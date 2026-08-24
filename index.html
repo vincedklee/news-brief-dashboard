@@ -1,0 +1,2271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Briefing</title>
+<meta name="description" content="매일 아침 AI·반도체·경제·국내 산업·스타트업 뉴스를 모아 정리한 브리핑.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Morning Briefing">
+<meta property="og:description" content="매일 아침 AI·반도체·경제·국내 산업·스타트업 뉴스를 모아 정리한 브리핑.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B0%3C/text%3E%3C/svg%3E">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  img, svg { display: block; max-width: 100%; }
+  button { font: inherit; color: inherit; }
+</style>
+<style>
+  :root {
+    --ground:   #EDEFF1;
+    --surface:  #FFFFFF;
+    --raise:    #F7F8F9;
+    --ink:      #14181C;
+    --ink-soft: #39424C;
+    --muted:    #5D6773;
+    --faint:    #8B95A0;
+    --hair:     #D8DDE2;
+    --hair-soft:#E6EAEE;
+    --accent:   #9A6410;
+    --accent-bg:#F2E7D4;
+    --up:       #D6304A;
+    --down:     #1F6FD0;
+
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+            "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+
+    --rail: 132px;
+    --gap:  32px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:   #0F1216;
+      --surface:  #161A20;
+      --raise:    #1C2129;
+      --ink:      #E3E7EB;
+      --ink-soft: #C0C7CF;
+      --muted:    #8A94A0;
+      --faint:    #6C7681;
+      --hair:     #252B33;
+      --hair-soft:#1F242B;
+      --accent:   #DFA44C;
+      --accent-bg:#2A2114;
+      --up:       #FF6B7F;
+      --down:     #5FA5F0;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:   #0F1216;
+    --surface:  #161A20;
+    --raise:    #1C2129;
+    --ink:      #E3E7EB;
+    --ink-soft: #C0C7CF;
+    --muted:    #8A94A0;
+    --faint:    #6C7681;
+    --hair:     #252B33;
+    --hair-soft:#1F242B;
+    --accent:   #DFA44C;
+    --accent-bg:#2A2114;
+    --up:       #FF6B7F;
+    --down:     #5FA5F0;
+  }
+
+  :root[data-theme="light"] {
+    --ground:   #EDEFF1;
+    --surface:  #FFFFFF;
+    --raise:    #F7F8F9;
+    --ink:      #14181C;
+    --ink-soft: #39424C;
+    --muted:    #5D6773;
+    --faint:    #8B95A0;
+    --hair:     #D8DDE2;
+    --hair-soft:#E6EAEE;
+    --accent:   #9A6410;
+    --accent-bg:#F2E7D4;
+    --up:       #D6304A;
+    --down:     #1F6FD0;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+  }
+
+  .page {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  a { color: inherit; }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ── masthead ────────────────────────────────── */
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 22px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .masthead h1 {
+    font-size: clamp(34px, 5.4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  .masthead .topics {
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* ── stat strip ──────────────────────────────── */
+  .strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    gap: 1px;
+    background: var(--hair);
+    border: 1px solid var(--hair);
+    margin-top: 26px;
+  }
+  .stat {
+    background: var(--surface);
+    padding: 15px 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .stat-value {
+    font-family: var(--mono);
+    font-size: 23px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .stat-value .unit {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 3px;
+  }
+  .stat-delta {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+  }
+  .stat-delta.up   { color: var(--up); }
+  .stat-delta.down { color: var(--down); }
+
+  /* ── 날짜 메뉴 ───────────────────────────────── */
+  .datenav {
+    display: flex;
+    gap: 7px;
+    margin-top: 26px;
+    padding-bottom: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    border-bottom: 1px solid var(--hair);
+  }
+  .datechip {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    padding: 8px 15px;
+    border: 1px solid var(--hair);
+    background: var(--surface);
+    color: var(--ink-soft);
+    cursor: pointer;
+    text-align: left;
+    transition: background .13s, color .13s, border-color .13s;
+  }
+  .datechip:hover { border-color: var(--faint); }
+  .datechip[aria-pressed="true"] {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .datechip .d {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  .datechip .w {
+    font-size: 12.5px;
+    color: var(--faint);
+    line-height: 1.3;
+  }
+  .datechip[aria-pressed="true"] .w { color: var(--accent); }
+  .datechip.all {
+    justify-content: center;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  .datechip.all .d { font-family: var(--sans); font-size: 15px; }
+
+  /* ── filters ─────────────────────────────────── */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 18px 0 34px;
+  }
+  .chip {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border: 1px solid var(--hair);
+    border-radius: 100px;
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .13s, color .13s, border-color .13s;
+  }
+  .chip:hover { border-color: var(--faint); color: var(--ink); }
+  .chip[aria-pressed="true"] {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .chip .count {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    opacity: .65;
+    margin-left: 5px;
+  }
+
+  /* ── timeline ────────────────────────────────── */
+  .timeline { display: flex; flex-direction: column; }
+
+  .day {
+    display: grid;
+    grid-template-columns: var(--rail) 1fr;
+    gap: var(--gap);
+    padding: 34px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .day:first-child { border-top: none; padding-top: 6px; }
+
+  .daymark {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .daymark .md {
+    font-family: var(--mono);
+    font-size: 29px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .daymark .yr {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+  }
+  .daymark .wd { font-size: 15px; color: var(--muted); }
+  .badge-today {
+    align-self: flex-start;
+    margin-top: 5px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+  }
+
+  .daybody { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+
+  /* 한눈에 보기 */
+  .digest {
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .digest h3 {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .digest ul { display: flex; flex-direction: column; gap: 11px; }
+  .digest li {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 4px;
+    font-size: 17px;
+    line-height: 1.62;
+    color: var(--ink-soft);
+  }
+  .digest li::before {
+    content: "";
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    padding-top: 3px;
+  }
+  .digest li:nth-child(1)::before { content: "01"; }
+  .digest li:nth-child(2)::before { content: "02"; }
+  .digest li:nth-child(3)::before { content: "03"; }
+  .digest li:nth-child(4)::before { content: "04"; }
+  .digest li:nth-child(5)::before { content: "05"; }
+  .digest strong { font-weight: 700; color: var(--ink); }
+
+  /* 그래서 뭐? — 사실이 아니라 판단. 시각적으로 확실히 구분한다 */
+  .insight {
+    background: var(--accent-bg);
+    border: 1px solid var(--hair);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .insight-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .insight-head h3 {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .insight-head .caveat {
+    font-size: 12.5px;
+    color: var(--muted);
+    letter-spacing: 0;
+    text-transform: none;
+    font-family: var(--sans);
+  }
+  .insight dl { display: flex; flex-direction: column; gap: 10px; }
+  .insight dt {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .insight dd {
+    font-size: 16.5px;
+    line-height: 1.66;
+    color: var(--ink-soft);
+    max-width: 64ch;
+  }
+  .insight strong { font-weight: 700; color: var(--ink); }
+
+  /* 진행 중인 흐름 배지 */
+  .arc {
+    align-self: flex-start;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--hair-soft);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .arc::before { content: "↳ "; color: var(--faint); }
+  .brief .arc { flex: 0 0 auto; font-size: 11px; padding: 1px 6px; }
+
+  /* 주제 섹션 */
+  .topic { display: flex; flex-direction: column; gap: 14px; }
+  .topic-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .topic-head h3 {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .topic-head .n {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .item { display: flex; flex-direction: column; gap: 6px; }
+  .item h4 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.44;
+    letter-spacing: -0.014em;
+    text-wrap: pretty;
+  }
+  .item p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 62ch;
+  }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 2px; }
+  .src {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hair);
+    padding-bottom: 1px;
+    transition: color .13s, border-color .13s;
+  }
+  .src::before { content: "→ "; color: var(--faint); }
+  .src:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* 그 외 — 한 줄 항목 */
+  .briefs-head {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-top: 6px;
+  }
+  .briefs {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--hair-soft);
+  }
+  .brief {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--hair-soft);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .brief > span { flex: 1 1 22ch; min-width: 0; }
+  .brief .src { flex: 0 0 auto; border-bottom: none; }
+
+  .note {
+    border-left: 2px dashed var(--hair);
+    padding: 2px 0 2px 16px;
+    font-size: 16px;
+    line-height: 1.66;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+  .note b {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .note ul { margin-top: 5px; padding-left: 16px; }
+  .note li { margin-bottom: 4px; }
+
+  .daymeta {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--faint);
+    line-height: 1.6;
+    padding-top: 4px;
+    border-top: 1px solid var(--hair-soft);
+  }
+
+  .empty {
+    font-size: 15.5px;
+    color: var(--faint);
+    padding: 40px 0;
+    text-align: center;
+    font-family: var(--mono);
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--faint);
+    line-height: 1.7;
+  }
+  footer .byline {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* ── mobile ──────────────────────────────────── */
+  @media (max-width: 720px) {
+    .page { padding: 28px 18px 60px; }
+    .day {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 26px 0;
+    }
+    .daymark {
+      position: static;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 9px;
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .daymark .md { font-size: 25px; }
+    .badge-today { margin-top: 0; }
+    .item p, .note { max-width: none; }
+    .item h4 { font-size: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+<style>
+  .themetoggle {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 50;
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 7px 11px;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity .15s, color .15s, border-color .15s;
+  }
+  .themetoggle:hover { opacity: 1; color: var(--accent); border-color: var(--accent); }
+  @media print { .themetoggle { display: none; } }
+</style>
+</head>
+<body>
+<button class="themetoggle" id="themetoggle" type="button">DARK</button>
+
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">Daily Brief</div>
+    <h1>뉴스 브리핑</h1>
+    <div class="topics">AI · 테크 / 반도체 · 하드웨어 / 경제 · 시장 / 국내 산업 · 정책 / 스타트업 · 투자</div>
+  </header>
+
+  <div class="strip" id="strip"></div>
+
+  <nav class="datenav" id="dates" aria-label="날짜 선택"></nav>
+
+  <nav class="filters" id="filters" aria-label="주제 필터"></nav>
+
+  <main class="timeline" id="timeline"></main>
+
+  <footer id="foot"></footer>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   BRIEFINGS — /brief 실행 시 이 배열에 최신 날짜가 앞에 추가됩니다.
+   ══════════════════════════════════════════════════════════ */
+
+const BRIEFINGS = [
+  {
+    date: "2026-08-24",
+    weekday: "월",
+    isToday: true,
+    collectedAt: "2026-08-24 06:45 KST",
+    window: "AI·반도체·국내산업 최근 24시간(일부 48시간 확대, 8/22~8/24 06:20 KST) · 경제/시장은 국내외 모두 주말 휴장으로 8/21(금) 종가·마감 · 스타트업 최근 7일(8/17~8/24)",
+    tally: "검색 약 159건 · 총 16건 — AI 1 / 반도체 1 / 경제 5 / 국내산업 3 / 스타트업 6 (35건 목표 크게 미달, 일요일 밤~월요일 새벽이라 평일 발표가 아직 없었음)",
+    metrics: [
+      { label: "KOSPI",    value: "6,912.95",  delta: "+0.88%", dir: "up",   note: "8/21 종가, 주말 휴장" },
+      { label: "KOSDAQ",   value: "801.94",    delta: "-4.63%", dir: "down", note: "8/21 종가, 매도 사이드카" },
+      { label: "다우",      value: "53,277.01", delta: "+0.98%", dir: "up",   note: "美 8/21 마감" },
+      { label: "S&P500",   value: "7,674.37",  delta: "+0.4%",  dir: "up",   note: "美 8/21 마감" },
+      { label: "나스닥",    value: "26,180.45", delta: "+0.4%",  dir: "up",   note: "美 8/21 마감" },
+      { label: "원/달러",   value: "1,386.5",  delta: "-6.1원", dir: "down", note: "8/21 종가, 11개월래 최저" },
+      { label: "WTI",      value: "87.06",     unit: "$",       delta: "+0.26%", dir: "up", note: "8/21" }
+    ],
+    digest: [
+      "<strong>앤스로픽이 최대 2조달러 밸류에이션을 목표로 10월 기업공개(IPO)를 추진 중인 것으로 전해졌다.</strong> 실현되면 스페이스X를 넘어서는 역대 최대 규모 IPO가 된다.",
+      "<strong>엔비디아가 내년 초 출하분부터 AI 서버 가격을 15% 이상 인상한다고 통보했다.</strong> 서버용 D램 값이 2분기에만 53~58% 뛰며 메모리 3사의 가격 협상력이 커진 결과로 풀이된다.",
+      "<strong>국내외 증시가 주말 내내 휴장한 가운데, 지난 금요일(8/21) 미국 3대 지수는 3거래일 만에 반등 마감했다(다우 +0.98%, S&P500·나스닥 +0.4%).</strong>"
+    ],
+    insight: [
+      { label: "흐름", text: "메모리 가격 상승이 오늘 처음으로 <strong>완제품 가격</strong>까지 넘어갔다. 8/11 낸드 단가 반영 → 8/19 \"2028년 HBM 소진\" → 8/21 eSSD 계약가 20~25% 추가 인상 전망으로 이어지던 흐름이 2주째 여섯 번째 진전을 맞았는데, 앞의 다섯 번은 모두 부품값 이야기였고 오늘은 엔비디아가 서버 완제품 값을 15% 올렸다." },
+      { label: "뒤집힐 조건", text: "엔비디아의 인상은 <strong>\"내년 초 출하분부터\"라는 통보 단계</strong>이지 체결된 계약이 아니다. 4분기 메모리 계약가가 꺾이거나 빅테크가 발주를 미루면 실제 반영되지 않을 수 있다. 8월 27일 SK하이닉스 인디애나 HBM 패키징 착공식이 공급 증설 속도를 가늠할 첫 지표다." },
+      { label: "안 보이는 것", text: "서버값을 올린 쪽 이야기는 나왔는데, 그 원가를 공급해 이익을 보는 <strong>삼성전자·SK하이닉스 쪽 반응이나 계약 조건은 오늘 한 건도 없었다.</strong> 주말이라 평일 발표가 없었던 영향으로 보이지만, 이번 주 안에 나오지 않으면 인상 근거 자체를 다시 봐야 한다." }
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "OpenAI, 유럽 31개국 챗GPT 무료·저가판에 광고 도입",
+            body: "OpenAI가 8월 24일부터 독일·프랑스·스웨덴·노르웨이·오스트리아 등 유럽 31개국에서 챗GPT 무료 버전과 월 8유로 Go 요금제 이용자에게 광고를 노출하기 시작한다. 유료 프리미엄 요금제는 광고 없이 유지된다. 광고는 개인화 없이 현재 대화 주제·대략적 위치·기기 종류·시간대·언어를 기준으로 노출되며, 과거 대화나 저장된 메모리는 사용하지 않는다고 밝혔다. 지난 2월 미국에서 먼저 시작한 광고 사업을 유럽으로 확장하는 것이다.",
+            sources: [
+              { name: "OpenAI 공식", url: "https://openai.com/index/chatgpt-ads-expands-across-europe/" },
+              { name: "TechXplore", url: "https://techxplore.com/news/2026-08-openai-ads-chatgpt-europe-week.html" }
+            ]
+          }
+        ],
+        briefs: [],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "검색 약 44회(1차+보강)에도 신규 확인 1건뿐이었다. 오픈소스 모델 출시, OpenAI 챗GPT 틴 버전, 앤스로픽 단백질 설계 연구 등은 모두 8/18 이전 발표로 기간 밖이었다.",
+            "앤스로픽 IPO 추진 소식은 관심주제.md 경계 규칙에 따라 스타트업/투자 주제로 옮겨 실었다."
+          ]
+        }
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "엔비디아, AI 서버 가격 15% 이상 인상 통보 — 메모리값 급등이 근원",
+            arc: "메모리 슈퍼사이클 · 2주째 6번째 진전 (8/11부터)",
+            body: "엔비디아가 주요 고객사에 AI 칩 탑재 시스템 가격을 15% 이상 인상한다고 통보했다(8/23 보도). 내년 초 출하분부터 적용되며 차세대 주력 제품 '베라 루빈'과 '그레이스 블랙웰' 탑재 시스템도 대상이다. 트렌드포스에 따르면 서버용 D램 계약가격이 2분기에 전분기 대비 53~58% 올랐고, 블룸버그는 이번 조치가 삼성전자·SK하이닉스·마이크론 등 메모리 3사의 가격 협상력 확대를 보여준다고 평가했다.",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com/article/2026082371501" },
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10849063" }
+            ]
+          }
+        ],
+        briefs: [],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "검색 약 45회(1차+보강)에도 신규 확인 1건뿐이었다. AMD '어드밴싱 AI' 행사 관련 기사가 검색에서 8/23로 노출됐으나 원문 대조 결과 실제로는 7월 22~23일 개최로 확인돼 제외했다."
+          ]
+        }
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "국내 증시, 주말 휴장 — 최근 종가는 지난 금요일(8/21) 그대로",
+            body: "국내 증시는 토요일(8/22)·일요일(8/23) 휴장했고 월요일인 오늘도 개장 전이라, 가장 최근 종가는 여전히 8월 21일(금) 마감치다. 당시 코스피는 60.37포인트(0.88%) 오른 6,912.95에 마감했다. 코스닥은 미국 장기금리 상승에 따른 성장주 할인율 부담으로 2차전지·바이오·로봇 관련주가 집중 매도되며 38.95포인트(4.63%) 급락한 801.94에 마감했고, 장중 매도 사이드카가 발동됐다.",
+            sources: [
+              { name: "비즈니스코리아", url: "https://www.businesskorea.co.kr/news/articleView.html?idxno=275291" },
+              { name: "MTN", url: "https://news.mtn.co.kr/news-detail/2026082116083734085" }
+            ]
+          },
+          {
+            title: "간밤 미국 증시, 3거래일 만에 반등 마감 — 어제 브리핑 수치 정정",
+            body: "미국 증시도 주말 휴장으로 최근 마감은 8월 21일(금, 미 동부시간) 세션이다. 다우존스는 전장 대비 517.80포인트(0.98%) 오른 53,277.01, S&P500은 33.21포인트(0.4%) 오른 7,674.37, 나스닥은 113.29포인트(0.4%) 오른 26,180.45로 각각 마감해 3거래일 만에 반등했다. 다만 주간 기준으로는 2주 연속 하락이다. 어제 브리핑에 실린 수치(다우 52,218.58 등)는 복수 매체 재확인 결과 8월 20일(목) 마감치로 확인돼, 이번 브리핑에서 8/21(금) 실제 마감치로 바로잡는다.",
+            sources: [
+              { name: "AP/kvue", url: "https://www.kvue.com/article/syndication/associatedpress/how-major-us-stock-indexes-fared-friday-8212026/616-eb8f8695-b282-47af-adab-e4778a9c2b2b" },
+              { name: "CNBC", url: "https://www.cnbc.com/2026/08/20/stock-market-today-live-updates.html" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "원/달러 환율은 8월 21일(금) 종가 기준 전 거래일보다 6.1원 내린 1,386.5원으로, 11개월여 만의 최저 수준을 유지하고 있다(주말 거래 없음).", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/21/2026082116174627744" }] },
+          { title: "국고채 3년물 금리는 8월 21일 3.854%로 전일보다 0.043%포인트 올랐다 — 미 장기금리 상승과 국채 발행 부담 영향.", sources: [{ name: "서울경제", url: "https://www.sedaily.com/article/20082018" }] },
+          { title: "WTI는 8월 21일(금) 배럴당 87.06달러로 0.26% 올라 2주 연속 주간 상승(약 5%)을 이어갔고, 국제 금값은 출처마다 4,600~4,680달러대로 편차가 있었다.", sources: [{ name: "TradingEconomics", url: "https://ko.tradingeconomics.com/commodity/gold" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "미국 3대 지수 마감치를 복수 매체로 교차확인하는 과정에서 어제 브리핑 수치가 실제로는 8/20(목) 마감치였음을 발견해 정정했다."
+          ]
+        }
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "현대차 노사, 24일 예정 부분파업 유보 — 임협 교섭 재개(어제 이어서)",
+            arc: "현대차·기아 임단협 · 6일째 4번째 진전 (8/19부터)",
+            body: "전국금속노조 현대차지부가 애초 예정했던 24일 1·2조 4시간 부분파업을 유보하고, 24일 오후 2시 울산공장에서 17차 임금협상 본교섭을 재개하기로 사측과 합의했다. 21일 10년 만의 8시간 전면파업까지 벌인 뒤 한발 물러선 것으로, 노조 누적 파업시간은 60시간에 달한다. 이날 교섭에서 진전된 제시안이 없으면 25일 조별 4시간 부분파업과 중앙쟁의대책위 소집을 통한 추가 쟁의 여부 검토가 예정돼 있다.",
+            sources: [
+              { name: "아시아투데이", url: "https://www.asiatoday.co.kr/kn/view.php?key=20260823010007521" }
+            ]
+          },
+          {
+            title: "재정경제부, '2026년 하반기 경제성장전략' 발표 — SMR 등 미래에너지 국가전략기술로 편입",
+            body: "재정경제부가 8월 23일 '2026년 하반기 경제성장전략'을 발표하며 소형모듈원자로(SMR) 등 미래형 에너지 분야를 연구개발(R&D)·투자세액공제가 우대되는 국가전략기술에 포함하겠다는 방침을 밝혔다. 차세대 원전 시장이 본격적으로 열리기 전에 기술과 공급망을 선점하려는 취지다.",
+            sources: [
+              { name: "대한민국 정책브리핑", url: "https://www.korea.kr/news/policyNewsView.do?newsId=148968164" }
+            ]
+          },
+          {
+            title: "이재명 대통령, 부동산 정책 국민 대토론회 개최",
+            body: "23일 서울 여의도 KBS에서 부동산 정책 국민 대토론회가 열려 정부 관계자·학계·공인중개사·부동산 유튜버·맘카페 운영진 등 140명이 참석했다. 이 대통령은 실수요자 중심 주거 안정을 정책 방향으로 제시하면서도 보유세 강화, 투기성 대출 억제라는 기존 기조는 재확인했다.",
+            sources: [
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10818872" }
+            ]
+          }
+        ],
+        briefs: [],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "기아 노조 관련 새 진전은 확인하지 못했다. 반도체 수출 통계(관세청 8/1~20일)는 어제 브리핑에 이미 실려 재수록하지 않았다."
+          ]
+        }
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "앤스로픽, 최대 2조달러 밸류에이션 목표로 IPO 추진 (8/21)",
+            arc: "앤스로픽 자체칩·IPO · 2번째 진전 (8/23부터)",
+            body: "앤스로픽이 오는 10월 기업공개(IPO)를 목표로 최대 2조달러 밸류에이션을 추진하고 있다고 복수 매체가 보도했다. 실현되면 지난 6월 1조7,700억달러로 상장한 스페이스X를 넘어 역대 최대 규모 IPO가 된다. 투자자들에 따르면 연환산 매출은 올해 말 1,000억~1,200억달러에 이를 전망으로, 지난 5월 밝힌 470억달러 대비 10배 이상 성장한 수치다. 직전 투자 라운드에서는 기업가치 9,650억달러를 인정받았다.",
+            sources: [
+              { name: "Dataconomy", url: "https://dataconomy.com/2026/08/21/anthropic-accelerates-ipo-plans-targeting-2-trillion/" },
+              { name: "Fortune", url: "https://fortune.com/2026/08/13/anthropic-ipo-2-trillion-october-largest-ever-spacex/" }
+            ]
+          },
+          {
+            title: "엔비디아, 국내 AI반도체 스타트업 리벨리온에 인수·투자·제휴 타진 (8/21 보도)",
+            arc: "엔비디아 대중 수출·칩 확보 · 2번째 진전 (8/21부터)",
+            body: "블룸버그 보도에 따르면 엔비디아가 국내 NPU 스타트업 리벨리온과 기술 협력·지분투자·인수 등을 포함한 협력 방안을 초기 단계에서 논의 중이다. 젠슨 황 CEO가 산타클라라 본사에서 박성현 리벨리온 공동창업자 겸 CEO를 만나 논의했으며, 아직 초기 단계로 실제 거래로 이어질지는 불확실하다.",
+            sources: [
+              { name: "와우테일", url: "https://wowtale.net/2026/08/23/263329/" },
+              { name: "이데일리", url: "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01521926645550272" }
+            ]
+          },
+          {
+            title: "방산 스타트업 캐스틸리온, 10억달러 시리즈C 유치 (8/19)",
+            body: "극초음속 미사일을 개발하는 미국 방산 스타트업 캐스틸리온이 지분투자 8억달러와 회전신용공여 2.5억달러를 합쳐 총 10억달러 규모의 시리즈C를 유치했다. JP모건체이스 전략투자그룹, 안드리센 호로위츠, 칼라일 운용 펀드가 공동 주도했으며 기업가치는 130억달러로 평가됐다.",
+            sources: [
+              { name: "SpaceNews", url: "https://spacenews.com/hypersonic-missile-startup-castelion-raises-1-billion/" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "AI 영상생성 스타트업 힉스필드가 기업가치 54억달러로 4억달러 규모 시리즈B를 유치했다 — 연환산 매출이 1년 만에 2,000만달러에서 7억달러로 늘었다고 밝혔다 (8/17).", sources: [{ name: "PR Newswire", url: "https://www.prnewswire.com/news-releases/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million-302852430.html" }] },
+          { title: "비산화 그래핀 소재기업 케이비엘러먼트가 140억원 규모 시리즈B 투자를 유치했다(누적 307억원) (8/22).", sources: [{ name: "와우테일", url: "https://wowtale.net/2026/08/22/263312/" }] },
+          { title: "AI 받아쓰기 스타트업 위스퍼가 기업가치 20억달러에 2억8,000만달러 규모 시리즈B를 유치했다, 멘로벤처스 주도 (8/17).", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/17/wispr-raises-280m-at-2b-valuation-as-it-looks-beyond-dictation/" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "7일 윈도우 밖(8/17 이전)이라 제외한 후보: 스토어링크·페이히어(실제 발표일 2024년으로 확인). Warp·Alcatraz·LeapXpert 등은 정확한 발표일을 확인하지 못해 보류했다."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    date: "2026-08-23",
+    weekday: "일",
+    isToday: false,
+    collectedAt: "2026-08-23 06:32 KST",
+    window: "AI·반도체·국내산업 최근 24시간(일부 48시간 확대, 8/21~8/23 06:20 KST) · 경제/시장은 국내 8/21(금) 종가·미국 8/22(금) 마감 · 스타트업 최근 7일(8/16~8/23)",
+    tally: "검색 약 204건 · 총 21건 — AI 6 / 반도체 1 / 경제 5 / 국내산업 5 / 스타트업 4 (35건 목표 미달, 주말이라 발표가 적었음)",
+    metrics: [
+      { label: "KOSPI",    value: "6,912.95",  delta: "+0.88%", dir: "up",   note: "8/21 종가" },
+      { label: "KOSDAQ",   value: "801.94",    delta: "-4.63%", dir: "down", note: "8/21 종가, 매도 사이드카" },
+      { label: "다우",      value: "52,218.58", delta: "-0.01%", dir: "down", note: "美 8/22 마감" },
+      { label: "S&P500",   value: "7,498.96",  delta: "-0.14%", dir: "down", note: "美 8/22 마감" },
+      { label: "나스닥",    value: "25,690.90", delta: "-0.57%", dir: "down", note: "美 8/22 마감" },
+      { label: "원/달러",   value: "1,386.5",  delta: "-6.1원", dir: "down", note: "8/21 종가, 11개월래 최저" },
+      { label: "WTI",      value: "86.64",     unit: "$",       delta: "+0.63%", dir: "up", note: "8/22 (단일 출처)" }
+    ],
+    digest: [
+      "<strong>코스피는 0.88% 올랐지만 코스닥은 4.63% 급락해 매도 사이드카가 발동됐고, 원/달러 환율은 11개월 만에 최저인 1,386.5원까지 떨어졌다(8/21 종가).</strong>",
+      "<strong>삼성전자가 이사회에서 올해 주주환원 규모를 최대 110조원으로 의결해, 어제 예고됐던 계획을 구체화했다.</strong>",
+      "<strong>애플이 시리·비전프로 조직에서 200명 이상을 감원했고 카카오는 AI 사업을 '카카오AI'로 인적분할하기로 하는 등, 국내외 빅테크의 조직 재편이 같은 날 겹쳤다.</strong>"
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "애플, 시리·비전 프로 조직 200여 명 감축 — AI·스마트글래스로 전환 가속",
+            body: "블룸버그 보도(8/21)에 따르면 애플이 비전 프로 팀(게임 부문 포함 약 100명)과 시리·AI 소프트웨어 그룹(약 100명)에서 총 200명 이상을 감원했다. 비전 프로 게임 사업부는 완전히 폐쇄되고 몰입형 영상 제작에서도 손을 뗀다. 애플은 비전 프로·비전OS 자체는 유지하며 2028년경 신모델을 계획 중이라고 밝혔으나, 경량 AI 스마트글래스와 차세대 시리 개발에 자원을 집중하려는 전략적 전환으로 풀이된다.",
+            sources: [
+              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/21/apple-is-reportedly-cutting-hundreds-of-jobs-from-siri-vision-pro-teams/" },
+              { name: "9to5Mac", url: "https://9to5mac.com/2026/08/21/apple-lays-off-200-people-across-vision-pro-and-siri-teams/" }
+            ]
+          },
+          {
+            title: "카카오, AI·투자 사업 인적분할 — '카카오AI'·'카카오X'로 재편",
+            body: "카카오가 이사회에서 인적분할을 결의하고, AI 전문회사 '카카오AI'(신설법인)와 카카오뱅크·페이·모빌리티 등을 맡는 '카카오X'(존속법인)로 분리하기로 했다(8/21). 분할비율은 순자산 장부가액 기준 카카오AI 0.36 : 카카오X 0.64이며, 카카오AI 대표는 정신아 현 대표이사가 내정됐다. 12월 17일 임시주총을 거쳐 2027년 1월 1일 분할 완료, 1월 27일 재상장·변경상장을 추진한다.",
+            sources: [
+              { name: "카카오", url: "https://www.kakaocorp.com/page/detail/12116" },
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260821000365" },
+              { name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20260821102850" }
+            ]
+          },
+          {
+            title: "DeepSeek, 실험적 비전 모델 공개 — 앤스로픽 Opus 4.8과 벤치마크 근접",
+            body: "DeepSeek이 텍스트 모델 V4-Flash에 이미지 이해 기능을 더한 실험 모델 'DeepSeek-V4-Flash-Vision-Exp'를 API로 공개했다(8/21). 자체 벤치마크에서 ApexBench는 36.5점으로 앤스로픽 Opus 4.8(39.4점)에 못 미쳤지만, Agents' Last Exam(27.3 대 25.7)·ZeroBench(35.0 대 34.0)에서는 Opus 4.8을 앞섰다고 밝혔다.",
+            sources: [
+              { name: "Dataconomy", url: "https://dataconomy.com/2026/08/21/deepseek-unveils-vision-model-challenging-anthropics-opus/" },
+              { name: "The Decoder", url: "https://the-decoder.com/deepseek-releases-experimental-flash-vision-model-that-rivals-opus-4-8-on-agent-benchmarks/" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "OpenAI가 GPT-5.6 Sol의 API·크레딧 가격을 향후 3개월간 20% 이상 인하한다고 밝혔다.", sources: [{ name: "OpenAI", url: "https://openai.com/news/company-announcements/" }] },
+          { title: "xAI가 상시 구동 AI 에이전트 'Grok Bot'을 SuperGrok Plus·Cursor Pro+ 요금제까지 확대했다(8/11 베타 출시 후 8/21 확대).", sources: [{ name: "x.ai", url: "https://x.ai/news/grok-bot-more-plans" }] },
+          { title: "과기정통부가 '모두의 AI' 사업설명회를 열어, 8월 중 사업자를 선정해 12월 말 정식 서비스를 목표로 한다는 일정을 재확인했다. (어제 이어서)", sources: [{ name: "CIO Korea", url: "https://www.cio.com/article/4196592/" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "검색 스니펫의 날짜 표기가 실제와 다른 사례(2024·2025년 기사가 '8/22'로 표시)가 여럿 확인돼, 원문 대조 후 제외했다."
+          ]
+        }
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "앤트로픽, 구글 TPU 개발 주역 영입 — 자체 AI 반도체 개발 속도",
+            body: "앤트로픽이 구글에서 1세대부터 7세대까지 TPU(텐서처리장치) 개발을 이끌었던 아미르 살렉을 영입했다고 블룸버그가 보도했다(8/22). 살렉은 구글 이전 엔비디아에서 8년간 근무했으며, 앤트로픽에서는 연산(compute) 팀에 합류해 제임스 브래드버리에게 보고한다. AI 모델 수요 급증 속 연산 인프라 확보에 어려움을 겪어온 앤트로픽이 자체 AI 칩 개발을 통해 이를 타개하려는 행보로 풀이된다.",
+            sources: [
+              { name: "전자신문", url: "https://www.etnews.com/20260822000034" },
+              { name: "아주경제", url: "https://www.ajunews.com/view/20260822082722932" },
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608220922330286" }
+            ]
+          }
+        ],
+        briefs: [],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "51회 검색(24시간+48시간)에도 이 1건 외 신규 기사를 확인하지 못했다. 주말이라 기업·컨퍼런스 발표가 적었던 것으로 보이며, 다수 후보가 실제로는 4~7월 발표인데 검색 스니펫에 8월로 잘못 표시돼 제외했다."
+          ]
+        }
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "코스피·코스닥 희비 — 코스피 0.88% 상승 마감, 코스닥은 4.63% 급락하며 매도 사이드카 발동",
+            body: "8월 21일(금) 코스피는 전장보다 60.37포인트(0.88%) 오른 6,912.95에 마감했다. 장 초반 뉴욕증시 약세 여파로 6,759.95까지 밀렸으나 삼성전자·SK하이닉스 등 반도체 대형주에 매수세가 유입되며 반등했다. 반면 코스닥은 미국 장기금리 상승에 따른 성장주 할인율 부담으로 2차전지·바이오·로봇 관련주가 집중 매도되며 38.95포인트(4.63%) 급락한 801.94에 마감했고, 장중 매도 사이드카가 발동됐다.",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com/article/2026082150696" },
+              { name: "MTN", url: "https://news.mtn.co.kr/news-detail/2026082116083734085" },
+              { name: "Businesskorea", url: "https://www.businesskorea.co.kr/news/articleView.html?idxno=275291" }
+            ]
+          },
+          {
+            title: "간밤 뉴욕증시, 중동 리스크·인플레이션 우려에 소폭 하락 마감",
+            body: "8월 22일(현지시간) 뉴욕증시는 다우존스가 전장 대비 6.06포인트(0.01%) 내린 52,218.58, S&P500이 10.24포인트(0.14%) 내린 7,498.96, 나스닥이 146.30포인트(0.57%) 내린 25,690.90으로 각각 마감했다. 기업 실적은 대체로 양호했지만 중동 지정학적 리스크와 인플레이션 우려가 투자심리를 눌러 3대 지수 모두 보합권 하락에 그쳤다.",
+            sources: [
+              { name: "이투데이", url: "https://www.etoday.co.kr/news/view/2606409" }
+            ]
+          },
+          {
+            title: "원/달러 환율, 11개월 만에 최저 수준인 1,386.5원까지 하락",
+            body: "8월 21일 서울 외환시장에서 원/달러 환율은 전일 대비 6.1원 내린 1,386.5원(오후 3시30분 종가)에 마감했다. 2025년 9월 17일(1,380.1원) 이후 11개월여 만의 최저 수준으로, 수출업체와 외국인 투자자의 달러 매도세가 하락을 주도했다. 6거래일 연속 하락이다.",
+            sources: [
+              { name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/21/2026082116174627744" },
+              { name: "아시아경제", url: "https://www.asiae.co.kr/article/2026082115333004696" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "WTI 유가는 8월 22일 배럴당 86.64달러로 마감해 전일 대비 0.63% 올랐다(단일 출처, 교차확인 미완료).", sources: [{ name: "Convex Trade", url: "https://convextrade.com/today/oil-price" }] },
+          { title: "국제 금값은 8월 22일 온스당 4,600.79달러로 전일 대비 0.37% 올랐다(단일 출처, 교차확인 미완료).", sources: [{ name: "CBC뉴스", url: "https://www.cbci.co.kr/news/articleView.html?idxno=600013" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "이 세션에서 WebFetch가 대부분 뉴스 도메인에서 차단돼 원문 대조 대신 복수 매체 교차 확인으로 대체했다. 미 국채금리·국내 국고채 금리는 8/21자 수치를 확보하지 못해 제외했다."
+          ]
+        }
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "삼성전자, 이사회서 올해 주주환원 최대 110조원 의결",
+            body: "삼성전자가 이사회를 열어 올해 주주환원 규모를 90조~110조원 수준으로 확정했다(8/21). 3분기부터 정규배당 포함 약 30조원 규모 현금배당을 시행하고, 임직원 보상용 자사주 약 15조원어치 매입도 함께 의결했다. 세부 실행안은 10월 말 이사회에서 다시 확정한다. 2024~2026년 3개년 누적 주주환원 규모는 120조~140조원에 이를 전망이다. 어제 브리핑의 '최대 150조원 계획'이 실제 이사회 의결로 구체화된 것이다. (어제 이어서)",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com/article/202608215371g" },
+              { name: "머니투데이", url: "https://www.mt.co.kr/industry/2026/08/21/2026082115542310945" }
+            ]
+          },
+          {
+            title: "기아 노조, 8월 26~28일 부분파업 결의",
+            body: "기아 노조가 쟁의대책위원회를 열어 26일 4시간, 27일 2시간, 28일 4시간씩 근무조별 부분파업에 나서기로 결의했다. 기본급 14만9,600원 인상과 전년도 영업이익 30% 성과급 등을 요구 중이며, 사측은 기본급 9만8,000원 인상 등 3차안을 제시한 상태다. 실행되면 2021년 이후 이어온 5년 연속 무분규 타결 기록이 깨진다.",
+            sources: [
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10848208" },
+              { name: "비즈니스포스트", url: "https://www.businesspost.co.kr/BP?command=article_view&num=445347" }
+            ]
+          },
+          {
+            title: "8월 1~20일 반도체 수출 260억달러 — 비중 47.2%로 역대 최고",
+            body: "관세청이 발표한 8월 1~20일 수출입 현황(잠정치)에 따르면 반도체 수출액이 전년 동기 대비 198.8% 증가한 260억달러를 기록해 전체 수출(552억달러, +56.0%)의 47.2%를 차지했다(8/21 발표). 해당 기간 기준 역대 최대 비중이며, 8월 1~20일 전체 수출액도 종전 최고였던 지난해 8월(354억달러)을 크게 웃도는 역대 최대치다.",
+            sources: [
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10847745" },
+              { name: "연합뉴스", url: "https://v.daum.net/v/20260821170710672" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "현대차 노사가 8월 21일 8시간 전면파업(10년 만) 이후에도 접점을 찾지 못해, 24~25일 부분파업이 이어질 예정이다. (어제 이어서)", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/industry/2026/08/18/2026081817125340220" }] },
+          { title: "금융감독원이 8월 이후 취급되는 민간 중금리대출과 이주비·중도금·잔금 등 집단대출 증가분을 금융회사별 가계대출 총량 관리 실적에서 전액 제외하기로 했다(8/21). 금융권 전체로 약 30조원의 추가 대출 여력이 생길 것으로 추산된다.", sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260821000712" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "AI 반도체 팹리스 iHW, 520억원 시리즈A 투자 유치 (8/19)",
+            body: "삼성전자·SK하이닉스·인텔 출신이 2024년 설립한 초저전력 AI 반도체(뉴로모픽 기반) 팹리스 iHW가 520억원 규모 시리즈A 투자 유치를 발표했다. 코오롱인베스트먼트가 주도하고 우리벤처파트너스, 미래에셋벤처투자, 한국산업은행 등 13개 기관이 참여했으며, 프리시리즈A(120억원)를 포함해 누적 투자유치액은 640억원이다.",
+            sources: [
+              { name: "머니투데이", url: "https://www.mt.co.kr/future/2026/08/19/2026081909164378071" },
+              { name: "와우테일", url: "https://wowtale.net/2026/08/19/263123/" }
+            ]
+          },
+          {
+            title: "AI 추론 클라우드 그록(Groq), 3억5,000만 달러 시리즈A 유치 (8/17)",
+            body: "미국 AI 추론(inference) 인프라 기업 그록이 3억5,000만 달러 규모 시리즈A 투자 유치를 발표했다. 밸류에이션은 35억 달러이며, 엔비디아가 투자자로 참여했다고 보도됐다. 지난 6월 유치한 6억5,000만 달러를 더하면 최근 조달액은 10억 달러 규모다.",
+            sources: [
+              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/" },
+              { name: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-17/groq-valued-at-3-5-billion-in-funding-round-after-nvidia-deal" }
+            ]
+          },
+          {
+            title: "전북서 '지역성장펀드' 1호 출범, 1,036억원 모펀드 결성 (8/20)",
+            body: "중소벤처기업부가 전북에서 비수도권 지역성장펀드 1호를 결성·출범했다. 모태펀드 600억원에 전북도·지자체·현대자동차그룹·농협은행·하나은행 등 17개 기관이 참여해 총 1,036억원 규모로 조성됐다. 정부는 비수도권 14개 지역에 최소 1개씩 펀드를 만들어 5년간 2조원 이상을 공급할 계획이다.",
+            sources: [
+              { name: "전자신문", url: "https://www.etnews.com/20260820000243" },
+              { name: "뉴시스", url: "https://nwww.newsis.com/view/NISX20260820_0003755305" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "고기능성 아웃도어 OEM 기도산업이 코스닥에 상장했다(8/21). 공모가 2만8,400원, 공모 규모 약 482억8,000만원이었으나 상장 첫날 공모가 대비 약 8~11% 하락 마감했다.", sources: [{ name: "이데일리", url: "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02807686645549616" }] }
+        ]
+      }
+    ]
+  },
+  {
+    date: "2026-08-21",
+    weekday: "금",
+    isToday: false,
+    collectedAt: "2026-08-21 06:40 KST",
+    window: "AI·반도체·경제·국내산업 최근 24시간 (8/20 06:00~8/21 06:20 KST, 일부 48시간) · 스타트업 최근 7일 (8/14~8/21)",
+    tally: "검색 약 172건 · 총 37건 — AI 9 / 반도체 5 / 경제 7 / 국내산업 9 / 스타트업 7",
+    metrics: [
+      { label: "KOSPI",    value: "6,852.58",  delta: "+5.89%", dir: "up",   note: "8/20 종가" },
+      { label: "KOSDAQ",   value: "840.89",    delta: "+1.99%", dir: "up",   note: "8/20 종가" },
+      { label: "다우",      value: "52,759.21", delta: "-1.3%",  dir: "down", note: "美 8/20 마감" },
+      { label: "S&P500",   value: "7,641.16",  delta: "-0.87%", dir: "down", note: "美 8/20 마감(매체 편차 있음)" },
+      { label: "나스닥",    value: "26,067.17", delta: "-1.0%",  dir: "down", note: "美 8/20 마감" },
+      { label: "원/달러",   value: "1,392.6",  delta: "-5.1원", dir: "down", note: "8/20 종가, 10년5개월만 1,400원 하회" },
+      { label: "WTI",      value: "85~86.28",  unit: "$",       delta: "주간+4%", dir: "up", note: "8/20 (정산가 미확인)" }
+    ],
+    digest: [
+      "<strong>삼성전자의 최대 150조원대 주주환원 계획과 SK하이닉스의 40조원 규모 자사주 매입·소각 결정이 겹치며 코스피가 5.89% 급등한 6,852.58로 마감, 올해 24번째 매수 사이드카가 발동됐다.</strong>",
+      "<strong>원/달러 환율이 10년 5개월 만에 처음으로 1,400원선을 하회한 데 이어 이틀 연속 1,300원대(1,392.6원)를 유지했다.</strong>",
+      "<strong>현대차·기아 노조가 21일 2016년 이후 10년 만의 전면파업을 예고했고, 미국에서는 스트라이프가 AI 모델 라우팅업체 오픈라우터를 7.5조~8조원 규모에 인수했다.</strong>"
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "스트라이프, AI 모델 라우팅 스타트업 오픈라우터 인수",
+            body: "결제기업 스트라이프가 8월 20일 AI 모델 라우팅·과금 플랫폼 오픈라우터 인수를 공식 발표했다. 인수가는 매체마다 다르게 보도됐다 — 뉴욕타임스는 75억 달러, 액시오스는 현금·주식 합산 80억 달러 이상으로 전했다. 오픈라우터는 80여개 공급사의 400개 이상 모델에 하루 10조 토큰 이상을 라우팅하며 이용자 1,000만명 이상을 확보했고, 지난 5월 투자 유치 당시 기업가치는 13억 달러였다.",
+            sources: [
+              { name: "CNBC", url: "https://www.cnbc.com" },
+              { name: "Bloomberg", url: "https://www.bloomberg.com" },
+              { name: "PYMNTS", url: "https://www.pymnts.com" }
+            ]
+          },
+          {
+            title: "\"모두의 AI\" 사업, 네이버 불참 속 카카오·통신사 컨소시엄 경쟁 구도",
+            body: "SK텔레콤·카카오·KT 등 6개 사업자가 정부의 전국민 무료 AI 서비스 '모두의 AI' 사업제안서를 제출한 가운데(8/18), 유일하게 불참한 네이버의 배경과 카카오·통신사가 적극 참여하는 이유를 짚은 후속 분석 기사가 8월 20일 나왔다. 카카오는 LG유플러스·LG AI연구원 등 14개사와 컨소시엄을 꾸려 자체 모델 '카나나'와 LG의 'K-엑사원'을 앞세웠다. 정부는 이달 말 사업자를 선정해 9월 말 베타서비스, 12월 정식서비스를 목표로 한다.",
+            sources: [
+              { name: "데일리안", url: "https://www.dailian.co.kr" },
+              { name: "ZDNet Korea", url: "https://zdnet.co.kr" }
+            ]
+          },
+          {
+            title: "메타, MS 애저의 최대 AI 고객 중 하나로 부상",
+            body: "메타가 매주 수조 개의 토큰을 소비하며 마이크로소프트 애저 클라우드를 통해 연간 수억 달러를 AI 모델 이용에 지출하고 있다고 블룸버그가 8월 20일 보도했다. 애저의 AI 모델 마켓플레이스 'Foundry'는 7월 기준 고객 10만곳을 확보했다. 양사 모두 공식 확인은 거부했다.",
+            sources: [
+              { name: "Bloomberg", url: "https://www.bloomberg.com" },
+              { name: "Yahoo Finance", url: "https://finance.yahoo.com" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "메타가 Meta AI에 페이스북·인스타그램 광고 데이터, 구글 워크스페이스 연동 기능을 추가해 캠페인 성과를 대화형으로 자동 요약해주는 기능을 출시했다.", sources: [{ name: "Dataconomy", url: "https://dataconomy.com" }] },
+          { title: "앤스로픽 계열 합작사 Ode(블랙스톤·헬먼앤프리드먼 공동 출자)가 AI 컨설팅업체 Casper Studios를 인수했다. 거래 금액은 비공개다.", sources: [{ name: "PYMNTS", url: "https://www.pymnts.com" }] },
+          { title: "OpenAI와 메타가 데이터센터 건설에 대한 지역 반대 여론에 대응해 홍보·대관 인력을 확충하고 있다. 미 전역에서 약 1,300억 달러 규모 데이터센터 프로젝트 75건 이상이 지역 반대로 지연·무산됐다.", sources: [{ name: "Bloomberg", url: "https://www.bloomberg.com" }] },
+          { title: "메타가 화면 공유와 시스템 전역 받아쓰기 기능을 갖춘 macOS용 Meta AI 데스크톱 앱 베타를 공개했다. (8/19)", sources: [{ name: "MacRumors", url: "https://www.macrumors.com" }] },
+          { title: "아마존이 월 19.99달러였던 Alexa+를 파이어TV 스틱 최신 세대 등 호환 기기 전반에 무료로 개방했다. (8/19)", sources: [{ name: "TechCrunch", url: "https://techcrunch.com" }] },
+          { title: "잭 도시가 창업한 블록이 사내에서 쓰던 AI 에이전트 관리 데스크톱 앱 'Berd'를 아파치 2.0 라이선스로 오픈소스 공개했다. (8/19)", sources: [{ name: "VentureBeat", url: "https://venturebeat.com" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "24시간 창 안 확인 항목이 적어 일부 항목은 48시간(8/19)까지 넓혔다."
+          ]
+        }
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "엔비디아, 중국 전용 AI칩 연내 소량 출하 계획 — 회사는 부인",
+            body: "엔비디아가 Groq에서 라이선스한 LPU(언어처리장치) 기술을 활용해 중국 전용 AI칩을 연내 소량 출하할 계획이라고 더인포메이션이 8월 20일(현지시간) 보도했다. 미국 수출규제는 준수하되 중국 정부 승인 여부는 불확실하며, 중국 기업 여러 곳이 이미 주문했다고 전해졌다. 다만 엔비디아 측은 이후 \"로드맵에 중국 전용 LPU는 없다\"며 보도 내용을 부인했다.",
+            sources: [
+              { name: "The Daily Guardian", url: "https://thedailyguardian.com" },
+              { name: "US News", url: "https://money.usnews.com" },
+              { name: "TipRanks", url: "https://www.tipranks.com" }
+            ]
+          },
+          {
+            title: "삼성전자, 파운드리 위탁생산 단가 최대 15% 인상 (8/19)",
+            body: "삼성전자가 4나노(SF4) 신규 위탁생산 단가를 중국·미국 고객 대상 10~15%, 대만 고객 5~10% 인상했다. 5나노(SF5)도 10~15%, 구형 8나노 공정도 10% 가까이 올렸다. AI 반도체 수요 폭증과 TSMC 생산능력 포화가 배경으로 꼽힌다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com" },
+              { name: "전자신문", url: "https://www.etnews.com" },
+              { name: "서울경제", url: "https://www.sedaily.com" }
+            ]
+          },
+          {
+            title: "엔비디아 H200, 중국 본토 반입 일부 승인 — 바이트댄스·텐센트 각 약 1만개 (8/19)",
+            body: "중국 규제당국이 엔비디아 H200 칩의 소량 반입을 승인해 바이트댄스와 텐센트가 각각 약 1만개씩 받은 것으로 전해졌다. 홍콩 경유 물량도 허용됐으며 다른 중국 기업들의 유사 규모 승인도 임박한 것으로 보도됐다.",
+            sources: [
+              { name: "Benzinga", url: "https://www.benzinga.com" },
+              { name: "invezz", url: "https://invezz.com" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "삼성전자가 미국 테일러 2기 파운드리 팹 투자를 준비하며 주요 장비 협력사에 SEMI 인증을 미리 받아두라고 요청했다.", sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr" }] },
+          { title: "AI 데이터센터용 eSSD 수요 급증으로 3분기 계약가가 2분기(48~53%↑)에 이어 20~25% 추가로 오를 것으로 전망됐다. 삼성·SK하이닉스가 고수익 eSSD에 집중하는 사이 중국 YMTC는 범용 낸드 점유율을 넓히고 있다. (8/19)", sources: [{ name: "한국일보", url: "https://www.hankookilbo.com" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "24시간 창 안에서 확인된 항목이 2건뿐이라 48시간(8/19)까지 넓혔다. SK하이닉스의 40조원 자사주 매입·소각은 사업 내용보다 자본배분 이슈라 판단해 국내산업/정책에서 다뤘다."
+          ]
+        }
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "코스피 5.89% 급등, 매수 사이드카 발동",
+            body: "코스피가 전 거래일 대비 381.41포인트(5.89%) 급등한 6,852.58에 마감했다. 삼성전자의 최대 150조원대 주주환원 계획과 SK하이닉스의 40조원 규모 자사주 매입·소각 결정이 겹치며 반도체 대형주가 급등을 주도했다(SK하이닉스 +12.73%, 삼성전자 +9.49%). 오전 9시 57분 올해 24번째 매수 사이드카가 발동됐고, 외국인이 1조7,092억원을 순매수한 반면 개인·기관은 순매도했다.",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com" },
+              { name: "서울경제", url: "https://www.sedaily.com" }
+            ]
+          },
+          {
+            title: "뉴욕증시 3대 지수 하락 — 국채금리 반등·유가 상승, 월마트 실적 쇼크 겹쳐",
+            body: "뉴욕증시 3대 지수가 일제히 하락 마감했다. 미 국채 금리가 반등하고 트럼프 대통령이 이란 경제 압박 방침을 밝히며 유가가 오른 영향이다. 다우존스는 703.84포인트(1.3%) 내린 52,759.21, S&P500은 0.87% 내린 7,641.16(매체마다 -0.28~-0.69%까지 편차), 나스닥은 263.92포인트(1.0%) 내린 26,067.17로 마감했다. 월마트는 2분기 실적이 예상치를 웃돌았음에도 3분기 가이던스 부진과 미국 내 동일점포 매출 부진으로 주가가 약 9~9.5% 급락하며 다우 낙폭의 상당 부분을 차지했다.",
+            sources: [
+              { name: "AP(Yakima Herald)", url: "https://www.yakimaherald.com" },
+              { name: "TheStreet", url: "https://www.thestreet.com" }
+            ]
+          },
+          {
+            title: "원/달러 환율, 10년 5개월 만에 1,400원선 하회",
+            body: "원/달러 환율이 전일 대비 5.1원 내린 1,392.6원(오후 3시30분 종가)에 마감했다. 전날 10년 5개월 만에 처음으로 1,400원선을 하회한 데 이어 이틀 연속 1,300원대를 유지했다. 수출업체의 달러 매도와 약달러 흐름이 배경으로 꼽힌다.",
+            sources: [
+              { name: "아시아경제", url: "https://www.asiae.co.kr" },
+              { name: "Businesskorea", url: "https://www.businesskorea.co.kr" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "코스닥은 전 거래일 대비 16.43포인트(1.99%) 오른 840.89로 마감했다. 알테오젠 등 바이오주가 강세였으나 코스피 대비 상승폭은 절반 수준에 그쳤다.", sources: [{ name: "서울신문", url: "https://www.seoul.co.kr" }] },
+          { title: "미 10년물 국채금리는 전일 대비 5bp 이상 오른 4.704%, 30년물은 5.248%로 마감했다. 30년물은 지난주 5.33%까지 오르며 19년 만의 최고치를 기록한 바 있다.", sources: [{ name: "CNBC", url: "https://www.cnbc.com" }] },
+          { title: "WTI 유가는 미·이란 호르무즈 해협 갈등이 격화되며 배럴당 85달러를 넘어 장중 86.28달러까지 올라 주간 기준 4% 이상 상승했다. 정확한 정산 종가는 매체마다 달라 확인하지 못했다.", sources: [{ name: "CNBC", url: "https://www.cnbc.com" }] },
+          { title: "일본 니케이225는 890.37포인트(1.36%) 오른 66,216.79로 마감해 미 국채 바이백 확대와 한국 반도체주 급등의 훈풍을 받았다.", sources: [{ name: "WSLS(AP)", url: "https://www.wsls.com" }] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "삼성전자, 사상 최대 주주환원 계획 — 최대 150조원",
+            body: "삼성전자가 8월 중 이사회를 열어 국내 기업 사상 최대 규모의 주주환원안을 확정·발표할 예정이다. 재원은 잉여현금흐름(FCF)의 50%를 활용하며, 내년에 규모를 더 늘릴 수 있다는 방침도 확인됐다. 소식에 이날 삼성전자 주가는 장중 10%대(272,250원), SK하이닉스는 최대 14.7%까지 급등했다.",
+            sources: [
+              { name: "머니투데이", url: "https://www.mt.co.kr" },
+              { name: "한국경제", url: "https://www.hankyung.com" },
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com" }
+            ]
+          },
+          {
+            title: "SK하이닉스, 40조원 규모 자사주 매입·소각 — 국내 상장사 최대",
+            body: "SK하이닉스가 8월 20일부터 최대 3개월간 40조원 규모 자사주를 장내 매입해 전량 소각하기로 이사회에서 결정했다(19일 결의). 국내 상장사 자사주 소각으로는 최대 규모다. 이 소식에 20일 SK하이닉스 주가는 전일 대비 약 12% 급등했다.",
+            sources: [
+              { name: "전자신문", url: "https://www.etnews.com" },
+              { name: "뉴스웨이", url: "https://www.newsway.co.kr" },
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com" }
+            ]
+          },
+          {
+            title: "현대차·기아 노조, 10년 만의 전면파업 예고",
+            body: "금속노조가 20~21일 이틀간 자동차 업종 공동파업에 들어갔다. 20일은 부품사·계열사가 조별 4시간 이상 부분파업을, 21일은 현대차 노조가 2016년 이후 10년 만의 8시간 전면파업을 벌인다. 노조는 기본급 14만9,600원 인상과 전년도 순이익 30% 성과급 등을 요구했으며, 현대차·기아 조합원과 부품사를 합쳐 참여 인원이 8만~9만명에 이를 것으로 추산된다.",
+            sources: [
+              { name: "디지털데일리", url: "https://www.ddaily.co.kr" },
+              { name: "이투데이", url: "https://www.etoday.co.kr" },
+              { name: "경기신문", url: "https://www.kgnews.co.kr" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "전력망 3법(국가기간 전력망 확충 특별법·전기사업법·전원개발촉진법 개정안)이 20일 국회 본회의를 통과했다. 한전 외 민간사업자의 전력망 개발 참여를 허용하되, 준공된 민간 전력망은 한전에 귀속하도록 했다.", sources: [{ name: "브릿지경제", url: "https://www.viva100.com" }] },
+          { title: "SK하이닉스 노사가 20일 임단협에 잠정합의했다. 임금 6.3% 인상과 초과이익분배금(PS) 60%를 자사주로 지급하는 안이 핵심이다.", sources: [{ name: "SBS Biz", url: "https://biz.sbs.co.kr" }] },
+          { title: "공정거래법·하도급법 개정안이 20일 국회 본회의를 통과했다. 하도급법상 처분시효 기산점을 '신고접수일'로 명확히 했다.", sources: [{ name: "정책브리핑", url: "https://www.korea.kr" }] },
+          { title: "국토교통부가 서울·경기·인천 외국인 토지거래허가구역 지정을 1년(8/26~내년 8/25) 연장하고, 울릉도·흑산도 등 외곽 섬 353곳을 신규 허가구역으로 지정했다. 지정 이후 수도권 외국인 주택거래는 27% 감소했다.", sources: [{ name: "아시아투데이", url: "https://www.asiatoday.co.kr" }] },
+          { title: "금융위원회가 국민성장펀드 내 딥테크 대상 초장기기술투자펀드(8,800억원, 최장 15~16년 만기)를 조성해 연내 투자에 나선다고 밝혔다.", sources: [{ name: "전자신문", url: "https://www.etnews.com" }] },
+          { title: "정부의 부동산 세제개편(11개 세법 개정안) 입법예고가 20일 마감됐다. 종부세법 개정안에는 2천여 건의 입법의견이 접수됐다.", sources: [{ name: "이데일리", url: "https://www.edaily.co.kr" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "원익로보틱스, 국민성장펀드 등서 3,000억원대 투자 유치 추진 (8/20)",
+            body: "로봇손 제조사 원익로보틱스가 국민성장펀드를 포함해 3,000억원대 규모 투자 유치를 추진하고 있다. 투자가 확정되면 국민성장펀드의 로봇 분야 첫 투자 사례가 되며, 아직 투자심의위원회 등 절차가 남아 확정 사안은 아니다.",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com" }
+            ]
+          },
+          {
+            title: "상반기 국내 벤처투자 8조8,676억원 — 역대 최대 (8/19)",
+            body: "중소벤처기업부에 따르면 2026년 상반기 국내 신규 벤처투자는 전년 동기 대비 54.3% 증가한 8조8,676억원으로, 호황기였던 2022년을 넘어선 상반기 역대 최대 실적을 기록했다. 신규 벤처펀드 결성액도 33% 늘어난 8조4,366억원으로 역대 상반기 2위다. AI·반도체·로보틱스 등 딥테크로 투자 무게중심이 이동하는 추세라는 분석이 나왔다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com" }
+            ]
+          },
+          {
+            title: "네로스, 2억5,000만 달러 시리즈C — 기업가치 25억 달러 (8/15)",
+            body: "미국 자폭드론 기업 네로스 테크놀로지스가 세쿼이아캐피털 등 주도로 2억5,000만 달러 규모 시리즈C를 유치해 기업가치 25억 달러를 인정받았다. 지난해 11월 시리즈B 대비 3배 오른 수치다. 자금은 공격용 드론 '아처'와 요격 드론 '밴딧'의 연간 생산량을 6만5,000대에서 2028년까지 100만대로 늘리는 데 투입된다.",
+            sources: [
+              { name: "dronexl.co", url: "https://dronexl.co" },
+              { name: "와우테일", url: "https://wowtale.net" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "라이비안에서 분사한 자율주행 소형 EV 스타트업 ALSO가 프리즘캐피털 주도로 1억5,000만 달러 시리즈D를 유치했다. 누적 투자금은 4억5,500만 달러다. (8/19)", sources: [{ name: "TechCrunch", url: "https://techcrunch.com" }] },
+          { title: "항체 신약 개발기업 인제니아테라퓨틱스가 코스닥에 상장했다. 공모가 1만2,000원, 공모 규모 약 600억원이다. (8/18)", sources: [{ name: "이데일리", url: "https://www.edaily.co.kr" }] },
+          { title: "크릿벤처스가 아시아 최대 FAST 채널 사업자 뉴 아이디의 시리즈B 라운드에 10억원 규모로 참여했다. (8/14)", sources: [{ name: "베타뉴스", url: "https://www.betanews.net" }] },
+          { title: "크릿벤처스가 웹툰 제작사 엑스텐스튜디오에 투자했다(금액 비공개). (8/18)", sources: [{ name: "벤처스퀘어", url: "https://www.venturesquare.net" }] }
+        ]
+      }
+    ]
+  },
+  {
+    date: "2026-08-19",
+    weekday: "수",
+    isToday: false,
+    collectedAt: "2026-08-19 06:34 KST",
+    window: "AI·반도체·경제·국내산업 최근 24시간 (8/18 06:20~8/19 06:20 KST) · 스타트업 최근 7일 (8/12~8/19)",
+    tally: "검색 약 223건 · 총 35건 — AI 4 / 반도체 4 / 경제 8 / 국내산업 7 / 스타트업 12",
+    metrics: [
+      { label: "KOSPI",    value: "6,869.83", delta: "-1.55%", dir: "down", note: "8/18 종가(장중 +3.42%)" },
+      { label: "KOSDAQ",   value: "834.20",   delta: "-3.52%", dir: "down", note: "8/18 종가" },
+      { label: "다우",      value: "53,343.40", delta: "-0.22%", dir: "down", note: "美 8/18 마감" },
+      { label: "S&P500",   value: "7,691.76", delta: "-0.69%", dir: "down", note: "美 8/18 마감" },
+      { label: "나스닥",    value: "26,289.71", delta: "-1.33%", dir: "down", note: "美 8/18 마감" },
+      { label: "원/달러",   value: "1,411.8",  delta: "-1.2원", dir: "down", note: "8/18 종가·10개월래 최저" },
+      { label: "美 국채30년", value: "5.31",  unit: "%",        delta: "+4.43bp", dir: "up", note: "2007년 이후 최고" }
+    ],
+    digest: [
+      "<strong>코스피가 장중 7,216(+3.42%)까지 올랐다가 미 국채 30년물 금리가 2007년 이후 최고치(5.31%)로 치솟고 중동發 지정학 리스크가 겹치며 -1.55%로 급반전 마감했다.</strong> 코스닥도 -3.52% 내렸고, 뉴욕 3대지수도 반도체·저장장치주 낙폭 속에 일제히 하락했다.",
+      "<strong>청와대는 대미 전략투자(2000억 달러) 1호 프로젝트가 반도체라는 보도를 부인했지만, 김정관 산업통상부 장관은 협상 타결을 위해 재차 방미했다.</strong> 같은 날 현대차 노조는 재개한 교섭이 2시간50분 만에 결렬되자 10년 만의 전면파업(8/21)을 예고했다.",
+      "<strong>OpenAI가 청소년 전용 ChatGPT를 출시했고, 과기정통부 '독자 AI 파운데이션 모델' 2차 평가에서 업스테이지·SK텔레콤·LG AI연구원이 3차 진출팀으로 선정돼 엔비디아 B200 GPU 총 1,000장을 지원받는다.</strong>"
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "OpenAI, 청소년 전용 ChatGPT 'ChatGPT for Teens' 출시",
+            body: "13~17세 대상 서비스를 8월 18일 출시했다. 자살·자해·로맨틱/성적 대화 제한을 강화했고 연령 예측으로 미성년자를 자동 전환한다. 부모 계정 연동, 위기 징후 알림, 단계별 학습유도 'Study Mode'도 함께 추가됐다.",
+            sources: [
+              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/" },
+              { name: "Washington Post", url: "https://www.washingtonpost.com/business/2026/08/18/openai-chatgpt-teens-ai-safety/39739860-9af4-11f1-9cc4-2dc9b46e2d5c_story.html" },
+              { name: "Axios", url: "https://www.axios.com/2026/08/18/openai-chatgpt-for-teens" }
+            ]
+          },
+          {
+            title: "독파모 2차 평가 — 업스테이지·SKT·LG AI연구원 통과, 엔비디아 B200 1,000장 지원",
+            body: "과기정통부 '독자 AI 파운데이션 모델' 2차 평가에서 3개 팀이 3차 진출팀으로 선정됐다(모티프테크놀로지스는 탈락). 1위·4위 간 벤치마크 격차는 4점에 불과했다. 정부는 3차 진출팀에 대한 엔비디아 B200 GPU 지원을 총 1,000장(약 1,200억원 규모)으로 확대하기로 했다.",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com/article/2026081867217" },
+              { name: "바이라인네트워크", url: "https://byline.network/2026/08/0818-7/" },
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181108484327" }
+            ]
+          },
+          {
+            title: "'모두의 AI' 사업자 공모 마감 — SKT·KT·카카오 등 6개 컨소시엄, 네이버는 불참",
+            body: "과기정통부의 무료 국민 AI 챗봇 서비스 프로젝트 공모가 8월 18일 마감됐다. SKT·KT·카카오(카나나)·LG유플러스 등 6개 컨소시엄이 제안서를 냈고, 네이버클라우드는 참여하지 않기로 했다. 이달 말 2~3개 사업자를 최종 선정한다.",
+            sources: [
+              { name: "전자신문", url: "https://www.etnews.com/20260818000443" },
+              { name: "머니투데이", url: "https://www.mt.co.kr/tech/2026/08/18/2026081817071479127" }
+            ]
+          }
+        ],
+        briefs: [
+          {
+            title: "Reddit, 게시물을 AI 내레이션 영상으로 자동 변환하는 실험 시작",
+            sources: [ { name: "Dataconomy", url: "https://dataconomy.com/2026/08/18/reddit-tests-ai-voiced-videos-based-on-user-posts/" } ]
+          }
+        ]
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "한미반도체, 인천에 창사 최대 8공장 부지 확보",
+            body: "머큐리로부터 인천 주안국가산업단지 부지·건물을 매입해 8공장(총투자 1,300억원)을 짓는다. 2027년 2분기 양산 목표로 HBM용 TC본더·하이브리드본더, AI 반도체용 2.5D 패키징 장비를 생산할 계획이며 창사 이래 최대 면적의 공장이다.",
+            sources: [
+              { name: "전자신문", url: "https://www.etnews.com/20260818000377" },
+              { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081813400167201" }
+            ]
+          },
+          {
+            title: "엔비디아, 오픈AI 오하이오 데이터센터에 최대 1,050억달러 잔존가치보증",
+            body: "SB에너지가 짓고 오픈AI가 20년간 독점 임차하는 4.25GW 데이터센터('포츠-파이크 테크놀로지 캠퍼스')에 잔존가치 보증계약을 체결했다. 엔비디아는 SB에너지에 15억달러도 별도 투자한다. 당초 거론된 최대 2,500억달러보다 절반 이상 축소된 규모다.",
+            sources: [
+              { name: "아시아경제", url: "https://www.asiae.co.kr/article/2026081809043643629" },
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260817000286" }
+            ]
+          },
+          {
+            title: "\"2028년 HBM 벌써 동났다\" — 빅테크 4곳 요구량, 시장 전망치의 1.7~1.8배",
+            body: "메리츠증권 채널체크에 따르면 브로드컴·엔비디아·구글·AMD의 2028년 HBM 수요 계획을 합치면 950억~1,000억Gb로, 시장조사업체 전망치(약 550억Gb)의 1.7~1.8배에 이른다. CSP들이 2028년 물량을 미리 확보하려는 움직임이 늘고 있다.",
+            sources: [ { name: "아이뉴스24", url: "http://inews24.com/view/1995940" } ]
+          }
+        ],
+        briefs: [
+          {
+            title: "테라파워 CEO, \"SMR이 AI 데이터센터·반도체 산업의 새 전력원\"",
+            sources: [ { name: "한국경제", url: "https://www.hankyung.com/article/2026081878781" } ]
+          }
+        ]
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "코스피, 장중 7,216 돌파 후 6,800대로 급반전 마감",
+            body: "반도체 대장주 강세로 장중 +3.42%까지 올랐으나 미 국채금리 급등과 중동 지정학 리스크가 부각되며 매도세로 전환, -1.55%(6,869.83)로 마감했다. 코스닥도 -3.52%(834.20)로 마쳤다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181620577713" },
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260818001094" }
+            ]
+          },
+          {
+            title: "뉴욕 3대지수 일제 하락, 반도체·저장장치주 낙폭 주도",
+            body: "미·이란 60일 휴전 만료로 지정학 리스크가 재부각되며 유가가 급등, 국채금리를 밀어올려 투자심리가 위축됐다. 웨스턴디지털 -7%, 샌디스크 -9% 등 저장장치·반도체주가 낙폭을 키웠다. 다우 -0.22%(53,343.40), S&P500 -0.69%(7,691.76), 나스닥 -1.33%(26,289.71).",
+            sources: [
+              { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081905420783414" },
+              { name: "게트뉴스", url: "https://www.getnews.co.kr/news/articleView.html?idxno=878104" }
+            ]
+          },
+          {
+            title: "미 국채 30년물 5.31%, 2007년 이후 최고 수준",
+            body: "재정적자 확대에 따른 국채 발행 증가, AI 데이터센터 투자 붐에 따른 기술기업 회사채 발행 급증, 주요 보유국의 미 국채 이탈이 겹치며 초장기 금리가 치솟았다. 미·이란 긴장에 따른 유가 급등도 인플레이션 우려를 키운 요인으로 지목됐다.",
+            sources: [ { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10843877" }, { name: "한국경제", url: "https://www.hankyung.com/article/202608185899i" } ]
+          }
+        ],
+        briefs: [
+          { title: "원/달러 환율 1,411.8원 마감, 10개월 만 최저", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181549139565" } ] },
+          { title: "국고채 전 구간 금리 상승, 10년물 4.382%(+6.9bp)", sources: [ { name: "이비엔뉴스", url: "https://www.ebn.co.kr/news/articleView.html?idxno=1720785" } ] },
+          { title: "SK하이닉스·삼성전자, 개장 초반 각각 +7.96%·+3.46% 급등 후 하락 마감", sources: [ { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260818000379" } ] },
+          { title: "국내 금값 상승, KRX 금 99.99%(1g) 199,950원(+0.81%)", sources: [ { name: "중앙이코노미뉴스", url: "https://www.joongangenews.com/news/articleView.html?idxno=540804" } ] },
+          { title: "국제유가(WTI), 매체 간 수치 크게 엇갈려(76달러대 하락설 vs 91달러대 급등설) 확정 못함", sources: [ { name: "이투데이", url: "https://www.etoday.co.kr" } ] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "청와대, \"대미투자 1호 반도체\" 보도 부인 — 김정관 장관은 재차 방미",
+            body: "청와대는 대미 전략투자(2,000억달러) 1호 후보로 반도체가 논의 중이라는 보도가 \"사실과 다르다\"며 현재는 에너지 분야가 우선 논의되고 있다고 밝혔다. 다만 업계에서는 미국이 삼성전자·SK하이닉스에 미국 내 생산시설 투자를 압박하고 있다는 보도가 이어졌다. 김정관 산업통상부 장관은 \"8말9초\" 발표 목표를 위해 8/16 재차 방미했다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608180806229620" },
+              { name: "이투데이", url: "https://www.etoday.co.kr/news/view/2615337" }
+            ]
+          },
+          {
+            title: "현대차 노조, 교섭 재개 두 시간 만에 결렬 — 10년 만의 전면파업 예고",
+            body: "노조는 이틀째 예정됐던 파업을 유보하고 오후 재개된 16차 임금협상에 나섰으나, 회사 측 추가 제시안이 없어 약 2시간50분 만에 결렬됐다. 19·20·24·25일 부분파업에 이어 21일 8시간 전면파업과 본사 상경 투쟁을 예고했다. 전면파업은 2016년 이후 10년 만이다.",
+            sources: [
+              { name: "경향신문", url: "https://www.khan.co.kr/article/202608181831001/" },
+              { name: "머니투데이", url: "https://www.mt.co.kr/industry/2026/08/18/2026081818142342330" }
+            ]
+          },
+          {
+            title: "금융당국, 고가주택 주담대 위험가중치 2~4배 상향 추진",
+            body: "금융위가 고액·고DSR 주담대와 고가주택·고LTV 주담대에 기존 대비 2~4배 위험가중치를 부여하는 방안을 내년 1월 시행 목표로 추진 중이다. 사업자대출을 통한 우회 주택매수를 막기 위한 전수점검도 병행한다.",
+            sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181144409336" } ]
+          }
+        ],
+        briefs: [
+          { title: "오세훈-이재명, 국무회의서 재건축 규제완화 두고 충돌", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181634246924" } ] },
+          { title: "노란봉투법 시행 3주, 노사 이의신청 268건으로 전주 대비 약 3배", sources: [ { name: "뉴데일리", url: "https://biz.newdaily.co.kr/site/data/html/2026/08/18/2026081800093.html" } ] },
+          { title: "중형조선 3사(HJ중공업·대한조선·케이조선) 상반기 영업이익 2배 넘게 증가(3,816억원)", sources: [ { name: "뉴스웨이", url: "https://www.newsway.co.kr/news/view?ud=2026081811305700739" } ] },
+          { title: "美 \"관세 쪼개기\"로 한미 15% 상한선 붕괴 우려(발행일 미확정, 48시간 창 적용)", sources: [ { name: "이투데이", url: "https://www.etoday.co.kr/news/view/2615327" } ] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "금융위·금감원 가계대출 30조 배분 첫 실무회의(8/19 개최 예정, 결과 미확인)",
+            "경제부총리 AMCHAM 간담회(8/19 오전 예정, 내용 미확인)"
+          ]
+        }
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "포인투테크놀로지, 1,920억원 규모 시리즈B — 엔비디아 전략투자 (8/12)",
+            body: "AI 데이터센터 인터커넥트 기술(e-Tube) 스타트업이 엔비디아·UMC·매브릭실리콘 등으로부터 총 1,920억원 규모 시리즈B를 유치했다. 국내 스타트업에 엔비디아가 전략 투자한 첫 사례로 꼽힌다.",
+            sources: [ { name: "와우테일", url: "https://wowtale.net/2026/08/12/262845/" } ]
+          },
+          {
+            title: "코드래빗, 1억4,300만달러 시리즈C — 밸류에이션 15억달러 (8/12)",
+            body: "AI 코드 리뷰 스타트업 코드래빗이 Atomico·Smash Capital 공동 주도로 시리즈C를 유치했다. BMW i Ventures, Datadog 등이 신규 참여했다.",
+            sources: [ { name: "Businesswire", url: "https://www.businesswire.com/news/home/20260812311754/en/CodeRabbit-Raises-$143-Million-at-$1.5-Billion-Valuation-and-Introduces-Agentic-Change-Management" } ]
+          },
+          {
+            title: "라이드플럭스, 코스닥 상장 예비심사청구 — 국내 1호 레벨4 자율주행 상장 도전 (8/18)",
+            body: "레벨4 자율주행 AI 소프트웨어 기업이 한국거래소에 예비심사청구서를 제출했다고 밝혔다(제출은 8/14). 기술성평가 A·A 등급을 받았다. 주관사는 한국투자증권·우리투자증권.",
+            sources: [
+              { name: "아시아경제", url: "https://www.asiae.co.kr/article/2026081808184381211" },
+              { name: "와우테일", url: "https://wowtale.net/2026/08/18/263087/" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "딜리셔스(신상마켓), 코스닥 상장 — 공모 154억원, 밴드 최상단 (8/12)", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608080900154898" } ] },
+          { title: "케이앤에스아이앤씨, 코스닥 상장 — 기관경쟁률 938대 1, 첫날 '따블' (8/13)", sources: [ { name: "글로벌이코노믹", url: "https://www.g-enews.com/article/Securities/2026/08/20260813090913100844093b5d4e_1" } ] },
+          { title: "인제니아테라퓨틱스, 코스닥 상장 — 시총 약 6,000억원 예상 (8/18)", sources: [ { name: "이데일리", url: "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02614166645548632" } ] },
+          { title: "네로스, 2억5,000만달러 시리즈C — 자폭드론, 미군 수요로 몸값 3배 (8/12)", sources: [ { name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20260812101705" } ] },
+          { title: "폼에너지, 7억5,000만달러 투자유치 — 철-공기 배터리 (8/14)", sources: [ { name: "와우테일", url: "https://wowtale.net/2026/08/14/262959/" } ] },
+          { title: "딥파인, 100억원 시리즈B — 산업용 AI 에이전트, 누적 180억원 (8/18)", sources: [ { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081809221993725" } ] },
+          { title: "뉴 아이디, 시리즈B 유치 — 미디어테크(OTT/FAST) (8/14)", sources: [ { name: "베타뉴스", url: "https://www.betanews.net/article/view/beta202608140013" } ] },
+          { title: "엑스텐스튜디오, 투자유치(금액 비공개) — 웹툰 제작·유통 (8/18)", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181106334726" } ] },
+          { title: "수출입은행, 방산·공급망 벤처펀드에 각 200억원 출자 — 첫 벤처투자 진출 (8/13)", sources: [ { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260813001257" } ] }
+        ]
+      }
+    ]
+  },
+  {
+    date: "2026-08-16",
+    weekday: "일",
+    isToday: false,
+    collectedAt: "2026-08-16 06:20 KST",
+    window: "AI·반도체·국내산업 최근 24~48시간(항목별 표시, 일요일이라 확장) · 경제/시장 8/14(금) 마지막 거래일 기준 · 스타트업 최근 7일 (8/9~8/16)",
+    tally: "검색 약 252건 · 총 35건 — AI 7 / 반도체 7 / 경제 9 / 국내산업 5 / 스타트업 7",
+    metrics: [
+      { label: "KOSPI",    value: "6,977.94", delta: "+2.42%", dir: "up",   note: "8/14(금) 종가" },
+      { label: "KOSDAQ",   value: "864.65",   delta: "+0.38%", dir: "up",   note: "8/14(금) 종가" },
+      { label: "다우",      value: "53,732.41", delta: "-0.20%", dir: "down", note: "美 8/14(금) 마감" },
+      { label: "S&P500",   value: "7,785.76", delta: "-0.17%", dir: "down", note: "美 8/14(금) 마감" },
+      { label: "나스닥",    value: "26,729.16", delta: "-0.28%", dir: "down", note: "美 8/14(금) 마감" },
+      { label: "원/달러",   value: "1,418.3",  delta: "-1.1원", dir: "down", note: "8/14(금) 15:30 기준" },
+      { label: "WTI",      value: "82.40",    unit: "$",       delta: "+1.42%", dir: "up", note: "8/14 마감" }
+    ],
+    digest: [
+      "<strong>미국이 재수출 반도체에 25% 관세를 부과하는 행정명령에 서명하고 백악관은 \"환적사기\" 보고서에서 경기 반도체벨트를 중국산 우회 통로로 지목했다.</strong> 같은 시기 이재명 대통령이 여한구 통상교섭본부장을 전격 경질해 미국과의 통상 압박이 고조된 정황으로 읽힌다.",
+      "<strong>코스피가 5거래일 연속 상승하며 2.42% 급등한 6,977.94에 마감했다.</strong> 미국 증시는 7월 소매판매가 예상과 달리 0.6% 줄며 다우·S&P·나스닥 3대 지수가 나란히 소폭 조정받았다.",
+      "<strong>스페이스X가 AI 코딩 도구 커서(Cursor)를 600억달러에 인수 완료했다.</strong> 국내에서는 정부의 '독자 AI 파운데이션 모델' 1차 평가에서 LG·SKT·업스테이지가 2차에 진출하고 네이버·NC는 탈락했다."
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "스페이스X, AI 코딩 스타트업 커서(Cursor) 600억달러 인수 완료",
+            body: "스페이스X가 임시 자회사 X67과 커서(법인명 애니스피어) 간 합병을 8월 14일(현지시간) 공시로 마무리했다. 전액 주식 교환 방식이며 커서 기업가치는 600억달러(약 85조원) 기준이다. 커서는 스페이스X의 100% 자회사로 편입돼 \"세계 최대 GPU 함대\"에 접근하게 됐고, 이번 편입이 xAI 그록(Grok) 계열 제품 개선에 쓰일 것이라고 밝혔다. 포춘 500대 기업의 64%를 포함해 5만개 이상 기업이 커서를 쓰고 있다고 전했다.",
+            sources: [
+              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/" },
+              { name: "위키트리", url: "https://www.wikitree.co.kr/articles/1152712" }
+            ]
+          },
+          {
+            title: "독자 AI 파운데이션 모델 1차 평가 — LG·SKT·업스테이지 통과, 네이버·NC 탈락",
+            body: "과학기술정보통신부·정보통신산업진흥원·한국정보통신기술협회가 8월 15일 '독자 AI 파운데이션 모델' 프로젝트 1차 단계평가 결과를 발표했다. LG AI연구원·SK텔레콤·업스테이지 3개 팀이 2차 진출에 성공했고, 네이버클라우드·NC AI는 탈락했다. 정부는 '독자 AI'를 아키텍처 설계·데이터 확보·사전학습 전 과정을 자체 수행한 모델로 엄격히 정의했는데, 네이버 '하이퍼클로바X 시드 32B 싱크'의 비전 인코더가 알리바바 큐원2.5와 코사인 유사도 99.51%를 기록한 점이 탈락 사유로 꼽혔다. SK텔레콤은 이번에 519억 파라미터 'A.X K1'을 공개했다.",
+            sources: [
+              { name: "인공지능신문", url: "https://www.aitimes.kr/news/articleView.html?idxno=38163" },
+              { name: "보안뉴스", url: "https://m.boannews.com/html/detail.html?tab_type=1&idx=141524" }
+            ]
+          },
+          {
+            title: "미국, AI 동맹국에 \"중국이냐 미국이냐\" 선택 압박 서한 준비 — 한국도 대상 (8/14)",
+            body: "로이터 단독보도에 따르면 미 국무부가 6월 서명된 'AI 기회 선언'(Pax Silica 구상) 서명국 35개국에 보내는 서한 초안을 준비 중이다. 중국이 주도하는 경쟁 프로그램에도 가입하면 미국 주도 연합에서 배제하겠다고 경고하는 내용으로, 일본·호주·한국 등 미국 동맹국이 동시에 중국 이니셔티브에도 가입한 상태라 파장이 예상된다. 서한 발송 시점은 확인되지 않았다.",
+            sources: [
+              { name: "Reuters/US News", url: "https://www.usnews.com/news/top-news/articles/2026-08-14/exclusive-us-to-tell-partners-they-must-pick-sides-in-ai-race-with-china" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "업스테이지가 추론·에이전트 역량을 강화한 '솔라 프로 4'를 공개, 한국 모델 최초로 오픈라우터에 이름을 올렸다 (8/14).", sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608140929331965" }] },
+          { title: "알리바바가 아파치 2.0 라이선스로 277.8억 파라미터 멀티모달 오픈웨이트 모델 'Qwen3.8-27B'를 공개했다 (8/14).", sources: [{ name: "officechai", url: "https://officechai.com/miscellaneous/alibaba-releases-qwen-3-8-27b-beats-muse-glimmer-30b-on-many-benchmarks/" }] },
+          { title: "앤스로픽이 8/14부터 클로드 코드 '오토 모드'를 기본값으로 전환했다 (어제 이어서, 8/11 브리핑 예고분이 실제 적용됨).", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/" }] },
+          { title: "과기정통부가 '대한민국 인공지능 윤리원칙(안)'을 공개하고 8월 중 제정·공표할 계획이다 (8/14).", sources: [{ name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081411354358021" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "일요일이라 24시간 창(8/15 06:20~8/16 06:20)만으로는 스페이스X-커서 인수 1건뿐이었다. 나머지는 관심주제.md 절차에 따라 48시간까지 검색을 넓혀 찾았으며 각 항목에 날짜를 표시했다."
+          ]
+        }
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "美, 재수출 반도체에 25% 관세 행정명령 서명 (8/14)",
+            body: "트럼프 대통령이 미국으로 수입된 후 국내 AI·컴퓨팅 인프라에 쓰이지 않고 제3국으로 재수출되는 반도체에 25% 관세를 부과하는 행정명령에 서명했다. 대만 TSMC 생산 엔비디아 H200 등이 미국을 경유해 재수출되는 물량이 대상이며, 미국 내수용 제품은 제외된다. 백악관은 미국 내 생산 유도를 위한 더 폭넓은 반도체 관세·상쇄 프로그램 도입 가능성도 시사했다.",
+            sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10655963" }]
+          },
+          {
+            title: "백악관 \"환적사기\" 보고서, 경기 반도체벨트를 중국산 우회 통로로 지목 (8/13~14)",
+            body: "백악관 무역제조업정책국(OTMP)이 \"거대한 환적사기\" 보고서를 공개하고 40개국 이상을 중국산 제품 불법 환적 위험국으로 분류했다. 한국은 캐나다·EU·인도·이스라엘·일본·멕시코·대만과 함께 최상위 1유형에 포함됐으며, 경기도 반도체 벨트가 중국산 집적회로의 우회 통로로 쓰여 피닉스·오스틴·포틀랜드·산호세의 미국 내 반도체 생산에 타격을 준다고 적시했다.",
+            sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814000023" }]
+          },
+          {
+            title: "7월 ICT 수출 534억달러 역대 최대, 반도체 178.8%↑ (8/14)",
+            body: "산업통상부·과학기술정보통신부가 '2026년 7월 ICT 수출입 동향'을 발표했다. ICT 수출은 533.6억달러로 역대 7월 중 최대, 전년 대비 140.6% 증가했다. 반도체 수출은 410억2000만달러로 전년 동월 대비 178.8% 증가해 17개월 연속 증가·7개월 연속 세자릿수 증가율을 이어갔다.",
+            sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/14/2026081414462598623" }]
+          }
+        ],
+        briefs: [
+          { title: "기후에너지환경부와 12차 전력수급기본계획 총괄위원회가 반도체 산단 등을 반영한 국가 전력수요 재전망 토론회를 8월 20일 연다고 밝혔다.", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/15/2026081419175078674" }] },
+          { title: "SK하이닉스 미국 낸드 자회사 솔리다임이 나스닥 상장을 저울질하는 것으로 알려졌다. 한국기업거버넌스포럼은 다단계 중복상장이라며 우려를 제기했다 (8/14).", sources: [{ name: "Daum", url: "https://v.daum.net/v/20260814062700595" }] },
+          { title: "중국 SMIC의 2분기 매출이 30.06억달러로 처음 30억달러를 넘었다(전년比 +36.1%) (8/13).", sources: [{ name: "TrendForce", url: "https://www.trendforce.com/news/2026/08/14/news-smic-2q26-gross-margin-hits-25-3-eyes-26-28-in-3q-as-ai-spillover-pricing-momentum-build/" }] },
+          { title: "퓨리오사AI 대표가 한경협 제주하계포럼에서 2030년까지 AI 데이터센터 파이프라인이 100GW에 이를 것이라고 전망했다.", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10811129" }] }
+        ]
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "코스피 2.42% 급등, 5거래일 연속 상승 — 코스닥은 강보합",
+            body: "코스피가 전일 대비 164.60포인트(2.42%) 오른 6,977.94에 마감했다. 장중 7,000선을 15거래일 만에 터치했다가 상승분 일부를 반납했으며, 외국인이 3조 384억원을 순매수하며 상승을 이끌어 5거래일 연속 상승세를 이어갔다. 코스닥은 3.28포인트(0.38%) 오른 864.65에 마감했다.",
+            sources: [
+              { name: "Businesskorea", url: "https://www.businesskorea.co.kr/news/articleView.html?idxno=274884" },
+              { name: "머니투데이", url: "https://www.mt.co.kr/stock/2026/08/14/2026081415441735876" }
+            ]
+          },
+          {
+            title: "뉴욕증시, 3주 연속 주간 상승 이어갔지만 금요일은 소폭 하락",
+            body: "미국 3대 지수가 8/14(금) 다우 -0.20%(53,732.41), S&P500 -0.17%대(7,785.76), 나스닥 -0.28%(26,729.16)로 하락 마감했다. 전날(8/13) S&P500이 7,798.99로 사상 최고 종가를 기록한 데 따른 숨 고르기 성격이며, 주간 기준으로는 S&P500이 3주 연속 상승을 이어갔다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608150522052874" },
+              { name: "Yahoo Finance", url: "https://finance.yahoo.com/markets/live/stock-market-today-friday-august-14-dow-sp-500-nasdaq-102635519.html" }
+            ]
+          },
+          {
+            title: "미국 7월 소매판매 0.6% 감소, 예상 밖 부진",
+            body: "미국 7월 소매판매가 전월 대비 0.6% 감소해 시장 예상치(+0.1%)를 크게 밑돌았다. 지난해 5월(-1.1%) 이후 최대 낙폭으로, 아마존 '프라임데이'가 6월로 앞당겨진 기저효과로 무점포 소매업체 판매가 2.2% 줄어든 영향이 컸다. 소비 둔화 우려로 9월 연준 금리동결 전망이 커졌다.",
+            sources: [
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814001244" },
+              { name: "서울경제", url: "https://www.sedaily.com/article/20079778" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "원/달러 환율이 전일 대비 1.1원(0.08%) 내린 1,418.3원(오후 3시30분 기준)에 마감했다.", sources: [{ name: "뉴시스", url: "https://www.newsis.com/view/NISX20260814_0003749846" }] },
+          { title: "美 7월 생산자물가지수(PPI)가 전월 대비 보합(0.0%, 예상 +0.2% 하회)을 기록했다. 9월 금리인상 가능성은 낮아졌다(교차확인 결과 매체마다 32.4%/34.4%로 소폭 편차).", sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814000037" }] },
+          { title: "美 8월 미시간대 소비자심리지수 예비치가 51.0으로 전월(55.2)·전망치(54.5)를 모두 밑돌았다.", sources: [{ name: "세계일보", url: "https://segye.com/newsView/20260815500490" }] },
+          { title: "WTI(9월물)가 전장 대비 1.42% 오른 배럴당 82.40달러, 브렌트유(10월물)는 1.67% 오른 88.52달러로 마감했다.", sources: [{ name: "국제뉴스", url: "https://www.gukjenews.com/news/articleView.html?idxno=3665464" }] },
+          { title: "미 10년물 국채금리가 4.7%대에서 2007년 이후 최고 수준을 이어가고 있다(8/12 입찰 낙찰금리 4.683%).", sources: [{ name: "The Guru", url: "https://www.theguru.co.kr/news/article.html?no=105733" }] },
+          { title: "국제 금 현물가가 온스당 4,354~4,437달러 구간에서 매체마다 다르게 보도됐다(등락률도 편차, 교차확인 실패).", sources: [{ name: "Vietnam.vn", url: "https://www.vietnam.vn/ko/gia-vang-ngay-14-8-bang-gia-tai-cac-cong-ty-vang-bac-da-quy" }] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "이재명 대통령, 여한구 통상교섭본부장 전격 경질",
+            body: "이재명 대통령이 8월 15일 0시부로 여한구 산업통상부 통상교섭본부장을 직권면직했다. 정무직 인사의 공무원 신분을 일방적으로 박탈하는 이례적 조치로, 구체적 사유는 공개되지 않았다. 미국의 무역법 301조 조사(쿠팡 관련)와 관세 협상이 진행 중인 시점에 통상 사령탑이 교체돼 배경에 관심이 쏠린다.",
+            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026081531687" }]
+          },
+          {
+            title: "재건축·재개발 이주비 대출 완화, 부동산 PF보증 47.8조로 확대 — 즉시 시행 확정 (8/14)",
+            body: "금융위원장이 8월 14일 '확대 가계부채 점검회의'를 열어 13일 발표한 '부동산 시장 안정 금융종합대책' 후속 조치를 점검했다. 부동산 PF 보증 공급을 26.3조원에서 47.8조원+α로 확대하고, 이주비 대출 담보평가 기준을 기존 자산가치가 아닌 준공 후 신축 자산가치 기준으로 바꿔 8월 31일부터 적용하기로 했다.",
+            sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814000349" }]
+          },
+          {
+            title: "금감원, 가계대출 총량 재조정 착수",
+            body: "금융감독원이 은행권·저축은행·상호금융과 함께 올해 하반기 은행별 가계대출 총량 한도 재조정 논의에 들어갔다. 앞서 13일 금융위가 가계부채 증가율 관리 목표를 1.5%에서 3.0%로 상향하고 재건축·재개발 이주비, 신축 입주단지 중도금·잔금대출을 총량 관리 대상에서 제외한 데 따른 후속 조치다. 상반기 대출을 과도하게 늘린 은행은 하반기 총량에서 그만큼 차감하는 페널티를 부여할 방침이다.",
+            sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608150702548403" }]
+          }
+        ],
+        briefs: [
+          { title: "SK하이닉스 통합노조가 사측의 성과급 조건부 주식 지급안에 반발하며 최태원 SK그룹 회장의 직접 결단을 요구했다.", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10842046" }] },
+          { title: "재정경제부 차관보 주재로 홈플러스 관계기관 전담반이 열려 8월 13일부터 67개 점포가 정식 영업을 재개한 상황을 점검했다(누적 5조4000억원 이상 투입) (8/14).", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10841400" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "LP성장펀드 출범 — 1조원 규모 민관 합동 벤처펀드 (8/13)",
+            body: "중소벤처기업부와 한국벤처투자가 'LP성장펀드 출범식'을 열었다. 민간 출자자 3400억원에 모태펀드 1700억원을 연계해 약 5100억원을 출자하고, 이를 마중물로 총 1조원 규모의 벤처펀드를 조성할 계획이다. 국민체육진흥기금·공급망안정화기금·한국수출입은행 등 5개 기관이 이번에 처음으로 벤처투자조합에 출자했다.",
+            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202608138723i" }]
+          },
+          {
+            title: "포인투테크놀로지, 시리즈B 후속 투자로 누적 1,920억원 확보 (8/12)",
+            body: "KAIST 배현민 교수 창업기업으로 AI 데이터센터용 인터커넥트를 개발하는 포인투테크놀로지가 Arm, LB인베스트먼트 등이 참여한 시리즈B 후속 투자를 마무리하며 누적 1억3600만달러(약 1,920억원)를 확보했다. 지난 4월 엔비디아 NVentures 투자에 이은 후속 라운드다.",
+            sources: [{ name: "와우테일", url: "https://wowtale.net/2026/08/12/262845/" }]
+          },
+          {
+            title: "CodeRabbit, 시리즈C 1억4,300만달러 유치 — 기업가치 15억달러 (8/12)",
+            body: "AI 코드 리뷰 기업 CodeRabbit이 Atomico·Smash Capital 리드로 1억4,300만달러 시리즈C를 유치했다. 최근 1년간 매출이 5배 이상 늘었고 주당 200만 건 이상의 코드 리뷰를 수행하며 고객 1만7000곳을 확보했다고 밝혔다.",
+            sources: [{ name: "SiliconANGLE", url: "https://siliconangle.com/2026/08/12/coderabbit-bags-143m-help-companies-get-grip-explosion-ai-generated-code/" }]
+          }
+        ],
+        briefs: [
+          { title: "패션 B2B 플랫폼 '신상마켓' 운영사 딜리셔스가 코스닥에 상장했다. 공모가는 희망밴드 상단 7000원이었으나 상장 첫날 26.57% 낮은 5140원에 거래를 마쳤다 (8/12).", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/stock/2026/08/04/2026080417240070007" }] },
+          { title: "전고체 배터리 소재 기업 솔리비스가 230억원 규모 시리즈C 투자를 마무리하며 누적 투자금 652억원을 확보했다 (8/13).", sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20260813100927" }] },
+          { title: "AI 데이터 인프라 기업 그래파이가 170억원 규모 시리즈A를 유치, 누적 투자액이 206억원이 됐다 (8/13).", sources: [{ name: "디일렉", url: "https://www.thelec.kr/news/articleView.html?idxno=60928" }] },
+          { title: "미국 방산 드론 스타트업 Neros가 2억5,000만달러 시리즈C를 유치, 기업가치가 25억달러로 뛰었다 (8/15).", sources: [{ name: "PR Newswire", url: "https://www.prnewswire.com/news-releases/neros-raises-250m-series-c-at-2-5b-valuation-to-scale-autonomous-and-interceptor-drone-programs-302848736.html" }] }
+        ]
+      }
+    ]
+  },
+  {
+    date: "2026-08-13",
+    weekday: "목",
+    isToday: false,
+    collectedAt: "2026-08-13 06:34 KST",
+    window: "AI·경제·국내산업 최근 24시간 (8/12 06:00~8/13 06:20 KST) · 반도체 일부 48시간까지 확장 · 스타트업 최근 7일 (8/6~8/13)",
+    tally: "검색 약 340건 · 총 34건 — AI 5 / 반도체 5 / 경제 7 / 국내산업 9 / 스타트업 8",
+    metrics: [
+      { label: "KOSPI",    value: "6,579.04", delta: "+3.68%", dir: "up",   note: "8/12 종가·매수 사이드카" },
+      { label: "KOSDAQ",   value: "858.91",   delta: "+0.12%", dir: "up",   note: "8/12 종가" },
+      { label: "다우",      value: "53,770.27", delta: "-0.04%", dir: "down", note: "美 8/12 마감(매체 편차 있음)" },
+      { label: "S&P500",   value: "7,748.50", delta: "+0.26%", dir: "up",   note: "美 8/12 마감(매체 편차 있음)" },
+      { label: "나스닥",    value: "26,588.49", delta: "+0.54%", dir: "up",   note: "美 8/12 마감(매체 편차 있음)" },
+      { label: "원/달러",   value: "1,412.6",  delta: "-3.30원", dir: "down", note: "8/12 15:30 기준" },
+      { label: "WTI",      value: "83.2~83.45", unit: "$",     delta: "+1%대", dir: "up", note: "8/12 (호르무즈 봉쇄 위협)" }
+    ],
+    digest: [
+      "<strong>코스피가 삼성전자(+6.68%)·SK하이닉스(+5.54%) 급등에 힘입어 3.68% 오른 6,579.04로 마감</strong>하며 매수 사이드카가 발동됐다. 싱가포르 국부펀드 테마섹이 두 회사에 직접 투자를 추진하며 정부와 접촉했다는 단독 보도가 배경으로 지목됐다.",
+      "<strong>xAI가 신형 플래그십 모델 'Grok 4.6'을 출시</strong>했고 구글 제미나이 앱은 월간활성이용자 10억 명을 돌파했다. 인텔은 200억 달러 규모 증자를 마무리했고, SK하이닉스는 미국 인디애나 HBM 패키징 공장 착공식(8/27)을 확정 발표했다.",
+      "<strong>이재명 대통령이 SMR·양자·우주항공 등 '7대 SEED' 미래성장동력 보고회를 주재</strong>했고, 김정관 산업통상부 장관은 국회에서 호남 반도체 클러스터 부지를 \"정부가 먼저 제안했다\"고 밝혔다. 미 7월 CPI는 3.4%로 시장 예상에 부합해 인플레이션 우려가 다소 완화됐다."
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "xAI, 장기 실행 에이전트용 신형 플래그십 모델 'Grok 4.6' 출시",
+            body: "SpaceXAI(옛 xAI)가 8월 12일 장기 실행 에이전트용 신형 플래그십 모델 Grok 4.6을 공개했다. 같은 날 코드 에디터 Cursor, 자체 도구 Grok Build, API에서 동시 제공되며 API 가격은 입력 100만 토큰당 2달러, 출력 100만 토큰당 6달러다. 코드베이스 전반 작업이나 여러 단계에 걸친 리서치·분석 등 복잡한 작업 수행을 강조했다.",
+            sources: [
+              { name: "x.ai 공식 발표", url: "https://x.ai/news/grok-4-6" },
+              { name: "Unite.AI", url: "https://www.unite.ai/spacexai-launches-grok-4-6-for-long-running-agents/" }
+            ]
+          },
+          {
+            title: "구글 제미나이 앱, 월간활성이용자(MAU) 10억 명 돌파",
+            body: "구글이 제미나이 앱의 월간활성이용자가 10억 명을 넘었다고 발표했다. 연초 7억5,000만 명 → 7월 9억5,000만 명 → 8월 10억 명으로 구글 역사상 가장 빠르게 성장한 제품이라고 밝혔다. 전체 이용자의 63%가 음성 기능을 쓰고, 하루 1억5,000만 장 이상의 이미지가 생성된다. 미국 현지 발표는 8월 11일, 국내 매체 보도는 8월 12일에 몰렸다.",
+            sources: [
+              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/" },
+              { name: "구글 공식 블로그", url: "https://blog.google/intl/ko-kr/company-news/inside-google/gemini-one-billion-monthly-users-kr/" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "OpenAI 오랜 COO 브래드 라이트캡이 \"새로운 것을 시작하겠다\"며 퇴사를 발표했다. 경영진 이탈이 이어지고 있다.", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/11/brad-lightcap-openais-longtime-coo-is-leaving-to-start-something-new/" }] },
+          { title: "구글 '메이드 바이 구글 2026' 행사에서 픽셀11 시리즈와 제미나이 통합 기능(라이브 트랜스크라이브, 워치 음성 호출 등)을 대거 선보였다.", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/" }] },
+          { title: "Lightricks가 오픈웨이트 비디오 생성모델 'LTX-2.5'를 공개했다. 이미지 한 장으로 10초 영상을 엔비디아 GPU 기준 6.8초 만에 생성한다.", sources: [{ name: "VentureBeat", url: "https://venturebeat.com/technology/ltx-2-5-can-generate-a-10-second-ai-video-from-an-image-in-just-6-8-seconds-on-nvidia-superchips-and-its-open-weights" }] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "이 주제는 오늘 5건만 확인됐다. Meta 뮤즈 글리머는 8/10~11 이미 보도돼 어제 브리핑에 실렸으므로 제외했다."
+          ]
+        }
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "TSMC·소니, 구마모토 이미지센서 합작사 설립 본계약 체결 (8/11)",
+            body: "소니세미컨덕터솔루션즈와 TSMC가 구마모토현 고시시에 이미지센서 합작사 'Advanced Vision Semiconductor Manufacturing'을 설립하는 법적 구속력 있는 본계약을 체결했다. 소니가 4,650억엔(현금+기존 구마모토 공장 현물출자), TSMC가 2,820억엔을 투자하며 소니가 지배주주가 된다. 차량·로봇용 이미지센서를 첨단 공정으로 2029년 양산 목표다.",
+            sources: [
+              { name: "Sony 공식 발표", url: "https://www.sony-semicon.com/en/news/2026/2026081101.html" },
+              { name: "TSMC 공식 발표", url: "https://pr.tsmc.com/english/news/3333" }
+            ]
+          },
+          {
+            title: "인텔, 200억 달러 규모 증자 가격 확정·거래 종결 — 파운드리 자금 조달",
+            body: "인텔이 주당 95달러에 약 2억1,052만 주를 발행하는 200억 달러 규모 증자(당초 150억 달러에서 상향)의 가격을 8월 11일 확정했고, 8월 12일 거래를 종결했다. 순조달액은 약 197억 달러로 파운드리 설비투자 등에 쓰일 예정이며, 기관 수요는 목표액의 약 5배인 1,000억 달러에 달했다.",
+            sources: [
+              { name: "Intel Newsroom", url: "https://newsroom.intel.com/corporate/intel-announces-upsize-and-pricing-of-20-billion-common-stock-offering" }
+            ]
+          },
+          {
+            title: "SK하이닉스, 美 인디애나 HBM 패키징 공장 8월 27일 착공식 확정",
+            body: "SK하이닉스가 인디애나주 웨스트라피엣에 짓고 있는 38억7,000만 달러(약 5조5,000억원) 규모 HBM 첨단 패키징 공장의 착공식을 8월 27일(현지시각) 연다고 밝혔다. AI 가속기용 HBM 후공정 전용 시설로 2028년 하반기 가동이 목표다.",
+            sources: [
+              { name: "머니투데이", url: "https://www.mt.co.kr/industry/2026/08/12/2026081218150375578" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "TrendForce에 따르면 TSMC의 5.5-레티클 CoWoS 패키징 수율이 99%를 넘었지만, AI 반도체 공급의 실제 병목은 HBM·ABF 기판으로 이동했다 (8/11).", sources: [{ name: "TrendForce", url: "https://www.trendforce.com/news/2026/08/11/news-tsmcs-5-5-reticle-cowos-reportedly-tops-99-yield-flags-memory-abf-as-ai-bottlenecks/" }] },
+          { title: "해외 매체가 삼성전자 파운드리 2나노(SF2) 공정 평균 수율이 약 55%로 개선됐다고 보도했다 — 삼성전자 공식 확인은 없다.", sources: [] }
+        ],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "24시간 창에서는 유효 후보를 찾지 못해 48시간까지 확장했다. 대부분의 반도체 뉴스가 삼성전자·SK하이닉스 주가·주주환원 서사에 쏠려 다수 배제했다."
+          ]
+        }
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "코스피, 반도체 쌍끌이에 3.68% 급등 마감 — 매수 사이드카 발동",
+            body: "코스피는 전일 대비 233.51포인트(3.68%) 오른 6,579.04로 마감했다. 삼성전자(+6.68%, 25만5,500원)와 SK하이닉스(+5.54%, 150만4,000원)가 테마섹 투자설과 대규모 주주환원 기대감에 급등을 주도했고, 코스피200 선물 급등으로 매수 사이드카가 발동됐다. 외국인·기관이 3조원 이상 순매수했다.",
+            sources: [
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260812000711" },
+              { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081216110426346" }
+            ]
+          },
+          {
+            title: "미 7월 CPI 3.4%로 예상 부합 — 뉴욕증시 상승, 9월 금리인상 가능성은 42%로 하락",
+            body: "7월 CPI가 전년비 3.4%(근원 2.5%)로 시장 예상에 부합하며 인플레이션 추가 가속 우려가 완화됐다. S&P500은 0.26% 오른 7,748.50, 나스닥은 0.54% 오른 26,588.49로 마감했고 다우존스는 0.04% 내린 53,770.27로 거의 보합이었다. CME 선물시장 반영 9월 FOMC 금리인상 가능성은 42%로 낮아졌다. 다만 일부 국내 매체는 다우 -0.34%·S&P500 -0.32%·나스닥 -0.60% 하락 마감으로 보도했는데, 이는 CPI 발표 이전인 전날(8/11) 마감치로 추정된다 — 원문 1차 대조는 이 환경에서 매체 접속이 막혀 하지 못했다.",
+            sources: [
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260813000024" },
+              { name: "TheStreet", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-12-2026" }
+            ]
+          },
+          {
+            title: "국제유가, 이란의 호르무즈 해협 봉쇄 위협에 상승",
+            body: "이란 혁명수비대가 8월 12일(현지시간) \"역내 미국 개입이 끝날 때까지 호르무즈 해협을 전면 봉쇄한다\"고 밝히며 유가가 상승 전환했다. WTI는 배럴당 83달러대, 브렌트유는 88~89달러대에서 1%대 오름세를 보였다. IEA는 같은 날 발간한 8월 보고서에서 올해 세계 석유 공급 감소폭 전망을 하루 370만→430만 배럴로 상향했다.",
+            sources: [
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260812000016" },
+              { name: "아시아경제", url: "https://view.asiae.co.kr/article/2026081219254728036" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "코스닥은 전일 대비 1.07포인트(0.12%) 오른 858.91로 강보합 마감했다.", sources: [{ name: "다음뉴스", url: "https://v.daum.net/v/20260812153640706" }] },
+          { title: "원/달러 환율은 전 거래일 주간종가 대비 3.30원 내린 1,412.6원(매체에 따라 1,412.11원)을 기록했다.", sources: [{ name: "뉴스1", url: "https://www.news1.kr/finance/market-exr/6256342" }] },
+          { title: "미 10년물 국채금리는 CPI 발표 이후 4.703%(전일比 +4.5bp)로 올랐다.", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/world/2026/08/12/2026081214193852306" }] },
+          { title: "국제 금값은 안전자산 수요와 약달러에 온스당 4,400달러 중반대까지 올라 3거래일 연속 상승했다(매체별로 4,412~4,484달러로 다소 엇갈림).", sources: [{ name: "이투데이", url: "https://www.etoday.co.kr/news/view/2613462" }] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "싱가포르 테마섹, 삼성전자·SK하이닉스 직접투자 추진 — 韓 증시 첫 투자",
+            body: "싱가포르 국부펀드 테마섹이 삼성전자·SK하이닉스에 대한 투자를 결정하고 자금 집행 시점을 타진하기 위해 한국 정부와 접촉한 것으로 확인됐다. 외부 위탁운용이 아닌 내부 인력을 통한 직접투자 방식이며, 테마섹이 한국 증시에 투자하는 것은 처음이다. 보도 후 삼성전자·SK하이닉스 주가가 각각 6.68%, 5.54% 급등했다.",
+            sources: [
+              { name: "아시아경제(단독)", url: "https://view.asiae.co.kr/article/2026081210232989087" },
+              { name: "다음뉴스", url: "https://v.daum.net/v/20260812113642292" }
+            ]
+          },
+          {
+            title: "이재명 대통령, SMR·양자·우주항공 등 '7대 SEED' 미래성장동력 보고회 주재",
+            body: "이재명 대통령이 8월 12일 SMR·핵융합·재생에너지·양자·우주항공·첨단바이오·첨단 소재부품 공급망 등 7대 첨단기술('7대 SEED') 육성 보고회를 주재했다. \"반도체가 만들어준 기회를 활용해 AI 시대 다음 먹거리를 준비해야 한다\"며 첨단산업 경쟁력을 \"국력의 제1 지표\"로 강조했다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608121457529858" },
+              { name: "전자신문", url: "https://www.etnews.com/20260812000339" }
+            ]
+          },
+          {
+            title: "하나은행, 변동금리 주택담보대출 신규 취급 한시 중단 — 가계대출 조이기 확산",
+            body: "하나은행이 8월 12일부터 대면·비대면 전 채널에서 변동금리 주담대 신규 취급을 한시 중단했다. 앞서 8월 7일 비대면 주담대 중단, 8월 11일 마이너스통장 한도 5,000만원 제한을 발표한 데 이은 조치로 재개 시점은 미정이다. 시중은행권 전반이 가산금리 인상·우대금리 축소로 가계대출 문턱을 높이고 있다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608121004097936" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "김정관 산업통상부 장관이 국회 업무보고에서 호남(광주) 반도체 클러스터 부지를 \"정부가 기업에 먼저 제안했다\"고 밝혔다. 주52시간제 예외 특례를 '메가특구특별법'에 담기 위해 협의 중이라고 답했다.", sources: [{ name: "한국일보", url: "https://www.hankookilbo.com/news/article/A2026081216070002718" }] },
+          { title: "7월 전세계 선박 수주량이 전년 동기 대비 22% 줄어든 가운데, 한국은 57만CGT(21척, 점유율 16%)로 중국(290만CGT, 81%)에 크게 밀렸다. 국내 조선 빅3 수주잔액은 224조원으로 12년 만에 200조원을 돌파했다.", sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608121054225744" }] },
+          { title: "테라파워 이사회 의장 빌 게이츠가 8월 14일 방한해 SK·HD현대·두산에너빌리티 등과 SMR 협력을 논의할 예정이다.", sources: [{ name: "뉴스웨이", url: "https://newsway.co.kr/news/view?ud=2026081214000353902" }] },
+          { title: "EU의 '포장 및 포장폐기물 규정(PPWR)'이 8월 12일부터 시행돼 대유럽 수출기업에 비상이 걸렸다.", sources: [{ name: "관세무역개발원", url: "https://www.kctdi.or.kr/kctdi/research/research11.do?mode=view&articleNo=5550" }] },
+          { title: "산업부가 반도체특별법 시행에 맞춰 '반도체 혁신지원단' 구성에 착수했다(어제 이어서).", sources: [{ name: "아주경제", url: "https://www.ajunews.com/view/20260811135457514" }] },
+          { title: "개인정보보호위원회가 마이데이터 스크래핑 대체를 위한 '본인전송요구 대리인 사전협의' 3차 추가신청을 받는다.", sources: [{ name: "아주경제", url: "https://www.ajunews.com/view/20260811133429434" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "리버AI, xAI 공동창업자가 세운 개인 맞춤형 AI 스타트업 — 11억 달러 투자유치 (8/12)",
+            body: "xAI 공동창업자 이고르 바부슈킨이 설립한 리버AI(River AI)가 11억 달러(약 1조5,600억원) 규모 투자를 유치했다. 제너럴카탈리스트·AMP PBC가 공동 주도했고 엔비디아·AMD벤처스가 전략 투자자로, 와이콤비네이터·테마섹도 참여했다.",
+            sources: [
+              { name: "와우테일", url: "https://wowtale.net/2026/08/12/262800/" },
+              { name: "위키트리", url: "https://www.wikitree.co.kr/articles/1151847" }
+            ]
+          },
+          {
+            title: "딜리셔스, 코스닥 상장 — 공모가 하회로 첫날 약세 (8/12)",
+            body: "패션 B2B 플랫폼 '신상마켓' 운영사 딜리셔스가 코스닥에 데뷔했다. 공모가는 희망범위 상단인 7,000원이었으나 상장 첫날 시초가가 공모가 대비 14.29% 낮은 6,000원에 형성된 뒤 낙폭이 확대돼 오전 한때 17%대 약세를 보였다. 지난해 매출 307억원, 영업이익 16억원을 기록했다.",
+            sources: [
+              { name: "아주경제", url: "https://www.ajunews.com/view/20260812103715434" },
+              { name: "이데일리", url: "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02469846645546664" }
+            ]
+          },
+          {
+            title: "Hadrian, 13억7,000만 달러 시리즈D 투자유치 — 자동화 방산 제조 (8/6~7)",
+            body: "자동화 공장을 짓는 방산·제조 스타트업 Hadrian이 WCM Investment Management, JP모건체이스 전략투자그룹 등이 참여한 13억7,000만 달러 규모 시리즈D를 유치했다. 기업가치는 78억7,000만 달러로 평가됐다.",
+            sources: [
+              { name: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-06/defense-startup-hadrian-valued-at-7-87-billion-in-new-round" },
+              { name: "PR Newswire", url: "https://www.prnewswire.com/news-releases/hadrian-raises-1-37b-series-d-to-build-highly-automated-factories-to-accelerate-americas-industrial-renewal-302844408.html" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "코스모스랩이 220억원 규모 시리즈A를 유치했다. 데이터센터·ESS용 수계 아연-할로겐 배터리를 개발하며, 소프트뱅크와 양산화 공동개발을 진행 중이다. (8/12)", sources: [{ name: "유니콘팩토리", url: "https://www.unicornfactory.co.kr/article/2026081209192198123" }] },
+          { title: "반도체 EUV 펠리클 소재기업 어썸레이가 75억원 규모 시리즈B 브릿지를 유치했다. (8/12)", sources: [{ name: "인더뉴스", url: "https://www.inthenews.co.kr/news/article.html?no=90443" }] },
+          { title: "AI 영상분석 스타트업 피아스페이스가 55억원 규모 시리즈A를 유치했다. 누적 투자유치액은 약 98억원. (8/7)", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/industry/2026/08/07/2026080715052775764" }] },
+          { title: "AI 신약개발 기업 Aureka Biotechnologies가 1억 달러 규모 시리즈B를 마감했다. (8/10)", sources: [{ name: "PR Newswire", url: "https://www.prnewswire.com/news-releases/aureka-biotechnologies-raises-us100-million-series-b-to-build-a-biological-world-model-for-drug-discovery-302847165.html" }] },
+          { title: "2026년 상반기 미국 VC 거래 규모가 4,127억 달러로 2025년 연간 총액을 29% 이상 웃돌았다. (8/11 보도)", sources: [{ name: "헤럴드경제 미주판", url: "https://www.heraldk.com/article/2026081117120621796" }] }
+        ]
+      }
+    ]
+  },
+  {
+    date: "2026-08-11",
+    weekday: "화",
+    isToday: false,
+    collectedAt: "2026-08-11 06:30 KST",
+    window: "AI·반도체·경제·국내산업 최근 24시간 (8/10 06:00~8/11 06:20 KST) · 스타트업 최근 7일 (8/4~8/11)",
+    tally: "검색 약 127건 · 총 28건 — AI 2 / 반도체 5 / 경제 7 / 국내산업 6 / 스타트업 8 (목표 35~45건 미달)",
+    metrics: [
+      { label: "KOSPI",    value: "6,299.66", delta: "+0.65%", dir: "up",   note: "8/10 종가" },
+      { label: "KOSDAQ",   value: "854.47",   delta: "+6.97%", dir: "up",   note: "8/10 종가·매수 사이드카" },
+      { label: "다우",      value: "53,975.98", delta: "-0.11%", dir: "down", note: "美 8/10 마감(매체 편차 있음)" },
+      { label: "S&P500",   value: "7,753.11", delta: "-0.06%", dir: "down", note: "美 8/10 마감(매체 편차 있음)" },
+      { label: "나스닥",    value: "26,605.36", delta: "-0.32%", dir: "down", note: "美 8/10 마감(매체 편차 있음)" },
+      { label: "원/달러",   value: "1,416.0",  delta: "-2.4원", dir: "down", note: "8/10 야간연장 마감" },
+      { label: "WTI",      value: "82.13",    unit: "$",       delta: "+5.1%", dir: "up", note: "8/10 종가" }
+    ],
+    digest: [
+      "<strong>코스닥이 6.97% 급등한 854.47로 마감하며 매수 사이드카가 발동됐고, 국제유가는 호르무즈 해협 재개방 협상이 교착되며 WTI 기준 5.1% 오른 82.13달러를 기록했다.</strong> 미국 전략비축유는 43년 만에 최저 수준이다.",
+      "<strong>엔비디아가 월가 6개 금융사와 5,000억 달러 규모 AI 인프라 파이낸싱 플랫폼을 구축하기로 했고, 마이크론은 \"데이터센터 메모리 수요를 절반도 못 채우고 있다\"며 공급부족 심화를 경고했다.</strong>",
+      "<strong>이재명 대통령이 3대 메가프로젝트 점검회의서 \"전격전\"을 주문했고, 같은 날 반도체특별법 시행령이 시행에 들어가 클러스터 인프라를 최대 100%까지 지원하기로 했다.</strong>"
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "저커버그, \"초지능은 모두의 것\" 선언문 발표 — 메타 오픈소스 모델 '뮤즈 글리머' 공개",
+            body: "마크 저커버그 메타 CEO가 8월 10일(현지시간) \"미래는 모두를 위한 것(The Future Is For Everyone)\"이라는 약 6,500단어 분량 에세이를 공개했다. 초지능이 소수 기업·정부·개인에게 집중되면 안 되며 개인 역량 강화·발명·권력 균형 원칙에 따라 광범위하게 분산돼야 한다는 내용이다. 같은 날 메타는 300억(30B) 파라미터 규모 신형 모델 '뮤즈 글리머(Muse Glimmer)'를 아파치 2.0(Apache 2.0) 라이선스로 오픈소스 공개했다. 용량을 20GB 이하로 최적화해 일반 소비자용 GPU 한 대로 구동 가능하며 에이전트 용도에 맞췄다고 소개됐다. 저커버그는 최신 파운데이션 모델 '뮤즈 스파크 1.2'의 가중치도 조만간 공개하겠다고 예고했다.",
+            sources: [
+              { name: "SiliconANGLE", url: "https://siliconangle.com/2026/08/10/meta-releases-open-source-muse-glimmer-model-30b-parameters/" },
+              { name: "VentureBeat", url: "https://venturebeat.com/technology/meta-returns-to-open-source-with-muse-glimmer-an-apache-2-0-licensed-30b-parameter-ai-model-optimized-for-agents-available-now" },
+              { name: "US News/AP", url: "https://www.usnews.com/news/business/articles/2026-08-10/zuckerberg-manifesto-pushes-an-open-source-approach-on-ai-as-meta-releases-its-latest-model" }
+            ]
+          },
+          {
+            title: "앤스로픽, 클로드 코드 '오토 모드'를 8월 14일부터 기본값으로 전환",
+            body: "앤스로픽이 8월 10일 클로드 코드(Claude Code)의 '오토 모드'를 Pro·Max·Team 플랜 신규 세션에서 8월 14일부터 기본값으로 설정한다고 밝혔다. 오토 모드는 단계마다 사용자 승인을 요청하지 않고 작업을 진행하되, 되돌릴 수 없거나 파괴적이거나 사용자 환경 밖으로 나가는 행동에서만 멈춘다. 유료 테스터 1,053명 대상 연구에서 오토 모드는 잠재적 유해 행동의 89%를 식별한 반면 사람이 직접 검토했을 때는 13.6%만 걸러졌다며, 사용자들이 권한 요청의 97%를 습관적으로 승인하는 경향이 원인으로 지목됐다. 안전 분류기 실행에 드는 추가 연산 비용은 더는 과금하지 않기로 했다. Enterprise·API·Bedrock 등에서는 당분간 선택 사항으로 남는다.",
+            sources: [
+              { name: "Help Net Security", url: "https://www.helpnetsecurity.com/2026/08/10/anthropic-claude-code-auto-mode/" },
+              { name: "AOL/로이터", url: "https://www.aol.com/articles/anthropic-now-let-claude-things-161837000.html" }
+            ]
+          }
+        ],
+        briefs: [],
+        note: {
+          title: "확인이 더 필요한 항목",
+          items: [
+            "이 주제는 오늘 2건만 확인됐다. GPT-5.6 Luna 무료 기본 전환·GitHub Copilot Kimi K3 탑재·EU AI Act 고위험 조항 시행·LG K-엑사원 2.0 등은 모두 24시간 기준보다 오래된 소식이라 제외했다."
+          ]
+        }
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "엔비디아, 월가 6개 금융사와 5,000억 달러 규모 AI 인프라 파이낸싱 플랫폼 구축",
+            body: "엔비디아가 아폴로글로벌매니지먼트·블랙록·블랙스톤·브룩필드·골드만삭스·KKR 등 6개 글로벌 금융기관과 양해각서를 체결하고, AI 컴퓨팅 인프라 구축을 위한 5,000억 달러(약 680조원) 규모 민간 자본 조달 플랫폼을 만들기로 했다. 고객사의 AI 데이터센터 구축 자금을 조달해주는 금융 플랫폼으로, 발표 이후 8월 10일 정규장에서 엔비디아 주가는 전일 대비 2.86% 하락한 217.55달러로 마감했다.",
+            sources: [
+              { name: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-10/nvidia-to-team-with-wall-street-on-500-billion-package-ft-says" },
+              { name: "NBC News", url: "https://www.nbcnews.com/tech/tech-news/nvidia-partners-wall-street-giants-raise-500-billion-ai-buildout-rcna591818" }
+            ]
+          },
+          {
+            title: "한국 8월 초순(1~10일) 반도체 수출, 역대 최대치 경신",
+            body: "관세청 발표에 따르면 8월 1~10일 전체 수출액은 213억 달러(전년 동기 대비 +45.3%)로 8월 동기 기준 역대 최대치를 기록했다. 이 중 반도체 수출은 99억 5,200만 달러(+155.4%)로 전체 수출의 46.8%(전년 대비 +20.1%p)를 차지하며 8월 동기 기준 역대 최고 실적을 냈다. HBM 등 고부가 제품 수요 증가와 D램·낸드 단가 상승이 겹친 결과로 분석됐다.",
+            sources: [
+              { name: "아주경제", url: "https://www.ajunews.com/view/20260811090029582" },
+              { name: "이데일리", url: "https://www.edaily.co.kr/News/Read?newsId=04323046645546336&mediaCodeNo=257" }
+            ]
+          },
+          {
+            title: "마이크론, \"데이터센터 메모리 수요 절반도 못 채운다\" — 공급부족 심화 경고",
+            body: "마이크론이 8월 10일 KeyBanc 테크놀로지 리더십 포럼에서 AI발 메모리 수요가 업계 공급 증가 속도를 앞지르고 있다고 밝혔다. 수밋 사다나 최고사업책임자는 현재 데이터센터 메모리 수요의 절반도 충족하지 못하고 있으며 2027년이 2026년보다 더 타이트할 것으로 전망했다. HBM3E용 웨이퍼 1장을 배정할 때마다 일반 DDR 3장 분량의 생산능력을 포기해야 하고, 2026년 HBM 생산능력은 이미 고정가 계약으로 전량 소진됐다고 밝혔다.",
+            sources: [
+              { name: "Benzinga", url: "https://www.benzinga.com/markets/tech/26/08/61100740/micron-says-customers-are-scrambling-for-memory-even-at-very-high-prices" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "정부가 호남 반도체 클러스터 1차 팹을 2029년까지 완공하겠다는 목표를 처음 제시했다. 전력 공급선로를 조기 구축해 2028년 말부터 전력을 공급하고, LH가 10월 안에 기업 입주 협약을 맺기로 했다.", sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608111154590990" }] },
+          { title: "키옥시아 공시에 따르면 도시바가 지분을 14.48%에서 14.12%로 줄이면서, SK하이닉스가 투자한 SPC 'BCPE 판게아 케이맨2'가 14.19% 지분으로 사실상 최대주주로 올라섰다.", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026081162161" }] }
+        ]
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "국제유가, 호르무즈 해협 협상 교착에 5%대 급등 — WTI 80달러대 재진입",
+            body: "호르무즈 해협 재개방 협상을 두고 미국과 이란이 추가 요구를 주고받으며 합의 기대가 후퇴, WTI가 9월물 기준 배럴당 82.13달러(+5.1%), 브렌트유는 10월물 기준 87.72달러(+5.0%)로 급등 마감했다. 미 에너지부 자료에 따르면 미국 전략비축유(SPR)는 2억 9,870만 배럴로 1983년 1월 이후 43년 만에 최저 수준까지 줄었다.",
+            sources: [
+              { name: "한국경제", url: "https://www.hankyung.com/article/2026081154447" },
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260810000066" }
+            ]
+          },
+          {
+            title: "뉴욕증시, 유가 급등에 국채금리 오르며 3대 지수 소폭 하락 마감",
+            body: "호르무즈 해협발 불확실성으로 국채 수익률이 오르며 연준의 추가 긴축 우려가 부각, 다우존스 53,975.98(-0.11%), S&P500 7,753.11(-0.06%), 나스닥 26,605.36(-0.32%)로 마감했다. 다만 다른 매체 보도에서는 각각 -0.34%·-0.32%·-0.6%로 더 큰 낙폭이 나와 수치가 정리되지 않았다 — 원문 1차 대조는 이 환경에서 매체 접속이 막혀 하지 못했다.",
+            sources: [
+              { name: "bbntimes", url: "https://www.bbntimes.com/technology/nasdaq-today-tech-heavy-index-declines-0-32-to-26-605-36-as-intel-and-nvidia-weigh" },
+              { name: "CNBC", url: "https://www.cnbc.com/2026/08/10/stock-market-today-live-updates.html" }
+            ]
+          },
+          {
+            title: "코스닥 6.97% 급등, 매수 사이드카 발동 — 코스피는 강보합",
+            body: "코스피는 전 거래일 대비 40.89포인트(0.65%) 오른 6,299.66에, 코스닥은 55.66포인트(6.97%) 급등한 854.47에 마감했다. 코스닥은 외국인·기관이 동반 순매수(각각 1,031억원, 5,661억원)하며 매수 사이드카가 발동됐다. 코스피는 개인(8,998억원)·기관(5,674억원) 순매수에도 외국인이 1조 4,887억원을 순매도했다.",
+            sources: [
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260810001159" },
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10836334" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "원/달러 환율은 낮장 1,418.4원 마감 후 야간연장거래에서 2.4원 더 내린 1,416.0원을 기록했다.", sources: [{ name: "뉴시스", url: "https://www.newsis.com/view/NISX20260811_0003744737" }] },
+          { title: "국고채 3년물 금리가 전 거래일보다 3.2bp 오른 연 3.778%로 3거래일 연속 상승했다.", sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608101708467778" }] },
+          { title: "국제 금 현물가는 온스당 4,329~4,343달러 구간에서 등락했다(공식 종가 하나로 특정한 기사는 확인되지 않았다).", sources: [{ name: "Fortune", url: "https://fortune.com/article/current-price-of-gold-08-10-2026/" }] },
+          { title: "미국 10년물 국채금리가 24시간 동안 약 7bp 올라 4.69~4.72% 수준을 기록했다(출처마다 소폭 차이).", sources: [] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "이재명 대통령, 반도체 클러스터 등 3대 메가프로젝트 \"전격전\" 주문",
+            body: "이재명 대통령이 8월 10일 오후 2차 민관합동 메가프로젝트 점검회의를 직접 주재했다. 호남권 반도체 클러스터, 충청권 첨단산업, 영남권 피지컬 AI 등 3대 프로젝트의 부지·전력·용수 공급, 정부 규제혁신 방안을 점검했으며 한성숙 국무총리·구윤철 부총리 겸 기재부 장관·배경훈 부총리 겸 과기정통부 장관과 삼성전자·SK하이닉스 관계자들이 참석했다. 이 대통령은 \"속도전을 넘어 전격전을 치러야 하는 상황\"이라고 말한 것으로 알려졌다.",
+            sources: [
+              { name: "한국일보", url: "https://www.hankookilbo.com/news/article/A2026081014200000651" },
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10832366" }
+            ]
+          },
+          {
+            title: "반도체특별법 시행령, 8월 11일부터 시행 — 클러스터 인프라 최대 100% 지원",
+            body: "「반도체산업 경쟁력 강화 및 지원에 관한 특별법」시행령이 8월 4일 국무회의에서 의결돼 8월 11일부터 시행에 들어갔다. 반도체 클러스터 지정·지원, 전력·용수·도로 등 산업기반시설을 최대 100%까지 지원하고, 예비타당성조사 특례, 반도체산업경쟁력강화특별회계 설치를 담았다. 정책 이행을 위한 대통령 직속 특별위원회도 신설된다. 다만 주 52시간 근로 예외 조항은 최종적으로 빠졌다.",
+            sources: [
+              { name: "전자신문", url: "https://www.etnews.com/20260811000258" },
+              { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10830448" }
+            ]
+          },
+          {
+            title: "정부, 가계대출 '누더기' 규제 비판 속 부동산금융 종합대책 준비",
+            body: "LTV·DSR 등 큰 틀은 유지한 채 문제가 생길 때마다 예외를 덧붙이는 방식이 반복되면서 부동산 대출규제가 \"누더기\"가 됐다는 비판이 나왔다. 올 하반기에만 아파트 잔금대출 7만가구, 26조원 규모가 가계대출 총량 관리에서 제외되면서 총량규제 실효성 논란이 커지고 있다. 금융위원회는 비거주 1주택자 전세대출 규제 강화 등을 포함한 부동산 금융 종합대책을 별도로 준비 중인 것으로 알려졌다.",
+            sources: [
+              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608110500413035" },
+              { name: "이투데이", url: "https://www.etoday.co.kr/news/view/2612870" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "고용부·중기부·공정위가 하반기 합동 정책브리핑을 열고 교대제 사업장 분기별 기획감독, 포괄임금제 지양 방침을 밝혔다. 2026년 최저임금은 시급 10,320원(+2.9%)으로 확정·고시됐다.", sources: [{ name: "전국인력신문", url: "https://www.kjob.news/news/511445" }] },
+          { title: "SK하이닉스 통합노조 설립 준비모임이 개설 나흘 만에 임직원(약 3만 5천명)의 약 10%인 3,800명 이상을 모았다. PS 지급방식을 둘러싼 불만이 배경으로 지목됐다.", sources: [{ name: "이투데이", url: "https://www.etoday.co.kr/news/view/2612845" }] },
+          { title: "한전의 송전선로 인근 주민 보상 규모가 '국가기간 전력망 확충 특별법' 시행 이후 누적 3조 5천억원에 이른 것으로 나타났다.", sources: [{ name: "아시아투데이", url: "https://www.asiatoday.co.kr/kn/view.php?key=20260810010003196" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "니어스랩, 코스닥 공모가 최상단 확정 — 얼어붙은 IPO 시장 뚫어 (8/11)",
+            body: "산업용 자율비행 드론 기업 니어스랩이 5거래일(8/3~8/7)간 진행한 기관 수요예측에서 국내외 1,795개 기관, 경쟁률 743.5대 1을 기록하며 공모가를 희망밴드(3만~4만 1,200원) 최상단인 4만 1,200원으로 확정했다. 총 공모금액은 약 375억원, 상장 후 예상 시가총액은 약 2,380억원이다. 12~13일 일반청약을 거쳐 24일 코스닥 상장 예정이다.",
+            sources: [
+              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260811000688" },
+              { name: "서울경제", url: "https://www.sedaily.com/article/20078004" }
+            ]
+          },
+          {
+            title: "이노크라스, 443억원 시리즈B-3 유치 — 누적 투자유치 1억 달러 (8/4)",
+            body: "암 환자 전장유전체(WGS) 데이터를 분석해 정밀 암진단 정보를 제공하는 이노크라스가 목표액을 초과한 443억원(3,100만 달러) 규모 시리즈B-3를 유치, 누적 투자유치액이 1억 달러에 도달했다. IMM인베스트먼트·한국투자증권 등이 신규 참여했다. 투자금은 미국 병원시장 확장에 쓰일 예정이다.",
+            sources: [
+              { name: "플래텀", url: "https://platum.kr/archives/291844" },
+              { name: "서울경제", url: "https://www.sedaily.com/article/20076263" }
+            ]
+          },
+          {
+            title: "블루엘리펀트, 글로벌 PEF서 1,000억원 투자유치 (8/7)",
+            body: "아이웨어 브랜드 블루엘리펀트가 글로벌 사모펀드 어펄마캐피탈매니져스코리아와 1,000억원 규모 투자유치 계약을 체결했다. 우선 750억원을 투자하고 6개월 내 250억원 추가 납입 옵션 행사 시 지분율 최대 25.8%를 확보한다. 기업가치는 약 4,000억원으로 평가받았으며, 부채비율은 기존 307%에서 60% 이하로 개선될 전망이다.",
+            sources: [
+              { name: "아시아투데이", url: "https://www.asiatoday.co.kr/kn/view.php?key=20260807010002501" },
+              { name: "이코노미스트", url: "https://economist.co.kr/article/view/ecn202608070035" }
+            ]
+          }
+        ],
+        briefs: [
+          { title: "AI 캐릭터 채팅 '위프' 운영사 벙커키즈가 150억원 규모 시리즈A를 유치했다. 출시 1년 만에 월매출이 1000배로 늘어 아시아 여성향 AI 캐릭터 채팅 시장 매출 1위라고 알려졌다. (8/11)", sources: [{ name: "와우테일", url: "https://wowtale.net/2026/08/11/262732/" }] },
+          { title: "중장비 에너지효율화 스타트업 레디로버스트머신이 134억원 규모 시리즈B를 유치, 누적 투자유치액 229억원을 확보했다. (8/4)", sources: [{ name: "전자신문", url: "https://www.etnews.com/20260804000039" }] },
+          { title: "사학연금·군인공제회·경찰공제회·국민연금 등 연기금·공제회가 국내 VC 블라인드펀드 출자를 3년 만에 재개했다. (8/9)", sources: [{ name: "이투데이", url: "https://www.etoday.co.kr/news/view/2612453" }] },
+          { title: "초소형위성 체계기업 스텝랩이 110억원 규모 시리즈A를 유치했다. (8/5, 라운드 종료 7/31)", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/future/2026/08/05/2026080514572594404" }] },
+          { title: "건강검진 플랫폼 '착한의사' 운영사 비바이노베이션이 150억원 규모 시리즈C를 유치했다. 인바디가 전략적 투자자로 참여했다. (8/10경, 클로징 일자 불명확)", sources: [{ name: "유니콘팩토리", url: "https://www.unicornfactory.co.kr/article/2026080916044191717" }] }
+        ]
+      }
+    ]
+  }
+];
+
+/* ══════════════════════════════════════════════════════════ */
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+const ALL = "전체";
+
+let activeTopic = ALL;
+/* 기본값은 최신 브리핑. 지난 날짜는 날짜 메뉴에서 고른다. */
+let activeDate = BRIEFINGS.length ? BRIEFINGS[0].date : ALL;
+
+/* 데이터의 isToday는 루틴이 써넣는 값이라, 루틴이 하루 거르면 어제 것이 '오늘'로 남는다.
+   그래서 표시용 라벨은 실제 날짜(KST)에서 직접 구한다. */
+function kstToday() {
+  try {
+    return new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" });
+  } catch (e) {
+    return "";
+  }
+}
+function shiftDate(iso, days) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d + days)).toISOString().slice(0, 10);
+}
+const TODAY = kstToday();
+const YESTERDAY = TODAY ? shiftDate(TODAY, -1) : "";
+
+function dayLabel(b) {
+  if (b.date === TODAY) return "오늘";
+  if (b.date === YESTERDAY) return "어제";
+  return b.weekday + "요일";
+}
+
+function allTopics() {
+  const seen = [];
+  BRIEFINGS.forEach((b) => b.sections.forEach((s) => {
+    if (!seen.includes(s.topic)) seen.push(s.topic);
+  }));
+  return seen;
+}
+
+function sectionCount(s) {
+  return (s.items ? s.items.length : 0) + (s.briefs ? s.briefs.length : 0);
+}
+
+/* 날짜·주제를 각각 ALL로 열어둘 수 있어서, 두 메뉴의 건수를 같은 함수로 센다. */
+function countFor(date, topic) {
+  let n = 0;
+  BRIEFINGS.forEach((b) => {
+    if (date !== ALL && b.date !== date) return;
+    b.sections.forEach((s) => {
+      if (topic === ALL || s.topic === topic) n += sectionCount(s);
+    });
+  });
+  return n;
+}
+
+function selectedDay() {
+  return activeDate === ALL ? null : BRIEFINGS.find((b) => b.date === activeDate);
+}
+
+function renderStrip() {
+  const day = selectedDay();
+  const shown = day || BRIEFINGS[0];
+  const cells = [
+    {
+      label: day ? "보는 중" : "최신 브리핑",
+      value: shown ? shown.date.slice(5).replace("-", ".") : "—",
+      delta: shown ? dayLabel(shown) : ""
+    },
+    { label: "누적 일수", value: String(BRIEFINGS.length), unit: "일", delta: "" },
+    { label: day ? "이 날 항목" : "누적 항목", value: String(countFor(activeDate, ALL)), unit: "건", delta: "" }
+  ];
+  /* 지표는 그 날짜의 것을 보여준다. 지난 날짜를 보면서 오늘 시세를 띄우면 안 된다. */
+  if (shown && shown.metrics) cells.push(...shown.metrics);
+
+  $("strip").innerHTML = cells.map((c) => `
+    <div class="stat">
+      <span class="stat-label">${esc(c.label)}</span>
+      <span class="stat-value">${esc(c.value)}${c.unit ? `<span class="unit">${esc(c.unit)}</span>` : ""}</span>
+      <span class="stat-delta ${c.dir === "up" ? "up" : c.dir === "down" ? "down" : ""}">${esc(c.delta || c.note || "")}</span>
+    </div>`).join("");
+}
+
+function renderDates() {
+  const chips = [`
+    <button class="datechip all" type="button" data-date="${ALL}" aria-pressed="${activeDate === ALL}">
+      <span class="d">전체</span>
+      <span class="w">${BRIEFINGS.length}일 · ${countFor(ALL, activeTopic)}건</span>
+    </button>`];
+
+  BRIEFINGS.forEach((b) => {
+    const [, m, d] = b.date.split("-");
+    chips.push(`
+      <button class="datechip" type="button" data-date="${esc(b.date)}" aria-pressed="${activeDate === b.date}">
+        <span class="d">${m}.${d}</span>
+        <span class="w">${esc(dayLabel(b).replace("요일", ""))} · ${countFor(b.date, activeTopic)}건</span>
+      </button>`);
+  });
+
+  $("dates").innerHTML = chips.join("");
+  $("dates").querySelectorAll(".datechip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeDate = btn.dataset.date;
+      render();
+    });
+  });
+}
+
+function renderFilters() {
+  const topics = [ALL, ...allTopics()];
+  $("filters").innerHTML = topics.map((t) => `
+    <button class="chip" type="button" data-topic="${esc(t)}" aria-pressed="${t === activeTopic}">
+      ${esc(t)}<span class="count">${countFor(activeDate, t)}</span>
+    </button>`).join("");
+
+  $("filters").querySelectorAll(".chip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeTopic = btn.dataset.topic;
+      render();
+    });
+  });
+}
+
+function renderNote(note) {
+  if (!note) return "";
+  const body = note.items.length === 1
+    ? `<div>${note.items[0]}</div>`
+    : `<ul>${note.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+  return `<div class="note"><b>${esc(note.title)}</b>${body}</div>`;
+}
+
+function renderSources(sources) {
+  return (sources || []).map((s) =>
+    `<a class="src" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("");
+}
+
+function renderArc(arc) {
+  return arc ? `<span class="arc">${esc(arc)}</span>` : "";
+}
+
+function renderItem(item) {
+  return `
+    <article class="item">
+      <h4>${esc(item.title)}</h4>
+      ${renderArc(item.arc)}
+      <p>${esc(item.body)}</p>
+      <div class="sources">${renderSources(item.sources)}</div>
+    </article>`;
+}
+
+function renderBriefs(briefs) {
+  if (!briefs || !briefs.length) return "";
+  return `
+    <div class="briefs-head">그 외 ${briefs.length}건</div>
+    <div class="briefs">
+      ${briefs.map((b) => `
+        <div class="brief">
+          <span>${esc(b.title)}</span>
+          ${renderArc(b.arc)}
+          ${renderSources(b.sources)}
+        </div>`).join("")}
+    </div>`;
+}
+
+function renderInsight(insight) {
+  if (!insight || !insight.length) return "";
+  const rows = insight
+    .filter((x) => x && x.text)
+    .map((x) => `<div><dt>${esc(x.label)}</dt><dd>${x.text}</dd></div>`)
+    .join("");
+  if (!rows) return "";
+  return `
+    <div class="insight">
+      <div class="insight-head">
+        <h3>그래서 뭐?</h3>
+        <span class="caveat">사실이 아니라 판단입니다. 위 항목만 재료로 씁니다</span>
+      </div>
+      <dl>${rows}</dl>
+    </div>`;
+}
+
+function renderTimeline() {
+  const days = BRIEFINGS.filter((b) => activeDate === ALL || b.date === activeDate).map((b) => {
+    const sections = b.sections.filter((s) => activeTopic === ALL || s.topic === activeTopic);
+    if (!sections.length) return "";
+
+    const [y, m, d] = b.date.split("-");
+    const showDigest = activeTopic === ALL && b.digest && b.digest.length;
+    const showInsight = activeTopic === ALL;
+
+    return `
+      <section class="day">
+        <div class="daymark">
+          <span class="md">${m}.${d}</span>
+          <span class="yr">${y}</span>
+          <span class="wd">${esc(b.weekday)}요일</span>
+          ${b.date === TODAY ? '<span class="badge-today">오늘</span>' : ""}
+        </div>
+        <div class="daybody">
+          ${showDigest ? `
+            <div class="digest">
+              <h3>한눈에 보기</h3>
+              <ul>${b.digest.map((t) => `<li><span>${t}</span></li>`).join("")}</ul>
+            </div>` : ""}
+          ${showInsight ? renderInsight(b.insight) : ""}
+          ${sections.map((s) => `
+            <div class="topic">
+              <div class="topic-head">
+                <h3>${esc(s.topic)}</h3>
+                <span class="n">${sectionCount(s)}건</span>
+              </div>
+              ${(s.items || []).map(renderItem).join("")}
+              ${renderBriefs(s.briefs)}
+              ${renderNote(s.note)}
+            </div>`).join("")}
+          <div class="daymeta">
+            수집 ${esc(b.collectedAt)} · ${esc(b.window)}${b.tally ? " · " + esc(b.tally) : ""}
+          </div>
+        </div>
+      </section>`;
+  }).join("");
+
+  const none = activeDate === ALL
+    ? "해당 주제의 브리핑이 없습니다"
+    : `${activeDate}에는 '${activeTopic}' 항목이 없습니다`;
+  $("timeline").innerHTML = days || `<div class="empty">${esc(none)}</div>`;
+}
+
+function renderFoot() {
+  const oldest = BRIEFINGS[BRIEFINGS.length - 1];
+  const latest = BRIEFINGS[0];
+  const range = BRIEFINGS.length > 1 ? `${oldest.date} — ${latest.date}` : latest ? latest.date : "";
+  $("foot").innerHTML =
+    `<span class="byline">Artifact by DK</span>` +
+    `News Brief · ${esc(range)} · ${BRIEFINGS.length}개 브리핑<br>` +
+    `<code>/brief</code> 실행 시 갱신됩니다. 모든 항목은 원문 출처 링크를 답니다.`;
+}
+
+function render() {
+  renderStrip();
+  renderDates();
+  renderFilters();
+  renderTimeline();
+}
+
+render();
+renderFoot();
+</script>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("themetoggle");
+  if (!btn) return;
+
+  // 저장된 선택이 없으면 data-theme을 비워 두고 prefers-color-scheme에 맡긴다.
+  var saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function paint() {
+    btn.textContent = current() === "dark" ? "LIGHT" : "DARK";
+    btn.setAttribute("aria-label", "테마 전환");
+  }
+
+  btn.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    paint();
+  });
+
+  paint();
+})();
+</script>
+</body>
+</html>
