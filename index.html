@@ -633,9 +633,133 @@
 
 const BRIEFINGS = [
   {
+    date: "2026-08-27",
+    weekday: "목",
+    isToday: true,
+    collectedAt: "2026-08-27 06:20 KST",
+    window: "AI·반도체·국내산업 최근 24시간(8/26 06:20~8/27 06:20 KST) · 경제/시장은 8/26(수) 국내 종가·미국 마감 기준 · 스타트업 최근 7일(8/20~8/27)",
+    tally: "검색 약 60건 · 총 22건 — AI 4 / 반도체 4 / 경제 5 / 국내산업 5 / 스타트업 4 (35건 목표 미달, 06:20 시점에 당일 기사가 아직 적었음) · 발송된 이메일에서 복구한 회차",
+    metrics: [
+      { label: "KOSPI",      value: "6,808.21", delta: "+0.97%",  dir: "up",   note: "8/26 종가" },
+      { label: "KOSDAQ",     value: "826.87",   delta: "강보합",   dir: "flat", note: "8/26 종가" },
+      { label: "원/달러",     value: "1,384.80", delta: "-1.3원",  dir: "down", note: "8/26 종가" },
+      { label: "국고채 3년",  value: "3.816",    unit: "%",        delta: "-1.4bp", dir: "down", note: "8/26, 금통위 하루 전" }
+    ],
+    digest: [
+      "<strong>엔비디아가 2분기 매출 962억달러(전년比 106%↑, 예상 922억달러 상회)와 3분기 가이던스 1,080억달러(예상 1,042억달러 상회)를 내놓았다.</strong> 중국 매출은 이번에도 0으로 반영했고, 시간외 주가는 약 5% 올랐다.",
+      "<strong>미국 정부가 한국(한전)에 웨스팅하우스 지분 공동인수를 제안한 것으로 알려졌다.</strong> AI 인프라용 美 원전 10기 프로젝트에 한국 자본·시공력을 끌어들이려는 의도로, 원전 관련주가 급등했다.",
+      "<strong>개인정보위가 SK텔레콤에 과징금 1,347억9,100만원을 부과했다.</strong> 지난 4월 해킹으로 전체 이용자 2,324만여명의 정보 25종이 유출된 데 대한 제재다."
+    ],
+    insight: [
+      { label: "흐름", text: "메모리 슈퍼사이클과 AI 인프라 원가 전가 호의 <strong>9번째 진전</strong>으로 풀이된다. 엔비디아가 시장 예상을 웃도는 실적과 가이던스를 내놓으며 AI 투자 사이클이 꺾이지 않았다는 신호로 시장이 받아들인 것으로 보인다." },
+      { label: "뒤집힐 조건", text: "시장이 가장 주시했던 <strong>'메모리 원가·AI서버 15% 가격인상이 이익률에 미친 영향'에 대한 구체 수치는 이번 검색으로 확인되지 않았다.</strong> 향후 총이익률 하락이 확인되면 \"가격 전가가 순조롭다\"는 판단이 재평가될 수 있다." },
+      { label: "안 보이는 것", text: "한국은행 금통위의 오늘(8/27) 기준금리 결정과 SK하이닉스 인디애나 착공식(한국시간 8/28 새벽경 예상)은 <strong>이 브리핑 마감 시점까지 결과가 나오지 않았다.</strong>" }
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "Anthropic, Claude와 Cowork의 기억(memory) 기능을 하나로 통합",
+            body: "채팅과 Cowork 중 한쪽에서 학습한 내용을 다른 쪽에서도 기억하도록 통합했다. 민감 주제는 기본 비저장이며 열람·수정·삭제가 가능하다.",
+            sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/" }]
+          },
+          {
+            title: "'모두의 AI', 5파전 발표평가 진행",
+            arc: "국가 AI 파운데이션 모델·모두의 AI · 3주째 6번째 진전 (8/16부터)",
+            body: "SKT·카카오-LG·KT·이스트소프트·제논 5개 컨소시엄이 8/27 발표평가(PT)를 치렀다. 최종 사업자 발표는 8월 말로 예상된다.",
+            sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/tech/2026/08/24/2026082418120172145" }]
+          }
+        ],
+        briefs: [
+          { title: "OpenAI가 ChatGPT 내 o3 모델 지원을 8/26자로 종료했다 (90일 유예 종료, API는 영향 없음).", sources: [{ name: "OpenAI 릴리스 노트", url: "https://help.openai.com/ko-kr/articles/6825453-chatgpt-%EB%A6%B4%EB%A6%AC%EC%8A%A4-%EB%85%B8%ED%8A%B8" }] },
+          { title: "구글 Gemini 앱 이용자가 10억명을 돌파했다고 구글이 밝혔다.", sources: [{ name: "Releasebot", url: "https://releasebot.io/updates/google" }] }
+        ]
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "엔비디아, 2분기 매출 962억달러로 시장 예상 상회",
+            arc: "메모리 슈퍼사이클 · 3주째 9번째 진전 (8/11부터)",
+            body: "회계연도 2027년 2분기 매출 962억달러(전년比 106%↑), 조정 EPS 2.22달러(예상 2.10달러)를 기록했다. 3분기 가이던스는 1,080억달러로 예상치 1,042억달러를 웃돌았고 중국 매출은 0으로 반영했다. 시간외 주가는 약 5% 올랐다.",
+            sources: [{ name: "Fortune", url: "https://fortune.com/2026/08/26/nvidia-results-q2-earnings/" }]
+          },
+          {
+            title: "미국, 한국에 웨스팅하우스 지분 공동인수 제안 — 원전동맹 카드로 부상",
+            body: "미국 정부가 한전을 투자 주체로 거론하며 웨스팅하우스 지분 공동인수를 제안한 것으로 전해졌다. 美 원전 10기 착공 프로젝트에 한국 자본·시공력을 끌어들이려는 의도로 풀이된다. 한전(+7.95%)·한전기술(+12.89%)·두산에너빌리티(+5.08%) 등 원전주가 동반 급등했다.",
+            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026082631506" }]
+          }
+        ],
+        briefs: [
+          { title: "PC용 범용 D램(DDR4 8Gb) 현물가가 8/24 기준 8.48달러로 1년 새 5배 이상 뛰었다.", arc: "메모리 슈퍼사이클 · 3주째 9번째 진전 (8/11부터)", sources: [{ name: "문화일보", url: "https://www.munhwa.com/article/11542183" }] },
+          { title: "애플이 Mac mini·Studio에 각각 M6·M5 Ultra를 탑재해 공개했다 — M6는 TSMC 2나노 공정으로 만든 애플 첫 칩이다.", sources: [{ name: "Apple Newsroom", url: "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/" }] }
+        ]
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "한국은행 금융통화위원회, 오늘 기준금리 결정",
+            body: "7월 2.50%→2.75% 인상 이후 추가 인상이냐 동결이냐를 놓고 시장 전망이 팽팽하다. 결정은 8/27 오전 발표 예정이며, 이 브리핑 마감 시점까지는 결과가 나오지 않았다.",
+            sources: [{ name: "뉴데일리", url: "https://biz.newdaily.co.kr/site/data/html/2026/08/22/2026082200010.html" }]
+          }
+        ],
+        briefs: [
+          { title: "코스피가 반도체 대형주 수급 개선으로 0.97% 오른 6,808.21에 마감했고 코스닥은 826.87로 강보합이었다 (8/26).", sources: [{ name: "비즈니스코리아", url: "https://www.businesskorea.co.kr/news/articleView.html?idxno=275576" }] },
+          { title: "뉴욕증시는 엔비디아 실적 발표를 앞둔 관망 속에 다우 −0.21%·S&P500 보합·나스닥 −0.08%로 8/26(수) 마감했다.", sources: [{ name: "CNBC", url: "https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html" }] },
+          { title: "원/달러 환율은 1.3원 내린 1,384.80원에 마감했다 (8/26).", arc: "원/달러 환율 하락 추세 · 3주째 (8/11부터)", sources: [{ name: "뉴시스", url: "https://www.newsis.com/view/NISX20260826_0003763756" }] },
+          { title: "국고채 3년물 금리는 1.4bp 내린 연 3.816%로 마감했다 — 금통위를 하루 앞두고 하락했다 (8/26).", sources: [{ name: "베타뉴스", url: "https://www.betanews.net/article/view/beta202608260100" }] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "개인정보위, SK텔레콤에 과징금 1,347억9,100만원 부과",
+            body: "개인정보보호위원회가 8/27 전체회의에서 지난 4월 해킹 사고 관련 안전조치·유출통지 의무 위반을 확인하고 과징금 1,347억9,100만원과 과태료 960만원을 부과했다. LTE·5G 전체 이용자 2,324만여명의 정보 25종이 유출됐다.",
+            sources: [{ name: "정책브리핑", url: "https://www.korea.kr/briefing/policyBriefingView.do?newsId=156721774" }]
+          }
+        ],
+        briefs: [
+          { title: "공정위가 쿠팡·네이버 등 오픈마켓 7개사 약관을 점검해 부당 면책 조항 등을 시정했다고 8/27 밝혔다.", sources: [{ name: "정책브리핑", url: "https://www.korea.kr/briefing/policyBriefingView.do?newsId=156721774" }] },
+          { title: "여당이 쿠팡의 공정위 조사거부 사태를 계기로 온플법을 연내 처리하겠다는 방침을 재확인했다 (8/26).", sources: [{ name: "서울경제", url: "https://www.sedaily.com/article/20083715" }] },
+          { title: "기후에너지환경부가 2040년 재생에너지 220GW 확대 계획을 밝히고 신규 원전 2기 건설도 계획대로 추진한다고 재확인했다 (8/26).", sources: [{ name: "정책브리핑", url: "https://www.korea.kr/news/policyNewsView.do" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "AI 서비스 스타트업 '뤼튼', 1,000억원 시리즈C로 유니콘 등극 (8/26)",
+            body: "코어라인벤처스·굿워터캐피탈·산업은행 등으로부터 1,000억원 규모 시리즈C를 유치해 기업가치 1조원 이상을 인정받았다. 국내 AI 서비스 스타트업 최초의 유니콘이다.",
+            sources: [{ name: "한국일보", url: "https://www.hankookilbo.com/news/article/A2026082616520005169" }]
+          },
+          {
+            title: "허깅페이스, 130억달러 밸류에이션으로 매각 타진 (8/23 보도)",
+            body: "투자은행과 함께 130억달러(약 18조원) 이상 기업가치로 복수 인수 후보에 의사를 타진 중이라고 미 비즈니스 인사이더가 보도했다. 논의는 초기 단계다.",
+            sources: [{ name: "와우테일", url: "https://wowtale.net/2026/08/24/263374/" }]
+          }
+        ],
+        briefs: [
+          { title: "디지털 헬스케어 스마트푸드네트웍스(SFN)가 150억원 규모 시리즈C를 유치했다 (8/25).", sources: [{ name: "스타트업레시피", url: "https://startuprecipe.co.kr/archives/5831251" }] },
+          { title: "더휴식이 TS인베스트먼트로부터 200억원 규모 시리즈B 브릿지를 유치했다 (8/26).", sources: [{ name: "스타트업레시피", url: "https://startuprecipe.co.kr/archives/5831251" }] }
+        ],
+        note: {
+          title: "이 회차에 대하여",
+          items: [
+            "8/27 루틴이 마크다운·이메일(3단계)까지만 끝내고 중단돼, 저장소·대시보드·아티팩트에 아무것도 남지 않았다. 이 항목은 발송된 이메일에서 복구했다.",
+            "복구 과정에서 내용을 새로 검색하거나 보태지 않았다. 메일에 실린 항목·숫자·출처를 그대로 옮겼다.",
+            "미국 3대 지수는 메일에 등락률만 실려 있어 상단 지표 스트립에 넣지 않고 경제/시장 항목에만 남겼다."
+          ]
+        }
+      }
+    ]
+  },
+  {
     date: "2026-08-26",
     weekday: "수",
-    isToday: true,
+    isToday: false,
     collectedAt: "2026-08-26 06:20 KST",
     window: "AI·반도체·국내산업 최근 24시간(8/25 06:20~8/26 06:20 KST, 일부 48시간 확장) · 경제/시장은 8/25(화) 국내 종가·미국 마감 기준 · 스타트업 최근 7일(8/19~8/26)",
     tally: "검색 약 250건 · 총 25건 — AI 7 / 반도체 4 / 경제 5 / 국내산업 5 / 스타트업 4 (35건 목표 미달, 반도체·국내산업은 48시간까지 넓혀도 얇았다)",
@@ -1829,183 +1953,6 @@ const BRIEFINGS = [
           { title: "뉴 아이디, 시리즈B 유치 — 미디어테크(OTT/FAST) (8/14)", sources: [ { name: "베타뉴스", url: "https://www.betanews.net/article/view/beta202608140013" } ] },
           { title: "엑스텐스튜디오, 투자유치(금액 비공개) — 웹툰 제작·유통 (8/18)", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181106334726" } ] },
           { title: "수출입은행, 방산·공급망 벤처펀드에 각 200억원 출자 — 첫 벤처투자 진출 (8/13)", sources: [ { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260813001257" } ] }
-        ]
-      }
-    ]
-  },
-  {
-    date: "2026-08-16",
-    weekday: "일",
-    isToday: false,
-    collectedAt: "2026-08-16 06:20 KST",
-    window: "AI·반도체·국내산업 최근 24~48시간(항목별 표시, 일요일이라 확장) · 경제/시장 8/14(금) 마지막 거래일 기준 · 스타트업 최근 7일 (8/9~8/16)",
-    tally: "검색 약 252건 · 총 35건 — AI 7 / 반도체 7 / 경제 9 / 국내산업 5 / 스타트업 7",
-    metrics: [
-      { label: "KOSPI",    value: "6,977.94", delta: "+2.42%", dir: "up",   note: "8/14(금) 종가" },
-      { label: "KOSDAQ",   value: "864.65",   delta: "+0.38%", dir: "up",   note: "8/14(금) 종가" },
-      { label: "다우",      value: "53,732.41", delta: "-0.20%", dir: "down", note: "美 8/14(금) 마감" },
-      { label: "S&P500",   value: "7,785.76", delta: "-0.17%", dir: "down", note: "美 8/14(금) 마감" },
-      { label: "나스닥",    value: "26,729.16", delta: "-0.28%", dir: "down", note: "美 8/14(금) 마감" },
-      { label: "원/달러",   value: "1,418.3",  delta: "-1.1원", dir: "down", note: "8/14(금) 15:30 기준" },
-      { label: "WTI",      value: "82.40",    unit: "$",       delta: "+1.42%", dir: "up", note: "8/14 마감" }
-    ],
-    digest: [
-      "<strong>미국이 재수출 반도체에 25% 관세를 부과하는 행정명령에 서명하고 백악관은 \"환적사기\" 보고서에서 경기 반도체벨트를 중국산 우회 통로로 지목했다.</strong> 같은 시기 이재명 대통령이 여한구 통상교섭본부장을 전격 경질해 미국과의 통상 압박이 고조된 정황으로 읽힌다.",
-      "<strong>코스피가 5거래일 연속 상승하며 2.42% 급등한 6,977.94에 마감했다.</strong> 미국 증시는 7월 소매판매가 예상과 달리 0.6% 줄며 다우·S&P·나스닥 3대 지수가 나란히 소폭 조정받았다.",
-      "<strong>스페이스X가 AI 코딩 도구 커서(Cursor)를 600억달러에 인수 완료했다.</strong> 국내에서는 정부의 '독자 AI 파운데이션 모델' 1차 평가에서 LG·SKT·업스테이지가 2차에 진출하고 네이버·NC는 탈락했다."
-    ],
-    sections: [
-      {
-        topic: "AI / 테크",
-        items: [
-          {
-            title: "스페이스X, AI 코딩 스타트업 커서(Cursor) 600억달러 인수 완료",
-            body: "스페이스X가 임시 자회사 X67과 커서(법인명 애니스피어) 간 합병을 8월 14일(현지시간) 공시로 마무리했다. 전액 주식 교환 방식이며 커서 기업가치는 600억달러(약 85조원) 기준이다. 커서는 스페이스X의 100% 자회사로 편입돼 \"세계 최대 GPU 함대\"에 접근하게 됐고, 이번 편입이 xAI 그록(Grok) 계열 제품 개선에 쓰일 것이라고 밝혔다. 포춘 500대 기업의 64%를 포함해 5만개 이상 기업이 커서를 쓰고 있다고 전했다.",
-            sources: [
-              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/" },
-              { name: "위키트리", url: "https://www.wikitree.co.kr/articles/1152712" }
-            ]
-          },
-          {
-            title: "독자 AI 파운데이션 모델 1차 평가 — LG·SKT·업스테이지 통과, 네이버·NC 탈락",
-            body: "과학기술정보통신부·정보통신산업진흥원·한국정보통신기술협회가 8월 15일 '독자 AI 파운데이션 모델' 프로젝트 1차 단계평가 결과를 발표했다. LG AI연구원·SK텔레콤·업스테이지 3개 팀이 2차 진출에 성공했고, 네이버클라우드·NC AI는 탈락했다. 정부는 '독자 AI'를 아키텍처 설계·데이터 확보·사전학습 전 과정을 자체 수행한 모델로 엄격히 정의했는데, 네이버 '하이퍼클로바X 시드 32B 싱크'의 비전 인코더가 알리바바 큐원2.5와 코사인 유사도 99.51%를 기록한 점이 탈락 사유로 꼽혔다. SK텔레콤은 이번에 519억 파라미터 'A.X K1'을 공개했다.",
-            sources: [
-              { name: "인공지능신문", url: "https://www.aitimes.kr/news/articleView.html?idxno=38163" },
-              { name: "보안뉴스", url: "https://m.boannews.com/html/detail.html?tab_type=1&idx=141524" }
-            ]
-          },
-          {
-            title: "미국, AI 동맹국에 \"중국이냐 미국이냐\" 선택 압박 서한 준비 — 한국도 대상 (8/14)",
-            body: "로이터 단독보도에 따르면 미 국무부가 6월 서명된 'AI 기회 선언'(Pax Silica 구상) 서명국 35개국에 보내는 서한 초안을 준비 중이다. 중국이 주도하는 경쟁 프로그램에도 가입하면 미국 주도 연합에서 배제하겠다고 경고하는 내용으로, 일본·호주·한국 등 미국 동맹국이 동시에 중국 이니셔티브에도 가입한 상태라 파장이 예상된다. 서한 발송 시점은 확인되지 않았다.",
-            sources: [
-              { name: "Reuters/US News", url: "https://www.usnews.com/news/top-news/articles/2026-08-14/exclusive-us-to-tell-partners-they-must-pick-sides-in-ai-race-with-china" }
-            ]
-          }
-        ],
-        briefs: [
-          { title: "업스테이지가 추론·에이전트 역량을 강화한 '솔라 프로 4'를 공개, 한국 모델 최초로 오픈라우터에 이름을 올렸다 (8/14).", sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608140929331965" }] },
-          { title: "알리바바가 아파치 2.0 라이선스로 277.8억 파라미터 멀티모달 오픈웨이트 모델 'Qwen3.8-27B'를 공개했다 (8/14).", sources: [{ name: "officechai", url: "https://officechai.com/miscellaneous/alibaba-releases-qwen-3-8-27b-beats-muse-glimmer-30b-on-many-benchmarks/" }] },
-          { title: "앤스로픽이 8/14부터 클로드 코드 '오토 모드'를 기본값으로 전환했다 (어제 이어서, 8/11 브리핑 예고분이 실제 적용됨).", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/" }] },
-          { title: "과기정통부가 '대한민국 인공지능 윤리원칙(안)'을 공개하고 8월 중 제정·공표할 계획이다 (8/14).", sources: [{ name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081411354358021" }] }
-        ],
-        note: {
-          title: "확인이 더 필요한 항목",
-          items: [
-            "일요일이라 24시간 창(8/15 06:20~8/16 06:20)만으로는 스페이스X-커서 인수 1건뿐이었다. 나머지는 관심주제.md 절차에 따라 48시간까지 검색을 넓혀 찾았으며 각 항목에 날짜를 표시했다."
-          ]
-        }
-      },
-      {
-        topic: "반도체 / 하드웨어",
-        items: [
-          {
-            title: "美, 재수출 반도체에 25% 관세 행정명령 서명 (8/14)",
-            body: "트럼프 대통령이 미국으로 수입된 후 국내 AI·컴퓨팅 인프라에 쓰이지 않고 제3국으로 재수출되는 반도체에 25% 관세를 부과하는 행정명령에 서명했다. 대만 TSMC 생산 엔비디아 H200 등이 미국을 경유해 재수출되는 물량이 대상이며, 미국 내수용 제품은 제외된다. 백악관은 미국 내 생산 유도를 위한 더 폭넓은 반도체 관세·상쇄 프로그램 도입 가능성도 시사했다.",
-            sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10655963" }]
-          },
-          {
-            title: "백악관 \"환적사기\" 보고서, 경기 반도체벨트를 중국산 우회 통로로 지목 (8/13~14)",
-            body: "백악관 무역제조업정책국(OTMP)이 \"거대한 환적사기\" 보고서를 공개하고 40개국 이상을 중국산 제품 불법 환적 위험국으로 분류했다. 한국은 캐나다·EU·인도·이스라엘·일본·멕시코·대만과 함께 최상위 1유형에 포함됐으며, 경기도 반도체 벨트가 중국산 집적회로의 우회 통로로 쓰여 피닉스·오스틴·포틀랜드·산호세의 미국 내 반도체 생산에 타격을 준다고 적시했다.",
-            sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814000023" }]
-          },
-          {
-            title: "7월 ICT 수출 534억달러 역대 최대, 반도체 178.8%↑ (8/14)",
-            body: "산업통상부·과학기술정보통신부가 '2026년 7월 ICT 수출입 동향'을 발표했다. ICT 수출은 533.6억달러로 역대 7월 중 최대, 전년 대비 140.6% 증가했다. 반도체 수출은 410억2000만달러로 전년 동월 대비 178.8% 증가해 17개월 연속 증가·7개월 연속 세자릿수 증가율을 이어갔다.",
-            sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/14/2026081414462598623" }]
-          }
-        ],
-        briefs: [
-          { title: "기후에너지환경부와 12차 전력수급기본계획 총괄위원회가 반도체 산단 등을 반영한 국가 전력수요 재전망 토론회를 8월 20일 연다고 밝혔다.", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/15/2026081419175078674" }] },
-          { title: "SK하이닉스 미국 낸드 자회사 솔리다임이 나스닥 상장을 저울질하는 것으로 알려졌다. 한국기업거버넌스포럼은 다단계 중복상장이라며 우려를 제기했다 (8/14).", sources: [{ name: "Daum", url: "https://v.daum.net/v/20260814062700595" }] },
-          { title: "중국 SMIC의 2분기 매출이 30.06억달러로 처음 30억달러를 넘었다(전년比 +36.1%) (8/13).", sources: [{ name: "TrendForce", url: "https://www.trendforce.com/news/2026/08/14/news-smic-2q26-gross-margin-hits-25-3-eyes-26-28-in-3q-as-ai-spillover-pricing-momentum-build/" }] },
-          { title: "퓨리오사AI 대표가 한경협 제주하계포럼에서 2030년까지 AI 데이터센터 파이프라인이 100GW에 이를 것이라고 전망했다.", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10811129" }] }
-        ]
-      },
-      {
-        topic: "경제 / 시장",
-        items: [
-          {
-            title: "코스피 2.42% 급등, 5거래일 연속 상승 — 코스닥은 강보합",
-            body: "코스피가 전일 대비 164.60포인트(2.42%) 오른 6,977.94에 마감했다. 장중 7,000선을 15거래일 만에 터치했다가 상승분 일부를 반납했으며, 외국인이 3조 384억원을 순매수하며 상승을 이끌어 5거래일 연속 상승세를 이어갔다. 코스닥은 3.28포인트(0.38%) 오른 864.65에 마감했다.",
-            sources: [
-              { name: "Businesskorea", url: "https://www.businesskorea.co.kr/news/articleView.html?idxno=274884" },
-              { name: "머니투데이", url: "https://www.mt.co.kr/stock/2026/08/14/2026081415441735876" }
-            ]
-          },
-          {
-            title: "뉴욕증시, 3주 연속 주간 상승 이어갔지만 금요일은 소폭 하락",
-            body: "미국 3대 지수가 8/14(금) 다우 -0.20%(53,732.41), S&P500 -0.17%대(7,785.76), 나스닥 -0.28%(26,729.16)로 하락 마감했다. 전날(8/13) S&P500이 7,798.99로 사상 최고 종가를 기록한 데 따른 숨 고르기 성격이며, 주간 기준으로는 S&P500이 3주 연속 상승을 이어갔다.",
-            sources: [
-              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608150522052874" },
-              { name: "Yahoo Finance", url: "https://finance.yahoo.com/markets/live/stock-market-today-friday-august-14-dow-sp-500-nasdaq-102635519.html" }
-            ]
-          },
-          {
-            title: "미국 7월 소매판매 0.6% 감소, 예상 밖 부진",
-            body: "미국 7월 소매판매가 전월 대비 0.6% 감소해 시장 예상치(+0.1%)를 크게 밑돌았다. 지난해 5월(-1.1%) 이후 최대 낙폭으로, 아마존 '프라임데이'가 6월로 앞당겨진 기저효과로 무점포 소매업체 판매가 2.2% 줄어든 영향이 컸다. 소비 둔화 우려로 9월 연준 금리동결 전망이 커졌다.",
-            sources: [
-              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814001244" },
-              { name: "서울경제", url: "https://www.sedaily.com/article/20079778" }
-            ]
-          }
-        ],
-        briefs: [
-          { title: "원/달러 환율이 전일 대비 1.1원(0.08%) 내린 1,418.3원(오후 3시30분 기준)에 마감했다.", sources: [{ name: "뉴시스", url: "https://www.newsis.com/view/NISX20260814_0003749846" }] },
-          { title: "美 7월 생산자물가지수(PPI)가 전월 대비 보합(0.0%, 예상 +0.2% 하회)을 기록했다. 9월 금리인상 가능성은 낮아졌다(교차확인 결과 매체마다 32.4%/34.4%로 소폭 편차).", sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814000037" }] },
-          { title: "美 8월 미시간대 소비자심리지수 예비치가 51.0으로 전월(55.2)·전망치(54.5)를 모두 밑돌았다.", sources: [{ name: "세계일보", url: "https://segye.com/newsView/20260815500490" }] },
-          { title: "WTI(9월물)가 전장 대비 1.42% 오른 배럴당 82.40달러, 브렌트유(10월물)는 1.67% 오른 88.52달러로 마감했다.", sources: [{ name: "국제뉴스", url: "https://www.gukjenews.com/news/articleView.html?idxno=3665464" }] },
-          { title: "미 10년물 국채금리가 4.7%대에서 2007년 이후 최고 수준을 이어가고 있다(8/12 입찰 낙찰금리 4.683%).", sources: [{ name: "The Guru", url: "https://www.theguru.co.kr/news/article.html?no=105733" }] },
-          { title: "국제 금 현물가가 온스당 4,354~4,437달러 구간에서 매체마다 다르게 보도됐다(등락률도 편차, 교차확인 실패).", sources: [{ name: "Vietnam.vn", url: "https://www.vietnam.vn/ko/gia-vang-ngay-14-8-bang-gia-tai-cac-cong-ty-vang-bac-da-quy" }] }
-        ]
-      },
-      {
-        topic: "국내 산업 / 정책",
-        items: [
-          {
-            title: "이재명 대통령, 여한구 통상교섭본부장 전격 경질",
-            body: "이재명 대통령이 8월 15일 0시부로 여한구 산업통상부 통상교섭본부장을 직권면직했다. 정무직 인사의 공무원 신분을 일방적으로 박탈하는 이례적 조치로, 구체적 사유는 공개되지 않았다. 미국의 무역법 301조 조사(쿠팡 관련)와 관세 협상이 진행 중인 시점에 통상 사령탑이 교체돼 배경에 관심이 쏠린다.",
-            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026081531687" }]
-          },
-          {
-            title: "재건축·재개발 이주비 대출 완화, 부동산 PF보증 47.8조로 확대 — 즉시 시행 확정 (8/14)",
-            body: "금융위원장이 8월 14일 '확대 가계부채 점검회의'를 열어 13일 발표한 '부동산 시장 안정 금융종합대책' 후속 조치를 점검했다. 부동산 PF 보증 공급을 26.3조원에서 47.8조원+α로 확대하고, 이주비 대출 담보평가 기준을 기존 자산가치가 아닌 준공 후 신축 자산가치 기준으로 바꿔 8월 31일부터 적용하기로 했다.",
-            sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20260814000349" }]
-          },
-          {
-            title: "금감원, 가계대출 총량 재조정 착수",
-            body: "금융감독원이 은행권·저축은행·상호금융과 함께 올해 하반기 은행별 가계대출 총량 한도 재조정 논의에 들어갔다. 앞서 13일 금융위가 가계부채 증가율 관리 목표를 1.5%에서 3.0%로 상향하고 재건축·재개발 이주비, 신축 입주단지 중도금·잔금대출을 총량 관리 대상에서 제외한 데 따른 후속 조치다. 상반기 대출을 과도하게 늘린 은행은 하반기 총량에서 그만큼 차감하는 페널티를 부여할 방침이다.",
-            sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608150702548403" }]
-          }
-        ],
-        briefs: [
-          { title: "SK하이닉스 통합노조가 사측의 성과급 조건부 주식 지급안에 반발하며 최태원 SK그룹 회장의 직접 결단을 요구했다.", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10842046" }] },
-          { title: "재정경제부 차관보 주재로 홈플러스 관계기관 전담반이 열려 8월 13일부터 67개 점포가 정식 영업을 재개한 상황을 점검했다(누적 5조4000억원 이상 투입) (8/14).", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10841400" }] }
-        ]
-      },
-      {
-        topic: "스타트업 / 투자",
-        items: [
-          {
-            title: "LP성장펀드 출범 — 1조원 규모 민관 합동 벤처펀드 (8/13)",
-            body: "중소벤처기업부와 한국벤처투자가 'LP성장펀드 출범식'을 열었다. 민간 출자자 3400억원에 모태펀드 1700억원을 연계해 약 5100억원을 출자하고, 이를 마중물로 총 1조원 규모의 벤처펀드를 조성할 계획이다. 국민체육진흥기금·공급망안정화기금·한국수출입은행 등 5개 기관이 이번에 처음으로 벤처투자조합에 출자했다.",
-            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202608138723i" }]
-          },
-          {
-            title: "포인투테크놀로지, 시리즈B 후속 투자로 누적 1,920억원 확보 (8/12)",
-            body: "KAIST 배현민 교수 창업기업으로 AI 데이터센터용 인터커넥트를 개발하는 포인투테크놀로지가 Arm, LB인베스트먼트 등이 참여한 시리즈B 후속 투자를 마무리하며 누적 1억3600만달러(약 1,920억원)를 확보했다. 지난 4월 엔비디아 NVentures 투자에 이은 후속 라운드다.",
-            sources: [{ name: "와우테일", url: "https://wowtale.net/2026/08/12/262845/" }]
-          },
-          {
-            title: "CodeRabbit, 시리즈C 1억4,300만달러 유치 — 기업가치 15억달러 (8/12)",
-            body: "AI 코드 리뷰 기업 CodeRabbit이 Atomico·Smash Capital 리드로 1억4,300만달러 시리즈C를 유치했다. 최근 1년간 매출이 5배 이상 늘었고 주당 200만 건 이상의 코드 리뷰를 수행하며 고객 1만7000곳을 확보했다고 밝혔다.",
-            sources: [{ name: "SiliconANGLE", url: "https://siliconangle.com/2026/08/12/coderabbit-bags-143m-help-companies-get-grip-explosion-ai-generated-code/" }]
-          }
-        ],
-        briefs: [
-          { title: "패션 B2B 플랫폼 '신상마켓' 운영사 딜리셔스가 코스닥에 상장했다. 공모가는 희망밴드 상단 7000원이었으나 상장 첫날 26.57% 낮은 5140원에 거래를 마쳤다 (8/12).", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/stock/2026/08/04/2026080417240070007" }] },
-          { title: "전고체 배터리 소재 기업 솔리비스가 230억원 규모 시리즈C 투자를 마무리하며 누적 투자금 652억원을 확보했다 (8/13).", sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20260813100927" }] },
-          { title: "AI 데이터 인프라 기업 그래파이가 170억원 규모 시리즈A를 유치, 누적 투자액이 206억원이 됐다 (8/13).", sources: [{ name: "디일렉", url: "https://www.thelec.kr/news/articleView.html?idxno=60928" }] },
-          { title: "미국 방산 드론 스타트업 Neros가 2억5,000만달러 시리즈C를 유치, 기업가치가 25억달러로 뛰었다 (8/15).", sources: [{ name: "PR Newswire", url: "https://www.prnewswire.com/news-releases/neros-raises-250m-series-c-at-2-5b-valuation-to-scale-autonomous-and-interceptor-drone-programs-302848736.html" }] }
         ]
       }
     ]
