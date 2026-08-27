@@ -633,9 +633,144 @@
 
 const BRIEFINGS = [
   {
+    date: "2026-08-28",
+    weekday: "금",
+    isToday: true,
+    collectedAt: "2026-08-28 06:20 KST",
+    window: "AI·반도체·국내산업 최근 24시간(8/27 06:20~8/28 06:20 KST) · 경제/시장은 8/27(목) 국내 종가·미국 마감 기준 · 스타트업 최근 7일(8/21~8/28)",
+    tally: "검색 약 160건 · 총 28건 — AI 3 / 반도체 5 / 경제 5 / 국내산업 6 / 스타트업 9 (35건 목표 미달, 06:20 시점에 당일 기사가 아직 적었음)",
+    metrics: [
+      { label: "KOSPI",      value: "6,912.37", delta: "+1.53%",  dir: "up",   note: "8/27 종가" },
+      { label: "KOSDAQ",     value: "837.65",   delta: "+1.30%",  dir: "up",   note: "8/27 종가" },
+      { label: "원/달러",     value: "1,380.90", delta: "-3.9원",  dir: "down", note: "8/27 종가" },
+      { label: "국고채 3년",  value: "3.755",    unit: "%",        delta: "-6.1bp", dir: "down", note: "8/27" },
+      { label: "기준금리",    value: "3.00",     unit: "%",        delta: "+25bp", dir: "up", note: "8/27 결정" }
+    ],
+    digest: [
+      "<strong>한국은행이 기준금리를 2.75%에서 3.00%로 인상했다(6대1 의결, 2개월 연속 인상).</strong> 2026년 성장률 전망을 2.6%에서 3.3%로 크게 올려잡았다.",
+      "<strong>엔비디아가 3분기 매출총이익률 가이던스를 74%로, 4분기는 71~72%가 저점이라고 밝혔다.</strong> 같은 날 SK하이닉스는 미국 인디애나 HBM 패키징 공장 착공식을 열었다.",
+      "<strong>엔비디아가 오픈소스 AI 허브 허깅페이스를 129억달러에 인수하기로 합의했다.</strong> 쿠팡은 공정위 현장조사를 네 차례 거부한 끝에 법원으로부터 조사 효력을 9월 23일까지 정지시키는 결정을 받아냈다."
+    ],
+    insight: [
+      { label: "흐름", text: "메모리 슈퍼사이클과 AI 인프라 원가 전가 호의 <strong>10번째 진전</strong>으로 풀이된다. 지난 브리핑들에서 \"다음 분기점\"으로 남겨뒀던 엔비디아 총이익률 수치가 오늘 처음 공개돼(74%→71~72% 전망), 메모리 원가 상승이 빅테크 마진에 실제로 영향을 주기 시작했다는 판단이 가능해진 것으로 보인다." },
+      { label: "뒤집힐 조건", text: "4분기 실제 총이익률이 71~72% 전망보다 더 낮게 나오면 \"원가 전가가 관리 가능한 수준\"이라는 지금의 판단이 흔들릴 수 있다. 한은은 오늘 인상하면서도 점도표 21개 중 16개가 3.00%보다 높게 찍혀 있었는데, 실제 다음 회의에서 추가 인상이 없다면 긴축 강도에 대한 판단도 재평가될 수 있다." },
+      { label: "안 보이는 것", text: "기아 노조 조합원 찬반투표는 오늘(8/28) 오전 6~11시 진행 중이라 이 브리핑 마감 시점까지 결과가 나오지 않았다. 쿠팡-공정위 조사거부 사태에서는 쿠팡 측 반박 논리(사전통지 미비)만 부각됐을 뿐, 공정위의 대응 방침은 아직 뚜렷하게 보도되지 않았다." }
+    ],
+    sections: [
+      {
+        topic: "AI / 테크",
+        items: [
+          {
+            title: "앤스로픽, Claude Cowork에 자체 내장 브라우저 추가",
+            body: "데스크톱 앱(맥·윈도우·리눅스)에 크로미움 기반 브라우저를 내장해, 웹 접속이 필요한 작업이면 사이드패널에서 자동으로 열려 클로드가 탐색·클릭·양식작성을 수행한다. 사용자의 기존 브라우저와는 분리돼 로그인 정보를 공유하지 않는다. 이번 주 중 프로·맥스·팀 요금제로 순차 확대된다.",
+            sources: [{ name: "Claude 공식 블로그", url: "https://claude.com/blog/cowork-built-in-browser" }]
+          },
+          {
+            title: "앤스로픽 IPO, 노동절 이후 증권신고서 공개·9월 중순 투자자설명회 추진 보도",
+            arc: "앤스로픽 — 자체 칩과 IPO · 1주째 4번째 진전 (8/23부터)",
+            body: "로이터가 디인포메이션 보도를 인용해, 앤스로픽이 노동절(9/7) 이후 IPO 증권신고서를 공개하고 9월 중순 투자자설명회를 연다고 전했다. 상장 시점은 9월 말~10월 초로 거론된다. 회사의 공식 확인은 없다.",
+            sources: [{ name: "로이터(TradingView 경유)", url: "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N44O1S2:0-anthropic-plans-to-publicly-unveil-ipo-prospectus-after-labor-day-the-information-reports/" }]
+          }
+        ],
+        briefs: [
+          { title: "퍼플렉시티가 엔비디아 DGX 스파크·RTX GPU 기기에서 완전히 로컬로 동작하는 AI 에이전트 '포터블 컴퓨터'를 공개했다 (8/26).", sources: [{ name: "VentureBeat", url: "https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs" }] }
+        ]
+      },
+      {
+        topic: "반도체 / 하드웨어",
+        items: [
+          {
+            title: "엔비디아, 3분기 매출총이익률 74%로 하향 가이던스 — 4분기 71~72%가 저점 전망",
+            arc: "메모리 슈퍼사이클과 AI 인프라 원가 전가 · 3주째 10번째 진전 (8/11부터)",
+            body: "2분기 매출총이익률 75% 대비 3분기 가이던스를 74%(±0.5%p)로 낮췄다. CFO는 4분기(11월~내년1월)에 71~72%까지 낮아지며 바닥을 찍을 것으로 전망했다 — 메모리 가격 급등이 원가에 반영된 것으로 풀이된다. 3분기 매출 가이던스는 1,058.4억~1,101.6억달러다.",
+            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202608276975g" }]
+          },
+          {
+            title: "SK하이닉스, 美 인디애나 HBM 첨단패키징 공장 착공식 개최",
+            arc: "메모리 슈퍼사이클과 AI 인프라 원가 전가 · 3주째 10번째 진전 (8/11부터)",
+            body: "인디애나주 웨스트라피엣 퍼듀 리서치파크에서 착공식을 열었다. 투자 규모는 국내 매체 38억7,000만달러, 미국 매체 40억달러 이상으로 다르게 보도됐다. CHIPS Act 보조금 4억5,800만달러와 대출 최대 5억달러를 지원받는다. 클린룸 가동은 2028년 하반기 목표다.",
+            sources: [{ name: "CNBC", url: "https://www.cnbc.com/2026/08/27/sk-hynix-ceo-says-indiana-will-be-key-memory-production-base-by-2030.html" }]
+          }
+        ],
+        briefs: [
+          { title: "최태원 SK그룹 회장이 \"여건이 갖춰지면 미국 내 메모리 전공정 팹 건설도 가능\"이라고 언급했다.", arc: "메모리 슈퍼사이클과 AI 인프라 원가 전가 · 3주째 10번째 진전 (8/11부터)", sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10854798" }] },
+          { title: "엔비디아가 H200의 중국 출하를 처음 공식화했다 — 데이터센터 매출의 1% 미만이며, 3분기 가이던스에는 여전히 중국 매출을 0으로 반영했다.", arc: "엔비디아 대중 수출 재개 · 1주째 4번째 진전 (8/21부터)", sources: [{ name: "SCMP", url: "https://www.scmp.com/tech/big-tech/article/3365383/nvidia-ships-first-h200-chips-china-forecasts-no-data-centre-computing-revenue" }] },
+          { title: "젠슨 황 엔비디아 CEO가 TSMC 경영진과 만찬을 가졌다고 보도됐다 — CoWoS 증설 논의 여부는 공식 확인되지 않았다.", sources: [{ name: "이데일리", url: "https://marketin.edaily.co.kr/News/ReadE?newsId=05136486645319688" }] }
+        ]
+      },
+      {
+        topic: "경제 / 시장",
+        items: [
+          {
+            title: "한국은행, 기준금리 2.75%→3.00%로 인상 — 2개월 연속 인상, 성장률 전망 2.6%→3.3% 상향",
+            body: "금융통화위원회가 8/27 기준금리를 0.25%p 올려 3.00%로 결정했다. 표결은 6대1로, 황건일 위원만 동결(2.75% 유지)에 표를 던졌다. 2026년 성장률 전망치는 2.6%에서 3.3%로 크게 상향했고, 물가 전망은 2.7%로 유지했다. 점도표는 21개 중 16개가 3.00%보다 위(3.25% 10개, 3.50% 6개)에 찍혀 추가 인상 가능성을 시사했다.",
+            sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/economy/2026/08/27/2026082709114417494" }]
+          },
+          {
+            title: "코스피 6,912.37(+1.53%), 코스닥 837.65(+1.30%) 마감",
+            arc: "삼성·SK 주주환원 경쟁 · 1주째 5번째 진전 (8/21부터)",
+            body: "엔비디아 호실적 훈풍으로 장중 6,996.12(+2.26%)까지 오르며 7,000 돌파를 노렸으나, 한은 기준금리 인상 발표 이후 상승폭을 반납하며 6,900선에서 마감했다. 반도체보다는 2차전지·전력 관련주가 상승을 주도했다.",
+            sources: [{ name: "아주경제", url: "https://www.ajunews.com/view/20260827153508146" }]
+          }
+        ],
+        briefs: [
+          { title: "원/달러 환율은 1,380.9원에 마감했다(전일 1,384.8원) — 금리인상 발표 직후 1,377원까지 낙폭을 키웠다가 되반등했다.", arc: "원/달러 환율 하락 추세 · 3주째 10번째 진전 (8/11부터)", sources: [{ name: "베타뉴스", url: "https://www.betanews.net/article/view/beta202608270086" }] },
+          { title: "국고채 3년물 금리는 3.755%로 6.1bp 내렸다 — 한은이 기준금리를 올렸음에도 향후 인상 속도조절 가능성에 더 크게 반응했다.", sources: [{ name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608271635254071" }] },
+          { title: "뉴욕증시는 엔비디아 실적발표에 AI 낙관론이 재점화하며 나스닥 26,541.35(+1.57%)·S&P500 7,730.99(+0.72%)·다우 53,569.44(+0.20%)로 8/27(현지) 마감했다.", sources: [{ name: "Yahoo Finance", url: "https://finance.yahoo.com/markets/live/stock-market-today-thursday-august-27-dow-sp-500-nasdaq-082144520.html" }] }
+        ]
+      },
+      {
+        topic: "국내 산업 / 정책",
+        items: [
+          {
+            title: "쿠팡, 공정위 현장조사 네 차례 거부 — 서울고법, 조사 효력 9/23까지 정지",
+            arc: "쿠팡-공정위 조사 갈등 · 1주째 1번째 진전 (8/27부터)",
+            body: "공정위가 '다이내믹 프라이싱' 비용을 납품업체에 전가했다는 의혹으로 8/19~28 현장조사를 시도했으나, 쿠팡은 사전 통지가 미비하다며 네 차례 조사를 거부했다. 서울고법은 8/27 쿠팡의 집행정지 신청을 받아들여 조사 효력을 9/23까지 정지시켰다. 9/2 심문기일이 예정돼 있다.",
+            sources: [{ name: "서울신문", url: "https://www.seoul.co.kr/news/economy/2026/08/27/20260827030001" }]
+          },
+          {
+            title: "현대차, 2030년 영업이익률 목표를 9% 이상으로 상향",
+            body: "CEO 인베스터데이에서 기존 8~9% 목표를 9% 이상으로 올리고, 2030년까지 글로벌 판매 555만대·신차 100종 투입 계획을 발표했다. 다만 신사업 전략 업데이트가 빠져 시장 반응은 부정적이었고, 증권사들이 목표주가를 낮췄다.",
+            sources: [{ name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10852965" }]
+          }
+        ],
+        briefs: [
+          { title: "공정위가 대규모유통업법 시행령 개정안(8/27~10/6 입법예고)과 과징금 부과기준 고시 개정안(8/27~9/16 행정예고)을 냈다.", sources: [{ name: "공정거래위원회", url: "https://www.ftc.go.kr/www/selectBbsNttView.do?pageUnit=10&pageIndex=11&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&searchViolt=15&nttSn=39926&rltnNttSn=40598" }] },
+          { title: "2026년 세제개편안이 8/27 차관회의를 거쳐 9/1 국무회의, 9/3 이전 정기국회 제출 일정으로 진행 중이다.", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026080926147" }] },
+          { title: "기후에너지환경부와 한전이 '산업용 지역 전기요금제' 설계안 공청회를 열었다 — 남부권은 kWh당 13~18원 인하, 수도권 남부는 사실상 동결이다 (8/26).", sources: [{ name: "부산일보", url: "https://www.busan.com/view/busan/view.php?code=2026082611125254268" }] },
+          { title: "(어제 이어서) 재생에너지 220GW 확대 계획을 두고 \"2030년 목표 100GW 중 87GW가 태양광에 편중됐다\"는 비판이 정책포럼에서 나왔다.", sources: [{ name: "아시아투데이", url: "https://www.asiatoday.co.kr/kn/view.php?key=20260827010009548" }] }
+        ]
+      },
+      {
+        topic: "스타트업 / 투자",
+        items: [
+          {
+            title: "엔비디아, 오픈소스 AI 허브 허깅페이스를 129억달러에 인수 합의 (8/27)",
+            body: "(어제 이어서) 3년 전 투자 유치 당시 기업가치 45억달러에서 130억달러 수준으로 오른 값에 인수하기로 합의했다고 복수 매체가 보도했다. 8/23 \"매각 타진\" 단계에서 실제 인수 합의로 진전했다.",
+            sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/world/2026/08/27/2026082717151230561" }]
+          },
+          {
+            title: "국민성장펀드, 원익로보틱스에 3,500억원 지원 승인 (8/27)",
+            body: "국민성장펀드 기금운용심의회가 원익로보틱스의 전북 로봇핸드 생산공장·AX센터 신축 자금 조달을 승인했다. 1,500억원은 첨단전략산업기금이 전환우선주 방식으로 직접 투자하고, 나머지 2,000억원은 민간 지분투자다.",
+            sources: [{ name: "이투데이", url: "https://www.etoday.co.kr/news/view/2619082" }]
+          }
+        ],
+        briefs: [
+          { title: "AI 검색 스타트업 라이너가 500억원 시리즈C를 유치해 누적 투자액 940억원을 달성했다 (8/25).", sources: [{ name: "와우테일", url: "https://wowtale.net/2026/08/25/263388/" }] },
+          { title: "네이버 D2SF가 방산·제조 인프라 스타트업 '포지'에 첫 기관투자로 참여했다 (8/26).", sources: [{ name: "머니투데이", url: "https://www.mt.co.kr/future/2026/08/26/2026082614280911644" }] },
+          { title: "[해외] AI 비서 스타트업 인스팅트가 2억5,000만달러 시리즈B를 유치해 기업가치 25억달러를 인정받았다 (8/26).", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/" }] },
+          { title: "[해외] 스마트링 제조사 오우라가 최대 30억달러 조달, 기업가치 160억달러 이상을 목표로 미국 IPO를 추진한다 (8/24).", sources: [{ name: "Bloomberg", url: "https://finance.yahoo.com/healthcare/articles/oura-targets-3b-us-ipo-220444532.html" }] },
+          { title: "[해외] 스태빌리티AI가 7,600만달러 시리즈B를 유치했다 — 누적 투자액 2억3,200만달러 (8/25).", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/08/25/stability-ai-maker-of-image-generator-stable-diffusion-raises-76-million-in-fresh-funding/" }] },
+          { title: "[해외] 위성 스타트업 뮤온스페이스가 2억5,000만달러 시리즈C를 유치해 기업가치 15억달러를 인정받았다 (8/20~21).", sources: [{ name: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-20/muon-space-raises-250-million-with-google-salesforce-backing" }] },
+          { title: "중기부가 2026년 상반기 창업기업동향을 발표했다 — 전체 창업은 1.5% 감소했으나 기술기반 창업은 14.2% 증가했다 (8/27).", sources: [{ name: "중소벤처기업부", url: "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=1064518&parentSeq=1064518" }] }
+        ]
+      }
+    ]
+  },
+  {
     date: "2026-08-27",
     weekday: "목",
-    isToday: true,
+    isToday: false,
     collectedAt: "2026-08-27 06:20 KST",
     window: "AI·반도체·국내산업 최근 24시간(8/26 06:20~8/27 06:20 KST) · 경제/시장은 8/26(수) 국내 종가·미국 마감 기준 · 스타트업 최근 7일(8/20~8/27)",
     tally: "검색 약 60건 · 총 22건 — AI 4 / 반도체 4 / 경제 5 / 국내산업 5 / 스타트업 4 (35건 목표 미달, 06:20 시점에 당일 기사가 아직 적었음) · 발송된 이메일에서 복구한 회차",
@@ -1754,205 +1889,6 @@ const BRIEFINGS = [
           { title: "항체 신약 개발기업 인제니아테라퓨틱스가 코스닥에 상장했다. 공모가 1만2,000원, 공모 규모 약 600억원이다. (8/18)", sources: [{ name: "이데일리", url: "https://www.edaily.co.kr" }] },
           { title: "크릿벤처스가 아시아 최대 FAST 채널 사업자 뉴 아이디의 시리즈B 라운드에 10억원 규모로 참여했다. (8/14)", sources: [{ name: "베타뉴스", url: "https://www.betanews.net" }] },
           { title: "크릿벤처스가 웹툰 제작사 엑스텐스튜디오에 투자했다(금액 비공개). (8/18)", sources: [{ name: "벤처스퀘어", url: "https://www.venturesquare.net" }] }
-        ]
-      }
-    ]
-  },
-  {
-    date: "2026-08-19",
-    weekday: "수",
-    isToday: false,
-    collectedAt: "2026-08-19 06:34 KST",
-    window: "AI·반도체·경제·국내산업 최근 24시간 (8/18 06:20~8/19 06:20 KST) · 스타트업 최근 7일 (8/12~8/19)",
-    tally: "검색 약 223건 · 총 35건 — AI 4 / 반도체 4 / 경제 8 / 국내산업 7 / 스타트업 12",
-    metrics: [
-      { label: "KOSPI",    value: "6,869.83", delta: "-1.55%", dir: "down", note: "8/18 종가(장중 +3.42%)" },
-      { label: "KOSDAQ",   value: "834.20",   delta: "-3.52%", dir: "down", note: "8/18 종가" },
-      { label: "다우",      value: "53,343.40", delta: "-0.22%", dir: "down", note: "美 8/18 마감" },
-      { label: "S&P500",   value: "7,691.76", delta: "-0.69%", dir: "down", note: "美 8/18 마감" },
-      { label: "나스닥",    value: "26,289.71", delta: "-1.33%", dir: "down", note: "美 8/18 마감" },
-      { label: "원/달러",   value: "1,411.8",  delta: "-1.2원", dir: "down", note: "8/18 종가·10개월래 최저" },
-      { label: "美 국채30년", value: "5.31",  unit: "%",        delta: "+4.43bp", dir: "up", note: "2007년 이후 최고" }
-    ],
-    digest: [
-      "<strong>코스피가 장중 7,216(+3.42%)까지 올랐다가 미 국채 30년물 금리가 2007년 이후 최고치(5.31%)로 치솟고 중동發 지정학 리스크가 겹치며 -1.55%로 급반전 마감했다.</strong> 코스닥도 -3.52% 내렸고, 뉴욕 3대지수도 반도체·저장장치주 낙폭 속에 일제히 하락했다.",
-      "<strong>청와대는 대미 전략투자(2000억 달러) 1호 프로젝트가 반도체라는 보도를 부인했지만, 김정관 산업통상부 장관은 협상 타결을 위해 재차 방미했다.</strong> 같은 날 현대차 노조는 재개한 교섭이 2시간50분 만에 결렬되자 10년 만의 전면파업(8/21)을 예고했다.",
-      "<strong>OpenAI가 청소년 전용 ChatGPT를 출시했고, 과기정통부 '독자 AI 파운데이션 모델' 2차 평가에서 업스테이지·SK텔레콤·LG AI연구원이 3차 진출팀으로 선정돼 엔비디아 B200 GPU 총 1,000장을 지원받는다.</strong>"
-    ],
-    sections: [
-      {
-        topic: "AI / 테크",
-        items: [
-          {
-            title: "OpenAI, 청소년 전용 ChatGPT 'ChatGPT for Teens' 출시",
-            body: "13~17세 대상 서비스를 8월 18일 출시했다. 자살·자해·로맨틱/성적 대화 제한을 강화했고 연령 예측으로 미성년자를 자동 전환한다. 부모 계정 연동, 위기 징후 알림, 단계별 학습유도 'Study Mode'도 함께 추가됐다.",
-            sources: [
-              { name: "TechCrunch", url: "https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/" },
-              { name: "Washington Post", url: "https://www.washingtonpost.com/business/2026/08/18/openai-chatgpt-teens-ai-safety/39739860-9af4-11f1-9cc4-2dc9b46e2d5c_story.html" },
-              { name: "Axios", url: "https://www.axios.com/2026/08/18/openai-chatgpt-for-teens" }
-            ]
-          },
-          {
-            title: "독파모 2차 평가 — 업스테이지·SKT·LG AI연구원 통과, 엔비디아 B200 1,000장 지원",
-            body: "과기정통부 '독자 AI 파운데이션 모델' 2차 평가에서 3개 팀이 3차 진출팀으로 선정됐다(모티프테크놀로지스는 탈락). 1위·4위 간 벤치마크 격차는 4점에 불과했다. 정부는 3차 진출팀에 대한 엔비디아 B200 GPU 지원을 총 1,000장(약 1,200억원 규모)으로 확대하기로 했다.",
-            sources: [
-              { name: "한국경제", url: "https://www.hankyung.com/article/2026081867217" },
-              { name: "바이라인네트워크", url: "https://byline.network/2026/08/0818-7/" },
-              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181108484327" }
-            ]
-          },
-          {
-            title: "'모두의 AI' 사업자 공모 마감 — SKT·KT·카카오 등 6개 컨소시엄, 네이버는 불참",
-            body: "과기정통부의 무료 국민 AI 챗봇 서비스 프로젝트 공모가 8월 18일 마감됐다. SKT·KT·카카오(카나나)·LG유플러스 등 6개 컨소시엄이 제안서를 냈고, 네이버클라우드는 참여하지 않기로 했다. 이달 말 2~3개 사업자를 최종 선정한다.",
-            sources: [
-              { name: "전자신문", url: "https://www.etnews.com/20260818000443" },
-              { name: "머니투데이", url: "https://www.mt.co.kr/tech/2026/08/18/2026081817071479127" }
-            ]
-          }
-        ],
-        briefs: [
-          {
-            title: "Reddit, 게시물을 AI 내레이션 영상으로 자동 변환하는 실험 시작",
-            sources: [ { name: "Dataconomy", url: "https://dataconomy.com/2026/08/18/reddit-tests-ai-voiced-videos-based-on-user-posts/" } ]
-          }
-        ]
-      },
-      {
-        topic: "반도체 / 하드웨어",
-        items: [
-          {
-            title: "한미반도체, 인천에 창사 최대 8공장 부지 확보",
-            body: "머큐리로부터 인천 주안국가산업단지 부지·건물을 매입해 8공장(총투자 1,300억원)을 짓는다. 2027년 2분기 양산 목표로 HBM용 TC본더·하이브리드본더, AI 반도체용 2.5D 패키징 장비를 생산할 계획이며 창사 이래 최대 면적의 공장이다.",
-            sources: [
-              { name: "전자신문", url: "https://www.etnews.com/20260818000377" },
-              { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081813400167201" }
-            ]
-          },
-          {
-            title: "엔비디아, 오픈AI 오하이오 데이터센터에 최대 1,050억달러 잔존가치보증",
-            body: "SB에너지가 짓고 오픈AI가 20년간 독점 임차하는 4.25GW 데이터센터('포츠-파이크 테크놀로지 캠퍼스')에 잔존가치 보증계약을 체결했다. 엔비디아는 SB에너지에 15억달러도 별도 투자한다. 당초 거론된 최대 2,500억달러보다 절반 이상 축소된 규모다.",
-            sources: [
-              { name: "아시아경제", url: "https://www.asiae.co.kr/article/2026081809043643629" },
-              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260817000286" }
-            ]
-          },
-          {
-            title: "\"2028년 HBM 벌써 동났다\" — 빅테크 4곳 요구량, 시장 전망치의 1.7~1.8배",
-            body: "메리츠증권 채널체크에 따르면 브로드컴·엔비디아·구글·AMD의 2028년 HBM 수요 계획을 합치면 950억~1,000억Gb로, 시장조사업체 전망치(약 550억Gb)의 1.7~1.8배에 이른다. CSP들이 2028년 물량을 미리 확보하려는 움직임이 늘고 있다.",
-            sources: [ { name: "아이뉴스24", url: "http://inews24.com/view/1995940" } ]
-          }
-        ],
-        briefs: [
-          {
-            title: "테라파워 CEO, \"SMR이 AI 데이터센터·반도체 산업의 새 전력원\"",
-            sources: [ { name: "한국경제", url: "https://www.hankyung.com/article/2026081878781" } ]
-          }
-        ]
-      },
-      {
-        topic: "경제 / 시장",
-        items: [
-          {
-            title: "코스피, 장중 7,216 돌파 후 6,800대로 급반전 마감",
-            body: "반도체 대장주 강세로 장중 +3.42%까지 올랐으나 미 국채금리 급등과 중동 지정학 리스크가 부각되며 매도세로 전환, -1.55%(6,869.83)로 마감했다. 코스닥도 -3.52%(834.20)로 마쳤다.",
-            sources: [
-              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181620577713" },
-              { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260818001094" }
-            ]
-          },
-          {
-            title: "뉴욕 3대지수 일제 하락, 반도체·저장장치주 낙폭 주도",
-            body: "미·이란 60일 휴전 만료로 지정학 리스크가 재부각되며 유가가 급등, 국채금리를 밀어올려 투자심리가 위축됐다. 웨스턴디지털 -7%, 샌디스크 -9% 등 저장장치·반도체주가 낙폭을 키웠다. 다우 -0.22%(53,343.40), S&P500 -0.69%(7,691.76), 나스닥 -1.33%(26,289.71).",
-            sources: [
-              { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081905420783414" },
-              { name: "게트뉴스", url: "https://www.getnews.co.kr/news/articleView.html?idxno=878104" }
-            ]
-          },
-          {
-            title: "미 국채 30년물 5.31%, 2007년 이후 최고 수준",
-            body: "재정적자 확대에 따른 국채 발행 증가, AI 데이터센터 투자 붐에 따른 기술기업 회사채 발행 급증, 주요 보유국의 미 국채 이탈이 겹치며 초장기 금리가 치솟았다. 미·이란 긴장에 따른 유가 급등도 인플레이션 우려를 키운 요인으로 지목됐다.",
-            sources: [ { name: "헤럴드경제", url: "https://biz.heraldcorp.com/article/10843877" }, { name: "한국경제", url: "https://www.hankyung.com/article/202608185899i" } ]
-          }
-        ],
-        briefs: [
-          { title: "원/달러 환율 1,411.8원 마감, 10개월 만 최저", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181549139565" } ] },
-          { title: "국고채 전 구간 금리 상승, 10년물 4.382%(+6.9bp)", sources: [ { name: "이비엔뉴스", url: "https://www.ebn.co.kr/news/articleView.html?idxno=1720785" } ] },
-          { title: "SK하이닉스·삼성전자, 개장 초반 각각 +7.96%·+3.46% 급등 후 하락 마감", sources: [ { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260818000379" } ] },
-          { title: "국내 금값 상승, KRX 금 99.99%(1g) 199,950원(+0.81%)", sources: [ { name: "중앙이코노미뉴스", url: "https://www.joongangenews.com/news/articleView.html?idxno=540804" } ] },
-          { title: "국제유가(WTI), 매체 간 수치 크게 엇갈려(76달러대 하락설 vs 91달러대 급등설) 확정 못함", sources: [ { name: "이투데이", url: "https://www.etoday.co.kr" } ] }
-        ]
-      },
-      {
-        topic: "국내 산업 / 정책",
-        items: [
-          {
-            title: "청와대, \"대미투자 1호 반도체\" 보도 부인 — 김정관 장관은 재차 방미",
-            body: "청와대는 대미 전략투자(2,000억달러) 1호 후보로 반도체가 논의 중이라는 보도가 \"사실과 다르다\"며 현재는 에너지 분야가 우선 논의되고 있다고 밝혔다. 다만 업계에서는 미국이 삼성전자·SK하이닉스에 미국 내 생산시설 투자를 압박하고 있다는 보도가 이어졌다. 김정관 산업통상부 장관은 \"8말9초\" 발표 목표를 위해 8/16 재차 방미했다.",
-            sources: [
-              { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608180806229620" },
-              { name: "이투데이", url: "https://www.etoday.co.kr/news/view/2615337" }
-            ]
-          },
-          {
-            title: "현대차 노조, 교섭 재개 두 시간 만에 결렬 — 10년 만의 전면파업 예고",
-            body: "노조는 이틀째 예정됐던 파업을 유보하고 오후 재개된 16차 임금협상에 나섰으나, 회사 측 추가 제시안이 없어 약 2시간50분 만에 결렬됐다. 19·20·24·25일 부분파업에 이어 21일 8시간 전면파업과 본사 상경 투쟁을 예고했다. 전면파업은 2016년 이후 10년 만이다.",
-            sources: [
-              { name: "경향신문", url: "https://www.khan.co.kr/article/202608181831001/" },
-              { name: "머니투데이", url: "https://www.mt.co.kr/industry/2026/08/18/2026081818142342330" }
-            ]
-          },
-          {
-            title: "금융당국, 고가주택 주담대 위험가중치 2~4배 상향 추진",
-            body: "금융위가 고액·고DSR 주담대와 고가주택·고LTV 주담대에 기존 대비 2~4배 위험가중치를 부여하는 방안을 내년 1월 시행 목표로 추진 중이다. 사업자대출을 통한 우회 주택매수를 막기 위한 전수점검도 병행한다.",
-            sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181144409336" } ]
-          }
-        ],
-        briefs: [
-          { title: "오세훈-이재명, 국무회의서 재건축 규제완화 두고 충돌", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181634246924" } ] },
-          { title: "노란봉투법 시행 3주, 노사 이의신청 268건으로 전주 대비 약 3배", sources: [ { name: "뉴데일리", url: "https://biz.newdaily.co.kr/site/data/html/2026/08/18/2026081800093.html" } ] },
-          { title: "중형조선 3사(HJ중공업·대한조선·케이조선) 상반기 영업이익 2배 넘게 증가(3,816억원)", sources: [ { name: "뉴스웨이", url: "https://www.newsway.co.kr/news/view?ud=2026081811305700739" } ] },
-          { title: "美 \"관세 쪼개기\"로 한미 15% 상한선 붕괴 우려(발행일 미확정, 48시간 창 적용)", sources: [ { name: "이투데이", url: "https://www.etoday.co.kr/news/view/2615327" } ] }
-        ],
-        note: {
-          title: "확인이 더 필요한 항목",
-          items: [
-            "금융위·금감원 가계대출 30조 배분 첫 실무회의(8/19 개최 예정, 결과 미확인)",
-            "경제부총리 AMCHAM 간담회(8/19 오전 예정, 내용 미확인)"
-          ]
-        }
-      },
-      {
-        topic: "스타트업 / 투자",
-        items: [
-          {
-            title: "포인투테크놀로지, 1,920억원 규모 시리즈B — 엔비디아 전략투자 (8/12)",
-            body: "AI 데이터센터 인터커넥트 기술(e-Tube) 스타트업이 엔비디아·UMC·매브릭실리콘 등으로부터 총 1,920억원 규모 시리즈B를 유치했다. 국내 스타트업에 엔비디아가 전략 투자한 첫 사례로 꼽힌다.",
-            sources: [ { name: "와우테일", url: "https://wowtale.net/2026/08/12/262845/" } ]
-          },
-          {
-            title: "코드래빗, 1억4,300만달러 시리즈C — 밸류에이션 15억달러 (8/12)",
-            body: "AI 코드 리뷰 스타트업 코드래빗이 Atomico·Smash Capital 공동 주도로 시리즈C를 유치했다. BMW i Ventures, Datadog 등이 신규 참여했다.",
-            sources: [ { name: "Businesswire", url: "https://www.businesswire.com/news/home/20260812311754/en/CodeRabbit-Raises-$143-Million-at-$1.5-Billion-Valuation-and-Introduces-Agentic-Change-Management" } ]
-          },
-          {
-            title: "라이드플럭스, 코스닥 상장 예비심사청구 — 국내 1호 레벨4 자율주행 상장 도전 (8/18)",
-            body: "레벨4 자율주행 AI 소프트웨어 기업이 한국거래소에 예비심사청구서를 제출했다고 밝혔다(제출은 8/14). 기술성평가 A·A 등급을 받았다. 주관사는 한국투자증권·우리투자증권.",
-            sources: [
-              { name: "아시아경제", url: "https://www.asiae.co.kr/article/2026081808184381211" },
-              { name: "와우테일", url: "https://wowtale.net/2026/08/18/263087/" }
-            ]
-          }
-        ],
-        briefs: [
-          { title: "딜리셔스(신상마켓), 코스닥 상장 — 공모 154억원, 밴드 최상단 (8/12)", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608080900154898" } ] },
-          { title: "케이앤에스아이앤씨, 코스닥 상장 — 기관경쟁률 938대 1, 첫날 '따블' (8/13)", sources: [ { name: "글로벌이코노믹", url: "https://www.g-enews.com/article/Securities/2026/08/20260813090913100844093b5d4e_1" } ] },
-          { title: "인제니아테라퓨틱스, 코스닥 상장 — 시총 약 6,000억원 예상 (8/18)", sources: [ { name: "이데일리", url: "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02614166645548632" } ] },
-          { title: "네로스, 2억5,000만달러 시리즈C — 자폭드론, 미군 수요로 몸값 3배 (8/12)", sources: [ { name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20260812101705" } ] },
-          { title: "폼에너지, 7억5,000만달러 투자유치 — 철-공기 배터리 (8/14)", sources: [ { name: "와우테일", url: "https://wowtale.net/2026/08/14/262959/" } ] },
-          { title: "딥파인, 100억원 시리즈B — 산업용 AI 에이전트, 누적 180억원 (8/18)", sources: [ { name: "디지털데일리", url: "https://www.ddaily.co.kr/page/view/2026081809221993725" } ] },
-          { title: "뉴 아이디, 시리즈B 유치 — 미디어테크(OTT/FAST) (8/14)", sources: [ { name: "베타뉴스", url: "https://www.betanews.net/article/view/beta202608140013" } ] },
-          { title: "엑스텐스튜디오, 투자유치(금액 비공개) — 웹툰 제작·유통 (8/18)", sources: [ { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202608181106334726" } ] },
-          { title: "수출입은행, 방산·공급망 벤처펀드에 각 200억원 출자 — 첫 벤처투자 진출 (8/13)", sources: [ { name: "뉴스핌", url: "https://www.newspim.com/news/view/20260813001257" } ] }
         ]
       }
     ]
