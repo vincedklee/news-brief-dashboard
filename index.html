@@ -17,189 +17,240 @@
   img, svg { display: block; max-width: 100%; }
   button { font: inherit; color: inherit; }
 </style>
-<style>
-  :root {
-    --ground:   #EDEFF1;
-    --surface:  #FFFFFF;
-    --raise:    #F7F8F9;
-    --ink:      #14181C;
-    --ink-soft: #39424C;
-    --muted:    #5D6773;
-    --faint:    #8B95A0;
-    --hair:     #D8DDE2;
-    --hair-soft:#E6EAEE;
-    --accent:   #9A6410;
-    --accent-bg:#F2E7D4;
-    --up:       #D6304A;
-    --down:     #1F6FD0;
+<!-- 표제용 세리프. CSP가 허용하는 폰트 호스트는 구글 폰트뿐이다.
+     못 받아와도 아래 --display의 시스템 세리프로 떨어진다. -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600&display=swap">
 
-    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+<style>
+  /* ══ 토큰 ══════════════════════════════════════
+     색은 여기서만 정의한다. 컴포넌트는 토큰을 통해서만 색을 참조한다.
+
+     그라운드는 차가운 스톤, 액센트는 따뜻한 브론즈다. 액센트가 따뜻한 쪽에
+     있는 이유는 시세 등락색(상승 빨강 --up / 하락 파랑 --down, 한국 관행)과
+     겹치지 않기 위해서다. 액센트를 빨강·파랑 계열로 바꾸면 지표와 충돌한다. */
+  :root {
+    --ground:   #E8E9EB;
+    --surface:  #FCFCFD;
+    --raise:    #F3F4F6;
+    --ink:      #0E1216;
+    --ink-soft: #333A42;
+    --muted:    #5A636D;
+    --faint:    #7C848D;
+    --hair:     #DBDEE2;
+    --hair-soft:#EAECEF;
+    --accent:   #8A5E14;
+    --accent-bg:#F0E8D8;
+    --up:       #C42A44;
+    --down:     #1D63C4;
+
+    /* 표제용 세리프. 발행물처럼 읽히게 하는 것이 목적이라 표제에만 쓴다 —
+       본문까지 세리프로 깔면 한국어 소자 가독성이 떨어지고 폰트도 무거워진다. */
+    --display: "Noto Serif KR", AppleMyungjo, "Nanum Myeongjo", Batang, 바탕,
+               "Times New Roman", serif;
     --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
             "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-    --rail: 132px;
-    --gap:  32px;
+    --rail: 116px;
+    --gap:  30px;
   }
 
+  /* 뷰어의 테마는 세 상태다 — 명시적 dark, 명시적 light, 그리고 아무것도
+     찍히지 않은 기본(system). 기본 상태는 prefers-color-scheme만으로 갈리므로
+     :root에 라이트 전체를 두고, 아래 두 블록에서 토큰만 다시 정의한다. */
   @media (prefers-color-scheme: dark) {
-    :root {
-      --ground:   #0F1216;
-      --surface:  #161A20;
-      --raise:    #1C2129;
-      --ink:      #E3E7EB;
-      --ink-soft: #C0C7CF;
-      --muted:    #8A94A0;
-      --faint:    #6C7681;
-      --hair:     #252B33;
-      --hair-soft:#1F242B;
-      --accent:   #DFA44C;
-      --accent-bg:#2A2114;
-      --up:       #FF6B7F;
-      --down:     #5FA5F0;
+    :root:not([data-theme="light"]) {
+      --ground:   #0F1114;
+      --surface:  #16191D;
+      --raise:    #1C2026;
+      --ink:      #E7E9EB;
+      --ink-soft: #C0C6CC;
+      --muted:    #8E969E;
+      --faint:    #737B83;
+      --hair:     #262A30;
+      --hair-soft:#1E2228;
+      --accent:   #DCA95E;
+      --accent-bg:#251D11;
+      --up:       #FF7286;
+      --down:     #6FADF5;
     }
   }
 
   :root[data-theme="dark"] {
-    --ground:   #0F1216;
-    --surface:  #161A20;
-    --raise:    #1C2129;
-    --ink:      #E3E7EB;
-    --ink-soft: #C0C7CF;
-    --muted:    #8A94A0;
-    --faint:    #6C7681;
-    --hair:     #252B33;
-    --hair-soft:#1F242B;
-    --accent:   #DFA44C;
-    --accent-bg:#2A2114;
-    --up:       #FF6B7F;
-    --down:     #5FA5F0;
+    --ground:   #0F1114;
+    --surface:  #16191D;
+    --raise:    #1C2026;
+    --ink:      #E7E9EB;
+    --ink-soft: #C0C6CC;
+    --muted:    #8E969E;
+    --faint:    #737B83;
+    --hair:     #262A30;
+    --hair-soft:#1E2228;
+    --accent:   #DCA95E;
+    --accent-bg:#251D11;
+    --up:       #FF7286;
+    --down:     #6FADF5;
   }
 
   :root[data-theme="light"] {
-    --ground:   #EDEFF1;
-    --surface:  #FFFFFF;
-    --raise:    #F7F8F9;
-    --ink:      #14181C;
-    --ink-soft: #39424C;
-    --muted:    #5D6773;
-    --faint:    #8B95A0;
-    --hair:     #D8DDE2;
-    --hair-soft:#E6EAEE;
-    --accent:   #9A6410;
-    --accent-bg:#F2E7D4;
-    --up:       #D6304A;
-    --down:     #1F6FD0;
+    --ground:   #E8E9EB;
+    --surface:  #FCFCFD;
+    --raise:    #F3F4F6;
+    --ink:      #0E1216;
+    --ink-soft: #333A42;
+    --muted:    #5A636D;
+    --faint:    #7C848D;
+    --hair:     #DBDEE2;
+    --hair-soft:#EAECEF;
+    --accent:   #8A5E14;
+    --accent-bg:#F0E8D8;
+    --up:       #C42A44;
+    --down:     #1D63C4;
   }
 
   body {
     background: var(--ground);
     color: var(--ink);
     font-family: var(--sans);
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.68;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
   }
 
   .page {
-    max-width: 1040px;
+    max-width: 1060px;
     margin: 0 auto;
-    padding: 40px 24px 80px;
+    padding: 52px 26px 90px;
   }
 
   a { color: inherit; }
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 1.5px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 1px;
   }
 
-  /* ── masthead ────────────────────────────────── */
+  /* 라벨·수치용 공통 — 페이지 전체에서 이 두 가지만 쓴다 */
+  .stat-label, .mkt-head h2, .mkt-head .asof, .mkt-row .n, .mkt-row .d,
+  .arcs > summary h2, .arcs > summary .tally, .arc-nums, .arc-detail dt,
+  .arc-detail ol li span, .datechip .d, .datechip .w, .chip .count,
+  .daymark .yr, .badge-today, .digest h3, .insight-head h3, .insight dt,
+  .topic-head .n, .briefs-head, .src, .note b, .daymeta, .empty, footer,
+  .spark-foot, .wk-head .range, .wk-block > h3, .wk-moved .p,
+  .wk-metrics .l, .wk-metrics .v, .wk-metrics .d, .wk-watch h4, .arc {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ══ 머리 ══════════════════════════════════════ */
   .masthead {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding-bottom: 22px;
-    border-bottom: 2px solid var(--ink);
+    gap: 12px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--ink);
   }
   .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 11px;
     font-family: var(--mono);
-    font-size: 12.5px;
-    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--accent);
   }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--accent);
+    flex: 0 0 auto;
+  }
   .masthead h1 {
-    font-size: clamp(34px, 5.4vw, 48px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    font-family: var(--display);
+    font-size: clamp(34px, 5vw, 50px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
     text-wrap: balance;
   }
   .masthead .topics {
-    font-size: 16px;
+    font-size: 14.5px;
     color: var(--muted);
+    letter-spacing: 0.005em;
   }
 
-  /* ── stat strip ──────────────────────────────── */
+  /* ══ 지표 스트립 ═══════════════════════════════
+     카드가 아니라 발행물의 데이터 밴드다. 배경·바깥 테두리를 두지 않고
+     위아래 가는 선과 세로 구분선만 쓴다. */
   .strip {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
-    gap: 1px;
-    background: var(--hair);
-    border: 1px solid var(--hair);
-    margin-top: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+    margin-top: 30px;
   }
   .stat {
-    background: var(--surface);
-    padding: 15px 17px;
+    padding: 16px 18px 15px 0;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
+    min-width: 0;
+  }
+  .stat + .stat {
+    border-left: 1px solid var(--hair-soft);
+    padding-left: 18px;
   }
   .stat-label {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.13em;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .stat-value {
     font-family: var(--mono);
-    font-size: 23px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 500;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    color: var(--ink);
   }
-  .stat-value .unit {
-    font-size: 14px;
+  .unit {
+    font-size: 12.5px;
     font-weight: 400;
-    color: var(--muted);
+    color: var(--faint);
     margin-left: 3px;
   }
   .stat-delta {
     font-family: var(--mono);
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-variant-numeric: tabular-nums;
     color: var(--faint);
   }
   .stat-delta.up   { color: var(--up); }
   .stat-delta.down { color: var(--down); }
 
-  /* ── 시장 패널 (환율·유가) ─────────────────────
-     환율·유가는 지표 스트립에서 떼어내 여기서만 보여준다 (renderStrip이 걸러낸다).
-     두 패널은 같은 컴포넌트다 — 대표 지표를 크게 + 7일 추이, 그 아래 나머지 종목.
-     추이 선은 시세 지표이므로 등락색(--up/--down)을 쓴다. 액센트는 맥락 표시용이라
-     여기 쓰지 않는다. */
+  /* ══ 시장 패널 (환율·유가) ══════════════════════
+     여기만 카드다. 나머지 영역은 선과 여백으로 나눈다.
+     추이 선은 시세 지표라 등락색을 쓴다 — 액센트는 맥락 표시용이라 여기 안 쓴다. */
   .markets {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 14px;
-    margin-top: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
   }
   .mkt {
     border: 1px solid var(--hair);
     background: var(--surface);
+    padding: 17px 19px 18px;
     min-width: 0;
   }
   .mkt[hidden] { display: none; }
@@ -207,212 +258,206 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 12px;
-    padding: 11px 17px;
-    border-bottom: 1px solid var(--hair-soft);
+    gap: 14px;
+    margin-bottom: 15px;
   }
   .mkt-head h2 {
-    font-family: var(--mono);
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--ink-soft);
     white-space: nowrap;
   }
   .mkt-head .asof {
-    font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--faint);
     text-align: right;
     min-width: 0;
   }
-  .mkt-body { padding: 15px 17px; }
-  .mkt .unit {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--muted);
-    margin-left: 3px;
-  }
+  .mkt-main .stat-label { font-size: 10.5px; }
   .mkt-main .big {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 4px 10px;
-    margin-top: 3px;
+    gap: 3px 11px;
+    margin-top: 4px;
   }
   .mkt-main .big b {
     font-family: var(--mono);
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 31px;
+    font-weight: 500;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
   }
   .mkt-main .big .d {
     font-family: var(--mono);
-    font-size: 14.5px;
+    font-size: 13.5px;
     font-variant-numeric: tabular-nums;
     color: var(--faint);
   }
   .mkt-main .big .d.up   { color: var(--up); }
   .mkt-main .big .d.down { color: var(--down); }
   .mkt-note {
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.5;
     color: var(--muted);
-    margin-top: 3px;
+    margin-top: 5px;
   }
 
   /* 스파크라인 — 저장된 브리핑에서 만든다. 외부 시세를 부르지 않는다 (CSP).
-     가로축은 회차 순번이 아니라 날짜 간격이다 — 값이 빠진 날이 있어도
-     간격이 그대로 보이게 하려는 것이다. */
-  .spark { margin-top: 13px; max-width: 460px; }
-  .spark svg { width: 100%; height: 58px; display: block; }
+     가로축은 회차 순번이 아니라 날짜 간격이다 — 값이 빠진 날의 간격이 보여야 한다. */
+  .spark { margin-top: 15px; max-width: 440px; }
+  .spark svg { width: 100%; height: 54px; display: block; }
   .spark.up   { color: var(--up); }
   .spark.down { color: var(--down); }
   .spark.flat { color: var(--faint); }
   .spark .line {
     fill: none;
     stroke: currentColor;
-    stroke-width: 2;
+    stroke-width: 1.5;
     stroke-linejoin: round;
     stroke-linecap: round;
     vector-effect: non-scaling-stroke;
   }
-  .spark .area { fill: currentColor; stroke: none; opacity: 0.12; }
+  .spark .area { fill: currentColor; stroke: none; opacity: 0.09; }
   .spark .mark {
     stroke: currentColor;
     stroke-width: 1;
-    stroke-dasharray: 2 3;
-    opacity: 0.6;
+    stroke-dasharray: 1.5 3;
+    opacity: 0.5;
     vector-effect: non-scaling-stroke;
   }
   .spark-foot {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    font-variant-numeric: tabular-nums;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
     color: var(--faint);
-    margin-top: 5px;
+    margin-top: 7px;
   }
 
-  .mkt-rows { margin-top: 14px; border-top: 1px solid var(--hair-soft); }
+  .mkt-rows { margin-top: 16px; border-top: 1px solid var(--hair-soft); }
   .mkt-row {
     display: grid;
     grid-template-columns: 1fr auto auto;
     align-items: baseline;
     gap: 12px;
-    padding: 9px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--hair-soft);
   }
   .mkt-row:last-child { border-bottom: 0; padding-bottom: 0; }
   .mkt-row .n {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
+    font-size: 10.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
     color: var(--faint);
   }
   .mkt-row .v {
     font-family: var(--mono);
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 15.5px;
+    font-weight: 500;
     font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
   }
   .mkt-row .d {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    font-variant-numeric: tabular-nums;
+    font-size: 11.5px;
     color: var(--faint);
-    min-width: 4.6em;
+    min-width: 4.8em;
     text-align: right;
   }
   .mkt-row .d.up   { color: var(--up); }
   .mkt-row .d.down { color: var(--down); }
-  .mkt-empty { color: var(--muted); font-size: 15px; }
+  .mkt-empty { color: var(--muted); font-size: 14.5px; }
 
-  /* ── 흐름 온도계 ─────────────────────────────
-     추적 대장(상태/추적.md)에 적힌 타임라인 날짜를 세어 호별 진전 빈도를 보여준다.
-     새 사실을 만들지 않는다 — 집계일 뿐이라 "그래서 뭐?"의 액센트 배경을 쓰지 않는다.
-     온도는 액센트 농도로만 나타낸다. 등락색(--up/--down)은 시세 전용이라 여기 안 쓴다. */
+  /* ══ 흐름 온도계 ═══════════════════════════════
+     카드가 아니라 목록이다 — 테두리 없이 가는 선 하나로 구분한다.
+     추적 대장의 타임라인 날짜를 센 **집계**지 판단이 아니다. 그래서 판단 층
+     (.insight)의 액센트 배경을 쓰지 않고, 온도는 액센트 농도로만 낸다.
+     등락색(--up/--down)은 시세 전용이라 여기 안 쓴다. */
   .arcs {
-    margin-top: 14px;
-    border: 1px solid var(--hair);
-    background: var(--surface);
+    margin-top: 34px;
+    border-top: 1px solid var(--hair);
   }
   .arcs[hidden] { display: none; }
   .arcs > summary {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 12px;
-    padding: 11px 17px;
+    gap: 14px;
+    padding: 15px 0 13px;
     cursor: pointer;
     list-style: none;
   }
   .arcs > summary::-webkit-details-marker { display: none; }
   .arcs > summary h2 {
-    font-family: var(--mono);
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--ink-soft);
   }
   .arcs > summary .tally {
-    font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--faint);
+    margin-left: auto;
     text-align: right;
   }
   .arcs > summary::after {
-    content: "▸";
+    content: "펼치기";
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
     color: var(--faint);
-    font-size: 11px;
+    border-bottom: 1px solid var(--hair);
+    padding-bottom: 1px;
     flex: 0 0 auto;
+    margin-left: 4px;
   }
-  .arcs[open] > summary::after { content: "▾"; }
-  .arcs > summary:hover h2 { text-decoration: underline; }
+  .arcs[open] > summary::after { content: "접기"; }
+  .arcs > summary:hover h2,
+  .arcs > summary:hover::after { color: var(--accent); }
+  .arcs > summary:hover::after { border-bottom-color: var(--accent); }
 
-  .arcs-body { border-top: 1px solid var(--hair-soft); padding: 4px 17px 14px; }
   .arcs-caveat {
     font-size: 12.5px;
-    line-height: 1.55;
+    line-height: 1.6;
     color: var(--muted);
-    padding: 9px 0 11px;
+    max-width: 74ch;
+    padding-bottom: 14px;
   }
+  .arcs-caveat b { color: var(--ink-soft); font-weight: 600; }
 
   .arc-row { border-top: 1px solid var(--hair-soft); }
   .arc-row > summary {
     display: grid;
-    grid-template-columns: 46px minmax(0, 1fr) auto;
+    grid-template-columns: 54px minmax(0, 1fr) auto;
     align-items: center;
-    gap: 12px;
-    padding: 9px 0;
+    gap: 14px;
+    padding: 11px 0;
     cursor: pointer;
     list-style: none;
   }
   .arc-row > summary::-webkit-details-marker { display: none; }
   .arc-row > summary:hover .arc-name { color: var(--accent); }
 
-  /* 최근 7일 진전 수를 칸으로. 색이 아니라 농도로 온도를 낸다 */
-  .arc-meter { display: flex; gap: 2px; }
+  /* 최근 7일 진전 수. 색이 아니라 농도로 온도를 낸다 */
+  .arc-meter { display: flex; gap: 3px; }
   .arc-meter i {
     flex: 1 1 0;
-    height: 13px;
-    background: var(--hair);
-    border-radius: 1px;
+    height: 6px;
+    background: var(--hair-soft);
   }
   .arc-row.hot     .arc-meter i.on { background: var(--accent); }
-  .arc-row.warm    .arc-meter i.on { background: var(--accent); opacity: 0.55; }
-  .arc-row.cooling .arc-meter i.on { background: var(--faint); opacity: 0.5; }
+  .arc-row.warm    .arc-meter i.on { background: var(--accent); opacity: 0.5; }
+  .arc-row.cooling .arc-meter i.on { background: var(--faint); opacity: 0.45; }
   .arc-row.cold    .arc-meter i.on { background: var(--hair); }
 
   .arc-name {
-    font-size: 15.5px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.45;
     color: var(--ink-soft);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -421,179 +466,55 @@
   }
   .arc-row.cold .arc-name { color: var(--faint); }
   .arc-nums {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-variant-numeric: tabular-nums;
+    font-size: 11.5px;
     color: var(--faint);
     white-space: nowrap;
   }
   .arc-nums b { color: var(--ink-soft); font-weight: 600; }
   .arc-row.cold .arc-nums b { color: var(--faint); }
-  .arc-nums .sep { opacity: 0.4; margin: 0 5px; }
+  .arc-nums .sep { opacity: 0.35; margin: 0 6px; }
 
   .arc-detail {
-    padding: 2px 0 14px 58px;
+    padding: 2px 0 18px 68px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 11px;
   }
   .arc-detail dt {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--faint);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .arc-detail dd {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14.5px;
+    line-height: 1.65;
     color: var(--ink-soft);
-    max-width: 62ch;
+    max-width: 64ch;
   }
-  .arc-detail ol { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .arc-detail ol { list-style: none; display: flex; flex-direction: column; gap: 7px; }
   .arc-detail ol li {
     display: grid;
-    grid-template-columns: 46px 1fr;
-    gap: 8px;
-    font-size: 14.5px;
-    line-height: 1.55;
+    grid-template-columns: 42px 1fr;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.6;
     color: var(--muted);
-    max-width: 66ch;
+    max-width: 68ch;
   }
   .arc-detail ol li span {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-variant-numeric: tabular-nums;
+    font-size: 11px;
     color: var(--faint);
     padding-top: 2px;
   }
 
-  @media (max-width: 720px) {
-    .arc-row > summary { grid-template-columns: 40px minmax(0, 1fr); }
-    .arc-nums { grid-column: 2; }
-    .arc-detail { padding-left: 0; }
-  }
-
-  /* ── 주간 회고 ───────────────────────────────
-     일간 브리핑과 같은 타임라인 자리에 뜨지만, 하루가 아니라 한 주가 단위다.
-     새로 검색해 만든 것이 아니라 그 주 브리핑과 추적 대장을 되짚은 것이다. */
-  .weekly { display: flex; flex-direction: column; gap: 22px; }
-  .wk-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--ink);
-  }
-  .wk-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
-  .wk-head .range {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--faint);
-    font-variant-numeric: tabular-nums;
-  }
-  .wk-block { display: flex; flex-direction: column; gap: 12px; }
-  .wk-block > h3 {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .wk-moved { display: flex; flex-direction: column; }
-  .wk-moved > div {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: baseline;
-    gap: 8px 14px;
-    padding: 11px 0;
-    border-bottom: 1px solid var(--hair-soft);
-  }
-  .wk-moved > div:first-child { border-top: 1px solid var(--hair-soft); }
-  .wk-moved b { font-size: 16px; font-weight: 700; }
-  .wk-moved .p {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--accent);
-    white-space: nowrap;
-  }
-  .wk-moved p {
-    grid-column: 1 / -1;
-    font-size: 15.5px;
-    line-height: 1.62;
-    color: var(--ink-soft);
-    max-width: 64ch;
-  }
-
-  .wk-metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1px;
-    background: var(--hair);
-    border: 1px solid var(--hair);
-  }
-  .wk-metrics > div {
-    background: var(--surface);
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .wk-metrics .l {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--faint);
-  }
-  .wk-metrics .v {
-    font-family: var(--mono);
-    font-size: 15px;
-    font-variant-numeric: tabular-nums;
-    color: var(--ink-soft);
-  }
-  .wk-metrics .v i { color: var(--faint); font-style: normal; margin: 0 4px; }
-  .wk-metrics .d {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    font-variant-numeric: tabular-nums;
-    color: var(--faint);
-  }
-  .wk-metrics .d.up   { color: var(--up); }
-  .wk-metrics .d.down { color: var(--down); }
-
-  .wk-watch { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-  .wk-watch h4 {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin-bottom: 7px;
-  }
-  .wk-watch ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-  .wk-watch li {
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-    padding-left: 14px;
-    position: relative;
-  }
-  .wk-watch li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--faint);
-  }
-
-  /* ── 날짜 메뉴 ───────────────────────────────── */
+  /* ══ 날짜 메뉴 ═════════════════════════════════
+     칩 상자 대신 탭이다. 고른 날짜만 아래 선으로 표시한다. */
   .datenav {
     display: flex;
-    gap: 7px;
-    margin-top: 26px;
-    padding-bottom: 12px;
+    gap: 26px;
+    margin-top: 32px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-width: thin;
@@ -604,159 +525,149 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1px;
-    padding: 8px 15px;
-    border: 1px solid var(--hair);
-    background: var(--surface);
-    color: var(--ink-soft);
+    gap: 2px;
+    padding: 4px 0 11px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    background: none;
+    color: var(--faint);
     cursor: pointer;
     text-align: left;
-    transition: background .13s, color .13s, border-color .13s;
+    transition: color .13s, border-color .13s;
   }
-  .datechip:hover { border-color: var(--faint); }
+  .datechip:hover { color: var(--ink-soft); }
   .datechip[aria-pressed="true"] {
-    background: var(--accent-bg);
-    border-color: var(--accent);
-    color: var(--accent);
+    color: var(--ink);
+    border-bottom-color: var(--accent);
   }
   .datechip .d {
-    font-family: var(--mono);
-    font-size: 16px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    font-weight: 500;
     letter-spacing: -0.01em;
-    line-height: 1.25;
+    line-height: 1.3;
+    color: inherit;
   }
   .datechip .w {
-    font-size: 12.5px;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
     color: var(--faint);
     line-height: 1.3;
   }
   .datechip[aria-pressed="true"] .w { color: var(--accent); }
-  .datechip.all {
-    justify-content: center;
-    padding-right: 18px;
-    padding-left: 18px;
-  }
-  .datechip.all .d { font-family: var(--sans); font-size: 15px; }
+  .datechip.all .d { font-family: var(--sans); font-size: 14.5px; }
 
-  /* ── filters ─────────────────────────────────── */
+  /* ══ 주제 필터 ═════════════════════════════════
+     알약 상자를 걷어내고 글자만 남긴다. 고른 것만 잉크색이 된다. */
   .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin: 18px 0 34px;
+    gap: 8px 22px;
+    margin: 20px 0 44px;
   }
-  /* display:flex가 UA의 [hidden]{display:none}을 이기므로 명시한다 */
   .filters[hidden] { display: none; }
   .chip {
     font-family: var(--sans);
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 500;
-    padding: 7px 16px;
-    border: 1px solid var(--hair);
-    border-radius: 100px;
-    background: var(--surface);
-    color: var(--muted);
+    padding: 2px 0;
+    border: 0;
+    background: none;
+    color: var(--faint);
     cursor: pointer;
-    transition: background .13s, color .13s, border-color .13s;
+    border-bottom: 1px solid transparent;
+    transition: color .13s, border-color .13s;
   }
-  .chip:hover { border-color: var(--faint); color: var(--ink); }
+  .chip:hover { color: var(--ink-soft); }
   .chip[aria-pressed="true"] {
-    background: var(--accent-bg);
-    border-color: var(--accent);
-    color: var(--accent);
-    font-weight: 600;
+    color: var(--ink);
+    border-bottom-color: var(--accent);
   }
   .chip .count {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    opacity: .65;
-    margin-left: 5px;
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: 6px;
+    letter-spacing: 0.04em;
   }
+  .chip[aria-pressed="true"] .count { color: var(--accent); }
 
-  /* ── timeline ────────────────────────────────── */
+  /* ══ 타임라인 ══════════════════════════════════ */
   .timeline { display: flex; flex-direction: column; }
 
   .day {
     display: grid;
     grid-template-columns: var(--rail) 1fr;
     gap: var(--gap);
-    padding: 34px 0;
+    padding: 44px 0;
     border-top: 1px solid var(--hair);
   }
-  .day:first-child { border-top: none; padding-top: 6px; }
+  .day:first-child { border-top: none; padding-top: 0; }
 
   .daymark {
     position: sticky;
-    top: 20px;
+    top: 24px;
     align-self: start;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
   }
   .daymark .md {
-    font-family: var(--mono);
-    font-size: 29px;
+    font-family: var(--display);
+    font-size: 32px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
     line-height: 1;
+    color: var(--ink);
   }
   .daymark .yr {
-    font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: 11px;
     color: var(--faint);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
   }
-  .daymark .wd { font-size: 15px; color: var(--muted); }
+  .daymark .wd { font-size: 13.5px; color: var(--muted); }
   .badge-today {
     align-self: flex-start;
-    margin-top: 5px;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    padding: 3px 8px;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 3px;
-  }
-
-  .daybody { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
-
-  /* 한눈에 보기 */
-  .digest {
-    background: var(--surface);
-    border: 1px solid var(--hair);
-    padding: 20px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-  }
-  .digest h3 {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.15em;
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
+    padding: 3px 0;
     color: var(--accent);
+    border-top: 1px solid var(--accent);
   }
-  .digest ul { display: flex; flex-direction: column; gap: 11px; }
+
+  .daybody { display: flex; flex-direction: column; gap: 34px; min-width: 0; }
+
+  /* 한눈에 보기 — 번호는 중요도 순서를 뜻한다. 장식이 아니다 */
+  .digest { display: flex; flex-direction: column; gap: 15px; }
+  .digest h3 {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .digest ul { display: flex; flex-direction: column; gap: 14px; }
   .digest li {
     list-style: none;
     display: grid;
-    grid-template-columns: 24px 1fr;
-    gap: 4px;
+    grid-template-columns: 30px 1fr;
     font-size: 17px;
-    line-height: 1.62;
+    line-height: 1.66;
     color: var(--ink-soft);
+    max-width: 68ch;
   }
   .digest li::before {
     content: "";
     font-family: var(--mono);
-    font-size: 13.5px;
+    font-size: 11.5px;
     color: var(--faint);
     font-variant-numeric: tabular-nums;
-    padding-top: 3px;
+    padding-top: 5px;
   }
   .digest li:nth-child(1)::before { content: "01"; }
   .digest li:nth-child(2)::before { content: "02"; }
@@ -765,223 +676,349 @@
   .digest li:nth-child(5)::before { content: "05"; }
   .digest strong { font-weight: 700; color: var(--ink); }
 
-  /* 그래서 뭐? — 사실이 아니라 판단. 시각적으로 확실히 구분한다 */
+  /* 그래서 뭐? — 브리핑에서 유일하게 사실이 아닌 층이다.
+     배경·좌측 액센트 바·"사실이 아니라 판단입니다" 문구를 없애지 않는다. */
   .insight {
     background: var(--accent-bg);
-    border: 1px solid var(--hair);
-    border-left: 3px solid var(--accent);
-    padding: 18px 22px;
+    border-left: 2px solid var(--accent);
+    padding: 20px 24px 22px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
   }
   .insight-head {
     display: flex;
     align-items: baseline;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
   }
   .insight-head h3 {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.15em;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
   }
   .insight-head .caveat {
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--muted);
     letter-spacing: 0;
     text-transform: none;
     font-family: var(--sans);
   }
-  .insight dl { display: flex; flex-direction: column; gap: 10px; }
+  .insight dl { display: flex; flex-direction: column; gap: 14px; }
   .insight dt {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
+    font-size: 10.5px;
+    letter-spacing: 0.13em;
     color: var(--muted);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .insight dd {
-    font-size: 16.5px;
-    line-height: 1.66;
+    font-size: 15.5px;
+    line-height: 1.68;
     color: var(--ink-soft);
-    max-width: 64ch;
+    max-width: 66ch;
   }
   .insight strong { font-weight: 700; color: var(--ink); }
 
-  /* 진행 중인 흐름 배지 */
+  /* 진행 중인 흐름 배지 — 지표가 아니라 맥락 표시다 */
   .arc {
     align-self: flex-start;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
     color: var(--accent);
-    background: var(--accent-bg);
-    border: 1px solid var(--hair-soft);
-    padding: 2px 8px;
-    border-radius: 2px;
+    padding: 1px 0;
+    border-bottom: 1px solid var(--hair);
   }
   .arc::before { content: "↳ "; color: var(--faint); }
-  .brief .arc { flex: 0 0 auto; font-size: 11px; padding: 1px 6px; }
+  .brief .arc { flex: 0 0 auto; font-size: 10px; border-bottom: 0; }
 
-  /* 주제 섹션 */
-  .topic { display: flex; flex-direction: column; gap: 14px; }
+  /* ══ 주제 섹션 ═════════════════════════════════ */
+  .topic { display: flex; flex-direction: column; gap: 20px; }
   .topic-head {
     display: flex;
     align-items: baseline;
-    gap: 10px;
-    padding-bottom: 7px;
-    border-bottom: 1px solid var(--hair);
+    gap: 12px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--ink);
   }
   .topic-head h3 {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
   }
   .topic-head .n {
-    font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: 11px;
     color: var(--faint);
-    font-variant-numeric: tabular-nums;
+    margin-left: auto;
+    letter-spacing: 0.06em;
   }
 
-  .item { display: flex; flex-direction: column; gap: 6px; }
+  .item { display: flex; flex-direction: column; gap: 8px; }
   .item h4 {
-    font-size: 19px;
+    font-size: 18.5px;
     font-weight: 700;
-    line-height: 1.44;
-    letter-spacing: -0.014em;
+    line-height: 1.46;
+    letter-spacing: -0.012em;
     text-wrap: pretty;
+    max-width: 58ch;
   }
   .item p {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--ink-soft);
-    line-height: 1.7;
-    max-width: 62ch;
+    line-height: 1.72;
+    max-width: 64ch;
   }
-  .sources { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 2px; }
+  .sources { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 3px; }
   .src {
-    font-family: var(--mono);
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: var(--muted);
     text-decoration: none;
-    border-bottom: 1px solid var(--hair);
-    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
     transition: color .13s, border-color .13s;
   }
   .src::before { content: "→ "; color: var(--faint); }
-  .src:hover { color: var(--accent); border-color: var(--accent); }
+  .src:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* 그 외 — 한 줄 항목 */
   .briefs-head {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.14em;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--faint);
-    margin-top: 6px;
+    margin-top: 8px;
   }
-  .briefs {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid var(--hair-soft);
-  }
+  .briefs { display: flex; flex-direction: column; }
   .brief {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 4px 10px;
-    padding: 9px 0;
+    gap: 3px 12px;
+    padding: 11px 0;
     border-bottom: 1px solid var(--hair-soft);
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15.5px;
+    line-height: 1.62;
     color: var(--ink-soft);
   }
-  .brief > span { flex: 1 1 22ch; min-width: 0; }
-  .brief .src { flex: 0 0 auto; border-bottom: none; }
+  .brief:first-child { border-top: 1px solid var(--hair-soft); }
+  .brief > span { flex: 1 1 24ch; min-width: 0; }
+  .brief .src { flex: 0 0 auto; }
 
   .note {
-    border-left: 2px dashed var(--hair);
-    padding: 2px 0 2px 16px;
-    font-size: 16px;
-    line-height: 1.66;
+    border-left: 1px solid var(--hair);
+    padding: 3px 0 3px 18px;
+    font-size: 14.5px;
+    line-height: 1.68;
     color: var(--muted);
-    max-width: 62ch;
+    max-width: 64ch;
   }
   .note b {
     display: block;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.12em;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--faint);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-weight: 500;
   }
-  .note ul { margin-top: 5px; padding-left: 16px; }
-  .note li { margin-bottom: 4px; }
+  .note ul { margin-top: 6px; padding-left: 16px; }
+  .note li { margin-bottom: 5px; }
 
   .daymeta {
-    font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: 11.5px;
     color: var(--faint);
-    line-height: 1.6;
-    padding-top: 4px;
+    line-height: 1.7;
+    padding-top: 14px;
     border-top: 1px solid var(--hair-soft);
   }
 
   .empty {
-    font-size: 15.5px;
+    font-size: 14px;
     color: var(--faint);
-    padding: 40px 0;
+    padding: 56px 0;
     text-align: center;
-    font-family: var(--mono);
+    letter-spacing: 0.04em;
   }
 
   footer {
-    margin-top: 56px;
-    padding-top: 20px;
+    margin-top: 64px;
+    padding-top: 22px;
     border-top: 1px solid var(--hair);
-    font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: 11.5px;
     color: var(--faint);
-    line-height: 1.7;
+    line-height: 1.8;
   }
   footer .byline {
     display: block;
-    font-size: 14px;
-    letter-spacing: 0.06em;
+    font-family: var(--display);
+    font-size: 15px;
+    letter-spacing: 0.02em;
     color: var(--accent);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  footer code {
+    font-family: var(--mono);
+    color: var(--muted);
   }
 
-  /* ── mobile ──────────────────────────────────── */
+  /* ══ 주간 회고 ═════════════════════════════════
+     일간과 같은 타임라인 자리에 뜨지만 단위가 한 주다.
+     판단 층은 일간과 **같은 .insight 블록**을 쓴다 — 주간이라고 사실과 판단의
+     구분을 느슨하게 하지 않는다. */
+  .weekly { display: flex; flex-direction: column; gap: 26px; }
+  .wk-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .wk-head h2 {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .wk-head .range {
+    font-size: 11.5px;
+    color: var(--faint);
+    letter-spacing: 0.04em;
+  }
+  .wk-block { display: flex; flex-direction: column; gap: 15px; }
+  .wk-block > h3 {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .wk-moved { display: flex; flex-direction: column; }
+  .wk-moved > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 7px 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--hair-soft);
+  }
+  .wk-moved > div:last-child { border-bottom: 0; }
+  .wk-moved b { font-size: 16.5px; font-weight: 700; letter-spacing: -0.01em; }
+  .wk-moved .p {
+    font-size: 11px;
+    color: var(--accent);
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+  .wk-moved p {
+    grid-column: 1 / -1;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 66ch;
+  }
+
+  .wk-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  .wk-metrics > div {
+    padding: 15px 18px 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+  }
+  .wk-metrics > div + div {
+    border-left: 1px solid var(--hair-soft);
+    padding-left: 18px;
+  }
+  .wk-metrics .l {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .wk-metrics .v {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .wk-metrics .v i { color: var(--faint); font-style: normal; margin: 0 5px; }
+  .wk-metrics .d { font-size: 11.5px; color: var(--faint); }
+  .wk-metrics .d.up   { color: var(--up); }
+  .wk-metrics .d.down { color: var(--down); }
+
+  .wk-watch { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .wk-watch h4 {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .wk-watch ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .wk-watch li {
+    font-size: 14.5px;
+    line-height: 1.62;
+    color: var(--ink-soft);
+    padding-left: 15px;
+    position: relative;
+  }
+  .wk-watch li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.68em;
+    width: 7px;
+    height: 1px;
+    background: var(--faint);
+  }
+
+  /* ══ 좁은 화면 ═════════════════════════════════ */
   @media (max-width: 720px) {
-    .page { padding: 28px 18px 60px; }
+    .page { padding: 34px 18px 64px; }
     .day {
       grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 26px 0;
+      gap: 18px;
+      padding: 30px 0;
     }
     .daymark {
       position: static;
       flex-direction: row;
       align-items: baseline;
-      gap: 9px;
+      gap: 10px;
       flex-wrap: wrap;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--ink);
+      padding-bottom: 11px;
+      border-bottom: 1px solid var(--ink);
     }
-    .daymark .md { font-size: 25px; }
-    .badge-today { margin-top: 0; }
-    .item p, .note { max-width: none; }
-    .item h4 { font-size: 18px; }
+    .daymark .md { font-size: 26px; }
+    .badge-today { margin-top: 0; border-top: 0; }
+    .item p, .note, .insight dd, .digest li { max-width: none; }
+    .item h4 { font-size: 17.5px; }
+    .datenav { gap: 18px; }
+    .arc-row > summary { grid-template-columns: 44px minmax(0, 1fr); }
+    .arc-nums { grid-column: 2; }
+    .arc-detail { padding-left: 0; }
+    .stat + .stat { border-left: 0; padding-left: 0; }
+    .wk-metrics > div + div { border-left: 0; padding-left: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; animation: none !important; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .datenav, .filters, .arcs { display: none; }
   }
 </style>
 <style>
