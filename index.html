@@ -28,23 +28,26 @@
   /* ══ 토큰 ══════════════════════════════════════
      색은 여기서만 정의한다. 컴포넌트는 토큰을 통해서만 색을 참조한다.
 
-     그라운드는 차가운 스톤, 액센트는 따뜻한 브론즈다. 액센트가 따뜻한 쪽에
-     있는 이유는 시세 등락색(상승 빨강 --up / 하락 파랑 --down, 한국 관행)과
-     겹치지 않기 위해서다. 액센트를 빨강·파랑 계열로 바꾸면 지표와 충돌한다. */
+     뉴트럴은 **녹색 쪽으로 치우친 회색**, 액센트는 브론즈, 판단 층 배경은
+     아이보리다. 셋이 같은 따뜻한 계열에 있어야 서로 붙는다 — 예전에는 뉴트럴이
+     파랑 쪽이라(본문 글자색이 짙은 슬레이트블루) 아이보리와 부딪혔다.
+
+     액센트가 따뜻한 쪽에 있는 이유는 시세 등락색(상승 빨강 --up / 하락 파랑 --down,
+     한국 관행)과 겹치지 않기 위해서다. --up/--down 자체는 관행이라 건드리지 않는다. */
   :root {
-    --ground:   #E8E9EB;
-    --surface:  #FCFCFD;
-    --raise:    #F3F4F6;
-    --ink:      #0E1216;
-    --ink-soft: #333A42;
-    --muted:    #5A636D;
-    --faint:    #7C848D;
-    --hair:     #DBDEE2;
-    --hair-soft:#EAECEF;
+    --ground:   #E7EAE6;
+    --surface:  #FBFCFA;
+    --raise:    #F1F4F0;
+    --ink:      #131A16;
+    --ink-soft: #35403A;
+    --muted:    #5C665F;
+    --faint:    #7E8880;
+    --hair:     #D7DCD5;
+    --hair-soft:#E8EBE6;
     --accent:   #8A5E14;
-    --accent-bg:#F0E8D8;
+    --accent-bg:#F0E9D8;
     --up:       #C42A44;
-    --down:     #1D63C4;
+    --down:     #1A5F9E;
 
     /* 본문 세리프. 신문처럼 읽히게 하는 것이 목적이다.
        기사에 해당하는 것은 전부 세리프, 네비게이션·라벨·숫자는 산스/모노 —
@@ -64,52 +67,52 @@
      :root에 라이트 전체를 두고, 아래 두 블록에서 토큰만 다시 정의한다. */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ground:   #0F1114;
-      --surface:  #16191D;
-      --raise:    #1C2026;
-      --ink:      #E7E9EB;
-      --ink-soft: #C0C6CC;
-      --muted:    #8E969E;
-      --faint:    #737B83;
-      --hair:     #262A30;
-      --hair-soft:#1E2228;
+      --ground:   #0E120F;
+      --surface:  #151A16;
+      --raise:    #1B211C;
+      --ink:      #E5E9E4;
+      --ink-soft: #BEC6BF;
+      --muted:    #8C958D;
+      --faint:    #737C75;
+      --hair:     #262D27;
+      --hair-soft:#1D231E;
       --accent:   #DCA95E;
-      --accent-bg:#251D11;
+      --accent-bg:#241E11;
       --up:       #FF7286;
-      --down:     #6FADF5;
+      --down:     #6FAEDF;
     }
   }
 
   :root[data-theme="dark"] {
-    --ground:   #0F1114;
-    --surface:  #16191D;
-    --raise:    #1C2026;
-    --ink:      #E7E9EB;
-    --ink-soft: #C0C6CC;
-    --muted:    #8E969E;
-    --faint:    #737B83;
-    --hair:     #262A30;
-    --hair-soft:#1E2228;
+    --ground:   #0E120F;
+    --surface:  #151A16;
+    --raise:    #1B211C;
+    --ink:      #E5E9E4;
+    --ink-soft: #BEC6BF;
+    --muted:    #8C958D;
+    --faint:    #737C75;
+    --hair:     #262D27;
+    --hair-soft:#1D231E;
     --accent:   #DCA95E;
-    --accent-bg:#251D11;
+    --accent-bg:#241E11;
     --up:       #FF7286;
-    --down:     #6FADF5;
+    --down:     #6FAEDF;
   }
 
   :root[data-theme="light"] {
-    --ground:   #E8E9EB;
-    --surface:  #FCFCFD;
-    --raise:    #F3F4F6;
-    --ink:      #0E1216;
-    --ink-soft: #333A42;
-    --muted:    #5A636D;
-    --faint:    #7C848D;
-    --hair:     #DBDEE2;
-    --hair-soft:#EAECEF;
+    --ground:   #E7EAE6;
+    --surface:  #FBFCFA;
+    --raise:    #F1F4F0;
+    --ink:      #131A16;
+    --ink-soft: #35403A;
+    --muted:    #5C665F;
+    --faint:    #7E8880;
+    --hair:     #D7DCD5;
+    --hair-soft:#E8EBE6;
     --accent:   #8A5E14;
-    --accent-bg:#F0E8D8;
+    --accent-bg:#F0E9D8;
     --up:       #C42A44;
-    --down:     #1D63C4;
+    --down:     #1A5F9E;
   }
 
   body {
@@ -328,7 +331,7 @@
     stroke-linecap: round;
     vector-effect: non-scaling-stroke;
   }
-  .spark .area { fill: currentColor; stroke: none; opacity: 0.09; }
+  .spark .area { fill: currentColor; stroke: none; opacity: 0.07; }
   .spark .mark {
     stroke: currentColor;
     stroke-width: 1;
