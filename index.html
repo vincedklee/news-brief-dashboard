@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Morning Briefing</title>
-<meta name="description" content="매일 아침 AI·반도체·경제·국내 산업·스타트업 뉴스를 모아 정리한 브리핑.">
+<meta name="description" content="매일 아침 AI·반도체·경제·국내 산업·SK 그룹·스타트업 뉴스를 모아 정리한 브리핑.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Morning Briefing">
-<meta property="og:description" content="매일 아침 AI·반도체·경제·국내 산업·스타트업 뉴스를 모아 정리한 브리핑.">
+<meta property="og:description" content="매일 아침 AI·반도체·경제·국내 산업·SK 그룹·스타트업 뉴스를 모아 정리한 브리핑.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B0%3C/text%3E%3C/svg%3E">
 <style>
@@ -185,6 +185,155 @@
   }
   .stat-delta.up   { color: var(--up); }
   .stat-delta.down { color: var(--down); }
+
+  /* ── 환율 패널 ───────────────────────────────
+     환율은 지표 스트립에서 떼어내 여기서만 보여준다 (renderStrip이 통화 항목을
+     걸러낸다). 추이 선은 시세 지표이므로 등락색(--up/--down)을 쓴다 —
+     액센트는 맥락 표시용이라 여기 쓰지 않는다. */
+  .fx {
+    margin-top: 14px;
+    border: 1px solid var(--hair);
+    background: var(--surface);
+  }
+  .fx[hidden] { display: none; }
+  .fx-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 17px;
+    border-bottom: 1px solid var(--hair-soft);
+  }
+  .fx-head h2 {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .fx-head .asof {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--faint);
+    text-align: right;
+  }
+  .fx-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 1px;
+    background: var(--hair-soft);
+  }
+  .fx-body.single { grid-template-columns: 1fr; }
+  .fx-main, .fx-rest { background: var(--surface); padding: 15px 17px; }
+  .fx .unit {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 3px;
+  }
+  .fx-main .big {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 3px;
+  }
+  .fx-main .big b {
+    font-family: var(--mono);
+    font-size: 32px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .fx-main .big .d {
+    font-family: var(--mono);
+    font-size: 14.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+  }
+  .fx-main .big .d.up   { color: var(--up); }
+  .fx-main .big .d.down { color: var(--down); }
+  .fx-note {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* 스파크라인 — 저장된 브리핑에서 만든다. 외부 시세를 부르지 않는다 (CSP) */
+  /* 통화가 원/달러 하나뿐인 날은 패널이 1단이라 그래프가 지나치게 옆으로 늘어난다.
+     폭을 묶어 비율을 지킨다. */
+  .spark { margin-top: 13px; max-width: 460px; }
+  .spark svg { width: 100%; height: 58px; display: block; }
+  .spark.up   { color: var(--up); }
+  .spark.down { color: var(--down); }
+  .spark.flat { color: var(--faint); }
+  .spark .line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .spark .area { fill: currentColor; stroke: none; opacity: 0.12; }
+  .spark .mark {
+    stroke: currentColor;
+    stroke-width: 1;
+    stroke-dasharray: 2 3;
+    opacity: 0.6;
+    vector-effect: non-scaling-stroke;
+  }
+  .spark-foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+    margin-top: 5px;
+  }
+
+  .fx-rest { display: flex; flex-direction: column; justify-content: center; }
+  .fx-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: baseline;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--hair-soft);
+  }
+  .fx-row:first-child { padding-top: 0; }
+  .fx-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .fx-row .n {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+  }
+  .fx-row .v {
+    font-family: var(--mono);
+    font-size: 17px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .fx-row .d {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+    min-width: 4.6em;
+    text-align: right;
+  }
+  .fx-row .d.up   { color: var(--up); }
+  .fx-row .d.down { color: var(--down); }
+  .fx-empty { color: var(--muted); font-size: 15px; }
+
+  @media (max-width: 720px) {
+    .fx-body { grid-template-columns: 1fr; }
+  }
 
   /* ── 날짜 메뉴 ───────────────────────────────── */
   .datenav {
@@ -611,10 +760,12 @@
   <header class="masthead">
     <div class="eyebrow">Daily Brief</div>
     <h1>뉴스 브리핑</h1>
-    <div class="topics">AI · 테크 / 반도체 · 하드웨어 / 경제 · 시장 / 국내 산업 · 정책 / 스타트업 · 투자</div>
+    <div class="topics">AI · 테크 / 반도체 · 하드웨어 / 경제 · 시장 / 국내 산업 · 정책 / SK 그룹 / 스타트업 · 투자</div>
   </header>
 
   <div class="strip" id="strip"></div>
+
+  <section class="fx" id="fx" aria-label="환율" hidden></section>
 
   <nav class="datenav" id="dates" aria-label="날짜 선택"></nav>
 
@@ -1466,8 +1617,12 @@ function renderStrip() {
     { label: "누적 일수", value: String(BRIEFINGS.length), unit: "일", delta: "" },
     { label: day ? "이 날 항목" : "누적 항목", value: String(countFor(activeDate, ALL)), unit: "건", delta: "" }
   ];
-  /* 지표는 그 날짜의 것을 보여준다. 지난 날짜를 보면서 오늘 시세를 띄우면 안 된다. */
-  if (shown && shown.metrics) cells.push(...shown.metrics);
+  /* 지표는 그 날짜의 것을 보여준다. 지난 날짜를 보면서 오늘 시세를 띄우면 안 된다.
+     환율은 아래 전용 패널이 맡으므로 여기서 뺀다 — 두 곳에 같은 숫자가 뜨지 않게. */
+  const fxHere = fxOf(shown).rates.length > 0;
+  if (shown && shown.metrics) {
+    cells.push(...shown.metrics.filter((m) => !(fxHere && isFxLabel(m.label))));
+  }
 
   $("strip").innerHTML = cells.map((c) => `
     <div class="stat">
@@ -1475,6 +1630,143 @@ function renderStrip() {
       <span class="stat-value">${esc(c.value)}${c.unit ? `<span class="unit">${esc(c.unit)}</span>` : ""}</span>
       <span class="stat-delta ${c.dir === "up" ? "up" : c.dir === "down" ? "down" : ""}">${esc(c.delta || c.note || "")}</span>
     </div>`).join("");
+}
+
+/* ── 환율 ──────────────────────────────────────────────────
+   환율은 상단 지표 스트립에서 떼어내 전용 패널에서 보여준다.
+   재료는 그날 브리핑의 fx 필드이고, 없으면(fx 필드가 생기기 전 회차)
+   metrics에서 통화 항목을 골라낸다.
+
+   페이지는 자체 완결이라 외부 시세를 불러오지 않는다 (CSP가 fetch를 막는다).
+   숫자는 매일 아침 루틴이 기사에서 확인해 채워 넣는 것이고, 추이 그래프도
+   저장된 브리핑에서만 만든다 — 배열이 7일치로 잘리므로 추이도 7일이다. */
+
+const FX_MAIN = "원/달러";
+
+function isFxLabel(label) {
+  const s = String(label || "");
+  return s.startsWith("원/") || s.replace(/\s+/g, "").startsWith("달러인덱스") || s === "DXY";
+}
+function isFxMain(label) {
+  return String(label || "").startsWith(FX_MAIN);
+}
+
+function fxOf(day) {
+  if (!day) return { asOf: "", rates: [] };
+  if (day.fx && day.fx.rates && day.fx.rates.length) {
+    return { asOf: day.fx.asOf || "", rates: day.fx.rates };
+  }
+  const rates = (day.metrics || []).filter((m) => isFxLabel(m.label));
+  const main = rates.find((m) => isFxMain(m.label));
+  return { asOf: (main && main.note) || "", rates: rates };
+}
+
+/* "1,368.6" → 1368.6. 숫자로 못 읽히면 NaN을 돌려 호출부에서 거른다. */
+function fxNum(v) {
+  const n = parseFloat(String(v).replace(/,/g, "").replace(/[^0-9.\-]/g, ""));
+  return Number.isFinite(n) ? n : NaN;
+}
+
+function fxSeries() {
+  const pts = [];
+  BRIEFINGS.forEach((b) => {
+    const main = fxOf(b).rates.find((m) => isFxMain(m.label));
+    if (!main) return;
+    const v = fxNum(main.value);
+    if (Number.isFinite(v)) pts.push({ date: b.date, v: v });
+  });
+  return pts.reverse();   /* BRIEFINGS는 최신이 앞. 그래프는 왼쪽이 과거다 */
+}
+
+/* 세로로 늘어나는 그래프라 점(circle)은 타원이 된다. 그래서 고른 날짜는
+   원이 아니라 세로 점선으로 표시하고, 선 굵기는 non-scaling-stroke로 지킨다. */
+function renderSpark(pts, markDate) {
+  if (pts.length < 2) return "";
+  const W = 300, H = 58, PAD = 5;
+  const vs = pts.map((p) => p.v);
+  const lo = Math.min.apply(null, vs), hi = Math.max.apply(null, vs);
+  const span = hi - lo || 1;
+  const x = (i) => PAD + (i * (W - PAD * 2)) / (pts.length - 1);
+  const y = (v) => PAD + (H - PAD * 2) * (1 - (v - lo) / span);
+
+  const line = pts.map((p, i) => x(i).toFixed(1) + "," + y(p.v).toFixed(1)).join(" ");
+  const area = PAD + "," + (H - PAD) + " " + line + " " + (W - PAD) + "," + (H - PAD);
+
+  const first = pts[0], last = pts[pts.length - 1];
+  const dir = last.v > first.v ? "up" : last.v < first.v ? "down" : "flat";
+
+  const at = pts.map((p) => p.date).indexOf(markDate);
+  const mark = at >= 0
+    ? `<line class="mark" x1="${x(at).toFixed(1)}" y1="0" x2="${x(at).toFixed(1)}" y2="${H}"></line>`
+    : "";
+
+  const fmt = (n) => n.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  const md = (d) => d.slice(5).replace("-", ".");
+
+  return `
+    <div class="spark ${dir}">
+      <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img"
+           aria-label="${esc(FX_MAIN)} ${pts.length}일 추이 — ${esc(fmt(first.v))}에서 ${esc(fmt(last.v))}">
+        <polygon class="area" points="${area}"></polygon>
+        ${mark}
+        <polyline class="line" points="${line}"></polyline>
+      </svg>
+      <div class="spark-foot">
+        <span>${esc(md(first.date))} ${esc(fmt(first.v))}</span>
+        <span>${pts.length}일 추이</span>
+        <span>${esc(md(last.date))} ${esc(fmt(last.v))}</span>
+      </div>
+    </div>`;
+}
+
+function fxDir(m) {
+  return m.dir === "up" ? "up" : m.dir === "down" ? "down" : "";
+}
+
+function renderFx() {
+  const el = $("fx");
+  if (!el) return;
+
+  const shown = selectedDay() || BRIEFINGS[0];
+  const fx = fxOf(shown);
+  if (!fx.rates.length) { el.hidden = true; el.innerHTML = ""; return; }
+  el.hidden = false;
+
+  const main = fx.rates.filter((m) => isFxMain(m.label))[0];
+  const rest = fx.rates.filter((m) => m !== main);
+
+  const mainBox = main ? `
+    <div class="fx-main">
+      <span class="stat-label">${esc(main.label)}</span>
+      <div class="big">
+        <b>${esc(main.value)}${main.unit ? `<span class="unit">${esc(main.unit)}</span>` : ""}</b>
+        <span class="d ${fxDir(main)}">${esc(main.delta || "")}</span>
+      </div>
+      ${main.note && main.note !== fx.asOf
+        ? `<div class="fx-note">${esc(main.note)}</div>` : ""}
+      ${renderSpark(fxSeries(), shown ? shown.date : "")}
+    </div>`
+    : `<div class="fx-main"><div class="fx-empty">이 날은 ${esc(FX_MAIN)}가 기록되지 않았습니다</div></div>`;
+
+  const restBox = rest.length ? `
+    <div class="fx-rest">
+      ${rest.map((m) => `
+        <div class="fx-row">
+          <span class="n">${esc(m.label)}</span>
+          <span class="v">${esc(m.value)}${m.unit ? `<span class="unit">${esc(m.unit)}</span>` : ""}</span>
+          <span class="d ${fxDir(m)}">${esc(m.delta || m.note || "")}</span>
+        </div>`).join("")}
+    </div>` : "";
+
+  el.innerHTML = `
+    <div class="fx-head">
+      <h2>환율</h2>
+      <span class="asof">${esc(fx.asOf || (shown ? shown.date : ""))}</span>
+    </div>
+    <div class="fx-body${restBox ? "" : " single"}">
+      ${mainBox}
+      ${restBox}
+    </div>`;
 }
 
 function renderDates() {
@@ -1634,6 +1926,7 @@ function renderFoot() {
 
 function render() {
   renderStrip();
+  renderFx();
   renderDates();
   renderFilters();
   renderTimeline();
