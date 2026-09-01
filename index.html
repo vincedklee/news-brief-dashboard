@@ -186,17 +186,24 @@
   .stat-delta.up   { color: var(--up); }
   .stat-delta.down { color: var(--down); }
 
-  /* ── 환율 패널 ───────────────────────────────
-     환율은 지표 스트립에서 떼어내 여기서만 보여준다 (renderStrip이 통화 항목을
-     걸러낸다). 추이 선은 시세 지표이므로 등락색(--up/--down)을 쓴다 —
-     액센트는 맥락 표시용이라 여기 쓰지 않는다. */
-  .fx {
+  /* ── 시장 패널 (환율·유가) ─────────────────────
+     환율·유가는 지표 스트립에서 떼어내 여기서만 보여준다 (renderStrip이 걸러낸다).
+     두 패널은 같은 컴포넌트다 — 대표 지표를 크게 + 7일 추이, 그 아래 나머지 종목.
+     추이 선은 시세 지표이므로 등락색(--up/--down)을 쓴다. 액센트는 맥락 표시용이라
+     여기 쓰지 않는다. */
+  .markets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 14px;
     margin-top: 14px;
+  }
+  .mkt {
     border: 1px solid var(--hair);
     background: var(--surface);
+    min-width: 0;
   }
-  .fx[hidden] { display: none; }
-  .fx-head {
+  .mkt[hidden] { display: none; }
+  .mkt-head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -204,66 +211,62 @@
     padding: 11px 17px;
     border-bottom: 1px solid var(--hair-soft);
   }
-  .fx-head h2 {
+  .mkt-head h2 {
     font-family: var(--mono);
     font-size: 11.5px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
+    white-space: nowrap;
   }
-  .fx-head .asof {
+  .mkt-head .asof {
     font-family: var(--mono);
     font-size: 12px;
     color: var(--faint);
     text-align: right;
+    min-width: 0;
   }
-  .fx-body {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: 1px;
-    background: var(--hair-soft);
-  }
-  .fx-body.single { grid-template-columns: 1fr; }
-  .fx-main, .fx-rest { background: var(--surface); padding: 15px 17px; }
-  .fx .unit {
+  .mkt-body { padding: 15px 17px; }
+  .mkt .unit {
     font-size: 14px;
     font-weight: 400;
     color: var(--muted);
     margin-left: 3px;
   }
-  .fx-main .big {
+  .mkt-main .big {
     display: flex;
     align-items: baseline;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 4px 10px;
     margin-top: 3px;
   }
-  .fx-main .big b {
+  .mkt-main .big b {
     font-family: var(--mono);
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
     line-height: 1.15;
   }
-  .fx-main .big .d {
+  .mkt-main .big .d {
     font-family: var(--mono);
     font-size: 14.5px;
     font-variant-numeric: tabular-nums;
     color: var(--faint);
   }
-  .fx-main .big .d.up   { color: var(--up); }
-  .fx-main .big .d.down { color: var(--down); }
-  .fx-note {
+  .mkt-main .big .d.up   { color: var(--up); }
+  .mkt-main .big .d.down { color: var(--down); }
+  .mkt-note {
     font-size: 13.5px;
     line-height: 1.5;
     color: var(--muted);
     margin-top: 3px;
   }
 
-  /* 스파크라인 — 저장된 브리핑에서 만든다. 외부 시세를 부르지 않는다 (CSP) */
-  /* 통화가 원/달러 하나뿐인 날은 패널이 1단이라 그래프가 지나치게 옆으로 늘어난다.
-     폭을 묶어 비율을 지킨다. */
+  /* 스파크라인 — 저장된 브리핑에서 만든다. 외부 시세를 부르지 않는다 (CSP).
+     가로축은 회차 순번이 아니라 날짜 간격이다 — 값이 빠진 날이 있어도
+     간격이 그대로 보이게 하려는 것이다. */
   .spark { margin-top: 13px; max-width: 460px; }
   .spark svg { width: 100%; height: 58px; display: block; }
   .spark.up   { color: var(--up); }
@@ -296,8 +299,8 @@
     margin-top: 5px;
   }
 
-  .fx-rest { display: flex; flex-direction: column; justify-content: center; }
-  .fx-row {
+  .mkt-rows { margin-top: 14px; border-top: 1px solid var(--hair-soft); }
+  .mkt-row {
     display: grid;
     grid-template-columns: 1fr auto auto;
     align-items: baseline;
@@ -305,21 +308,20 @@
     padding: 9px 0;
     border-bottom: 1px solid var(--hair-soft);
   }
-  .fx-row:first-child { padding-top: 0; }
-  .fx-row:last-child { border-bottom: 0; padding-bottom: 0; }
-  .fx-row .n {
+  .mkt-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .mkt-row .n {
     font-family: var(--mono);
     font-size: 11.5px;
     letter-spacing: 0.1em;
     color: var(--faint);
   }
-  .fx-row .v {
+  .mkt-row .v {
     font-family: var(--mono);
     font-size: 17px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
   }
-  .fx-row .d {
+  .mkt-row .d {
     font-family: var(--mono);
     font-size: 12.5px;
     font-variant-numeric: tabular-nums;
@@ -327,13 +329,9 @@
     min-width: 4.6em;
     text-align: right;
   }
-  .fx-row .d.up   { color: var(--up); }
-  .fx-row .d.down { color: var(--down); }
-  .fx-empty { color: var(--muted); font-size: 15px; }
-
-  @media (max-width: 720px) {
-    .fx-body { grid-template-columns: 1fr; }
-  }
+  .mkt-row .d.up   { color: var(--up); }
+  .mkt-row .d.down { color: var(--down); }
+  .mkt-empty { color: var(--muted); font-size: 15px; }
 
   /* ── 날짜 메뉴 ───────────────────────────────── */
   .datenav {
@@ -765,7 +763,10 @@
 
   <div class="strip" id="strip"></div>
 
-  <section class="fx" id="fx" aria-label="환율" hidden></section>
+  <div class="markets">
+    <section class="mkt" id="fx"  aria-label="환율" hidden></section>
+    <section class="mkt" id="oil" aria-label="유가" hidden></section>
+  </div>
 
   <nav class="datenav" id="dates" aria-label="날짜 선택"></nav>
 
@@ -1618,10 +1619,12 @@ function renderStrip() {
     { label: day ? "이 날 항목" : "누적 항목", value: String(countFor(activeDate, ALL)), unit: "건", delta: "" }
   ];
   /* 지표는 그 날짜의 것을 보여준다. 지난 날짜를 보면서 오늘 시세를 띄우면 안 된다.
-     환율은 아래 전용 패널이 맡으므로 여기서 뺀다 — 두 곳에 같은 숫자가 뜨지 않게. */
-  const fxHere = fxOf(shown).rates.length > 0;
+     환율·유가는 아래 전용 패널이 맡으므로 여기서 뺀다 — 두 곳에 같은 숫자가 뜨지 않게.
+     패널이 안 뜨는 날(그 종목이 없는 날)은 걸러내지 않는다. */
+  const taken = MARKETS.filter((s) => marketOf(shown, s).rows.length);
   if (shown && shown.metrics) {
-    cells.push(...shown.metrics.filter((m) => !(fxHere && isFxLabel(m.label))));
+    cells.push(...shown.metrics.filter(
+      (m) => !taken.some((s) => s.owns(String(m.label || "")))));
   }
 
   $("strip").innerHTML = cells.map((c) => `
@@ -1632,61 +1635,84 @@ function renderStrip() {
     </div>`).join("");
 }
 
-/* ── 환율 ──────────────────────────────────────────────────
-   환율은 상단 지표 스트립에서 떼어내 전용 패널에서 보여준다.
-   재료는 그날 브리핑의 fx 필드이고, 없으면(fx 필드가 생기기 전 회차)
-   metrics에서 통화 항목을 골라낸다.
+/* ── 시장 패널 (환율·유가) ────────────────────────────────
+   환율과 유가는 상단 지표 스트립에서 떼어내 전용 패널에서 보여준다.
+   재료는 그날 브리핑의 fx·oil 필드이고, 없으면(그 필드가 생기기 전 회차)
+   metrics에서 해당 종목을 골라낸다.
 
    페이지는 자체 완결이라 외부 시세를 불러오지 않는다 (CSP가 fetch를 막는다).
    숫자는 매일 아침 루틴이 기사에서 확인해 채워 넣는 것이고, 추이 그래프도
    저장된 브리핑에서만 만든다 — 배열이 7일치로 잘리므로 추이도 7일이다. */
 
-const FX_MAIN = "원/달러";
-
-function isFxLabel(label) {
-  const s = String(label || "");
-  return s.startsWith("원/") || s.replace(/\s+/g, "").startsWith("달러인덱스") || s === "DXY";
-}
-function isFxMain(label) {
-  return String(label || "").startsWith(FX_MAIN);
-}
-
-function fxOf(day) {
-  if (!day) return { asOf: "", rates: [] };
-  if (day.fx && day.fx.rates && day.fx.rates.length) {
-    return { asOf: day.fx.asOf || "", rates: day.fx.rates };
+const MARKETS = [
+  {
+    id: "fx",
+    title: "환율",
+    field: "fx",
+    list: "rates",
+    /* 대표 지표. 이 값으로 추이 그래프를 그린다 */
+    isMain: (s) => s.startsWith("원/달러"),
+    owns: (s) => s.startsWith("원/") || s.replace(/\s+/g, "").startsWith("달러인덱스") || s === "DXY"
+  },
+  {
+    id: "oil",
+    title: "유가",
+    field: "oil",
+    list: "prices",
+    isMain: (s) => /^WTI/i.test(s),
+    owns: (s) => /^(WTI|브렌트|두바이|유가)/i.test(s)
   }
-  const rates = (day.metrics || []).filter((m) => isFxLabel(m.label));
-  const main = rates.find((m) => isFxMain(m.label));
-  return { asOf: (main && main.note) || "", rates: rates };
+];
+
+function marketOf(day, spec) {
+  if (!day) return { asOf: "", rows: [] };
+  const own = day[spec.field];
+  if (own && own[spec.list] && own[spec.list].length) {
+    return { asOf: own.asOf || "", rows: own[spec.list] };
+  }
+  const rows = (day.metrics || []).filter((m) => spec.owns(String(m.label || "")));
+  const main = rows.filter((m) => spec.isMain(String(m.label || "")))[0];
+  return { asOf: (main && main.note) || "", rows: rows };
 }
 
-/* "1,368.6" → 1368.6. 숫자로 못 읽히면 NaN을 돌려 호출부에서 거른다. */
-function fxNum(v) {
+/* "1,368.6" → 1368.6, "$85.76" → 85.76. 숫자로 못 읽히면 NaN을 돌려 호출부에서 거른다. */
+function mktNum(v) {
   const n = parseFloat(String(v).replace(/,/g, "").replace(/[^0-9.\-]/g, ""));
   return Number.isFinite(n) ? n : NaN;
 }
 
-function fxSeries() {
+/* 날짜를 일 단위 정수로. 가로축을 날짜 간격에 비례시키는 데 쓴다 */
+function dayNum(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return Date.UTC(y, m - 1, d) / 86400000;
+}
+
+function mktSeries(spec) {
   const pts = [];
   BRIEFINGS.forEach((b) => {
-    const main = fxOf(b).rates.find((m) => isFxMain(m.label));
+    const main = marketOf(b, spec).rows.filter((m) => spec.isMain(String(m.label || "")))[0];
     if (!main) return;
-    const v = fxNum(main.value);
+    const v = mktNum(main.value);
     if (Number.isFinite(v)) pts.push({ date: b.date, v: v });
   });
   return pts.reverse();   /* BRIEFINGS는 최신이 앞. 그래프는 왼쪽이 과거다 */
 }
 
 /* 세로로 늘어나는 그래프라 점(circle)은 타원이 된다. 그래서 고른 날짜는
-   원이 아니라 세로 점선으로 표시하고, 선 굵기는 non-scaling-stroke로 지킨다. */
-function renderSpark(pts, markDate) {
+   원이 아니라 세로 점선으로 표시하고, 선 굵기는 non-scaling-stroke로 지킨다.
+   가로 위치는 회차 순번이 아니라 날짜다 — 값이 빠진 날의 간격이 보여야 한다. */
+function renderSpark(pts, markDate, label) {
   if (pts.length < 2) return "";
   const W = 300, H = 58, PAD = 5;
+
   const vs = pts.map((p) => p.v);
   const lo = Math.min.apply(null, vs), hi = Math.max.apply(null, vs);
   const span = hi - lo || 1;
-  const x = (i) => PAD + (i * (W - PAD * 2)) / (pts.length - 1);
+
+  const ds = pts.map((p) => dayNum(p.date));
+  const d0 = ds[0], dspan = ds[ds.length - 1] - d0 || 1;
+
+  const x = (i) => PAD + ((ds[i] - d0) / dspan) * (W - PAD * 2);
   const y = (v) => PAD + (H - PAD * 2) * (1 - (v - lo) / span);
 
   const line = pts.map((p, i) => x(i).toFixed(1) + "," + y(p.v).toFixed(1)).join(" ");
@@ -1702,71 +1728,81 @@ function renderSpark(pts, markDate) {
 
   const fmt = (n) => n.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
   const md = (d) => d.slice(5).replace("-", ".");
+  /* 며칠에 걸친 몇 회차인지 같이 적는다. 값이 빠진 날이 있으면 둘이 어긋난다 */
+  const days = dspan + 1;
 
   return `
     <div class="spark ${dir}">
       <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img"
-           aria-label="${esc(FX_MAIN)} ${pts.length}일 추이 — ${esc(fmt(first.v))}에서 ${esc(fmt(last.v))}">
+           aria-label="${esc(label)} ${days}일 추이 — ${esc(fmt(first.v))}에서 ${esc(fmt(last.v))}">
         <polygon class="area" points="${area}"></polygon>
         ${mark}
         <polyline class="line" points="${line}"></polyline>
       </svg>
       <div class="spark-foot">
         <span>${esc(md(first.date))} ${esc(fmt(first.v))}</span>
-        <span>${pts.length}일 추이</span>
+        <span>${days}일 · ${pts.length}회차</span>
         <span>${esc(md(last.date))} ${esc(fmt(last.v))}</span>
       </div>
     </div>`;
 }
 
-function fxDir(m) {
+function mktDir(m) {
   return m.dir === "up" ? "up" : m.dir === "down" ? "down" : "";
 }
 
-function renderFx() {
-  const el = $("fx");
+function mktValue(m) {
+  return `${esc(m.value)}${m.unit ? `<span class="unit">${esc(m.unit)}</span>` : ""}`;
+}
+
+function renderMarket(spec, shown) {
+  const el = $(spec.id);
   if (!el) return;
 
-  const shown = selectedDay() || BRIEFINGS[0];
-  const fx = fxOf(shown);
-  if (!fx.rates.length) { el.hidden = true; el.innerHTML = ""; return; }
+  const data = marketOf(shown, spec);
+  if (!data.rows.length) { el.hidden = true; el.innerHTML = ""; return; }
   el.hidden = false;
 
-  const main = fx.rates.filter((m) => isFxMain(m.label))[0];
-  const rest = fx.rates.filter((m) => m !== main);
+  const main = data.rows.filter((m) => spec.isMain(String(m.label || "")))[0];
+  const rest = data.rows.filter((m) => m !== main);
 
   const mainBox = main ? `
-    <div class="fx-main">
+    <div class="mkt-main">
       <span class="stat-label">${esc(main.label)}</span>
       <div class="big">
-        <b>${esc(main.value)}${main.unit ? `<span class="unit">${esc(main.unit)}</span>` : ""}</b>
-        <span class="d ${fxDir(main)}">${esc(main.delta || "")}</span>
+        <b>${mktValue(main)}</b>
+        <span class="d ${mktDir(main)}">${esc(main.delta || "")}</span>
       </div>
-      ${main.note && main.note !== fx.asOf
-        ? `<div class="fx-note">${esc(main.note)}</div>` : ""}
-      ${renderSpark(fxSeries(), shown ? shown.date : "")}
+      ${main.note && main.note !== data.asOf
+        ? `<div class="mkt-note">${esc(main.note)}</div>` : ""}
+      ${renderSpark(mktSeries(spec), shown ? shown.date : "", main.label)}
     </div>`
-    : `<div class="fx-main"><div class="fx-empty">이 날은 ${esc(FX_MAIN)}가 기록되지 않았습니다</div></div>`;
+    : `<div class="mkt-empty">이 날은 대표 지표가 기록되지 않았습니다</div>`;
 
   const restBox = rest.length ? `
-    <div class="fx-rest">
+    <div class="mkt-rows">
       ${rest.map((m) => `
-        <div class="fx-row">
+        <div class="mkt-row">
           <span class="n">${esc(m.label)}</span>
-          <span class="v">${esc(m.value)}${m.unit ? `<span class="unit">${esc(m.unit)}</span>` : ""}</span>
-          <span class="d ${fxDir(m)}">${esc(m.delta || m.note || "")}</span>
+          <span class="v">${mktValue(m)}</span>
+          <span class="d ${mktDir(m)}">${esc(m.delta || m.note || "")}</span>
         </div>`).join("")}
     </div>` : "";
 
   el.innerHTML = `
-    <div class="fx-head">
-      <h2>환율</h2>
-      <span class="asof">${esc(fx.asOf || (shown ? shown.date : ""))}</span>
+    <div class="mkt-head">
+      <h2>${esc(spec.title)}</h2>
+      <span class="asof">${esc(data.asOf || (shown ? shown.date : ""))}</span>
     </div>
-    <div class="fx-body${restBox ? "" : " single"}">
+    <div class="mkt-body">
       ${mainBox}
       ${restBox}
     </div>`;
+}
+
+function renderMarkets() {
+  const shown = selectedDay() || BRIEFINGS[0];
+  MARKETS.forEach((spec) => renderMarket(spec, shown));
 }
 
 function renderDates() {
@@ -1926,7 +1962,7 @@ function renderFoot() {
 
 function render() {
   renderStrip();
-  renderFx();
+  renderMarkets();
   renderDates();
   renderFilters();
   renderTimeline();
