@@ -333,6 +333,261 @@
   .mkt-row .d.down { color: var(--down); }
   .mkt-empty { color: var(--muted); font-size: 15px; }
 
+  /* ── 흐름 온도계 ─────────────────────────────
+     추적 대장(상태/추적.md)에 적힌 타임라인 날짜를 세어 호별 진전 빈도를 보여준다.
+     새 사실을 만들지 않는다 — 집계일 뿐이라 "그래서 뭐?"의 액센트 배경을 쓰지 않는다.
+     온도는 액센트 농도로만 나타낸다. 등락색(--up/--down)은 시세 전용이라 여기 안 쓴다. */
+  .arcs {
+    margin-top: 14px;
+    border: 1px solid var(--hair);
+    background: var(--surface);
+  }
+  .arcs[hidden] { display: none; }
+  .arcs > summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 17px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .arcs > summary::-webkit-details-marker { display: none; }
+  .arcs > summary h2 {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .arcs > summary .tally {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--faint);
+    text-align: right;
+  }
+  .arcs > summary::after {
+    content: "▸";
+    color: var(--faint);
+    font-size: 11px;
+    flex: 0 0 auto;
+  }
+  .arcs[open] > summary::after { content: "▾"; }
+  .arcs > summary:hover h2 { text-decoration: underline; }
+
+  .arcs-body { border-top: 1px solid var(--hair-soft); padding: 4px 17px 14px; }
+  .arcs-caveat {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    padding: 9px 0 11px;
+  }
+
+  .arc-row { border-top: 1px solid var(--hair-soft); }
+  .arc-row > summary {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .arc-row > summary::-webkit-details-marker { display: none; }
+  .arc-row > summary:hover .arc-name { color: var(--accent); }
+
+  /* 최근 7일 진전 수를 칸으로. 색이 아니라 농도로 온도를 낸다 */
+  .arc-meter { display: flex; gap: 2px; }
+  .arc-meter i {
+    flex: 1 1 0;
+    height: 13px;
+    background: var(--hair);
+    border-radius: 1px;
+  }
+  .arc-row.hot     .arc-meter i.on { background: var(--accent); }
+  .arc-row.warm    .arc-meter i.on { background: var(--accent); opacity: 0.55; }
+  .arc-row.cooling .arc-meter i.on { background: var(--faint); opacity: 0.5; }
+  .arc-row.cold    .arc-meter i.on { background: var(--hair); }
+
+  .arc-name {
+    font-size: 15.5px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color .13s;
+  }
+  .arc-row.cold .arc-name { color: var(--faint); }
+  .arc-nums {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+  .arc-nums b { color: var(--ink-soft); font-weight: 600; }
+  .arc-row.cold .arc-nums b { color: var(--faint); }
+  .arc-nums .sep { opacity: 0.4; margin: 0 5px; }
+
+  .arc-detail {
+    padding: 2px 0 14px 58px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .arc-detail dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    margin-bottom: 2px;
+  }
+  .arc-detail dd {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .arc-detail ol { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .arc-detail ol li {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 8px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 66ch;
+  }
+  .arc-detail ol li span {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+    padding-top: 2px;
+  }
+
+  @media (max-width: 720px) {
+    .arc-row > summary { grid-template-columns: 40px minmax(0, 1fr); }
+    .arc-nums { grid-column: 2; }
+    .arc-detail { padding-left: 0; }
+  }
+
+  /* ── 주간 회고 ───────────────────────────────
+     일간 브리핑과 같은 타임라인 자리에 뜨지만, 하루가 아니라 한 주가 단위다.
+     새로 검색해 만든 것이 아니라 그 주 브리핑과 추적 대장을 되짚은 것이다. */
+  .weekly { display: flex; flex-direction: column; gap: 22px; }
+  .wk-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .wk-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+  .wk-head .range {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .wk-block { display: flex; flex-direction: column; gap: 12px; }
+  .wk-block > h3 {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .wk-moved { display: flex; flex-direction: column; }
+  .wk-moved > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 8px 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--hair-soft);
+  }
+  .wk-moved > div:first-child { border-top: 1px solid var(--hair-soft); }
+  .wk-moved b { font-size: 16px; font-weight: 700; }
+  .wk-moved .p {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .wk-moved p {
+    grid-column: 1 / -1;
+    font-size: 15.5px;
+    line-height: 1.62;
+    color: var(--ink-soft);
+    max-width: 64ch;
+  }
+
+  .wk-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--hair);
+    border: 1px solid var(--hair);
+  }
+  .wk-metrics > div {
+    background: var(--surface);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .wk-metrics .l {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+  }
+  .wk-metrics .v {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-soft);
+  }
+  .wk-metrics .v i { color: var(--faint); font-style: normal; margin: 0 4px; }
+  .wk-metrics .d {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+  }
+  .wk-metrics .d.up   { color: var(--up); }
+  .wk-metrics .d.down { color: var(--down); }
+
+  .wk-watch { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .wk-watch h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 7px;
+  }
+  .wk-watch ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .wk-watch li {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    padding-left: 14px;
+    position: relative;
+  }
+  .wk-watch li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--faint);
+  }
+
   /* ── 날짜 메뉴 ───────────────────────────────── */
   .datenav {
     display: flex;
@@ -392,6 +647,8 @@
     gap: 7px;
     margin: 18px 0 34px;
   }
+  /* display:flex가 UA의 [hidden]{display:none}을 이기므로 명시한다 */
+  .filters[hidden] { display: none; }
   .chip {
     font-family: var(--sans);
     font-size: 15px;
@@ -768,6 +1025,8 @@
     <section class="mkt" id="oil" aria-label="유가" hidden></section>
   </div>
 
+  <details class="arcs" id="arcs" aria-label="진행 중인 흐름" open hidden></details>
+
   <nav class="datenav" id="dates" aria-label="날짜 선택"></nav>
 
   <nav class="filters" id="filters" aria-label="주제 필터"></nav>
@@ -782,6 +1041,218 @@
 /* ══════════════════════════════════════════════════════════
    BRIEFINGS — /brief 실행 시 이 배열에 최신 날짜가 앞에 추가됩니다.
    ══════════════════════════════════════════════════════════ */
+
+/* ARCS-BEGIN — tools/sync_arcs.py가 상태/추적.md에서 만들어 넣습니다. 손으로 고치지 마세요 */
+const ARCS = [
+  {
+    name: "메모리 슈퍼사이클과 AI 인프라 원가 전가",
+    status: "active",
+    since: "2026-08-11", last: "2026-08-27", count: 10,
+    state: "엔비디아가 실적 콜에서 처음으로 매출총이익률 구체 수치를 공개해, 메모리 원가 상승이 실제로 빅테크 마진에 영향을 주기 시작했다는 것이 확인됐다. SK하이닉스는 미국 인디애나에 HBM 첨단패키징 공장을 착공하며 공급망 확장에 나섰다.",
+    next: "4분기 실제 매출총이익률이 71~72% 전망대로 나오는지. 4분기 메모리 계약가 협상 결과.",
+    timeline: [
+      { date: "2026-08-11", text: "낸드 단가 상승이 실적에 반영됐다는 분석" },
+      { date: "2026-08-19", text: "\"2028년 HBM은 이미 동났다\" — 빅테크 4곳 요구량이 시장 전망치의 1.7~1.8배" },
+      { date: "2026-08-21", text: "AI 데이터센터용 eSSD 3분기 계약가 20~25% 추가 상승 전망 (2분기 48~53% 상승에 이어)" },
+      { date: "2026-08-24", text: "서버용 D램이 2분기에만 53~58% 상승 → 엔비디아가 내년 초 출하분부터 AI 서버 가격 15% 이상 인상 통보" },
+      { date: "2026-08-25", text: "엔비디아 AI서버 가격인상 협상 세부조건 확인 — 메모리업체 3분기 협상서 20~30% 제시했으나 실제 계약은 15~20%선에서 정리 / 삼성전자, 파운드리 4나노 수탁가 추가 10~15% 인상 + HBM4 2027년 공급협상 막바지" },
+      { date: "2026-08-27", text: "엔비디아 FY27 2분기 매출 962억달러(전년比 106%↑)·3분기 가이던스 1,080억달러, 중국 매출 0 반영 / PC용 DDR4 8Gb 현물가 8.48달러로 1년 새 5배 이상 상승(8/24 기준)" },
+      { date: "2026-08-27", text: "엔비디아 3분기 매출총이익률 가이던스 74%(2분기 75%서 하향), 4분기 71~72%가 저점 전망 — 메모리 원가·가격인상 영향 첫 수치 확인 / SK하이닉스 美 인디애나 HBM 첨단패키징 공장 착공식(38.7억~40억+달러, 매체별 상이), 2028년 하반기 가동목표, HBM4E 2029년 3분기 양산목표 / SK그룹, 여건되면 美 메모리 전공정 팹 건설도 검토 시사" },
+    ]
+  },
+  {
+    name: "원/달러 환율 하락 추세",
+    status: "active",
+    since: "2026-08-11", last: "2026-08-31", count: 12,
+    state: "8/31 1,368.6원까지 밀리며 13개월래 최저치를 다시 경신, 1,370원선도 이미 하회했다.",
+    next: "1,360원선 방어 여부.",
+    timeline: [
+      { date: "2026-08-11", text: "1,416.0원(야간연장, 유가·달러 강세 배경) → 08-13 1,412.6원" },
+      { date: "2026-08-16", text: "1,418.3원 — 반등" },
+      { date: "2026-08-19", text: "1,411.8원, 10개월 만 최저" },
+      { date: "2026-08-21", text: "1,392.6원 — 10년 5개월 만에 1,400원선 하회, 이틀 연속 1,300원대" },
+      { date: "2026-08-23", text: "1,386.5원 (8/21 종가) — 11개월 만 최저, 주말 거래 없음" },
+      { date: "2026-08-25", text: "1,382.40원 (8/24 15:30 마감, −4.10원) — 11개월래 최저권에서 소폭 더 하락" },
+      { date: "2026-08-26", text: "1,386.10원 (8/25 마감, +3.70원) — 8거래일 만에 반등" },
+      { date: "2026-08-27", text: "1,380.90원 (8/27 마감, −3.9원) — 한은 기준금리 인상 발표 직후 1,377원까지 낙폭 확대했다가 되반등, 하락 추세 재개" },
+      { date: "2026-08-29", text: "1,372.5원 (8/28 마감, −8.4원) — 13개월 만 최저치 재경신, 월말 수출업체 네고 물량·장 막판 커스터디 매도세 영향" },
+      { date: "2026-08-31", text: "1,368.6원 (15:30 기준, −3.9원) — 13개월래 최저 재경신, 월말 네고 물량이 워시 의장 매파 발언·이란 리스크의 강달러 압력 상쇄" },
+    ]
+  },
+  {
+    name: "현대차·기아 임단협과 파업",
+    status: "active",
+    since: "2026-08-19", last: "2026-08-31", count: 9,
+    state: "기아 노사가 8/28 조합원 찬반투표(64.1% 찬성)로 임단협을 최종 가결하며 6년 연속 무분규로 마무리했다. 현대차는 8/31 오늘 조합원 찬반투표를 실시한다 — 결과는 아직 나오지 않았다.",
+    next: "현대차 조합원 찬반투표 가결 여부(오늘 중 발표 예상, 내일 아침 회차에서 확인).",
+    timeline: [
+      { date: "2026-08-19", text: "재개한 교섭이 2시간 50분 만에 결렬, 8/21 전면파업 예고" },
+      { date: "2026-08-21", text: "현대차·기아 노조 전면파업 예고 — 2016년 이후 10년 만" },
+      { date: "2026-08-23", text: "현대차 8시간 전면파업 이후에도 접점 없음, 24~25일 부분파업 예정 / 기아 노조 8월 26~28일 부분파업 결의" },
+      { date: "2026-08-24", text: "현대차 노사, 24일 예정 부분파업 유보하고 임협 교섭 재개" },
+      { date: "2026-08-25", text: "현대차, 24일 교섭서 신규인원 500명 충원 합의(임금쟁점은 미타결) / 기아, 25일 12차 본교섭 진행(26~28일 부분파업 예고 유지)" },
+      { date: "2026-08-25", text: "현대차·기아 동반 임금협상 잠정합의 — 현대차 111일 만(기본급 10만원↑, 성과금 400%+1,270만원), 기아도 동일 수준 잠정합의로 26~28일 예고 부분파업 철회. 파업으로 인한 완성차 출하차질 약 5만5,000대·매출손실 2조3,000억원 이상 추산" },
+      { date: "2026-08-27", text: "현대차, CEO 인베스터데이서 2030년 영업이익률 목표 8~9%→9%이상 상향, 총주주환원율 35%이상 제시 — 신사업 전략 부재로 증권사 목표주가는 하향 / 기아 조합원 찬반투표 8/28 오전 6~11시 진행" },
+      { date: "2026-08-29", text: "기아 임단협 조합원 투표 가결(임금협상안 64.1%·단체협약안 63.1% 찬성, 91% 투표), 6년 연속 무분규 확정. 노사는 8/31 광명 오토랜드 조인식 예정" },
+      { date: "2026-08-31", text: "현대차 조합원 찬반투표 실시(오늘) — 이 브리핑 작성 시점(이른 아침)에는 결과 미확인" },
+    ]
+  },
+  {
+    name: "삼성·SK 주주환원 경쟁",
+    status: "active",
+    since: "2026-08-21", last: "2026-08-31", count: 7,
+    state: "삼성전자·SK하이닉스가 8/31 자사주 대량 매입(각 200만주·65만주)을 공시하며 예고 이후 처음으로 실제 매수 집행 단계에 들어갔다. 삼성전자 자사주 환원 규모는 여전히 미확정이다.",
+    next: "150조와 110조의 차이가 무엇인지(기간·범위) 공시로 확인되는지. 자사주 매입이 실제 소각으로 이어지는지.",
+    timeline: [
+      { date: "2026-08-21", text: "삼성전자 최대 150조원대 주주환원 계획 + SK하이닉스 40조원 자사주 매입·소각(국내 상장사 최대) → 코스피 5.89% 급등 6,852.58, 올해 24번째 매수 사이드카" },
+      { date: "2026-08-23", text: "삼성전자 이사회, 올해 주주환원 최대 110조원 의결 — 예고치(150조)보다 낮은 수준에서 구체화" },
+      { date: "2026-08-25", text: "삼성전자 8.69%↓, 코스피 3.12%↓ 6,696.96 — 110조 의결이 예고치(150조)에 못미쳐 실망 매물, 외국인 3.68조·기관 1.29조 순매도" },
+      { date: "2026-08-26", text: "코스피 장중 -4.30%까지 급락했다가 0.68%↑ 6,742.74로 반등 마감(8/25 종가). 삼성전자 보합·SK하이닉스 +0.42%로 급락분 되돌림" },
+      { date: "2026-08-27", text: "코스피 6,912.37(+1.53%) 마감 — 엔비디아 훈풍으로 장중 6,996.12(+2.26%)까지 올랐으나 한은 기준금리 인상 발표 후 상승폭 반납. 반도체보다 2차전지·전력주가 상승 주도" },
+      { date: "2026-08-29", text: "코스피 6,788.88(-1.79%) 마감(8/28 종가) — 워시 연준의장 매파적 잭슨홀 연설을 앞둔 관망세 속 외국인 1조7,560억·기관 2,840억 순매도, 삼성전자·SK하이닉스에 매물 집중" },
+      { date: "2026-08-31", text: "삼성전자·SK하이닉스 자사주 각 200만주·65만주 장내매수 공시, 각각 +1.17%·+1.27% 마감. 코스피 6,820.02(+0.46%) 방어" },
+    ]
+  },
+  {
+    name: "국가 AI 파운데이션 모델과 '모두의 AI'",
+    status: "active",
+    since: "2026-08-16", last: "2026-08-28", count: 7,
+    state: "'모두의 AI' 최종 사업자로 SKT·카카오·KT 3개 컨소시엄이 확정됐다. 네이버는 독자 파운데이션 모델과 '모두의 AI' 양쪽 모두에서 계속 빠져 있다.",
+    next: "9월 베타 서비스 실제 공개 여부. 네이버가 계속 빠져 있는 이유가 드러나는지.",
+    timeline: [
+      { date: "2026-08-16", text: "독자 AI 파운데이션 모델 1차 평가 — LG·SKT·업스테이지 진출, 네이버·NC 탈락" },
+      { date: "2026-08-19", text: "2차 평가 통과 3팀(업스테이지·SKT·LG AI연구원), 엔비디아 B200 총 1,000장 지원 / '모두의 AI' 공모 마감 — 6개 컨소시엄, 네이버 불참" },
+      { date: "2026-08-21", text: "'모두의 AI' 카카오·통신사 컨소시엄 경쟁 구도" },
+      { date: "2026-08-23", text: "과기정통부 사업설명회 — 8월 중 사업자 선정, 12월 말 전 국민 정식 서비스 목표 재확인" },
+      { date: "2026-08-25", text: "'모두의 AI' 6개 컨소시엄 중 서류평가에서 MKD 탈락, 5곳(SKT·KT·카카오·이스트소프트·제논) 8/27 발표평가(PT) 진출" },
+      { date: "2026-08-27", text: "5개 컨소시엄 발표평가(PT) 진행 — 최종 사업자 발표는 8월 말 예상" },
+      { date: "2026-08-28", text: "SKT·카카오·KT 3개 컨소시엄 최종 선정, 이스트소프트·MKD·제논 탈락. 카카오 컨소시엄엔 LG유플러스·LG AI연구원 등 14곳 참여. 정부 올해 엔비디아 B200 512장 지원, 9월 베타 공개·연내 정식서비스 목표" },
+    ]
+  },
+  {
+    name: "대미 통상 — 2,000억 달러 전략투자와 반도체 관세",
+    status: "active",
+    since: "2026-08-16", last: "2026-08-25", count: 5,
+    state: "관세 협상이 타결되지 않은 채 장관급 방미가 반복되고 있고, 1호 프로젝트가 반도체라는 보도는 청와대가 부인했다.",
+    next: "협상 타결 발표 또는 1호 프로젝트 공식 확정. 반도체 관세가 실제 부과되는 시점.",
+    timeline: [
+      { date: "2026-08-16", text: "미국, 재수출 반도체에 25% 관세" },
+      { date: "2026-08-19", text: "청와대, 대미 전략투자(2,000억 달러) 1호 프로젝트 반도체설 부인 / 김정관 산업통상부 장관 재차 방미" },
+      { date: "2026-08-21", text: "\"관세 쪼개기\"로 한미 15% 상한선이 무너질 수 있다는 우려 (발행일 미확정)" },
+      { date: "2026-08-23", text: "8월 1~20일 반도체 수출 260억 달러, 수출 비중 47.2%로 역대 최고" },
+      { date: "2026-08-25", text: "김정관 산업통상부 장관, 1호 프로젝트를 \"8월말~9월초 목표로 협상 중\"이라 재확인 — 러트닉 美상무장관이 삼성전자·SK하이닉스를 직접 거론했다는 보도(보도 시점 특정 못함)" },
+    ]
+  },
+  {
+    name: "앤스로픽 — 자체 칩과 IPO",
+    status: "active",
+    since: "2026-08-23", last: "2026-08-27", count: 4,
+    state: "IPO 준비가 구체화되고 있다는 보도가 이어진다 — 노동절(9/7) 이후 증권신고서 공개, 9월 중순 투자자설명회 예정이라는 보도다. 여전히 회사 공식 확인은 없다.",
+    next: "공식 S-1 제출이나 증권신고서 실제 공개 여부. 자체 칩의 파운드리 파트너가 드러나는지.",
+    timeline: [
+      { date: "2026-08-23", text: "구글 TPU 개발 주역 영입 — 자체 AI 반도체 개발 속도" },
+      { date: "2026-08-24", text: "최대 2조 달러 밸류에이션 목표로 10월 IPO 추진 보도 (실현 시 역대 최대 규모)" },
+      { date: "2026-08-25", text: "최근 분기 매출 115억달러·연환산 650억달러 수준 보도 (10월 상장·2조달러 밸류는 여전히 미확인)" },
+      { date: "2026-08-27", text: "노동절 이후 IPO 증권신고서 공개·9월 중순 투자자설명회 예정 보도(로이터/디인포메이션 인용), 상장시점 9월말~10월초 거론, CFO 비공식 투자자 브리핑 진행중" },
+    ]
+  },
+  {
+    name: "엔비디아 대중 수출 재개",
+    status: "active",
+    since: "2026-08-21", last: "2026-08-27", count: 4,
+    state: "H200의 중국 출하가 실적 콜에서 처음 공식화됐다(매출 반영은 미미). 중국 전용 칩 관련해서는 여전히 3분기 가이던스에 중국 매출을 0으로 반영하고 있다. 리벨리온 인수 협상은 초기 단계에서 진전이 없다.",
+    next: "미 상무부의 공식 라이선스 내용. 중국 전용 칩의 실물 출하 확인. 리벨리온 건의 사실 여부.",
+    timeline: [
+      { date: "2026-08-21", text: "H200 중국 본토 반입 일부 승인 — 바이트댄스·텐센트 각 약 1만 개 / 중국 전용 AI 칩 연내 소량 출하 계획 보도, 회사 부인" },
+      { date: "2026-08-24", text: "엔비디아, 국내 AI 반도체 스타트업 리벨리온에 인수·투자·제휴 타진 보도 (8/21)" },
+      { date: "2026-08-25", text: "리벨리온 몸값 약 3조원 수준으로 거론, 인수·투자·제휴 3개 옵션 초기 협의 지속(여전히 초기 단계)" },
+      { date: "2026-08-27", text: "엔비디아, H200 중국 출하 첫 공식화 — 데이터센터 매출의 1% 미만, 초과재고 충당금 4억달러 인식. 3분기 가이던스엔 중국 매출 여전히 0 반영. 리벨리온 건은 새 진전 없음" },
+    ]
+  },
+  {
+    name: "쿠팡-공정위 조사 갈등",
+    status: "active",
+    since: "2026-08-27", last: "2026-08-27", count: 1,
+    state: "공정위가 '다이내믹 프라이싱' 비용 전가 의혹으로 현장조사를 시도했으나 쿠팡이 네 차례 거부했고, 서울고법이 쿠팡의 집행정지 신청을 받아들여 조사 효력을 9/23까지 정지시켰다.",
+    next: "9/2 서울고법 심문기일. 조사효력정지 이후 공정위·쿠팡 각각의 대응.",
+    timeline: [
+      { date: "2026-08-27", text: "공정위 현장조사(8/19~28) 4차례 거부, 서울고법 집행정지 인용(조사효력 9/23까지 정지, 9/2 심문기일)" },
+    ]
+  },
+  {
+    name: "미국-이란 충돌 재개와 유가 급등",
+    status: "active",
+    since: "2026-08-31", last: "2026-08-31", count: 1,
+    state: "미군이 8/30(현지시간) 호르무즈 해협 라라크섬의 이란 로켓 발사대 2곳을 한 달 만에 다시 공격했다. 국제유가가 급등하고 뉴욕증시가 하락했다.",
+    next: "호르무즈 해협 봉쇄 장기화 여부. 트럼프가 예고한 추가 공격 실행 여부.",
+    timeline: [
+      { date: "2026-08-31", text: "미군 호르무즈 해협 이란 로켓발사대 공격(한 달만) — WTI +2.83% $85.76·브렌트 $90 돌파, 다우 -0.70%(53,185.90)·S&P500 -0.33%·나스닥 -0.12% 하락 마감. 트럼프 대통령, 이란이 휴전 조건 미수용시 향후 몇 주 내 공격 강화 경고" },
+    ]
+  },
+];
+/* ARCS-END */
+
+/* ══════════════════════════════════════════════════════════
+   WEEKLIES — 월요일 아침에 지난주(월~일) 회고가 맨 앞에 추가됩니다.
+   새로 검색해 만드는 것이 아니라 그 주 브리핑과 추적 대장을 되짚은 것입니다.
+   ══════════════════════════════════════════════════════════ */
+
+const WEEKLIES = [
+  {
+    from: "2026-08-24",
+    to: "2026-08-30",
+    label: "8월 넷째 주",
+    writtenAt: "2026-09-01",
+    note: "재료: 2026-08-24~08-30 일간 브리핑 7회차 · 상태/추적.md · 이 회고를 위한 신규 검색 0회 · 주간 회고를 도입하며 소급해 만든 첫 회차",
+    digest: [
+      "<strong>한국은행이 8월 27일 기준금리를 2.75%에서 3.00%로 인상했다(6대1 의결, 2개월 연속).</strong> 2026년 성장률 전망을 2.6%에서 3.3%로 크게 올려잡았고, 점도표는 21개 중 16개가 3.00%보다 위에 찍혔다.",
+      "<strong>엔비디아가 3분기 매출총이익률 가이던스를 74%(2분기 75%), 4분기는 71~72%가 저점이라고 밝혔다.</strong> 메모리 원가 상승이 빅테크 마진에 닿는 정도가 처음 수치로 확인됐다. 같은 날 SK하이닉스는 미국 인디애나에서 HBM 첨단패키징 공장을 착공했다.",
+      "<strong>8월 29일 브리핑이 \"오늘 청와대에서 삼성·SK 투자 국민보고회가 열린다\"고 예고한 것은 오인용이었고, 8월 30일 브리핑에서 정정했다.</strong> 해당 행사는 실제로는 6월 29일에 이미 열렸던 것이다."
+    ],
+    insight: [
+      { label: "흐름", text: "이번 주 움직인 호 9개 중 가장 많이 진전한 것은 <strong>현대차·기아 임단협(5회)</strong>이다. 8/19 교섭 결렬로 시작한 호가 8/25 동반 잠정합의 → 8/28 기아 가결(64.1%)로 종결 국면에 들어선 것으로 보인다. 한편 <strong>메모리 슈퍼사이클 호(4회)</strong>는 성격이 달라졌다 — 지금까지 \"메모리 값이 얼마나 올랐나\"였다면, 이번 주는 그 원가가 <strong>사는 쪽 마진에 얼마나 닿았나</strong>가 처음 수치로 나온 주로 풀이된다." },
+      { label: "뒤집힐 조건", text: "4분기 실제 매출총이익률이 71~72% 전망보다 낮게 나오면 \"원가 전가가 관리 가능한 수준\"이라는 판단이 흔들린다. 현대차 8/31 조합원 투표가 부결되면 임단협 호는 종결이 아니라 재협상으로 되돌아간다." },
+      { label: "안 보이는 것", text: "삼성전자 주주환원의 <strong>예고치 150조원과 의결치 110조원의 차이를 설명할 공시가 이번 주에도 나오지 않았다</strong> (8/21 등록 이후 계속 열려 있다). <strong>대미 통상 호는 8/25 이후 진전이 없다</strong> — 장관이 \"8월말~9월초 목표\"라고 한 1호 프로젝트가 8월을 넘겼는데도 후속이 조용하다." }
+    ],
+    arcs: [
+      { name: "현대차·기아 임단협과 파업", progress: 5, total: 9, note: "8/24 현대차가 예정 부분파업을 유보하고 교섭을 재개해 신규인원 500명 충원에 합의했고, 8/25 현대차·기아가 나란히 잠정합의를 도출했다(현대차 111일 만, 기본급 10만원 인상·성과금 400%+1,270만원). 출하 차질은 약 5만5,000대·매출손실 2조3,000억원 이상으로 추산됐다. 8/28 기아 조합원 투표가 가결(임금 64.1%·단협 63.1%, 투표율 91%)되며 6년 연속 무분규가 확정됐다." },
+      { name: "메모리 슈퍼사이클과 AI 인프라 원가 전가", progress: 4, total: 10, note: "8/24 서버용 D램이 2분기에만 53~58% 올라 엔비디아가 AI 서버 가격 15% 이상 인상을 통보한 사실이 나왔고, 8/25 실제 계약은 15~20%선에서 정리된 것으로 확인됐다. 삼성전자는 파운드리 4나노 수탁가를 추가 10~15% 올렸다. 8/27 엔비디아 2분기 매출 962억달러와 총이익률 74%→71~72% 가이던스가 나왔고, SK하이닉스가 인디애나 공장을 착공했다(38.7억~40억달러, 매체별 상이)." },
+      { name: "원/달러 환율 하락 추세", progress: 4, total: 12, note: "8/24 마감 1,382.40원에서 8/25 1,386.10원으로 8거래일 만에 반등했다가, 8/27 1,380.90원·8/28 1,372.5원으로 하락 추세를 재개해 13개월 만의 최저치를 다시 썼다. 월말 수출업체 네고 물량이 배경으로 꼽혔다." },
+      { name: "삼성·SK 주주환원 경쟁", progress: 4, total: 7, note: "8/25 삼성전자가 8.69% 급락하며 코스피가 3.12% 내린 6,696.96에 마감했다 — 110조 의결이 예고치 150조에 못 미친 데 대한 실망 매물이다. 8/26 장중 -4.30%까지 밀렸다가 0.68% 상승 반전했고, 8/27 6,912.37(+1.53%)까지 올랐다가 한은 인상 발표 후 상승폭을 반납했다. 8/28은 잭슨홀 관망세로 1.79% 하락했다." },
+      { name: "국가 AI 파운데이션 모델과 '모두의 AI'", progress: 3, total: 7, note: "8/25 서류평가에서 MKD가 탈락해 5곳이 8/27 발표평가에 올랐고, 8/28 SKT·카카오·KT 3개 컨소시엄이 최종 선정됐다. 카카오 컨소시엄에는 LG유플러스·LG AI연구원 등 14곳이 참여한다. 정부는 올해 엔비디아 B200 512장을 지원하며 9월 베타·연내 정식서비스가 목표다. 네이버는 이번에도 빠졌다." },
+      { name: "앤스로픽 — 자체 칩과 IPO", progress: 3, total: 4, note: "8/24 최대 2조 달러 밸류에이션으로 10월 IPO를 추진한다는 보도가 나왔고, 8/25 최근 분기 매출 115억달러(연환산 650억달러) 수준이 보도됐다. 8/27에는 노동절 이후 증권신고서 공개·9월 중순 투자자설명회 예정이라는 보도가 더해졌다. 회사 공식 확인은 이번 주 내내 없었다." },
+      { name: "엔비디아 대중 수출 재개", progress: 3, total: 4, note: "8/24~25 국내 AI 반도체 스타트업 리벨리온에 인수·투자·제휴를 타진했다는 보도(몸값 약 3조원 거론)가 이어졌으나 초기 단계에 머물렀다. 8/27 실적 콜에서 H200의 중국 출하가 처음 공식화됐다 — 데이터센터 매출의 1% 미만이며, 3분기 가이던스에는 중국 매출을 여전히 0으로 반영했다." },
+      { name: "쿠팡-공정위 조사 갈등 (새 호)", progress: 1, total: 1, note: "8/27 공정위의 '다이내믹 프라이싱' 비용 전가 의혹 현장조사를 쿠팡이 네 차례 거부했고, 서울고법이 집행정지를 인용해 조사 효력이 9/23까지 정지됐다. 심문기일은 9/2다." },
+      { name: "대미 통상 — 2,000억 달러 전략투자와 반도체 관세", progress: 1, total: 5, note: "8/25 김정관 산업통상부 장관이 1호 프로젝트를 \"8월말~9월초 목표로 협상 중\"이라고 재확인했다. 이후 이 주에는 진전이 없었다." }
+    ],
+    metrics: [
+      { label: "코스피",  from: "6,912.95", to: "6,788.88", delta: "-124.07 (-1.79%)", dir: "down" },
+      { label: "코스닥",  from: "801.94",   to: "838.41",   delta: "+36.47 (+4.55%)",  dir: "up" },
+      { label: "원/달러", from: "1,386.5",  to: "1,372.5",  delta: "-14.0원",          dir: "down" }
+    ],
+    closed: [
+      "기아 8/26~28 부분파업·현대차 임협 → 8/25 동반 잠정합의, 부분파업 철회 (8/26)",
+      "엔비디아 8/26 실적발표에 가격인상·메모리 원가가 반영됐는지 → 절반만. 이익률 영향은 미확인으로 재등록 (8/27)",
+      "엔비디아 총이익률 구체 수치 → 3분기 74%, 4분기 71~72% 저점 (8/28)",
+      "허깅페이스 130억달러 매각이 실제 거래로 이어지는지 → 엔비디아가 129억달러에 인수 합의 (8/28)",
+      "한국은행 8/27 기준금리 결정 → 2.75%→3.00% 인상, 6대1 (8/28)",
+      "SK하이닉스 인디애나 착공식이 실제로 열렸는지 → 열렸다. 투자액은 매체별로 38.7억 vs 40억+달러 (8/28)",
+      "과기정통부 '모두의 AI' 사업자 선정 → SKT·카카오·KT 3곳 (8/29)",
+      "기아 조합원 찬반투표 → 가결 64.1% (8/29)",
+      "삼성·SK 청와대 국민보고회 개최 여부 → 오인용으로 확인, 정정 종결 (8/30)"
+    ],
+    opened: [
+      "애플의 중국산 메모리(CXMT·YMTC) 채택이 실제로 승인되는지 (만기 9/24)",
+      "온플법 국회 처리가 재개되는지 (만기 9/8)",
+      "현대차 조합원 찬반투표 가결 여부 (만기 9/2)",
+      "SK이노베이션-SKIET 합병이 예정대로 진행되는지 (만기 11/24)",
+      "세제개편안 9/1 국무회의 상정·국회 제출 (만기 9/2)",
+      "쿠팡-공정위 조사효력정지 서울고법 심문 결과 (만기 9/2)",
+      "오우라 미국 IPO 실제 상장 여부 (만기 9/30)",
+      "엔비디아-허깅페이스 인수 딜 클로징 (만기 10/15)"
+    ]
+  }
+];
 
 const BRIEFINGS = [
   {
@@ -1551,6 +2022,7 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
 const ALL = "전체";
+const WEEK = "주간";   /* 날짜 메뉴의 특수 값 — 타임라인이 주간 회고로 바뀐다 */
 
 let activeTopic = ALL;
 /* 기본값은 최신 브리핑. 지난 날짜는 날짜 메뉴에서 고른다. */
@@ -1609,14 +2081,16 @@ function selectedDay() {
 function renderStrip() {
   const day = selectedDay();
   const shown = day || BRIEFINGS[0];
+  /* 주간 회고를 보는 중이면 날짜 기준 집계가 없다 — 누적으로 센다 */
+  const countDate = activeDate === WEEK ? ALL : activeDate;
   const cells = [
     {
-      label: day ? "보는 중" : "최신 브리핑",
+      label: day ? "보는 중" : activeDate === WEEK ? "주간 회고" : "최신 브리핑",
       value: shown ? shown.date.slice(5).replace("-", ".") : "—",
       delta: shown ? dayLabel(shown) : ""
     },
     { label: "누적 일수", value: String(BRIEFINGS.length), unit: "일", delta: "" },
-    { label: day ? "이 날 항목" : "누적 항목", value: String(countFor(activeDate, ALL)), unit: "건", delta: "" }
+    { label: day ? "이 날 항목" : "누적 항목", value: String(countFor(countDate, ALL)), unit: "건", delta: "" }
   ];
   /* 지표는 그 날짜의 것을 보여준다. 지난 날짜를 보면서 오늘 시세를 띄우면 안 된다.
      환율·유가는 아래 전용 패널이 맡으므로 여기서 뺀다 — 두 곳에 같은 숫자가 뜨지 않게.
@@ -1812,6 +2286,15 @@ function renderDates() {
       <span class="w">${BRIEFINGS.length}일 · ${countFor(ALL, activeTopic)}건</span>
     </button>`];
 
+  /* 주간 회고가 하나라도 있을 때만 칩을 낸다 */
+  if (typeof WEEKLIES !== "undefined" && WEEKLIES.length) {
+    chips.push(`
+      <button class="datechip all" type="button" data-date="${WEEK}" aria-pressed="${activeDate === WEEK}">
+        <span class="d">주간</span>
+        <span class="w">회고 ${WEEKLIES.length}건</span>
+      </button>`);
+  }
+
   BRIEFINGS.forEach((b) => {
     const [, m, d] = b.date.split("-");
     chips.push(`
@@ -1831,6 +2314,10 @@ function renderDates() {
 }
 
 function renderFilters() {
+  /* 주간 회고는 주제로 갈라지지 않는다 */
+  $("filters").hidden = activeDate === WEEK;
+  if (activeDate === WEEK) { $("filters").innerHTML = ""; return; }
+
   const topics = [ALL, ...allTopics()];
   $("filters").innerHTML = topics.map((t) => `
     <button class="chip" type="button" data-topic="${esc(t)}" aria-pressed="${t === activeTopic}">
@@ -1903,7 +2390,205 @@ function renderInsight(insight) {
     </div>`;
 }
 
+/* ── 흐름 온도계 ───────────────────────────────────────────
+   ARCS는 tools/sync_arcs.py가 상태/추적.md에서 뽑아 넣는다. 여기서 하는 일은
+   타임라인 날짜를 세는 것뿐이다 — 최근 7일에 몇 번 진전했나, 그 앞 7일과 비교해
+   늘었나 줄었나, 마지막 진전이 며칠 전인가.
+
+   **새 사실을 만들지 않는다.** 온도는 판단이 아니라 대장에 적힌 날짜의 집계다.
+   그래서 "그래서 뭐?" 블록의 액센트 배경을 쓰지 않고, 액센트 농도로만 나타낸다.
+
+   기준일은 뷰어의 시계가 아니라 **최신 브리핑 날짜**다. 페이지가 오래 방치돼도
+   숫자가 저 혼자 식지 않게 하려는 것이다. */
+
+const ARC_WINDOW = 7;      /* 최근 N일 */
+const ARC_METER = 5;       /* 계기 칸 수 */
+
+function arcAnchor() {
+  return BRIEFINGS.length ? BRIEFINGS[0].date : TODAY;
+}
+
+function daysBetween(a, b) {
+  return dayNum(b) - dayNum(a);
+}
+
+function arcHeat(arc, anchor) {
+  let recent = 0, prior = 0;
+  (arc.timeline || []).forEach((e) => {
+    const gap = daysBetween(e.date, anchor);
+    if (gap < 0) return;                       /* 기준일보다 미래면 세지 않는다 */
+    if (gap < ARC_WINDOW) recent++;
+    else if (gap < ARC_WINDOW * 2) prior++;
+  });
+  const since = arc.last ? daysBetween(arc.last, anchor) : null;
+
+  let temp = "cold";
+  if (recent >= 3) temp = "hot";
+  else if (recent >= 1) temp = "warm";
+  else if (prior >= 1) temp = "cooling";
+
+  const trend = recent > prior ? "↑" : recent < prior ? "↓" : "→";
+  return { recent: recent, prior: prior, since: since, temp: temp, trend: trend };
+}
+
+const ARC_ORDER = { hot: 0, warm: 1, cooling: 2, cold: 3 };
+
+function arcRows() {
+  const anchor = arcAnchor();
+  return (typeof ARCS === "undefined" ? [] : ARCS)
+    .filter((a) => a.status === "active")
+    .map((a) => ({ arc: a, heat: arcHeat(a, anchor) }))
+    .sort((x, y) =>
+      (ARC_ORDER[x.heat.temp] - ARC_ORDER[y.heat.temp]) ||
+      (y.heat.recent - x.heat.recent) ||
+      (y.arc.count - x.arc.count));
+}
+
+function renderArcs() {
+  const el = $("arcs");
+  if (!el) return;
+
+  const rows = arcRows();
+  if (!rows.length) { el.hidden = true; el.innerHTML = ""; return; }
+  el.hidden = false;
+
+  const anchor = arcAnchor();
+  const moved = rows.filter((r) => r.heat.recent > 0).length;
+  const md = (d) => d.slice(5).replace("-", ".");
+
+  const body = rows.map((r) => {
+    const a = r.arc, h = r.heat;
+    const cells = [];
+    for (let i = 0; i < ARC_METER; i++) {
+      cells.push(`<i class="${i < Math.min(h.recent, ARC_METER) ? "on" : ""}"></i>`);
+    }
+    /* 타임라인은 최근 것부터 넉넉히 5줄까지. 대장은 오래된 것부터 적혀 있다 */
+    const tl = (a.timeline || []).slice(-5).reverse();
+
+    return `
+      <details class="arc-row ${h.temp}">
+        <summary>
+          <span class="arc-meter" aria-hidden="true">${cells.join("")}</span>
+          <span class="arc-name">${esc(a.name)}</span>
+          <span class="arc-nums">
+            <b>${h.recent}</b>${esc(h.trend)}<span class="sep">·</span>총 ${a.count}회<span class="sep">·</span>${
+              h.since === null ? "—" : h.since === 0 ? "오늘" : h.since + "일 전"}
+          </span>
+        </summary>
+        <dl class="arc-detail">
+          <div><dt>지금</dt><dd>${esc(a.state)}</dd></div>
+          ${a.next ? `<div><dt>다음 분기점</dt><dd>${esc(a.next)}</dd></div>` : ""}
+          <div>
+            <dt>타임라인 (최근 ${tl.length}줄 · 시작 ${esc(md(a.since))})</dt>
+            <dd><ol>${tl.map((e) =>
+              `<li><span>${esc(md(e.date))}</span>${esc(e.text)}</li>`).join("")}</ol></dd>
+          </div>
+        </dl>
+      </details>`;
+  }).join("");
+
+  el.innerHTML = `
+    <summary>
+      <h2>진행 중인 흐름</h2>
+      <span class="tally">${rows.length}개 · 최근 ${ARC_WINDOW}일 움직인 것 ${moved}개</span>
+    </summary>
+    <div class="arcs-body">
+      <div class="arcs-caveat">
+        추적 대장에 적힌 <b>진전 횟수를 센 것</b>입니다 — 판단이 아니라 집계입니다.
+        계기는 최근 ${ARC_WINDOW}일 진전 수, 화살표는 그 앞 ${ARC_WINDOW}일과 비교한 것입니다.
+        기준일은 최신 브리핑(${esc(md(anchor))})입니다.
+      </div>
+      ${body}
+    </div>`;
+}
+
+/* ── 주간 회고 ─────────────────────────────────────────────
+   날짜 메뉴의 "주간" 칩을 고르면 타임라인 자리에 뜬다. 일간과 달리
+   새로 검색해 만든 것이 아니라, 그 주 브리핑과 추적 대장을 되짚은 것이다. */
+
+function renderWeekly() {
+  const list = (typeof WEEKLIES === "undefined" ? [] : WEEKLIES);
+  if (!list.length) {
+    return `<div class="empty">아직 주간 회고가 없습니다 — 월요일 아침에 만들어집니다</div>`;
+  }
+  const md = (d) => d.slice(5).replace("-", ".");
+
+  return `<div class="weekly">${list.map((w) => `
+    <section class="day">
+      <div class="daymark">
+        <span class="md">${esc(md(w.to))}</span>
+        <span class="yr">${esc(w.to.slice(0, 4))}</span>
+        <span class="wd">주간</span>
+      </div>
+      <div class="daybody">
+        <div class="wk-head">
+          <h2>${esc(w.label)}</h2>
+          <span class="range">${esc(md(w.from))} — ${esc(md(w.to))} · ${esc(w.writtenAt)} 작성</span>
+        </div>
+
+        ${w.digest && w.digest.length ? `
+          <div class="digest">
+            <h3>이번 주 세 줄</h3>
+            <ul>${w.digest.map((t) => `<li><span>${t}</span></li>`).join("")}</ul>
+          </div>` : ""}
+
+        ${renderInsight(w.insight)}
+
+        ${w.arcs && w.arcs.length ? `
+          <div class="wk-block">
+            <h3>움직인 흐름</h3>
+            <div class="wk-moved">
+              ${w.arcs.map((a) => `
+                <div>
+                  <b>${esc(a.name)}</b>
+                  <span class="p">이번 주 ${a.progress}회 · 누적 ${a.total}회</span>
+                  <p>${esc(a.note)}</p>
+                </div>`).join("")}
+            </div>
+          </div>` : ""}
+
+        ${w.metrics && w.metrics.length ? `
+          <div class="wk-block">
+            <h3>주간 지표</h3>
+            <div class="wk-metrics">
+              ${w.metrics.map((m) => `
+                <div>
+                  <span class="l">${esc(m.label)}</span>
+                  <span class="v">${esc(m.from)}<i>→</i>${esc(m.to)}</span>
+                  <span class="d ${m.dir === "up" ? "up" : m.dir === "down" ? "down" : ""}">${esc(m.delta)}</span>
+                </div>`).join("")}
+            </div>
+          </div>` : ""}
+
+        ${(w.closed && w.closed.length) || (w.opened && w.opened.length) ? `
+          <div class="wk-block">
+            <h3>워치리스트</h3>
+            <div class="wk-watch">
+              ${w.closed && w.closed.length ? `
+                <div>
+                  <h4>닫힌 것 ${w.closed.length}건</h4>
+                  <ul>${w.closed.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+                </div>` : ""}
+              ${w.opened && w.opened.length ? `
+                <div>
+                  <h4>새로 연 것 ${w.opened.length}건</h4>
+                  <ul>${w.opened.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+                </div>` : ""}
+            </div>
+          </div>` : ""}
+
+        <div class="daymeta">${esc(w.note)}</div>
+      </div>
+    </section>`).join("")}</div>`;
+}
+
 function renderTimeline() {
+  /* "주간"을 고르면 일간 대신 주간 회고를 보여준다 */
+  if (activeDate === WEEK) {
+    $("timeline").innerHTML = renderWeekly();
+    return;
+  }
+
   const days = BRIEFINGS.filter((b) => activeDate === ALL || b.date === activeDate).map((b) => {
     const sections = b.sections.filter((s) => activeTopic === ALL || s.topic === activeTopic);
     if (!sections.length) return "";
@@ -1963,6 +2648,7 @@ function renderFoot() {
 function render() {
   renderStrip();
   renderMarkets();
+  renderArcs();
   renderDates();
   renderFilters();
   renderTimeline();
