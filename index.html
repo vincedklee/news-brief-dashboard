@@ -435,7 +435,6 @@
     font-size: 12.5px;
     line-height: 1.6;
     color: var(--muted);
-    max-width: 74ch;
     padding-bottom: 14px;
   }
   .arcs-caveat b { color: var(--ink-soft); font-weight: 600; }
@@ -501,7 +500,6 @@
     font-size: 15px;
     line-height: 1.75;
     color: var(--ink-soft);
-    max-width: 60ch;
   }
   .arc-detail ol { list-style: none; display: flex; flex-direction: column; gap: 7px; }
   .arc-detail ol li {
@@ -511,7 +509,6 @@
     font-size: 14.5px;
     line-height: 1.72;
     color: var(--muted);
-    max-width: 64ch;
   }
   .arc-detail ol li span {
     font-size: 11px;
@@ -667,9 +664,8 @@
     display: grid;
     grid-template-columns: 30px 1fr;
     font-size: 18px;
-    line-height: 1.78;
+    line-height: 1.88;
     color: var(--ink-soft);
-    max-width: 66ch;
   }
   .digest li::before {
     content: "";
@@ -725,9 +721,8 @@
   }
   .insight dd {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.88;
     color: var(--ink-soft);
-    max-width: 66ch;
   }
   .insight strong { font-weight: 700; color: var(--ink); }
 
@@ -764,6 +759,10 @@
     letter-spacing: 0.06em;
   }
 
+  /* 본문 글줄에 폭 제한을 두지 않는다 — 화면을 꽉 채우는 쪽을 골랐다.
+     읽기 좋은 길이(45~75자)보다 길어지므로 행간을 1.86~1.9로 올려 보완한다.
+     되돌리려면 .digest li / .item h4·p / .insight dd / .note 등에
+     max-width를 다시 주면 된다. */
   .item { display: flex; flex-direction: column; gap: 8px; }
   .item h4 {
     font-size: 20px;
@@ -771,13 +770,11 @@
     line-height: 1.42;
     letter-spacing: -0.015em;
     text-wrap: pretty;
-    max-width: 58ch;
   }
   .item p {
     font-size: 16.5px;
     color: var(--ink-soft);
-    line-height: 1.82;
-    max-width: 64ch;
+    line-height: 1.9;
   }
   .sources { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 3px; }
   .src {
@@ -818,9 +815,8 @@
     border-left: 1px solid var(--hair);
     padding: 3px 0 3px 18px;
     font-size: 15px;
-    line-height: 1.78;
+    line-height: 1.86;
     color: var(--muted);
-    max-width: 60ch;
   }
   .note b {
     display: block;
@@ -927,9 +923,8 @@
   .wk-moved p {
     grid-column: 1 / -1;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.88;
     color: var(--ink-soft);
-    max-width: 62ch;
   }
 
   .wk-metrics {
@@ -1012,7 +1007,6 @@
     }
     .daymark .md { font-size: 26px; }
     .badge-today { margin-top: 0; border-top: 0; }
-    .item p, .note, .insight dd, .digest li { max-width: none; }
     .item h4 { font-size: 17.5px; }
     .datenav { gap: 18px; }
     .arc-row > summary { grid-template-columns: 44px minmax(0, 1fr); }
