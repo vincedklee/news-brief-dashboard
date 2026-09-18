@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Morning Briefing</title>
-<meta name="description" content="매일 아침 AI·반도체·경제·국내 산업·SK 그룹·스타트업 뉴스를 모아 정리한 브리핑.">
+<meta name="description" content="세계 정치·경제·기술·산업·과학·문화의 변화를 핵심·주요·전체 뉴스로 읽는 글로벌 브리핑.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Morning Briefing">
-<meta property="og:description" content="매일 아침 AI·반도체·경제·국내 산업·SK 그룹·스타트업 뉴스를 모아 정리한 브리핑.">
+<meta property="og:description" content="세계 정치·경제·기술·산업·과학·문화의 변화를 핵심·주요·전체 뉴스로 읽는 글로벌 브리핑.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B0%3C/text%3E%3C/svg%3E">
 <style>
@@ -1024,6 +1024,28 @@
     body { background: #fff; }
     .datenav, .filters, .arcs { display: none; }
   }
+
+  [hidden] { display: none !important; }
+  .market-context { margin: 20px 0; }
+  .market-context > summary { cursor: pointer; padding: 12px 0; border-bottom: 1px solid var(--hair); font: 13px var(--sans); }
+  .market-context > summary span { font: 11px var(--mono); color: var(--muted); margin-left: 14px; }
+  .reader { border-bottom: 1px solid var(--hair); padding: 4px 0 20px; }
+  .reader-modes, .reader-tools { display: flex; gap: 12px 24px; flex-wrap: wrap; align-items: center; }
+  .reader-modes { margin-bottom: 16px; }
+  .reader-tools { font: 13px var(--sans); color: var(--muted); }
+  .reader-tools label { display: flex; align-items: center; gap: 8px; }
+  .reader-tools select, .reader-tools input[type="search"] {
+    min-width: 0; max-width: 100%; background: var(--surface); color: var(--ink);
+    border: 1px solid var(--hair); border-radius: 0; padding: 9px; font: 14px var(--sans);
+  }
+  .search-label { flex: 1 1 230px; }
+  .search-label input { flex: 1; width: 100%; }
+  .reader-status, .edition-status { font: 12px/1.8 var(--sans); color: var(--muted); margin-top: 14px; }
+  .edition-status { padding: 12px 0; border-bottom: 1px solid var(--hair); margin: 0 0 20px; }
+  .article-meta { font: 11px/1.8 var(--mono); color: var(--muted); margin: 5px 0; font-variant-numeric: tabular-nums; }
+  .item .change { font-size: 14px; border-left: 1px solid var(--hair); padding-left: 12px; }
+  .top-rank { font: 13px var(--mono); color: var(--muted); margin-right: 12px; }
+  @media print { .reader { display: none; } }
 </style>
 <style>
   .themetoggle {
@@ -1054,11 +1076,13 @@
 <div class="page">
 
   <header class="masthead">
-    <div class="eyebrow">Daily Brief</div>
-    <h1>뉴스 브리핑</h1>
-    <div class="topics">AI · 테크 / 반도체 · 하드웨어 / 경제 · 시장 / 국내 산업 · 정책 / SK 그룹 / 스타트업 · 투자</div>
+    <div class="eyebrow">Global Daily Brief</div>
+    <h1>세계의 변화, 매일 아침</h1>
+    <div class="topics">지정학 · 경제 · 기술 · 산업 · 에너지 · 과학 · 사회 · 기업 · 한국</div>
   </header>
 
+  <details class="market-context">
+    <summary>시장 지표 · 환율 · 유가 <span>선택한 회차 기준</span></summary>
   <div class="strip" id="strip"></div>
 
   <div class="markets">
@@ -1066,11 +1090,24 @@
     <section class="mkt" id="oil" aria-label="유가" hidden></section>
   </div>
 
-  <details class="arcs" id="arcs" aria-label="진행 중인 흐름" open hidden></details>
+  </details>
+
+  <details class="arcs" id="arcs" aria-label="진행 중인 흐름" hidden></details>
 
   <nav class="datenav" id="dates" aria-label="날짜 선택"></nav>
 
   <nav class="filters" id="filters" aria-label="주제 필터"></nav>
+
+  <section class="reader" id="reader" aria-label="뉴스 탐색">
+    <nav class="reader-modes" id="modes" aria-label="읽기 단계"></nav>
+    <div class="reader-tools">
+      <label>지역 <select id="region" aria-label="지역 선택"></select></label>
+      <label class="search-label">검색 <input id="search" type="search" placeholder="회사, 사건, 키워드" autocomplete="off"></label>
+      <label><input type="checkbox" id="sk-only"> SK만</label>
+      <button class="chip" type="button" id="reset-reader">필터 초기화</button>
+    </div>
+    <p class="reader-status" id="reader-status" role="status" aria-live="polite"></p>
+  </section>
 
   <main class="timeline" id="timeline"></main>
 
@@ -2140,14 +2177,144 @@ const BRIEFINGS = [
 /* ══════════════════════════════════════════════════════════ */
 
 const $ = (id) => document.getElementById(id);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+/* TOPICS-BEGIN */
+const TOPIC_CONFIG = {
+  "topics": [
+    {
+      "name": "세계 정치 / 지정학",
+      "searchBudget": 18
+    },
+    {
+      "name": "글로벌 경제 / 시장",
+      "searchBudget": 18
+    },
+    {
+      "name": "AI / 디지털 기술",
+      "searchBudget": 20
+    },
+    {
+      "name": "반도체 / 컴퓨팅 인프라",
+      "searchBudget": 16
+    },
+    {
+      "name": "에너지 / 기후 / 자원",
+      "searchBudget": 14
+    },
+    {
+      "name": "산업 / 모빌리티 / 로봇",
+      "searchBudget": 14
+    },
+    {
+      "name": "과학 / 바이오 / 건강",
+      "searchBudget": 12
+    },
+    {
+      "name": "사회 / 문화 / 소비",
+      "searchBudget": 12
+    },
+    {
+      "name": "글로벌 기업 / 스타트업 / 자본",
+      "searchBudget": 12
+    },
+    {
+      "name": "한국 산업 / 정책 / SK",
+      "searchBudget": 14
+    }
+  ],
+  "regions": [
+    "한국",
+    "미국",
+    "유럽",
+    "중국",
+    "일본",
+    "인도",
+    "동남아",
+    "중동",
+    "아프리카",
+    "중남미",
+    "기타 아시아",
+    "오세아니아",
+    "캐나다",
+    "글로벌"
+  ],
+  "aliases": {
+    "AI / 테크": "AI / 디지털 기술",
+    "반도체 / 하드웨어": "반도체 / 컴퓨팅 인프라",
+    "경제 / 시장": "글로벌 경제 / 시장",
+    "국내 산업 / 정책": "한국 산업 / 정책 / SK",
+    "SK 그룹": "한국 산업 / 정책 / SK",
+    "스타트업 / 투자": "글로벌 기업 / 스타트업 / 자본"
+  },
+  "schemaRequiredFrom": "2026-09-19"
+};
+/* TOPICS-END */
 const ALL = "전체";
 const WEEK = "주간";   /* 날짜 메뉴의 특수 값 — 타임라인이 주간 회고로 바뀐다 */
 
 let activeTopic = ALL;
+let activeRegion = ALL;
+let activeMode = "top";
+let searchQuery = "";
+let skOnly = false;
+const topicName = (name) => TOPIC_CONFIG.aliases[name] || name;
+const regionsOf = (item) => item.regions && item.regions.length ? item.regions : ["지역 미분류"];
+const isSK = (item, section) => section.topic === "SK 그룹" || (item.entities || []).includes("SK");
+const isTop = (item) => Number.isInteger(item.topRank) && item.topRank >= 1 && item.topRank <= 5;
+function matchesItem(item, section, topic = activeTopic) {
+  if (topic !== ALL && topicName(section.topic) !== topic) return false;
+  if (activeRegion !== ALL && !regionsOf(item).includes(activeRegion)) return false;
+  if (skOnly && !isSK(item, section)) return false;
+  const haystack = [item.title, item.body, item.change, item.arc, ...(item.entities || []),
+    ...(item.regions || []), ...(item.sources || []).map((x) => x.name)].join(" ").toLocaleLowerCase();
+  return !searchQuery || haystack.includes(searchQuery.toLocaleLowerCase());
+}
+function displaySections(day, topic = activeTopic, mode = activeMode) {
+  const grouped = new Map();
+  day.sections.forEach((section) => {
+    const name = topicName(section.topic);
+    const target = grouped.get(name) || { topic: name, items: [], briefs: [], notes: [] };
+    target.items.push(...(section.items || []).filter((x) => matchesItem(x, section, topic) && (mode !== "top" || isTop(x))));
+    if (mode === "all") target.briefs.push(...(section.briefs || []).filter((x) => matchesItem(x, section, topic)));
+    if (section.note && (topic === ALL || name === topic) && activeRegion === ALL && !searchQuery && !skOnly) target.notes.push(section.note);
+    if (target.items.length || target.briefs.length || (mode === "all" && target.notes.length)) grouped.set(name, target);
+  });
+  return [...grouped.values()];
+}
+function visibleCount(date, topic = activeTopic, mode = activeMode) {
+  return BRIEFINGS.filter((b) => date === ALL || b.date === date)
+    .reduce((n, b) => n + displaySections(b, topic, mode).reduce((m, s) => m + sectionCount(s), 0), 0);
+}
+function renderReader() {
+  $("reader").hidden = activeDate === WEEK;
+  if (activeDate === WEEK) return;
+  $("modes").innerHTML = [["top", "핵심 5"], ["major", "주요"], ["all", "전체 뉴스"]].map(([mode, label]) =>
+    `<button type="button" class="chip" data-mode="${mode}" aria-pressed="${mode === activeMode}">${label}<span class="count">${visibleCount(activeDate, activeTopic, mode)}</span></button>`).join("");
+  $("modes").querySelectorAll("button").forEach((button) => button.addEventListener("click", () => { activeMode = button.dataset.mode; render(); }));
+  const dates = BRIEFINGS.filter((b) => activeDate === ALL || b.date === activeDate);
+  const noRank = dates.some((b) => !b.sections.some((s) => (s.items || []).some(isTop)));
+  $("reader-status").textContent = `${visibleCount(activeDate)}건 표시 · 검색 범위는 화면에 보관된 ${BRIEFINGS.length}개 회차입니다.` +
+    (noRank ? " 핵심 선정 기록이 없는 회차는 ‘주요’ 또는 ‘전체 뉴스’에서 읽을 수 있습니다." : " 핵심은 주요 뉴스에서 선정한 최대 5건입니다.");
+}
+function renderArticleMeta(item) {
+  const parts = [...regionsOf(item)];
+  if (item.publishedAt) parts.push(item.publishedAt);
+  if (item.status === "new") parts.push("첫 게재");
+  if (item.status === "update") parts.push("후속 진전");
+  return `<div class="article-meta">${parts.map(esc).join(" · ")}</div>`;
+}
+function editionStatus(b) {
+  const c = b.coverage;
+  return `<div class="edition-status">수집 ${esc(b.collectedAt)}${b.date !== TODAY ? " · 오늘 회차가 아닙니다" : ""}` +
+    (c ? ` · 검증 후 ${b.sections.reduce((n, s) => n + sectionCount(s), 0)}건` +
+      (Number.isInteger(c.candidateCount) ? ` / 후보 ${c.candidateCount}건` : "") +
+      (c.failedSources && c.failedSources.length ? ` · 수집 실패: ${esc(c.failedSources.join(", "))}` : "") +
+      (c.gaps && c.gaps.length ? ` · 확인 공백: ${esc(c.gaps.join(", "))}` : "") : " · 상세 수집 상태 미기록") + `</div>`;
+}
 /* 기본값은 최신 브리핑. 지난 날짜는 날짜 메뉴에서 고른다. */
 let activeDate = BRIEFINGS.length ? BRIEFINGS[0].date : ALL;
+if (!BRIEFINGS[0]?.sections.some((s) => (s.items || []).some(isTop))) activeMode = "major";
 
 /* 데이터의 isToday는 루틴이 써넣는 값이라, 루틴이 하루 거르면 어제 것이 '오늘'로 남는다.
    그래서 표시용 라벨은 실제 날짜(KST)에서 직접 구한다. */
@@ -2172,11 +2339,9 @@ function dayLabel(b) {
 }
 
 function allTopics() {
-  const seen = [];
-  BRIEFINGS.forEach((b) => b.sections.forEach((s) => {
-    if (!seen.includes(s.topic)) seen.push(s.topic);
-  }));
-  return seen;
+  const seen = new Set(BRIEFINGS.flatMap((b) => b.sections.map((s) => topicName(s.topic))));
+  return [...TOPIC_CONFIG.topics.map((t) => t.name).filter((t) => seen.has(t)),
+    ...[...seen].filter((t) => !TOPIC_CONFIG.topics.some((x) => x.name === t))];
 }
 
 function sectionCount(s) {
@@ -2189,7 +2354,7 @@ function countFor(date, topic) {
   BRIEFINGS.forEach((b) => {
     if (date !== ALL && b.date !== date) return;
     b.sections.forEach((s) => {
-      if (topic === ALL || s.topic === topic) n += sectionCount(s);
+      if (topic === ALL || topicName(s.topic) === topic) n += sectionCount(s);
     });
   });
   return n;
@@ -2404,7 +2569,7 @@ function renderDates() {
   const chips = [`
     <button class="datechip all" type="button" data-date="${ALL}" aria-pressed="${activeDate === ALL}">
       <span class="d">전체</span>
-      <span class="w">${BRIEFINGS.length}일 · ${countFor(ALL, activeTopic)}건</span>
+      <span class="w">${BRIEFINGS.length}일 · ${visibleCount(ALL)}건</span>
     </button>`];
 
   /* 주간 회고가 하나라도 있을 때만 칩을 낸다 */
@@ -2421,7 +2586,7 @@ function renderDates() {
     chips.push(`
       <button class="datechip" type="button" data-date="${esc(b.date)}" aria-pressed="${activeDate === b.date}">
         <span class="d">${m}.${d}</span>
-        <span class="w">${esc(dayLabel(b).replace("요일", ""))} · ${countFor(b.date, activeTopic)}건</span>
+        <span class="w">${esc(dayLabel(b).replace("요일", ""))} · ${visibleCount(b.date)}건</span>
       </button>`);
   });
 
@@ -2442,7 +2607,7 @@ function renderFilters() {
   const topics = [ALL, ...allTopics()];
   $("filters").innerHTML = topics.map((t) => `
     <button class="chip" type="button" data-topic="${esc(t)}" aria-pressed="${t === activeTopic}">
-      ${esc(t)}<span class="count">${countFor(activeDate, t)}</span>
+      ${esc(t)}<span class="count">${visibleCount(activeDate, t)}</span>
     </button>`).join("");
 
   $("filters").querySelectorAll(".chip").forEach((btn) => {
@@ -2462,6 +2627,7 @@ function renderNote(note) {
 }
 
 function renderSources(sources) {
+  if (!sources || !sources.length) return '<span class="article-meta">출처 미기록</span>';
   return (sources || []).map((s) =>
     `<a class="src" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join("");
 }
@@ -2473,9 +2639,11 @@ function renderArc(arc) {
 function renderItem(item) {
   return `
     <article class="item">
-      <h4>${esc(item.title)}</h4>
+      <h4>${isTop(item) ? `<span class="top-rank">${String(item.topRank).padStart(2, "0")}</span>` : ""}${esc(item.title)}</h4>
+      ${renderArticleMeta(item)}
       ${renderArc(item.arc)}
-      <p>${esc(item.body)}</p>
+      <p>${esc(item.body || "")}</p>
+      ${item.change ? `<p class="change">달라진 점 · ${esc(item.change)}</p>` : ""}
       <div class="sources">${renderSources(item.sources)}</div>
     </article>`;
 }
@@ -2488,6 +2656,8 @@ function renderBriefs(briefs) {
       ${briefs.map((b) => `
         <div class="brief">
           <span>${esc(b.title)}</span>
+          ${renderArticleMeta(b)}
+          ${b.change ? `<div>달라진 점 · ${esc(b.change)}</div>` : ""}
           ${renderArc(b.arc)}
           ${renderSources(b.sources)}
         </div>`).join("")}
@@ -2522,7 +2692,7 @@ function renderInsight(insight) {
    기준일은 뷰어의 시계가 아니라 **최신 브리핑 날짜**다. 페이지가 오래 방치돼도
    숫자가 저 혼자 식지 않게 하려는 것이다. */
 
-const ARC_WINDOW = 7;      /* 최근 N일 */
+let ARC_WINDOW = 7;      /* 최근 N일 */
 const ARC_METER = 5;       /* 계기 칸 수 */
 
 function arcAnchor() {
@@ -2584,7 +2754,7 @@ function renderArcs() {
       cells.push(`<i class="${i < Math.min(h.recent, ARC_METER) ? "on" : ""}"></i>`);
     }
     /* 타임라인은 최근 것부터 넉넉히 5줄까지. 대장은 오래된 것부터 적혀 있다 */
-    const tl = (a.timeline || []).slice(-5).reverse();
+    const tl = (a.timeline || []).filter((entry) => { const gap = daysBetween(entry.date, anchor); return gap >= 0 && gap < ARC_WINDOW; }).slice().reverse();
 
     return `
       <details class="arc-row ${h.temp}">
@@ -2600,7 +2770,7 @@ function renderArcs() {
           <div><dt>지금</dt><dd>${esc(a.state)}</dd></div>
           ${a.next ? `<div><dt>다음 분기점</dt><dd>${esc(a.next)}</dd></div>` : ""}
           <div>
-            <dt>타임라인 (최근 ${tl.length}줄 · 시작 ${esc(md(a.since))})</dt>
+            <dt>타임라인 (${ARC_WINDOW}일 · ${tl.length}줄 · 시작 ${esc(md(a.since))})</dt>
             <dd><ol>${tl.map((e) =>
               `<li><span>${esc(md(e.date))}</span>${esc(e.text)}</li>`).join("")}</ol></dd>
           </div>
@@ -2614,13 +2784,17 @@ function renderArcs() {
       <span class="tally">${rows.length}개 · 최근 ${ARC_WINDOW}일 움직인 것 ${moved}개</span>
     </summary>
     <div class="arcs-body">
+      <div class="reader-tools"><label>집계 기간 <select id="arc-window" aria-label="흐름 집계 기간"><option value="7" ${ARC_WINDOW === 7 ? "selected" : ""}>7일</option><option value="30" ${ARC_WINDOW === 30 ? "selected" : ""}>30일</option></select></label></div>
       <div class="arcs-caveat">
         추적 대장에 적힌 <b>진전 횟수를 센 것</b>입니다 — 판단이 아니라 집계입니다.
         계기는 최근 ${ARC_WINDOW}일 진전 수, 화살표는 그 앞 ${ARC_WINDOW}일과 비교한 것입니다.
-        기준일은 최신 브리핑(${esc(md(anchor))})입니다.
+        기준일은 최신 브리핑(${esc(md(anchor))})입니다. 세계 보도량이나 인기도를 뜻하지 않습니다.
       </div>
       ${body}
     </div>`;
+  $("arc-window").addEventListener("change", (event) => {
+    ARC_WINDOW = Number(event.target.value); renderArcs();
+  });
 }
 
 /* ── 주간 회고 ─────────────────────────────────────────────
@@ -2711,12 +2885,13 @@ function renderTimeline() {
   }
 
   const days = BRIEFINGS.filter((b) => activeDate === ALL || b.date === activeDate).map((b) => {
-    const sections = b.sections.filter((s) => activeTopic === ALL || s.topic === activeTopic);
+    const sections = displaySections(b);
     if (!sections.length) return "";
 
     const [y, m, d] = b.date.split("-");
-    const showDigest = activeTopic === ALL && b.digest && b.digest.length;
-    const showInsight = activeTopic === ALL;
+    const unfiltered = activeTopic === ALL && activeRegion === ALL && !searchQuery && !skOnly;
+    const showDigest = unfiltered && b.digest && b.digest.length;
+    const showInsight = unfiltered;
 
     return `
       <section class="day">
@@ -2727,13 +2902,14 @@ function renderTimeline() {
           ${b.date === TODAY ? '<span class="badge-today">오늘</span>' : ""}
         </div>
         <div class="daybody">
+          ${editionStatus(b)}
           ${showDigest ? `
             <div class="digest">
               <h3>한눈에 보기</h3>
               <ul>${b.digest.map((t) => `<li><span>${t}</span></li>`).join("")}</ul>
             </div>` : ""}
           ${showInsight ? renderInsight(b.insight) : ""}
-          ${sections.map((s) => `
+          ${activeMode === "top" ? sections.flatMap((s) => s.items).sort((a, b) => a.topRank - b.topRank).map(renderItem).join("") : sections.map((s) => `
             <div class="topic">
               <div class="topic-head">
                 <h3>${esc(s.topic)}</h3>
@@ -2741,7 +2917,7 @@ function renderTimeline() {
               </div>
               ${(s.items || []).map(renderItem).join("")}
               ${renderBriefs(s.briefs)}
-              ${renderNote(s.note)}
+              ${(s.notes || []).map(renderNote).join("")}
             </div>`).join("")}
           <div class="daymeta">
             수집 ${esc(b.collectedAt)} · ${esc(b.window)}${b.tally ? " · " + esc(b.tally) : ""}
@@ -2750,9 +2926,9 @@ function renderTimeline() {
       </section>`;
   }).join("");
 
-  const none = activeDate === ALL
-    ? "해당 주제의 브리핑이 없습니다"
-    : `${activeDate}에는 '${activeTopic}' 항목이 없습니다`;
+  const none = activeMode === "top"
+    ? "현재 조건에 핵심 선정 기사가 없습니다. 주요 또는 전체 뉴스로 바꾸거나 필터를 초기화해 보세요."
+    : "현재 조건에 맞는 기사가 없습니다. 지역·주제·검색어를 바꾸거나 필터를 초기화해 보세요.";
   $("timeline").innerHTML = days || `<div class="empty">${esc(none)}</div>`;
 }
 
@@ -2772,9 +2948,18 @@ function render() {
   renderArcs();
   renderDates();
   renderFilters();
+  renderReader();
   renderTimeline();
 }
 
+$("region").innerHTML = [ALL, ...TOPIC_CONFIG.regions, "지역 미분류"].map((region) => `<option value="${esc(region)}">${esc(region)}</option>`).join("");
+$("region").addEventListener("change", (event) => { activeRegion = event.target.value; render(); });
+$("search").addEventListener("input", (event) => { searchQuery = event.target.value.trim(); render(); });
+$("sk-only").addEventListener("change", (event) => { skOnly = event.target.checked; render(); });
+$("reset-reader").addEventListener("click", () => {
+  activeTopic = ALL; activeRegion = ALL; searchQuery = ""; skOnly = false;
+  $("region").value = ALL; $("search").value = ""; $("sk-only").checked = false; render();
+});
 render();
 renderFoot();
 </script>
