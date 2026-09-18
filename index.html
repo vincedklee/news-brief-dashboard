@@ -1046,6 +1046,21 @@
   .item .change { font-size: 14px; border-left: 1px solid var(--hair); padding-left: 12px; }
   .top-rank { font: 13px var(--mono); color: var(--muted); margin-right: 12px; }
   @media print { .reader { display: none; } }
+
+  .event-panel { padding: 14px 0; border-bottom: 1px solid var(--hair); }
+  .event-panel > summary { cursor: pointer; font: 14px var(--sans); }
+  .event-panel > summary span { font: 11px var(--mono); color: var(--muted); margin-left: 12px; }
+  .event-caveat { font: 12px/1.8 var(--sans); color: var(--muted); margin: 14px 0; }
+  .agenda-row { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 16px; padding: 14px 0; border-top: 1px solid var(--hair-soft); }
+  .agenda-date, .event-count { font: 12px/1.8 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .agenda-row h3, .event-group h3 { font: 600 17px/1.8 var(--serif); }
+  .agenda-row p { font-size: 14px; }
+  .event-group { padding: 24px 0; border-bottom: 1px solid var(--hair); }
+  .event-group > .item { padding-bottom: 8px; }
+  .event-history { margin-top: 12px; }
+  .event-history > summary { cursor: pointer; font: 13px var(--sans); color: var(--muted); }
+  .spread-row { padding: 15px 0; border-top: 1px solid var(--hair-soft); }
+  @media (max-width: 720px) { .agenda-row { grid-template-columns: 76px minmax(0,1fr); gap: 12px; } }
 </style>
 <style>
   .themetoggle {
@@ -1108,6 +1123,9 @@
     </div>
     <p class="reader-status" id="reader-status" role="status" aria-live="polite"></p>
   </section>
+
+  <details class="event-panel" id="spread-panel"><summary>보도 확산 <span id="spread-label"></span></summary><div id="spread-body"></div></details>
+  <details class="event-panel" id="agenda-panel"><summary>다음 확인 일정 <span id="agenda-label"></span></summary><div id="agenda-body"></div></details>
 
   <main class="timeline" id="timeline"></main>
 
@@ -2176,6 +2194,162 @@ const BRIEFINGS = [
 
 /* ══════════════════════════════════════════════════════════ */
 
+/* EVENTS-BEGIN */
+const EVENT_DATA = {
+  "registryHash": "46e8cb58cd15e6850d8bb7982f8826f59dab02825d513d168bf5d1c4c8892e27",
+  "asOf": "2026-09-18",
+  "measuredAt": "2026-09-18T04:30:02.371522+00:00",
+  "comparison": {
+    "ready": false,
+    "reason": "동일 수집원에서 48시간 비교 자료를 모으는 중"
+  },
+  "events": [
+    {
+      "id": "skt-usim-penalty-lawsuit",
+      "title": "SK텔레콤 유심유출 과징금 취소소송",
+      "reviewedAt": "2026-09-18",
+      "members": [
+        {
+          "date": "2026-09-18",
+          "title": "SK텔레콤 유심유출 과징금 취소소송 첫 변론기일 — 다음 변론 11/5, 선고 2027년 1월말 예정"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "SK텔레콤 유심유출 과징금(1,347.91억원) 취소소송, 오늘(9/17) 오후 서울행정법원 첫 변론기일 예정"
+        },
+        {
+          "date": "2026-09-10",
+          "title": "SK텔레콤, 유심 유출 과징금(1,347.91억원) 취소소송 첫 변론기일 9월 17일 지정"
+        }
+      ],
+      "measurement": {
+        "ready": false,
+        "reason": "동일 수집원에서 48시간 비교 자료를 모으는 중",
+        "current": null,
+        "previous": null,
+        "delta": null,
+        "unknownOrigins": 0
+      }
+    },
+    {
+      "id": "hd-hyundai-2026-bargaining",
+      "title": "HD현대중공업 2026년 임단협",
+      "reviewedAt": "2026-09-18",
+      "members": [
+        {
+          "date": "2026-09-17",
+          "title": "HD현대중공업 노사, 2차 잠정합의 도출 — 9/19 조합원 투표"
+        },
+        {
+          "date": "2026-09-16",
+          "title": "HD현대중공업 노조, 9/16부터 파업 4시간→7시간 확대"
+        }
+      ],
+      "measurement": {
+        "ready": false,
+        "reason": "동일 수집원에서 48시간 비교 자료를 모으는 중",
+        "current": null,
+        "previous": null,
+        "delta": null,
+        "unknownOrigins": 0
+      }
+    }
+  ],
+  "agenda": [
+    {
+      "id": "hd-union-vote",
+      "title": "HD현대중공업 잠정합의안 조합원 투표",
+      "date": "2026-09-19",
+      "dateType": "scheduled",
+      "certainty": "announced",
+      "recordedAt": "2026-09-17",
+      "reference": {
+        "date": "2026-09-17",
+        "title": "HD현대중공업 노사, 2차 잠정합의 도출 — 9/19 조합원 투표"
+      },
+      "note": "브리핑에 실린 예정일. 실제 이행 여부는 후속 확인.",
+      "sources": [
+        {
+          "name": "EBN",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1678915"
+        },
+        {
+          "name": "매일노동뉴스",
+          "url": "https://www.labortoday.co.kr/news/articleView.html?idxno=224557"
+        }
+      ],
+      "topic": "국내 산업 / 정책",
+      "entities": []
+    },
+    {
+      "id": "us-investment-report",
+      "title": "대미투자 국회 보고 일정 확인",
+      "date": "2026-09-21",
+      "dateType": "scheduled",
+      "certainty": "tentative",
+      "recordedAt": "2026-09-18",
+      "reference": {
+        "date": "2026-09-18",
+        "title": "대미투자 MOU 서명 재연기 — 웨스팅하우스 원전 지분 이견 구체화"
+      },
+      "note": "9/21~22로 재조정 중이라는 보도. 확정 일정 아님.",
+      "sources": [
+        {
+          "name": "헤럴드경제",
+          "url": "https://biz.heraldcorp.com/article/10877594"
+        }
+      ],
+      "topic": "국내 산업 / 정책",
+      "entities": []
+    },
+    {
+      "id": "industrial-tariff-deferral",
+      "title": "산업용 전기요금 적용 유예 신청 마감",
+      "date": "2026-09-30",
+      "dateType": "scheduled",
+      "certainty": "announced",
+      "recordedAt": "2026-09-18",
+      "reference": {
+        "date": "2026-09-18",
+        "title": "산업용 전기요금 개편, 준비기간 고려해 9/30까지 적용 유예 신청 허용"
+      },
+      "note": "브리핑에 실린 예정일. 실제 이행 여부는 후속 확인.",
+      "sources": [
+        {
+          "name": "정책브리핑",
+          "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148960823"
+        }
+      ],
+      "topic": "국내 산업 / 정책",
+      "entities": []
+    },
+    {
+      "id": "skt-next-hearing",
+      "title": "SK텔레콤 과징금 취소소송 다음 변론",
+      "date": "2026-11-05",
+      "dateType": "scheduled",
+      "certainty": "announced",
+      "recordedAt": "2026-09-18",
+      "reference": {
+        "date": "2026-09-18",
+        "title": "SK텔레콤 유심유출 과징금 취소소송 첫 변론기일 — 다음 변론 11/5, 선고 2027년 1월말 예정"
+      },
+      "note": "브리핑에 실린 예정일. 실제 이행 여부는 후속 확인.",
+      "sources": [
+        {
+          "name": "이투데이",
+          "url": "https://www.etoday.co.kr/news/view/2626928"
+        }
+      ],
+      "topic": "SK 그룹",
+      "entities": [
+        "SK"
+      ]
+    }
+  ]
+};
+/* EVENTS-END */
+
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -2276,9 +2450,9 @@ function displaySections(day, topic = activeTopic, mode = activeMode) {
     const name = topicName(section.topic);
     const target = grouped.get(name) || { topic: name, items: [], briefs: [], notes: [] };
     target.items.push(...(section.items || []).filter((x) => matchesItem(x, section, topic) && (mode !== "top" || isTop(x))));
-    if (mode === "all") target.briefs.push(...(section.briefs || []).filter((x) => matchesItem(x, section, topic)));
+    if (mode === "all" || mode === "events") target.briefs.push(...(section.briefs || []).filter((x) => matchesItem(x, section, topic)));
     if (section.note && (topic === ALL || name === topic) && activeRegion === ALL && !searchQuery && !skOnly) target.notes.push(section.note);
-    if (target.items.length || target.briefs.length || (mode === "all" && target.notes.length)) grouped.set(name, target);
+    if (target.items.length || target.briefs.length || ((mode === "all" || mode === "events") && target.notes.length)) grouped.set(name, target);
   });
   return [...grouped.values()];
 }
@@ -2289,7 +2463,7 @@ function visibleCount(date, topic = activeTopic, mode = activeMode) {
 function renderReader() {
   $("reader").hidden = activeDate === WEEK;
   if (activeDate === WEEK) return;
-  $("modes").innerHTML = [["top", "핵심 5"], ["major", "주요"], ["all", "전체 뉴스"]].map(([mode, label]) =>
+  $("modes").innerHTML = [["top", "핵심 5"], ["major", "주요"], ["all", "전체 뉴스"], ["events", "사건별"]].map(([mode, label]) =>
     `<button type="button" class="chip" data-mode="${mode}" aria-pressed="${mode === activeMode}">${label}<span class="count">${visibleCount(activeDate, activeTopic, mode)}</span></button>`).join("");
   $("modes").querySelectorAll("button").forEach((button) => button.addEventListener("click", () => { activeMode = button.dataset.mode; render(); }));
   const dates = BRIEFINGS.filter((b) => activeDate === ALL || b.date === activeDate);
@@ -2878,6 +3052,10 @@ function renderWeekly() {
 }
 
 function renderTimeline() {
+  if (activeMode === "events" && activeDate !== WEEK) {
+    $("timeline").innerHTML = renderEventView();
+    return;
+  }
   /* "주간"을 고르면 일간 대신 주간 회고를 보여준다 */
   if (activeDate === WEEK) {
     $("timeline").innerHTML = renderWeekly();
@@ -2932,6 +3110,67 @@ function renderTimeline() {
   $("timeline").innerHTML = days || `<div class="empty">${esc(none)}</div>`;
 }
 
+
+function eventAnchor() { return selectedDay()?.date || BRIEFINGS[0]?.date || TODAY; }
+function publishedRows() {
+  return BRIEFINGS.flatMap(day => day.sections.flatMap(section => [...(section.items||[]), ...(section.briefs||[])].map(item => ({day,section,item}))));
+}
+function eventFor(row, anchor) {
+  return EVENT_DATA.events.find(event => event.reviewedAt <= anchor && (row.item.eventId === event.id || event.members.some(ref => ref.date === row.day.date && ref.title === row.item.title)));
+}
+function renderEventView() {
+  const anchor = eventAnchor();
+  const all = publishedRows();
+  const visible = all.filter(row => (activeDate === ALL || row.day.date === activeDate) && matchesItem(row.item,row.section));
+  const groups = new Map();
+  visible.forEach((row,index) => {
+    const event = eventFor(row,anchor);
+    const id = event?.id || `single-${index}`;
+    if (!groups.has(id)) groups.set(id,{event,rows:[]});
+    groups.get(id).rows.push(row);
+  });
+  if (!groups.size) return '<div class="empty">현재 조건에 맞는 사건이 없습니다.</div>';
+  return `<p class="event-caveat">${visible.length}개 항목을 ${groups.size}개 묶음으로 표시합니다. 동일 사건으로 검토한 항목만 합칩니다. 출처 수는 독립 취재 건수가 아닙니다.</p>` + [...groups.values()].map(group => {
+    const event=group.event, latest=group.rows[0];
+    if (!event) return renderItem(latest.item);
+    const history=all.filter(row=>row.day.date <= anchor && eventFor(row,anchor)?.id === event.id).sort((a,b)=>b.day.date.localeCompare(a.day.date));
+    const sources=[...new Map(history.flatMap(row=>row.item.sources||[]).map(source=>[source.url,source])).values()];
+    const publishers=new Set(sources.map(source=>source.name));
+    return `<section class="event-group">
+      <h3>${esc(event.title)}</h3>
+      <p class="event-count">선택 조건 ${group.rows.length}개 항목 · 관련 기록 ${history.length}개 · 출처 이름 ${publishers.size}곳</p>
+      ${renderItem(latest.item)}
+      <details class="event-history"><summary>사건 경과와 원문 ${history.length}개 기록</summary>
+        <p class="event-caveat">관련 과거 기록은 현재 검색·주제 조건 밖의 문맥도 포함합니다. 날짜는 브리핑 게재일입니다.</p>
+        ${history.map(row=>`<div class="article-meta">${esc(row.day.date)} · ${esc(topicName(row.section.topic))}</div>${renderItem(row.item)}`).join("")}
+      </details>
+    </section>`;
+  }).join("");
+}
+function renderEventPanels() {
+  const anchor=eventAnchor();
+  $("spread-panel").hidden=activeDate===WEEK;
+  $("agenda-panel").hidden=activeDate===WEEK;
+  if(activeDate===WEEK) return;
+  const rows=publishedRows();
+  const events=EVENT_DATA.events.filter(event=>event.reviewedAt<=anchor && rows.some(row=>row.day.date<=anchor && eventFor(row,anchor)?.id===event.id && matchesItem(row.item,row.section)));
+  const measurementInTime=EVENT_DATA.measuredAt && new Date(EVENT_DATA.measuredAt).toLocaleDateString("sv-SE",{timeZone:"Asia/Seoul"})<=anchor;
+  const comparable=measurementInTime ? events.filter(event=>event.measurement.ready) : [];
+  $("spread-label").textContent=comparable.length ? `${comparable.length}개 사건 비교` : "비교 자료 준비 중";
+  $("spread-body").innerHTML=`<p class="event-caveat">${esc(measurementInTime ? EVENT_DATA.comparison.reason : "해당 날짜까지의 비교 자료가 없습니다")} · 매체 수와 중요도는 다릅니다. 원취재·전재를 확인한 자료만 독립 보도로 셉니다.</p>`+
+    (events.length ? events.map(event=>{
+      const m=event.measurement;
+      return `<div class="spread-row"><h3>${esc(event.title)}</h3><p class="event-count">${measurementInTime && m.ready ? `확인된 원취재 단위 · 이전 24시간 ${m.previous} → 최근 24시간 ${m.current} · 증감 ${m.delta>0?"+":""}${m.delta}` : esc(m.reason)}</p></div>`;
+    }).join("") : '<p class="event-caveat">현재 조건에 검토 완료된 사건 묶음이 없습니다.</p>');
+  const agenda=EVENT_DATA.agenda.filter(entry=>entry.recordedAt<=anchor && (!entry.resolvedAt || entry.resolvedAt>anchor) &&
+    matchesItem({title:entry.title,body:entry.note,entities:entry.entities,regions:entry.regions||[],sources:entry.sources},{topic:entry.topic})).sort((a,b)=>a.date.localeCompare(b.date));
+  $("agenda-label").textContent=`${agenda.length}건 · ${anchor} 기준`;
+  $("agenda-body").innerHTML=`<p class="event-caveat">선택한 회차까지 알려진 일정입니다. 재확인일은 실제 행사일과 다릅니다. 예정일이 지나도 결과 확인 전까지 남겨 둡니다.</p>` +
+    (agenda.length ? agenda.map(entry=>`<article class="agenda-row"><div class="agenda-date">${esc(entry.date.slice(5).replace("-","."))}<br>${entry.date<anchor?"결과 확인 필요":entry.date===anchor?"기준일 당일":"앞으로 확인"}</div><div>
+      <h3>${esc(entry.title)}</h3><div class="article-meta">${entry.dateType==="review"?"재확인일":entry.certainty==="tentative"?"잠정 일정":"보도된 예정일"}</div>
+      <p>${esc(entry.note||"")}</p>${renderSources(entry.sources)}</div></article>`).join("") : '<p class="event-caveat">현재 조건에 공개된 확인 일정이 없습니다.</p>');
+}
+
 function renderFoot() {
   const oldest = BRIEFINGS[BRIEFINGS.length - 1];
   const latest = BRIEFINGS[0];
@@ -2949,6 +3188,7 @@ function render() {
   renderDates();
   renderFilters();
   renderReader();
+  renderEventPanels();
   renderTimeline();
 }
 
