@@ -22,7 +22,7 @@
      못 받아와도 아래 --serif의 시스템 세리프로 떨어진다. -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400..700&display=swap">
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400..700&family=UnifrakturCook:wght@700&display=swap">
 
 <style>
   /* ══ 토큰 ══════════════════════════════════════
@@ -52,6 +52,7 @@
     /* 본문 세리프. 신문처럼 읽히게 하는 것이 목적이다.
        기사에 해당하는 것은 전부 세리프, 네비게이션·라벨·숫자는 산스/모노 —
        신문에서 기사와 '가구'를 가르는 방식과 같다. */
+    --masthead: "UnifrakturCook", "Old English Text MT", Georgia, serif;
     --serif: "Noto Serif KR", AppleMyungjo, "Nanum Myeongjo", Batang, 바탕,
              "Times New Roman", serif;
     --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
@@ -1069,14 +1070,14 @@
   .home-heading h2 { font:600 24px/1.5 var(--serif); }
   .home-heading h3, .flow-card h3 { font:600 19px/1.7 var(--serif); }
   .home-kicker { font:11px/1.8 var(--mono); color:var(--muted); letter-spacing:.08em; }
-  .home-intro { font:16px/1.8 var(--serif); color:var(--ink-soft); max-width:66ch; }
+  .home-intro { font:16px/1.8 var(--serif); color:var(--ink-soft); max-width:none; }
   .home-actions { display:flex; gap:12px 20px; flex-wrap:wrap; align-items:center; }
   .home-actions button, .flow-card summary { font:13px/1.8 var(--sans); cursor:pointer; }
   .home-actions button { background:transparent; color:var(--ink); border:0; border-bottom:1px solid var(--hair); padding:7px 0; }
   .home-actions button[aria-pressed="true"] { color:var(--accent); border-color:var(--accent); }
   .change-row { display:grid; grid-template-columns:90px minmax(0,1fr); gap:20px; padding:18px 0; border-top:1px solid var(--hair-soft); }
   .change-row h3 { font:600 18px/1.8 var(--serif); }
-  .change-row p, .flow-card p { font:15px/1.8 var(--serif); max-width:66ch; }
+  .change-row p, .flow-card p { font:15px/1.8 var(--serif); max-width:none; }
   .change-kind { font:12px/1.8 var(--mono); color:var(--muted); }
   .flow-card { padding:24px 0; border-top:1px solid var(--hair); }
   .flow-card summary { margin:14px 0; color:var(--muted); }
@@ -1095,8 +1096,8 @@
   .page { max-width:1280px; padding:24px 38px 80px; }
   .masthead { gap:0; padding:0; text-align:center; border-bottom:3px double var(--ink); }
   .paper-topline { display:flex; justify-content:space-between; gap:16px; font:10px/1.6 var(--mono); color:var(--muted); letter-spacing:.08em; padding:0 0 12px; border-bottom:1px solid var(--ink); }
-  .masthead h1 { font:700 clamp(52px,8vw,100px)/1.12 var(--serif); letter-spacing:-.065em; padding:14px 0 4px; }
-  .paper-tagline { font:14px/1.8 var(--serif); letter-spacing:.18em; padding-bottom:16px; }
+  .masthead h1 { font:700 clamp(42px,7.5vw,82px)/1.4 var(--masthead); letter-spacing:0; padding:18px 0 8px; margin:0; flex-shrink:0; }
+  .paper-tagline { font:14px/1.8 var(--serif); letter-spacing:.18em; margin-top:12px; padding:0 0 22px; flex-shrink:0; }
   .masthead .topics { font:11px/1.6 var(--sans); letter-spacing:.13em; padding:10px 0; border-top:1px solid var(--hair); }
   .datenav { margin-top:0; gap:24px; padding-top:12px; }
   .datechip { padding-bottom:9px; }
@@ -1147,8 +1148,8 @@
   @media (max-width:720px) {
     .page { padding:18px 20px 60px; }
     .paper-topline { font-size:8px; letter-spacing:0; gap:8px; }
-    .masthead h1 { font-size:clamp(42px,12vw,70px); padding-top:16px; }
-    .paper-tagline { font-size:11px; padding-bottom:14px; }
+    .masthead h1 { font-size:clamp(38px,10vw,60px); line-height:1.4; padding:16px 0 8px; }
+    .paper-tagline { font-size:12px; margin-top:10px; padding-bottom:18px; }
     .masthead .topics { font-size:9px; letter-spacing:.02em; }
     .datenav { gap:22px; }
     .workspace-nav { gap:24px; }
@@ -1178,7 +1179,7 @@
   @media(max-width:720px) { .research-evidence { grid-template-columns:1fr; gap:10px; } }
 
   /* Reading edition: a single, continuous article column. */
-  .page { max-width:980px; }
+  .page { max-width:1060px; }
   .headline-grid, .development-grid, .research-evidence, .evidence-pair { display:block; }
   .headline-grid .change-row, .headline-grid .change-row:first-child,
   .headline-grid .change-row:nth-child(2), .development-grid .change-row,
@@ -1187,13 +1188,15 @@
   .development-grid h3 { font:700 clamp(23px,2.6vw,29px)/1.55 var(--serif); letter-spacing:-.025em; margin:8px 0 16px; }
   .headline-grid .change-row p, .headline-grid .change-row:first-child p,
   .development-grid .change-row p, .flow-evidence p, .evidence-pair p,
-  .home-intro, .item p { font:17px/1.95 var(--serif); max-width:66ch; margin:12px 0; overflow-wrap:anywhere; }
+  .home-intro, .item p { font:16px/1.85 var(--serif); max-width:none; margin:12px 0; overflow-wrap:anywhere; }
   .headline-grid .article-meta, .headline-grid .src, .change-kind,
   .home-actions button, .workspace-nav button { font-size:14px; }
   .research-evidence > div, .evidence-pair > div + div { border-left:0; padding:20px 0; border-top:1px solid var(--hair); }
   .edition-desk .home-intro { font-size:14px; }
+  #home, .home-section, .research-report, .research-evidence, .flow-evidence { min-width:0; width:100%; }
+  .research-evidence p, .flow-card p { font-size:16px; line-height:1.85; max-width:none; }
   .change-context { font:14px/1.8 var(--sans); color:var(--muted); margin-top:14px; }
-  @media(max-width:720px) { .page { padding:18px 22px 50px; } .headline-grid .change-row p, .headline-grid .change-row:first-child p, .development-grid .change-row p, .item p { font-size:17px; line-height:1.9; } }
+  @media(max-width:720px) { .page { padding:18px 22px 50px; } .headline-grid .change-row p, .headline-grid .change-row:first-child p, .development-grid .change-row p, .item p { font-size:16px; line-height:1.85; } }
 </style>
 <style>
   .themetoggle {
