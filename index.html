@@ -1176,6 +1176,24 @@
   .research-limits h3 { font:600 18px/1.8 var(--serif); margin-bottom:10px; }
   .research-limits p { font:14px/1.85 var(--sans); color:var(--muted); margin:10px 0; }
   @media(max-width:720px) { .research-evidence { grid-template-columns:1fr; gap:10px; } }
+
+  /* Reading edition: a single, continuous article column. */
+  .page { max-width:980px; }
+  .headline-grid, .development-grid, .research-evidence, .evidence-pair { display:block; }
+  .headline-grid .change-row, .headline-grid .change-row:first-child,
+  .headline-grid .change-row:nth-child(2), .development-grid .change-row,
+  .development-grid .change-row:nth-child(odd) { border-right:0; border-top:1px solid var(--hair); padding:26px 0; }
+  .headline-grid .change-row h3, .headline-grid .change-row:first-child h3,
+  .development-grid h3 { font:700 clamp(23px,2.6vw,29px)/1.55 var(--serif); letter-spacing:-.025em; margin:8px 0 16px; }
+  .headline-grid .change-row p, .headline-grid .change-row:first-child p,
+  .development-grid .change-row p, .flow-evidence p, .evidence-pair p,
+  .home-intro, .item p { font:17px/1.95 var(--serif); max-width:66ch; margin:12px 0; overflow-wrap:anywhere; }
+  .headline-grid .article-meta, .headline-grid .src, .change-kind,
+  .home-actions button, .workspace-nav button { font-size:14px; }
+  .research-evidence > div, .evidence-pair > div + div { border-left:0; padding:20px 0; border-top:1px solid var(--hair); }
+  .edition-desk .home-intro { font-size:14px; }
+  .change-context { font:14px/1.8 var(--sans); color:var(--muted); margin-top:14px; }
+  @media(max-width:720px) { .page { padding:18px 22px 50px; } .headline-grid .change-row p, .headline-grid .change-row:first-child p, .development-grid .change-row p, .item p { font-size:17px; line-height:1.9; } }
 </style>
 <style>
   .themetoggle {
@@ -5250,7 +5268,8 @@ function renderHome() {
   const pending = personal.following.reduce((n,name)=>n+flowUnread(name,anchor).length,0);
   const agenda = homeAgenda(anchor);
   const rowHTML = (row, update) => `<article class="change-row"><div class="change-kind">${update?'후속 진전':'핵심 '+row.item.topRank}</div><div>
-    <h3>${esc(row.item.title)}</h3><p>${esc(update?row.item.change:row.item.body||'')}</p>
+    <h3>${esc(row.item.title)}</h3><p>${esc(row.item.body||row.item.change||'')}</p>
+    ${update && row.item.body && row.item.change && row.item.change!==row.item.body ? `<div class="change-context">새로 달라진 점 · ${esc(row.item.change)}</div>`:''}
     <div class="article-meta">${esc(topicName(row.section.topic))} · ${esc(row.item.publishedAt||row.day.date)}</div>
     ${renderSources(row.item.sources)}</div></article>`;
   $('home').innerHTML = `<section class="home-section edition-desk">
