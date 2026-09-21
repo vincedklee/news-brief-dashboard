@@ -35,7 +35,7 @@
      액센트가 따뜻한 쪽에 있는 이유는 시세 등락색(상승 빨강 --up / 하락 파랑 --down,
      한국 관행)과 겹치지 않기 위해서다. --up/--down 자체는 관행이라 건드리지 않는다. */
   :root {
-    --ground:   #E7EAE6;
+    --ground:   #F3F4EC;
     --surface:  #FBFCFA;
     --raise:    #F1F4F0;
     --ink:      #131A16;
@@ -100,7 +100,7 @@
   }
 
   :root[data-theme="light"] {
-    --ground:   #E7EAE6;
+    --ground:   #F3F4EC;
     --surface:  #FBFCFA;
     --raise:    #F1F4F0;
     --ink:      #131A16;
@@ -1090,6 +1090,83 @@
   .home-coverage summary { cursor:pointer; }
   .home-status { font:12px/1.8 var(--sans); color:var(--muted); }
   @media(max-width:720px) { .change-row { grid-template-columns:1fr; gap:6px; } .evidence-pair { grid-template-columns:1fr; gap:14px; } .home-heading h2 { font-size:22px; } }
+
+  /* Newspaper edition: typographic hierarchy, ruled columns, no decorative cards. */
+  .page { max-width:1280px; padding:24px 38px 80px; }
+  .masthead { gap:0; padding:0; text-align:center; border-bottom:3px double var(--ink); }
+  .paper-topline { display:flex; justify-content:space-between; gap:16px; font:10px/1.6 var(--mono); color:var(--muted); letter-spacing:.08em; padding:0 0 12px; border-bottom:1px solid var(--ink); }
+  .masthead h1 { font:700 clamp(52px,8vw,100px)/1.12 var(--serif); letter-spacing:-.065em; padding:14px 0 4px; }
+  .paper-tagline { font:14px/1.8 var(--serif); letter-spacing:.18em; padding-bottom:16px; }
+  .masthead .topics { font:11px/1.6 var(--sans); letter-spacing:.13em; padding:10px 0; border-top:1px solid var(--hair); }
+  .datenav { margin-top:0; gap:24px; padding-top:12px; }
+  .datechip { padding-bottom:9px; }
+  .datechip .d { font-size:13px; }
+  .workspace-nav { margin:0; gap:30px; border-bottom:1px solid var(--ink); }
+  .workspace-nav button { padding:12px 0; font-weight:600; }
+  .home-section { padding:26px 0; }
+  .edition-desk { display:grid; grid-template-columns:1fr auto; gap:5px 24px; padding:20px 0 16px; }
+  .edition-desk > .home-kicker { grid-column:1/-1; }
+  .edition-desk .home-heading { grid-column:1/-1; margin:0; }
+  .edition-desk h2 { font:700 25px/1.5 var(--serif); }
+  .edition-desk .home-intro { font:12px/1.8 var(--sans); max-width:none; grid-column:1/-1; }
+  .edition-desk .home-coverage { font-size:10px; margin:4px 0; }
+  .reading-guide { font:10px/1.8 var(--sans); color:var(--muted); margin:4px 0; }
+  .reading-guide summary { cursor:pointer; }
+  .reading-guide[open], .home-coverage[open] { grid-column:1/-1; }
+  .edition-desk #memo-status, .edition-desk .memo-output { grid-column:1/-1; }
+  .edition-desk #memo-status:empty { display:none; }
+  .home-heading h3 { font:700 19px/1.5 var(--serif); }
+  .front-page { border-bottom:3px double var(--ink); }
+  .front-page > .home-heading { margin-bottom:18px; }
+  .headline-grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:0 28px; }
+  .headline-grid .change-row { display:block; padding:18px 0; border-top:1px solid var(--hair); min-width:0; }
+  .headline-grid .change-kind { font:10px/1.6 var(--mono); letter-spacing:.12em; margin-bottom:10px; }
+  .headline-grid h3 { font:700 23px/1.55 var(--serif); letter-spacing:-.035em; text-wrap:pretty; margin-bottom:12px; }
+  .headline-grid p { font:14px/1.85 var(--serif); }
+  .headline-grid .change-row:first-child { grid-row:span 2; border-top:0; border-right:1px solid var(--hair); padding:0 28px 4px 0; }
+  .headline-grid .change-row:first-child h3 { font-size:clamp(28px,3vw,41px); line-height:1.5; letter-spacing:-.045em; }
+  .headline-grid .change-row:first-child p { font-size:16px; line-height:1.9; margin:20px 0; }
+  .headline-grid .change-row:nth-child(2) { border-top:0; padding-top:0; }
+  .headline-grid .article-meta { font-size:10px; margin:12px 0 8px; }
+  .headline-grid .src { font-size:10px; }
+  .development-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; }
+  .development-grid .change-row { display:block; }
+  .development-grid .change-kind { font-size:10px; margin-bottom:7px; }
+  .development-grid .change-row:nth-child(odd) { border-right:1px solid var(--hair); padding-right:28px; }
+  .development-grid h3 { font-size:20px; line-height:1.65; }
+  .development-grid p { font-size:14px; margin:8px 0; }
+  .developments .insight { margin:24px 0 0; }
+  .flow-card { border-top:1px solid var(--ink); }
+  .flow-card .home-heading h3 { font-size:25px; letter-spacing:-.03em; }
+  .evidence-pair { gap:28px; }
+  .evidence-pair > div + div { border-left:1px solid var(--hair); padding-left:28px; }
+  .evidence-pair h4 { font-size:20px; margin:8px 0; }
+  .home-actions button { font-size:12px; }
+  .home-section > details > summary { font:12px/1.8 var(--sans); padding:12px 0; cursor:pointer; }
+  footer { border-top:3px double var(--ink); }
+  @media (max-width:720px) {
+    .page { padding:18px 20px 60px; }
+    .paper-topline { font-size:8px; letter-spacing:0; gap:8px; }
+    .masthead h1 { font-size:clamp(42px,12vw,70px); padding-top:16px; }
+    .paper-tagline { font-size:11px; padding-bottom:14px; }
+    .masthead .topics { font-size:9px; letter-spacing:.02em; }
+    .datenav { gap:22px; }
+    .workspace-nav { gap:24px; }
+    .workspace-nav button { font-size:12px; }
+    .edition-desk { display:block; padding:18px 0 12px; }
+    .edition-desk .home-heading { margin:5px 0; }
+    .edition-desk h2 { font-size:23px; }
+    .edition-desk .home-intro { margin-bottom:8px; }
+    .headline-grid, .development-grid { grid-template-columns:1fr; }
+    .headline-grid .change-row:first-child { grid-row:auto; border-right:0; padding:0 0 24px; }
+    .headline-grid .change-row:first-child h3 { font-size:29px; line-height:1.55; }
+    .headline-grid .change-row:first-child p { font-size:15px; margin:14px 0; }
+    .headline-grid .change-row:nth-child(2) { border-top:1px solid var(--hair); padding-top:20px; }
+    .headline-grid h3 { font-size:22px; }
+    .development-grid .change-row:nth-child(odd) { border-right:0; padding-right:0; }
+    .evidence-pair > div + div { border-left:0; padding-left:0; border-top:1px solid var(--hair); padding-top:16px; }
+    .flow-card .home-heading h3 { font-size:22px; }
+  }
 </style>
 <style>
   .themetoggle {
@@ -1110,6 +1187,7 @@
     transition: opacity .15s, color .15s, border-color .15s;
   }
   .themetoggle:hover { opacity: 1; color: var(--accent); border-color: var(--accent); }
+  @media (max-width:720px) { .themetoggle { top:auto; bottom:14px; } }
   @media print { .themetoggle { display: none; } }
 </style>
 </head>
@@ -1120,9 +1198,10 @@
 <div class="page">
 
   <header class="masthead">
-    <div class="eyebrow">Global Daily Brief</div>
-    <h1>세계의 변화, 매일 아침</h1>
-    <div class="topics">지정학 · 경제 · 기술 · 산업 · 에너지 · 과학 · 사회 · 기업 · 한국</div>
+    <div class="paper-topline"><span>독립적인 시선 · 연결되는 흐름</span><span>GLOBAL AFFAIRS &amp; IDEAS</span></div>
+    <h1>The Daily Brief</h1>
+    <div class="paper-tagline">세계의 변화, 매일 아침</div>
+    <div class="topics">세계 · 경제 · 기술 · 산업 · 에너지 · 과학 · 사회 · 기업 · 한국</div>
   </header>
 
   <nav class="datenav" id="dates" aria-label="날짜 선택"></nav>
@@ -5054,19 +5133,19 @@ function renderHome() {
     <h3>${esc(row.item.title)}</h3><p>${esc(update?row.item.change:row.item.body||'')}</p>
     <div class="article-meta">${esc(topicName(row.section.topic))} · ${esc(row.item.publishedAt||row.day.date)}</div>
     ${renderSources(row.item.sources)}</div></article>`;
-  $('home').innerHTML = `<section class="home-section">
+  $('home').innerHTML = `<section class="home-section edition-desk">
     <div class="home-kicker">${esc(anchor)} 회차 기준${activeDate===ALL?' · 전체 선택 시 최신 회차를 요약합니다':''}</div>
-    <div class="home-heading"><h2>${following?'내가 지켜보는 흐름':'오늘 무엇이 달라졌나'}</h2><div class="home-actions"><button type="button" id="copy-home">${following?'관심 흐름':'오늘의 변화'} 메모 만들기</button></div></div>
-    <p class="home-intro">${following?`관심 ${personal.following.length}개 · 마지막 확인 이후 보관된 기사 ${pending}건. 흐름별로 근거를 읽고 확인 완료를 누르세요.`:`후속 진전 ${changes.length}건 · 관심 흐름의 미확인 기록 ${pending}건. 변화의 근거를 비교하고 다음에 확인할 조건을 정리합니다.`}</p>
-    <details class="home-coverage"><summary>${esc(day.collectedAt)} 수집${anchor!==TODAY?' · 오늘 회차가 아닙니다':''} · 수집 범위와 확인 공백 보기</summary>${editionStatus(day)}</details>
-    <p class="home-status">${personalPersistent?'관심·확인 기록: 이 브라우저에 저장 · 기기 간 동기화 및 알림 없음.':'브라우저 저장을 사용할 수 없어 이번 방문 동안만 관심 목록을 유지합니다.'} 표시 범위는 보관된 ${BRIEFINGS.length}개 회차입니다.</p>
+    <div class="home-heading"><h2>${following?'내가 지켜보는 흐름':'오늘의 지면'}</h2><div class="home-actions"><button type="button" id="copy-home">${following?'관심 흐름':'오늘의 변화'} 메모 만들기</button></div></div>
+    <p class="home-intro">${following?`관심 ${personal.following.length}개 · 마지막 확인 이후 보관된 기사 ${pending}건. 흐름별로 근거를 읽고 확인 완료를 누르세요.`:`후속 진전 ${changes.length}건 · 관심 흐름 ${pending}건 미확인`}</p>
+    <details class="home-coverage"><summary>${esc(anchor)} 발행${anchor!==TODAY?' · 오늘 회차가 아닙니다':''} · 수집 정보</summary>${editionStatus(day)}</details>
+    <details class="reading-guide"><summary>읽는 방법 · 관심 흐름 사용 안내</summary><p class="home-status">관심 있는 흐름의 ‘이 흐름 계속 보기’를 누르면 내 관심 흐름에 모입니다. 읽은 뒤 ‘확인 완료’를 누르세요. 입력할 내용은 없습니다.</p><p class="home-status">${personalPersistent?'관심·확인 기록: 이 브라우저에 저장 · 기기 간 동기화 및 알림 없음.':'브라우저 저장을 사용할 수 없어 이번 방문 동안만 관심 목록을 유지합니다.'} 표시 범위는 보관된 ${BRIEFINGS.length}개 회차입니다.</p></details>
     <p id="memo-status" class="home-status" role="status" aria-live="polite"></p><textarea id="memo-output" class="memo-output" aria-label="복사할 브리핑 메모" hidden readonly></textarea>
   </section>
-  ${!following ? `<section class="home-section"><div class="home-heading"><h3>먼저 볼 핵심</h3></div>
+  ${!following ? `<section class="home-section front-page"><div class="home-heading"><h3>주요 뉴스</h3><span class="home-kicker">THE FRONT PAGE</span></div><div class="headline-grid">
     ${headlineRows.length?headlineRows.slice(0,3).map(row=>rowHTML(row,false)).join(''):'<p class="home-empty">이 회차에는 핵심 선정 기록이 없습니다. 뉴스 탐색에서 주요 기사를 확인하세요.</p>'}
-    </section><section class="home-section"><div class="home-heading"><h3>새로 달라진 사실</h3><span class="home-kicker">이전 보도 대비 · ${changes.length}건</span></div>
-    ${changes.length?changes.slice(0,4).map(row=>rowHTML(row,true)).join(''):'<p class="home-empty">이 회차에 명시적으로 기록된 후속 진전이 없습니다. 새 기사가 없다는 뜻은 아닙니다.</p>'}
-    ${changes.length>4?`<details><summary>후속 진전 ${changes.length-4}건 더 보기</summary>${changes.slice(4).map(row=>rowHTML(row,true)).join('')}</details>`:''}
+    </div></section><section class="home-section developments"><div class="home-heading"><h3>새로 달라진 사실</h3><span class="home-kicker">이전 보도 대비 · ${changes.length}건</span></div>
+    <div class="development-grid">${changes.length?changes.slice(0,4).map(row=>rowHTML(row,true)).join(''):'<p class="home-empty">이 회차에 명시적으로 기록된 후속 진전이 없습니다. 새 기사가 없다는 뜻은 아닙니다.</p>'}
+    </div>${changes.length>4?`<details><summary>후속 진전 ${changes.length-4}건 더 보기</summary>${changes.slice(4).map(row=>rowHTML(row,true)).join('')}</details>`:''}
     ${renderInsight(day.insight)}</section>` : ''}
   <section class="home-section"><div class="home-heading"><h3>${following?'관심 흐름의 변화':'기사를 이어서 보는 흐름'}</h3></div>
     <p class="event-caveat">같은 흐름의 이전·최근 근거를 나란히 비교합니다. 반대 근거나 판단을 바꿀 조건은 ‘그래서 뭐?’에서 구분해 읽습니다.</p>
