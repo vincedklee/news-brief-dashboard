@@ -4899,7 +4899,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "e7e0b18e06beb78c822b2cf5c969a9824a2a8e0564c928f36f4394ff5c1aebee",
+  "registryHash": "deebe7ce2427948f103cf3d531d13fe01d22943c53614f30e20a6a7b371bb95f",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -4994,6 +4994,15 @@ const RESEARCH_DATA = {
         "ai-infrastructure-buildout-2026-09-28"
       ],
       "reason": "원문 접근 제한으로 충분한 근거를 대조하지 못해 초안 게시를 취소했습니다. 원문 확인 후 재조사합니다."
+    },
+    {
+      "date": "2026-09-28",
+      "checkedAt": "2026-09-28T01:05:00Z",
+      "status": "failed",
+      "reportIds": [
+        "ai-infrastructure-buildout-2026-09-28"
+      ],
+      "reason": "같은 날 두 번째 실행에서 새 조사를 시작하기 전에 WebFetch 원문 열람 가능 여부를 20개 서로 다른 도메인(로이터·위키피디아·SEC·연준·한국은행·가트너·주요 언론사·애플·아마존·구글·오픈AI 등 IR/보도 페이지)으로 재확인했습니다. microsoft.com, anthropic.com 2곳만 열렸고 나머지 18곳은 모두 EGRESS_BLOCKED로 실패해 오전 실행이 기록한 네트워크 차단이 그대로 재현됨을 확인했습니다. 접근 가능한 출처가 2개 조직뿐이라 최소 출처 다양성(3~5개, 반대 근거 포함)을 채울 수 없어 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 필요합니다."
     }
   ]
 };
