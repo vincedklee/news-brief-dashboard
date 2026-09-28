@@ -5883,8 +5883,8 @@ function setWorkspace(view) {
 function renderResearch() {
   const reports=RESEARCH_DATA.reports.filter(r=>r.reviewedAt<=TODAY).slice().sort((a,b)=>b.reviewedAt.localeCompare(a.reviewedAt));
   $('home').innerHTML=`<section class="home-section"><div class="home-kicker">DAILY SIGNAL · RESEARCH DESK</div><div class="home-heading"><h2>한 걸음 더 확인한 것</h2></div>
-    <p class="home-intro">도입 발표와 실제 결과를 대조하고, 판단을 바꿀 근거를 찾습니다.</p>
-    <p class="event-caveat">직접 주제를 입력하지 않아도 주요 뉴스에서 질문을 골라 개념·근거·반론을 조사합니다. 개인 열람 기록을 사용한 추천은 아닙니다.</p>
+    <p class="home-intro">중요한 뉴스의 배경과 작동 원리를 설명하고, 근거와 반론을 함께 살펴봅니다.</p>
+    <p class="event-caveat">매일 오전 9:07 자동 조사 · 오후 3:07 누락·게시 재확인 (한국시간). 직접 주제를 입력하지 않아도 주요 뉴스에서 질문을 골라 개념·근거·반론을 조사합니다. 실행 후 보고서 작성에는 시간이 걸립니다. 개인 열람 기록을 사용한 추천은 아닙니다.</p>
     <p class="article-meta">가장 최근 보고서 · ${esc(reports[0]?.reviewedAt||'없음')} · ${reports[0]&&daysBetween(reports[0].reviewedAt,TODAY)>1?'갱신 지연 — 마지막 보고서를 표시합니다':'뉴스 날짜와 별개의 조사 기록'}</p>
     ${(RESEARCH_DATA.runs||[]).length?`<p class="event-caveat">최근 조사 실행 · ${esc(RESEARCH_DATA.runs.at(-1).date)} · ${esc(({published:'새 보고서 작성',no_new_evidence:'새 근거를 확인하지 못함',failed:'조사 미완료'})[RESEARCH_DATA.runs.at(-1).status])} · ${esc(RESEARCH_DATA.runs.at(-1).reason)}</p>`:''}</section>`+
     (reports.length?reports.map(r=>`<article class="home-section research-report"><div class="home-kicker">${esc(r.topic)} · ${esc(r.reviewedAt)} 조사 · ${r.scope==='background'?'과거 연구를 포함한 배경 조사':'현재 사건 조사'}</div>
