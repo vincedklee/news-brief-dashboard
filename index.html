@@ -4899,7 +4899,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "49205d278cefd2a118a2e57f3eb442a6e72f1b014c97baf6bfac54274e695428",
+  "registryHash": "3ab64d9862f25ccd6557b5c2ace0eff0ec884bda1fa272dccf560b61ff550b2c",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -4983,6 +4983,213 @@ const RESEARCH_DATA = {
           "kind": "공급자의 자체 연구 보고"
         }
       ]
+    },
+    {
+      "id": "ai-infrastructure-buildout-2026-09-28",
+      "ruleId": "ai-infrastructure",
+      "topic": "반도체 / 컴퓨팅 인프라",
+      "question": "AI 인프라 증설에서 실제로 부족한 것은 무엇이며, 투자 발표가 공급·수익성으로 전환됐는가?",
+      "basis": "조사대기 브랜치의 ai-infrastructure 요청이 2026-09-21부터 매일 재생성되며 7일 넘게 처리되지 않고 남아 있었고, 오늘 일간 브리핑의 '메모리 슈퍼사이클과 AI 인프라 원가 전가' 호와도 맞닿아 있어 이번 회차 주제로 선택했습니다. 직전 회차(2026-09-21)는 'AI / 디지털 기술' 분야였으므로 이번에는 '반도체 / 컴퓨팅 인프라' 분야로 옮겨 분야 다양성을 유지했습니다. 개인 열람 기록을 학습한 결과가 아닙니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-28",
+      "scope": "current",
+      "summary": "AI 데이터센터 투자를 둘러싼 '실제로 무엇이 부족한가'와 '투자 발표가 공급·수익성으로 이어졌는가'라는 두 질문을 최근 하이퍼스케일러 실적 발표, 프로젝트 지연·취소 집계, 이를 반박하는 분석을 교차 대조해 확인했습니다. 수요·백로그가 급증한다는 낙관적 신호와 전력망 병목·수익성 미달을 지적하는 비관적 신호가 같은 시기에 함께 나오고 있다는 것이 이번 조사의 핵심입니다.",
+      "learning": [
+        {
+          "title": "'수주잔고(backlog)'는 오늘의 매출이 아니다",
+          "text": "클라우드 기업이 발표하는 백로그는 계약은 됐지만 아직 청구되지 않은 미래 매출이다. 알파벳(구글)은 2026년 1분기 클라우드 백로그가 4,600억달러로 전분기(2,400억달러) 대비 급증했다고 밝혔지만, 동시에 이 중 'just over 50%'만 앞으로 24개월 내 매출로 인식될 것이라고 안내했다. 백로그 발표를 그대로 매출 성과로 읽으면 투자 전환 속도를 과장하게 된다.",
+          "sourceIds": [
+            "alphabet-q1-2026-transcript"
+          ]
+        },
+        {
+          "title": "'부족한 것'이 GPU칩에서 전력 인프라로 옮겨갔다",
+          "text": "가트너는 2024년 11월 시점에 전력 부족이 2027년까지 AI 데이터센터의 40%를 제약할 것이라 예측했다. 2026년 들어 업계 논의는 GPU칩 공급보다 고압변압기·스위치기어·송전망 접속 심사 대기시간에 집중되는 쪽으로 옮겨갔다 — '무엇이 병목인가'라는 질문의 답 자체가 반도체에서 전력 설비로 바뀌었다는 뜻이다.",
+          "sourceIds": [
+            "gartner-2027-power"
+          ]
+        },
+        {
+          "title": "'취소'와 '지연' 통계는 집계기관마다 해석이 갈린다",
+          "text": "데이터센터워치(Data Center Watch)는 2026년 1분기에만 130억달러 이상 규모의 프로젝트 75건이 지역 반대 등으로 막히거나 지연됐다고 집계했다. 그러나 세미애널리시스(SemiAnalysis)는 같은 부류의 통계를 근거로 '미국 데이터센터 용량 절반이 취소됐다'는 식으로 옮겨진 보도들이 분모를 잘못 잡았다고 반박했다 — 같은 숫자도 무엇과 비교하느냐에 따라 정반대 인상을 준다.",
+          "sourceIds": [
+            "datacenterwatch-q1-2026",
+            "semianalysis-rebuttal"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "가트너는 2024년 11월 12일 보도자료에서, AI 최적화 서버 구동에 필요한 전력이 2027년 연간 500테라와트시(TWh)에 달해 2023년의 2.6배가 될 것이며, 이에 따라 전력 부족이 2027년까지 AI 데이터센터의 40%를 운영상 제약할 것으로 전망했다.",
+          "sourceIds": [
+            "gartner-2027-power"
+          ]
+        },
+        {
+          "text": "업계 집계에 따르면 마이크로소프트·구글·아마존 등 하이퍼스케일러의 2026년 합산 설비투자(capex)는 약 6,300억~6,900억달러 규모로 2025년(약 3,880억달러)보다 크게 늘었고 이 중 약 75%(약 4,500억달러)가 AI 인프라를 겨냥한다. 마이크로소프트는 2026회계연도(FY26) 3분기 실적(2026-04-29 발표) 투자자관계 자료에서 Azure 및 기타 클라우드 서비스 매출이 40% 성장했고, AI 인프라 투자를 이유로 매출원가가 47% 늘었다고 직접 밝혔다.",
+          "sourceIds": [
+            "introl-capex-2026",
+            "ms-ir-fy26q3"
+          ]
+        },
+        {
+          "text": "알파벳은 2026년 1분기 실적 발표(2026-04-29)에서 구글 클라우드 매출이 63% 성장해 처음으로 200억달러를 넘었고, 클라우드 백로그는 전분기 2,400억달러에서 4,600억달러로 늘었다고 밝혔다. 순다르 피차이 CEO는 실적콜에서 '단기적으로 컴퓨트 제약 상태(compute constrained)'라며 '수요를 맞출 수 있었다면 클라우드 매출이 더 높았을 것'이라고 말했고, 백로그 중 24개월 내 매출로 인식되는 비중은 '50%를 약간 넘는' 수준이라고 안내했다.",
+          "sourceIds": [
+            "alphabet-q1-2026-transcript"
+          ]
+        },
+        {
+          "text": "데이터센터워치(Data Center Watch, 10a Labs 산하 리서치)는 2026년 1~3월 미국에서 총 130억달러 이상 규모의 데이터센터 프로젝트 75건이 지역 반대 등으로 막히거나 지연됐다고 집계했으며, 활동 중인 반대 단체 수는 49개 주에 걸쳐 833개로 이전보다 두 배 이상 늘었다고 보도됐다(2026-07-10 보도 기준).",
+          "sourceIds": [
+            "datacenterwatch-q1-2026"
+          ]
+        },
+        {
+          "text": "세미애널리시스(SemiAnalysis)는 2026년 6월 21일 뉴스레터에서 '미국 데이터센터 용량의 절반이 취소됐다'는 보도들이 애초 '부지 확보·자금조달·그리드 접속 심사조차 통과하지 못했던 초기 단계 계획'까지 분모에 넣은 오류라고 반박했다. 이들의 자체 추적 모델상 2026년 말 북미 하이퍼스케일러 자체건설(self-build) 전망치는 최근 6개월간 약 1%만 변동했고, 아마존 한 곳만 2025년 4기가와트(GW), 2026년 5GW 이상을 짓고 있어 논란이 된 '12GW 파이프라인' 규모에 근접한다고 지적했다. 이들은 실제 구조 변화는 취소가 아니라 그리드 접속 지연에 따른 '자체 발전기(behind-the-meter gas generation) 조달' 확산이라고 설명했다.",
+          "sourceIds": [
+            "semianalysis-rebuttal"
+          ]
+        },
+        {
+          "text": "J.P.모건은 2025년 11월 11일 보도된 분석에서, 2030년까지 이어질 AI 인프라 투자에 대해 10%의 수익률을 내려면 연간 6,500억달러의 신규 매출이 필요하다고 추정했으며, 이는 전 세계 아이폰 이용자 1인당 매월 34.72달러, 또는 넷플릭스 구독자 1인당 매월 180달러를 영구히 추가로 내야 하는 규모에 해당한다고 비유했다.",
+          "sourceIds": [
+            "jpmorgan-tomshardware"
+          ]
+        }
+      ],
+      "limitations": [
+        "마이크로소프트·구글의 '컴퓨트 제약'·백로그 수치는 투자를 정당화할 유인이 있는 당사자(회사 경영진) 스스로 발표한 자료다. 독립된 제3자가 실제 가동률이나 백로그의 매출 전환율을 사후 검증한 수치는 이번 조사에서 확인하지 못했다.",
+        "데이터센터워치의 프로젝트 집계는 미국 내 사업에 한정되며, 원문 리포트를 직접 열람하지 못하고 이를 인용한 2차 보도로 대조했다. 세미애널리시스는 같은 통계 해석에 이견을 냈고, 두 기관 모두 세부 방법론을 이번 조사에서 확인 가능한 형태로 공개하지 않았다.",
+        "J.P.모건의 '연 6,500억달러 필요' 추정(2025-11-11 보도)은 2030년까지의 누적 투자 총량을 전제로 한 은행 리서치의 가정치다. 이와 직접 비교할, 출처가 분명하고 날짜가 확인되는 '현재 실제 AI 기여 매출액' 수치는 이번 조사에서 확인하지 못했다 — 격차의 크기를 단정하지 않는다.",
+        "실행 환경의 네트워크 제약으로 세미애널리시스 뉴스레터 원문, SEC 공시, 위키피디아 등 다수 페이지를 WebFetch로 직접 열람하지 못했다(접속 차단). 이 경우 서로 다른 매체의 검색 결과가 같은 수치·날짜를 반복해 확인해 준 경우에만 사실로 실었다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "오늘 확인한 근거를 연결하면, 'AI 인프라가 부족하다'는 말의 실체는 처음 우려됐던 GPU칩 자체보다 고압변압기·그리드 접속 심사 같은 전력 인프라 쪽으로 옮겨간 것으로 읽힌다. 동시에 구글·마이크로소프트의 수요는 회사 자체 발표 기준으로는 여전히 공급을 웃돌지만(구글 백로그 4,600억달러), 그중 얼마가 실제 매출로 전환될지는 회사의 자체 안내(24개월 내 절반)에 기대고 있어 '투자가 수익성으로 전환됐다'고 단정하기는 아직 이른 것으로 보인다."
+        },
+        {
+          "label": "다음 확인",
+          "text": "2026년 4분기~2027년 초 실적 발표에서 (1) 구글 백로그의 실제 매출 인식 속도가 안내치(24개월 내 50%)를 따라가는지, (2) 하이퍼스케일러들의 2027년 캐펙스 가이던스가 늘어나는지 줄어드는지, (3) 데이터센터워치·세미애널리시스 등 서로 다른 기관의 집계 차이가 좁혀지는지를 확인한다. 이 신호가 바뀌면 오늘의 판단을 다시 검토한다."
+        }
+      ],
+      "nextQuestion": "2026년 4분기~2027년 실적 발표에서 하이퍼스케일러의 캐펙스 가이던스와 백로그의 실제 매출 전환 실적은 어떻게 나타나는가?",
+      "nextCheck": "2026-10-12",
+      "attempts": [
+        {
+          "target": "AI 데이터센터 전력·그리드 병목 웹검색(원 근거 탐색)",
+          "outcome": "opened",
+          "note": "가트너·데이터센터날리지·스페론 등 종합 검색 결과 대조"
+        },
+        {
+          "target": "하이퍼스케일러 2026 캐펙스 규모 웹검색",
+          "outcome": "opened",
+          "note": "Introl·Futurum 등 업계 집계 확인, 회사별 수치 대조"
+        },
+        {
+          "target": "마이크로소프트 투자자관계(IR) 페이지 원문 (microsoft.com/investor)",
+          "outcome": "opened",
+          "note": "FY26 Q3 Intelligent Cloud 실적을 1차 자료로 직접 열람"
+        },
+        {
+          "target": "알파벳(구글) 2026년 1분기 실적콜 관련 웹검색",
+          "outcome": "opened",
+          "note": "백로그·컴퓨트 제약 발언·매출 전환 안내 대조"
+        },
+        {
+          "target": "데이터센터워치 Q1 2026 집계 원문 열람 시도 (techradar.com, wsls.com, forbes.com, biggo.com 등)",
+          "outcome": "blocked",
+          "note": "WebFetch가 다수 매체에서 EGRESS_BLOCKED로 실패. 검색 결과에 반복 등장한 수치만 사실로 채택"
+        },
+        {
+          "target": "세미애널리시스 반박 뉴스레터 원문 열람 시도 (newsletter.semianalysis.com)",
+          "outcome": "blocked",
+          "note": "WebFetch 접속 차단, 검색 결과의 인용문으로 대조"
+        },
+        {
+          "target": "반대 근거 검색 — AI 데이터센터 취소·오버빌드·거품 경고(표본 한계 확인)",
+          "outcome": "opened",
+          "note": "TD Cowan의 공급과잉 지적과 이를 반박하는 세미애널리시스 양쪽 모두 확인"
+        },
+        {
+          "target": "J.P.모건 연 6,500억달러 수익성 기준 웹검색",
+          "outcome": "opened",
+          "note": "Tom's Hardware(2025-11-11) 등에서 대조. J.P.모건 자체 페이지(am.jpmorgan.com)는 WebFetch 차단되어 2차 보도로 대체"
+        },
+        {
+          "target": "SEC EDGAR·위키피디아·EIA.gov 등 원문 페이지 열람 시도",
+          "outcome": "blocked",
+          "note": "실행 환경 네트워크 프록시가 다수 도메인을 EGRESS_BLOCKED로 차단, 시도만 기록"
+        },
+        {
+          "target": "현재 실제 AI 기여 매출 규모(J.P.모건 벤치마크와 직접 비교할 수치) 확인 시도",
+          "outcome": "no_new_evidence",
+          "note": "날짜·출처가 분명한 자료로 확인하지 못해 한계로만 기록하고 추정치는 게시하지 않음"
+        }
+      ],
+      "sources": [
+        {
+          "id": "gartner-2027-power",
+          "name": "Gartner Newsroom · \"Gartner Predicts Power Shortages Will Restrict 40% of AI Data Centers By 2027\"",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2024-11-12-gartner-predicts-power-shortages-will-restrict-40-percent-of-ai-data-centers-by-20270",
+          "publishedAt": "2024-11-12",
+          "kind": "리서치기관 보도자료(원문, 배경자료)"
+        },
+        {
+          "id": "introl-capex-2026",
+          "name": "Introl Blog · \"Hyperscaler CapEx Hits $600B in 2026\"",
+          "url": "https://introl.com/blog/hyperscaler-capex-600b-2026-ai-infrastructure-debt-january-2026",
+          "publishedAt": "2026-01",
+          "kind": "업계 분석 블로그(집계)"
+        },
+        {
+          "id": "ms-ir-fy26q3",
+          "name": "Microsoft Investor Relations · FY26 Q3 Intelligent Cloud Performance",
+          "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/intelligent-cloud-performance",
+          "publishedAt": "2026-04-29",
+          "kind": "기업 1차 자료(투자자관계, 직접 열람)"
+        },
+        {
+          "id": "alphabet-q1-2026-transcript",
+          "name": "The Motley Fool · Alphabet (GOOGL) Q1 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/04/29/alphabet-googl-q1-2026-earnings-call-transcript/",
+          "publishedAt": "2026-04-29",
+          "kind": "실적발표 콜 녹취록(3자 게재)"
+        },
+        {
+          "id": "datacenterwatch-q1-2026",
+          "name": "WSLS · \"$130B in AI data centers has been blocked or delayed this year\" (Data Center Watch 집계 인용)",
+          "url": "https://www.wsls.com/news/2026/07/10/130b-in-ai-data-centers-has-been-blocked-or-delayed-this-year-heres-what-you-need-to-know/",
+          "publishedAt": "2026-07-10",
+          "kind": "언론보도(연구기관 집계 인용)"
+        },
+        {
+          "id": "semianalysis-rebuttal",
+          "name": "SemiAnalysis · \"Stop Saying Half of 2026 US Datacenter Capacity Is Canceled\"",
+          "url": "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter",
+          "publishedAt": "2026-06-21",
+          "kind": "업계 분석 뉴스레터(원 저자, 검색 결과로 대조·직접 열람 실패)"
+        },
+        {
+          "id": "jpmorgan-tomshardware",
+          "name": "Tom's Hardware · \"J.P. Morgan calls out AI spend, says $650 billion in annual revenue required...\"",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/usd650-billion-in-annual-revenue-required-to-deliver-10-percent-return-on-ai-buildout-investment-j-p-morgan-claims-equivalent-to-usd35-payment-from-every-iphone-user-or-usd180-from-every-netflix-subscriber-in-perpetuity",
+          "publishedAt": "2025-11-11",
+          "kind": "언론보도(은행 리서치 인용)"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "date": "2026-09-28",
+      "checkedAt": "2026-09-28T00:30:00Z",
+      "status": "published",
+      "reportIds": [
+        "ai-infrastructure-buildout-2026-09-28"
+      ],
+      "reason": "ai-infrastructure 대기 질문(7일 이상 미처리)을 검증해 새 autonomous 보고서를 게시함"
     }
   ]
 };
