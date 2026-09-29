@@ -4639,7 +4639,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "c33a7bb541b9ade0357a8319af79a863e97f2b21b9ada12abdd268a4a36e495e",
+  "registryHash": "c2d186a41656adb2d83998e94d7b0be03633e74f1f1a6892b1f2d3105f3aa8b5",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -4752,6 +4752,13 @@ const RESEARCH_DATA = {
         "ai-infrastructure-buildout-2026-09-28"
       ],
       "reason": "같은 날 세 번째(오후) 실행. research-automation.json의 lastObservedBlock에 따라 20개 도메인 전면 재탐색 대신 표본 점검만 했습니다 — WebSearch는 정상 동작했고, WebFetch는 wikipedia.org·sec.gov가 EGRESS_BLOCKED, anthropic.com만 열렸습니다(앞선 두 차례와 동일 패턴). 접근 가능한 조직이 여전히 1~2곳뿐이라 최소 출처 다양성을 채울 수 없어 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 오늘 세 차례 모두 같은 원인이므로 이 날짜의 추가 실행은 설정 변경 근거가 없는 한 전면 재탐색을 반복하지 않는 편이 낫습니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 필요합니다."
+    },
+    {
+      "date": "2026-09-29",
+      "checkedAt": "2026-09-29T00:20:00Z",
+      "status": "failed",
+      "reportIds": [],
+      "reason": "이날 첫(오전) 실행. 새 조사를 시작하기 전 research-automation.json의 lastObservedBlock에 따라 표본 점검(WebSearch 1회 + WebFetch 8회, 8개 서로 다른 도메인)으로 네트워크 상태를 재확인했습니다. 결과: WebSearch는 정상 동작(AI 인프라 지출 검색에서 다수 출처 반환). WebFetch는 reuters.com, en.wikipedia.org, www.sec.gov, openai.com, www.bok.or.kr, www.gartner.com, www.idc.com 7곳 모두 EGRESS_BLOCKED로 실패했고, www.anthropic.com·www.microsoft.com 2곳만 열렸습니다 — 2026-09-28 세 차례 실행과 동일한 차단 패턴이 이번에도 그대로 재현됨을 확인했습니다. 접근 가능한 조직이 여전히 2곳(둘 다 AI/클라우드 사업자로 이해관계가 있어 서로 독립적 대조에도 한계)뿐이라, 최소 출처 다양성(2개 이상 독립 조직, 반대 근거 포함)과 원문 전체 열람(full_text) 요건을 충족할 수 없습니다. 직전 회차(ai-infrastructure-buildout-2026-09-28)가 검색 발췌만으로 사실을 채웠다가 게시 후 검증 취소된 전례가 있어, 같은 실수를 반복하지 않기 위해 이번에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
     }
   ]
 };
