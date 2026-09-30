@@ -4639,7 +4639,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "992c7310c806f6e2f74a7b436e3bc7415a409f5b9c5efb0d25e7aecfea148ed4",
+  "registryHash": "97ebad89dc250a304644775c56ce02c56a2522cac3da1912fb500d66e94dc797",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -4766,6 +4766,13 @@ const RESEARCH_DATA = {
       "status": "failed",
       "reportIds": [],
       "reason": "이날 두 번째(오후) 실행. 오전 실행에서 네트워크 차단이 확인됐으므로 이번에도 20개 전면 재탐색 대신 가벼운 표본 점검(WebSearch 1회 + WebFetch 4회, 오전과 겹치지 않는 도메인)만 했습니다. WebSearch는 정상 동작해 'AI 데이터센터 전력 수급' 주제로 다수 출처를 반환했습니다(전자신문·헤럴드경제·전기신문 등). WebFetch는 www.etnews.com, www.iea.org, www.yna.co.kr 3곳이 모두 실패(앞 둘은 EGRESS_BLOCKED, yna.co.kr은 'unable to fetch')했고, www.microsoft.com만 정상 열람됐습니다 — 지금까지 5회 연속(9/28 세 차례, 9/29 두 차례) 같은 차단 패턴입니다. 접근 가능한 조직이 1~2곳(둘 다 AI/클라우드 이해관계자)뿐이라 최소 출처 다양성과 원문 전체 열람 요건을 충족할 수 없어, 유망한 후보 주제(AI 데이터센터 전력 수급 병목)를 확인했음에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
+    },
+    {
+      "date": "2026-09-30",
+      "checkedAt": "2026-09-30T00:09:40Z",
+      "status": "failed",
+      "reportIds": [],
+      "reason": "이날 첫(오전) 실행. 5회 연속 재확인된 네트워크 차단 패턴을 전면 재탐색 대신 가벼운 표본(WebSearch 1회 + WebFetch 5회, 이전 5회 실행과 겹치지 않는 새 도메인 4곳 + 대조군 1곳)으로 재확인했습니다. WebSearch는 정상 동작해 'AI 데이터센터 전력 공급 병목' 주제로 다수 출처(이투데이·글로벌이코노믹·파이낸셜뉴스·전기신문·토큰포스트 등)를 반환했습니다. WebFetch는 새로 시도한 www.bloomberg.com, www.nvidia.com, www.hankyung.com이 모두 EGRESS_BLOCKED, oracle.com은 HTTP 403으로 실패했고, 대조군인 www.anthropic.com만 정상 열람됐습니다 — 지금까지 6회 연속(9/28 세 차례, 9/29 두 차례, 9/30 오전) 동일 패턴입니다. 접근 가능한 조직이 사실상 1~2곳(둘 다 AI/클라우드 이해관계자)뿐이라 최소 출처 다양성(2개 이상 독립 조직, 반대 근거 포함)과 원문 전체 열람(full_text) 요건을 충족할 수 없어, 유망한 후보 주제(AI 데이터센터 전력 공급 병목)를 확인했음에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
     }
   ]
 };
