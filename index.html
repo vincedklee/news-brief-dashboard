@@ -4639,7 +4639,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "97ebad89dc250a304644775c56ce02c56a2522cac3da1912fb500d66e94dc797",
+  "registryHash": "becd1c7244079e84ed327468c58fbd1f3d9ef4951bcb1eba8a440b0e08e73d90",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -4723,6 +4723,257 @@ const RESEARCH_DATA = {
           "kind": "공급자의 자체 연구 보고"
         }
       ]
+    },
+    {
+      "id": "ai-datacenter-power-review-2026-09-30",
+      "ruleId": "energy-grid-review",
+      "topic": "에너지 / 기후 / 자원",
+      "question": "한국 AI 데이터센터는 왜 GPU가 아니라 전력 때문에 멈추는가?",
+      "basis": "지난 세 차례(9/28~9/30 오전) 심층 조사 시도에서 'AI 데이터센터 전력 공급 병목'을 유망한 후보로 반복 확인했지만 실행 환경의 WebFetch 접속 차단(EGRESS_BLOCKED)으로 매번 실패로 종료했습니다. 이번 실행에서는 같은 접속 제약이 재현되지 않아(reuters.com 1건만 차단) 원문 열람이 가능해, 그동안 미룬 후보를 실제로 검증했습니다. 직전 두 회차가 각각 'AI / 디지털 기술'(9/21, reviewed)·'반도체 / 컴퓨팅 인프라'(9/28, failed) 분야였던 점을 고려해 이번에는 '에너지 / 기후 / 자원' 분야로 옮겨 분야 다양성을 유지했습니다. 개인 열람 기록을 학습한 결과가 아닙니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-30",
+      "scope": "current",
+      "summary": "2026-09-28 국회 국정감사에서 한국전력이 어기구 의원실에 제출한 자료가 공개되며 'AI 데이터센터가 전력 때문에 멈춘다'는 통계가 구체화됐습니다. 이 통계가 실제로 무엇을 재는지, 정부가 이미 내놓은 해법(AIDC특별법)은 언제부터 작동하는지, '전력 부족'이라는 설명만으로 모든 지연을 덮을 수 있는지를 국정감사 자료·정책 자료·업계 조사 세 갈래로 대조했습니다.",
+      "learning": [
+        {
+          "title": "'전력계통영향평가'란 무엇인가",
+          "text": "데이터센터가 한전에 대용량 전력사용을 신청하면, 그 전력을 끌어써도 인근 송·변전망에 무리가 없는지를 평가받아야 한다. 이미 부하가 몰린 지역일수록 이 평가가 오래 걸리거나 통과율이 낮아진다 — 수도권이 대표적이다.",
+          "sourceIds": [
+            "idj-yeoju",
+            "dataeconomy-approval"
+          ]
+        },
+        {
+          "title": "'접속 대기 중'이 모두 전력 문제는 아니다",
+          "text": "송·변전망 접속을 기다리는 데이터센터라고 전부 전력망이 원인은 아니다. 한국일보 조사에서는 대기 중인 144곳 중 127곳(88.1%)이 '고객 준비 중' — 즉 사업자의 자금 조달·인허가·고객사 계약이 아직 안 끝난 상태였다. 전력 공급 병목과 사업 추진 지연은 서로 다른 문제다.",
+          "sourceIds": [
+            "hankookilbo-dc"
+          ]
+        },
+        {
+          "title": "'타임아웃제'란 무엇인가",
+          "text": "2026년 5월 국회를 통과한 AIDC특별법이 도입한 장치로, 법정 검토기한(전력계통영향평가 150일 등)이 지나도 기관이 거부 의사를 밝히지 않으면 다음날 인허가가 자동으로 완료된 것으로 간주한다. 비수도권 AIDC는 전력계통영향평가 자체를 면제받는다. 다만 이 제도는 아직 시행 전이다.",
+          "sourceIds": [
+            "busan-aidc",
+            "shinkim-aidc",
+            "kdi-aidc"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "한국전력이 어기구 의원실(국회 기후에너지환경노동위)에 제출한 자료에 따르면 2021년~2026년4월 데이터센터 전력공급방안 검토대상 163건 중 154건이 회신됐고, 이 중 57건(37.0%)이 6개월 이상 걸렸다 — 6개월~1년 미만 44건, 1년~2년 미만 9건, 2년 이상 4건이며 미회신 9건 중에도 1년 이상 대기가 5건, 2년 이상이 2건 있었다.",
+          "sourceIds": [
+            "idj-yeoju",
+            "etoday-power"
+          ]
+        },
+        {
+          "text": "회신된 154건의 판정 결과는 '공급가능' 88건(57.1%), '조건부가능' 63건(40.9%), '공급불가' 3건(1.9%, 모두 경기지역)이었다. 즉 신청 대부분은 결국 어떤 형태로든 공급 가능 판정을 받았고, 문제는 승인 여부보다 걸리는 시간이라는 것이 이 자료의 핵심이다.",
+          "sourceIds": [
+            "idj-yeoju"
+          ]
+        },
+        {
+          "text": "수도권 쏠림도 함께 확인됐다. 2025년 신청 46건 중 서울·경기·인천이 37건(80.4%)으로, 2024년 32%에서 1년 만에 48.4%포인트 뛰었다(계약전력 기준으로는 19.8%→52.1%).",
+          "sourceIds": [
+            "idj-yeoju"
+          ]
+        },
+        {
+          "text": "같은 병목을 다른 절차 단계에서 집계한 수치도 있다. 한국데이터경제신문은 2024년8월~2025년6월 신청된 수도권 '전력계통영향평가' 195건 중 승인은 4건(2.1%)에 그쳤다고 보도했다 — 어기구 의원 자료의 '공급가능' 응답률(57.1%)과는 대상 절차·집계 기간이 달라 같은 병목의 다른 단면으로 보이며, 두 수치를 같은 지표처럼 비교할 수는 없다.",
+          "sourceIds": [
+            "dataeconomy-approval"
+          ]
+        },
+        {
+          "text": "한국일보 조사에 따르면 송·변전 접속을 기다리는 데이터센터 144곳 중 127곳(88.1%)은 전력망이 아니라 '고객 준비 중' 상태였다. 정부의 2040년 예상 수요는 20.8GW, 발표된 메가프로젝트 계획 총합은 22.8GW인데, 2030년까지 실제로 확보된 수요는 2.3GW에 그쳤다.",
+          "sourceIds": [
+            "hankookilbo-dc"
+          ]
+        },
+        {
+          "text": "정부는 2026년 5월 7일 국회 본회의에서 AIDC특별법을 통과시켜 비수도권 AIDC의 전력계통영향평가 면제, 인허가 타임아웃제, 시설물 설치기준 완화를 도입했다. 법무법인 신영·KDI 자료 모두 국무회의 의결·공포 후 9개월의 경과기간을 거쳐 '2027년 2월 시행 예정'이라고 밝히고 있어, 지금 나온 지연 통계(2026년 4월까지)는 이 법 시행 이전 상황을 담고 있다.",
+          "sourceIds": [
+            "busan-aidc",
+            "shinkim-aidc",
+            "kdi-aidc"
+          ]
+        }
+      ],
+      "limitations": [
+        "국정감사에서 여러 매체가 보도한 한전 수치는 사실상 어기구 의원실이 배포한 같은 자료 하나에서 나온 것으로, 이번 조사도 그중 두 매체(당진신문·이투데이)를 대조했을 뿐 서로 독립적으로 집계된 복수의 통계는 아니다.",
+        "어기구 의원 자료의 '공급가능 57.1%'와 한국데이터경제신문의 '전력계통영향평가 승인 2.1%'가 정확히 같은 절차의 다른 표현인지, 서로 다른 심사 단계(예: 초기 검토 대 최종 계통영향평가)를 재는 것인지는 두 원자료를 직접 대조하지 못해 확정하지 못했다.",
+        "AIDC특별법의 정확한 공포일자는 원문 법령 공포문으로 확인하지 못했다. 과학기술정보통신부 보도자료 재게시 페이지(bems.or.kr)는 접속 시도 시 HTTP 503으로 열리지 않았고, 법무법인 뉴스레터·KDI 자료(둘 다 법 통과 직후인 5월 초 작성)는 시행 시점을 '2027년 2월 예정'으로만 적고 있어 이후 절차 지연 여부는 확인하지 못했다.",
+        "'전력 부족이 데이터센터 건설을 가로막는다'는 서사를 복잡하게 만드는 반대 근거(한국일보의 '고객 준비 중' 88.1%, 단비뉴스의 '데이터센터 전력소비 과장' 팩트체크)는 확인했지만, '전력 병목 통계 자체가 과장됐다'는 주장을 직접 뒷받침하는 가동률·유휴 설비 통계는 이번 조사에서 찾지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "한전 자료와 AIDC특별법의 시행 일정을 겹쳐보면, 지금 보도되는 '전력 때문에 데이터센터가 막힌다'는 통계(2026년 4월까지 집계)는 정부가 이미 내놓은 해법이 작동하기 전 상황을 담고 있는 것으로 읽힌다. 동시에 한국일보 조사가 보여주듯 대기 중인 프로젝트의 상당수(88.1%)는 애초에 전력망이 아니라 사업자 쪽 사정으로 멈춰 있어, 법이 시행돼도 이 몫은 그대로 남을 가능성이 있다."
+        },
+        {
+          "label": "다음 확인",
+          "text": "이 판단은 (1) 법 시행(2027년 2월 예정) 이후 처음 나올 한전의 검토기간 분포나 전력계통영향평가 승인율이 뚜렷이 개선되지 않거나, (2) 비수도권 AIDC 신청이 실제로는 늘지 않거나, (3) '고객 준비 중' 127곳 중 착공·가동으로 이어지는 비율이 낮게 유지되면 뒤집힌다. 다음 국정감사·한전 통계 발표에서 이 세 지표를 확인한다."
+        }
+      ],
+      "nextQuestion": "AIDC특별법 시행(2027년 2월 예정) 이후 한전의 전력공급방안 검토기간·전력계통영향평가 승인율과 비수도권 AIDC 신청 비중은 실제로 달라졌는가?",
+      "nextCheck": "2026-12-15",
+      "attempts": [
+        {
+          "target": "AI 데이터센터 전력 공급 병목 웹검색(원 후보 재탐색)",
+          "outcome": "opened",
+          "note": "'AI 데이터센터 전력 공급 병목' 검색, 국정감사 관련 다수 보도 확인"
+        },
+        {
+          "sourceId": "etoday-power",
+          "target": "https://www.etoday.co.kr/news/view/2629741",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-28 확인"
+        },
+        {
+          "target": "https://www.electimes.com/news/articleView.html?idxno=363963",
+          "outcome": "opened",
+          "note": "전기신문 배경 기사 본문 열람. 발행일 2026-01-14로 오래돼 최종 findings에는 미채택"
+        },
+        {
+          "target": "어기구 의원 데이터센터 전력 공급방안 검토 국정감사 웹검색",
+          "outcome": "opened",
+          "note": "당진신문·이투데이·기계설비신문 등 동일 국정감사 자료를 인용한 복수 매체 확인"
+        },
+        {
+          "sourceId": "idj-yeoju",
+          "target": "https://www.idjnews.kr/news/articleView.html?idxno=302918",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 한전 자료 세부 수치(163건/154건/57건 등) 확인"
+        },
+        {
+          "target": "데이터센터 전력 공급 지연 대책 정부 대응 웹검색",
+          "outcome": "opened",
+          "note": "한국일보·부산일보 등 정부 대응(AIDC특별법) 관련 보도 확인"
+        },
+        {
+          "sourceId": "hankookilbo-dc",
+          "target": "https://www.hankookilbo.com/news/article/A2026091414120004676",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-23, '고객 준비 중' 88.1% 수치 확인"
+        },
+        {
+          "sourceId": "busan-aidc",
+          "target": "https://www.busan.com/view/busan/view.php?code=2026050718375921000",
+          "outcome": "opened",
+          "note": "본문 직접 열람, AIDC특별법 통과일 2026-05-07 확인"
+        },
+        {
+          "target": "http://www.bems.or.kr/bbs/board.php?bo_table=sub05_ct03&wr_id=10602",
+          "outcome": "blocked",
+          "note": "HTTP 503으로 열람 실패, 과기정통부 공식 1차 발표문은 확인하지 못함"
+        },
+        {
+          "sourceId": "shinkim-aidc",
+          "target": "https://www.shinkim.com/kor/media/newsletter/3266",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 시행예정 2027년 2월 확인"
+        },
+        {
+          "sourceId": "kdi-aidc",
+          "target": "https://eiec.kdi.re.kr/policy/materialView.do?num=280743",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 시행예정 2027년 2월 재확인(독립 출처 교차검증)"
+        },
+        {
+          "target": "반대 근거 검색 — 데이터센터 전력수요 전망 과장·실제 가동률·유령 프로젝트(표본 한계 확인)",
+          "outcome": "opened",
+          "note": "'가동률 낮다·유령 프로젝트' 직접 근거는 찾지 못했으나 단비뉴스 팩트체크·한국일보 기사로 대체 반론 확인"
+        },
+        {
+          "sourceId": "danbi-factcheck",
+          "target": "https://www.danbinews.com/news/articleView.html?idxno=31413",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2025-09-11(배경자료), '절반의 사실' 판정 확인"
+        },
+        {
+          "sourceId": "dataeconomy-approval",
+          "target": "https://www.dataeconomy.co.kr/news/articleView.html?idxno=42618",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-16, 195건 중 4건(2.1%) 승인 수치 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "idj-yeoju",
+          "name": "당진신문 · \"전력 검토 37%가 6개월 이상..당진 어기구 의원, 데이터센터 지연 개선 촉구\"",
+          "url": "https://www.idjnews.kr/news/articleView.html?idxno=302918",
+          "publishedAt": "2026-09-28",
+          "kind": "언론보도(국정감사 제출자료 직접 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:46:30Z"
+        },
+        {
+          "id": "etoday-power",
+          "name": "이투데이 · \"AI는 '속도전'인데 전력 검토만 2년⋯'데이터센터 투자 발목'\"",
+          "url": "https://www.etoday.co.kr/news/view/2629741",
+          "publishedAt": "2026-09-28",
+          "kind": "언론보도(국정감사 제출자료 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:45:30Z"
+        },
+        {
+          "id": "hankookilbo-dc",
+          "name": "한국일보 · \"지금도 127곳 '고객 준비 중'인데… 이 많은 데이터센터, 지을 수 있을까\"",
+          "url": "https://www.hankookilbo.com/news/article/A2026091414120004676",
+          "publishedAt": "2026-09-23",
+          "kind": "언론보도(자체 취재, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:46:50Z"
+        },
+        {
+          "id": "busan-aidc",
+          "name": "부산일보 · \"AIDC 특별법 국회 본회의 통과…비수도권 AIDC 전력계통영향평가 면제\"",
+          "url": "https://www.busan.com/view/busan/view.php?code=2026050718375921000",
+          "publishedAt": "2026-05-07",
+          "kind": "언론보도(정부 발표 인용, 직접 열람, 배경자료)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:47:10Z"
+        },
+        {
+          "id": "shinkim-aidc",
+          "name": "법무법인(유) 신영 뉴스레터 · \"인공지능 데이터센터 산업 진흥에 관한 특별법 국회 본회의 통과\"",
+          "url": "https://www.shinkim.com/kor/media/newsletter/3266",
+          "publishedAt": "2026-05-08",
+          "kind": "법무법인 실무 뉴스레터(직접 열람, 배경자료)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:47:40Z"
+        },
+        {
+          "id": "kdi-aidc",
+          "name": "KDI 경제교육·정보센터 · \"인공지능 데이터센터 산업 진흥에 관한 특별법 국회 본회의 통과\"",
+          "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=280743",
+          "publishedAt": "2026-05-07",
+          "kind": "정부출연연구기관 정책자료(직접 열람, 배경자료)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:47:55Z"
+        },
+        {
+          "id": "danbi-factcheck",
+          "name": "단비뉴스 · \"데이터센터 하나가 도시만큼 전력을 쓴다?\" (팩트체크)",
+          "url": "https://www.danbinews.com/news/articleView.html?idxno=31413",
+          "publishedAt": "2025-09-11",
+          "kind": "언론 팩트체크(직접 열람, 배경자료)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:48:40Z"
+        },
+        {
+          "id": "dataeconomy-approval",
+          "name": "한국데이터경제신문 · \"[심층리포트] 수도권 데이터센터 승인율 2% 벼랑 끝…전기요금 35% 폭등이 몰고 온 전력 위기\"",
+          "url": "https://www.dataeconomy.co.kr/news/articleView.html?idxno=42618",
+          "publishedAt": "2026-09-16",
+          "kind": "언론 심층리포트(업계 집계 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-09-30T00:48:55Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -4773,6 +5024,15 @@ const RESEARCH_DATA = {
       "status": "failed",
       "reportIds": [],
       "reason": "이날 첫(오전) 실행. 5회 연속 재확인된 네트워크 차단 패턴을 전면 재탐색 대신 가벼운 표본(WebSearch 1회 + WebFetch 5회, 이전 5회 실행과 겹치지 않는 새 도메인 4곳 + 대조군 1곳)으로 재확인했습니다. WebSearch는 정상 동작해 'AI 데이터센터 전력 공급 병목' 주제로 다수 출처(이투데이·글로벌이코노믹·파이낸셜뉴스·전기신문·토큰포스트 등)를 반환했습니다. WebFetch는 새로 시도한 www.bloomberg.com, www.nvidia.com, www.hankyung.com이 모두 EGRESS_BLOCKED, oracle.com은 HTTP 403으로 실패했고, 대조군인 www.anthropic.com만 정상 열람됐습니다 — 지금까지 6회 연속(9/28 세 차례, 9/29 두 차례, 9/30 오전) 동일 패턴입니다. 접근 가능한 조직이 사실상 1~2곳(둘 다 AI/클라우드 이해관계자)뿐이라 최소 출처 다양성(2개 이상 독립 조직, 반대 근거 포함)과 원문 전체 열람(full_text) 요건을 충족할 수 없어, 유망한 후보 주제(AI 데이터센터 전력 공급 병목)를 확인했음에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
+    },
+    {
+      "date": "2026-09-30",
+      "checkedAt": "2026-09-30T00:49:44Z",
+      "status": "published",
+      "reportIds": [
+        "ai-datacenter-power-review-2026-09-30"
+      ],
+      "reason": "이날 두 번째(오전 09:45 KST 시작) 실행. 앞선 6회 연속 실패(9/28 세 차례, 9/29 두 차례, 9/30 오전 첫 실행)의 원인이던 WebFetch EGRESS_BLOCKED가 이번에는 재현되지 않아(reuters.com 1건만 차단, 그 외 한국 언론·법무법인·KDI 등 10곳 정상 열람) 'AI 데이터센터 전력 공급 병목'을 실제로 검증해 새 autonomous 보고서(ai-datacenter-power-review-2026-09-30)를 게시했다. 2개 이상 독립 매체(당진신문·이투데이의 국정감사 자료, 한국일보의 자체 취재, 한국데이터경제신문의 별도 집계) 및 반대근거 1회(한국일보 '고객 준비 중' 88.1%, 단비뉴스 팩트체크) 요건을 충족했다."
     }
   ]
 };
