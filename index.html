@@ -4559,7 +4559,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "0379b31b46b312c2c538c1f666d68d301319bdbd4964e722218636bab384f876",
+  "registryHash": "93595875c4dc08a7eedaa11140f9a83ebff657a1d749cf083086a563f98e3acc",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -5108,6 +5108,255 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-01T00:14:20Z"
         }
       ]
+    },
+    {
+      "id": "hormuz-oil-flow-gap-2026-10-02",
+      "ruleId": "energy-geopolitics",
+      "topic": "세계 정치 / 지정학",
+      "question": "'호르무즈 해협이 봉쇄 수준'이라는 보도와 실제 원유 통과량 수치는 왜 서로 다르게 보도되는가?",
+      "basis": "조사대기.json에 2026-09-25부터 매일 재등록된 energy-geopolitics(지정학 변화와 에너지 공급) 요청이 7일 넘게 처리되지 못해 선택했다. 같은 질문이 일간 브리핑의 '미국-이란 충돌 재개와 유가 급등' 호(8/31 시작, 10/2 기준 27회 진전)에서도 반복 등장하며, 특히 9/29 회차가 '호르무즈 통과량 전쟁전 대비 약 60% 회복'이라고 적은 수치의 근거를 직접 원문으로 확인하고 다른 집계와 대조하고자 했다. 직전 두 회차(09-30 에너지/기후, 10-01 반도체)와 겹치지 않도록 '세계 정치/지정학' 분야로 옮겼다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-02",
+      "scope": "current",
+      "summary": "호르무즈 해협 관련 보도마다 '선박 통항 90%+ 감소'와 '원유 물동량 60% 회복'이 동시에 등장해 혼란을 주는 현상을, 선박 통항횟수(AIS 기반) 지표와 원유 물동량(배럴 추정치) 지표가 서로 다른 지표라는 점, 그리고 '다크 탱커'(AIS 차단 운항)와 '전쟁 전 기준치' 선택이 수치 차이를 어떻게 만드는지를 중심으로 확인했다. 미국 정부 발표치와 민간 추적기관(Kpler) 수치의 격차도 함께 대조했다.",
+      "learning": [
+        {
+          "title": "'선박 통항횟수'와 '원유 물동량'은 다른 지표다",
+          "text": "많은 보도가 '호르무즈 통과 선박이 전쟁 전보다 90% 넘게 줄었다'는 식으로 쓰지만, 이는 자동식별장치(AIS)로 잡히는 선박 '횟수'를 센 것이다. 실제 원유 물동량(배럴 기준)은 남은 선박이 대형 유조선 위주로 운항하면 선박 수 감소율만큼 떨어지지 않을 수 있어, 두 지표를 같은 것으로 읽으면 오해가 생긴다.",
+          "sourceIds": [
+            "aljazeera-hormuz",
+            "khaleej-hormuz"
+          ]
+        },
+        {
+          "title": "'다크 탱커'가 두 지표의 괴리를 키운다",
+          "text": "공격·나포 위험을 피하려고 AIS 위치신호를 끄고 오만 쪽 남쪽 항로로 우회하는 유조선('다크 탱커')이 늘면서, AIS 기반 추적기관(Kpler 등)이 집계하는 통항 수는 실제보다 적게 잡히는 경향이 있다. 미국 정부와 민간 추적기관의 수치 차이를 만드는 한 축으로 지목된다.",
+          "sourceIds": [
+            "gulfnews-darktanker",
+            "aljazeera-hormuz"
+          ]
+        },
+        {
+          "title": "'전쟁 전 기준치' 자체가 보도마다 다르다",
+          "text": "어떤 보도는 전쟁 전 하루 약 1,500만배럴을, 미 EIA 공식 통계는 2022~2024년 기준 하루 약 2,000~2,100만배럴(세계 석유 소비의 약 20~21%)을 '정상'으로 놓는다. 분모가 달라지면 같은 936만배럴이라는 수치도 '60% 회복'과 '45% 수준' 양쪽으로 모두 표현될 수 있다.",
+          "sourceIds": [
+            "ajunews-kpler",
+            "eia-hormuz"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "Al Jazeera(2026-09-03) 보도에 따르면 미 재무장관 베센트는 9월1일(월) 기준 하루 1,500만~1,700만배럴이 통과했다고 주장했고 CNN은 같은 주 화요일 상선 40척이 1,800만배럴을 운반했다고 전했다. 반면 같은 기간 Kpler 추적치로는 하루 5~13척(10일 평균 13척)만 포착됐다 — 기사는 미국 수치가 해군 호위함·보조선·소형 다우선까지 포함했을 가능성과 AIS를 끈 선박의 존재를 격차의 원인으로 들었다. 기사가 인용한 전쟁 전 평시 평균은 선박 약 100척·원유 약 2,000만배럴이다.",
+          "sourceIds": [
+            "aljazeera-hormuz"
+          ]
+        },
+        {
+          "text": "Khaleej Times(2026-08-26, Kpler 집계 인용)에 따르면 8월25일(화) 상품운반선 5척, 8월24일(월) 4척이 통과했고 10일 평균은 15척이었다. 같은 날 바브엘만데브 해협은 31척으로 10일 평균과 일치해, 호르무즈만 유독 평시 대비 낮은 수준이었다.",
+          "sourceIds": [
+            "khaleej-hormuz"
+          ]
+        },
+        {
+          "text": "Gulf News(2026-09-22 갱신)는 9월 둘째 주말 12척 통과(전주 35척에서 감소), 월요일 17척(전주 37척에서 감소)을 전하며, 같은 주(9/13 주간) 유조선 22척이 약 4,200만배럴(하루 평균 약 600만배럴)을 운송했다고 집계했다. 기사는 '비평가들'이 Kpler 데이터가 왜곡됐으며 실제 물량은 다크 탱커로 빠져나가 추적되지 않는다고 지적했다고 전했다(비평가의 소속·신원은 기사에서 특정되지 않음).",
+          "sourceIds": [
+            "gulfnews-darktanker"
+          ]
+        },
+        {
+          "text": "아주경제(2026-09-28, 닛케이·Kpler 재인용)는 9월 호르무즈 해협 하루 평균 원유 통과량이 936만배럴로 집계됐으며 이는 8월보다 356만배럴 늘어난 수치이고, 기사가 전제한 전쟁 전 약 1,500만배럴 대비 약 60% 수준까지 회복된 것이라고 보도했다. AIS를 끄는 '다크 탱커' 증가를 회복의 배경으로 들었다.",
+          "sourceIds": [
+            "ajunews-kpler"
+          ]
+        },
+        {
+          "text": "Lloyd's List Intelligence 브리핑(2026-09-24)은 9월14~20일 호르무즈 전체 통항 104척(유조선·가스운반선 82척 포함, 전주 102척·79척에서 소폭 증가)을 집계했다 — 주간 약 14~15척/일 수준으로, 같은 시기 Kpler가 보도한 '원유 물동량 60% 회복'과 달리 선박 '횟수' 기준으로는 여전히 평시 대비 크게 낮은 수준이 유지됐다.",
+          "sourceIds": [
+            "lloydslist-brief"
+          ]
+        },
+        {
+          "text": "미 EIA(2023-11-21 공식 통계, 배경자료)에 따르면 2022년 기준 호르무즈 해협 하루 평균 원유·석유제품 통과량은 2,100만배럴로 세계 석유 소비의 약 21%였다. 이 기준치는 위 '전쟁 전 1,500만배럴' 추정과 최대 40% 차이가 난다.",
+          "sourceIds": [
+            "eia-hormuz"
+          ]
+        }
+      ],
+      "limitations": [
+        "'전쟁 전' 기준치가 출처마다 다르다(1,500만배럴 대 EIA의 2,100만배럴, 선박 수 100척 대 125척). 회복률(%)은 어느 분모를 쓰느냐에 크게 좌우되므로, 같은 936만배럴이라는 숫자도 '60% 회복'과 '약 45% 수준' 둘 다로 부를 수 있어 이 조사는 어느 쪽이 맞는 기준치인지 판정하지 않는다.",
+        "아주경제 기사는 닛케이·Kpler 자료의 2차 인용 보도다. 닛케이 원문이나 Kpler 원 데이터는 이번 조사에서 직접 열람하지 못했다.",
+        "미 정부(베센트 등)와 민간 추적기관(Kpler) 수치 차이의 방법론(해군 호위함 포함 여부 등)은 언론의 추정 설명일 뿐이다. 미 정부가 집계 방법론을 공식 공개한 1차 자료는 이번 조사에서 찾지 못했다.",
+        "Gulf News가 인용한 'Kpler 데이터가 왜곡됐다'는 비판은 익명 비평가(critics)의 주장으로, 비판자의 소속·근거 자료는 기사에서 확인되지 않는다.",
+        "globalmilitary.net(IMF PortWatch 인용)과 Kpler 공식 블로그 설명 글은 각각 HTTP 403·404로 직접 열람이 막혀 findings에 포함하지 않았다. 검색 발췌에만 등장한 'IMF PortWatch 기준 96% 감소' 수치는 원문 대조에 실패해 사실로 싣지 않았다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "오늘 확인한 자료를 연결하면, '호르무즈 봉쇄' 보도가 과장이라기보다는 서로 다른 지표(선박 횟수 대 원유 물동량)와 서로 다른 전쟁 전 기준치를 섞어 쓰면서 같은 상황이 '90%+ 감소'로도 '60% 회복'으로도 동시에 읽히는 것으로 보인다. 다크 탱커 증가는 추적기관의 통항 수치를 실제보다 낮게 보이게 만드는 방향으로 작동하는 것으로 풀이된다."
+        },
+        {
+          "label": "다음 확인",
+          "text": "10월 이후 Kpler·Lloyd's List·미 정부 발표치가 같은 기간을 놓고 얼마나 수렴하는지, 다크 탱커 비중을 공식적으로 추산한 자료가 나오는지 확인한다. 격차가 좁혀지거나 한쪽 기준치가 사실상 표준으로 굳어지면 이 '자료 괴리' 해석을 다시 검토한다."
+        }
+      ],
+      "nextQuestion": "10월 이후에도 미 정부·Kpler·Lloyd's List 등 기관별 호르무즈 통항·물동량 수치가 같은 폭으로 엇갈리는가, 다크 탱커 비중을 공식 추산한 자료가 나오는가?",
+      "nextCheck": "2026-10-20",
+      "attempts": [
+        {
+          "target": "Strait of Hormuz tanker traffic data October 2026 Kpler Vortexa 웹검색",
+          "outcome": "opened",
+          "note": "초기 영어 검색, 8~9월 선박 통항·물동량 후보 확인"
+        },
+        {
+          "target": "호르무즈 해협 유조선 통항량 실제 감소 2026년 10월 웹검색",
+          "outcome": "opened",
+          "note": "한글 보도 후보 확인(뉴시스·SBS 등 7월 수치)"
+        },
+        {
+          "sourceId": "khaleej-hormuz",
+          "target": "https://www.khaleejtimes.com/business/gulf-ship-traffic-via-strait-of-hormuz-hovers-below-10-day-average-data-shows-2",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-08-26, Kpler 집계 선박 수 확인"
+        },
+        {
+          "target": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2870553-hormuz-traffic-constrained-despite-oman-iran-talks",
+          "outcome": "blocked",
+          "note": "콘텐츠 미제공으로 열람 실패"
+        },
+        {
+          "target": "Hormuz Strait tanker transits September 2026 recovery 60 percent pre-war 웹검색",
+          "outcome": "opened",
+          "note": "IMF PortWatch·straits.live 등 후보 확인"
+        },
+        {
+          "target": "https://www.globalmilitary.net/conflicts/strait-of-hormuz/transits/",
+          "outcome": "blocked",
+          "note": "HTTP 403으로 열람 실패"
+        },
+        {
+          "sourceId": "lloydslist-brief",
+          "target": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-24-september-2026",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-24, 주간 통항 수치 확인"
+        },
+        {
+          "target": "https://www.globalmilitary.net/news/hormuz-transits-three-a-day-september-2026-gmn-data/",
+          "outcome": "blocked",
+          "note": "HTTP 403, IMF PortWatch 재인용 수치 원문 대조 실패"
+        },
+        {
+          "sourceId": "ajunews-kpler",
+          "target": "https://www.ajunews.com/view/20260928132737760",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-28, 936만배럴·60%·다크탱커 설명 확인"
+        },
+        {
+          "target": "Hormuz dark fleet tankers AIS off Iran oil exports September 2026 Kpler 웹검색",
+          "outcome": "opened",
+          "note": "다크 탱커 관련 복수 매체(Gulf News·Hellenic Shipping News 등) 후보 확인"
+        },
+        {
+          "target": "Nikkei Kpler Hormuz oil flow recovered 60% September barrels per day 웹검색",
+          "outcome": "opened",
+          "note": "영어권 교차확인 시도, 美 정부 측 '50~70% 회복' 목표 수치 등 확인"
+        },
+        {
+          "target": "EIA Strait of Hormuz world's most important oil chokepoint million barrels per day 웹검색",
+          "outcome": "opened",
+          "note": "EIA 공식 페이지 URL 확인"
+        },
+        {
+          "sourceId": "gulfnews-darktanker",
+          "target": "https://gulfnews.com/1.500683047",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-22, 다크 탱커·Kpler 비판 확인"
+        },
+        {
+          "target": "Kpler data criticized unreliable Hormuz tanker tracking methodology dispute 웹검색",
+          "outcome": "opened",
+          "note": "반대 근거·한계 검색, 美 정부치 대 Kpler치 격차(약 2배) 확인"
+        },
+        {
+          "sourceId": "aljazeera-hormuz",
+          "target": "https://www.aljazeera.com/amp/news/2026/9/3/how-much-oil-is-going-through-hormuz-how-data-doesnt-match-us-claims",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 발행일 2026-09-03, 美정부·Kpler 수치 격차와 원인 설명 확인"
+        },
+        {
+          "target": "https://www.kpler.com/fr/blog/explainer-the-nuances-of-reading-hormuz-oil-flows-data",
+          "outcome": "blocked",
+          "note": "HTTP 404로 열람 실패"
+        },
+        {
+          "target": "Hormuz Strait oil tanker traffic late September early October 2026 latest 웹검색",
+          "outcome": "opened",
+          "note": "최신 동향 탐색, 구체 출처 URL 특정 실패로 findings에는 미채택"
+        },
+        {
+          "sourceId": "eia-hormuz",
+          "target": "https://www.eia.gov/todayinenergy/detail.php?id=61002",
+          "outcome": "opened",
+          "note": "본문 직접 열람, 2022년 기준 2,100만배럴/21% 수치 확인(발행일 2023-11-21, 배경자료)"
+        }
+      ],
+      "sources": [
+        {
+          "id": "khaleej-hormuz",
+          "name": "Khaleej Times · \"Gulf ship traffic via Strait of Hormuz hovers below 10-day average, data shows\"",
+          "url": "https://www.khaleejtimes.com/business/gulf-ship-traffic-via-strait-of-hormuz-hovers-below-10-day-average-data-shows-2",
+          "publishedAt": "2026-08-26",
+          "kind": "언론보도(Kpler 집계 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-02T00:12:00Z"
+        },
+        {
+          "id": "lloydslist-brief",
+          "name": "Lloyd's List Intelligence · \"Strait of Hormuz Brief: 24 September, 2026\"",
+          "url": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-24-september-2026",
+          "publishedAt": "2026-09-24",
+          "kind": "해운정보기관 브리핑(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-02T00:14:00Z"
+        },
+        {
+          "id": "ajunews-kpler",
+          "name": "아주경제 · \"호르무즈 해협 원유 통과량, 전쟁 전 대비 약 60%까지 회복\" (닛케이·Kpler 재인용)",
+          "url": "https://www.ajunews.com/view/20260928132737760",
+          "publishedAt": "2026-09-28",
+          "kind": "언론보도(닛케이·Kpler 집계 재인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-02T00:16:00Z"
+        },
+        {
+          "id": "gulfnews-darktanker",
+          "name": "Gulf News · \"Mid-East oil producers continue exporting on tankers traveling with their transponders switched off: report\"",
+          "url": "https://gulfnews.com/1.500683047",
+          "publishedAt": "2026-09-22",
+          "kind": "언론보도(Kpler 집계·업계 비평 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-02T00:20:00Z"
+        },
+        {
+          "id": "aljazeera-hormuz",
+          "name": "Al Jazeera · \"How much oil is going through Hormuz? Why data doesn't match US claims\"",
+          "url": "https://www.aljazeera.com/amp/news/2026/9/3/how-much-oil-is-going-through-hormuz-how-data-doesnt-match-us-claims",
+          "publishedAt": "2026-09-03",
+          "kind": "언론 분석보도(美 정부 발표·Kpler 수치 비교, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-02T00:24:00Z"
+        },
+        {
+          "id": "eia-hormuz",
+          "name": "U.S. Energy Information Administration · \"Today in Energy\" (Strait of Hormuz chokepoint)",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=61002",
+          "publishedAt": "2023-11-21",
+          "kind": "정부기관 공식 통계자료(1차 자료, 직접 열람, 배경자료)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-02T00:28:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -5176,6 +5425,15 @@ const RESEARCH_DATA = {
         "ai-memory-shortage-review-2026-10-01"
       ],
       "reason": "이날 첫(오전) 실행. 조사대기.json에 9/24부터 매일 재등록된 ai-infrastructure 질문을 선택해 마이크론 FY26 4분기 실적(GAAP 매출총이익률 86.8%)과 트렌드포스 4분기 메모리 가격 전망(D램 10~15%·낸드 15~20% 상승)을 1차 자료로 직접 열람했다. CSIS 분석으로 '구조적 부족' 설명을, SK하이닉스 4월 컨퍼런스콜 보도로 공급사측 입장을, 마이클 버리의 약세 베팅(중국 CXMT 증설 근거)으로 반대 근거를 각각 확인해 autonomous 보고서를 게시했다."
+    },
+    {
+      "date": "2026-10-02",
+      "checkedAt": "2026-10-02T00:30:00Z",
+      "status": "published",
+      "reportIds": [
+        "hormuz-oil-flow-gap-2026-10-02"
+      ],
+      "reason": "이날 첫(오전) 실행. 조사대기.json에 9/25부터 매일 재등록된 energy-geopolitics 질문(지정학 변화와 에너지 공급)을 선택해, 일간 브리핑이 9/29 '호르무즈 통과량 전쟁전 대비 약 60% 회복'이라고 적은 수치의 원 출처(아주경제·닛케이·Kpler)를 직접 열람하고 Khaleej Times·Lloyd's List Intelligence·Gulf News·Al Jazeera·美 EIA 공식통계와 교차대조했다. 선박 통항횟수와 원유 물동량이 다른 지표라는 점, '다크 탱커' 증가, 美 정부와 Kpler 수치 격차(반대근거·방법론 차이)를 확인해 autonomous 보고서를 게시했다."
     }
   ]
 };
