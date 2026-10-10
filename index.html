@@ -4123,7 +4123,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "71e1c1edc8dab00077b3ca0b89885cf8518731ec0a1821943cfc7b4cbd6ebf8a",
+  "registryHash": "fe1b6ecfbe3c79037834c35b023d2165c467d6d4321b264aeb17e29a3a5843fc",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -6714,6 +6714,259 @@ const RESEARCH_DATA = {
           "note": "본문 직접 열람, 2025년 매출 약46억달러(+1,088%)·영업손실 약80.6억달러·순손실 약420억달러 확인"
         }
       ]
+    },
+    {
+      "id": "ai-work-productivity-conditions-2026-10-10",
+      "ruleId": "ai-work",
+      "topic": "AI / 디지털 기술",
+      "question": "AI 도입 확대가 실제 업무 성과로 이어지는가 — 효과가 측정되지 않거나 사라지는 조건은 무엇인가?",
+      "basis": "조사대기.json에 2026-10-03부터 매일 재등록된 ai-work 질문이 7일 넘게 처리되지 않고 남아 있었다. 2026-09-21 보고서(ai-work-outcomes)가 기업 발표의 사용량·체감 지표를 다뤘던 것을 이어, 이번에는 '효과가 사라지는 조건'이라는 좁힌 질문으로 2026년에 새로 나온 임원 설문·실적콜 분석 자료를 확인했다. 직전 3회차(10/7 반도체/컴퓨팅인프라, 10/8 한국산업/정책/SK, 10/9 글로벌기업/스타트업/자본)와 겹치지 않는 분야다. 개인 열람 기록을 학습한 결과가 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-10",
+      "scope": "current",
+      "summary": "2026년에 나온 임원 설문 2건(NBER)과 상장사 실적콜 분석 1건(세인트루이스 연은), 2025년 MIT 보고서(NANDA)와 그에 대한 방법론 비판을 대조해, 'AI가 업무 성과로 이어지는가'라는 질문에 대한 답이 측정 방식·표본·업종에 따라 왜 엇갈리는지를 확인했다.",
+      "learning": [
+        {
+          "title": "노동생산성과 총요소생산성(TFP)은 다른 질문에 답한다",
+          "text": "노동생산성은 근로자 한 명(또는 근로시간)당 산출물을 재고, 총요소생산성(TFP)은 자본·노동 투입분을 제외한 순수 효율성 향상만 분리해 잰다. NBER 워킹페이퍼(34984)는 최근 생산성 상승이 설비투자 확대(자본심화)가 아니라 매출 기반 TFP 상승에서 주로 나온다고 설명했다 — AI가 투입을 늘려서가 아니라 같은 투입으로 더 많은 매출을 내는 혁신·수요 경로로 작동했다는 뜻이다. 다만 매출로 반영되기까지 시차가 있어, 경영진이 체감하는 효과가 통계상 측정치보다 먼저 나타난다고 설명한다.",
+          "sourceIds": [
+            "nber-34984"
+          ]
+        },
+        {
+          "title": "경영진의 'AI가 생산성을 높였다'는 발언, 대부분 아직 일어나지 않은 일에 대한 말",
+          "text": "세인트루이스 연은이 2000~2025년 미국 상장사 5,198곳의 실적발표 콜 약49만건, 생산성 관련 문장 약91만개를 분석한 결과 AI와 연결된 생산성 발언 중 약95%가 미래 시점을 가리키는 표현이었다(비AI 생산성 발언은 약4분의3). 'AI로 생산성이 좋아졌다'는 경영진 발언의 상당수가 과거 실적이 아니라 앞으로의 기대를 말하는 것이어서, 발언의 긍정적 어조와 실제 측정된 성과는 구분해 읽어야 한다.",
+          "sourceIds": [
+            "stlouisfed-blog"
+          ]
+        },
+        {
+          "title": "'95% 실패율'이라는 숫자, 분모를 어떻게 잡느냐에 따라 달라진다",
+          "text": "MIT 미디어랩 NANDA 프로젝트의 2025년7월 보고서는 생성형AI 파일럿의 95%가 손익(P&L)에 측정 가능한 영향을 주지 못했다고 밝혀 널리 인용됐다. 그러나 와튼스쿨 교수와 업계 분석매체(Futuriom)는 이 수치가 '파일럿을 시작하지도 않은 기업'까지 분모에 포함했을 가능성, 산업별 성과 차트에 축 레이블이 없는 점, 데이터 수집 방식이 공개되지 않은 점을 지적했다. 같은 보고서는 성공한 5%의 공통점으로 '한 가지 문제에 집중하고 자체 도구를 만드는 대신 외부 도구 제공업체와 협업했다'는 점을 들었다.",
+          "sourceIds": [
+            "fortune-mit",
+            "futuriom-critique"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "2026년2월(3월 개정) 공개된 NBER 워킹페이퍼(34836)는 미국·영국·독일·호주 기업 임원 약6,000명을 설문해, 지난 3년간 AI가 고용에 영향을 주지 않았다고 답한 비율이 90% 이상, 노동생산성에 영향이 없었다고 답한 비율이 89%라고 보고했다(NBER 다이제스트 2026년5월호 기준). 네 나라 평균 AI 사용 기업 비율은 69%(미국78%·호주59%)였다.",
+          "sourceIds": [
+            "nber-34836",
+            "nber-digest",
+            "atlantafed-wp"
+          ]
+        },
+        {
+          "text": "같은 임원들은 앞으로 3년은 다르게 내다봤다 — 노동생산성 +1.4%, 산출 +0.8%, 고용 -0.7%. 반면 같은 설문의 일반 직원 응답자들은 AI가 자사 고용을 오히려 +0.5% 늘릴 것으로 예상해, 경영진과 직원의 전망이 반대 방향으로 갈렸다.",
+          "sourceIds": [
+            "nber-34836",
+            "nber-digest"
+          ]
+        },
+        {
+          "text": "2026년3월 공개된 또 다른 NBER 워킹페이퍼(34984, 임원 약750명 설문)는 반대로 노동생산성 증가가 이미 '양(+)'이며 2026년 더 강해질 것으로 예상했다. 효과는 고숙련 서비스업·금융업에 집중됐고, 사무직(clerical) 수요는 줄고 숙련 기술직 수요는 늘었다. 두 NBER 논문은 비슷한 시기 비슷한 방식(임원 설문)으로 조사했지만 '효과 없음'과 '효과 있음'이라는 다른 결론을 냈다.",
+          "sourceIds": [
+            "nber-34984"
+          ]
+        },
+        {
+          "text": "세인트루이스 연은은 2026년7월31일 공개한 분석에서, 실적콜 속 생산성 논의 중 AI가 차지하는 비중이 챗GPT 출시(2022년11월) 전에는 0에 가까웠으나 2025년 말에는 약15%로 늘었다고 밝혔다. 그러나 같은 시기 샌프란시스코 연은이 집계한 가변이용률조정 총요소생산성(TFP) 성장률은 2026년1분기로 끝나는 4개 분기 동안 0.07%에 그쳤다 — 경영진의 '말'은 늘었지만 집계 통계에는 아직 뚜렷하게 나타나지 않았다는 뜻이다.",
+          "sourceIds": [
+            "stlouisfed-blog"
+          ]
+        },
+        {
+          "text": "MIT NANDA의 2025년7월 보고서는 공개된 AI 도입 사례 300여건 분석, 리더 인터뷰150건, 직원 서베이350명을 근거로 '파일럿의 95%가 빠른 매출 성장을 내지 못했다'고 밝혔다. 저자(Aditya Challapally)는 성공한 조직들이 '한 가지 문제에 집중하고 도구를 직접 만들기보다 이를 제공하는 기업과 협업했다'고 설명했다.",
+          "sourceIds": [
+            "fortune-mit"
+          ]
+        }
+      ],
+      "limitations": [
+        "MIT NANDA 보고서 원문 PDF는 이번 조사에서 직접 열람하지 못했다(비공개 양식 뒤에 있다는 복수 보도가 있음). 보고서 관련 수치는 Fortune의 저자 인터뷰 인용과 업계 비평 매체(Futuriom)의 재구성으로만 확인했으며, '95%'가 정확히 어떤 질문·분모에 대한 답인지는 보고서 저자도 명확히 공개하지 않았다는 비판이 있다.",
+        "NBER 워킹페이퍼 34836의 전체 본문 PDF는 바이너리 형식이라 직접 텍스트로 읽지 못했다. 수치는 NBER 자체 요약(다이제스트)과 공동저자 소속기관(애틀랜타 연은)의 초록 페이지로 교차 확인했으며, 두 요약 사이에 '80% 이상' 대 '89~90%'처럼 표현이 다소 엇갈려 소수점까지 정확한 수치는 확정하지 못했다.",
+        "NBER 논문 2건 모두 동료심사를 거치지 않은 워킹페이퍼이며, 설문에 기반한 임원의 체감·예측 응답이 다수다. 두 논문이 비슷한 시기 다른 임원 집단(각각 약6,000명·약750명)에 설문했다는 점에서, 표본 차이가 상반된 결론에 얼마나 기여했는지는 이번 조사에서 확정하지 못했다.",
+        "세인트루이스 연은 글에 나온 '풍요가 가치를 파괴한다'는 설명은 공동저자(Ozkan)가 Fortune 인터뷰에서 제시한 가설로, 연은 공식 게시물 본문이나 실적콜 데이터 분석이 직접 검증한 결론은 아니다. 이번 조사에서는 이 가설을 뒷받침하거나 반박하는 별도의 정량 자료를 찾지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "임원 설문(NBER 34836)의 '지난 3년간 효과 없음' 응답과 실적콜 분석(세인트루이스 연은)의 '집계 생산성 통계에 아직 안 나타남'이 같은 방향을 가리키는 반면, 비슷한 시기의 다른 임원 설문(NBER 34984)과 MIT NANDA의 '성공한 5%' 사례는 조건이 맞으면 효과가 있다고 본다. 두 결과를 합치면 'AI가 성과로 이어지는가'라는 질문의 답은 '아직 대다수에게는 측정되지 않았고, 소수의 특정 조건(한 가지 문제에 집중, 외부 도구 활용, 고숙련 서비스·금융업)에서만 확인된다' 쪽으로 읽히는 것으로 보인다."
+        },
+        {
+          "label": "다음 확인",
+          "text": "NBER 임원 설문의 '향후 3년' 예측(생산성+1.4%)이 2027~2028년 반복 설문에서 실측에 가까워지는지, 세인트루이스 연은이 인용한 TFP 성장률이 이후에도 0%대에 머무는지, MIT NANDA가 95% 수치의 산출 근거(분모 정의)를 추가로 공개하는지를 확인한다. 이 중 하나라도 뒤집히면 오늘의 '소수 조건부 효과' 판단을 재검토한다."
+        }
+      ],
+      "nextQuestion": "2027년 임원 설문 반복조사에서 예측된 생산성 효과(+1.4%)가 실측치로 얼마나 수렴하며, 집계 TFP 성장률은 여전히 0%대에 머무는가?",
+      "nextCheck": "2026-12-15",
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "AI productivity gains disappear under what conditions 2026 study (웹검색)",
+          "note": "질문 선정을 위한 1차 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "MIT 95% AI pilots fail generative AI divide report (웹검색)",
+          "note": "MIT NANDA 보고서 후보 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "NBER working paper 2026 survey executives AI productivity no measurable effect labour (웹검색)",
+          "note": "NBER 34836·34984 두 논문 혼재 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "MIT NANDA \"GenAI Divide\" report learning gap PDF 2025 (웹검색)",
+          "note": "MIT 보고서 저자·방법론 개요 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://wfhresearch.com/wp-content/uploads/2026/03/Firm-Data-on-AI-March-2026.pdf",
+          "note": "PDF 텍스트 추출 실패(바이너리), 본문을 직접 읽지 못함 — 이후 NBER 다이제스트·애틀랜타연은 요약 페이지로 대체"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "nber-34984",
+          "target": "https://nber.org/papers/w34984",
+          "note": "본문(초록) 직접 열람, 임원 약750명 설문·고숙련서비스/금융 집중 수치 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "nber-34836",
+          "target": "https://www.nber.org/papers/w34836",
+          "note": "본문(초록) 직접 열람, 임원 약6,000명·4개국·'80%대 영향없음' 수치 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Firm Data on AI\" NBER 34836 abstract \"no impact\" productivity employment percent executives survey (웹검색)",
+          "note": "34836 수치 교차검증용 2차 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "nber-digest",
+          "target": "https://www.nber.org/digest/202605/global-evidence-business-use-ai",
+          "note": "본문 직접 열람, 고용90%+·생산성89% 영향없음, AI사용률 69%(미78%·호59%) 수치 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "atlantafed-wp",
+          "target": "https://atlantafed.org/research-and-data/publications/working-papers/2026/03/24/03-firm-data-on-ai",
+          "note": "본문 직접 열람, 임원 약6,000명·4개국·발행일 2026-03-24 재확인"
+        },
+        {
+          "outcome": "no_new_evidence",
+          "target": "MIT NANDA \"state of ai in business 2025\" site:nanda.media.mit.edu OR site:mit.edu (웹검색)",
+          "note": "MIT 공식 사이트의 원문 PDF를 찾지 못함 — 보고서가 비공개 양식 뒤에 있다는 2차 보도만 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "fortune-mit",
+          "target": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+          "note": "본문 직접 열람, 95% 수치의 의미·조사방법(인터뷰150·서베이350·사례300)·저자 인용문 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "futuriom-critique",
+          "target": "https://www.futuriom.com/articles/news/why-we-dont-believe-mit-nandas-werid-ai-study/2025/08/",
+          "note": "본문 직접 열람, 반대 근거/방법론 비판(분모 불명확·차트 축 레이블 없음·이해관계) 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "allwork-fed",
+          "target": "https://allwork.space/2026/08/ai-may-be-erasing-the-value-of-its-own-productivity-gains-fed-research-finds/",
+          "note": "본문 직접 열람, 세인트루이스 연은 연구자·'풍요가 가치를 파괴한다' 가설(Fortune 인터뷰 인용) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "St Louis Fed AI productivity gains hidden abundance destroying value earnings calls research 2026 (웹검색)",
+          "note": "원 연구 게시물 링크 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "stlouisfed-blog",
+          "target": "https://www.stlouisfed.org/on-the-economy/2026/jul/ai-productivity-what-firms-say-earnings-calls",
+          "note": "본문 직접 열람(1차 자료), 실적콜 49만건·5,198개사·AI생산성발언 95% 미래지향·TFP 0.07% 성장 수치 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "nber-34836",
+          "name": "NBER Working Paper 34836 · \"Firm Data on AI\" (초록 페이지)",
+          "url": "https://www.nber.org/papers/w34836",
+          "publishedAt": "2026-03",
+          "kind": "NBER 워킹페이퍼 초록(1차 자료, 직접 열람, 본문 PDF는 열람 실패)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:25:00Z"
+        },
+        {
+          "id": "nber-digest",
+          "name": "NBER Digest · \"Global Evidence on Business Use of AI\"",
+          "url": "https://www.nber.org/digest/202605/global-evidence-business-use-ai",
+          "publishedAt": "2026-05-01",
+          "kind": "NBER 공식 다이제스트(연구소 자체 요약, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:28:00Z"
+        },
+        {
+          "id": "atlantafed-wp",
+          "name": "Atlanta Fed · Working Paper 2026-3 \"Firm Data on AI\" (초록 페이지)",
+          "url": "https://atlantafed.org/research-and-data/publications/working-papers/2026/03/24/03-firm-data-on-ai",
+          "publishedAt": "2026-03-24",
+          "kind": "지역연은 워킹페이퍼 초록(공동저자 소속기관 1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:30:00Z"
+        },
+        {
+          "id": "nber-34984",
+          "name": "NBER Working Paper 34984 · \"Artificial Intelligence, Productivity, and the Workforce: Evidence from Corporate Executives\" (초록 페이지)",
+          "url": "https://nber.org/papers/w34984",
+          "publishedAt": "2026-03",
+          "kind": "NBER 워킹페이퍼 초록(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:22:00Z"
+        },
+        {
+          "id": "stlouisfed-blog",
+          "name": "St. Louis Fed \"On the Economy\" · \"AI and Productivity: What Firms Are Saying on Earnings Calls\"",
+          "url": "https://www.stlouisfed.org/on-the-economy/2026/jul/ai-productivity-what-firms-say-earnings-calls",
+          "publishedAt": "2026-07-31",
+          "kind": "지역연은 공식 블로그(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:48:00Z"
+        },
+        {
+          "id": "fortune-mit",
+          "name": "Fortune · \"MIT report: 95% of generative AI pilots at companies are failing\"",
+          "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+          "publishedAt": "2025-08-18",
+          "kind": "언론보도(보고서 저자 인터뷰 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:38:00Z"
+        },
+        {
+          "id": "futuriom-critique",
+          "name": "Futuriom · \"Why We Don't Believe MIT NANDA's Weird AI Study\"",
+          "url": "https://www.futuriom.com/articles/news/why-we-dont-believe-mit-nandas-werid-ai-study/2025/08/",
+          "publishedAt": "2025-08-26",
+          "kind": "업계 분석 매체 비판 기사(직접 열람, 반대 근거)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:40:00Z"
+        },
+        {
+          "id": "allwork-fed",
+          "name": "Allwork.space · \"AI May Be Erasing the Value of Its Own Productivity Gains, Fed Research Finds\"",
+          "url": "https://allwork.space/2026/08/ai-may-be-erasing-the-value-of-its-own-productivity-gains-fed-research-finds/",
+          "publishedAt": "2026-08-05",
+          "kind": "언론보도(세인트루이스 연은 연구자 인터뷰 재인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-10T00:44:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -6854,6 +7107,15 @@ const RESEARCH_DATA = {
         "anthropic-ipo-roadshow-s1-mechanics-2026-10-09"
       ],
       "reason": "이날 첫 실행. 직전 3회차(10/6 세계정치/지정학, 10/7 반도체/컴퓨팅인프라, 10/8 한국산업/정책/SK)와 겹치지 않고 지금까지 한 번도 선택되지 않은 '글로벌 기업/스타트업/자본' 분야를 선택했다. 오늘 일간 브리핑의 앤스로픽 IPO 항목('로드쇼 15일 전 의무인 공식 S-1 공개는 여전히 이뤄지지 않았다')을 계기로, SEC 1차 자료(JOBS Act FAQ)를 직접 열람해 '로드쇼'(Rule 433(h)(4))와 '테스트더워터스'(Section 5(d)/Rule 163B) 투자자 접촉이 서로 다른 단계이며 15일 공개 시한은 로드쇼 시작 시점부터 계산된다는 점을 확인했다. EGC(신흥성장기업) 매출기준(12억3,500만달러, Davis Polk)과 앤스로픽의 보도된 2025년 매출(약46억달러, 로이터 재구성 보도)을 대조해 앤스로픽이 EGC 전용 혜택을 못 받을 가능성이 높다는 점도 함께 확인했다. 반대근거·실패사례 탐색(건점핑 제재 사례)에서 2017년 라이언 바이오테크놀로지스 SEC 행정명령을 찾았으나 PDF 원문 접근에 실패해 findings에서 제외하고 attempts에만 실패로 남겼다. 검색 11회·원문열기 13회(성공 8·실패 5), 합계 24회를 사용했다."
+    },
+    {
+      "date": "2026-10-10",
+      "checkedAt": "2026-10-10T00:50:00Z",
+      "status": "published",
+      "reportIds": [
+        "ai-work-productivity-conditions-2026-10-10"
+      ],
+      "reason": "이날 첫 실행. 조사대기.json에 10/3부터 매일 재등록된 ai-work 질문이 7일 넘게 처리되지 않아 선택했다. 직전 3회차(10/7 반도체/컴퓨팅인프라, 10/8 한국산업/정책/SK, 10/9 글로벌기업/스타트업/자본)와 겹치지 않는 'AI/디지털기술' 분야다. 2026년 NBER 워킹페이퍼 2건(34836·34984, 서로 다른 임원 설문)과 세인트루이스 연은의 실적콜 분석(1차 자료 직접 열람)을 대조해 '지난 3년간 효과 없음'과 '효과 있음'이라는 상반된 임원 설문 결과, 그리고 'AI 생산성 발언의 95%가 미래지향'이라는 점을 확인했다. 2025년 MIT NANDA '95% 실패율' 보고서는 원문 PDF 접근에 실패해 Fortune 인터뷰 기사로 대체 확인했고, 와튼스쿨 교수·Futuriom의 방법론 비판(반대 근거)도 함께 확인했다. 검색 6회·원문열기 10회(성공 9·실패 1), 합계 16회를 사용했다."
     }
   ]
 };
