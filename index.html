@@ -4363,7 +4363,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "fe1b6ecfbe3c79037834c35b023d2165c467d6d4321b264aeb17e29a3a5843fc",
+  "registryHash": "89c89b3d4ef1b6ace5f31721dd69c31ecb824a88aaba14cb036ffbe65cd919be",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -7207,6 +7207,236 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-10T00:44:00Z"
         }
       ]
+    },
+    {
+      "id": "argenx-sjogrens-futility-stop-2026-10-11",
+      "ruleId": "science-bio-health",
+      "topic": "과학 / 바이오 / 건강",
+      "question": "제약사가 '3상 중단'을 발표했을 때, 그것이 '무용성(futility) 중간분석' 때문인지 '완주한 시험의 1차평가지표 미달' 때문인지는 왜 다르며 어떻게 구별하는가?",
+      "basis": "10개 관심분야 중 '과학/바이오/건강'과 '사회/문화/소비'는 이 루틴이 지금까지 한 번도 고르지 않았다(9/21~10/10 보고서 11건 모두 세계정치·경제·AI·반도체·에너지·산업·한국산업/SK·기업자본 8개 분야에만 분포). 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics 3건만 남아 있고 모두 최근 3회차 보고서로 이미 처리돼, 최신 일간 브리핑(10/11)에서 질문을 직접 골랐다. 직전 회차(10/10) 브리핑의 '아르젠엑스 비브가르트, 쇼그렌증후군 3상 실패' 항목은 '위약 대비 우월한 효과를 보이지 못했다'고 요약했으나, 원문을 열어보니 실제로는 완주한 시험의 결과가 아니라 독립데이터모니터링위원회(IDMC)의 중간분석에 따른 '무용성' 조기중단이었다 — 일간 브리핑 한 줄 요약으로는 구별되지 않는 이 차이가 다른 제약·바이오 뉴스를 읽을 때도 반복적으로 유용하다고 판단해 질문으로 선택했다. 개인 열람 기록을 학습한 결과가 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-11",
+      "scope": "current",
+      "summary": "2026년10월8일 아르젠엑스가 발표한 쇼그렌증후군 치료제 비브가르트 피하주사(efgartigimod SC) 3상 'UNITY' 시험 중단 발표를 1차 자료(회사 공식 발표)로 직접 확인하고 2차 독립 매체(AllSci)로 교차검증했다. 이어 '무용성(futility) 중간분석'이 무엇이며 완주한 3상의 '1차평가지표 미달'과 어떻게 다른지를 FDA 데이터모니터링위원회(DMC) 가이드라인(1차 자료)과 동료심사 방법론 연구(Walter 외, 2020)로 확인했고, 반대근거로 무용성 중단 결정이 최종적으로 뒤집힌 과거 사례(LUME-Lung 2, Lesaffre 외, 2017)를 대조했다.",
+      "learning": [
+        {
+          "title": "'무용성(futility) 중단'은 완주한 3상의 '실패'와 다른 사건이다",
+          "text": "임상시험에는 안전성·효과를 중간에 점검하는 독립 전문가 그룹인 데이터모니터링위원회(DMC, IDMC·DSMB로도 불림)가 있을 수 있다. FDA의 2006년 가이드라인은 이 위원회가 쓰는 통계적 방법의 하나로 '무용성 중단'을 설명하는데, 중간 데이터를 바탕으로 '애초에 찾으려던 치료효과가 확인될 가능성이 매우 낮다'고 판단되면 시험을 계획된 완료 시점 전에 끝내는 것을 뜻한다. 이는 시험을 끝까지 진행해 1차평가지표(primary endpoint)를 놓친 것과는 다른 사건으로, 아르젠엑스의 UNITY 시험은 전자(중간분석 기반 조기중단)였고 전체 데이터 분석은 아직 끝나지 않았다.",
+          "sourceIds": [
+            "fda-dmc-guidance",
+            "argenx-pr-1008"
+          ]
+        },
+        {
+          "title": "무용성으로 중단된 시험이 나중에 결과가 뒤집힌 전례가 있다",
+          "text": "2017년 Annals of Oncology에 실린 재분석 논문은 폐암 치료제 닌테다닙의 3상 'LUME-Lung 2' 시험이 조사자 판독 무진행생존기간(PFS) 기준 무용성 중간분석(조건부검정력 10.3%, 기준치 20% 미달)으로 중단됐지만, 이후 완료된 중앙판독 PFS 분석에서는 1차평가지표가 충족됐다고 밝혔다. 저자들은 분석 시점이나 평가 방식(조사자 판독 대 중앙판독)에 따라 조건부검정력이 크게 달라질 수 있어, 무용성 중단 전 2차 확인 분석이 필요할 수 있다고 권고했다.",
+          "sourceIds": [
+            "annonc-lesaffre-2017"
+          ]
+        },
+        {
+          "title": "조기중단 결정 자체가 통계적으로 늘 엄밀하게 뒷받침되는 것은 아니다",
+          "text": "동료심사를 거친 방법론 연구(Walter 외, 2020, BMC Medical Research Methodology)가 무용성으로 조기중단된 임상시험 52건을 조사한 결과, 사전에 중단 규칙을 명확히 정의해둔 시험은 42%(22건)에 그쳤고, 중단 근거가 되는 '조건부검정력' 수치를 실제로 계산할 수 있었던 시험은 25건뿐이었다(16건은 계산 불가). 저자들은 무용성으로 조기중단된 시험들이 대체로 치료효과를 과소추정하는 경향이 있다고 지적했다.",
+          "sourceIds": [
+            "bmc-walter-2020"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "아르젠엑스는 2026년10월8일(중부유럽시간 오전7시) 공식 발표로 쇼그렌증후군 성인 환자 대상 비브가르트 피하주사 3상 UNITY 시험을 중단한다고 밝혔다. 독립데이터모니터링위원회(IDMC)가 중간분석 후 '1차평가지표를 달성할 수 없다'고 결론 내리고 중단을 권고했으며, 1차평가지표는 48주차 clinESSDAI(EULAR 쇼그렌증후군 질병활동도 지수) 기저치 대비 변화량, 참가기준은 clinESSDAI 6점 이상이었다. 안전성은 기존에 알려진 프로파일과 일치했고 새로운 안전성 신호는 없었다고 밝혔다.",
+          "sourceIds": [
+            "argenx-pr-1008"
+          ]
+        },
+        {
+          "text": "2차 독립 매체(AllSci)도 같은 날짜·같은 사실관계(IDMC의 무용성 중단 권고, 48주차 clinESSDAI 1차평가지표)를 보도해 교차확인됐다. 다만 두 출처 모두 아르젠엑스가 중간분석의 구체적 효능 수치·분석에 포함된 환자 수·무용성 판단의 통계적 근거(조건부검정력 등)는 공개하지 않았다고 명시했다 — 전체 데이터는 시험 종료·데이터베이스 잠금 이후 별도로 분석될 예정이다.",
+          "sourceIds": [
+            "allsci-1008"
+          ]
+        },
+        {
+          "text": "FDA의 2006년 임상시험 데이터모니터링위원회 가이드라인은 무용성 중단의 통계적 근거를 '중간데이터를 바탕으로 찾으려는 치료효과가 확립될 가능성이 매우 낮을 때'로 설명하며, 이런 상황을 포함해 '해석에 따라 매우 호의적이거나 비호의적인 결과, 또는 무용성 판단이 나올 경우 계획된 완료 전 시험 종료가 윤리적으로 요구될 수 있다'는 점을 DMC 설치가 필요한 근거 중 하나로 든다.",
+          "sourceIds": [
+            "fda-dmc-guidance"
+          ]
+        },
+        {
+          "text": "Walter 외(2020)의 체계적 조사는 무용성으로 조기중단된 임상시험 52건 중 40%(21건)가 산업계 후원, 42%(22건)만 사전에 중단 규칙을 정의했다고 밝혔다. 조건부검정력을 계산할 수 있었던 시험은 25건에 그쳤고(16건은 계산 불가), 전반적으로 대부분의 조기중단은 '조건부검정력 관점에서는 타당했다'고 결론 내리면서도, 조기중단된 시험은 치료효과를 과소추정하는 경향이 있다고 지적했다.",
+          "sourceIds": [
+            "bmc-walter-2020"
+          ]
+        },
+        {
+          "text": "2017년 Annals of Oncology 재분석은 'LUME-Lung 2' 3상이 713건(목표 사건수의 50%) 시점 조사자 판독 PFS 기준 조건부검정력 10.3%(기준치 20% 미만)로 무용성 중단됐으나, 이후 완료된 중앙판독 PFS의 최종 1차평가지표는 충족됐다고 밝혔다. 저자들은 분석 시점이나 평가방식에 따라 검정력 수치가 달라질 수 있었다고 설명했다.",
+          "sourceIds": [
+            "annonc-lesaffre-2017"
+          ]
+        }
+      ],
+      "limitations": [
+        "아르젠엑스는 UNITY 중간분석의 정량적 효능 수치·분석대상 환자 수·무용성 판단의 통계적 기준(조건부검정력 등)을 공개하지 않았다. 이번 중단이 Walter 외(2020)가 지적한 '사전 중단규칙 미비' 사례에 해당하는지, 아니면 엄격하게 사전정의된 규칙을 따른 것인지는 공개된 자료만으로 확인할 수 없다.",
+        "같은 약물의 2상 쇼그렌증후군 연구(RHO)는 환자 34명 규모에 다른 평가지표를 썼다는 점이 선행 검색에서 확인됐다 — 2상 결과가 긍정적이었다고 해서 이번 3상 무용성 중단과 직접 모순되는 것은 아니며, 이번 조사에서는 2상·3상 결과를 원문으로 대조하지는 못했다.",
+        "LUME-Lung 2(폐암, 닌테다닙)는 질환·약물·평가지표가 모두 다른 사례이며, '무용성 중단이 뒤집힐 수 있다'는 일반적 가능성을 보여주는 전례로만 인용했다. 아르젠엑스의 UNITY 시험에서 같은 결과가 재현된다는 근거는 없다.",
+        "반대근거 탐색(조기중단 결정의 타당성에 대한 비판적 연구)에서 '무용성 중단이 대체로 부당하다'는 결론을 내린 연구는 찾지 못했다 — 가장 포괄적인 조사(Walter 외, 2020)도 '대체로 타당했다'는 결론과 '치료효과 과소추정 경향'이라는 한계를 동시에 제시해, 완전히 상반된 근거를 확보하지는 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "제약사 발표나 언론 요약에서 '3상 실패'로 뭉뚱그려지는 사건은 실제로는 (1) 중간분석에 기반한 무용성 조기중단과 (2) 끝까지 진행한 시험의 최종 1차평가지표 미달이라는 서로 다른 단계를 가리킬 수 있다는 점이, 아르젠엑스 UNITY 사례로 다시 확인된 것으로 보인다. 이번 중단은 전자이며 전체 데이터 분석은 아직 공개되지 않았다 — 과거 사례(LUME-Lung 2)처럼 최종분석에서 결과가 달라질 가능성이 이론적으로는 남아 있는 것으로 풀이된다."
+        },
+        {
+          "label": "다음 확인",
+          "text": "아르젠엑스가 데이터베이스 잠금 이후 공개할 UNITY 전체 데이터에 중간분석의 조건부검정력 수치나 정량적 효능 데이터가 함께 제시되는지, 최종 결과가 이번 무용성 판단과 같은 방향인지를 확인한다."
+        }
+      ],
+      "nextQuestion": "아르젠엑스가 공개할 UNITY 전체 데이터(데이터베이스 잠금 이후)에 조건부검정력 등 무용성 판단의 통계적 근거가 함께 제시되는가, 최종 결과는 이번 중간분석과 같은 방향인가?",
+      "nextCheck": "2026-12-15",
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "argenx Vyvgart Sjogren's syndrome phase 3 trial results press release efgartigimod (웹검색)",
+          "note": "질문 선정을 위한 1차 탐색 — UNITY 3상 시험명 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "argenx UNITY Sjogren's phase 3 October 2026 did not meet primary endpoint (웹검색)",
+          "note": "10/8 공식발표 존재·무용성 중단 사실 1차 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://argenx.com/news/2025/press-release-3097206",
+          "note": "검색으로 찾은 과거(2025년) 보도자료 URL — UNITY 중단과 무관한 구버전이라 교체"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "argenx-pr-1008",
+          "target": "https://mfn.se/all/a/argenx/argenx-provides-update-on-phase-3-unity-study-of-efgartigimod-sc-in-sjogrens-disease-4dc041e8",
+          "note": "본문 직접 열람(1차 자료) — IDMC 무용성 중단 권고, 1차평가지표(48주 clinESSDAI), 안전성 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "argenx Vyvgart Sjogren's UNITY trial stopped futility Reuters Fierce Biotech (웹검색)",
+          "note": "2차 독립 출처 탐색 — Reuters·Fierce Biotech 보도는 검색결과에 없었음"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "allsci-1008",
+          "target": "https://allsci.com/news/clinical-trials/efgartigimod-sjogrens-disease-sc-phase-iii-unity/",
+          "note": "본문 직접 열람 — 2차 독립 매체로 사실관계 교차확인, 미공개 수치 명시 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "FDA guidance data monitoring committee futility interim analysis clinical trial explanation (웹검색)",
+          "note": "무용성 중단 개념의 공식 정의 출처 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "FDA.gov guidance document Data Monitoring Committees PDF site:fda.gov (웹검색)",
+          "note": "FDA 2006년 최종 가이드라인 PDF 링크 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://fda.gov/media/75398/download",
+          "note": "프로토콜 없는 URL로 404 — www. 포함 URL로 재시도"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "fda-dmc-guidance",
+          "target": "https://www.fda.gov/media/75398/download",
+          "note": "PDF 직접 열람(1차 자료) — '무용성 중단' 통계적 정의(15p), DMC 설치 권고 기준(4p) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "clinical trial stopped early futility criticism underpowered wrong decision reversal (웹검색)",
+          "note": "반대근거·실패사례 탐색 — LUME-Lung 2 반례 발견"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://trialsjournal.biomedcentral.com/articles/10.1186/1745-6215-15-61",
+          "note": "리다이렉트가 로그인 요구 페이지로 이어져 접근 실패 — PMC 경로로 재시도"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"systematic survey\" randomised trials stopped early futility pmc conditional power (웹검색)",
+          "note": "Walter 외(2020) 논문의 PMC 링크 확보"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "bmc-walter-2020",
+          "target": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6966801",
+          "note": "본문 직접 열람 — 52개 시험 조사, 42% 사전 중단규칙 정의, 조기중단의 효과 과소추정 경향 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "LUME-Lung 2 nintedanib futility stopped progression-free survival reversal Lesaffre Manegold (웹검색)",
+          "note": "LUME-Lung 2 반례 세부사항(조건부검정력 수치 등) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Lesaffre Manegold 2017 Annals Oncology nintedanib pemetrexed futility interim analysis pubmed abstract (웹검색)",
+          "note": "논문 서지정보(DOI·저자) 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://pubmed.ncbi.nlm.nih.gov/28184431/",
+          "note": "쿠키 설정 요구 오류 페이지로 본문 접근 실패 — 출판사(Oxford Academic) 페이지로 재시도"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "annonc-lesaffre-2017",
+          "target": "https://academic.oup.com/annonc/article/28/7/1419/3056221",
+          "note": "초록 페이지 직접 열람 — 조건부검정력 10.3%(기준 20%), 713건 시점, 중앙판독 PFS 충족 수치 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "argenx-pr-1008",
+          "name": "argenx · UNITY 3상 쇼그렌증후군 시험 업데이트 공식 발표 (via MFN)",
+          "url": "https://mfn.se/all/a/argenx/argenx-provides-update-on-phase-3-unity-study-of-efgartigimod-sc-in-sjogrens-disease-4dc041e8",
+          "publishedAt": "2026-10-08",
+          "kind": "회사 공식 발표 원문(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-11T00:09:30Z"
+        },
+        {
+          "id": "allsci-1008",
+          "name": "AllSci · \"Argenx halts Phase III efgartigimod trial in Sjögren's disease after futility analysis\"",
+          "url": "https://allsci.com/news/clinical-trials/efgartigimod-sjogrens-disease-sc-phase-iii-unity/",
+          "publishedAt": "2026-10-08",
+          "kind": "독립 매체 보도(2차 교차확인, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-11T00:10:30Z"
+        },
+        {
+          "id": "fda-dmc-guidance",
+          "name": "FDA · \"Guidance for Clinical Trial Sponsors: Establishment and Operation of Clinical Trial Data Monitoring Committees\"",
+          "url": "https://www.fda.gov/media/75398/download",
+          "publishedAt": "2006-03",
+          "kind": "FDA 공식 가이드라인(1차 자료, 배경 개념자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-11T00:11:30Z"
+        },
+        {
+          "id": "bmc-walter-2020",
+          "name": "Walter 외 · \"A systematic survey of randomised trials that stopped early for reasons of futility\" (BMC Medical Research Methodology, 2020)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6966801",
+          "publishedAt": "2020-01-16",
+          "kind": "동료심사 학술논문(배경 방법론 연구, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-11T00:12:30Z"
+        },
+        {
+          "id": "annonc-lesaffre-2017",
+          "name": "Lesaffre 외 · \"Statistical controversies in clinical research: futility analyses in oncology\" (Annals of Oncology, 2017)",
+          "url": "https://academic.oup.com/annonc/article/28/7/1419/3056221",
+          "publishedAt": "2017-02",
+          "kind": "동료심사 학술논문 초록(과거 반례 사례, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-11T00:14:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -7356,6 +7586,15 @@ const RESEARCH_DATA = {
         "ai-work-productivity-conditions-2026-10-10"
       ],
       "reason": "이날 첫 실행. 조사대기.json에 10/3부터 매일 재등록된 ai-work 질문이 7일 넘게 처리되지 않아 선택했다. 직전 3회차(10/7 반도체/컴퓨팅인프라, 10/8 한국산업/정책/SK, 10/9 글로벌기업/스타트업/자본)와 겹치지 않는 'AI/디지털기술' 분야다. 2026년 NBER 워킹페이퍼 2건(34836·34984, 서로 다른 임원 설문)과 세인트루이스 연은의 실적콜 분석(1차 자료 직접 열람)을 대조해 '지난 3년간 효과 없음'과 '효과 있음'이라는 상반된 임원 설문 결과, 그리고 'AI 생산성 발언의 95%가 미래지향'이라는 점을 확인했다. 2025년 MIT NANDA '95% 실패율' 보고서는 원문 PDF 접근에 실패해 Fortune 인터뷰 기사로 대체 확인했고, 와튼스쿨 교수·Futuriom의 방법론 비판(반대 근거)도 함께 확인했다. 검색 6회·원문열기 10회(성공 9·실패 1), 합계 16회를 사용했다."
+    },
+    {
+      "date": "2026-10-11",
+      "checkedAt": "2026-10-11T00:17:00Z",
+      "status": "published",
+      "reportIds": [
+        "argenx-sjogrens-futility-stop-2026-10-11"
+      ],
+      "reason": "이날 첫 실행. '과학/바이오/건강'·'사회/문화/소비' 두 분야가 9/21~10/10 보고서 11건에서 한 번도 선택되지 않아, 조사대기.json(ai-work·ai-infrastructure·energy-geopolitics만 남아 모두 최근 처리됨)이 아닌 최신 일간 브리핑(10/11)에서 과학/바이오/건강 분야 질문을 직접 골랐다. 10/10 브리핑이 '아르젠엑스 비브가르트 쇼그렌증후군 3상 실패'로 요약한 사건을 1차 자료(아르젠엑스 공식발표, mfn.se)로 직접 열람해, 실제로는 완주한 시험의 결과가 아니라 독립데이터모니터링위원회(IDMC)의 중간분석에 따른 '무용성(futility)' 조기중단이었음을 확인했다. 2차 독립 매체(AllSci)로 교차확인하고, FDA 2006년 DMC 가이드라인(1차 자료)으로 '무용성 중단'의 통계적 정의를 확인했다. 반대근거·실패사례 탐색에서 무용성 중간분석으로 중단됐다가 최종분석에서 1차평가지표가 충족된 것으로 뒤집힌 과거 사례(LUME-Lung 2, Lesaffre 외 2017, Annals of Oncology)를 발견해 대조했고, 조기중단의 통계적 엄밀성을 다룬 동료심사 방법론 연구(Walter 외 2020, 52개 시험 조사)도 함께 확인했다. 아르젠엑스는 중간분석의 정량적 효능 수치·통계적 근거를 공개하지 않아 이를 한계로 기록했다. 검색 9회·원문열기 9회(성공 6·실패 3), 합계 18회를 사용했다."
     }
   ]
 };
