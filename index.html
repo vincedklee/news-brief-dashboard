@@ -5220,7 +5220,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "ccce2e790050abe83996eeb156d1af4b993a829e16db03bfa4dc7a650eef9066",
+  "registryHash": "d4fcd969bafe02bf47b0f6b5243038960e4705f97a8b3a5be2beb6962f4320ea",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -8719,6 +8719,281 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-13T00:12:00Z"
         }
       ]
+    },
+    {
+      "id": "nk-missile-trajectory-hypersonic-signal-2026-10-14",
+      "ruleId": "nk-missile-capability",
+      "topic": "세계 정치 / 지정학",
+      "question": "북한이 10/12 쏜 미사일의 '불규칙한 궤적'은 왜 극초음속 무기 가능성의 근거로 읽히며, 이런 궤적 기반 판단은 왜 북·한·일 사이에서 자주 엇갈리는가?",
+      "basis": "10개 관심분야 중 '세계정치/지정학'은 10/6(hormuz-toll-claim-verification) 이후 8일간 선택되지 않았고, 직전 3회차(10/11 과학/바이오/건강, 10/12 사회/문화/소비, 10/13 에너지/기후/자원)와도 겹치지 않는다. 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics(호르무즈 유류 공급) 3건만 반복 등록돼 있는데 앞 둘은 다른 분야이고 energy-geopolitics는 유가·해협통항 논점으로 이미 10/2·10/6에 두 차례 다뤄 같은 각도를 반복하지 않기로 했다. 대신 오늘(10/14) 일간 브리핑의 세계정치/지정학 섹션 '북한, 한국 극초음속 시험 며칠 뒤 탄도미사일 연쇄 발사' 항목이 '일본 방위성이 두 번째 미사일의 불규칙한 궤적을 근거로 극초음속 무기 가능성을 제기했다'는 사실만 전하고, 왜 궤적이 불규칙하면 극초음속 가능성이 제기되는지, 그 판단이 얼마나 신뢰할 만한지는 설명하지 않은 채 남아 있어 이해하면 다른 미사일 관련 뉴스도 읽기 쉬워지는 질문으로 적합하다고 판단했다. 개인 열람 기록을 학습한 결과가 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-14",
+      "scope": "current",
+      "summary": "10/12(월) 북한이 평양 일대에서 동해로 탄도미사일 2발(17분 간격)을 발사했을 때 일본 방위성이 두 번째 발의 '불규칙한 궤적'을 근거로 극초음속 무기 가능성을 제기한 배경을, CSIS Missile Threat의 북한 화성-16나(HGV) 기술 분석과 NK News의 과거 보도, 한국의 첫 자체개발 극초음속 무기 시험(10/8) 관련 AP 보도를 대조해 확인했다. '불규칙한 궤적'이라는 관측 자체는 극초음속활공체(HGV)만을 가리키는 표현이 아니며, 북·한·일 세 나라의 비행거리·고도 추정치가 거의 매 시험마다 엇갈려 온 패턴도 함께 확인했다.",
+      "learning": [
+        {
+          "title": "'극초음속 무기'는 속도가 아니라 '활공 기동'으로 구분한다",
+          "text": "마하5 이상 속도는 일반 탄도미사일도 재진입 단계에서 도달할 수 있어, 극초음속 무기 여부를 가르는 핵심은 속도가 아니라 비행경로다. CSIS Missile Threat에 따르면 일반 탄도미사일은 예측 가능한 포물선을 그리지만, 극초음속활공체(HGV)는 로켓부스터에서 분리된 뒤 대기권 안에서 양력을 이용해 지속적으로 기동하며 활공한다. 기동재진입체(MaRV)는 HGV보다 좁은 범위에서만 기동하는 중간 단계로 따로 분류된다. CSIS가 분석한 북한 화성-16나(2024.4.2) 시험에서는 1차 정점(고도 101.1km) 이후 '풀업(pull-up)' 기동으로 2차 정점(72.3km)에 다시 오른 뒤 측면 기동까지 했는데, 이런 재상승·측면기동이 일반 탄도궤적과 구분되는 특징으로 꼽힌다.",
+          "sourceIds": [
+            "csis-hwasong16b"
+          ]
+        },
+        {
+          "title": "일본이 쓰는 '불규칙한 궤적'은 극초음속을 확정하는 표현이 아니다",
+          "text": "NK News가 2022년 보도에서 전문가들을 인용해 설명한 바에 따르면, 일본 방위성이 쓰는 '불규칙한 궤적' 표현은 통상적인 포물선을 벗어난 비행 중 기동을 가리키는 말로, 추적을 어렵게 만드는 현상 일반을 뜻할 뿐 반드시 극초음속 무기를 가리키지는 않는다(이 설명은 2022년 사례에 대한 것으로 배경 자료다). 같은 표현은 극초음속활공체뿐 아니라, KN-23 계열처럼 종말단계에서 상승·선회하는 변칙기동형 준탄도미사일에도 쓰일 수 있다. 그래서 '불규칙한 궤적'이라는 관측은 극초음속 여부를 확정하는 1차 증거가 아니라, 추적을 방해하는 기동이 있었다는 신호에 가깝다.",
+          "sourceIds": [
+            "nknews-irregular-trajectory-2022"
+          ]
+        },
+        {
+          "title": "북·한·일 세 나라의 비행거리·고도 추정치는 거의 매번 다르게 나온다",
+          "text": "북한이 주장하는 사거리는 한국·일본의 자체 추적치보다 대체로 크게 보도된다. AP 보도(10/8)에 따르면 10/3 시험에서 북한은 1,000km 이상 비행했다고 주장했지만 한국군은 700km 이상, 일본 방위성은 약680km로 추정해 300km 이상 차이가 났다. CSIS에 따르면 2024.4.2 화성-16나 시험에서도 북한은 약1,000km를 주장했지만 한국은 600km, 일본은 650km로 추정했다. 이런 격차가 거의 모든 시험에서 반복되는 것은 각국이 서로 다른 레이더망·분석 기준으로 같은 비행을 재구성하기 때문일 수도 있고, 북한이 의도적으로 추적을 어렵게 하는 기동을 쓰기 때문일 수도 있어 어느 쪽이 주된 원인인지는 이번 조사로 확정하지 못했다.",
+          "sourceIds": [
+            "csis-hwasong16b",
+            "ap-sk-hypersonic-test"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "10/12(월) 북한이 평양 일대에서 동해로 탄도미사일을 발사했다. 일본 방위성에 따르면 최소 2발이 17분 간격으로 발사됐고, 첫 번째는 약220km, 두 번째는 910km 이상 비행했다. 한국 합참은 미사일 중 하나가 900km 이상 비행했다고 밝혔다. 두 발 모두 일본의 배타적경제수역(EEZ) 밖 바다에 떨어졌다.",
+          "sourceIds": [
+            "aljazeera-nk-missile-1012"
+          ]
+        },
+        {
+          "text": "일본 방위성 차관 코야리 타카시(Takashi Koyari)는 두 번째 미사일이 '불규칙한' 비행 궤적을 보였다며 극초음속 무기일 가능성을 시사했다(\"may have been a hypersonic weapon\"). 이는 가능성 표현이며, 한국군이나 제3의 독립 전문기관이 이 발사체를 별도로 '극초음속'이라고 확인했다는 자료는 이번 조사에서 찾지 못했다.",
+          "sourceIds": [
+            "aljazeera-nk-missile-1012"
+          ]
+        },
+        {
+          "text": "이번 발사는 이재명 대통령이 참관한 한국의 첫 자체개발 극초음속 무기 시험(10/8) 며칠 뒤 이뤄졌다. AP 보도에 따르면 한국의 시험 비행체는 최소 마하5(음속 5배) 속도로 설계됐고, 부스터 로켓과 분리된 뒤 수직·수평으로 기동한 다음 표적을 타격했다. 개발 기관(국방과학연구소 등)과 시험 장소는 공개되지 않았다.",
+          "sourceIds": [
+            "ap-sk-hypersonic-test"
+          ]
+        },
+        {
+          "text": "CSIS 분석에 따르면 북한의 극초음속활공체(HGV) 계열인 화성-16나는 2024.4.2·2025.1.6 시험에서 HGV를 탑재했고, 2024.1.14 시험은 HGV가 아닌 기동재진입체(MaRV)를 탑재해 일부 분석가는 이를 별도 변종(화성-16A)으로 구분한다. 추정 최대사거리는 약5,500km지만 실제 시험 비행은 선회기동을 포함해 약1,000km 안팎에서만 이뤄졌으며, CSIS는 선회기동 없이 비행했다면 더 먼 거리를 갈 수 있었을 것이라는 분석도 함께 전했다.",
+          "sourceIds": [
+            "csis-hwasong16b"
+          ]
+        },
+        {
+          "text": "NK News(2022.9.27, 배경자료)가 전한 전문가 설명에 따르면 일본 방위성이 쓰는 '불규칙한 궤적'은 포물선을 벗어난 비행 중 기동을 가리키는 표현으로, 추적을 어렵게 만들며 한·일 추정치가 엇갈리는 한 원인일 수 있다. 다만 이 기사는 극초음속 여부와 직접 연결하지 않았고, 2022년 사례(잠수함발사 탄도미사일 추정)를 다룬 것으로 10/12 사례와 같은 발사체를 가리키지 않는다.",
+          "sourceIds": [
+            "nknews-irregular-trajectory-2022"
+          ]
+        }
+      ],
+      "limitations": [
+        "10/12 발사체의 실제 명칭(화성계열 식별)은 이번 조사에서 확인하지 못했다. 한국 합참·일본 방위성의 공식 보도자료 원문(jcs.mil.kr, mod.go.jp)은 접근이 막혀(403 응답) 직접 열람하지 못했고, Al Jazeera의 2차 보도로만 확인했다.",
+        "코야리 차관의 '극초음속일 수 있다'는 발언은 가능성 표현일 뿐이며, 이번 조사에서 38 North·CSIS 같은 독립 전문기관이 10/12 발사를 별도로 분석해 극초음속 여부를 확인한 자료는 찾지 못했다.",
+        "NK News의 '불규칙한 궤적' 설명(learning 2번)은 2022년 사례에 대한 것으로, 그 의미가 10/12 사례에도 그대로 적용된다는 직접적 근거는 아니다 — 궤적 용어의 일반적 의미를 보여주는 배경 자료로만 썼다(scope: background).",
+        "한국군이 과거 북한의 '극초음속' 주장을 KN-23 계열 발사체에 날개형 탄두를 장착한 변종('화성-11마')으로 재분류한 사례(2026년1월 보도)를 검색에서 확인했으나, 원문을 직접 열람하지 못하고 검색 발췌로만 확인해 findings·learning에는 넣지 않았다.",
+        "일본 방위성이 과거(2021.10.19 발사) 우주공간의 물체를 미사일로 오판해 발사 횟수 발표를 번복한 사례(Janes, 2021.11.10)를 반대근거 탐색 과정에서 확인했다. 이는 '불규칙 궤적' 판단이 아니라 '발사 횟수' 판단의 오류이므로, 같은 종류의 오류가 이번 10/12 궤적 판단에도 적용된다고 단정할 수 없다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "코야리 차관의 '극초음속일 수 있다'는 발언은 '불규칙한 궤적을 관측했다'는 사실과 '그것이 극초음속 무기다'라는 결론 사이에 아직 공개 검증이 채워지지 않은 공백이 있는 것으로 보인다. 북한이 10/8 한국의 첫 극초음속 시험 직후 미사일을 쏜 시점은 '극초음속 경쟁'이라는 틀로 읽히지만, 그 틀을 뒷받침할 기술적 확인(비행체 식별·궤적 재구성)은 이번 조사 범위에서는 아직 나오지 않았다."
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "한국 합참이나 일본 방위성이 10/12 발사체를 화성계열 명칭으로 특정하고, 그 궤적이 CSIS가 설명한 '재상승·측면기동'(화성-16나 사례처럼) 같은 HGV 특유의 패턴으로 확인되면 이번 조사의 '아직 미확정'이라는 판단은 뒤집힌다. 반대로 추가 분석에서 이 발사체가 KN-23 계열의 변칙기동형 준탄도미사일로 재분류되면(과거 2026년1월 사례처럼), '불규칙 궤적=극초음속 가능성'이라는 당시 해석은 과도했던 것으로 판명될 수 있다."
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "10/12 발사체의 공식 명칭, 실제 궤적의 재상승·측면기동 여부, 그리고 한국 국방부가 이 발사를 '극초음속'으로 보는지에 대한 입장은 이번 조사에서 확인되지 않은 채로 남아 있다."
+        }
+      ],
+      "nextQuestion": "한국 합참이나 일본 방위성이 10/12 발사체를 어떤 명칭으로 특정하며, 그 궤적이 화성-16나(2024.4.2)처럼 재상승·측면기동을 포함한 HGV 패턴으로 확인되는가, 아니면 KN-23 계열의 변칙기동형 준탄도미사일로 재분류되는가?",
+      "nextCheck": "2026-11-04",
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "North Korea missile October 12 2026 irregular trajectory hypersonic (웹검색)",
+          "note": "질문 선정 후 1차 탐색 — 10/12 발사 관련 기사 확인, 상세 수치는 추가 확인 필요"
+        },
+        {
+          "outcome": "opened",
+          "target": "hypersonic missile definition quasi-ballistic trajectory glide vehicle difference (웹검색)",
+          "note": "배경 개념 탐색 — HGV·MaRV·탄도미사일의 일반적 구분 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "aljazeera-nk-missile-1012",
+          "target": "https://www.aljazeera.com/news/2026/10/12/north-korea-fires-multiple-ballistic-missiles-towards-the-sea?traffic_source=rss",
+          "note": "직접 열람 — 10/12 발사 2발·17분 간격·비행거리(220km/910km+)·코야리 차관의 '불규칙한 궤적·극초음속 가능성' 발언 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "북한 탄도미사일 10월 12일 2026 불규칙 궤적 극초음속 일본 방위성 (웹검색)",
+          "note": "한국어 보도 추가 탐색 — 10/12 발사 관련 한국어 매체 기사는 찾지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "South Korea first hypersonic missile test October 8 2026 Lee Jae-myung (웹검색)",
+          "note": "한국의 10/8 극초음속 시험 배경 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "North Korea hypersonic missile claims skepticism experts doubt previous tests (웹검색)",
+          "note": "반대근거·실패사례 탐색 1차 — 과거(2022년 전후) 전문가들의 북한 극초음속 주장에 대한 의구심 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "North Korea October 12 2026 missile Yonhap 900km altitude analysis (웹검색)",
+          "note": "연합뉴스 등 10/12 발사 고도·비행거리 추가 확인 시도 — 추가 수치는 찾지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "38 North OR NK Pro North Korea hypersonic missile trajectory analysis 2026 (웹검색)",
+          "note": "전문기관 분석 탐색 — 10/12 발사에 대한 38 North·NK Pro 전용 분석은 찾지 못하고 과거 화성-16나 분석 존재만 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "38north.org Tianran Xu HGV Hwasong-16 hypersonic trajectory analysis radar altitude speed (웹검색)",
+          "note": "38 North 화성-16나 분석 논문 존재 확인 — 전문 원문은 열람하지 못하고 CSIS 재정리본으로 대체"
+        },
+        {
+          "outcome": "opened",
+          "target": "북한 미사일 10월 12일 2026 화성포 극초음속 전문가 분석 (웹검색)",
+          "note": "한국어 전문가 분석 탐색 — 10/12 발사 관련 자료는 못 찾고 2026년1월 발사(화성-11마 재분류 사례)만 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "csis-hwasong16b",
+          "target": "https://missilethreat.csis.org/missile/hwasong-16b/",
+          "note": "직접 열람 — 화성-16나(HS-16B)의 HGV/MaRV 구분, 추진방식, 2024.4.2·2025.1.6 시험의 고도·사거리(북·한·일 추정치 비교) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Hwasongpho-11Ma-1 CSIS missile threat North Korea hypersonic KN-23 variant (웹검색)",
+          "note": "다른 북한 극초음속 계열(화성포-11마-1) 탐색 — 원문 미열람으로 findings에서 제외"
+        },
+        {
+          "outcome": "opened",
+          "target": "북한 미사일 10월13일 평양 동해 두번째 극초음속 가능성 합참 (웹검색)",
+          "note": "합참 발표 추가 탐색 — 관련 한국어 보도 찾지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"October 13\" North Korea missile hypersonic Japan Ministry Defense trajectory irregular (웹검색)",
+          "note": "영어권 추가 탐색 — 10/3 발사 관련 자료만 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "防衛省 北朝鮮 ミサイル 10月12日 2026 発表 (웹검색)",
+          "note": "일본 방위성 발표 원문 탐색 — 10/12자 발표 링크는 검색 결과에서 찾지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "합동참모본부 북한 탄도미사일 2026년 10월 12일 보도자료 (웹검색)",
+          "note": "합참 보도자료 탐색 — 10/12자 보도자료 링크는 찾지 못함"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.mod.go.jp/j/press/news/2026/10/",
+          "note": "일본 방위성 10월 보도자료 색인 페이지 접근 시도 — HTTP 403으로 열람 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "Takashi Koyari North Korea missile irregular trajectory hypersonic October (웹검색)",
+          "note": "코야리 차관 관련 추가 확인 — 별도 상세 자료는 찾지 못함"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.janes.com/defence-news/news-detail/tokyo-retracts-claim-north-korea-test-launched-two-ballistic-missiles-on-19-october",
+          "note": "Janes 기사 접근 시도 — HTTP 404로 열람 실패(URL 경로 상이)"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "janes-tokyo-retraction-2021",
+          "target": "https://www.janes.com/defence-intelligence-insights/defence-news/c4isr/tokyo-retracts-claim-north-korea-test-launched-two-ballistic-missiles-on-19-october",
+          "note": "직접 열람 — 2021년 일본 방위성이 레이더 오판으로 발사 횟수 발표를 번복한 사례 확인(반대근거/한계 자료, 배경)"
+        },
+        {
+          "outcome": "opened",
+          "target": "北朝鮮 ミサイル 17分 間隔 10月 変則的な軌道 可能性 (웹검색)",
+          "note": "'변칙궤도' 표현의 일본 방위성 용례 추가 탐색"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.mod.go.jp/j/press/kisha/2022/1102b_r.html",
+          "note": "방위성 과거 발표 원문 접근 시도 — HTTP 403으로 열람 실패"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://sp.m.jiji.com/english/show/14889",
+          "note": "지지통신 영문 기사 접근 시도 — HTTP 404로 열람 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "nknews-irregular-trajectory-2022",
+          "target": "https://www.nknews.org/?p=919684",
+          "note": "직접 열람 — 전문가들이 설명하는 '불규칙한 궤적'의 일반적 의미(포물선을 벗어난 비행 중 기동) 확인(배경자료, 2022.9.27)"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.scmp.com/news/asia/east-asia/article/3370218/south-korea-test-flies-its-first-home-grown-hypersonic-weapon",
+          "note": "SCMP 10/8 한국 극초음속 시험 기사 접근 시도 — HTTP 403으로 열람 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ap-sk-hypersonic-test",
+          "target": "https://www.kaxe.org/news/2026-10-08/south-korea-test-flies-its-first-domestically-developed-hypersonic-weapon",
+          "note": "직접 열람(AP 통신, NPR 가맹국 재게시) — 한국 10/8 극초음속 시험 상세(마하5 이상, 수직·수평 기동)와 10/3 북한 시험의 북·한·일 비행거리 추정치 차이(1,000km vs 700km+ vs 680km) 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "aljazeera-nk-missile-1012",
+          "name": "Al Jazeera · \"North Korea fires multiple ballistic missiles towards the sea\"",
+          "url": "https://www.aljazeera.com/news/2026/10/12/north-korea-fires-multiple-ballistic-missiles-towards-the-sea?traffic_source=rss",
+          "publishedAt": "2026-10-12",
+          "kind": "독립 매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-14T00:03:00Z"
+        },
+        {
+          "id": "csis-hwasong16b",
+          "name": "CSIS Missile Threat · \"Hwasong-16B\"",
+          "url": "https://missilethreat.csis.org/missile/hwasong-16b/",
+          "publishedAt": "2025-12-17",
+          "kind": "독립 전문기관 데이터베이스(배경·기술 분석, 직접 열람, 최종수정 2026-01-13)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-14T00:08:00Z"
+        },
+        {
+          "id": "ap-sk-hypersonic-test",
+          "name": "AP(Associated Press, NPR 가맹국 kaxe.org 재게시) · \"South Korea test-flies its first domestically developed hypersonic weapon\"",
+          "url": "https://www.kaxe.org/news/2026-10-08/south-korea-test-flies-its-first-domestically-developed-hypersonic-weapon",
+          "publishedAt": "2026-10-08",
+          "kind": "통신사 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-14T00:17:00Z"
+        },
+        {
+          "id": "nknews-irregular-trajectory-2022",
+          "name": "NK News · 북한 미사일의 '불규칙한 궤적' 표현에 대한 전문가 설명 (2022년 보도)",
+          "url": "https://www.nknews.org/?p=919684",
+          "publishedAt": "2022-09-27",
+          "kind": "전문 매체 보도(배경자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-14T00:15:00Z"
+        },
+        {
+          "id": "janes-tokyo-retraction-2021",
+          "name": "Janes · \"Tokyo retracts claim North Korea test-launched two ballistic missiles on 19 October\"",
+          "url": "https://www.janes.com/defence-intelligence-insights/defence-news/c4isr/tokyo-retracts-claim-north-korea-test-launched-two-ballistic-missiles-on-19-october",
+          "publishedAt": "2021-11-10",
+          "kind": "전문 매체 보도(배경·반대근거 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-14T00:13:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -8895,6 +9170,15 @@ const RESEARCH_DATA = {
         "renewable-auction-market-vs-rps-2026-10-13"
       ],
       "reason": "이날 첫 실행. '에너지/기후/자원' 분야가 9/30 이후 13일간 선택되지 않아 가장 오래 비어 있었고 직전 3회차(10/10 AI,10/11 과학/바이오,10/12 사회문화)와도 겹치지 않아 선택했다. 오늘(10/13) 일간 브리핑의 '한국, 재생에너지 공급의무화제도 폐지하고 2027년 경매제 도입 세부안 공개' 항목을 계기로, 기후에너지환경부 보도자료(9/15 공포, KDI 재게시본 직접 열람)·법무법인 세종 뉴스레터(8/31)·pv-magazine(10/12)을 대조해 RPS와 새 계약시장의 구조 차이(사후 REC 거래→사전 경쟁입찰+장기고정가 계약, 비가격 평가요소, REC·현물시장 일몰 일정)를 확인했다. 반대근거·실패사례 탐색에서 가격상한이 낮게 책정돼 응찰이 목표에 크게 못 미친 해외 사례(필리핀 2차 녹색에너지경매 GEA2, 2023, 목표 11,600MW 중 3,580.76MW만 확보)를 찾아 원문을 직접 대조했다. 국내 업계의 2026년 개편에 대한 공식 반응은 세 차례 검색에도 찾지 못해 한계로 기록했다. 검색 9회·원문열기 5회, 합계 14회를 사용했다."
+    },
+    {
+      "date": "2026-10-14",
+      "checkedAt": "2026-10-14T00:19:00Z",
+      "status": "published",
+      "reportIds": [
+        "nk-missile-trajectory-hypersonic-signal-2026-10-14"
+      ],
+      "reason": "이날 첫 실행. '세계정치/지정학' 분야가 10/6(hormuz-toll-claim-verification) 이후 8일간 선택되지 않았고 직전 3회차(10/11 과학/바이오/건강, 10/12 사회/문화/소비, 10/13 에너지/기후/자원)와도 겹치지 않아 선택했다. 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics(호르무즈 유류) 3건만 반복 등록돼 있어 energy-geopolitics(세계정치/지정학으로 분류되나 유가·해협통항 각도로 10/2·10/6에 이미 두 차례 다룸)를 반복하지 않고, 오늘(10/14) 일간 브리핑의 '북한, 한국 극초음속 시험 며칠 뒤 탄도미사일 연쇄 발사' 항목에서 '일본 방위성이 불규칙한 궤적을 근거로 극초음속 가능성을 제기했다'는 사실만 전하고 설명하지 않은 부분을 질문으로 골랐다. CSIS Missile Threat(화성-16나, 배경자료)·NK News(2022년 전문가 설명, 배경자료)·AP(10/8 한국 극초음속 시험 보도, 직접 열람)를 대조해 '불규칙한 궤적'이 극초음속만을 가리키지 않는다는 점과 북·한·일 비행거리·고도 추정치가 거의 매 시험마다 엇갈려 온 패턴을 확인했다. 반대근거·실패사례 탐색에서 일본 방위성이 2021년 레이더 오판으로 발사 횟수 발표를 번복한 사례(Janes)를 찾아 한계로 기록했다. 10/12 발사체의 실제 명칭과 궤적 세부사항은 한국 합참·일본 방위성 원문 접근 실패(403)로 확인하지 못해 한계로 남겼다. 검색 16회·원문열기 10회(성공 5·실패 5), 합계 26회를 사용했다."
     }
   ]
 };
