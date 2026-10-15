@@ -5303,7 +5303,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "d4fcd969bafe02bf47b0f6b5243038960e4705f97a8b3a5be2beb6962f4320ea",
+  "registryHash": "5162132b73dc49b125e181e643d38a0ca0e29540fb108ec00bfbf11df50928f8",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -9077,6 +9077,254 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-14T00:13:00Z"
         }
       ]
+    },
+    {
+      "id": "mind-robotics-pre-product-valuation-2026-10-15",
+      "ruleId": "industry-mobility",
+      "topic": "산업 / 모빌리티 / 로봇",
+      "question": "Rivian의 로봇 자회사 Mind Robotics는 구체적 제품을 공개하지 않은 채 분사 6개월 만에 밸류에이션이 20억→34억달러로(최근 두 달 새 70%) 뛰었다 — 이런 평가는 무엇에 근거하며, 비슷하게 '제품 공개 전' 고평가됐던 과거 사례는 어떻게 꺾였는가?",
+      "basis": "10개 관심분야 중 '산업/모빌리티/로봇'이 10/3(hd-heavy-wage-vote-rejection-pattern) 이후 12일간 선택되지 않아 가장 오래 비어 있었고, 직전 3회차(10/12 사회/문화/소비, 10/13 에너지/기후/자원, 10/14 세계정치/지정학)와도 겹치지 않아 선택했다. 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics 3건만 반복 등록돼 있어 이 분야의 처리 대기 요청은 없었다. 오늘(10/15) 일간 브리핑의 산업/모빌리티/로봇 섹션 'Rivian 로봇자회사 마인드로보틱스, 더그 필드(전 테슬라·애플·포드) 사장 영입 — 1년도 안돼 10억달러 이상 투자유치' 항목이 투자유치 사실만 전하고, 제품을 공개하지 않은 회사가 어떻게 이런 평가를 받는지, 비슷한 패턴이 과거 어떻게 끝났는지는 설명하지 않아 이해하면 비슷한 다른 AI/로봇 스타트업 뉴스도 읽기 쉬워지는 질문으로 적합하다고 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-15",
+      "scope": "current",
+      "summary": "Rivian이 2025년 11월 3분기 주주서한(SEC 8-K 공시)에서 분사를 공시한 산업용 AI·로봇 스타트업 Mind Robotics가, 제품이나 매출을 공개하지 않은 채 6개월 만에 세 차례 라운드(시드→시리즈A→추가라운드)를 거쳐 밸류에이션이 20억달러(2026/3)에서 34억달러(2026/5)로 뛴 경위를 1차 자료(SEC 공시)와 독립 매체 보도로 확인했다. 같은 '제품 없는 고밸류에이션' 패턴을 보인 Safe Superintelligence(SSI, 320억달러)와 비교하고, AI 스타트업 전반의 '팀·전략 프리미엄' 통계를 대조했으며, 반대 사례로 2022년 해체된 자율주행 스타트업 Argo AI(제품화 실패)를 검토했다.",
+      "learning": [
+        {
+          "title": "밸류에이션이 매출이 아니라 '팀과 전략적 포지션'으로 매겨지는 방식",
+          "text": "표준 벤처투자 평가법인 스코어카드 방식은 경영진 역량·시장규모·기술·경쟁환경 등을 가중치로 매겨 매출이 없는 회사도 평가한다. Finro가 Statista 자료를 바탕으로 분석한 결과(2023년 기준), AI 스타트업의 시드 단계 밸류에이션은 비AI 스타트업보다 평균 20% 높고 시리즈A에서는 39%, 시리즈B에서는 59%까지 격차가 벌어졌다. TechCrunch가 인터뷰한 투자자·창업자들은 이 프리미엄이 매출 실적이 아니라 AI 연구자 인재 확보 경쟁, 투자자들이 '수년 뒤의 경쟁우위'를 먼저 가격에 반영하는 관행에서 온다고 설명했다.",
+          "sourceIds": [
+            "techcrunch-ai-seed-premium-2026"
+          ]
+        },
+        {
+          "title": "'스핀오프 + 데이터 플라이휠'이 실제로 뜻하는 것",
+          "text": "Mind Robotics는 Rivian에서 분리된 별도 법인이지만, Rivian의 실제 생산 공장을 AI 로봇의 학습 데이터 수집처이자 실증 배치 공간으로 쓴다. Rivian의 공식 주주서한은 이를 '로봇 데이터 플라이휠의 기반'이라고 표현했다. 이런 구조는 모회사가 지분과 실증 현장을 제공하는 대신, 분사 법인은 외부 투자자에게서 별도로 자금을 유치해 모회사 재무제표에서 분리된 평가를 받을 수 있게 한다 — 그래서 모회사(Rivian) 주가와 무관하게 자회사만 수억~수십억달러 단위로 평가될 수 있다.",
+          "sourceIds": [
+            "sec-rivian-q3-2025-shareholder-letter",
+            "techcrunch-mind-spinoff-2025"
+          ]
+        },
+        {
+          "title": "제품 없는 고밸류에이션이 꺾일 때는 보통 '신규 투자자 조달 실패'로 시작된다",
+          "text": "2017년 포드 주도로 출범해 2020년 75억달러까지 평가받았던 자율주행 스타트업 Argo AI는, 2022년 10월 포드가 실적발표에서 '신규 투자자를 끌어모으지 못했다'고 밝히며 해체됐다. 제품(완전자율주행 상용화)을 끝내 공개하지 못한 상태에서 벌어진 일이었다. 포드·폭스바겐이 합쳐 36억달러를 투자했는데도, 다음 라운드의 자금 순환이 멈추자 평가 자체가 무너졌다는 점이 이번 조사에서 확인한 선례다.",
+          "sourceIds": [
+            "crunchbase-argo-ai-shutdown-2022"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "Rivian은 2025년 11월 4일 공시한 3분기 주주서한(SEC 8-K 첨부자료)에서 'Mind Robotics'라는 새 회사를 11월에 설립했다고 밝혔다. 원문은 'Mind Robotics will focus on the advancement of industrial AI to reshape how physical world businesses operate'라고 설명하며, Rivian의 운영 데이터를 'the foundation for a robotics data flywheel'로 쓴다고 덧붙였다. 외부 시드 자본 약1억1,000만달러를 확보했다고 명시했으나, 제품이나 매출에 대한 언급은 없었다.",
+          "sourceIds": [
+            "sec-rivian-q3-2025-shareholder-letter"
+          ]
+        },
+        {
+          "text": "TechCrunch(2025/11/4) 보도에 따르면 시드 라운드는 Eclipse가 주도해 1억1,500만달러를 조달했고, RJ Scaringe(Rivian CEO)가 Mind Robotics 이사회 의장을 맡는다. 보도 시점 Mind Robotics의 온라인 흔적은 상표출원서 정도였는데, 그 출원은 기계·차량부터 '달걀 부화기(incubators for eggs)'까지 포괄해 구체적인 사업 방향을 특정하기 어려웠다고 지적했다.",
+          "sourceIds": [
+            "techcrunch-mind-spinoff-2025"
+          ]
+        },
+        {
+          "text": "2026년 3월 11일 Mind Robotics는 Accel과 Andreessen Horowitz가 공동 주도한 5억달러 규모 시리즈A를 발표했다(Pulse2가 보도자료 내용을 재게시). 밸류에이션은 보도되지 않았으나, 로이터·WSJ를 인용한 다른 매체들은 이 라운드가 20억달러 밸류에이션으로 이뤄졌다고 전했다. Accel 파트너 Sameer Gandhi가 이사회에 합류했다.",
+          "sourceIds": [
+            "pulse2-mind-seriesa-2026"
+          ]
+        },
+        {
+          "text": "약 2개월 뒤인 2026년 5월 13일, Kleiner Perkins가 주도하고 Meritech Capital·Redpoint Ventures 등이 신규로 참여한 4억달러 추가 라운드가 이뤄지며 밸류에이션이 34억달러로(3월 대비 약70% 상승) 뛰었다고 로이터가 '사정을 아는 소식통'을 인용해 보도했다(마켓스크리너 재게시). 분사 이후 누적 투자액은 약10억1,500만달러로, 회사의 공식 확인 발표는 이 보도에 없었다.",
+          "sourceIds": [
+            "marketscreener-mind-valuation-2026"
+          ]
+        },
+        {
+          "text": "비교 사례: OpenAI 전 수석과학자 Ilya Sutskever가 2024년 창업한 Safe Superintelligence(SSI)는 2025년4월 20억달러 투자유치 당시 320억달러로 평가됐다. TechCrunch 보도에 따르면 이 회사는 '단 하나의 목표와 하나의 제품, 안전한 초지능'이라는 선언 외에 상업 제품·연구논문·매출을 창업 이후 공개한 적이 없다.",
+          "sourceIds": [
+            "techcrunch-ssi-32b-2025"
+          ]
+        }
+      ],
+      "limitations": [
+        "20억·34억달러 밸류에이션은 모두 '사정을 아는 소식통'을 인용한 로이터/WSJ 계열 보도이며, Mind Robotics나 Rivian이 직접 공식 확인한 수치는 이번 조사에서 찾지 못했다.",
+        "공식 보도자료 원문(Business Wire, 2026/3/11)은 접근이 막혀(HTTP 403) 직접 열람하지 못하고, 같은 내용을 재게시한 Pulse2로 대체 확인했다.",
+        "반대근거·실패사례 탐색에서 '휴머노이드·산업로봇 스타트업의 다운라운드·셧다운' 사례는 이번 조사 기간에 찾지 못했다 — 오히려 Humanoid(13.5억달러), Neura Robotics(약70억달러) 같은 추가 상향 라운드만 확인됐다. 이는 반론이 없다는 판단이 아니라 로봇 분야 자체에서는 아직 찾지 못했다는 사실이다. 그 대신 인접 분야(자율주행)인 Argo AI를 반대 사례로 썼는데, 업종이 달라 산업용 로봇에 그대로 적용된다는 보장은 없다.",
+        "Mind Robotics의 실제 제품명·고객·매출 계획, 그리고 Rivian의 정확한 지분율은 이번 조사의 어떤 출처에서도 확인되지 않았다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "Mind Robotics가 반년 만에 밸류에이션을 3배 이상(20억→34억달러) 끌어올린 것은, 매출·제품 없이 창업자 이력과 모회사의 실증 현장(데이터 플라이휠)이라는 전략적 포지션만으로 평가받는 관행이 AI·로봇 투자 붐에서 반복되고 있음을 보여주는 사례로 읽힌다. SSI(320억달러, 제품 비공개)와 같은 패턴이다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "Mind Robotics가 구체적 제품명·고객·매출계획을 공개하면 이번 고평가가 실체를 얻어 판단이 달라진다. 반대로 다음 라운드에서 Argo AI 사례처럼 '신규 투자자를 끌어모으지 못했다'는 신호가 나오면, 제품 없이 쌓은 지금의 평가가 오래 유지되지 않는다는 쪽으로 판단이 바뀐다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "Mind Robotics의 실제 제품·고객·매출, 그리고 34억달러 밸류에이션에 대한 회사 자체의 공식 확인은 이번 조사에서 확인되지 않은 채로 남아 있다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "Mind Robotics가 실제로 어떤 제품을 공개하며, 다음 투자 라운드가 이번 34억달러 밸류에이션을 더 끌어올리는지 아니면 유지하지 못하는지?",
+      "nextCheck": "2026-11-05",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "\"Mind Robotics\" Rivian valuation $3.4 billion Reuters (웹검색)",
+          "note": "밸류에이션 수치 1차 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Mind Robotics\" Rivian Series A funding Accel Andreessen Horowitz announcement (웹검색)",
+          "note": "시리즈A 투자자·구조 탐색"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://secure.businesswire.com/news/home/20260311414783/en/Mind-Robotics-Announces-%24500M-Financing-to-Support-Deployment-of-AI-Powered-Robots-at-Industrial-Scale",
+          "note": "공식 보도자료 원문 접근 시도 — HTTP 403으로 열람 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "marketscreener-mind-valuation-2026",
+          "target": "https://www.marketscreener.com/news/rivian-spinout-mind-robotics-valued-at-3-4-billion-in-new-funding-round-ce7f5bdcdd8bf423",
+          "note": "직접 열람 — 34억달러 밸류에이션, 신규 투자자 명단, 익명소스 여부 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "pulse2-mind-seriesa-2026",
+          "target": "https://pulse2.com/mind-robotics-500-million-series-a-raised-for-ai-industrial-robotics-platform",
+          "note": "직접 열람 — 시리즈A 5억달러, Accel·a16z 공동주도, 이사회 합류 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Safe Superintelligence SSI valuation $32 billion no product pre-revenue 2025 (웹검색)",
+          "note": "비교 사례 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "techcrunch-ssi-32b-2025",
+          "target": "https://techcrunch.com/2025/04/12/openai-co-founder-ilya-sutskevers-safe-superintelligence-reportedly-valued-at-32b",
+          "note": "직접 열람 — SSI 320억달러 밸류에이션, 제품·매출 미공개 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "humanoid robotics startup valuation cut down round failure 2025 2026 (웹검색)",
+          "note": "반대근거·실패사례 탐색 1차 — 로봇분야 다운라운드 사례 찾지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "Argo AI shutdown $7.25 billion valuation Ford Volkswagen 2022 (웹검색)",
+          "note": "반대근거·실패사례 탐색 2차 — 인접분야(자율주행) 실패 사례 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "pre-revenue AI startup valuation \"talent\" team acquisition strategic premium VC analysis (웹검색)",
+          "note": "'팀·전략 프리미엄' 평가방식 배경 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "crunchbase-argo-ai-shutdown-2022",
+          "target": "https://news.crunchbase.com/transportation/autonomous-vehicles-argo-ai-ford/",
+          "note": "직접 열람 — Argo AI 해체 경위, '신규 투자자 유치 실패' 사유 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "techcrunch-ai-seed-premium-2026",
+          "target": "https://techcrunch.com/2026/03/31/its-not-your-imagination-ai-seed-startups-are-commanding-higher-valuations",
+          "note": "직접 열람 — Finro/Statista AI 프리미엄 수치, 투자자 인터뷰 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Rivian investor relations Mind Robotics spin-off Q3 2025 earnings call site:rivian.com OR \"ir.rivian.com\" (웹검색)",
+          "note": "1차 자료(공식 공시) 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "techcrunch-mind-spinoff-2025",
+          "target": "https://www.techcrunch.com/2025/11/04/rivian-creates-another-spinoff-company-called-mind-robotics/",
+          "note": "직접 열람 — 분사 경위, 시드펀딩, 상표출원 범위(달걀 부화기 포함) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Rivian third quarter 2025 shareholder letter PDF ir.rivian.com Mind Robotics (웹검색)",
+          "note": "SEC 공시 원문 위치 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "sec-rivian-q3-2025-shareholder-letter",
+          "target": "https://www.sec.gov/Archives/edgar/data/1874178/000187417825000051/ex-9923q25shareholderletter.htm",
+          "note": "직접 열람(1차 자료, SEC 8-K 첨부) — Mind Robotics 설명 원문, 시드펀딩 1.1억달러, 제품/매출 미언급 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "sec-rivian-q3-2025-shareholder-letter",
+          "name": "SEC EDGAR · Rivian Automotive 8-K 첨부 \"Q3 2025 Shareholder Letter\"",
+          "url": "https://www.sec.gov/Archives/edgar/data/1874178/000187417825000051/ex-9923q25shareholderletter.htm",
+          "publishedAt": "2025-11-04",
+          "kind": "1차 자료(SEC 공시, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:40:00Z"
+        },
+        {
+          "id": "techcrunch-mind-spinoff-2025",
+          "name": "TechCrunch · \"Rivian creates another spinoff company called Mind Robotics\"",
+          "url": "https://www.techcrunch.com/2025/11/04/rivian-creates-another-spinoff-company-called-mind-robotics/",
+          "publishedAt": "2025-11-04",
+          "kind": "독립 매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:33:00Z"
+        },
+        {
+          "id": "pulse2-mind-seriesa-2026",
+          "name": "Pulse2 · \"Mind Robotics: $500 Million Series A Raised For AI Industrial Robotics Platform\"",
+          "url": "https://pulse2.com/mind-robotics-500-million-series-a-raised-for-ai-industrial-robotics-platform",
+          "publishedAt": "2026-03",
+          "kind": "보도자료 재게시(독립 매체, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:16:00Z"
+        },
+        {
+          "id": "marketscreener-mind-valuation-2026",
+          "name": "MarketScreener(로이터 보도 재게시) · \"Rivian spinout Mind Robotics valued at $3.4 billion in new funding round\"",
+          "url": "https://www.marketscreener.com/news/rivian-spinout-mind-robotics-valued-at-3-4-billion-in-new-funding-round-ce7f5bdcdd8bf423",
+          "publishedAt": "2026-05-13",
+          "kind": "통신사 보도 재게시(직접 열람, 익명 소스 인용)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:15:00Z"
+        },
+        {
+          "id": "techcrunch-ssi-32b-2025",
+          "name": "TechCrunch · \"OpenAI co-founder Ilya Sutskever's Safe Superintelligence reportedly valued at $32B\"",
+          "url": "https://techcrunch.com/2025/04/12/openai-co-founder-ilya-sutskevers-safe-superintelligence-reportedly-valued-at-32b",
+          "publishedAt": "2025-04-12",
+          "kind": "독립 매체 보도(비교 사례, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:20:00Z"
+        },
+        {
+          "id": "crunchbase-argo-ai-shutdown-2022",
+          "name": "Crunchbase News · \"Autonomous Vehicles: Argo AI, Ford\" (Argo AI 해체 보도)",
+          "url": "https://news.crunchbase.com/transportation/autonomous-vehicles-argo-ai-ford/",
+          "publishedAt": "2022-10",
+          "kind": "독립 매체 보도(반대근거·선례, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:27:00Z"
+        },
+        {
+          "id": "techcrunch-ai-seed-premium-2026",
+          "name": "TechCrunch · \"It's not your imagination: AI seed startups are commanding higher valuations\"",
+          "url": "https://techcrunch.com/2026/03/31/its-not-your-imagination-ai-seed-startups-are-commanding-higher-valuations",
+          "publishedAt": "2026-03-31",
+          "kind": "독립 매체 보도(데이터 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-15T00:29:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -9262,6 +9510,15 @@ const RESEARCH_DATA = {
         "nk-missile-trajectory-hypersonic-signal-2026-10-14"
       ],
       "reason": "이날 첫 실행. '세계정치/지정학' 분야가 10/6(hormuz-toll-claim-verification) 이후 8일간 선택되지 않았고 직전 3회차(10/11 과학/바이오/건강, 10/12 사회/문화/소비, 10/13 에너지/기후/자원)와도 겹치지 않아 선택했다. 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics(호르무즈 유류) 3건만 반복 등록돼 있어 energy-geopolitics(세계정치/지정학으로 분류되나 유가·해협통항 각도로 10/2·10/6에 이미 두 차례 다룸)를 반복하지 않고, 오늘(10/14) 일간 브리핑의 '북한, 한국 극초음속 시험 며칠 뒤 탄도미사일 연쇄 발사' 항목에서 '일본 방위성이 불규칙한 궤적을 근거로 극초음속 가능성을 제기했다'는 사실만 전하고 설명하지 않은 부분을 질문으로 골랐다. CSIS Missile Threat(화성-16나, 배경자료)·NK News(2022년 전문가 설명, 배경자료)·AP(10/8 한국 극초음속 시험 보도, 직접 열람)를 대조해 '불규칙한 궤적'이 극초음속만을 가리키지 않는다는 점과 북·한·일 비행거리·고도 추정치가 거의 매 시험마다 엇갈려 온 패턴을 확인했다. 반대근거·실패사례 탐색에서 일본 방위성이 2021년 레이더 오판으로 발사 횟수 발표를 번복한 사례(Janes)를 찾아 한계로 기록했다. 10/12 발사체의 실제 명칭과 궤적 세부사항은 한국 합참·일본 방위성 원문 접근 실패(403)로 확인하지 못해 한계로 남겼다. 검색 16회·원문열기 10회(성공 5·실패 5), 합계 26회를 사용했다."
+    },
+    {
+      "date": "2026-10-15",
+      "checkedAt": "2026-10-15T00:45:00Z",
+      "status": "published",
+      "reportIds": [
+        "mind-robotics-pre-product-valuation-2026-10-15"
+      ],
+      "reason": "이날 첫 실행. '산업/모빌리티/로봇'이 10/3 이후 12일간 선택되지 않아 10개 분야 중 가장 오래 비어 있었고 직전 3회차(10/12 사회/문화/소비, 10/13 에너지/기후/자원, 10/14 세계정치/지정학)와도 겹치지 않아 선택했다. 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics만 등록돼 이 분야 대기 요청은 없어, 오늘(10/15) 일간 브리핑의 '산업/모빌리티/로봇' 섹션 Rivian 로봇자회사 Mind Robotics 투자유치 항목을 계기로 질문을 직접 선정했다. SEC EDGAR의 Rivian 3분기(2025) 주주서한(1차 자료)을 직접 열람해 Mind Robotics가 제품·매출을 공개하지 않은 채 분사했다는 사실과 시드펀딩 규모(1.1억달러)를 확인했고, TechCrunch(2025/11/4)로 상표출원이 '달걀 부화기'까지 포괄할 만큼 사업 범위가 불명확했다는 점을 확인했다. Pulse2(시리즈A 5억달러, 20억달러 밸류에이션)와 마켓스크리너(로이터 재게시, 2개월 뒤 34억달러로 70%↑)로 밸류에이션 점프를 대조했다. 비교 사례로 제품·매출 없이 320억달러로 평가된 Safe Superintelligence(TechCrunch)를, '팀·전략 프리미엄' 평가방식의 배경으로 Finro/Statista 통계를 인용한 TechCrunch 기사를 확인했다. 반대근거·실패사례 탐색에서 로봇 분야 자체의 다운라운드·셧다운 사례는 찾지 못했으나(오히려 Humanoid·Neura Robotics 등 추가 상향 라운드만 확인), 인접 분야인 자율주행의 Argo AI(2022년, '신규 투자자 유치 실패'로 해체)를 대조 사례로 확인하고 업종이 다르다는 한계를 명시했다. 공식 보도자료 원문(Business Wire)은 HTTP403으로 접근이 막혀 Pulse2 재게시로 대체했다. 검색 8회·원문열기 8회(성공7·실패1), 합계 16회를 사용했다."
     }
   ]
 };
