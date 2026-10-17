@@ -1415,8 +1415,8 @@ const ARCS = [
   {
     name: "미국-이란 충돌 재개와 유가 급등",
     status: "active",
-    since: "2026-08-31", last: "2026-10-17", count: 41,
-    state: "트럼프가 10/15 \"핵무기는 쓰지 않는다\"며 MOAB(재래식 초대형폭탄)은 핵무기가 아니라고 선을 그었으나 중간선거(11/3) 전 재공습은 없다는 입장은 유지했다. 호르무즈 침몰 컨테이너선은 싱가포르籍 'GFS Pride'(21명 전원구조)로 확인됐고, WTI $101.41(+3.5%)·브렌트 $109.86(+3.7%, 5/19래 최고)로 긴장이 유가에 계속 반영되고 있다.",
+    since: "2026-08-31", last: "2026-10-18", count: 42,
+    state: "10/17(현지시간) 美중부사령부와 이란 혁명수비대가 호르무즈 해협 통제권을 각각 공개 주장했다 — 美는 선박 400척·원유 1억배럴 통과를 내세웠고 이란은 비인가 항로의 유조선이 기뢰에 맞아 화재가 났다고 반박했다. UKMTO 집계로 10/9~16 최소 12척 피격은 개전(2/28) 이후 최다 주간이며, 호르무즈 통과량은 전쟁 전의 68%로 줄었다. 브렌트유는 5월 이후 최고치인 배럴당 110달러에 근접했다.",
     next: "이란의 美 답변 공식 수용·거부 여부. 11월 중간선거 이후 군사행동 재개 가능성. 사우디 송유관 완전 정상화 시점. 리야드공항 재개항·항공사 정상화 시점. G7 비축유 방출의 실제 이행 여부. 러시아산 디젤 공급 합의의 실제 이행 규모(480만톤 전체). 사우디·美의 실제 보복 군사행동 확대 여부. 호르무즈 통과물량 추가 회복 여부.",
     timeline: [
       { date: "2026-10-10", text: "WTI $91.85·브렌트 $104.72로 이틀째 상승. 트럼프-푸틴 러시아산 디젤 공급확대 합의" },
@@ -1427,6 +1427,7 @@ const ARCS = [
       { date: "2026-10-15", text: "아람코 본사 실제 피격(화재, 리야드 4명부상)·호르무즈서 컨테이너선2척 침몰(이란은 기뢰피격 주장, 서방 미확인) — UKMTO 집계 10/6~14 선박피격 15건(최근나흘11건), 통과원유량 2,080만→290만배럴 급감. 러-美 디젤 1차물량(약30만톤) 공개, 美하루수요에도 못미침. 유엔 \"호르무즈 비료수송로 합의 시급\" 경고(식량안보위기 가능성). 우크라이나 스타링크 제한 반발, 키이우 재공습으로 에너지휴전 사실상 와해. 이란, 美 제안(10/11)을 \"일부만 수용, 불충분\"이라 평가" },
       { date: "2026-10-16", text: "후티, 예멘 아덴 대통령궁에 미사일공격(5명사망·16명부상) — 美는 전투재개시 초대형폭탄 MOAB 투하 검토설(CNN). 젤렌스키 \"에너지휴전 끝났다\" 선언, 우크라이나 랴잔 정유소(러 정제능력 약5%) 타격·러시아는 발전시설 보복. WTI $97.97(+3%)·브렌트 $105.92로 재급등(美 원유재고 급감 겹침)" },
       { date: "2026-10-17", text: "(10/15 발언) 트럼프 \"핵무기는 안 쓴다, MOAB은 핵무기 아니다\" — 중간선거 전 재공습은 보류 유지. 이란 페제시키안 대통령 항복거부 재확인. 호르무즈 침몰선 싱가포르籍 GFS Pride 확인(21명 구조). WTI $101.41(+3.5%)·브렌트 $109.86(+3.7%, 5/19래 최고) 급등" },
+      { date: "2026-10-18", text: "(10/17 발표) 美중부사령부-이란 혁명수비대, 호르무즈 통제권 정면 주장 — 美는 선박400척·원유1억배럴 통과·이란 원유수출손실 250억달러·가상자산 3.5억달러 압수 주장, 이란은 비인가 항로 유조선 기뢰피격 발표. UKMTO 10/9~16 최소12척 피격(개전후 최다주간), 통과량 전쟁전 68%. 브렌트 $110 근접" },
     ]
   },
   {
@@ -1768,9 +1769,275 @@ const WEEKLIES = [
 
 const BRIEFINGS = [
   {
+    date: "2026-10-18",
+    weekday: "일",
+    isToday: true,
+    schemaVersion: 2,
+    collectedAt: "2026-10-18 07:50 KST",
+    window: "최근 72시간 중 지난 3회차(10/15·10/16·10/17)에 안 실린 것",
+    tally: "10개 분야 리서치 에이전트 병렬 운용(WebSearch 세션 공유 한도 소진, 약190회) + RSS 후보캐시(news-candidates) 교차확인 · 확정 기사 21건(주요 14 · 그 외 7) — 70건 목표 크게 미달",
+    coverage: {
+      failedSources: [
+        "cnbc.com(403)", "ft.com(차단)", "theguardian.com(차단)", "thehindu.com(차단)",
+        "theverge.com(차단)", "channelnewsasia.com(차단)", "yna.co.kr(차단)",
+        "scmp.com(일부 403)", "japantimes.co.jp(402, 결제필요)", "straitstimes.com(차단)", "wowtale.net(403)"
+      ],
+      gaps: [
+        "글로벌 기업/스타트업/자본 분야 — 주말 공급 부족 + 접속 제한으로 확정 기사 0건",
+        "세계정치·경제·과학·사회 다수 분야 — 세션 공유 WebSearch 한도 소진으로 10/15~18 구간 추가 검증 중단(검색 결과가 반복적으로 10/13일 이전으로 수렴)",
+        "원/엔100·원/유로·달러인덱스·두바이유·美3대지수 — 주말 휴장으로 신규 수치 없음"
+      ],
+      feedCollectedAt: "2026-10-17T19:43:00.532913+00:00"
+    },
+    fx: {
+      asOf: "10/16(금) 15:30 종가 — 주말 휴장으로 최신값 유지",
+      rates: [
+        { label: "원/달러", value: "1,331.4", delta: "-13.2원", dir: "down", note: "2년래 최저, 신규 종가 없음(주말)" }
+      ]
+    },
+    oil: {
+      asOf: "10/16(현지시간) 종가 — 주말 휴장으로 최신값 유지",
+      prices: [
+        { label: "WTI", value: "$101.41", delta: "+3.5%", dir: "up", note: "신규 종가 없음(주말)" },
+        { label: "브렌트유", value: "$109.86", delta: "+3.7%", dir: "up", note: "5/19 이후 최고, 신규 종가 없음(주말)" }
+      ]
+    },
+    digest: [
+      "트럼프, 9월 서명한 러시아 제재법을 시행 직전 행정명령으로 유예 — 공화당 내에서도 \"푸틴에 굴복\" 비판, 젤렌스키는 \"<strong>푸틴에 재정적 보상</strong>\"이라 반발했다",
+      "美·이란이 호르무즈 해협 통제권을 서로 주장 — 美중부사령부는 선박 <strong>400척</strong> 통과를 주장했고 이란은 유조선 기뢰피격을 발표, 브렌트유는 5월래 최고치인 <strong>$110</strong>에 근접했다",
+      "중국 CXMT, 3분기 매출이 전년比 <strong>589~619%</strong> 늘어날 것으로 공시 — D램 점유율이 1년 전 4%에서 <strong>10%</strong>로 뛰었다",
+      "캘리포니아 뉴섬 주지사, AI 모델 '킬스위치' 전문가위원회 설치 등 AI 안전규제 강화 행정명령에 서명했다",
+      "알바니아 '플라밍고 혁명' 시위가 나흘째 이어져 <strong>160명</strong>이 구금됐다 — 라마 총리는 사퇴를 거부하며 \"외세가 배후\"라고 주장했다"
+    ],
+    insight: [
+      { label: "흐름", text: "\"미국-이란 충돌 재개와 유가 급등\" 호의 7주째 42번째 진전이다. 美중부사령부와 이란 혁명수비대가 호르무즈 해협 통제권을 정면으로 주장하고 나선 것은, 10월 들어 선박 피격이 개전(2/28) 이후 가장 잦아진 국면에서도 양측 모두 물리적 통제력을 공식적으로 과시해야 할 필요를 느끼고 있다는 뜻으로 보인다." },
+      { label: "뒤집힐 조건", text: "11/3 중간선거 이후 美가 실제로 추가 군사행동(MOAB 투입설 포함)에 나서거나, UKMTO의 피격 집계가 이번 주(10/9~16, 12척)보다 더 늘어나면 지금의 \"통제 유지\" 평가는 \"통제력 상실\" 쪽으로 뒤집힐 수 있다." },
+      { label: "안 보이는 것", text: "美중부사령부는 이란의 원유수출 손실(250억달러)·가상자산 압수(3억5,000만달러)라는 구체적 수치를 제시했지만, 이란 측은 이를 \"성과 과장\"이라 반박하면서도 자신들의 피격 횟수나 통과 선박 수는 전혀 공개하지 않아 양측 주장의 교차검증이 안 된다." }
+    ],
+    sections: [
+      {
+        topic: "세계 정치 / 지정학",
+        items: [
+          {
+            id: "2026-10-18-trump-russia-sanctions-waiver",
+            title: "트럼프, 러시아 제재법 시행 직전 유예 서명 — 공화당서도 \"푸틴에 굴복\" 비판",
+            body: "트럼프 대통령이 지난달 서명해 법으로 확정된 러시아·러시아산 석유·가스 구매국 제재법(고 린지 그레이엄 상원의원 이름을 딴 법, 상원 86대11 통과)의 시행을 며칠 앞두고 행정명령으로 유예했다. 공화당 톰 틸리스 상원의원은 \"beyond irresponsible\"이라 비판하며 행정부가 푸틴에 굴복하고 있다고 주장했고, 존 코닌 상원의원은 법안을 이끈 그레이엄 의원이 \"충격받았을 것\"이라 말했다. 민주당 워런 상원의원과 베이어 하원의원도 각각 우크라이나를 배신한 조치, 의회 무시라고 비판했다. 젤렌스키 대통령은 X에 \"푸틴에 대한 재정적 보상이자 공격을 부추길 조치\"라고 밝혔다. 의회는 11/3 중간선거 이후까지 휴회 중이라 즉각 대응은 어렵다.",
+            regions: ["미국", "유럽"],
+            entities: [],
+            publishedAt: "2026-10-16",
+            status: "new",
+            topRank: 1,
+            sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/10/17/trump-faces-bipartisan-backlash-over-russia-sanctions-waiver" }]
+          },
+          {
+            id: "2026-10-18-morocco-first-woman-led-govt",
+            title: "모로코, 사상 첫 여성 주도 정부 공식 출범",
+            body: "무함마드 6세 국왕이 파티마 에즈자흐라 엘 만수리를 총리로 하는 모로코 역사상 첫 여성 주도 정부의 각료 31명을 공식 임명했다. 9월 총선에서 1위를 차지한 중도우파 진정성·현대당(PAM)이 이스티클랄당 등과 연립해 395석 중 210석을 확보했다. 여성 장관은 총리 포함 7명이다. 9월 총선 투표율은 약 20년 만에 최저였고, 유권자들은 생활비·고용·불평등 문제를 우려했다. 새 정부는 2030 월드컵(스페인·포르투갈 공동개최) 준비도 맡는다.",
+            regions: ["아프리카"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            sources: [{ name: "Africanews", url: "http://www.africanews.com/2026/10/17/moroccos-king-mohammed-vi-formally-appoints-first-woman-led-government/" }]
+          },
+          {
+            id: "2026-10-18-sisi-saudi-defence-authorisation",
+            title: "엘시시 이집트 대통령, \"2030년 퇴임\" 재확인하며 동시에 사우디 방위지원 승인 요청",
+            body: "엘시시 대통령은 카이로 인근 행사에서 임기가 끝나는 2030년에 물러나겠다며 \"완전히 정해진 사안\"이라고 말했다. 같은 날 그는 사우디아라비아가 요청할 경우 방위지원에 나설 권한을 얻기 위해 의회 긴급회의 소집을 요청했다고 밝혔다 — 후티 반군의 리야드 킹칼리드 국제공항 공격(사망 14명·부상 300명 이상)이 배경이다. 사우디·파키스탄·튀르키예는 8월 '메카 방위동맹'을 맺었고, 이집트는 수에즈 운하 수입 때문에 홍해 안보에 직접적 이해관계가 있다.",
+            regions: ["아프리카", "중동"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/economy/2026/10/17/egypts-sisi-seeks-authorisation-for-defence-assistance-to-saudi-arabia" }]
+          }
+        ],
+        briefs: [
+          { title: "튀니지 수도 튀니스서 수년 내 최대 반정부 시위 — 노동조합연맹 주최, 구금자 석방·노조활동 제약철폐 요구 (10/17·중동)", id: "2026-10-18-tunisia-protest", publishedAt: "2026-10-17", status: "new", entities: [], regions: ["중동", "아프리카"], sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/10/17/thousands-rally-for-biggest-protest-in-years-against-tunisias-saied" }] },
+          { title: "에티오피아 티그라이 전직 전투원 수백명, 평화협정에 따른 재통합 프로그램 등록 시작 (10/17·아프리카)", id: "2026-10-18-ethiopia-tigray-ddr", publishedAt: "2026-10-17", status: "new", entities: [], regions: ["아프리카"], sources: [{ name: "Africanews", url: "http://www.africanews.com/2026/10/17/ex-fighters-in-ethiopias-tigray-region-register-for-reintegration-programme/" }] }
+        ]
+      },
+      {
+        topic: "글로벌 경제 / 시장",
+        items: [
+          {
+            id: "2026-10-18-imf-low-income-nations",
+            title: "IMF 총재, 고채무·전쟁여파 저소득국 지원 책임 강조",
+            body: "크리스탈리나 게오르기에바 IMF 총재는 저소득국이 세계 금리 상승으로 재정수입의 8~14%를 부채상환에 쓰고 있다고 밝히며, AI·인플레이션·고부채·전쟁·기후위험을 핵심 우려로 꼽았다. 2월 미국·이스라엘의 이란 공격 이후 에너지 가격이 뛰면서 원유 수입 저소득국의 타격이 가장 크다고 설명했다. IMFC 의장인 사우디 재무장관은 분쟁·무역갈등 심화가 주요 교역로를 교란할 수 있다고 경고했다. IMF는 이라크에 대출 프로그램 지원을 \"매우 확고하게\" 약속했고 레바논과도 협의가 진전되고 있다고 밝혔다.",
+            regions: ["글로벌"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/economy/2026/10/17/war-spillovers-debt-threaten-low-income-nations-imf-chief-warns" }]
+          }
+        ],
+        briefs: []
+      },
+      {
+        topic: "AI / 디지털 기술",
+        items: [
+          {
+            id: "2026-10-18-replit-anthropic-split",
+            title: "코딩 플랫폼 Replit, 앤스로픽과 협력 종료 — 기본 모델 OpenAI로 전환",
+            body: "Replit CEO 암자드 마사드는 TechCrunch Disrupt 행사에서 Replit이 더 이상 앤스로픽과 협력하지 않는다고 밝혔다. Claude 모델은 선택지로 남지만 기본값은 OpenAI ChatGPT로 바뀌며, 그는 \"비용·파트너십·성능\"을 이유로 들며 \"ChatGPT가 지금은 더 낫다\"고 말했다. Replit은 최근까지 앤스로픽의 상위 5개 고객 중 하나였고 8월 OpenAI와 파트너십을 발표했다. 기본값 전환으로 Replit의 앤스로픽 지출이 크게 줄 수 있다는 분석이 나온다. 다만 일부 내부 관계자는 협력이 완전히 끝난 것은 아니라고 전했다.",
+            regions: ["미국"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            topRank: 5,
+            sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/" }]
+          },
+          {
+            id: "2026-10-18-newsom-ai-kill-switch",
+            title: "캘리포니아 뉴섬 주지사, AI 안전규제 강화 — '킬스위치' 전문가위원회 설치",
+            body: "뉴섬 주지사가 임기 마지막 행정명령 중 하나로 AI 모델 독립 검증을 요구하고, 자율 AI 에이전트가 통제를 벗어날 경우에 대비한 '킬스위치' 마련을 전문가위원회에 지시했다. 캘리포니아 비상서비스국은 11/15까지 AI 규제 권고안을 내야 하며, 뉴섬은 이를 토대로 임기 중 특별 입법회기를 소집할 수 있다. 이는 2024년 그가 거부했던 SB 1047 법안의 일부만 되살린 약화된 조치다. 최근 AI 기업들이 겪은 수천 건의 안전사고(SEC·인구조사국 등 정부 사이트 무단접근 시도 포함)가 배경으로 꼽혔다. 그가 2028년 대선을 염두에 둔 행보라는 분석도 나온다.",
+            regions: ["미국"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            topRank: 4,
+            sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/economy/2026/10/17/california-gov-newsom-boosts-ai-regulation-as-he-eyes-2028-presidential-run" }]
+          }
+        ],
+        briefs: [
+          { title: "코히어, AI 취약점 탐지 스타트업 아일(AISLE) 인수의향서(LOI) 체결 — 금액 비공개, 본계약은 아직 (10/15·북미)", id: "2026-10-18-cohere-aisle", publishedAt: "2026-10-15", status: "new", entities: [], regions: ["미국"], sources: [{ name: "BNN Bloomberg", url: "https://www.bnnbloomberg.ca/business/company-news/2026/10/15/ai-firm-cohere-to-buy-cybersecurity-company-aisle" }] }
+        ]
+      },
+      {
+        topic: "반도체 / 컴퓨팅 인프라",
+        items: [
+          {
+            id: "2026-10-18-cxmt-q3-revenue-surge",
+            title: "中 CXMT, 3분기 매출 전년比 589~619% 급증 전망 — D램 점유율 1년 새 4%→10%",
+            body: "창신메모리테크놀로지(CXMT)가 3분기 매출 1,147억~1,197억위안(약 22조9,000억~23조9,000억원), 순이익 534억~549억위안으로 지난해 적자에서 큰 흑자로 전환할 것이라고 실적 전망을 공시했다. 1~3분기 누적 매출은 전년比 726~742% 늘어난 2,650억~2,700억위안 규모다. 카운터포인트리서치 기준 CXMT의 2분기 D램 매출 점유율은 10%로 1년 전 4%에서 뛰었다 — 순위는 삼성전자(38%)·SK하이닉스(25%)·마이크론(24%)에 이어 4위다. AI 수요 급증으로 D램 공급이 부족해지며 가격이 오른 것이 실적 개선의 배경이다. 7월 중국 증시 상장 이후 시가총액은 16일 종가 기준 약 3조600억위안(약 610조원)에 달한다.",
+            regions: ["중국"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            topRank: 3,
+            arc: "메모리 슈퍼사이클과 AI 인프라 원가 전가",
+            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026101779027" }]
+          }
+        ],
+        briefs: [
+          { title: "머스크의 반도체공장 '테라팹', TSMC 웨이저자 회장이 협력 논의 처음 공식 확인 — \"운영은 TSMC가 맡는다\" 조건, 투자구조는 미확정(워치리스트 결말·부분) (10/15·미국/대만)", id: "2026-10-18-terafab-tsmc", publishedAt: "2026-10-15", status: "update", change: "TSMC가 처음으로 논의 사실을 공식 확인", entities: [], regions: ["미국"], sources: [{ name: "SCMP", url: "https://www.scmp.com/tech/big-tech/article/3371010/tsmc-confirms-talks-elon-musk-over-texas-terafab-insists-operational-control" }] }
+        ]
+      },
+      {
+        topic: "에너지 / 기후 / 자원",
+        items: [
+          {
+            id: "2026-10-18-hormuz-control-claims",
+            title: "미국과 이란, 호르무즈 해협 통제권 각각 주장 — 선박 피격은 개전 이후 최다",
+            body: "美중부사령부 브래드 쿠퍼 사령관은 호르무즈 해협이 \"이란이 아니라 미국과 지역 파트너의 통제하\"에 있다며 최근 일주일 선박 400척·원유 1억배럴이 통과했고, 이란의 원유수출 손실이 250억달러, 암호화폐 자금 3억5,000만달러를 압수했다고 주장했다. 이란 혁명수비대는 반박하며 '비인가' 항로를 지나던 초대형 유조선이 기뢰에 맞아 화재가 났다고 발표했다. 영국 해상무역작전센터(UKMTO)는 10/9~16 사이 최소 12척 피격을 집계했는데 이는 2/28 개전 이후 최다 주간이다. 호르무즈 원유 통과량은 전쟁 전 하루 1,710만배럴의 68%(1,160만배럴) 수준으로 줄었고, 브렌트유는 5월 이후 최고치인 배럴당 110달러에 근접했다.",
+            regions: ["중동"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "update",
+            change: "美·이란이 호르무즈 통제권을 각각 공식 주장, 피격 12척으로 개전 후 최다 주간",
+            topRank: 2,
+            arc: "미국-이란 충돌 재개와 유가 급등 · 7주째 42번째 진전",
+            sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/10/17/us-and-iran-both-claim-control-of-strait-of-hormuz-amid-attacks-on-vessels" }]
+          },
+          {
+            id: "2026-10-18-taiwan-alaska-lng",
+            title: "대만, 알래스카 LNG에 최대 44억달러 투자 공식 확인 — 아직 '의향서' 단계",
+            body: "대만 경제부가 국영 CPC의 알래스카 LNG 프로젝트 투자 계획(최대 44억달러, 연간 구매량 약 600만톤·전체 생산량의 30%)을 공식 확인했다. 트럼프 대통령이 10/13 알래스카 유세에서 먼저 공개한 내용으로, 대만 측은 구속력 있는 구매계약이 아니라 양해각서(LOI) 단계라고 선을 그었다. 파이프라인 최종투자결정(FID)은 2026년 내, 수출시설 FID는 2027년, 첫 수출은 2031년이 목표다.",
+            regions: ["동남아", "미국"],
+            entities: [],
+            publishedAt: "2026-10-15",
+            status: "update",
+            change: "대만 경제부가 투자 계획을 처음 공식 확인",
+            sources: [{ name: "Mining Weekly", url: "https://www.miningweekly.com/article/taiwan-cites-progress-on-alaska-lng-after-trump-says-it-will-buy-30-of-output-2026-10-15" }]
+          }
+        ],
+        briefs: [
+          { title: "브라질 아마존 삼림파괴, 1988년 집계 이후 최저(3,335㎢, 전년比 42%↓) — 10/25 대선 결선투표 앞두고 발표 (10/17·중남미)", id: "2026-10-18-brazil-amazon-deforestation", publishedAt: "2026-10-17", status: "new", entities: [], regions: ["중남미"], sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/10/17/brazils-amazon-deforestation-hits-lowest-level-on-record" }] }
+        ]
+      },
+      {
+        topic: "산업 / 모빌리티 / 로봇",
+        items: [
+          {
+            id: "2026-10-18-tesla-roadster-spacex-merger",
+            title: "테슬라, 스페이스X 기술 적용 '로드스터' 공개 — 테슬라·스페이스X 합병설 확산",
+            body: "테슬라가 텍사스 맥그리거 스페이스X 시험시설에서 로켓 추진기·고압용기 등을 적용한 차세대 로드스터를 공개했다. 경사로를 달리다 공중으로 뛰어올라 회전 후 착륙하는 시연을 보였고, 정지에서 시속 60마일(약 96km)까지 1초 미만에 도달한다고 밝혔다. 2017년 발표 후 약 9년 만의 공개다. 예측시장 칼시에서 \"내년 3월 이전 테슬라-스페이스X 합병\" 계약 가격이 사흘 만에 29%에서 56%로 뛰었고, 로보택시·휴머노이드 옵티머스·AI 반도체 테라팹 등 AI 사업 수직계열화가 합병 동력으로 거론된다. 머스크는 \"지켜보게 될 것\"이라고만 말했으며 합병은 아직 공식 발표되지 않았다.",
+            regions: ["미국"],
+            entities: [],
+            publishedAt: "2026-10-15",
+            status: "new",
+            sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026101777627" }]
+          },
+          {
+            id: "2026-10-18-samsung-heavy-hanwha-engine",
+            title: "삼성중공업, 한화엔진과 1,322억원 선박엔진 공급계약",
+            body: "한화엔진이 삼성중공업에 2026년 10월부터 2028년 11월까지 선박용 엔진을 공급하는 약 1,322억원 규모 계약을 공시했다 — 지난해 한화엔진 연결매출의 9.6%에 해당한다. 양사는 1999년 엔진사업 통합(HSD엔진) 이후 지분관계가 바뀌어 왔고, 2024년 한화그룹 편입 후 현재도 삼성중공업이 한화엔진의 핵심 고객(매출 비중 34.7%)이다. 삼성중공업 관계자는 한화엔진 비중이 높지만 만(MAN)·HD현대마린엔진 등 다른 업체 엔진도 쓰고 있다고 밝혔다.",
+            regions: ["한국"],
+            entities: [],
+            publishedAt: "2026-10-16",
+            status: "new",
+            sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20261016175715" }]
+          }
+        ],
+        briefs: []
+      },
+      {
+        topic: "과학 / 바이오 / 건강",
+        items: [
+          {
+            id: "2026-10-18-google-quantum-magic-state",
+            title: "구글 퀀텀AI, 양자컴퓨터 오류 40배 줄이는 하드웨어 시연 — Science 게재",
+            body: "구글 퀀텀AI 연구진이 초전도 양자프로세서 'Willow'에서 '매직 스테이트 배양' 기법을 처음 하드웨어로 시연해 오류를 40배 줄였다고 Science(2026)에 발표했다(DOI 10.1126/science.aee7961). 정제된 상태의 충실도는 최소 약 99.99%였으나, 초기 시도 중 모든 충실도 검사를 통과한 비율은 약 8%에 그쳤다. 연구진은 적은 측정으로 잔여 오류를 검출하는 'kickback tomography' 기법도 새로 개발했고, 정제된 상태를 더 큰 표면코드 구조로 옮기는 데도 성공했다. 원리 입증 단계로, 더 큰 양자컴퓨터로의 확장과 기존 증류 방식 대비 자원 절감 효과는 추가 검증이 필요하다.",
+            regions: ["미국"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            sources: [{ name: "Phys.org", url: "https://phys.org/news/2026-10-quantum-magic-state-cleanup-errors.html" }]
+          }
+        ],
+        briefs: [
+          { title: "케냐 에볼라 확진 4명 추가(누적 7명) — 3명은 첫 환자 치료 의료진, 접촉자 98.5% 격리 (10/17·아프리카)", id: "2026-10-18-kenya-ebola-update", publishedAt: "2026-10-17", status: "update", change: "확진자 3명→7명으로 증가", entities: [], regions: ["아프리카"], sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/10/17/kenya-confirms-four-more-ebola-cases-bringing-total-to-seven" }] }
+        ]
+      },
+      {
+        topic: "사회 / 문화 / 소비",
+        items: [
+          {
+            id: "2026-10-18-albania-flamingo-revolution",
+            title: "알바니아 '플라밍고 혁명' 나흘째 — 라마 총리 \"외세가 배후\", 160명 구금",
+            body: "라마 총리는 금요일 영상연설에서 이번 시위가 \"단순한 학생운동이 아니다\"라며 \"알바니아의 평화를 바라지 않는 외세\"가 배후에 있다고 주장했다. 사퇴 요구는 거부했지만 교육비 상승 문제는 논의할 수 있다고 밝혔다. 시위는 나흘째로, 수도 티라나에서 수천 명이 행진해 교육부 앞에서 진압경찰과 충돌했고 물대포·최루가스가 동원됐다. 엘바산·슈코드라·코르차 등 지방으로도 확산됐으며 목요일 저녁 160명이 폭력 혐의로 구금됐다. 발단은 해안 일부를 트럼프 사위 쿠슈너 연계 리조트 개발업체에 매각한 사건이고, 시위대는 라마 총리 사임과 선거·교육 제도 개혁을 요구하고 있다.",
+            regions: ["유럽"],
+            entities: [],
+            publishedAt: "2026-10-16",
+            status: "update",
+            change: "체포자 160명으로 증가, 라마 총리 \"외세 배후\" 첫 주장",
+            sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/10/16/albanian-pm-blames-foreign-hands-for-unrest-as-student-protests-intensify" }]
+          }
+        ],
+        briefs: []
+      },
+      {
+        topic: "한국 산업 / 정책 / SK",
+        items: [
+          {
+            id: "2026-10-18-nonghyup-mbk-deals",
+            title: "농협, 10년간 MBK파트너스 관련 거래 2조6,643억원 — 국정감사서 적절성 지적",
+            body: "김선교 국민의힘 의원이 국회 농해수위에서 공개한 농협 제출자료에 따르면, 농협중앙회와 금융계열사 5곳이 2017~2026년 MBK파트너스 관련 거래 24건(펀드투자·인수금융·차환대출·브릿지론)에 약정액 2조6,643억원·누적 집행액 2조6,581억원을 투입했고 미회수 잔액은 약9,131억원이다. 고려아연 공개매수 관련 NH투자증권의 브릿지론(1조7,150억원, 2024년 9월 실행)이 대표적 사례다. 홈플러스 사태로 협력업체 피해가 불거진 상황에서 농협 자금의 사모펀드 공급이 설립취지에 맞는지 비판이 제기됐다. 농협중앙회는 향후 투자를 더 신중히 검토하겠다고 답했다.",
+            regions: ["한국"],
+            entities: [],
+            publishedAt: "2026-10-17",
+            status: "new",
+            sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20261016182926" }]
+          }
+        ],
+        briefs: [
+          { title: "SK하이닉스 청주 공사현장에서 끊어진 케이블에 근로자 2명 부상 — 원문 접근 제한으로 제목 수준만 확인 (10/17·한국)", id: "2026-10-18-skhynix-cheongju-accident", publishedAt: "2026-10-17", status: "new", entities: ["SK"], regions: ["한국"], sources: [{ name: "연합뉴스", url: "https://www.yna.co.kr/view/AKR20261017028500064" }] }
+        ]
+      }
+    ]
+  },
+  {
     date: "2026-10-17",
     weekday: "토",
-    isToday: true,
+    isToday: false,
     schemaVersion: 2,
     collectedAt: "2026-10-17 06:54 KST",
     window: "최근 72시간 중 지난 3회차(10/14·10/15·10/16)에 안 실린 것 (기업/자본 중 스타트업·VC는 7일, 10/10~10/17)",
@@ -4826,8 +5093,8 @@ const BRIEFINGS = [
 /* EVENTS-BEGIN */
 const EVENT_DATA = {
   "registryHash": "46e8cb58cd15e6850d8bb7982f8826f59dab02825d513d168bf5d1c4c8892e27",
-  "asOf": "2026-10-17",
-  "measuredAt": "2026-10-16T20:05:38.324072+00:00",
+  "asOf": "2026-10-18",
+  "measuredAt": "2026-10-17T19:43:00.532913+00:00",
   "comparison": {
     "ready": false,
     "reason": "비교 기간에 2시간 넘는 수집 공백이 있음"
