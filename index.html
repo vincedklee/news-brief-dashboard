@@ -4928,7 +4928,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "4bd43326a851aa708b801f5d015da9e3be56d8711fbbb1e7db35c5c0f0cb74e7",
+  "registryHash": "4dcf2e8836c74ad9983e0ecbbab3036b6e456e4fc3f12a8052e30269532c10ee",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -9205,6 +9205,208 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-16T00:20:00Z"
         }
       ]
+    },
+    {
+      "id": "micron-segment-margin-figures-2026-10-17",
+      "ruleId": "ai-infrastructure",
+      "topic": "반도체 / 컴퓨팅 인프라",
+      "question": "머스크가 촉발한 메모리 가격 논쟁에서 거론된 마이크론 데이터센터·클라우드메모리 영업이익률 수치(38%→87%, 46%→78%)는 마이크론의 공식 실적 자료와 실제로 일치하는가?",
+      "basis": "10개 관심분야 중 '반도체/컴퓨팅인프라'가 10/7(dram-market-share-methodology) 이후 10일간 선택되지 않아 가장 오래 비어 있었고, 직전 3회차(10/14 세계정치/지정학, 10/15 산업/모빌리티/로봇, 10/16 글로벌경제/시장)와도 겹치지 않아 선택했다. 조사대기.json에도 ai-infrastructure 질문('AI 인프라 증설에서 실제로 부족한 것은 무엇이며, 투자 발표가 공급·수익성으로 전환됐는가?')이 10/10부터 매일 재등록돼 있어 이 분야와 맞았다. 오늘(10/17) 일간 브리핑의 '머스크, 메모리 가격 \"폭리\" 비판' 항목이 인용한 수치가 출처 원문에 실제로 있는지, 마이크론 공식 공시와 일치하는지 확인하면 비슷한 애널리스트 노트발 보도를 읽을 때도 도움이 될 것으로 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-17",
+      "scope": "current",
+      "summary": "오늘(10/17) 브리핑의 반도체/컴퓨팅인프라 섹션은 10/13 머스크의 X 게시물(JPMorgan 노트에 반응)을 계기로 '마이크론 데이터센터 부문 영업이익률이 38%→87%로, 클라우드메모리 부문은 46%→78%로 뛰었다'는 수치를 실었다. 이 숫자가 마이크론의 공식 공시와 실제로 일치하는지, 트위터발 애널리스트 노트가 매체를 거치며 숫자가 어떻게 달라질 수 있는지를 마이크론의 SEC 공식 보도자료(FY2026 2·4분기 Exhibit 99.1)와 브리핑이 인용한 머니투데이 기사 원문을 직접 대조해 확인했다.",
+      "learning": [
+        {
+          "title": "매출총이익률과 영업이익률은 다른 숫자다",
+          "text": "매출총이익률(gross margin)은 매출에서 매출원가만 뺀 값이고, 영업이익률(operating margin)은 여기서 연구개발비·판매관리비까지 뺀, 보통 더 낮은 값이다. 마이크론 코어데이터센터(Core Data Center) 사업부의 경우 FY2026 3분기(5월 마감) 매출총이익률은 87%였지만 같은 분기 영업이익률은 83%로 별개 숫자였다. 두 지표를 섞어 쓰면 마진이 실제보다 더 높아 보일 수 있다.",
+          "sourceIds": [
+            "micron-8k-q4fy26"
+          ]
+        },
+        {
+          "title": "마이크론은 '사업부(Business Unit)' 단위로 AI 수요처 매출을 따로 공시한다",
+          "text": "마이크론은 클라우드메모리(Cloud Memory BU)·코어데이터센터(Core Data Center BU) 등 고객군별 사업부 실적을 분기마다 따로 공시하는데, 이는 삼성전자·SK하이닉스가 쓰는 메모리 제품(D램/낸드) 중심 분류와 다른 방식이다. 그래서 머스크가 '마이크론 외 공급사들'을 겨냥했다고 해석돼도, 삼성·SK하이닉스에는 같은 기준의 사업부 영업이익률이 공시되지 않아 숫자로 직접 비교할 수 없다.",
+          "sourceIds": [
+            "micron-8k-q4fy26",
+            "micron-8k-q2fy26"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "마이크론의 공식 FY2026 4분기(6~8월, 9/3 마감) 실적발표(Exhibit 99.1)에 따르면, 코어데이터센터 사업부 영업이익률은 1년 전(FY2025 4분기) 25%에서 FY2026 4분기 85%로 올랐고, 같은 기간 매출총이익률은 41%→90%, 매출은 15억7,700만달러→180억200만달러로 늘었다.",
+          "sourceIds": [
+            "micron-8k-q4fy26"
+          ]
+        },
+        {
+          "text": "같은 자료에서 클라우드메모리 사업부 영업이익률은 FY2025 4분기 48%에서 FY2026 4분기 76%로 올랐다(매출총이익률 59%→83%, 매출 45억4,300만달러→162억8,300만달러). FY2026 3분기(2~5월)에는 영업이익률이 78%까지 올랐다가 4분기에는 78%→76%로 소폭 낮아졌다.",
+          "sourceIds": [
+            "micron-8k-q4fy26"
+          ]
+        },
+        {
+          "text": "FY2026 2분기 실적발표(Exhibit 99.1, 3/18 발표)에서는 코어데이터센터 영업이익률이 1분기 37%에서 2분기 67%로, 클라우드메모리는 1분기 55%에서 2분기 66%로 올랐다. 브리핑이 전한 '38%'는 코어데이터센터 1분기 영업이익률(37%)과 가장 가깝고, '87%'는 코어데이터센터 3분기 매출총이익률(해당 분기 영업이익률은 83%)과 일치해, 두 수치가 서로 다른 지표·분기를 섞은 조합일 가능성이 있다.",
+          "sourceIds": [
+            "micron-8k-q2fy26",
+            "micron-8k-q4fy26"
+          ]
+        },
+        {
+          "text": "브리핑이 출처로 링크한 머니투데이(10/14) 기사 원문에는 '38%→87%'·'46%→78%' 수치가 전혀 등장하지 않는다. 같은 기사는 JPMorgan 노트의 다른 수치(2026~2028년 메모리 공급부족률 20%→19%→15%, HBM 시장 640억→2,800억달러 확대 전망, 장기계약 26건·FY2027 생산량 75% 이상 계약)와 머스크의 실제 트윗 문구(\"Micron has shown a reasonable attitude regarding future memory prices\", \"other companies have been demanding absurdly high prices\")만 전한다.",
+          "sourceIds": [
+            "mt-musk-jpmorgan-1014"
+          ]
+        },
+        {
+          "text": "블룸버그 인텔리전스의 Shuli Ren은 2026년 7월 메모리 공급부족이 2026년 2분기 정점을 찍었을 가능성이 크고 2028년에는 공급과잉으로 전환될 수 있다고 전망했다 — 삼성·SK하이닉스·마이크론이 기록적 가격을 바탕으로 생산을 늘리고 있고, 하이퍼스케일러의 초기 인프라 구축이 끝나면 AI 하드웨어 구매가 가속에서 정상화로 바뀔 수 있다는 것이 근거다.",
+          "sourceIds": [
+            "247wallst-burry-bear-case"
+          ]
+        }
+      ],
+      "limitations": [
+        "JPMorgan 노트 원문은 공개 자료가 아니라 X(트위터)의 애널리스트 게시물과 2차 매체 재인용으로만 확인했다. 노트 자체를 직접 열람하지 못해 '38%→87%'·'46%→78%'가 실제로 노트에 그렇게 적혀 있었는지, 전달 과정(애널리스트 게시물→머스크 답글→국내 매체)에서 숫자가 바뀌었는지는 특정하지 못했다.",
+        "클라우드메모리 '46%'는 마이크론이 FY2026 1~4분기 및 FY2025 4분기에 공시한 어떤 영업이익률·매출총이익률 수치와도 정확히 일치하지 않았다(가장 가까운 값은 FY2025 4분기 영업이익률 48%). 이 2%포인트 차이의 정확한 출처는 확인하지 못했다.",
+        "삼성전자·SK하이닉스는 마이크론과 같은 고객군별(Business Unit) 세그먼트를 공시하지 않아, 머스크가 '다른 공급사들'을 겨냥했다는 해석이 숫자로 맞는지는 이번 조사로 검증할 수 없었다.",
+        "반대근거 탐색에서 삼성전자·SK하이닉스의 마진 전망에 대한 구체적 비판은 찾지 못했고, 블룸버그 인텔리전스·모건스탠리의 전망은 마이크론 중심이었다. 찾지 못한 것과 비판이 없다는 판단은 구분한다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "마이크론의 AI向 사업부 수익성 급등 자체는 회사 공식 공시로 확인되지만, 오늘 브리핑이 전한 '38%→87%'·'46%→78%' 조합은 마이크론이 분기마다 공시한 실제 숫자들과 정확히 일치하지 않아, 애널리스트 노트가 트위터 답글과 매체를 거치며 지표(매출총이익률/영업이익률)와 분기가 섞였을 가능성으로 읽힌다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "JPMorgan 노트 원문이나 애널리스트 본인의 설명이 공개돼 '38%→87%'·'46%→78%'가 실제로 그 안에 명시된 숫자였음이 확인되면, 전달 과정의 혼선이 아니라 원 출처 자체의 다른 계산 방식(예: 특정 월 단위 집계)이었다는 뜻이 되어 이 판단은 달라진다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "머스크의 '다른 공급사들'이 삼성전자·SK하이닉스를 정말 가리킨 것인지, 두 회사의 같은 성격의 수익성이 실제로 마이크론보다 높은지는 비교 가능한 공시 숫자가 없어 이번에도 확인되지 않은 채로 남았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "JPMorgan 애널리스트 노트의 원문(또는 공개 리서치 요약)이 확보되면 '38%→87%'·'46%→78%' 조합이 실제 노트의 표기인지, 전달 과정에서 생긴 혼선인지 확인할 수 있다.",
+      "nextCheck": "2026-11-07",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Micron data center operating margin 38% 87% cloud memory 46% 78% JPMorgan note Musk (웹검색)",
+          "note": "브리핑 수치 1차 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "Elon Musk Micron memory prices reasonable extortionate tweet October 2026 (웹검색)",
+          "note": "머스크 트윗 맥락 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "fool-dc-margin-0709",
+          "target": "https://www.fool.com/investing/2026/07/09/microns-data-center-gross-margin-hit-87-last-quart/",
+          "note": "직접 열람 — FY26 3분기 데이터센터 매출총이익률 87%(매출 11.5억달러, 전분기대비 103%↑) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "마이크론 데이터센터 영업이익률 38% 87% 클라우드메모리 46% 78% JP모간 (웹검색)",
+          "note": "한국어 매체 수치 교차탐색 — 25%→85% 등 다른 보도 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Micron fiscal fourth quarter 2026 earnings press release Cloud Memory Business Unit Core Data Center Business Unit operating income (웹검색)",
+          "note": "공식 실적발표 1차 자료 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "마이크론 4분기 실적 발표 보도자료 사업부문 영업이익률 클라우드메모리 코어데이터센터 (웹검색)",
+          "note": "한국어 보도 교차탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "micron-8k-q4fy26",
+          "target": "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+          "note": "직접 열람 — 사업부별 분기 표(FQ4-26/FQ3-26/FQ4-25) 전 항목 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "mt-musk-jpmorgan-1014",
+          "target": "https://www.mt.co.kr/en/tech/2026/10/14/2026101408070493867",
+          "note": "직접 열람 — 브리핑이 인용한 원문 기사에 38%→87%/46%→78% 수치가 없음을 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Micron fiscal Q1 2026 Q2 2026 Cloud Memory Business Unit Core Data Center operating margin segment (웹검색)",
+          "note": "FY26 1~2분기 수치 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "memory supercycle margin unsustainable analyst warning oversupply risk 2026 Micron Samsung SK hynix (웹검색)",
+          "note": "반대근거·과잉공급 전망 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "micron-8k-q2fy26",
+          "target": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000004/a2026q2ex991-pressrelease.htm",
+          "note": "직접 열람 — FQ2-26/FQ1-26 사업부 표 확인, 코어데이터센터 1분기 영업이익률 37% 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "247wallst-burry-bear-case",
+          "target": "https://247wallst.com/investing/2026/07/06/wait-michael-burry-is-right-about-the-memory-boom-ending-this-analyst-says-yes/",
+          "note": "직접 열람 — 블룸버그인텔리전스 Shuli Ren의 2028년 공급과잉 전망·근거 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "micron-8k-q4fy26",
+          "name": "Micron Technology · FY2026 4분기 실적발표 (SEC 8-K Exhibit 99.1)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+          "publishedAt": "2026-09-30",
+          "kind": "기업 공식 실적발표 1차 자료(SEC 8-K Exhibit 99.1, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-17T00:06:00Z"
+        },
+        {
+          "id": "micron-8k-q2fy26",
+          "name": "Micron Technology · FY2026 2분기 실적발표 (SEC 8-K Exhibit 99.1)",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000004/a2026q2ex991-pressrelease.htm",
+          "publishedAt": "2026-03-18",
+          "kind": "기업 공식 실적발표 1차 자료(SEC 8-K Exhibit 99.1, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-17T00:11:00Z"
+        },
+        {
+          "id": "mt-musk-jpmorgan-1014",
+          "name": "머니투데이 · 머스크, 마이크론 외 메모리 공급사 가격 비판 X 게시물 보도",
+          "url": "https://www.mt.co.kr/en/tech/2026/10/14/2026101408070493867",
+          "publishedAt": "2026-10-14",
+          "kind": "독립 매체 보도(직접 열람, 오늘 브리핑의 인용 출처)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-17T00:08:00Z"
+        },
+        {
+          "id": "fool-dc-margin-0709",
+          "name": "The Motley Fool · Micron's Data Center Gross Margin Hit 87% Last Quarter",
+          "url": "https://www.fool.com/investing/2026/07/09/microns-data-center-gross-margin-hit-87-last-quart/",
+          "publishedAt": "2026-07-09",
+          "kind": "독립 매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-17T00:04:00Z"
+        },
+        {
+          "id": "247wallst-burry-bear-case",
+          "name": "24/7 Wall St. · Michael Burry Is Right About the Memory Boom Ending? This Analyst Says Yes",
+          "url": "https://247wallst.com/investing/2026/07/06/wait-michael-burry-is-right-about-the-memory-boom-ending-this-analyst-says-yes/",
+          "publishedAt": "2026-07-06",
+          "kind": "독립 매체 보도(직접 열람, 반대근거·과잉공급 전망)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-17T00:13:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -9408,6 +9610,15 @@ const RESEARCH_DATA = {
         "kospi-circuit-breaker-frequency-2026-10-16"
       ],
       "reason": "이날 첫 실행. 10개 관심분야 중 '글로벌 경제/시장'이 10/5(fx-mar-vs-close) 이후 11일간 선택되지 않아 가장 오래 비어 있었고 직전 3회차와도 겹치지 않아 선택했다. 조사대기.json에는 ai-work·ai-infrastructure·energy-geopolitics만 등록돼 이 분야 대기 요청은 없어, 오늘(10/16) 일간 브리핑 1순위 항목인 '코스피·코스닥 서킷브레이커 동반 발동'을 계기로 질문을 직접 선정했다. 2026년 1월 이후 보도(헤럴드경제·경기일보·경향신문·SBS Biz·토큰포스트)를 교차 대조해 코스피 1단계 서킷브레이커가 7/29 기준 역대 15번째·올해 9번째까지 누적된 사실과, 2015년 도입된 2단계(15%)·3단계(20%)는 지금까지 한 번도 발동되지 않았다는 점을 확인했다. 반대근거·비판여론 탐색에서 토큰포스트의 '제도 취지와 효과의 간극' 지적을 찾아 대조했다. 기획재정부 시사경제용어사전이 2015년 개편 이전 기준(10% 단일단계)을 그대로 싣고 있어 현재 운영기준과 차이가 있음도 확인했다. 10/15 발동의 정확한 2026년 순번과 8~9월 공백 구간의 추가 발동 여부는 검색으로 확인하지 못해 한계로 남겼다. 2012년 학술연구는 서지·초록만 확인해 findings에서 제외했다. 검색 9회·원문열기 10회, 합계 19회를 사용했다."
+    },
+    {
+      "date": "2026-10-17",
+      "checkedAt": "2026-10-17T00:16:00Z",
+      "status": "published",
+      "reportIds": [
+        "micron-segment-margin-figures-2026-10-17"
+      ],
+      "reason": "이날 첫 실행. 10개 관심분야 중 '반도체/컴퓨팅인프라'가 10/7(dram-market-share-methodology) 이후 10일간 선택되지 않아 가장 오래 비어 있었고 직전 3회차(10/14 세계정치/지정학, 10/15 산업/모빌리티/로봇, 10/16 글로벌경제/시장)와도 겹치지 않아 선택했다. 조사대기.json에는 ai-infrastructure 질문('AI 인프라 증설에서 실제로 부족한 것은 무엇이며, 투자 발표가 공급·수익성으로 전환됐는가?')이 10/10부터 매일 재등록돼 있어 이 분야와도 맞았다. 오늘(10/17) 일간 브리핑의 '머스크, 메모리 가격 \"폭리\" 비판' 항목이 인용한 '마이크론 데이터센터 영업이익률 38%→87%, 클라우드메모리 46%→78%' 수치를 마이크론 공식 SEC 8-K 보도자료(FY2026 2·4분기 Exhibit 99.1, 직접 열람)와 브리핑의 인용 출처인 머니투데이(10/14) 기사 원문과 대조했다. 마이크론 공식 자료로 코어데이터센터 영업이익률이 FY2025 4분기 25%→FY2026 4분기 85%(매출총이익률 41%→90%), 클라우드메모리는 48%→76%(매출총이익률 59%→83%)로 오른 사실은 확인했으나, 브리핑의 '38%→87%'·'46%→78%' 조합은 어느 분기·지표 조합과도 정확히 일치하지 않아(87%는 코어데이터센터 3분기 매출총이익률, 38%는 코어데이터센터 1분기 영업이익률 37%와 근접) 매출총이익률·영업이익률·분기가 섞였을 가능성으로 기록했다. 머니투데이 원문에는 해당 수치 자체가 없음도 확인했다. 반대근거·전망 탐색에서 블룸버그 인텔리전스 Shuli Ren의 2028년 메모리 공급과잉 전환 전망(2026.7.6, 24/7 Wall St. 보도)을 확인해 한계에 반영했다. 삼성전자·SK하이닉스는 마이크론과 같은 사업부 단위 수익성을 공시하지 않아 머스크의 '다른 공급사들' 비판을 숫자로 검증하지 못했다. 검색 8회·원문열기 5회, 합계 13회를 사용했다."
     }
   ]
 };
