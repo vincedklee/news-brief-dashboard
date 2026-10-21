@@ -4510,7 +4510,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "479d73c1654d3b2630133b30699fff42af8a5c9bf4455b179e65d9a3591ea50a",
+  "registryHash": "950849a54a68286e7fb7af86e6605d70fafb9f58198d543f0f1cd8367f974f8a",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -9640,6 +9640,188 @@ const RESEARCH_DATA = {
           "note": "직접 열람 — 60/65세 획일 연령기준에 대한 학술적 비판 확인(반대근거)"
         }
       ]
+    },
+    {
+      "id": "quantum-logical-qubit-lambda-2026-10-21",
+      "ruleId": "science-bio-health",
+      "topic": "과학 / 바이오 / 건강",
+      "question": "양자컴퓨터의 '오류감소인자(λ)'는 무엇을 재는 지표이며, 왜 '논리큐비트 숫자'만으로 서로 다른 발표를 직접 비교할 수 없는가?",
+      "basis": "조사대기.json(news-candidates 브랜치)에는 ai-work·ai-infrastructure·energy-geopolitics 질문만 반복 등록돼 있었다. 10개 분야 로테이션에서 가장 오래 비어있던 분야는 AI/디지털기술(10/10, ai-work-productivity-conditions)이었으나, 그 보고서를 다시 읽어본 결과 오늘 등록된 ai-work 큐 질문('AI 도입 확대가 실제 업무 성과로 이어지는가')이 같은 MIT NANDA 보고서·같은 Fortune 인터뷰·같은 '분모 문제' 비판을 재료로 다시 쓰게 될 것으로 판단해, 같은 자료를 날짜만 바꿔 재발행하지 않기 위해 분야를 바꿨다. 다음으로 오래 비어있고 직전 3회차(10/18 한국산업/정책/SK, 10/19 글로벌기업/스타트업/자본, 10/20 사회/문화/소비)와도 겹치지 않는 '과학/바이오/건강'(10/11 이후 비어있음)을 선택했다. 오늘(10/21) 일간 브리핑의 '퀀티넘, 98큐비트로 오류율 10배 개선 발표' 항목을 계기로, 이런 양자컴퓨팅 발표가 잇따를 때 '오류감소인자(λ)'·'메가쿼프' 같은 용어와 서로 다른 λ값을 어떻게 읽어야 하는지를 설명하면 앞으로 비슷한 보도를 읽을 때도 도움이 될 것으로 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-21",
+      "scope": "current",
+      "summary": "오늘 브리핑이 전한 퀀티넘 헬리오스의 '논리큐비트 오류율 10배 개선(λ≈10)' 발표(Science News, 2026-10-20 보도)를 계기로, 'λ(오류감소인자)'가 정확히 무엇을 재는 지표인지와 2024년 구글 윌로우의 λ≈2.14 결과와 왜 직접 비교하기 조심스러운지를 구글 공식 연구블로그 원문, 퀀티넘 헬리오스 하드웨어 사양 논문(2025-11, 배경자료)을 대조해 확인했다.",
+      "learning": [
+        {
+          "title": "'λ(람다)'는 '논리큐비트 숫자'가 아니라 '격자를 키울 때 오류가 몇 배 줄어드는가'를 재는 지표다",
+          "text": "양자 오류정정에서 물리 큐비트 여러 개를 묶어 논리 큐비트 하나를 만들 때, 묶는 격자(코드 거리)를 한 단계씩 키울 때마다 논리 오류율이 평균 몇 배 줄어드는지를 나타내는 값이 λ다. 구글은 윌로우 칩에서 격자를 3x3→5x5→7x7로 키울 때마다 오류율이 약 2.14배씩 줄었다고 2024년12월 발표했다. λ가 클수록 같은 목표 오류율에 도달하는 데 필요한 물리큐비트 수가 적어진다 — 그래서 '논리큐비트가 몇 개냐'보다 λ가 확장성을 더 직접적으로 보여주는 지표로 쓰인다.",
+          "sourceIds": [
+            "google-willow-blog-1209"
+          ]
+        },
+        {
+          "title": "'메가쿼프' 같은 단계 이름은 '큐비트 개수'가 아니라 '신뢰할 수 있는 연산 횟수'를 기준으로 붙는다",
+          "text": "메가쿼프(megaquop)는 약 100만 번의 신뢰할 수 있는 양자연산을 수행할 수 있는 단계를 가리키는 업계 용어다. 퀀티넘은 이번 실험에서 논리큐비트 1개로 100만 번 연산 중 오류 약 5회를 달성했다고 밝혔는데, 이는 단일 논리큐비트 단위의 결과이고 업계가 말하는 메가쿼프 단계에 이르려면 논리큐비트를 약 50~100개로 늘려야 한다. 즉 '큐비트가 몇 개냐'와 '어느 연산 단계에 도달했냐'는 서로 다른 질문이다.",
+          "sourceIds": [
+            "sciencenews-quantinuum-1020"
+          ]
+        },
+        {
+          "title": "이온트랩과 초전도 방식은 '논리큐비트'의 정의와 오류예산 구조가 달라 로드맵을 그대로 겹쳐 비교하기 어렵다",
+          "text": "구글 등이 쓰는 초전도 방식은 표면코드(surface code)와 트랜스몬 큐비트를 쓰고, 퀀티넘 등이 쓰는 이온트랩 방식은 다른 결맞음 특성과 오류정정 코드를 쓴다. 플랫폼마다 '논리큐비트'를 정의하는 코드와 오류예산 구조가 달라, 어느 쪽이 메가쿼프에 먼저 도달하느냐보다 '어느 쪽의 오류예산이 먼저 닫히느냐'로 봐야 한다는 지적이 있다. 다만 이 지적을 한 매체는 양자컴퓨팅 전문 매체가 아니고 출처 인용이 구체적이지 않아, 개념을 이해하는 참고로만 쓰고 수치 근거로는 쓰지 않았다.",
+          "sourceIds": [
+            "beyondtmrw-roadmap-0620"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "퀀티넘(Quantinuum)은 2026년10월19일 자사 사이트와 arXiv에 공개한 논문에서, 98개 물리큐비트로 구성된 이온트랩 양자컴퓨터 '헬리오스(Helios)'의 물리큐비트 37개를 묶어 만든 논리큐비트 1개로 약 100만 번 연산 중 오류 약 5회(100만분의5) 수준을 달성했다고 밝혔다. 오류감소인자(λ)는 약 10으로 계산됐다. (Science News, 2026-10-20 보도, 외부전문가 듀크대 Ken Brown 인용, 연구에는 참여하지 않음)",
+          "sourceIds": [
+            "sciencenews-quantinuum-1020"
+          ]
+        },
+        {
+          "text": "비교 대상인 구글의 2024년 윌로우(Willow) 칩 결과는, 표면코드 격자를 3x3→5x5→7x7로 키울 때마다 논리 오류율이 약 2.14배씩 줄어 λ≈2.14였다. 이 결과는 《네이처》 2024-12-09(DOI 10.1038/s41586-024-08449-y) 논문으로 발표됐고, 7x7 논리큐비트의 수명은 구성 물리큐비트 중 최상의 것보다 약 2배, 이전 칩 시카모어(Sycamore) 세대의 표면코드보다 약 20배 길었다.",
+          "sourceIds": [
+            "google-willow-blog-1209"
+          ]
+        },
+        {
+          "text": "구글 연구팀은 같은 발표에서 목표로 하는 10⁻⁶ 수준의 논리오류율에 도달하려면 표면코드 격자 하나당 물리큐비트 1,000개 이상이 필요할 수 있다고 밝혔고, 현재 장치의 물리오류율은 약 1,000분의1 수준이라고 설명했다. 반복부호 실험에서는 격자를 키워도 사이클당 오류율이 약 10⁻¹⁰ 부근에서 더 떨어지지 않는 '오류 바닥' 현상도 관측됐으며, 원인은 조사 중이라고 밝혔다.",
+          "sourceIds": [
+            "google-willow-blog-1209"
+          ]
+        },
+        {
+          "text": "퀀티넘 헬리오스의 하드웨어 사양을 다룬 2025년11월7일 arXiv 논문(배경자료)에 따르면, 이 시스템은 바륨-137 하이퍼파인 이온 98개를 물리큐비트로 쓰며 단일큐비트 게이트 평균 오류율 2.5×10⁻⁵, 두큐비트 게이트 평균 오류율 7.9×10⁻⁴, 상태준비·측정(SPAM) 평균 오류율 4.8×10⁻⁴를 보고했다.",
+          "sourceIds": [
+            "arxiv-helios-98qubit"
+          ]
+        },
+        {
+          "text": "Science News 보도에 따르면 퀀티넘의 이번 결과는 논리큐비트 1개 단위 실험이었고, 업계가 쓰는 '메가쿼프'(약 100만 번의 신뢰할 수 있는 연산) 단계에 이르려면 논리큐비트를 약 50~100개로 늘려야 한다는 한계가 외부전문가(Ken Brown, 듀크대)에 의해 지적됐다.",
+          "sourceIds": [
+            "sciencenews-quantinuum-1020"
+          ]
+        }
+      ],
+      "limitations": [
+        "퀀티넘의 10/19 발표 논문 원문(arXiv)을 이번 조사에서 직접 열람하지 못했다. 검색으로 정확한 arXiv ID를 찾지 못해, λ≈10·논리큐비트37개·100만분의5 오류율 수치는 오늘 브리핑의 인용 출처인 Science News 보도로만 확인했고, 퀀티넘 자체 발표문이나 논문 원문과 직접 대조하지는 못했다.",
+        "구글 윌로우(λ≈2.14)와 퀀티넘 헬리오스(λ≈10)는 서로 다른 하드웨어 방식(초전도 vs 이온트랩)·오류정정 코드·실험 조건에서 나온 수치라, 두 숫자를 단순히 '5배 낫다'는 식으로 비교할 근거를 이번 조사에서 확인하지 못했다. Science News 기사도 \"λ가 크다\"는 사실만 언급했을 뿐 두 방식을 직접 비교하지는 않았다.",
+        "플랫폼 간 비교의 어려움을 설명한 beyondtmrw.org 글은 저자가 양자컴퓨팅 전문가가 아니고(천체물리 박사, 우주 분야 취재 경력) 출처 인용이 구체적이지 않아, 개념 이해의 참고로만 썼고 findings의 수치 근거로는 쓰지 않았다. 더 권위 있는 독립적 비교·비판 자료는 이번 검색에서 찾지 못했다.",
+        "퀀티넘의 결과가 동료심사(peer review)를 거쳤는지는 Science News 기사에 언급되지 않아 확인하지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "퀀티넘의 λ≈10 발표는 2024년 구글 윌로우의 λ≈2.14보다 높은 수치로 보도됐지만, 서로 다른 하드웨어 방식·실험 조건에서 나온 결과라 '퀀티넘이 구글보다 5배 앞섰다'고 단정할 근거는 확인되지 않은 것으로 보인다. 다만 λ가 커질수록 메가쿼프 단계에 필요한 물리큐비트 수가 줄어든다는 구글의 설명을 적용하면, 이번 결과가 확장 비용을 낮추는 방향의 진전이라는 점은 두 발표 모두가 공유하는 해석으로 읽힌다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "퀀티넘이 논리큐비트를 여러 개로 늘린 후속 실험에서도 λ≈10이 유지되는지, 혹은 격자를 키울수록 구글처럼 '오류 바닥' 현상이 나타나는지가 다음 논문에서 확인되면 이번 해석은 달라진다. 두 결과를 동일 기준(같은 코드族·같은 목표오류율)으로 비교한 제3자 분석이 나오는 것도 뒤집힐 조건이다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "퀀티넘의 10/19 논문이 동료심사를 거쳤는지, 그리고 이번 실험이 논리큐비트 1개에 그친 이유(비용·시간 제약인지 기술적 한계인지)는 이번 조사에서 확인되지 않았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "퀀티넘이 논리큐비트를 여러 개로 확장한 후속 실험에서 λ≈10이 유지되는지, 혹은 구글처럼 오류율이 더 내려가지 않는 '오류 바닥' 현상이 나타나는지 확인할 수 있는가?",
+      "nextCheck": "2026-11-21",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "sciencenews-quantinuum-1020",
+          "target": "https://www.sciencenews.org/article/quantum-computer-megaquops-error-correction",
+          "note": "직접 열람 — 오늘 브리핑 인용출처 원문 확인, λ·논리큐비트37개·외부전문가(듀크대 Ken Brown) 인터뷰 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Quantinuum Helios 98 qubit logical qubit error correction arXiv October 2026 (웹검색)",
+          "note": "퀀티넘 10/19 발표 논문의 정확한 arXiv ID 탐색 — 2026년3월·9월의 다른 로직코드 프리프린트(아이스버그·헬릭스 코드)만 확인됨, 10/19 발표 고유 논문은 못 찾음"
+        },
+        {
+          "outcome": "opened",
+          "target": "Quantinuum Helios logical qubit lambda suppression factor October 2026 (웹검색)",
+          "note": "같은 논문 재탐색 — 헬리오스 2025년11월 출시 사양(물리큐비트98개·논리큐비트48개, 2:1비율)만 확인, λ값을 직접 언급한 자료는 못 찾음"
+        },
+        {
+          "outcome": "opened",
+          "target": "Quantinuum Helios logical qubit million operations 5 errors arxiv preprint (웹검색)",
+          "note": "arXiv 2511.05465(헬리오스 하드웨어 사양 논문) 발견"
+        },
+        {
+          "outcome": "opened",
+          "target": "Google Willow 2024 quantum error correction below threshold lambda 2.14 Nature (웹검색)",
+          "note": "구글 공식 연구블로그·네이처 논문 DOI 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "google-willow-blog-1209",
+          "target": "https://research.google/blog/making-quantum-error-correction-work/",
+          "note": "직접 열람 — λ=2.14, 격자크기별 오류율 감소, 확장과제·디코더지연·오류바닥 한계 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "quantum computing hype skeptic logical qubit milestone claims practical advantage criticism 2026 (웹검색)",
+          "note": "반대근거·한계 탐색(필수 1회) — 신뢰할 동료평가 비판은 못 찾고 업계 칼럼 1건(beyondtmrw.org) 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "beyondtmrw-roadmap-0620",
+          "target": "https://beyondtmrw.org/article/logical-qubit-roadmaps-error-budgets-and-hardware-vendors-in-2026",
+          "note": "직접 열람(본문·발행일 2회 확인) — 플랫폼간 비교 어려움 주장 확인, 저자가 양자컴퓨팅 전문가가 아니며 인용이 구체적이지 않다는 점도 확인해 한계로 기록"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "arxiv-helios-98qubit",
+          "target": "https://arxiv.org/abs/2511.05465",
+          "note": "직접 열람 — 헬리오스 하드웨어 사양(물리큐비트98개, 단일/두큐비트 게이트 오류율, SPAM오류율), 최초게재일 2025-11-07 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "sciencenews-quantinuum-1020",
+          "name": "Science News · Quantum computer takes step toward 'megaquops' with better error correction",
+          "url": "https://www.sciencenews.org/article/quantum-computer-megaquops-error-correction",
+          "publishedAt": "2026-10-20",
+          "kind": "언론보도(원 연구 보도, 외부전문가 인터뷰 포함, 직접 열람, 오늘 브리핑의 인용 출처)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-21T00:12:00Z"
+        },
+        {
+          "id": "google-willow-blog-1209",
+          "name": "Google Research Blog · Making quantum error correction work (Willow)",
+          "url": "https://research.google/blog/making-quantum-error-correction-work/",
+          "publishedAt": "2024-12-09",
+          "kind": "기업 공식 연구블로그(1차 자료, 직접 열람, 배경자료 — 비교 기준)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-21T00:16:00Z"
+        },
+        {
+          "id": "arxiv-helios-98qubit",
+          "name": "arXiv 2511.05465 · Helios: A 98-qubit trapped-ion quantum computer",
+          "url": "https://arxiv.org/abs/2511.05465",
+          "publishedAt": "2025-11-07",
+          "kind": "학술 프리프린트(1차 자료, 직접 열람, 배경자료 — 하드웨어 사양)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-21T00:19:00Z"
+        },
+        {
+          "id": "beyondtmrw-roadmap-0620",
+          "name": "Beyond Tomorrow · Logical qubit roadmaps, error budgets, and hardware vendors in 2026",
+          "url": "https://beyondtmrw.org/article/logical-qubit-roadmaps-error-budgets-and-hardware-vendors-in-2026",
+          "publishedAt": "2026-06-20",
+          "kind": "업계 동향 매체 칼럼(전문가 아닌 저자, 구체적 인용 부족 — 개념 참고용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-21T00:18:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -9879,6 +10061,15 @@ const RESEARCH_DATA = {
         "aging-society-classification-beijing-2026-10-20"
       ],
       "reason": "사회/문화/소비 분야 고령화 분류기준 설명형 보고서 1건 신규 작성·검증 완료"
+    },
+    {
+      "date": "2026-10-21",
+      "checkedAt": "2026-10-21T00:23:35.367Z",
+      "status": "published",
+      "reportIds": [
+        "quantum-logical-qubit-lambda-2026-10-21"
+      ],
+      "reason": "이날 첫(유일) 실행. 10개 분야 로테이션상 AI/디지털기술(ai-work)이 가장 오래 비어있었으나(10/10), 조사대기.json에 반복 등록된 ai-work 질문이 기존 10/10 보고서(ai-work-productivity-conditions)와 같은 MIT NANDA·Fortune 자료를 재료로 다시 쓰게 될 것으로 판단해 재발행을 피하고 분야를 바꿨다. 다음으로 오래 비어있고 직전 3회차(10/18 한국산업/정책/SK, 10/19 글로벌기업/스타트업/자본, 10/20 사회/문화/소비)와 겹치지 않는 과학/바이오/건강을 선택했다. 오늘 일간 브리핑의 퀀티넘 헬리오스 오류정정 발표를 계기로 오류감소인자(λ)·메가쿼프 개념을 설명하는 보고서를 작성·검증했다. 검색·원문열기 합계 28회(이 중 AI분야 사전탐색 17회는 분야 전환으로 폐기, 과학분야 실제 조사 11회)를 사용했다."
     }
   ]
 };
