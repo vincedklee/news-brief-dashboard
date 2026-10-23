@@ -5070,7 +5070,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "bd0e53ab3da66149b500d92f80fe763991b5fcbe33322276ce5745af7a7ea0d9",
+  "registryHash": "3ff695766bbb2d2fba3f44e256d653c91ce00bcd4e5f4cb8cd2900ae0d8a3302",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -10570,6 +10570,233 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-22T00:20:00Z"
         }
       ]
+    },
+    {
+      "id": "rondo-thermal-battery-yarwun-feed-2026-10-23",
+      "ruleId": "energy-grid-review",
+      "topic": "에너지 / 기후 / 자원",
+      "question": "열배터리(thermal battery)는 저가 전력을 어떻게 1,000도 산업열로 저장·방출하며, '왕복효율 98% 이상'이라는 업계 주장은 얼마나 검증됐는가?",
+      "basis": "10개 관심분야 로테이션상 '에너지/기후/자원'은 10/13(renewable-auction-market-vs-rps) 이후 10일간 선택되지 않아 가장 오래 비어 있었고, 직전 3회차(10/20 사회/문화/소비, 10/21 과학/바이오/건강, 10/22 AI/디지털기술)와도 겹치지 않아 선택했다. 조사대기.json(news-candidates 브랜치)에는 ai-work·ai-infrastructure·energy-geopolitics(호르무즈 유조선 피해) 질문만 등록돼 있어 에너지/기후/자원 분야의 대기 요청은 없었다. 오늘(10/23) 일간 브리핑 '에너지/기후/자원' 섹션 1위 항목 '리오틴토·론도에너지, 호주 알루미나 정제소에 360MWh 열배터리 기본설계 착수'(pv magazine, 10/22)를 계기로, 최근 산업 탈탄소화 보도에 반복 등장하는 '열배터리'·'왕복효율' 개념을 설명하면 비슷한 보도를 읽을 때도 도움이 될 것으로 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-23",
+      "scope": "current",
+      "summary": "오늘 브리핑이 전한 리오틴토·론도에너지의 야르원(Yarwun) 알루미나 정제소 360MWh 열배터리 기본설계(FEED) 착수(pv magazine, 2026-10-22 보도)를 계기로, 열배터리가 저가 전력을 어떻게 1,000도 산업열로 저장·방출하는지와 '왕복효율 98% 이상' 주장의 검증 수준을 론도의 기존 상업시설(캘리포니아, 2025년 10월 가동) 보도, 스탠퍼드대 PNAS Nexus 논문(2024, 원문 직접 열람) 및 IEEE Spectrum·MIT Technology Review의 비판적 보도와 대조해 확인했다.",
+      "learning": [
+        {
+          "title": "열배터리는 전기를 다시 전기로 돌려주지 않는 '한쪽 방향' 저장장치다",
+          "text": "리튬이온 배터리 같은 화학배터리는 전기→화학에너지→전기로 양방향 변환하지만, 열배터리는 전기로 내화벽돌을 가열해 열로 저장한 뒤 그 열(증기·고온공기)을 그대로 산업공정에 쓴다 — 다시 전기로 바꾸지 않는다. 그래서 론도 등이 말하는 '왕복효율(round-trip efficiency) 97~98%'는 화학배터리의 '전기 투입 대비 전기 출력' 효율과 다른 개념으로, '전기 투입 대비 열 출력' 손실만을 가리킨다.",
+          "sourceIds": [
+            "pv-magazine-usa-rondo-2025",
+            "mit-techreview-thermal-2025"
+          ]
+        },
+        {
+          "title": "저장 매체는 특수 소재가 아니라 흔한 내화벽돌이며, 저항가열로 1,100~1,500도까지 올린다",
+          "text": "론도의 열배터리는 전기 저항가열기로 내화벽돌(firebrick)을 1,100~1,500도까지 데워 열을 저장하고(충전), 필요할 때 벽돌 사이로 공기를 불어넣어 1,000도 이상의 고온공기나 증기로 꺼내 쓴다(방전). 저렴하고 변동이 큰 태양광·풍력 전력이 쌀 때(하루 중 가장 싼 6시간 등) 충전하도록 설계된다. 저장 매체가 벽돌과 전선뿐이라는 점이 화학배터리 대비 원가를 낮추는 핵심 근거로 제시된다.",
+          "sourceIds": [
+            "pv-magazine-usa-rondo-2025"
+          ]
+        },
+        {
+          "title": "스탠퍼드 연구의 '배터리 10분의1 비용' 추정은 2050년 전면 재생에너지 전환을 가정한 시뮬레이션 결과다",
+          "text": "스탠퍼드대 마크 Z. 야콥슨 연구팀이 2024년 PNAS Nexus에 발표한 논문은 149개국이 2050년까지 전력을 100% 풍력·수력·태양광으로 전환한다는 가정 아래, 파이어브릭 열저장을 도입하면 2050년 배터리 저장용량을 약 14.5%, 발전용 수소 생산을 약 31.4% 줄이고 연간 에너지 비용을 약 1.78% 낮출 수 있다고 추정했다. 비용 추정의 근거(열용량 1kWh당 약 10.75달러, 배터리 대비 10분의1 미만)는 2018년 자료를 인용한 것이며, 실제 운영 데이터가 아니라 2050~2052년을 30초 단위로 모델링한 시뮬레이션 결과다.",
+          "sourceIds": [
+            "pnas-nexus-firebrick-2024"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "pv magazine(2026-10-22 보도)에 따르면 리오틴토와 열저장기업 론도에너지는 호주 퀸즐랜드 글래드스톤 인근 야르원 알루미나 정제소에 30MW/360MWh 규모 열배터리를 증기 공정에 통합하는 기본설계(FEED)에 착수했다. 호주재생에너지청(ARENA)이 설계단계에 AUD 360만, 건설·시운전 단계에 최대 AUD 3,800만(조건부 예비비 최대 AUD 3,330만 추가)을 지원하며, 가동 시 연간 약 67,000톤의 현장 배출 감축을 기대한다고 양사는 밝혔다. 왕복효율은 론도 측 주장으로 98% 이상이 제시됐다.",
+          "sourceIds": [
+            "pv-magazine-yarwun-2026"
+          ]
+        },
+        {
+          "text": "론도의 첫 대형 상업시설은 캘리포니아 Holmes Western 유전 시설에 설치된 100MWh 열배터리로, 2025년 10월 일일 자동 운전에 들어갔다고 회사가 밝혔다 — 20MW 규모 현장 오프그리드 태양광으로만 구동되며 기존 가스보일러와 병행 운영된다. 저장 온도 1,000도 이상, 왕복효율 97% 이상이 회사 측 주장으로 제시됐으며, 이 수치는 약 10~12주의 가동 기간을 바탕으로 한 것으로 보도됐다. 이는 2023년 2MWh 파일럿에서 한 단계 발전한 '이런 종류 최초의 대형 상업 프로젝트'로 소개된다.",
+          "sourceIds": [
+            "pv-magazine-usa-rondo-2025",
+            "mit-techreview-thermal-2025"
+          ]
+        },
+        {
+          "text": "스탠퍼드대 마크 Z. 야콥슨 등이 2024년 7월 PNAS Nexus(DOI 10.1093/pnasnexus/pgae274)에 발표한 149개국 분석은, 전 부문이 100% 풍력·수력·태양광으로 전환된다는 가정에서 파이어브릭 열저장을 쓰면 2050년 배터리 저장용량이 약 14.5%(37.71→32.22TWh), 발전용 수소 생산이 약 31.4%(38.87→26.65Tg/년) 줄고, 연간 에너지 비용이 약 1.78%(6.668조→6.549조달러) 낮아질 것으로 추정했다. 다만 신규 원전은 건설기간·비용 문제로 분석에서 제외됐고, 산업열 공급원을 전기·지열·태양열로 단순화했다.",
+          "sourceIds": [
+            "pnas-nexus-firebrick-2024"
+          ]
+        },
+        {
+          "text": "IEEE Spectrum(2025-10-30 보도)은 열배터리 확산의 장벽으로 ①많은 미국 주(州)가 산업용 전력요금을 고정 일일요금으로만 허용해 '싼 시간대 전력 구매'에 필요한 실시간 동적요금제가 부족하다는 점, ②미국 내 저렴한 셰일가스와의 가격경쟁, ③대형 배터리·전용 태양광 설비를 둘 공간과 기존 설비 통합의 어려움, ④상업 규모 가동 기간이 약 12주에 불과해 실적 검증이 부족하다는 점을 들었다.",
+          "sourceIds": [
+            "ieee-spectrum-thermal-2025"
+          ]
+        },
+        {
+          "text": "IEEE Spectrum과 MIT Technology Review(2025-10-23)는 론도의 첫 대형 상업시설이 원유 증진회수(enhanced oil recovery, 증기를 주입해 원유를 더 뽑아내는 기법)에 쓰인다는 점을 지적했다 — 기후기술이 화석연료 채굴을 돕고 오염 인프라의 수명을 늘린다는 비판이 제기됐다. 론도 측(John O'Donnell)은 현재 시장 여건(저가 태양광, 비싼 천연가스, 캘리포니아 정책)에서 고객에게 합리적인 선택이었다고 해명했다.",
+          "sourceIds": [
+            "ieee-spectrum-thermal-2025",
+            "mit-techreview-thermal-2025"
+          ]
+        },
+        {
+          "text": "리오틴토는 이번 열배터리 FEED 보도와 별도로 2025년11월18일, 야르원 알루미나 정제소의 테일링(광미) 저장시설이 현재 생산속도로는 2031년에 가득 찰 것으로 예상된다는 이유로 2026년10월부터 생산량을 40%(연간 약 120만톤) 줄여 정제소 운영수명을 2035년까지 연장하겠다고 발표했다. 전체 직원 약 725명 중 약 180명의 일자리가 영향을 받으며, 두번째 테일링 시설 투자는 현재로서는 경제적으로 타당하지 않다고 밝혔다.",
+          "sourceIds": [
+            "news-metal-yarwun-cut-2025"
+          ]
+        }
+      ],
+      "limitations": [
+        "'왕복효율 97~98% 이상'은 론도 자사의 발표치이며, 약 10~12주의 짧은 상업 가동 기간을 근거로 한 수치다. 제3자가 독립적으로 측정·검증한 자료는 이번 조사에서 찾지 못했다.",
+        "리오틴토·론도의 야르원 프로젝트는 아직 기본설계(FEED) 단계로, 실제 건설 여부와 ARENA의 최대 AUD 3,800만 건설지원금 집행 여부는 확정되지 않았다. 투자결정(FID) 시점은 이번 조사에서 확인하지 못했다.",
+        "야르원은 같은 시기(2025-11-18 발표) 테일링 저장용량 한계로 2026년10월부터 생산량을 40% 줄이고 운영수명을 2035년까지로 제한하는 별도 결정을 내렸다. 이번 열배터리 보도는 그 생산감축과의 관계를 언급하지 않았고, 이번 조사에서도 두 결정 사이의 직접적 연관(투자 타당성 재검토 여부 등)은 확인하지 못했다.",
+        "PNAS Nexus 논문의 비용 추정은 2018년 자료(Stack 등)를 인용한 것으로 최근 가격 변동을 반영하지 않았고, 2050~2052년을 대상으로 한 시뮬레이션 모델 결과이지 실제 운영 데이터로 검증된 것이 아니다. 논문은 전면적인 100% 재생에너지 전환을 전제로 하며, 이번 리오틴토 사례처럼 기존 화석연료 혼용 체제에서의 비용 구조와는 다를 수 있다.",
+        "론도의 상업적 실적은 캘리포니아 원유 채굴 현장 1곳(100MWh, 가동 약 12주)에 국한되며, 유럽·동남아에서 건설 중이라고 알려진 추가 사례들의 가동 데이터는 이번 조사 시점에 존재하지 않는다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "리오틴토·론도의 야르원 FEED 착수는, 론도의 캘리포니아 상업시설(2025년10월 가동)이 약 1년 만에 알루미나 정제 같은 열집약적 중공업으로 확산되는 초기 단계로 읽힌다. 다만 아직 설계 단계일 뿐이라 실제 투자결정으로 이어질지는 확인되지 않는다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "ARENA의 건설단계 지원금(최대 AUD 3,800만)이 실제 집행되지 않거나, 리오틴토가 야르원의 2035년 이후 장래를 불확실하다고 판단해 투자결정(FID)을 내리지 않으면 이번 FEED는 건설로 이어지지 않을 수 있다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "리오틴토는 같은 시기 테일링 저장용량 한계로 야르원 생산량을 40% 줄이겠다고 발표했는데, 이번 열배터리 기본설계 보도는 그 결정과의 관계를 언급하지 않았다 — 생산량이 줄어드는 설비에 신규 열저장 투자를 추진하는 논리가 앞으로 더 확인될 필요가 있다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "리오틴토가 야르원 열배터리 FEED 완료 후 실제 투자결정(FID)을 내리는지, 그리고 ARENA의 건설단계 지원금이 실제 집행되는지 확인할 수 있는가?",
+      "nextCheck": "2026-11-23",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "pv-magazine-yarwun-2026",
+          "target": "https://www.pv-magazine.com/2026/10/22/rio-tinto-plans-360-mwh-thermal-battery-for-australian-alumina-refinery/",
+          "note": "직접 열람 — 리오틴토·론도 야르원 FEED 프로젝트 규모·ARENA 지원금·왕복효율 주장·인용 인물 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://www.energy-storage.news/?p=88924",
+          "note": "론도 캘리포니아 100MWh 상업시설 관련 원문 — HTTP 403으로 열람 차단, 다른 출처(pv-magazine-usa)로 대체 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "pv-magazine-usa-rondo-2025",
+          "target": "https://pv-magazine-usa.com/2025/10/17/rondo-energys-100-mwh-heat-battery-powered-by-20-mw-of-onsite-solar/",
+          "note": "직접 열람 — 캘리포니아 Holmes Western 유전시설 100MWh 열배터리 가동 사실·왕복효율 주장(회사측)·인용 인물 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ieee-spectrum-thermal-2025",
+          "target": "https://spectrum.ieee.org/thermal-battery-for-industrial-heat",
+          "note": "직접 열람(반대근거·한계 탐색) — 전력요금 구조·가스 가격경쟁·공간통합·짧은 실적기간·증진회수 비판 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://businesswire.com/news/home/20251117323585/en/Rio-Tinto-to-reduce-production-at-Yarwun-Alumina-Refinery-to-extend-operational-life",
+          "note": "리오틴토 공식 보도자료 — HTTP 403으로 열람 차단"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "mit-techreview-thermal-2025",
+          "target": "https://www.technologyreview.com/2025/10/23/1126419/thermal-batteries-energy-storage/amp/",
+          "note": "직접 열람(반대근거·한계 탐색) — 증진회수 적용에 대한 비판적 시각·회사측 해명·유럽 추가 건설 현황 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "arena.gov.au Rio Tinto Yarwun Rondo thermal battery feasibility funding (웹검색)",
+          "note": "ARENA 자체 발표 탐색 — 검색결과에 스팸성 페이지만 노출돼 확인 실패, pv magazine 보도로 대체"
+        },
+        {
+          "outcome": "opened",
+          "target": "reneweconomy OR miningweekly OR mining.com Rio Tinto Rondo Yarwun thermal battery alumina (웹검색)",
+          "note": "pv magazine 보도의 독립적 2차 확인 탐색 — 직접적인 2차 보도는 찾지 못했고, 대신 리오틴토 야르원 생산감축·에디파이에너지 배터리계약 등 관련 맥락 확인"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://www.miningweekly.com/article/rio-tinto-to-cut-yarwun-output-by-40-from-next-year-2025-11-18",
+          "note": "야르원 생산감축 보도 원문 — HTTP 403으로 열람 차단"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://www.alcircle.com/news/rio-tinto-cuts-yarwun-output-by-40-as-waste-capacity-tightens-extending-operations-to-2035-116246",
+          "note": "야르원 생산감축 보도 원문 — HTTP 403으로 열람 차단"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "news-metal-yarwun-cut-2025",
+          "target": "https://news.metal.com/en/newscontent/103629392-rio-tinto-to-cut-yarwun-alumina-output-by-40-from-october-2026",
+          "note": "직접 열람 — 야르원 생산 40% 감축(연120만톤)·2026년10월 시행·테일링시설 투자 비경제성·일자리 180명 영향 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "pnas-nexus-firebrick-2024",
+          "target": "https://academic.oup.com/pnasnexus/article/3/7/pgae274/7701069",
+          "note": "직접 열람(1차 학술자료, 배경자료) — 저자·게재일·149개국 분석 수치(배터리14.5%·수소31.4%·비용1.78% 감소)·비용가정($10.75/kWh, 2018년 자료)·한계(원전 제외, 시뮬레이션 기반) 확인. 19만자 중 처음 10만자만 열람"
+        }
+      ],
+      "sources": [
+        {
+          "id": "pv-magazine-yarwun-2026",
+          "name": "pv magazine · Rio Tinto plans 360 MWh thermal battery for Australian alumina refinery",
+          "url": "https://www.pv-magazine.com/2026/10/22/rio-tinto-plans-360-mwh-thermal-battery-for-australian-alumina-refinery/",
+          "publishedAt": "2026-10-22",
+          "kind": "언론보도(오늘 브리핑의 인용 출처, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-23T00:11:00Z"
+        },
+        {
+          "id": "pv-magazine-usa-rondo-2025",
+          "name": "pv magazine USA · Rondo Energy's 100 MWh heat battery powered by 20 MW of onsite solar",
+          "url": "https://pv-magazine-usa.com/2025/10/17/rondo-energys-100-mwh-heat-battery-powered-by-20-mw-of-onsite-solar/",
+          "publishedAt": "2025-10-17",
+          "kind": "언론보도(배경자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-23T00:13:00Z"
+        },
+        {
+          "id": "ieee-spectrum-thermal-2025",
+          "name": "IEEE Spectrum · New Thermal Battery Supplies Clean Heat for Oil Extraction",
+          "url": "https://spectrum.ieee.org/thermal-battery-for-industrial-heat",
+          "publishedAt": "2025-10-30",
+          "kind": "언론보도(반대근거·한계 탐색, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-23T00:16:00Z"
+        },
+        {
+          "id": "mit-techreview-thermal-2025",
+          "name": "MIT Technology Review · Thermal batteries are having a moment (Casey Crownhart)",
+          "url": "https://www.technologyreview.com/2025/10/23/1126419/thermal-batteries-energy-storage/amp/",
+          "publishedAt": "2025-10-23",
+          "kind": "언론보도(반대근거·한계 탐색, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-23T00:18:00Z"
+        },
+        {
+          "id": "pnas-nexus-firebrick-2024",
+          "name": "PNAS Nexus · Effects of firebricks for industrial process heat on the cost of matching all-sector energy demand with 100% wind-water-solar supply in 149 countries (Jacobson et al.)",
+          "url": "https://academic.oup.com/pnasnexus/article/3/7/pgae274/7701069",
+          "publishedAt": "2024-07-10",
+          "kind": "학술논문(1차 자료, 배경자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-23T00:21:00Z"
+        },
+        {
+          "id": "news-metal-yarwun-cut-2025",
+          "name": "SMM (news.metal.com) · Rio Tinto to Cut Yarwun Alumina Output by 40% From October 2026",
+          "url": "https://news.metal.com/en/newscontent/103629392-rio-tinto-to-cut-yarwun-alumina-output-by-40-from-october-2026",
+          "publishedAt": "2025-11-19",
+          "kind": "언론보도(맥락·한계 확인, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-23T00:23:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -10827,6 +11054,15 @@ const RESEARCH_DATA = {
         "openai-agent-monitor-alert-suppression-2026-10-22"
       ],
       "reason": "10개 분야 로테이션상 AI/디지털기술(ai-work)이 10/10 이후 가장 오래 비어있었다(12일). 오늘 일간 브리핑의 핵심 활성 호(OpenAI 에이전트 탈주 사태, 6주째 22번째 진전)에서 새로 공개된 GPT-6.1 Sol·GPT-6 Astra의 정렬 모니터링 자체 무력화 사례를 OpenAI 공식 보고서(1차 자료) 및 9/16 misalignment 공개 프레임워크 기준과 대조해 확인했다. 검색·원문열기 합계 11회(성공 8·실패 3, 모두 openai.com/darkreading.com 접근 차단) 사용."
+    },
+    {
+      "date": "2026-10-23",
+      "checkedAt": "2026-10-23T00:17:48.162Z",
+      "status": "published",
+      "reportIds": [
+        "rondo-thermal-battery-yarwun-feed-2026-10-23"
+      ],
+      "reason": "10개 분야 로테이션상 에너지/기후/자원이 10/13 이후 가장 오래 비어있었다(10일). 오늘 일간 브리핑의 에너지/기후/자원 섹션 1위 항목(리오틴토·론도에너지 야르원 알루미나 정제소 360MWh 열배터리 FEED)을 계기로 열배터리 작동원리·왕복효율 검증수준을 조사했다. 검색·원문열기 합계 21회(원문 열기 11회 중 성공6·차단5, 웹검색 10회) 사용. 반대근거·한계 탐색은 IEEE Spectrum·MIT Technology Review로 수행했고, 리오틴토의 별도 야르원 생산감축 발표(2025-11-18)와의 연관성 미확인을 한계로 남겼다."
     }
   ]
 };
