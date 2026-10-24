@@ -5091,7 +5091,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "3ff695766bbb2d2fba3f44e256d653c91ce00bcd4e5f4cb8cd2900ae0d8a3302",
+  "registryHash": "b2ab65bbe80a45b666f523bb4dd7f8326c8d39bc29deb5f894dadfa866912d2f",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -10818,6 +10818,213 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-23T00:23:00Z"
         }
       ]
+    },
+    {
+      "id": "france-sentinelle-precedent-2026-10-24",
+      "ruleId": "france-protest-military",
+      "topic": "세계 정치 / 지정학",
+      "question": "세티넬 작전이 이번 프랑스 시위에 투입된 것이 \"1992년 이후 처음\"이라는 보도는 정확히 무엇을 기준으로 \"처음\"이라는 뜻이며, 세티넬 자체가 2018~19년 노란 조끼 시위 때도 투입됐던 사실과는 어떻게 다른가?",
+      "basis": "10개 관심분야 로테이션상 세계정치/지정학이 10/14(nk-missile-capability) 이후 가장 오래 비어있었다(10일) — 10/15~10/23 사이 나머지 9개 분야가 모두 한 차례씩 선택됐다. news-candidates 브랜치의 조사대기.json history에는 ai-work·ai-infrastructure·energy-geopolitics 3건만 반복 등록돼 있어 세계정치/지정학 관련 대기 요청은 없었고, 오늘(10/24) 일간 브리핑 '세계 정치/지정학' 섹션 3위 항목('프랑스, 10/24 집회 대비 경찰 7만명·세티넬 부대 투입 확정')과 상태/추적.md의 '프랑스 학교·생활비 시위' 호 타임라인(10/22 항목: \"1992년 고속도로점거 해산 이후 첫 군 투입\")을 계기로 질문을 선정했다. 이 호를 매일 따라온 독자가 \"1992년 이후 처음\"이라는 표현을 그 자체로 받아들이기보다, 세티넬이라는 부대의 설립 목적·과거 투입 이력과 비교해 읽을 수 있게 하면 이후 10/24 집회 결과나 비슷한 역사적 비교 보도를 읽을 때도 도움이 될 것으로 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-24",
+      "scope": "current",
+      "summary": "오늘 활성 호 '프랑스 학교·생활비 시위'에서 반복 인용되는 \"세티넬 부대 투입은 1992년 이후 첫 사례\"라는 평가를, 이 표현이 처음 등장한 France24 10/21 기사 원문과 세티넬 작전의 설립 선언문(2015)·2018~19년 노란 조끼 시위 당시 투입 기록을 대조해 검증했다. '군이 투입된 것 자체'와 '세티넬이라는 부대가 투입된 것'이 서로 다른 비교 기준이라는 점을 확인했다.",
+      "learning": [
+        {
+          "title": "'세티넬 작전'은 무엇인가 — 테러대응용 상시 경비 부대",
+          "text": "세티넬은 2015년 1월 샤를리 에브도·이페르카셰 테러 이후 비그피라트(Vigipirate) 계획의 틀에서 올랑드 대통령이 \"영구화(pérennisée)\"하겠다고 선언하며 만들어졌다. 군인이 학교·종교시설·관광지 등 공공장소를 정적(靜的)으로 경비하는 임무이며 상시 약 7,000명(절반이 파리권)이 배치된다. 설립 선언문에는 시위·치안 대응 임무가 전혀 언급되지 않고 테러 억제가 유일한 설립 목적으로 제시됐다.",
+          "sourceIds": [
+            "elysee-2015",
+            "parismatch-2017"
+          ]
+        },
+        {
+          "title": "'정적 경비'와 '질서유지'는 다른 임무로 취급된다",
+          "text": "프랑스에서 시위 해산·체포 등 직접 개입('질서유지', maintien de l'ordre)은 전통적으로 경찰·기동헌병의 몫이고 군은 이 임무를 맡지 않는다는 원칙이 있다. 세티넬이 시위 국면에 등장할 때마다 정부가 \"세티넬의 역할은 질서유지가 아니다\"라고 반복해 강조하는 이유가 여기 있다 — 군인은 건물 등 '고정 지점(points fixes)'만 지키고, 그로 인해 비는 경찰 인력을 시위 현장으로 재배치하는 간접적 구조다. 다만 이 두 임무를 가르는 구체적 법령·조문은 이번 조사의 열람 범위에서는 확인하지 못했다.",
+          "sourceIds": [
+            "publicsenat-2019"
+          ]
+        },
+        {
+          "title": "'처음'이라는 비교는 기준을 어떻게 좁히느냐에 달려 있다",
+          "text": "\"N년 이후 처음\"이라는 보도는 비교 대상을 어떻게 좁히느냐에 따라 결론이 달라진다. France24는 \"사회갈등에서 군이 쓰인 사례\"로 좁혀 1992년을 유일한 전례로 들었지만, '세티넬이라는 부대 자체의 시위 국면 투입'으로 기준을 좁히면 2018~19년 노란 조끼 시위가 바로 전례가 된다. 같은 사실도 비교 기준에 따라 \"매우 드문 전례\"와 \"반복되는 패턴\" 중 어느 쪽으로도 읽힐 수 있다.",
+          "sourceIds": [
+            "france24-1021",
+            "publicsenat-2019",
+            "publicsenat-2018"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "프랑스 정부는 10/20 세티넬 부대를 10/24(토) 집회에 투입하기로 발표했고, France24는 이를 제5공화국 역사에서 '사회갈등(conflit social)'에 군이 쓰인 사례로는 \"매우 드물다(rarissime)\"며 \"다른 유일한 예는 1992년뿐이다(Un seul autre exemple existe: en 1992)\"라고 전했다.",
+          "sourceIds": [
+            "france24-1021"
+          ]
+        },
+        {
+          "text": "1992년 사례는 사회당 베레고부아 총리 정부가 운전면허 점수제(permis à points) 도입에 반발한 화물차 기사들의 고속도로 봉쇄(릴 인근 A1, 팔랑팽)를 풀기 위해 병력 500명과 경장갑차 여러 대, AMX 전차 1대를 투입한 것이다 — France24와 Public Sénat 두 매체가 공통으로 확인했다.",
+          "sourceIds": [
+            "france24-1021",
+            "publicsenat-2018"
+          ]
+        },
+        {
+          "text": "세티넬 작전 자체는 이미 2018년 11월~2019년 3월 '노란 조끼' 시위 당시에도 투입된 바 있다. 2019/3/20 마크롱 대통령이 공공건물 등 '고정 지점(points fixes)'을 지키도록 지시했고, 정부 소식통은 \"세티넬의 역할은 질서유지 임무가 아니다(Le rôle de Sentinelle n'est pas de faire du maintien de l'ordre)\"라며 경찰력을 시위 현장 쪽으로 돌리는 구조라고 설명했다.",
+          "sourceIds": [
+            "publicsenat-2019"
+          ]
+        },
+        {
+          "text": "세티넬은 2015/4/29 올랑드 대통령이 \"이 작전은 세티넬 작전이라는 이름으로 영구화될 것이다(cette opération, qui prendra le nom d'opération Sentinelle, serait pérennisée)\"라고 선언하며 비그피라트 계획의 틀 안에서 만들어졌다 — 선언문 전체에서 시위 대응이나 치안유지 임무는 언급되지 않는다.",
+          "sourceIds": [
+            "elysee-2015"
+          ]
+        },
+        {
+          "text": "2026년 이번 투입에서도 정부는 같은 구도(세티넬은 정적 경비, 경찰·헌병이 진압 임무)를 쓰고 있다고 France24가 전한다. 정부 대변인 모드 브레종도 처음에는 \"군의 임무는 질서유지 임무가 아니다(les missions de l'armée ne sont pas des missions de maintien de l'ordre)\"라며 투입 방안에 부정적이었다고 기사는 전한다.",
+          "sourceIds": [
+            "france24-1021"
+          ]
+        },
+        {
+          "text": "세티넬은 투입 이력 내내 비판에서 자유롭지 않았다 — 2017/8월 파리 근교 레발루아페레에서 순찰 중인 군인 6명이 공격받은 사건을 계기로 마크롱 대통령이 작전 재편을 약속했고, 여당(LREM) 의원은 '효율성 재검토', 야당(LR) 의원은 '전면 재검토'를 요구했다. 7,000명 상시 배치의 피로도·임무 적합성 논란이 당시부터 있었다.",
+          "sourceIds": [
+            "parismatch-2017"
+          ]
+        }
+      ],
+      "limitations": [
+        "1992년 사건의 1차 원문(프랑스 국회 회의록, archives.assemblee-nationale.fr)은 두 차례 접근을 시도했으나 모두 HTTP 503으로 막혀 직접 대조하지 못했다. France24·Public Sénat 두 언론 보도로만 교차확인했다.",
+        "\"1992년 이후 처음\"이라는 비교가 정확히 어떤 법적 기준(군 투입 자체 vs 질서유지성 역할)으로 \"처음\"을 규정하는지 설명하는 1차 법령·정부 문서는 찾지 못했다. 정적 경비(garde statique)와 질서유지(maintien de l'ordre)의 경계를 규정한 조문도 이번 조사에서 확인하지 못했다.",
+        "10/24(토) 실제 투입에서 세티넬 병력이 정적 경비를 유지했는지, 아니면 시위 현장에서 더 직접적인 역할을 맡았는지는 이 보고서 작성 시점(10/24 오전)까지 결과가 나오지 않아 반영하지 못했다.",
+        "2018~19년 노란 조끼 투입과 이번 투입의 병력 규모를 공식 수치로 직접 비교하지 못했다 — 2026년 정부 발표는 \"massif(대규모)\"라는 표현만 확인됐고, 구체적 병력 수를 밝힌 1차 자료는 찾지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "세티넬의 2026년 투입을 \"1992년 이후 첫 군 투입\"으로만 읽으면 테러대응용 상시 경비 부대가 처음으로 시위 현장에 등장한 것처럼 보인다. 그러나 세티넬 자체는 이미 2018~19년에도 같은 '정적 경비' 역할로 투입된 적이 있어, 이번에 실제로 새로운 것은 '군이 다시 등장했다'는 사실이 아니라 정부가 그 역할을 공공연히 '질서유지에 준하는 수준'으로 넓히려 하는 신호일 수 있다는 쪽으로 읽힌다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "10/24 투입에서 세티넬 병력이 공공건물 경비 등 정적 임무만 수행했다는 것이 사후에 확인되면, 이번 사례도 2018~19년과 본질적으로 같은 패턴이라는 쪽으로 판단이 기운다. 반대로 병력이 시위 분산·진압성 행위에 직접 관여한 사실이 확인되면, France24가 말한 \"1992년 이후 첫 예외\"라는 평가가 더 설득력을 갖는다.",
+          "sourceIds": []
+        },
+        {
+          "label": "다음 확인",
+          "text": "10/24 집회 이후 세티넬 병력의 실제 임무 범위(정적 경비 유지 여부)와, 이번 투입을 계기로 세티넬의 법적 임무 범위를 바꾸려는 논의(의회 조사 등)가 실제로 진행되는지를 다음 지표로 본다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "10/24 집회에서 투입된 세티넬 병력은 실제로 정적 경비 임무만 수행했는가, 아니면 질서유지 성격의 역할로 확대됐는가? 그리고 이번 투입을 계기로 세티넬의 법적 임무 범위를 바꾸는 논의가 실제로 진행되는가?",
+      "nextCheck": "2026-10-28",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Opération Sentinelle France protest 2026 deployed first time since 1992 (웹검색)",
+          "note": "초기 탐색 — 1992년 비교의 출처 확인 시도, 검색결과 자체는 1992년을 직접 언급하지 않음"
+        },
+        {
+          "outcome": "opened",
+          "target": "Opération Sentinelle qu'est-ce que c'est mission légale 2015 (웹검색)",
+          "note": "세티넬 설립 배경·임무 개요 확인, 법적 근거 1차 문서는 검색만으로 특정하지 못함"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "france24-1021",
+          "target": "https://www.france24.com/fr/france/20261021-armee-deployee-samedi-24-octobre-precedents-rarissimes-france",
+          "note": "직접 열람 — 오늘 일간브리핑 인용 출처와 동일 기사. '1992년 유일한 전례' 표현과 그 맥락(사회갈등 한정) 확인, 2018~19 노란조끼 세티넬 투입 사실도 같은 기사에 언급됨을 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "publicsenat-2019",
+          "target": "https://www.publicsenat.fr/article/politique/gilets-jaunes-sentinelle-mobilise-samedi-philippe-annule-son-deplacement-en-guyane",
+          "note": "직접 열람 — 2019/3/20 노란조끼 시위 당시 세티넬 투입(정적 경비) 사실·정부 발언('질서유지 아님') 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "1992 Bérégovoy armée chauffeurs routiers autoroute A1 Lille AMX-30 permis à points (웹검색)",
+          "note": "1992년 사건의 배경·경위 교차확인, Public Sénat 기사와 국회 회의록 PDF 존재 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "publicsenat-2018",
+          "target": "https://www.publicsenat.fr/actualites/politique/blocages-quand-beregovoy-envoyait-l-armee-135410",
+          "note": "직접 열람 — 1992년 사건 상세(병력 500명·AMX 전차·팔랑팽), 2018년에도 이미 '처음이 아니다' 비교가 쓰였음을 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "parismatch-2017",
+          "target": "https://www.parismatch.be/actualites/societe/2017/08/11/les-attaques-sur-des-militaires-francais-font-douter-de-loperation-sentinelle-LOF22AC2KRCFVH4IGEQZQCRMKM/",
+          "note": "직접 열람(반대근거·실패사례 탐색) — 2017년 레발루아페레 군인 공격 사건과 세티넬 재편·재검토 요구 정치권 반응 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://archives.assemblee-nationale.fr/9/cri/1991-1992-extraordinaire4/005.pdf",
+          "note": "HTTP 503으로 접근 차단 — 1992년 국회 회의록 1차 원문 대조 실패"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://archives.assemblee-nationale.fr/9/cri/1991-1992-extraordinaire4/005.pdf",
+          "note": "재시도에도 동일하게 HTTP 503, 포기하고 2차 보도(Public Sénat)로 대체"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "elysee-2015",
+          "target": "https://www.elysee.fr/francois-hollande/2015/04/29/declaration-de-m-francois-hollande-president-de-la-republique-sur-la-politique-de-defense-de-la-france-a-paris-le-29-avril-2015",
+          "note": "직접 열람(1차 자료) — 올랑드 대통령의 세티넬 영구화 선언 원문, 테러대응 목적만 언급되고 치안·시위 대응 임무는 부재함을 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "france24-1021",
+          "name": "France 24, \"L'armée déployée samedi 24 octobre: des précédents rarissimes en France\"",
+          "url": "https://www.france24.com/fr/france/20261021-armee-deployee-samedi-24-octobre-precedents-rarissimes-france",
+          "publishedAt": "2026-10-21",
+          "kind": "언론보도(직접 열람, 오늘 일간브리핑의 인용 출처와 동일)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-24T00:15:00Z"
+        },
+        {
+          "id": "publicsenat-2019",
+          "name": "Public Sénat, \"«Gilets jaunes»: Sentinelle mobilisé samedi, Philippe annule son déplacement en Guyane\"",
+          "url": "https://www.publicsenat.fr/article/politique/gilets-jaunes-sentinelle-mobilise-samedi-philippe-annule-son-deplacement-en-guyane",
+          "publishedAt": "2019-03-20",
+          "kind": "언론보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-24T00:22:00Z"
+        },
+        {
+          "id": "publicsenat-2018",
+          "name": "Public Sénat, \"Blocages: quand Bérégovoy envoyait l'armée\"",
+          "url": "https://www.publicsenat.fr/actualites/politique/blocages-quand-beregovoy-envoyait-l-armee-135410",
+          "publishedAt": "2018-11-13",
+          "kind": "언론보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-24T00:28:00Z"
+        },
+        {
+          "id": "parismatch-2017",
+          "name": "Paris Match (Belgique), \"Les attaques sur des militaires français font douter de l'opération Sentinelle\"",
+          "url": "https://www.parismatch.be/actualites/societe/2017/08/11/les-attaques-sur-des-militaires-francais-font-douter-de-loperation-sentinelle-LOF22AC2KRCFVH4IGEQZQCRMKM/",
+          "publishedAt": "2017-08-11",
+          "kind": "언론보도(직접 열람, 반대근거·실패사례)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-24T00:32:00Z"
+        },
+        {
+          "id": "elysee-2015",
+          "name": "프랑스 대통령실(Élysée), \"Déclaration de M. François Hollande... sur la politique de défense de la France\"",
+          "url": "https://www.elysee.fr/francois-hollande/2015/04/29/declaration-de-m-francois-hollande-president-de-la-republique-sur-la-politique-de-defense-de-la-france-a-paris-le-29-avril-2015",
+          "publishedAt": "2015-04-29",
+          "kind": "대통령 공식 선언문(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-24T00:40:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -11084,6 +11291,15 @@ const RESEARCH_DATA = {
         "rondo-thermal-battery-yarwun-feed-2026-10-23"
       ],
       "reason": "10개 분야 로테이션상 에너지/기후/자원이 10/13 이후 가장 오래 비어있었다(10일). 오늘 일간 브리핑의 에너지/기후/자원 섹션 1위 항목(리오틴토·론도에너지 야르원 알루미나 정제소 360MWh 열배터리 FEED)을 계기로 열배터리 작동원리·왕복효율 검증수준을 조사했다. 검색·원문열기 합계 21회(원문 열기 11회 중 성공6·차단5, 웹검색 10회) 사용. 반대근거·한계 탐색은 IEEE Spectrum·MIT Technology Review로 수행했고, 리오틴토의 별도 야르원 생산감축 발표(2025-11-18)와의 연관성 미확인을 한계로 남겼다."
+    },
+    {
+      "date": "2026-10-24",
+      "checkedAt": "2026-10-24T00:45:00Z",
+      "status": "published",
+      "reportIds": [
+        "france-sentinelle-precedent-2026-10-24"
+      ],
+      "reason": "10개 분야 로테이션상 세계정치/지정학이 10/14 이후 가장 오래 비어있었다(10일). 오늘 일간 브리핑·추적대장의 '프랑스 학교·생활비 시위' 호 항목에서 반복된 \"세티넬 투입은 1992년 이후 처음\"이라는 평가를 France24 원문과 세티넬 설립 선언문(2015)·2018~19년 노란조끼 투입 기록으로 대조해, 세티넬 자체의 과거 투입 이력과는 다른 비교 기준이라는 점을 확인했다. 검색 3회·원문열기 7회(성공5·실패2, 모두 1992년 국회 회의록 PDF 접근차단) 합계 10회를 사용했다."
     }
   ]
 };
