@@ -5183,7 +5183,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "b2ab65bbe80a45b666f523bb4dd7f8326c8d39bc29deb5f894dadfa866912d2f",
+  "registryHash": "3ab680baaa75b5c983be7d3b96564fbe3ab043fcdc72be762f5ced573f9a5344",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -11117,6 +11117,261 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-24T00:40:00Z"
         }
       ]
+    },
+    {
+      "id": "eu-used-chinese-ev-tariff-loophole-2026-10-25",
+      "ruleId": "industry-mobility",
+      "topic": "산업 / 모빌리티 / 로봇",
+      "question": "EU가 신규 중국산 전기차에 최대 45.3% 관세를 매기는데, 중고 중국산 전기차는 왜 이 관세·쿼터를 피해 유럽으로 들어오는가 — '신규(new)' 차량을 가르는 법적 기준은 무엇인가?",
+      "basis": "10개 관심분야 로테이션상 산업/모빌리티/로봇이 10/15(industry-mobility) 이후 가장 오래 비어 있었다(10일) — 10/15~10/24 사이 나머지 9개 분야가 모두 한 차례씩 선택돼 로테이션이 한 바퀴 돌았다. news-candidates 브랜치의 조사대기.json history에는 ai-work·ai-infrastructure·energy-geopolitics 3건만 반복 등록돼 있어 이 분야 대기 요청은 없었고, 오늘(10/25) 일간 브리핑 '산업/모빌리티/로봇' 섹션 1위 항목('중고 중국산 전기차, 관세 피해 유럽·캐나다로 뒷문 유입 — MSRP 대비 40% 저가')을 계기로 질문을 직접 선정했다. 기사는 중고차가 관세·쿼터를 '피한다'는 결과만 전하고 법적 이유는 설명하지 않아, 그 구조를 설명하면 비슷한 관세회피 보도를 읽을 때도 도움이 될 것으로 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-25",
+      "scope": "current",
+      "summary": "오늘 일간 브리핑이 전한 '중고 중국산 전기차의 유럽 뒷문 유입' 현상을, EU의 신규 전기차 상계관세 규정(Implementing Regulation 2024/2754)과 EU 관세품목분류(Combined Nomenclature) Chapter 87의 신규/중고 차량 정의 조문을 대조해 검증했다. 관세·예정된 하이브리드 쿼터 모두 '신규' 차량만 겨냥하도록 설계돼 있고, 그 '신규'의 법적 경계선(등록 6개월 이내 또는 주행 6,000km 이내)이 기사에 소개된 사례와 정확히 맞물린다는 점을 확인했다.",
+      "learning": [
+        {
+          "title": "EU의 중국산 전기차 관세·쿼터는 전부 '신규(new)' 차량만 겨냥한다",
+          "text": "EU 집행위는 2024년 중국산 배터리전기차(BEV)에 상계관세를 매겼다. 회사별로 BYD 17.0%, Geely 18.8%, SAIC 35.3%, 테슬라(상하이) 7.8%, 기타 협조기업 20.7%, 기타 비협조기업 35.3%이며 2024/10/30부터 5년간 적용된다. 여기에 EU의 기본 자동차 관세 10%가 더해져 최대 45.3%가 된다. 그런데 이 규정(Implementing Regulation 2024/2754) 1조는 적용 대상을 처음부터 \"new battery electric vehicles(신규 배터리전기차)\"로 못박아 두고 있다. 2026/10/8~9 EU-中 합의로 추진 중인 하이브리드(HEV·PHEV) 수입 쿼터(연 35만대, 2026/12/1 시행 예정) 역시 '신규 수입'을 겨냥한 조치다. 두 조치 모두 애초에 중고차를 다루지 않는다.",
+          "sourceIds": [
+            "eu-trade-notice",
+            "electrive-1011"
+          ]
+        },
+        {
+          "title": "'중고차'를 가르는 기준은 나이가 아니라 등록기간·주행거리다",
+          "text": "EU 관세품목분류(Combined Nomenclature) Chapter 87 설명주석(2025/1/13 개정, OJ C/2025/330)은 '신규 차량'을 ① 영구등록 후 6개월이 지나지 않았거나 ② 주행거리 6,000km를 넘지 않은 차량으로 정의하고, 둘 중 어느 것도 해당하지 않으면 '중고 차량'으로 본다. 즉 공장에서 나온 지 얼마 안 됐어도 등록 후 6개월 또는 6,000km를 넘기면 관세·분류상 '중고'가 된다 — 이 기준은 영국 관세당국(HMRC) 고시가 같은 EU 조문을 그대로 인용해 재확인된다.",
+          "sourceIds": [
+            "uk-hmrc-tariff3"
+          ]
+        },
+        {
+          "title": "하이브리드 쿼터는 아직 '양해' 단계이고 중고차 취급은 공백이다",
+          "text": "35만대 쿼터(매년 최대 6%씩 증가, 2026/12/1 시행 예정)는 블룸버그 보도로만 구체적 수치가 알려졌고, 세이프가드 조치인지 자발적 수출제한인지 등 법적 근거와 세부 시행규정은 기사 작성 시점까지 공식 확정되지 않았다. 신규 차량 관세와 마찬가지로 이 쿼터도 중고차를 어떻게 다룰지에 대한 공식 언급을 이번 조사에서 찾지 못했다.",
+          "sourceIds": [
+            "electrive-1011"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "China EV Marketplace(CEVM)에 따르면 EU 고객 대상 중고 중국산 전기차 판매는 전년 대비 280% 늘어 2026년 9월까지 7,900대에 달했고, 웹사이트에는 BYD·Geely·Zeekr 등 2,600대 이상이 올라와 있다. CEVM COO는 약 6,000km를 주행한 차량이 중국 정가보다 약 40% 낮은 가격에 팔리는 사례를 들었다.",
+          "sourceIds": [
+            "electrek-1024"
+          ]
+        },
+        {
+          "text": "EU 집행위 공식 통상공지는 신규 중국산 BEV 상계관세를 회사별로 BYD 17.0%·Geely 18.8%·SAIC 35.3%·테슬라(상하이) 7.8%(개별심사 시)·기타 협조기업 20.7%·기타 비협조기업 35.3%로 명시하고, 2024/10/30부터 5년간 적용된다고 밝힌다. 제품 범위는 \"new battery electric vehicles(BEVs), designed primarily for the transport of up to nine persons\"로 한정되며 L카테고리 차량·오토바이는 제외된다.",
+          "sourceIds": [
+            "eu-trade-notice"
+          ]
+        },
+        {
+          "text": "영국 관세당국(HMRC) Tariff Notice 3은 EU 관세품목분류 설명주석(2025/1/13 개정, OJ C/2025/330)을 인용해 \"new vehicles\"를 ① 영구등록 6개월 이내(주행거리 무관) 또는 ② 주행거리 6,000km 이내(등록기간 무관)인 차량으로, 둘 다 해당하지 않으면 \"used vehicles\"로 정의한다고 밝힌다. 임시등록(최종 등록지까지 이동 목적)은 영구등록으로 치지 않는다는 조건도 포함된다.",
+          "sourceIds": [
+            "uk-hmrc-tariff3"
+          ]
+        },
+        {
+          "text": "CarNewsChina(2026/1/21)는 CEVM의 2025년 전 세계 신차 인도량이 11,000대로 전년(3,400대) 대비 224% 늘었다고 전하면서, 신규 중국산 BEV에는 최대 35%(상계관세분) 관세가 그대로 부과되고 레인지 익스텐더(EREV)도 BEV로 분류돼 같은 관세를 받는다고 명시한다 — 즉 CEVM의 신차 사업은 관세를 피하지 못하며, 10/24 기사가 다룬 '관세 회피'는 중고차 채널에서 새로 두드러진 현상임을 뒷받침한다.",
+          "sourceIds": [
+            "carnewschina-0121"
+          ]
+        },
+        {
+          "text": "electrive.com(2026/10/11, 10/12 갱신, Bloomberg 인용)에 따르면 EU는 중국산 하이브리드(HEV·PHEV) 수입을 연 35만대로 제한하고 매년 최대 6%까지 늘리는 방안을 추진 중이며, 집행위는 올해 중국산 하이브리드 수입을 약 80만대로 추정한다. 시행은 2026/12/1부터로 보도됐으나, 법적 근거(세이프가드 수단 여부)는 기사 작성 시점에 확정되지 않았다.",
+          "sourceIds": [
+            "electrive-1011"
+          ]
+        }
+      ],
+      "limitations": [
+        "7,900대·280%·40% 할인 수치는 이 사업을 직접 운영하는 CEVM 자신의 발표(Electrek이 CarNewsChina 인터뷰를 인용)이며, JATO Dynamics·S&P Global Mobility 같은 독립 제3자 통계로 교차확인하지 못했다.",
+        "EU가 '등록 직후 재수출'하는 이런 중고차 유통 방식을 관세회피(anti-circumvention) 조사 대상으로 검토하거나 규정을 손보려 한다는 공식 발표·1차 자료는 이번 조사에서 찾지 못했다. 찾지 못했다는 사실과 '그런 움직임이 없다'는 판단은 다르다.",
+        "EU 관세품목분류 설명주석 원문(EUR-Lex, OJ C/2025/330)은 세 차례 접근을 시도했으나 모두 빈 응답으로 직접 열람하지 못해, 같은 조문을 인용한 영국 HMRC 고시로 대체 확인했다 — EU 원문과 완전히 동일한지는 직접 대조하지 못했다.",
+        "캐나다 상황은 Electrek 기사에서 '캐나다 구매자도 대안으로 찾는다'는 한 문장과 사진 설명에만 등장해, 캐나다의 관세·쿼터 제도는 이번 조사에서 확인하지 못했다.",
+        "하이브리드 쿼터(35만대)의 법적 근거·시행세칙이 아직 미확정이라, 이 쿼터가 발효되더라도 중고 하이브리드·BEV 재수출 경로를 포함할지는 알 수 없다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "EU의 관세·쿼터가 '신규' 차량만 겨냥하도록 설계된 틈을, 중고차 재수출 채널이 그대로 활용하고 있는 것으로 보인다. 소개된 사례(약 6,000km 주행)가 법이 정한 '신규/중고'의 경계선과 거의 맞물려 있어, 우연이라기보다 그 경계선을 겨냥한 영업 방식에 가깝게 읽힌다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "EU가 이런 등록-후-재수출 방식을 반회피(anti-circumvention) 조사 대상으로 공식 지정하거나, '신규' 판정 기준(6개월·6,000km)을 더 엄격하게 바꾸는 발표를 내면 이 틈은 좁아진다. 반대로 12/1 시행 예정인 하이브리드 쿼터가 발효되고도 중고 BEV 재수출 물량이 계속 늘어나는 것이 이후 통계로 확인되면, 이 통로가 쿼터 설계에서도 빠져 있다는 뜻으로 읽을 수 있다.",
+          "sourceIds": []
+        },
+        {
+          "label": "다음 확인",
+          "text": "하이브리드 쿼터의 법적 근거(세이프가드 수단 여부)와 시행세칙이 12월 시행 전에 공식 발표되는지, 그 규정이 중고차 재수출 경로를 다루는지를 다음 지표로 본다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "EU-中 하이브리드 수입 쿼터의 최종 법적 근거와 시행세칙이 공식 발표되면, 그 규정이 중고차 재수출 경로도 다루는가? EU가 '등록 후 단기 재수출' 방식을 반회피 조사 대상으로 공식 검토한 사례가 있는가?",
+      "nextCheck": "2026-11-15",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "electrek-1024",
+          "target": "https://electrek.co/2026/10/24/chinese-evs-found-back-door-into-western-car-markets-at-40-off-msrp/",
+          "note": "직접 열람 — 오늘 일간브리핑의 인용 출처와 동일 기사. CEVM 중고 중국산 EV 유럽 판매량·할인율·캐나다 언급 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "EU China hybrid PHEV import quota 2026 agreement European Commission (웹검색)",
+          "note": "하이브리드 쿼터 합의 배경·수치 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "EU anti-subsidy duty Chinese electric vehicles 45.3% definitive countervailing BYD Geely SAIC (웹검색)",
+          "note": "45.3% 관세 구성(상계관세+기본관세) 확인 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "Regulation 2024/2754 definitive countervailing duty new battery electric vehicles scope product definition (웹검색)",
+          "note": "규정의 '신규' 범위 한정 문구 탐색, EU 집행위 공식 통상공지 링크 발견"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.am-online.com/news/eu-caps-chinese-hybrid-imports-at-350-000-cars-a-year",
+          "note": "HTTP 403으로 접근 차단"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "electrive-1011",
+          "target": "https://www.electrive.com/2026/10/11/china-limits-hybrid-exports-to-eu/",
+          "note": "직접 열람 — EU-中 하이브리드 쿼터 합의 경위·35만대 수치(블룸버그 인용)·법적 근거 미확정 상태 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://eur-lex.europa.eu/eli/reg_impl/2024/2754/2026-02-11/",
+          "note": "빈 응답 — Regulation 2024/2754 통합본 직접 대조 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "eu-trade-notice",
+          "target": "https://trade.ec.europa.eu/access-to-markets/en/news/eu-commission-imposes-countervailing-duties-imports-battery-electric-vehicles-bevs-china",
+          "note": "직접 열람 — EU 집행위 공식 통상공지. 회사별 관세율·'신규 BEV' 범위 한정 문구·시행일 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "used Chinese EV loophole Europe tariff circumvention grey market Reuters Financial Times (웹검색, 반대근거·실패사례 탐색)",
+          "note": "중고차 재수출 관련 독립 보도·반회피 조사 사례 탐색 — 직접적인 결과 없음, PHEV 현지생산 우회 사례만 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "China EV Marketplace CEVM used electric vehicles export Europe CarNewsChina (웹검색)",
+          "note": "CEVM 사업모델·신차 판매 규모 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "EU used vehicle import type approval registration requirements third country non-EU car (웹검색)",
+          "note": "독일·네덜란드·슬로베니아·스웨덴 등 등록당국 페이지 탐색 — 개별승인 절차 존재를 검색 발췌로 확인, 원문 직접열람은 아래 RDW 재시도에서 수행"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.rdw.nl/en/import-export-transit/getting-a-car-motorcycle-or-moped-from-outside-the-eu-approved",
+          "note": "HTTP 404 — 최초 시도한 URL 경로가 달라 접근 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "RDW import approval non-EU car individual approval site:rdw.nl (웹검색)",
+          "note": "RDW 올바른 페이지 경로 재탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "eu-registration-rules",
+          "target": "https://www.rdw.nl/en/import-export-transit/approval-for-import-outside-europe/getting-a-car-motorcycle-or-moped-from-outside-the-eu-approved",
+          "note": "직접 열람 — 비EU산 차량의 개별승인 절차, 관세·BPM 신고와 별개 절차임을 확인, 페이지가 신차·중고차를 구분하지 않음도 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "EU customs new vehicle vs used registered mileage anti-circumvention trade defense (웹검색)",
+          "note": "EU 관세품목분류의 '신규/중고' 정의(6개월·6,000km) 최초 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "EU Commission anti-circumvention investigation near-new Chinese EV resale used car loophole 2026 (웹검색, 반대근거 탐색)",
+          "note": "중고차 재수출 관련 반회피 조사 사례 탐색 — 해당 결과 없음, 2023년 원래 반덤핑 조사만 검색됨"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "uk-hmrc-tariff3",
+          "target": "https://www.gov.uk/guidance/new-vehicles-of-chapter-87-tariff-notice-3",
+          "note": "직접 열람 — EU CN 설명주석(OJ C/2025/330, 2025/1/13) 인용한 '신규/중고' 차량 정의 전문 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://eur-lex.europa.eu/eli/C/2025/330/oj/eng",
+          "note": "빈 응답 — EU 설명주석 원문 직접 대조 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "Combined Nomenclature new vehicles 6 months 6 000 kilometres EU explanatory notes (웹검색)",
+          "note": "OJ C/2025/330 문서의 검색 발췌로 UK 재인용 문구와 일치 확인(검색 발췌만, 원문 직접열람은 아님)"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://eur-lex.europa.eu/eli/C/2025/330/oj/eng/pdf",
+          "note": "빈 응답 — EU 설명주석 PDF 원문 직접 대조 재시도, 재차 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "carnewschina-0121",
+          "target": "https://carnewschina.com/2026/01/21/china-ev-marketplace-xiaomi-tops-sales-in-most-european-markets-as-platform-sales-rise-224-year-on-year-in-2025/",
+          "note": "직접 열람 — CEVM 2025년 신차 인도량·성장률, 신규 BEV에 최대 35% 관세가 그대로 부과된다는 명시적 서술 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "electrek-1024",
+          "name": "Electrek, \"Chinese EVs found back door into Western car markets at 40% off MSRP\" (Jo Borrás)",
+          "url": "https://electrek.co/2026/10/24/chinese-evs-found-back-door-into-western-car-markets-at-40-off-msrp/",
+          "publishedAt": "2026-10-24",
+          "kind": "언론보도(직접 열람, 오늘 일간브리핑의 인용 출처와 동일)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-25T00:05:00Z"
+        },
+        {
+          "id": "eu-trade-notice",
+          "name": "유럽연합 집행위원회, \"EU Commission imposes countervailing duties on imports of battery electric vehicles (BEVs) from China\" (Access2Markets 공식 통상공지)",
+          "url": "https://trade.ec.europa.eu/access-to-markets/en/news/eu-commission-imposes-countervailing-duties-imports-battery-electric-vehicles-bevs-china",
+          "publishedAt": "2024-12-12",
+          "kind": "EU 집행위원회 공식 통상공지(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-25T00:20:00Z"
+        },
+        {
+          "id": "uk-hmrc-tariff3",
+          "name": "영국 국세관세청(HMRC), \"New vehicles of chapter 87: Tariff notice 3\" (EU Combined Nomenclature 설명주석 OJ C/2025/330 인용)",
+          "url": "https://www.gov.uk/guidance/new-vehicles-of-chapter-87-tariff-notice-3",
+          "publishedAt": "2025-02-05",
+          "kind": "영국 정부 관세고시(EU 설명주석 재인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-25T00:38:00Z"
+        },
+        {
+          "id": "carnewschina-0121",
+          "name": "CarNewsChina, \"China EV Marketplace: Xiaomi tops sales in most European markets as platform sales rise 224% year-on-year in 2025\" (Joey Wang)",
+          "url": "https://carnewschina.com/2026/01/21/china-ev-marketplace-xiaomi-tops-sales-in-most-european-markets-as-platform-sales-rise-224-year-on-year-in-2025/",
+          "publishedAt": "2026-01-21",
+          "kind": "언론보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-25T00:52:00Z"
+        },
+        {
+          "id": "electrive-1011",
+          "name": "electrive.com, \"China limits hybrid exports to EU\" (Florian Treiss, Bloomberg 인용)",
+          "url": "https://www.electrive.com/2026/10/11/china-limits-hybrid-exports-to-eu/",
+          "publishedAt": "2026-10-11",
+          "kind": "언론보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-25T00:14:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -11392,6 +11647,15 @@ const RESEARCH_DATA = {
         "france-sentinelle-precedent-2026-10-24"
       ],
       "reason": "10개 분야 로테이션상 세계정치/지정학이 10/14 이후 가장 오래 비어있었다(10일). 오늘 일간 브리핑·추적대장의 '프랑스 학교·생활비 시위' 호 항목에서 반복된 \"세티넬 투입은 1992년 이후 처음\"이라는 평가를 France24 원문과 세티넬 설립 선언문(2015)·2018~19년 노란조끼 투입 기록으로 대조해, 세티넬 자체의 과거 투입 이력과는 다른 비교 기준이라는 점을 확인했다. 검색 3회·원문열기 7회(성공5·실패2, 모두 1992년 국회 회의록 PDF 접근차단) 합계 10회를 사용했다."
+    },
+    {
+      "date": "2026-10-25",
+      "checkedAt": "2026-10-25T01:00:00Z",
+      "status": "published",
+      "reportIds": [
+        "eu-used-chinese-ev-tariff-loophole-2026-10-25"
+      ],
+      "reason": "10개 분야 로테이션상 산업/모빌리티/로봇이 10/15 이후 가장 오래 비어있었다(10일, 로테이션 한 바퀴 완료). 오늘 일간 브리핑의 산업/모빌리티/로봇 섹션 1위 항목(중고 중국산 전기차의 EU 관세·쿼터 회피)을 계기로, EU 신규 BEV 상계관세 규정과 EU 관세품목분류의 신규/중고 차량 정의(등록 6개월·주행 6,000km 기준)를 대조해 '왜 중고차가 관세를 피하는가'를 설명했다. 검색 10회·원문열기 11회(성공6·실패5), 합계 21회를 사용했다."
     }
   ]
 };
