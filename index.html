@@ -5060,7 +5060,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "d8117bed339c735486a4dd7309ba84284d1780a48fae7aee4a873dcb0fa86f38",
+  "registryHash": "8d9cddbac6a4d9f9736a2deda0454b8871bf151536fded369a330c0f5d219d4e",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -12035,6 +12035,220 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-28T01:05:00Z"
         }
       ]
+    },
+    {
+      "id": "jio-listing-gain-percentage-timing-2026-10-29",
+      "ruleId": "global-corporate-startups",
+      "topic": "글로벌 기업 / 스타트업 / 자본",
+      "question": "릴라이언스 지오 플랫폼스 상장 첫날 상승률이 같은 기사 안에서도 21%대부터 27%대까지 엇갈린 이유는 무엇인가?",
+      "basis": "10개 관심분야 로테이션상 글로벌 기업/스타트업/자본(global-corporate-startups)이 10/19(jio-ipo-price-band-vs-drhp-valuation) 이후 가장 오래 비어있었다(10일). 직전 3회차(10/26 글로벌경제/시장, 10/27 반도체/컴퓨팅인프라, 10/28 한국산업/정책/SK)와도 겹치지 않는다. 오늘(10/29) 일간 브리핑의 글로벌기업/스타트업/자본 섹션 항목이 '단일 출처 기사라 정확한 상승률은 추가 교차검증이 필요하다'고 명시적으로 유보한 지오 플랫폼스 상장 첫날 상승률(21.36%·22.83%·26.64% 혼재)을 그대로 닫는 후속 조사로 선택했다. 조사대기.json(news-candidates)에는 이 주제와 겹치는 대기 요청이 없었다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-29",
+      "scope": "current",
+      "summary": "릴라이언스 지오 플랫폼스가 10/28 인도 BSE·NSE에 상장하며 공모가(1,119루피) 대비 20%대 급등으로 데뷔했다고 보도됐는데, 같은 기사 안에서도 상승률이 21.36%·22.83%·26.64%로 갈렸다. 이 보고서는 AnalyticsInsight 라이브블로그와 Upstox 라이브블로그의 시각별 가격을 대조해, 수치가 서로 다른 거래소 기준이나 교차검증 오류가 아니라 '하루 중 어느 시점의 가격이냐'의 차이였는지를 확인했다.",
+      "learning": [
+        {
+          "title": "'상장일 수익률(listing gain)'은 업계 표준상 시가(개장가) 기준이지, 종가나 장중 최고가 기준이 아니다",
+          "text": "인도 증권가에서 통용되는 'listing gain'은 보통 상장일 시가(open)와 공모가의 차이를 공모가로 나눈 값이다. 종가나 장중가로 계산하면 다른 숫자가 나온다. 그런데 뉴스 기사의 '상승률'이라는 표현은 이 표준 정의를 쓰는지, 그 순간의 실시간 호가를 쓰는지 밝히지 않는 경우가 많다 — 지오 플랫폼스 기사들도 마찬가지였다.",
+          "sourceIds": [
+            "multibagg-0923",
+            "incredmoney-0928"
+          ]
+        },
+        {
+          "title": "라이브블로그 기사는 하루 동안 여러 번 갱신되며, '상승률'이 매번 그 순간의 가격을 가리킨다",
+          "text": "상장일 보도는 흔히 시간순으로 계속 덧붙여지는 라이브블로그 형식이다. 공모가라는 분모는 고정돼 있지만 분자(그날의 거래가)가 시간이 갈수록 바뀌므로, 09시대 업데이트와 12시대 업데이트의 '상승률'이 같은 기사 안에서도 서로 다른 숫자가 된다. 이는 매체 간 교차검증 실패가 아니라 같은 기사 내 서로 다른 시점의 스냅샷이다.",
+          "sourceIds": [
+            "analyticsinsight-1028",
+            "upstox-1028"
+          ]
+        },
+        {
+          "title": "BSE·NSE는 각자 별도의 개장 경매(call auction)를 운영해 같은 종목의 시가가 두 거래소에서 다르게 나올 수 있다",
+          "text": "인도 증시는 신규 상장 종목의 시가를 거래소별 프리오픈 경매로 따로 결정한다. 실제로 2026년 9월 17일 렌토모조(Rentomojo) 상장 때는 NSE 시가 482.45루피·BSE 시가 480.00루피로 두 거래소 가격이 달랐던 사례가 있다. 다만 지오 플랫폼스의 경우 이번 조사로 확인한 09시대 보도에서는 BSE·NSE 시가가 1,358루피로 동일하게 보도돼, 이번 상승률 혼재의 원인은 거래소 차이가 아니라 시점 차이였다.",
+          "sourceIds": [
+            "multibagg-0923"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "AnalyticsInsight 라이브블로그의 09:15경 업데이트는 지오 플랫폼스가 BSE·NSE 공통 1,358루피에 거래를 시작했다고 전했다 — 공모가(1,119루피) 대비 +21.36%다.",
+          "sourceIds": [
+            "analyticsinsight-1028"
+          ]
+        },
+        {
+          "text": "같은 AnalyticsInsight 기사의 같은 09시대 업데이트에는 그 시점까지 도달한 가격으로 BSE 1,375루피(+22.87%)·NSE 1,374.50루피(+22.83%)가 함께 실려 있다 — 시가(1,358루피)보다 더 오른, 다른 순간의 거래가다.",
+          "sourceIds": [
+            "analyticsinsight-1028"
+          ]
+        },
+        {
+          "text": "AnalyticsInsight 기사의 정오(12:00경) 업데이트는 가격이 약 1,417루피 선까지 올라 공모가 대비 +26.64%라고 전했다.",
+          "sourceIds": [
+            "analyticsinsight-1028"
+          ]
+        },
+        {
+          "text": "Upstox 라이브블로그는 10/28 거래 종료(15:47, NSE 기준) 가격을 1,419루피로 기록했다 — 상장 직후 가격(1,358루피) 대비 +4.49%이며, 이를 공모가(1,119루피) 기준으로 환산하면 약 +26.8%다(이 환산은 이번 조사가 두 수치를 대조해 계산한 것으로, 원문이 직접 밝힌 수치는 아니다).",
+          "sourceIds": [
+            "upstox-1028"
+          ]
+        }
+      ],
+      "limitations": [
+        "BSE 쪽 종가 수치는 확인하지 못했다 — Upstox 라이브블로그는 종가를 NSE 기준으로만 명시했고, 이번 조사로는 BSE 종가가 NSE(1,419루피)와 같았는지 확인하지 못했다.",
+        "CNBC 보도(10/28, 'shares rose 21.5% on trading debut')는 WebFetch가 403으로 막혀 본문을 직접 열람하지 못했다. 검색 발췌에만 나온 수치라 이번 보고서의 findings·sources에는 포함하지 않았다.",
+        "AnalyticsInsight 기사의 '09:15'·'12:00' 같은 시각 표기는 그 섹션이 작성된 대략적 시점으로 보이며, 거래소가 그 가격을 정확히 몇 시 몇 분에 기록했는지까지는 명시돼 있지 않다.",
+        "반론 탐색(IPO 상승률 보도에서 매체 오류·거래소 간 실제 혼동 사례)으로 인도 증시의 BSE·NSE 시가 차이 사례(렌토모조)는 찾았지만, '상승률 표기 혼란이 실제 투자자 피해로 이어진' 사례는 찾지 못했다 — 못 찾았다는 사실과 그런 사례가 없다는 판단은 다르다.",
+        "지오 플랫폼스 자체의 BSE 쪽 09시대 시가(1,375루피)와 NSE 쪽(1,374.50루피)이 0.5루피 차이 나는 것을 확인했지만, 이것이 두 거래소의 독립적 가격발견 때문인지 단순 오탈자인지는 원문만으로는 구분할 수 없었다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "오늘 일간 브리핑이 '단일 출처라 교차검증이 필요하다'고 유보한 상승률 불일치는, 다른 매체 간 수치가 안 맞는 문제가 아니라 상장 당일 가격이 시가(1,358루피)에서 종가(1,419루피)까지 계속 오르는 동안 같은 라이브블로그 기사가 그 순간들을 그대로 옮겨 적은 결과로 풀이된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "BSE 공식 종가가 NSE(1,419루피)와 다른 것으로 확인되거나, AnalyticsInsight·Upstox 중 한쪽이 실제 거래소 기록과 어긋나는 가격을 실었던 것으로 드러나면 이 설명은 틀린 것이 된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "다음 확인",
+          "text": "BSE 공식 종가 자료나 거래소 공시로 1,419루피(NSE)와 비교할 수 있는 BSE 수치가 나오면 확인한다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "릴라이언스 지오 플랫폼스의 BSE 공식 종가는 NSE 종가(1,419루피)와 일치했는가?",
+      "nextCheck": "2026-11-05",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Jio Platforms listing day NSE BSE share price opening October 28 2026 (웹검색)",
+          "note": "사전 탐색 — 상장 전 GMP·공모 관련 기사만 발견, 실제 상장일 데이터 없음"
+        },
+        {
+          "outcome": "opened",
+          "target": "Jio Platforms shares list at premium NSE BSE October 28 (웹검색)",
+          "note": "사전 탐색 — 상장 전 GMP 22% 관련 기사만 발견"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Jio Platforms\" listing \"21%\" OR \"22%\" OR \"26%\" premium BSE NSE (웹검색)",
+          "note": "AnalyticsInsight·BusinessToday 등 후보 발견, 26% 수치는 검색 결과에선 미확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "analyticsinsight-1028",
+          "target": "https://www.analyticsinsight.net/ipo/jio-listing-live-updates-stock-lists-at-21-premium-on-nse-bse",
+          "note": "직접 열람 — 라이브블로그 09:15·09:15(장중 도달가)·12:00 업데이트의 시가 1,358루피·BSE 1,375/NSE 1,374.50루피·약 1,417루피(26.64%) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Jio Platforms share price close October 28 2026 listing day gain percent moneycontrol (웹검색)",
+          "note": "종가 확인 시도 — 모두 상장 전 기사만 발견, 종가 확인 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "Reliance Jio Platforms stock market debut closing price October 28 2026 Reuters (웹검색)",
+          "note": "종가 확인 시도 — Reuters 기사 미발견, 상장 전 기사만 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Jio Platforms stock closes day 1 trading market cap crore (웹검색)",
+          "note": "종가 확인 재시도 — 'day 1'이 IPO 청약일로 해석돼 상장일 자료 미발견"
+        },
+        {
+          "outcome": "opened",
+          "target": "Jio Platforms IPO listing day BSE NSE open price 1358 1370 moneycontrol livemint (웹검색)",
+          "note": "종가 확인 재시도 — moneycontrol·livemint 결과 없음"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Jio Platforms\" lists shares economic times business standard October 28 (웹검색, extended)",
+          "note": "CNBC·Upstox 라이브블로그 발견 — CNBC는 '21.5% on trading debut', Upstox는 종가 1,419루피(+4.49%) 시사"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://www.cnbc.com/2026/10/28/jio-ipo-india-listing-.html",
+          "note": "WebFetch 403 Forbidden — 본문 직접 열람 실패, 검색 발췌만으로는 사실로 채택하지 않음"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "upstox-1028",
+          "target": "https://upstox.com/news/market-news/ipo/jio-platforms-ipo-listing-live-updates-share-price-nse-bse-reliance-industries-subsidiary-october-28-2026/liveblog-202492/",
+          "note": "직접 열람 — 라이브블로그 시간대별 가격(10:00 시가 1,358 → 15:47 종가 1,419, NSE 기준) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "India IPO listing day BSE NSE different opening price why same day (웹검색, 반대근거/일반화 탐색)",
+          "note": "BSE·NSE 시가가 갈리는 메커니즘·사례 탐색 — Chittorgarh(날짜 미표기, 출처 미채택)·포럼 글(미검증, 채택 안함) 발견"
+        },
+        {
+          "outcome": "opened",
+          "target": "IPO listing gain percentage confusion issue price vs previous close media error India (웹검색, 반대근거 탐색)",
+          "note": "'상승률 보도 오류' 직접 사례는 찾지 못함 — 대신 listing gain의 표준 정의(시가 기준) 관련 글 다수 발견"
+        },
+        {
+          "outcome": "blocked",
+          "target": "https://www.chittorgarh.com/faq_pg/why-ipo-price-and-listing-prices-are-different/5112/",
+          "note": "직접 열람했으나 발행일·최종수정일이 본문에 없어(저작권 연도만 '© 2026') sources 채택 기준(YYYY-MM 이상) 미달로 제외"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "multibagg-0923",
+          "target": "https://www.multibagg.ai/feeds/ipo-listing-gains-cmudzbe3u00010agmqyn5iddr",
+          "note": "직접 열람 — listing gain 표준정의(시가 기준), BSE·NSE 별도 경매로 시가가 다를 수 있다는 설명과 렌토모조(2026-09-17) 실제 사례(NSE 482.45·BSE 480.00) 확인, 발행일 2026-09-23 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "incredmoney-0928",
+          "target": "https://www.incredmoney.com/knowledge-center/?p=2389",
+          "note": "직접 열람 — listing gain 공식(상장가-공모가) 확인, 'Updated on 28 Sep, 2026' 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "analyticsinsight-1028",
+          "name": "AnalyticsInsight, \"Jio Listing Live Updates: Stock Lists at 21% Premium on NSE, BSE\"",
+          "url": "https://www.analyticsinsight.net/ipo/jio-listing-live-updates-stock-lists-at-21-premium-on-nse-bse",
+          "publishedAt": "2026-10-28",
+          "kind": "언론보도(라이브블로그, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-29T00:25:00Z"
+        },
+        {
+          "id": "upstox-1028",
+          "name": "Upstox, \"Jio Platforms IPO Listing, Share Price Highlights...\"",
+          "url": "https://upstox.com/news/market-news/ipo/jio-platforms-ipo-listing-live-updates-share-price-nse-bse-reliance-industries-subsidiary-october-28-2026/liveblog-202492/",
+          "publishedAt": "2026-10-28",
+          "kind": "증권사 라이브블로그(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-29T00:25:00Z"
+        },
+        {
+          "id": "multibagg-0923",
+          "name": "Multibagg, \"Which app shows IPO listing gains in India in 2026?\"",
+          "url": "https://www.multibagg.ai/feeds/ipo-listing-gains-cmudzbe3u00010agmqyn5iddr",
+          "publishedAt": "2026-09-23",
+          "kind": "핀테크 설명자료(배경 개념, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-29T00:25:00Z"
+        },
+        {
+          "id": "incredmoney-0928",
+          "name": "InCred Money 지식센터, IPO listing gain 설명",
+          "url": "https://www.incredmoney.com/knowledge-center/?p=2389",
+          "publishedAt": "2026-09-28",
+          "kind": "증권사 지식센터(배경 개념, 직접 열람, 최종수정 2026-09-28)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-29T00:25:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -12346,6 +12560,15 @@ const RESEARCH_DATA = {
         "hd-heavy-2nd-deal-vote-flip-2026-10-28"
       ],
       "reason": "10개 분야 로테이션상 한국산업/정책/SK가 10/18 이후 가장 오래 비어있었다(10일). 오늘(10/28) 일간 브리핑의 유일 항목(HD현대중공업 2차 잠정합의안 가결)이 10/3 자체 보고서의 nextQuestion에 그대로 대응해, 1차·2차 합의안 원문을 대조해 무엇이 바뀌어 투표가 뒤집혔는지 검증했다. 검색·원문열기 합계 16회(전부 opened, 실패 없음) 사용. 매체별 '증가액' 표현(50만원 대 80만원)이 다른 점을 교차확인으로 해소했고, 가결의 직접적 '이유'를 설명하는 1차 자료는 찾지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-10-29",
+      "checkedAt": "2026-10-29T00:25:00Z",
+      "status": "published",
+      "reportIds": [
+        "jio-listing-gain-percentage-timing-2026-10-29"
+      ],
+      "reason": "10개 분야 로테이션상 글로벌기업/스타트업/자본이 10/19 이후 가장 오래 비어있었다(10일). 오늘 일간 브리핑이 '단일 출처라 교차검증 필요'로 유보한 지오 플랫폼스 상장 첫날 상승률 혼재(21.36%/22.83%/26.64%)를 라이브블로그 두 곳(AnalyticsInsight·Upstox)의 시각별 가격으로 대조해, 거래소 차이가 아니라 시점 차이(시가 1,358→종가 1,419루피)였음을 확인했다. 검색·원문열기 합계 16회(성공14·차단2, CNBC 403·Chittorgarh 날짜미표기로 출처 미채택) 사용."
     }
   ]
 };
