@@ -5087,7 +5087,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "8d9cddbac6a4d9f9736a2deda0454b8871bf151536fded369a330c0f5d219d4e",
+  "registryHash": "6caa30602a97f6679cf50c5133635db9f10d682ded4583a4a10dddf63691569d",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -12276,6 +12276,206 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-29T00:25:00Z"
         }
       ]
+    },
+    {
+      "id": "china-ai-token-share-vs-revenue-2026-10-30",
+      "ruleId": "china-ai",
+      "topic": "중국 AI",
+      "question": "오픈라우터(OpenRouter) 호출량 순위에서 중국 모델이 26주 연속 1위라는데 — 그 '1위'는 매출·시장점유율 1위와 같은 뜻인가?",
+      "basis": "12개 관심분야 중 '중국 AI'와 '중국 반도체 산업'은 2026-09-21부터 2026-10-29까지 쌓인 32건의 자동 심층 조사 보고서 중 단 한 번도 선정되지 않은 유일한 두 분야였다. 오늘(10/30) 일간 브리핑의 중국 AI 섹션 유일 항목(이차이글로벌 인용, 딥시크 오픈라우터 호출량 3주 연속 1위·중국모델 상위5개 싹쓸이·26주 연속 미국모델 추월)이 본문에서 스스로 '이 집계는 트래픽만 반영해 전체 시장점유율과 다르며, 지출(매출) 기준으로는 해외 모델이 앞선다'는 유보를 달았다. 이 유보가 실제로 얼마나 큰 차이인지, 그리고 오픈라우터 순위 자체가 정확히 무엇을 재는지를 검증하면 비슷한 'AI 모델 순위' 기사를 읽을 때도 도움이 될 것으로 판단했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-30",
+      "scope": "current",
+      "summary": "오늘(10/30) 일간 브리핑이 전한 '딥시크가 오픈라우터 호출량 3주 연속 1위, 중국 모델이 26주 연속 미국 모델 앞섬'(이차이글로벌, 10/27) 보도와 그 보도 자신이 달아둔 유보('지출 기준은 해외 모델이 앞선다')를 오픈라우터의 공식 순위 산정 방식, 그리고 가격·매출 관련 2차 보도로 대조했다. 호출량(토큰 수) 1위와 매출 1위가 왜 다른 질문인지, 그 차이를 수치로 보여주는 자료가 실제로 존재하는지를 확인했다.",
+      "learning": [
+        {
+          "title": "오픈라우터 순위는 '얼마나 많이 호출됐는가'를 재고, '얼마나 벌었는가'를 재지 않는다",
+          "text": "오픈라우터 공식 순위 페이지는 모델 순위를 '수백만 개발자가 오픈라우터 API로 처리한 토큰 수'로 매긴다고 명시한다. 이 집계는 오픈라우터라는 한 플랫폼을 거친 트래픽만 반영하며, 벤더가 자체 API·클라우드 플랫폼·온프레미스로 직접 제공하는 물량, 소비자용 앱·웹 제품은 포함하지 않는다. 그래서 '호출량 1위'는 이 플랫폼 안에서 가장 많이 호출된 모델이라는 뜻이고, 전체 매출이나 전체 시장점유율과는 다른 질문이다.",
+          "sourceIds": [
+            "openrouter-rankings",
+            "yicai-1027"
+          ]
+        },
+        {
+          "title": "가격이 1/4~1/100 수준으로 싸면, 호출량이 늘어도 매출은 그만큼 늘지 않는다",
+          "text": "중국 오픈웨이트 모델은 Anthropic·OpenAI의 주요 제품보다 60~90% 저렴하다고 설명된다. 딥시크 V4 플래시의 입력 토큰 가격은 100만 토큰당 0.14달러로, GPT-5.5(100만 토큰당 5.00달러)보다 4배에서 100배까지 싸다. 같은 양의 '일(토큰 처리)'을 하더라도 받는 돈이 그만큼 적으므로, 호출량(토큰) 점유율이 높다고 매출 점유율이 같은 비율로 높아지는 것은 아니다. 중국 분석가(Sun Hao)도 이를 '호출량에서는 이기지만 매출은 비례해서 늘지 않는다'고 설명한다.",
+          "sourceIds": [
+            "forkast-0710",
+            "itiger-0721"
+          ]
+        },
+        {
+          "title": "매출이 늘었다고 해서 '더 많이 호출돼서'는 아닐 수 있다 — 가격을 올려도 매출은 는다",
+          "text": "딥시크의 연환산 매출(run rate)은 2026년 9월 기준 약 10억 달러로, 몇 달 전보다 두 배 이상 늘었다고 보도됐다. 그런데 보도가 지목한 주된 원인은 사용량 증가가 아니라 '최근의 API 가격 인상'(모델별로 2.3배~4.5배)이다. 즉 매출이 늘어난 것이 반드시 호출량(토큰 점유율)이 늘어난 결과는 아니며, 둘은 독립적으로 움직일 수 있는 서로 다른 지표다.",
+          "sourceIds": [
+            "tnw-0924"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "이차이글로벌(10/27)에 따르면 딥시크의 최신 모델 V4.1-플래시-1017이 10월 25일로 끝난 주에 33.6조 토큰으로 오픈라우터 호출량 1위를 기록해 3주 연속 1위를 지켰다. 2위는 V4.1-플래시, 이어 미니맥스-M3.1-플래시, Z.AI의 GLM-5.3-플래시, 텐센트 훈위안의 Hy4 프리뷰 순으로 상위 5개를 모두 중국 모델이 차지했다. 같은 주 오픈라우터 전체 LLM 호출량은 전주 대비 약 15% 늘어난 188조 토큰이었고, 중국 모델은 18% 늘어난 93.54조 토큰, 미국 모델은 29% 늘어난 약 22.5조 토큰으로, 중국 모델이 26주 연속 미국 모델을 앞섰다.",
+          "sourceIds": [
+            "yicai-1027"
+          ]
+        },
+        {
+          "text": "오픈라우터 공식 순위 페이지는 '모델은 수백만 개발자가 오픈라우터 API로 처리한 토큰 수를 기준으로 순위가 매겨진다'고 설명한다. 작업(task)별 순위는 전체 지출 중 비중(share of spend)을 기준으로 별도 집계되지만, 이 조사 시점(10/30)에는 해당 차트의 모델별 수치가 동적 렌더링으로 본문 추출에 포착되지 않았다.",
+          "sourceIds": [
+            "openrouter-rankings"
+          ]
+        },
+        {
+          "text": "Forkast(7/10, CNBC의 7/7 보도 인용)에 따르면 오픈라우터 기준 미국 기업의 주간 토큰 사용량 중 중국 기원 모델 비중은 2025년 상반기 4.5%에서 2026년 중반 주간 최고 46%까지 올랐고, 2026년 2월 8일 이후로는 매주 최소 30%를 유지했다. 라우팅된 전체 토큰 기준으로는 중국 기원 모델이 46.4%, 미국 기원 모델이 35.7%였으며 제공자별로는 딥시크 17.6%, 알리바바 큐원 13.9%였다. 같은 기사는 중국 오픈소스 모델이 Anthropic·OpenAI 주요 제품보다 60~90% 저렴하며, 딥시크 V4 플래시(100만 토큰당 0.14달러)와 GPT-5.5(100만 토큰당 5.00달러)의 가격 차이가 4배에서 100배라고 전했다.",
+          "sourceIds": [
+            "forkast-0710"
+          ]
+        },
+        {
+          "text": "Deep News(7/21, 타이거브로커스 게재)는 중국 모델의 미국 기업 토큰 점유율이 같은 수치(상반기 4.5%→최고 46%)로 늘었다고 전하면서도, 매출·지출 기준 점유율 수치는 제시하지 않았다. 대신 애널리스트 Sun Hao를 인용해 중국 모델이 '토큰 호출량에서는 이기고 있지만 매출은 비례해서 늘지 않는다(winning on token volume but not seeing proportional growth in revenue)'고 전했고, Zhu Yijun은 중국 대형모델 기업들이 주로 API 호출 요금에 의존해 산업 가치사슬에서 차지하는 몫이 작다고 지적했다고 전했다.",
+          "sourceIds": [
+            "itiger-0721"
+          ]
+        },
+        {
+          "text": "The Next Web(9/24, The Information 보도 인용)에 따르면 딥시크의 연환산 매출(run rate)은 약 10억 달러로, 몇 달 전 5억 달러 미만에서 두 배 이상 늘었다. 같은 매체가 그 전달 보도한 바로는 2026년 1~7월 매출이 약 4억 7,500만 위안(약 7,070만 달러)으로 2025년 연간 매출의 약 10배였다. 매출 증가의 주된 원인으로는 신규 사용자 유입이 아니라 '최근의 API 가격 인상'(모델별로 2.3배~4.5배)과 꾸준한 수요가 꼽혔다. 창업자 량원펑은 투자자들에게 가격 인상에도 고객이 떠나지 않았다고 말했다고 전해졌다.",
+          "sourceIds": [
+            "tnw-0924"
+          ]
+        }
+      ],
+      "limitations": [
+        "'지출(매출) 기준으로는 해외 모델이 앞선다'는 진단은 이차이글로벌·Deep News의 애널리스트 인용에서 반복되지만, 오픈라우터나 제3의 기관이 실제 달러 기준 모델별 지출 점유율을 숫자로 공개한 자료는 이번 조사에서 찾지 못했다. 오픈라우터 순위 페이지의 '지출 비중(share of spend)' 차트는 작업(task)별 집계이며 동적 렌더링이라 본문 추출로는 수치를 확인하지 못했다.",
+        "딥시크 매출이 최근 큰 폭(연환산 약 10배)으로 늘었다는 보도가 있어, '중국 모델은 호출량만 많고 매출은 전혀 늘지 않는다'는 단순한 도식은 과장일 수 있다. 다만 이 증가의 주된 원인으로 보도된 것은 호출량 증가가 아니라 가격 인상(2.3~4.5배)이어서, 호출량 점유율 자체가 매출로 그대로 전환된 사례로 보기는 어렵다.",
+        "딥시크의 연환산 매출 수치 자체도 보도마다 다르다 — The Information은 2026년 9월 기준 약 10억 달러라고 보도했지만, 같은 시기 파이낸셜타임스는 약 5억 달러로 추정했다고 The Next Web이 전했다. 두 수치가 같은 시점을 가리키는지, 산정 방식이 같은지는 원문 접근 범위 내에서 확인하지 못했다.",
+        "각 수치의 시점·분모가 다르다 — 이차이글로벌 수치는 '오픈라우터 전체 LLM 호출량 기준 특정 주', Forkast/CNBC 수치는 '미국 기업의 오픈라우터 주간 토큰 사용량 기준 중국 기원 모델 비중'이다. 서로 다른 모집단을 섣불리 하나의 숫자로 통합하지 않았다.",
+        "알리바바 큐원의 매출·지출 점유율에 대한 구체적 수치는 이번 조사에서 확인하지 못했다. 큐원이 에이전트 상품·수익화를 더 적극적으로 추진한다는 정성적 서술만 확인했고, 1차 자료로 검증하지 않아 findings에 넣지 않았다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "오픈라우터의 '중국 모델 호출량 1위·26주 연속'은 한 플랫폼의 트래픽 집계이고, 중국 모델 가격이 미국 주요 모델의 4분의 1에서 100분의 1 수준이라는 점을 함께 보면 '매출 1위'와는 다른 질문으로 읽힌다. 다만 같은 시기 딥시크의 연환산 매출이 가격 인상을 통해 큰 폭으로 늘었다는 보도도 있어, 호출량과 매출의 격차가 고정돼 있다기보다 가격 정책에 따라 움직이는 변수로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "오픈라우터나 a16z·Menlo Ventures 같은 분석기관이 모델별 실제 지출(달러) 점유율을 구체적 숫자로 공개하면, 또는 딥시크·알리바바가 매출·유료 고객 수 등을 공식 공시(실적발표·IPO 서류)하면 이 추정은 수치로 검증될 수 있다. 반대로 딥시크가 추가로 가격을 올리고도 호출량 점유율이 유지된다면, 지금의 '싸서 많이 쓰인다'는 설명과는 다른 수요(가격 비탄력적 수요)가 있다는 뜻이 된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "'토큰은 중국, 매출은 미국'이라는 진단은 여러 매체·애널리스트가 반복하지만, 그 격차를 실제 달러 숫자로 보여주는 공식 자료는 어느 쪽에서도 공개된 적이 없다. 딥시크 자체의 연환산 매출 수치조차 보도기관(The Information 10억 달러 대 파이낸셜타임스 5억 달러)에 따라 두 배 차이가 난다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "오픈라우터나 a16z·Menlo Ventures 등 분석기관이 모델별 실제 지출(달러) 점유율을 공식 수치로 발표하는가? 딥시크의 연환산 매출 10억 달러(The Information)와 약 5억 달러(파이낸셜타임스) 추정 중 어느 쪽이 실적·IPO 서류로 확인되는가?",
+      "nextCheck": "2026-11-15",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "openrouter-rankings",
+          "target": "https://openrouter.ai/rankings",
+          "note": "직접 열람 — 순위 산정 기준('tokens processed') 문구 확인. 모델별 주간 호출량·지출비중 차트는 동적 렌더링이라 본문 추출로는 수치를 확인하지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "https://openrouter.ai/rankings",
+          "note": "재열람 — 상위 모델 호출량·지출비중 수치 재시도, 동일하게 차트 수치는 추출되지 않아 Yicai 등 2차 보도로 대체"
+        },
+        {
+          "outcome": "opened",
+          "target": "OpenRouter DeepSeek three weeks top call volume Yicai Global October 2026 (웹검색)",
+          "note": "이차이글로벌 원문 기사 위치 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "yicai-1027",
+          "target": "https://www.yicaiglobal.com/news/chinas-deepseek-ranks-first-in-call-volume-on-openrouter-for-third-straight-week",
+          "note": "직접 열람 — 33.6조 토큰, 3주·26주 연속, 2~5위 모델명, 전체/중국/미국 호출량과 유보 문구 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "OpenRouter spend share token share difference Chinese models revenue monetization 2026 (웹검색)",
+          "note": "지출(매출) 기준 점유율 수치 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "forkast-0710",
+          "target": "https://forkast.news/chinese-ai-models-now-capture-up-to-46-of-us-enterprise-token-usage/amp/",
+          "note": "직접 열람 — CNBC 인용 토큰점유율 시계열, 가격 비교 수치 확인. 발행일이 7/10으로 배경자료"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://fourweekmba.com/ai-openrouter-us-models-token-share-deepseek-volume-revenue-spl/",
+          "note": "HTTP 403 — 접근 차단, 지출 기준 분석 수치 확인 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "itiger-0721",
+          "target": "https://www.itiger.com/news/1178312210",
+          "note": "직접 열람 — Deep News 보도, 애널리스트(Sun Hao·Zhu Yijun) 인용한 '호출량 대 매출' 진단 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "DeepSeek Qwen revenue growth enterprise API China AI models monetization 2026 catching up closed models (웹검색)",
+          "note": "반대근거(매출이 실제로 따라가고 있는가) 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "tnw-0924",
+          "target": "https://thenextweb.com/news/deepseek-revenue-run-rate-1bn",
+          "note": "직접 열람 — The Information 인용, 딥시크 연환산 매출 10억달러와 가격인상(2.3~4.5배)이 주 원인이라는 설명 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "openrouter-rankings",
+          "name": "OpenRouter, Rankings 페이지 (플랫폼 공식)",
+          "url": "https://openrouter.ai/rankings",
+          "publishedAt": "2026-10-28",
+          "kind": "플랫폼 공식 페이지(1차자료, 직접 열람, 순위 산정 방식 설명. 모델별 동적 차트 수치는 미확인)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-30T00:05:00Z"
+        },
+        {
+          "id": "yicai-1027",
+          "name": "Yicai Global, \"China's DeepSeek Ranks First in Call Volume on OpenRouter for Third Straight Week\" (Liu Xiaojie)",
+          "url": "https://www.yicaiglobal.com/news/chinas-deepseek-ranks-first-in-call-volume-on-openrouter-for-third-straight-week",
+          "publishedAt": "2026-10-27",
+          "kind": "언론보도(직접 열람, 오늘 일간 브리핑의 인용 출처와 동일 기사)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-30T00:08:00Z"
+        },
+        {
+          "id": "forkast-0710",
+          "name": "Forkast, \"Chinese AI models now capture up to 46% of US enterprise token usage\" (Lena Park, CNBC 7/7 보도 인용)",
+          "url": "https://forkast.news/chinese-ai-models-now-capture-up-to-46-of-us-enterprise-token-usage/amp/",
+          "publishedAt": "2026-07-10",
+          "kind": "언론보도(CNBC 인용, 직접 열람, 배경)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-30T00:11:00Z"
+        },
+        {
+          "id": "itiger-0721",
+          "name": "Deep News (라오후증권/Tiger Brokers 게재), 중국 모델 토큰 점유율·매출 진단 기사",
+          "url": "https://www.itiger.com/news/1178312210",
+          "publishedAt": "2026-07-21",
+          "kind": "언론보도(애널리스트 인용, 직접 열람, 배경)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-30T00:14:00Z"
+        },
+        {
+          "id": "tnw-0924",
+          "name": "The Next Web, \"DeepSeek's annualised revenue run rate reaches $1bn, report says\" (The Information 보도 인용)",
+          "url": "https://thenextweb.com/news/deepseek-revenue-run-rate-1bn",
+          "publishedAt": "2026-09-24",
+          "kind": "언론보도(The Information 인용, 직접 열람, 배경)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-30T00:17:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -12596,6 +12796,15 @@ const RESEARCH_DATA = {
         "jio-listing-gain-percentage-timing-2026-10-29"
       ],
       "reason": "10개 분야 로테이션상 글로벌기업/스타트업/자본이 10/19 이후 가장 오래 비어있었다(10일). 오늘 일간 브리핑이 '단일 출처라 교차검증 필요'로 유보한 지오 플랫폼스 상장 첫날 상승률 혼재(21.36%/22.83%/26.64%)를 라이브블로그 두 곳(AnalyticsInsight·Upstox)의 시각별 가격으로 대조해, 거래소 차이가 아니라 시점 차이(시가 1,358→종가 1,419루피)였음을 확인했다. 검색·원문열기 합계 16회(성공14·차단2, CNBC 403·Chittorgarh 날짜미표기로 출처 미채택) 사용."
+    },
+    {
+      "date": "2026-10-30",
+      "checkedAt": "2026-10-30T00:20:00Z",
+      "status": "published",
+      "reportIds": [
+        "china-ai-token-share-vs-revenue-2026-10-30"
+      ],
+      "reason": "12개 분야 중 '중국 AI'·'중국 반도체 산업'이 2026-09-21 이후 32건의 보고서 중 단 한 번도 선정되지 않아 가장 오래 비어있었다(둘 다 0회). 오늘(10/30) 일간 브리핑의 중국 AI 섹션 유일 항목(이차이글로벌, 딥시크 오픈라우터 호출량 3주·26주 연속 1위)이 본문에서 스스로 '지출 기준은 해외 모델이 앞선다'는 유보를 달아, 그 유보의 실제 크기와 오픈라우터 순위의 산정 방식을 검증했다. 검색·원문열기 합계 10회(전부 opened/실패 기록, 실패 1건은 fourweekmba.com 403 차단) 사용."
     }
   ]
 };
