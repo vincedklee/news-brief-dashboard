@@ -5118,7 +5118,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "6caa30602a97f6679cf50c5133635db9f10d682ded4583a4a10dddf63691569d",
+  "registryHash": "add2c734d001cd40b52240ea50e1217386e8b4c66d90b07d114c5b109d0ccd76",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -12507,6 +12507,213 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-10-30T00:17:00Z"
         }
       ]
+    },
+    {
+      "id": "malaysia-ai-chip-smuggling-transshipment-2026-10-31",
+      "ruleId": "china-semiconductor",
+      "topic": "중국 반도체 산업",
+      "question": "말레이시아를 반복 경유하는 AI칩 밀수 적발이 '중국행'이라는 뜻인가, 2025년 도입된 전략무역허가 제도는 이를 막고 있는가?",
+      "basis": "12개 관심분야 중 '중국 반도체 산업'은 2026-09-21부터 쌓인 33건의 자동 심층 조사 보고서 중 단 한 번도 선정되지 않아 가장 오래 비어있는 분야다(바로 전날 10/30 보고서에서 '중국 AI'가 처음 선정됐고 '중국 반도체 산업'만 남았다). 오늘(10/31) 일간 브리핑의 중국 반도체 산업 섹션 유일 항목('그 외')이 말레이시아 공항에서 AI칩 서버 30대가 적발돼 '올해 같은 밀수망 관련 다섯 번째 사건'이라고만 짧게 전하고 그 밀수망의 실체·목적지·통제 효과는 설명하지 않아, 이해하면 비슷한 수출통제 우회 기사를 읽기 쉬워질 질문으로 판단해 검증했다. 개인 열람 기록을 학습한 결과는 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-10-31",
+      "scope": "current",
+      "summary": "오늘(10/31) 일간 브리핑이 전한 말레이시아 쿠알라룸푸르국제공항(KLIA) AI칩 서버 30대 적발(10/28 발표, 10/15 적발)을 당국 발표 원문과 선행 사건(6월), 2025년 도입된 규제 배경, 그리고 같은 시기 발표된 별도의 미 법무부 기소 사건과 대조해, '같은 밀수망'이 실제로 무엇을 가리키고 '중국행'이 확인된 사실인지를 검증했다.",
+      "learning": [
+        {
+          "title": "'환적(transshipment)'과 '캐치올(catch-all) 통제'가 같이 쓰이는 이유",
+          "text": "수출통제는 보통 품목을 '전략품목목록'에 올려야 규제 대상이 되는데, 품목이 아직 목록에 없으면 '캐치올(catch-all)' 조항으로 임시 규제한다. 말레이시아는 2010년 전략무역법 12조의 캐치올 조항을 근거로, 미국산 고성능 AI칩이 정식 목록에 오르기 전인 2025년 7월부터 그 수출·환적·경유 전부에 전략무역허가를 의무화하고 선적 30일 전 신고를 요구했다. '환적'은 화물이 최종 목적지가 아닌 제3국을 거쳐 가는 것을 뜻하며, 이 경유 단계를 통제 대상에 넣은 것이 이번 조치의 핵심이다.",
+          "sourceIds": [
+            "theregister-0715"
+          ]
+        },
+        {
+          "title": "'같은 조직 연계 다섯 번째 사건'이 뜻하는 것",
+          "text": "말레이시아 세관이 10/28 밝힌 '올해 다섯 번째 사건'은 모두 쿠알라룸푸르국제공항(KLIA) 자유무역지대에서 AI칩이 든 서버를 '일반 전자/컴퓨터 부품'으로 허위신고해 역외로 재수출하려다 적발된 사례들을 가리킨다. 6월에 적발된 서버 72대 건이 그중 하나로 확인되며, 당국은 이들을 개별 사건이 아니라 하나의 '조직(syndicate)'과 연계된 반복 시도로 분류하고 있다. 다만 이는 반입경로·신고방식의 유사성에 따른 당국의 분류이고, 다섯 건 전부가 동일한 최종 목적지로 연결된다는 뜻은 아니다.",
+          "sourceIds": [
+            "ap-ajc-1028",
+            "oecd-incident-0626"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "말레이시아 세관은 10/15 쿠알라룸푸르국제공항(KLIA) 자유무역지대 창고에서 일반 전자부품으로 신고된 고성능 AI칩 탑재 서버 30대(약 5,000만~5,290만 링깃, 약 1,210만~1,220만 달러 상당)를 적발했다고 10/28 발표했다. 세관 성명은 '해당 조직이 말레이시아를 경유지(transit destination)로 이용하고 있다'고 밝혔고, 이번 건이 같은 조직과 연계된 '올해 다섯 번째 사건'이라고 설명했다. KLIA 세관장 아스팔릴라 아그 투아는 화물이 '다른 아시아 국가'에서 출발해 필요한 무역허가 없이 역외의 '다른 아시아 국가'로 재수출될 예정이었다고 말했지만, 원산지·최종 목적지는 수사 중이라며 구체적으로 밝히지 않았다. 선적을 도운 말레이시아 기업 한 곳이 수사 협조를 위해 소환됐다.",
+          "sourceIds": [
+            "ap-ajc-1028",
+            "aviationpros-1028"
+          ]
+        },
+        {
+          "text": "올해 '다섯 번째' 사건으로 지목된 10/28 건에 앞서, 같은 KLIA 자유무역지대에서 6/5 일반 컴퓨터 부품으로 신고된 고성능 AI칩 탑재 서버 72대(약 5,290만 링깃, 약 1,300만 달러 상당)가 적발돼 6/26 공개됐다. 당국은 이 화물 역시 재수출을 위한 경유 목적이었다고 밝혔다.",
+          "sourceIds": [
+            "oecd-incident-0626"
+          ]
+        },
+        {
+          "text": "말레이시아 통상산업부(MITI)는 2025년 7월 14일, 2010년 전략무역법에 근거해 미국산 고성능 AI칩의 수출·환적·경유에 '전략무역허가'를 의무화하고 선적 30일 전 신고를 요구하는 조치를 발표했다. 이는 미국이 말레이시아·태국 등 제3국을 거쳐 중국으로 흘러가는 첨단칩 우회 경로를 차단하려 압박한 데 따른 것으로 보도됐으며, 같은 시기 미국은 말레이시아산 수입품에 25% 관세를 부과했다. 같은 기사는 엔비디아 매출의 20% 이상을 차지하는 싱가포르 소재 기업들도 유사한 우회 경로로 의심받고 있다고 전했다.",
+          "sourceIds": [
+            "theregister-0715"
+          ]
+        },
+        {
+          "text": "말레이시아·싱가포르를 거친 경로가 실제로 '중국행'이었다고 공식 확인된 사례는 이번 10/28 적발건과는 별개로, 미 법무부(DOJ)가 10/2 발표한 기소 건에서 나온다. 캘리포니아 소재 Earthmade Computer 대표 그렉 루이(38)는 2023~2024년 미 상무부 수출허가 없이 구매한 엔비디아 GPU 탑재 서버(약 3억 달러 상당)를, 허가가 필요 없는 말레이시아·싱가포르로 보낸 뒤 그곳에서 중국으로 불법 재수출한 혐의로 기소됐다. 유죄가 확정되면 최고 50년형에 처해질 수 있으며, 로스앤젤레스 연방검사 빌 에사일리는 '국익을 위협하는 자들을 적극 기소하겠다'고 밝혔다.",
+          "sourceIds": [
+            "khaleejtimes-1002"
+          ]
+        }
+      ],
+      "limitations": [
+        "10/28·6월 두 건의 KLIA 적발에서는 말레이시아 당국이 중국을 목적지로 명시하지 않았다(수사 중, '다른 아시아국가로 재수출 예정'이라고만 언급). '중국행'이 공식 기소로 확인된 것은 Earthmade 건(10/2)뿐이며, 이는 이번 10/28 건과는 다른 사건이다. 그래서 이번 10/28 적발을 '중국 반도체 공급망 우회'의 직접 증거로 단정할 수 없다.",
+        "올해 누적 '다섯 건·1억 링깃 초과' 같은 집계치는 2차 보도(aviationpros 등)에서만 확인되고, 당국의 성명 전문이나 6월 건을 제외한 나머지 세 건의 개별 사건명·시점은 이번 조사에서 특정하지 못했다.",
+        "Earthmade 사건에서 자주 인용되는 '말레이시아 선적업체 2곳으로부터 1억7,600만달러 수령' 수치는 2차 보도에서만 확인되고 AFP·Khaleej Times 원문에는 없어 findings에서 제외했다.",
+        "말레이시아가 고성능 AI칩을 전략품목목록(SIL)에 정식 등재했는지, 2025년 캐치올 조항(사전허가·신고)이 적발률에 실제로 어떤 영향을 줬는지는 1차 자료(MITI 관보)로 확인하지 못했다.",
+        "malaymail.com 원문은 접속이 차단(403)돼 전략무역법 조항의 세부 내용을 1차 보도 매체로 직접 대조하지 못했다. 반대 근거(이 통제가 실효성이 없다는 직접적 비판)도 2026년 기준으로는 찾지 못했다 — 2025년 7월 장관의 '증거 없음' 발언과 이후 두 차례(6월·10월) 실제 적발이 시차를 두고 있다는 사실 자체만 확인했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "올해 같은 조직과 연계된 적발이 다섯 번째라는 점은, 2025년 7월 도입된 '전략무역허가·30일 사전신고' 같은 사전등록형 통제가 유통을 사전에 막기보다 사후 적발에 주로 의존하고 있음을 보여주는 것으로 읽힌다. 다만 적발된 두 건(6월·10월) 모두 당국이 목적지를 중국이라고 밝히지 않았다는 점에서, 이 적발들을 곧바로 '중국 반도체 우회 공급'의 증거로 단정하기는 이르다 — '말레이시아 경유 → 중국'이 실제로 확인된 것은 완전히 별개인 10/2 Earthmade 기소 건뿐이다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "말레이시아 당국이 10/28 적발분의 수사 결과(기소 여부·실제 발주사·최종 수하인)를 공식 발표하고 그 수하인이 중국 소재로 확인되면 '중국행' 판단이 사실로 바뀐다. 반대로 올해 안에 추가(여섯 번째) 적발이 없다면, 2025년 통제가 실제로 억제 효과를 내고 있다는 쪽으로 해석이 기울 수 있다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "당국은 '같은 조직과 연계된 다섯 번째 사건'이라고만 밝혔을 뿐, 6월 건을 제외한 나머지 세 건의 개별 내용(시점·규모)은 공개하지 않았다. 2025년 도입된 전략무역허가 제도 아래 실제로 승인·통과된 합법적 수출·환적 건수가 얼마나 되는지(비교 기준)도 보도되지 않아, 적발 다섯 건이 전체 흐름 중 어느 정도 비중인지는 판단할 수 없다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "10/28 KLIA 적발건의 기소·수사 결과가 발표돼 실제 발주사와 최종 목적지가 확인되는가? 말레이시아가 고성능 AI칩을 전략품목목록(SIL)에 정식 등재했는가?",
+      "nextCheck": "2026-11-20",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "aviationpros-1028",
+          "target": "https://www.aviationpros.com/airport-business/news/55415001/malaysian-airport-customs-seize-121-million-in-suspected-smuggled-ai-chips",
+          "note": "직접 열람 — 10/28 적발 발표 기사 원문, 금액·장소·발표주체·목적지 관련 당국 발언 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Malaysia customs AI chips servers seized KLIA free trade zone October 2026 Reuters (웹검색)",
+          "note": "로이터 원문 소재 및 금액·날짜 교차확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.malaymail.com/amp/news/malaysia/2026/10/28/klia-customs-seizes-rm495m-in-ai-chips-with-potential-military-uses-fifth-case-in-rm100m-syndicate-probe/240981",
+          "note": "HTTP 403 — 접근 차단, 전략무역법 세부조항 1차 대조 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "Malaysia Strategic Trade Act 2010 amendment 2025 AI chips export control transshipment China diversion (웹검색)",
+          "note": "2025년 7월 캐치올 조항·전략무역허가 도입 배경 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "oecd-incident-0626",
+          "target": "https://oecd.ai/en/incidents/2026-06-26-2da5",
+          "note": "직접 열람 — 6월 KLIA 적발(서버72대) 세부사항 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Malaysia AI chip smuggling enforcement criticism effectiveness 2026 Strategic Trade Act loophole (웹검색)",
+          "note": "통제 실효성에 대한 비판·반론 탐색(최소 1회 반대근거 검색)"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://techovedas.com/how-malaysia-became-the-new-checkpoint-in-the-u-s-china-semiconductor-battle/",
+          "note": "404 — 페이지 없음, 배경 설명 자료로 채택 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "Malaysia Strategic Items List AI chips added 2026 status MITI (웹검색)",
+          "note": "전략품목목록(SIL) 정식 등재 여부 확인 시도 — 1차 자료로 확정 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Malaysia\" AI chip smuggling network destination China confirmed investigation 2026 (웹검색)",
+          "note": "이번 10/28 건의 '중국행' 여부 확인 시도 — 당국이 목적지를 밝히지 않았음을 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ap-ajc-1028",
+          "target": "https://www.ajc.com/news/2026/10/malaysia-seizes-servers-with-advanced-ai-chips-suspected-of-violating-export-controls/",
+          "note": "직접 열람 — AP통신 배포 원문, 세관장 실명 발언·올해 5번째·전략무역허가 배경 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Earthmade Malaysia Singapore AI chips China export control case $300 million (웹검색)",
+          "note": "별도의 미 DOJ 기소 사건(Earthmade) 소재 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "justice.gov press release Earthmade Lui AI server export China Malaysia Singapore indictment (웹검색)",
+          "note": "DOJ 1차 발표문 소재 탐색 — 보도자료 원문은 못 찾고 2차 보도로 대체"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "theregister-0715",
+          "target": "https://www.theregister.com/2025/07/15/malaysia_ai_chip_export_restrictions/",
+          "note": "직접 열람 — 2025년 7월 전략무역허가 도입 배경, 법적 근거, 싱가포르 관련 의심 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "khaleejtimes-1002",
+          "target": "https://www.khaleejtimes.com/world/americas/us-arrests-man-over-alleged-smuggling-of-300-million-worth-of-computer-servers-to-china-2",
+          "note": "직접 열람 — AFP 배포 원문, Earthmade·그렉 루이 기소 혐의·금액·검사 인용 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ap-ajc-1028",
+          "name": "AP(연합통신) 배포, The Atlanta Journal-Constitution 게재, \"Malaysia seizes servers with advanced AI chips suspected of violating export controls\"",
+          "url": "https://www.ajc.com/news/2026/10/malaysia-seizes-servers-with-advanced-ai-chips-suspected-of-violating-export-controls/",
+          "publishedAt": "2026-10-28",
+          "kind": "통신사 배포 기사(직접 열람, 세관 성명·세관장 실명 인용 포함)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-31T00:05:00Z"
+        },
+        {
+          "id": "aviationpros-1028",
+          "name": "AviationPros(로이터 인용), \"Malaysian Airport Customs Seize $12.1 Million in Suspected Smuggled AI Chips\"",
+          "url": "https://www.aviationpros.com/airport-business/news/55415001/malaysian-airport-customs-seize-121-million-in-suspected-smuggled-ai-chips",
+          "publishedAt": "2026-10-28",
+          "kind": "언론보도(로이터 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-31T00:02:00Z"
+        },
+        {
+          "id": "oecd-incident-0626",
+          "name": "OECD AI Incidents Monitor, \"Malaysia Seizes $13M in Smuggled AI Chips at Kuala Lumpur Airport\"(말레이말 등 원보도 집계)",
+          "url": "https://oecd.ai/en/incidents/2026-06-26-2da5",
+          "publishedAt": "2026-06-26",
+          "kind": "사고 데이터베이스(1차 보도 집계, 직접 열람, 배경)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-31T00:08:00Z"
+        },
+        {
+          "id": "theregister-0715",
+          "name": "The Register, \"Malaysia closes a back door that may have allowed US-sourced AI chips to reach China\"",
+          "url": "https://www.theregister.com/2025/07/15/malaysia_ai_chip_export_restrictions/",
+          "publishedAt": "2025-07-15",
+          "kind": "언론보도(직접 열람, 배경·규제 도입 경위)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-31T00:20:00Z"
+        },
+        {
+          "id": "khaleejtimes-1002",
+          "name": "Khaleej Times(AFP 배포), \"US arrests man over alleged smuggling of $300 million worth of computer servers to China\"",
+          "url": "https://www.khaleejtimes.com/world/americas/us-arrests-man-over-alleged-smuggling-of-300-million-worth-of-computer-servers-to-china-2",
+          "publishedAt": "2026-10-02",
+          "kind": "통신사 배포 기사(직접 열람, 검사 실명 인용 포함)",
+          "verification": "full_text",
+          "fetchedAt": "2026-10-31T00:23:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -12836,6 +13043,15 @@ const RESEARCH_DATA = {
         "china-ai-token-share-vs-revenue-2026-10-30"
       ],
       "reason": "12개 분야 중 '중국 AI'·'중국 반도체 산업'이 2026-09-21 이후 32건의 보고서 중 단 한 번도 선정되지 않아 가장 오래 비어있었다(둘 다 0회). 오늘(10/30) 일간 브리핑의 중국 AI 섹션 유일 항목(이차이글로벌, 딥시크 오픈라우터 호출량 3주·26주 연속 1위)이 본문에서 스스로 '지출 기준은 해외 모델이 앞선다'는 유보를 달아, 그 유보의 실제 크기와 오픈라우터 순위의 산정 방식을 검증했다. 검색·원문열기 합계 10회(전부 opened/실패 기록, 실패 1건은 fourweekmba.com 403 차단) 사용."
+    },
+    {
+      "date": "2026-10-31",
+      "checkedAt": "2026-10-31T00:30:00Z",
+      "status": "published",
+      "reportIds": [
+        "malaysia-ai-chip-smuggling-transshipment-2026-10-31"
+      ],
+      "reason": "12개 분야 중 '중국 반도체 산업'이 2026-09-21 이후 33건의 보고서 중 단 한 번도 선정되지 않아 가장 오래 비어있었다(전날 10/30 '중국 AI'가 처음 선정된 뒤로는 유일하게 0회). 오늘(10/31) 일간 브리핑의 중국 반도체 산업 섹션 유일 항목(말레이시아 KLIA AI칩 서버30대 적발, '올해 같은 밀수망 관련 5번째 사건')이 밀수망의 실체·목적지를 설명하지 않아, 당국 발표 원문·선행사건(6월)·2025년 규제 배경·별도의 미 DOJ 기소 사건(Earthmade, 10/2)을 대조해 '중국행'이 확인된 사실인지 검증했다. 검색·원문열기 합계 14회(성공12·실패2, malaymail.com 403·techovedas.com 404) 사용."
     }
   ]
 };
