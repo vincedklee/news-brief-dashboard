@@ -4973,7 +4973,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "add5f45dd00d2921a52901325d62a597262eb75a280326886fd72f503bcc3b17",
+  "registryHash": "55b529c2600c7f0a61ea87b70be6616f4ae6c4cd27b23d5ec76970ce706bd98f",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -13439,6 +13439,225 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-04T00:16:00Z"
         }
       ]
+    },
+    {
+      "id": "singapore-energy-demand-forecast-widening-2026-11-05",
+      "ruleId": "energy-grid-review",
+      "topic": "에너지 / 기후 / 자원",
+      "question": "싱가포르의 2031년 전력 피크수요 전망이 6개월 만에 왜 상단만 1.6GW 더 올라갔으며, 가스발전 26% 증설과 태양광·배터리 목표 확대는 서로 어떤 역할을 나누는가?",
+      "basis": "12개 분야 중 '에너지 / 기후 / 자원'이 2026-10-23 이후 자동조사 11건(10/24~11/4) 중 한 번도 선정되지 않아 가장 오래 비어있었다(13일, 전체 12개 분야 중 최장). 오늘(11/5) 일간 브리핑의 에너지/기후/자원 섹션 머리 항목(싱가포르 EMA 5개년 전력 인프라 계획 — 피크수요 8.6GW→9.9~13GW 전망, 가스발전 26%↑)이 그 수요전망 범위와 가스·태양광 증설이 동시에 가는 이유를 설명하지 않아, EMA 공식 보도자료 원문과 지난 4월 RFP 발표 시점의 전망을 직접 대조해 검증했다. 비공개 조사대기열(news-candidates 브랜치)에는 이 주제와 정확히 일치하는 요청이 없고(가장 가까운 대기 항목은 '외교·분쟁 보도가 실제 원유 수송·공급에 만드는 변화' 질문으로 중동 산유 지역에 한정됨), 오늘 일간 브리핑에서 직접 질문을 새로 골랐다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "scope": "current",
+      "summary": "2026-10-26 싱가포르 에너지시장청(EMA)이 발표한 5개년 에너지인프라계획은 2031년 피크 전력수요를 2026년 8월 기준 8.6GW에서 9.9~13GW로 전망했다. 2026-04-29 EMA가 신규 가스발전 RFP를 낼 때 밝힌 전망(9.6~11.4GW)과 비교하면 상단이 1.6GW 올라갔다. 이 상향 폭의 근거, 그리고 가스발전 26% 증설이 태양광·배터리 확대 목표와 함께 가는 구조를 EMA 공식 보도자료 두 건과 같은 주의 수요측 보도로 대조해 확인했다.",
+      "learning": [
+        {
+          "title": "전망이 '넓은 범위'로 나오는 이유는 확률분포가 아니라 '언제 가동되느냐'는 시점 불확실성이다",
+          "text": "EMA 2026-10-26 보도자료는 2031년 피크수요를 9.9~13GW 범위로 제시하며, 그 이유를 \"증가 속도는 이 신규 시설들이 언제 가동되는지에 따라 달라질 것(The pace of demand growth will depend on when these new developments come onstream)\"이라고만 설명한다. 즉 이 범위는 통계적 신뢰구간이 아니라, 반도체 제조·데이터센터 등 이미 계획된 대형 수요시설의 착공·가동 일정이 아직 확정되지 않았다는 뜻이다. 4월 RFP 보도자료가 쓴 \"연 2.4~4.8% 성장\"이라는 표현도 같은 시점 불확실성을 연간 성장률 범위로 환산한 것이다.",
+          "sourceIds": [
+            "ema-oct26"
+          ]
+        },
+        {
+          "title": "가스는 '기저', 태양광·배터리는 '보조' — 두 계획이 동시에 커지는 이유",
+          "text": "같은 보도자료에서 가스발전 용량은 신규 발전소 5기로 현재 약 12GW에서 약 26% 늘어나는 반면, 태양광은 현재 2.3GWp에서 2030년 3GWp(기존 목표 유지)·2035년 4GWp(신규 상향)로, 에너지저장은 약 350MWh에서 2030년 1GWh 이상으로 늘어난다. 가스의 절대 증설분(약 3GW대)이 태양광 목표 상향분(약 1GWp)보다 훨씬 크다. 두 계획은 경쟁관계가 아니라 역할이 다른 것으로 읽힌다 — 전력의 약 95%를 차지하는 가스가 기저 발전을 계속 떠받치고, 태양광·배터리·말레이시아 2차 연계선(타당성검토 중, 최대 2GW)은 변동성 대응·보완 역할로 설계돼 있다.",
+          "sourceIds": [
+            "ema-oct26"
+          ]
+        },
+        {
+          "title": "같은 해에도 전망은 반복해서 바뀐다 — 4월과 10월 발표의 차이",
+          "text": "2026-04-29 EMA가 신규 가스발전 RFP(2031·2032년 가동 목표 발전기)를 낼 때는 피크수요가 연 2.4~4.8% 늘어 2031년 9.6~11.4GW에 이를 것으로 전망했다. 6개월 뒤인 10월 26일 발표에서는 같은 2031년 수요가 9.9~13GW로 다시 제시됐다 — 하단은 0.3GW, 상단은 1.6GW 올라갔다. EMA는 두 발표 사이의 전망 변경을 '상향 조정'이라고 명시하지 않았고, 상단이 왜 더 크게 움직였는지도 설명하지 않는다.",
+          "sourceIds": [
+            "ema-oct26",
+            "ema-apr29"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "EMA는 2026-10-26 보도자료에서 2026년 8월 기준 싱가포르 피크 전력수요가 8.6GW였고, 2031년에는 9.9~13GW에 이를 것으로 전망했다고 밝혔다. 증가의 주된 요인은 반도체 제조·데이터센터 등 에너지집약 업종의 신규 수요와 전기 운송수단 확대라고 설명했다.",
+          "sourceIds": [
+            "ema-oct26"
+          ]
+        },
+        {
+          "text": "같은 보도자료는 2026~2031년 신규 가스발전소 5기가 가동돼 현재 약 12GW인 발전용량이 약 26% 늘어난다고 밝혔고, 천연가스가 현재 싱가포르 전력의 약 95%를 차지한다고 명시했다. LNG 재기화 능력은 2030년 두 번째 터미널(주롱항) 가동 시 10Mtpa에서 15Mtpa로 늘어난다.",
+          "sourceIds": [
+            "ema-oct26"
+          ]
+        },
+        {
+          "text": "그리드 투자는 2025~2029년 최대 53억달러로 직전 5년 대비 11배이며, 신규 변전소 7곳(직전 5년은 4곳), 송전선은 2030년까지 약 7,700km에서 약 9,100km로 확충할 계획이다. 현재 약 50km인 케이블터널은 3배 이상으로 늘리는 방안을 타당성 검토 중이다.",
+          "sourceIds": [
+            "ema-oct26"
+          ]
+        },
+        {
+          "text": "태양광은 현재 2.3GWp이며 2030년 3GWp 목표를 유지하고 2035년 4GWp로 목표를 새로 올렸다. 에너지저장은 현재 약 350MWh에서 2030년 1GWh를 넘기는 것이 목표다. 말레이시아와의 2차 전력연계선(최대 2GW, 2030년까지)은 타당성 검토 중이며, 기존 연계선은 최대 1GW 양방향 송전이 가능하다.",
+          "sourceIds": [
+            "ema-oct26"
+          ]
+        },
+        {
+          "text": "2026-04-29 EMA의 RFP 보도자료는 당시 피크수요가 연 2.4~4.8% 성장해 2031년 9.6~11.4GW에 이를 것으로 전망했다고 밝혔다. 이 RFP는 적어도 600MW급 수소대응 복합화력 발전기 1기(2031년 가동용)와 최대 2기(2032년 가동용)를 민간이 건설·소유·운영하는 방식이었다.",
+          "sourceIds": [
+            "ema-apr29"
+          ]
+        },
+        {
+          "text": "littlebigreddot(2026-10-27)은 인도네시아가 10월 24일부터 18일간 파이프라인 가스 공급을 하루 3,100만 표준입방피트(싱가포르 일일 가스수요의 2% 미만) 줄였다고 전했다. 담당 장관은 이 감축이 요금에 미치는 영향이 크지 않다고 밝혔고, 기사는 5개년 계획이 이 감축에 대한 대응이라고는 명시하지 않았다.",
+          "sourceIds": [
+            "littlebigreddot-1027"
+          ]
+        }
+      ],
+      "limitations": [
+        "oilprice.com의 칼럼(2026-01-04, 저자 의견 중심)은 가스의존도를 94%(저자 추정)·재생에너지 비중을 3.5%로 인용하며 2030년 배출정점 목표와 데이터센터의 기저수요가 충돌한다고 주장하지만, 이 수치는 EMA의 최신 수치(가스 약 95%)보다 10개월 앞선 저자 추정치이고 데이터센터 모라토리엄 등 서술은 원문 재확인이 필요한 의견이라 findings에는 넣지 않았다.",
+        "EMA 보도자료는 전망 상단이 11.4GW에서 13GW로 왜 더 크게 올랐는지, 구체적으로 어떤 반도체공장·데이터센터 프로젝트가 새로 확정돼 반영됐는지는 밝히지 않아 확인하지 못했다.",
+        "가스발전 26% 증설이 싱가포르의 2030년 탄소배출 정점·2050 net zero 목표와 수치로 어떻게 양립하는지(탄소포집·수소혼소 비율 등)는 이번에 확인한 두 보도자료에 설명이 없어 확인하지 못했다.",
+        "장관의 '자원 민족주의' 관련 발언을 인용한 보도(asianews.network)는 접속이 막혀(403) 원문을 확인하지 못해 인용하지 않았다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "2031년 전망 상단이 6개월 사이 11.4GW에서 13GW로 올라간 것은 일회성 수정이 아니라, EMA 스스로 인정하는 '시점 불확실성' 구조가 반복적으로 수치를 밀어올리는 패턴으로 풀이된다. 같은 기간 가스발전 증설(26%, 약 3GW대)이 태양광 목표 상향분(약 1GWp)보다 훨씬 더 크다는 점에서, 이번 계획의 무게중심은 재생에너지 확대가 아니라 '기저 가스용량을 수요 상단에 맞추는 것'에 있는 것으로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "2026년 9월 마감한 2032년 가동분 가스발전 RFP의 평가 결과가 발표돼 추가 용량이 공개되거나, EMA가 다음 전망에서 상단을 더 올리면 '전망이 계속 위로만 움직인다'는 지금의 해석은 더 뒷받침된다. 반대로 반도체공장·데이터센터 프로젝트의 착공이 지연돼 다음 발표에서 전망 상단이 낮아지면, 지금의 해석은 재검토해야 한다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "EMA의 두 보도자료 모두 가스 26% 증설과 2030년 탄소배출 정점·net zero 목표가 수치상 어떻게 양립하는지는 설명하지 않는다. 또한 '태양광 2.3GWp'는 피크 발전용량(GWp)이라 실제 발전량(GWh)으로 환산한 수치가 제시되지 않아, 태양광이 2031년 수요 9.9~13GW 중 실제로 얼마를 감당하는지는 이번 자료만으로 확인할 수 없다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "EMA가 2026년 9월 마감한 2032년 가동분 가스발전 RFP의 평가 결과를 발표하면 추가 용량이 얼마나 확정되는지, 그리고 다음 전망 발표(통상 RFP·연례계획 발표 시점)에서 2031년 피크수요 범위가 또 상향되는지 확인한다.",
+      "nextCheck": "2026-12-20",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "EMA Singapore Energy 2050 Committee five-year electricity demand plan November 2026 (웹검색)",
+          "note": "오늘 브리핑 항목의 1차 자료(EMA 보도자료) 위치 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "Singapore Energy Market Authority press release electricity demand forecast 2031 gas power plants (웹검색)",
+          "note": "4월 RFP 발표와 10월 계획의 전망 수치 비교를 위한 탐색"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.ema.gov.sg/content/dam/corporate/news/media-releases/2026/20262610-EMA-Media-Release-Five-Year-Energy-Infra-Plan-to-Meet-Unprecedented-Future-Demand.pdf.coredownload.pdf",
+          "note": "WebFetch 도구로는 PDF 본문이 텍스트로 추출되지 않아 1차 시도 실패 — 파일을 내려받아 pdftotext로 재시도"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ema-oct26",
+          "target": "https://www.ema.gov.sg/content/dam/corporate/news/media-releases/2026/20262610-EMA-Media-Release-Five-Year-Energy-Infra-Plan-to-Meet-Unprecedented-Future-Demand.pdf.coredownload.pdf",
+          "note": "pdftotext로 PDF 본문 직접 추출해 열람 — 수요전망·가스증설·그리드투자·태양광·저장·연계선 수치 전체 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://ema.gov.sg/news-events/news/media-releases/2026/five-year-infrastructure-plan-to-meet-unpredecented-future-demand",
+          "note": "HTML 보도자료 페이지는 WebFetch로 본문이 비어 있게 반환돼 열람 실패 — PDF 원문으로 대체 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.ema.gov.sg/content/dam/corporate/news/media-releases/2026/20260429-EMA-Media%20Release-EMA-Launches-Request-for-Proposal-for-New-Electricity-Generation-Capacity.pdf.coredownload.pdf",
+          "note": "WebFetch 1차 시도에서 PDF 본문 미추출 — 파일을 내려받아 pdftotext로 재시도"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ema-apr29",
+          "target": "https://www.ema.gov.sg/content/dam/corporate/news/media-releases/2026/20260429-EMA-Media%20Release-EMA-Launches-Request-for-Proposal-for-New-Electricity-Generation-Capacity.pdf.coredownload.pdf",
+          "note": "pdftotext로 PDF 본문 직접 추출해 열람 — 2026-04-29 당시 수요전망(9.6~11.4GW) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Singapore gas power plan criticism climate target 2030 renewable energy experts concern data centre electricity (웹검색)",
+          "note": "반대 근거·비판 검색 — 가스의존·기후목표 충돌을 주장하는 칼럼·분석 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"EMA\" Singapore electricity demand forecast revised upward data centre semiconductor analysis (웹검색)",
+          "note": "전망 상향에 대한 3차 분석·보도 탐색"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.datacenterdynamics.com/en/news/singapore-plans-solar-expansion-renewable-remains-fraction-overall-power/",
+          "note": "403 Forbidden으로 접속 차단 — 다른 비판 자료(oilprice.com)로 대체"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "oilprice-column",
+          "target": "https://oilprice.com/Energy/Energy-General/Singapores-Digital-Empire-Hits-the-Energy-Wall.amp.html",
+          "note": "직접 열람 — 가스의존·기후목표 충돌을 주장하는 칼럼 확인(발행일 2026-01-04, 저자 추정치 포함돼 limitations로만 사용)"
+        },
+        {
+          "outcome": "opened",
+          "target": "Singapore five-year energy infrastructure plan October 2026 reaction climate pledge gas expansion analysts (웹검색)",
+          "note": "10/26 계획 발표에 대한 직접 반응·분석 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "littlebigreddot-1027",
+          "target": "https://littlebigreddot.com/?p=29719",
+          "note": "직접 열람 — 인도네시아 가스공급 감축과 5개년 계획 발표 시점의 관계(인과관계 아님) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Singapore net zero 2050 peak emissions 2030 target natural gas reliance tension 2026 (웹검색)",
+          "note": "가스증설과 공식 탄소배출 목표의 정합성에 대한 배경 탐색 — 1차 원문 확인에는 이르지 못해 findings에 반영하지 않음"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://asianews.network/?p=310486",
+          "note": "403 Forbidden으로 접속 차단 — 장관의 '자원 민족주의' 발언 원문 인용은 확인하지 못해 limitations에 남김"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ema-oct26",
+          "name": "Energy Market Authority (Singapore), Media Release \"Five-Year Energy Infrastructure Plan to Meet Unprecedented Future Demand\"",
+          "url": "https://www.ema.gov.sg/content/dam/corporate/news/media-releases/2026/20262610-EMA-Media-Release-Five-Year-Energy-Infra-Plan-to-Meet-Unprecedented-Future-Demand.pdf.coredownload.pdf",
+          "publishedAt": "2026-10-26",
+          "kind": "정부기관 1차 문서(직접 열람, PDF)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-05T00:11:00Z"
+        },
+        {
+          "id": "ema-apr29",
+          "name": "Energy Market Authority (Singapore), Media Release \"EMA Launches Request for Proposal for New Electricity Generation Capacity\"",
+          "url": "https://www.ema.gov.sg/content/dam/corporate/news/media-releases/2026/20260429-EMA-Media%20Release-EMA-Launches-Request-for-Proposal-for-New-Electricity-Generation-Capacity.pdf.coredownload.pdf",
+          "publishedAt": "2026-04-29",
+          "kind": "정부기관 1차 문서(직접 열람, PDF)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-05T00:12:00Z"
+        },
+        {
+          "id": "littlebigreddot-1027",
+          "name": "Little Big Red Dot, \"EMA plans five new gas plants by 2031 after Indonesia cuts gas exports on 24 October\"",
+          "url": "https://littlebigreddot.com/?p=29719",
+          "publishedAt": "2026-10-27",
+          "kind": "현지 매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-05T00:14:00Z"
+        },
+        {
+          "id": "oilprice-column",
+          "name": "OilPrice.com, \"Singapore's Digital Empire Hits the Energy Wall\" (Michael Kern)",
+          "url": "https://oilprice.com/Energy/Energy-General/Singapores-Digital-Empire-Hits-the-Energy-Wall.amp.html",
+          "publishedAt": "2026-01-04",
+          "kind": "칼럼/의견(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-05T00:13:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -13813,6 +14032,15 @@ const RESEARCH_DATA = {
         "anthropic-rsp-ai-rd-threshold-2026-11-04"
       ],
       "reason": "12개 분야 중 'AI/디지털기술'이 2026-10-22 이후 가장 오래(13일) 비어있었다. 오늘 일간 브리핑의 핵심 항목(앤스로픽 S-1/A 'RSI에 매우 근접' 경고)이 근거를 설명하지 않아, RSP v3.0 원문·2026-02 위험보고서(7/8 갱신판)로 '자동화 AI R&D' 기준의 정의와 '아직 미달' 판단이 내부 직원 설문에 주로 의존한다는 점을 확인했다. 검색·원문열기 합계 10회(전부 opened; Bloomberg Law 1건은 페이월로 일부만 열람돼 출처로는 쓰지 않음) 사용."
+    },
+    {
+      "date": "2026-11-05",
+      "checkedAt": "2026-11-05T00:16:00Z",
+      "status": "published",
+      "reportIds": [
+        "singapore-energy-demand-forecast-widening-2026-11-05"
+      ],
+      "reason": "12개 분야 중 '에너지 / 기후 / 자원'이 2026-10-23 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래 비어있었다(13일). 오늘(11/5) 일간 브리핑의 싱가포르 EMA 5개년 전력계획 항목이 수요전망 범위·가스증설 근거를 설명하지 않아, EMA 공식 보도자료 원문(10/26)과 지난 4월(4/29) RFP 발표 시점의 전망을 대조해 전망이 6개월 만에 상단만 1.6GW 올라간 점과 가스·태양광 증설의 역할 분담을 검증했다. 검색·원문열기 합계 14회(opened 11·failed 3: datacenterdynamics.com 403, asianews.network 403, EMA HTML 보도자료 페이지 본문 미추출 — PDF 원문으로 대체 확인) 사용."
     }
   ]
 };
