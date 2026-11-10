@@ -1318,17 +1318,16 @@ const ARCS = [
   {
     name: "원/달러 환율 추세",
     status: "active",
-    since: "2026-08-11", last: "2026-11-10", count: 59,
-    state: "11/9(월) 코스피가 0.81% 추가 하락한 5,018.85로 3거래일 연속 떨어지며 2월 2일(4,949.67) 이후 최저치를 기록했다 — 외국인이 7거래일째 순매도했다. 원/달러는 1,347.1원(-9.5원)으로 소폭 하락해 1,340원대로 복귀했다.",
+    since: "2026-08-11", last: "2026-11-11", count: 60,
+    state: "11/10(화) 원/달러가 1,337.5원(-9.6원)으로 이틀 연속 하락했다 — 국제유가 급락·위험선호 회복 속에 외국인이 국내주식 3,717억원 순매수로 전환했고, 코스피는 4.39% 급등한 5,239.13을 기록했다.",
     next: "호르무즈 '2일 재개방안' 1일차 美이행조치 실제 여부·2일차 실제 개방 여부. 이란의 사거리제한 해제 선언이 실제 공격범위 확대로 이어지는지. 11/9(월) 코스피가 5,000선을 지키며 안정되는지, 아니면 추가로 밀려 서킷브레이커가 재발동되는지. 1,320원대 저점이 다시 깨지는지. 美 의회의 AI데이터센터 규제가 실제 입법으로 이어지는지.",
     timeline: [
+      { date: "2026-11-11", text: "(11/10 15:30종가) 1,337.5원(-9.6원) 하락, 이틀 연속 내림세 — 코스피 5,239.13(+4.39%, +220.28p, 전일 美증시 급반등·유가급락 영향), 코스닥 667.61(+4.48%, +28.64p). 외국인 국내주식 3,717억원 순매수 전환. 서울외국환중개 매매기준율 1,355.7원" },
       { date: "2026-11-10", text: "(11/9 15:30종가) 1,347.1원(-9.5원) 하락, 1,340원대로 복귀 — 코스피 5,018.85(-0.81%, -40.84p, 2월2일 이후 최저), 3거래일 연속 하락·외국인 7거래일째 순매도(6,925억원). 코스닥 638.97(-0.82%, -5.30p). 달러인덱스 102.09(-0.21)" },
       { date: "2026-11-07", text: "(11/6 15:30종가) 1,356.6원(+14.5원) 상승, 한달만에 1,360원대 터치 — 코스피 5,059.69(-6.02%, 324.11p↓)·코스닥 644.27(-5.03%), 양시장 1단계 서킷브레이커(코스피, 20분간 거래정지)·매도 사이드카 동시발동(장중 8%대·4,900선까지 하락). 美 중간선거發 AI데이터센터 규제우려가 이틀째 지수를 흔드는 핵심변수로 지목. 美증시는 11/6(현지시간) 나스닥 반등(매체간 +1.09%~+1.07% 엇갈림, 반도체주 저가매수)·다우 하락(-0.46%~-0.91%)으로 혼조, 10년물 국채금리 4.9%대가 반등폭 제한 요인으로 거론됨" },
       { date: "2026-11-06", text: "(11/5 15:30종가) 1,342.1원(+0.6원) 소폭 상승, 4거래일 연속 1,340원대 — 코스피 5,383.80(-5.28%, 7개월래 최저)·코스닥 678.41(-5.11%), 양시장 매도 사이드카 동시발동(10/15 이후 처음). 美 중간선거發 AI데이터센터 규제우려로 美 반도체주 급락한 영향, 외국인 약3조4,000억원 순매도. 같은날(현지시간) 美 다우 3.44%↓(51,523.06)·나스닥 5.52%↓(24,315.00, 조정국면진입)" },
       { date: "2026-11-05", text: "(11/4 15:30종가) 1,341.5원(+0.5원) 소폭 상승 — 美 중간선거 민주당 상·하원 동시장악 결과 반영. 코스피 5,683.80(+0.62%, +35.01p 자체역산), 코스닥 714.95(+1.50%) — 데이터센터 규제우려·안도랠리 기대 사이 급등락 끝 상승마감(일중 변동성 3개월래 최대)" },
       { date: "2026-11-04", text: "(11/3 15:30종가) 1,341.0원(-2.8원) 소폭 하락(장중 1,337.5~1,346.8원) — 코스피 5,648.79(-3.59%, -210.29p), 美 AI투자 수익성 우려(오라클 자금조달·마이크론-5.8%·엔비디아-1.3%)發 반도체 대형주 동반급락. 외국인 1조5,151억원·기관5,113억원 순매도, 개인 1조6,608억원 순매수" },
-      { date: "2026-11-03", text: "(11/2종가) 1,343.8원(+9.5원) 반등 — 코스피 5,859.08(+2.24%, +128.34p), 이란 호르무즈 외교진전에 WTI $96.46(-7.4%)·브렌트유 $104.77(-7.6%) 급락과 같은 날" },
-      { date: "2026-10-31", text: "(10/30종가) 1,334.3원(-2.5원) 추가 하락 — 코스피 5,730.74(-3.48%), 美 S&P500도 인텔쇼크(주가-28.6%)로 6월래 최악의 하루(-1.8%). WTI $102.00(10/29 현지시간)·브렌트유 $114.88" },
     ]
   },
   {
@@ -1350,17 +1349,15 @@ const ARCS = [
   {
     name: "앤스로픽 — 자체 칩과 IPO",
     status: "active",
-    since: "2026-08-23", last: "2026-11-10", count: 34,
-    state: "11/9 앤스로픽이 가스터빈 발전설비 공급업체 OnePWR의 기존 주문을 인수해 통상 6년인 대기 기간을 건너뛰고 34억달러에 1.7GW 용량을 확보했다 — IPO 밸류 하향 속에서도 AI 데이터센터 전력 확보 경쟁은 이어지고 있는 것으로 보인다.",
-    next: "실제 공모가·상장일 확정(11월 중 목표, 밸류 하향이 실제 공모가에 반영되는지). 실제 신용등급 결과(BB대 전망의 확정 여부, 투기등급 실제 부여 여부). 엔비디아 앵커투자 실제 여부·규모. 창업자 의결권 50.1% 구조에 대한 주주 승인 절차(신고서 공개와 별개). 반독점소송의 실제 진행(기각/각하/본안행) 여부. AI 토큰 가격경쟁이 오픈AI 등 경쟁사로도 계속 번지는지.",
+    since: "2026-08-23", last: "2026-11-11", count: 35,
+    state: "11/10 앤스로픽이 나스닥 상장 공모가 범위를 주당 70~78달러(완전희석 밸류 최대 1조4,040억달러)로 제시했다 — 11월19일 상장 목표, 구글·엔비디아가 각 100억달러씩 투자하는 등 총260억달러 규모 사모주식도 함께 확정됐다(워치리스트 \"공모가·상장일 확정\" 해소).",
+    next: "11/19 무렵 실제 상장·최종 확정가(공모가 범위 70~78달러 내 어디서 결정되는지). 실제 신용등급 결과(BB대 전망의 확정 여부, 투기등급 실제 부여 여부). 창업자 의결권 50.1% 구조에 대한 주주 승인 절차(신고서 공개와 별개). 반독점소송의 실제 진행(기각/각하/본안행) 여부. AI 토큰 가격경쟁이 오픈AI 등 경쟁사로도 계속 번지는지.",
     timeline: [
+      { date: "2026-11-11", text: "(11/10 TechCrunch) IPO 공모가 범위 확정 — 주당70~78달러, 상단기준 완전희석밸류 1조4,040억달러(5월 9,650억달러보다 높으나 최근 보도된 목표 2조달러엔 못미침). 구글·엔비디아 각100억달러 등 총260억달러 무의결권 사모주식 공모가매입 확정. 티커 'ANT', 상장예정 11/19 무렵. 10월말 런레이트매출 810억달러·9개월 순손실1,040억달러" },
       { date: "2026-11-10", text: "(11/9 TechCrunch·Tom's Hardware) 가스터빈 발전설비 34억달러 계약 — OnePWR 기존 주문 인수 방식으로 6년 대기줄 건너뛰고 1.7GW 확보, AI데이터센터 전력공급용. 계약 상대방·구체조건은 원문 접근제한으로 미확인" },
       { date: "2026-11-07", text: "(11/6 TechCrunch) Ramp 지출데이터: AI토큰 지출증가율 8~9월 합산1.5%로 급둔화(7월엔 전월比42%↑에서) — 앤스로픽 Fable5.1·Opus5.5 가격인하로 매출증가분 약6억달러 감소(자체제출서류). 블룸버그: 예상 IPO밸류 10월초2조달러→1.2~1.3조달러 하향, 투기등급('junk') 전망. 오픈AI도 목표밸류 1.4조→1.25조달러·펀딩목표 100억달러 축소" },
       { date: "2026-11-05", text: "앤스로픽, AI모델 '신원증명' 오픈소스 시스템 공개 — 어떤 출력이 실제로 특정 모델에서 나왔는지 암호학적으로 증명(모델별 공개 '지문'과 출력 대조, 가중치 비노출, 개인기기 검증 가능). 비용절감 목적의 몰래 모델교체·성능수치 부풀리기를 막는 용도. 완성 연구 아닌 중간성과로 실제 배포계획은 현재 없음" },
       { date: "2026-11-04", text: "(11/2 공시) 수정 S-1/A — RSP기준 \"AI발 급격히 가속된 진전\"에 근접 경고(단, 이 기준을 넘긴 모델은 없다고 덧붙임), 3분기(9월말)까지 재무자료 확장돼 매출170억달러(전분기115억달러)·컴퓨팅비용비중58%(전분기48%)로 악화 공시. 3분기 컴퓨팅비용100억달러 중50억달러는 단가 비싼 단기계약. 공모가·상장일 여전히 공란(일부매체 11/16 추정, 미확정)" },
-      { date: "2026-11-02", text: "Nscale(英 AI데이터센터기업), 뉴욕증시 상장신청(티커 NSCL) — 목표 기업가치 최대350억달러. 앤스로픽과 맺은 웨스트버지니아 캠퍼스 공급계약(6년간 450억달러)이 핵심계약, 엔비디아가 상장전 전환사채 10억달러 약정(11월중순 마감예정)" },
-      { date: "2026-11-01", text: "블랙스톤, IPO후 투기등급 상위(BB대) 전망 전함(FT보도) — 630억달러 칩금융거래 앵커투자자인 블랙스톤이 과거 \"2027년전 투자적격등급\" 전망에서 하향. 신용평가사명 비공개, 회사측 논평거부" },
-      { date: "2026-10-27", text: "SEC에 S-1 정식 제출 확인 — \"공식 S-1 제출 여부\"(다음 분기점) 해소. 공모가·상장일은 공란, 매체마다 밸류 1.5조~2조달러·상장시점(11월중순 vs 11/23)으로 엇갈림. 엔비디아 직접 앵커투자는 신고서에 없음(여전히 미확인)" },
     ]
   },
   {
@@ -1382,20 +1379,17 @@ const ARCS = [
   {
     name: "미국-이란 충돌 재개와 유가 급등",
     status: "active",
-    since: "2026-08-31", last: "2026-11-10", count: 61,
-    state: "11/9(월) 트럼프 대통령이 \"이란과 협상이 진행되는 동안 새로운 대규모 공격을 명령할 가능성은 매우 낮다\"고 말했고, 같은 날 WTI·브렌트유가 주간 기준 5년 만에 최대폭으로 급락했다 — 군사적 긴장이 외교보다 앞서가던 흐름에서 디에스컬레이션 쪽으로 기우는 것으로 풀이되나, 호르무즈 해협에서는 선박 피격이 계속 보고되고 있어 최종합의는 아직이다.",
+    since: "2026-08-31", last: "2026-11-11", count: 62,
+    state: "11/10(화) 트럼프 대통령이 \"이란과의 전쟁이 실질적으로 끝났다\"고 말했고, 브렌트유는 $91.49(-1.17%)로 추가 하락했다(WTI $86.47, -0.44%) — 11/9 \"대규모공격 명령 가능성 매우낮다\" 발언 이후 디에스컬레이션 쪽으로 더 기운 것으로 풀이되나, 호르무즈 해협에서는 선박 피격이 계속 보고되고 있어 최종합의는 아직이다.",
     next: "호르무즈 '2일 재개방안'의 1일차 美이행조치 실제 여부·2일차 실제 개방 여부. 이란이 카타르의 핵사찰 연계 탈긴장안을 실제 수용·거부하는지. 네타냐후의 재공습 요구가 트럼프 승인으로 이어지는지. 11/6 유조선 화재·선원사망 보도의 독립 교차검증 여부. G7 비축유 방출의 실제 이행 여부. 유엔의 후티 테러조직 지정 실제 성사 여부.",
     timeline: [
+      { date: "2026-11-11", text: "(11/10 현지시간) 트럼프 \"이란과의 전쟁이 실질적으로 끝났다\" 발언 — 브렌트유 $91.49(-1.17%, 장중 한때 $90 아래로 8월이후 최초)·WTI $86.47(-$0.38, -0.44%)로 마감. 美 휘발유 평균소매가 갤런당 $3.98로 7월이후 첫 4달러 아래. 같은 날 美 10월 CPI가 예상(+0.3%) 상회한 +0.4%로 나와 10년물 국채수익률 장중 5% 터치, 코스피는 전일대비 4.39% 급등(5,239.13)해 美증시 반등·유가급락 영향을 반영" },
       { date: "2026-11-10", text: "(11/9 현지시간) 트럼프 \"이란에 대규모 공격 명령할 가능성 매우 낮다\" 발언 — WTI $86.85(-$3.98, -4.38%)·브렌트유 $92.57(-$5.75, -5.85%)로 마감, 주간 기준 5년래 최대 하락폭. 같은 날 뉴욕증시는 급반등(다우+2.15%·나스닥+2.74%)" },
       { date: "2026-11-09", text: "11/7(토) 밤 이란 케쉼섬 폭발2건·자스크항 다수 폭발(원인미확인). 11/8(일) 이란군, \"승인되지 않은 항로\" 통과 시도 유조선 2척이 기뢰에 맞아 화재 — 美중부사령부는 세인트키츠 국적 선박을 항공기로 무력화했다고 확인. 美, 토요일 'Task Force Iron Gate'(본부 플로리다 탬파, 첨단무기·제재물자 육로·카스피해 반입 차단) 출범. AP: 이란이 카타르 제시 핵사찰 연계 탈긴장안 검토 중, 트럼프-카타르 국왕 금요일 통화" },
       { date: "2026-11-08", text: "UKMTO 주간보고로 11/6까지 한주간 호르무즈 인근 최소11척 공격·3척 침몰 확인(서방 정보기관 집계 누적 발사체공격 88건). 금요일밤 케쉼섬 발사체2발(트럼프 \"경미한 공격\"), 토요일 이란군 美 MQ-9드론 격추 주장(혁명수비대는 전날 MQ-1 격추 주장, 개전후 16번째). IRGC, 기존 약2,000km 미사일 사거리제한 해제 선언 — 하메네이 \"제약없는 대응\" 명령. 아라그치 외무장관 48시간내 12개국과 통화, 라리자니 안보수장 모스크바서 푸틴 면담" },
       { date: "2026-11-07", text: "(11/6 The Hindu, 단일출처·교차검증안됨) 이란혁명수비대, 호르무즈 해협 유조선 2척 화재 주장 — 같은날 걸프에서 선원1명 사망 보도도 나옴, 10월말 유사사태(기뢰충돌 주장) 재현여부 불명확. WTI $90.83(+$0.31, 11/6 현지시간 정산가)·브렌트 $98.32(+$0.03)로 소폭반등했으나 주간으론 각각 약13%·16%+하락. Rapidan Energy: 이란긴장 재점화시 $100 재돌파 가능성 거론" },
       { date: "2026-11-06", text: "(11/5 현지시간) WTI $90.71(+2.94%, 12월물) — 전날 급락 뒤 반등, 이란-美 평화협상 결과 불확실성 반영으로 풀이. 호르무즈 '2일 재개방안' 이행 여부는 추가 진전 보도 없음" },
       { date: "2026-11-05", text: "(11/4 현지시간) WTI $88.12(-8.29%, 한달래 최저, 머니투데이 집계 88.55달러·-7.86%)·브렌트유 $94.6(-8.7%) — 美 중간선거 블루웨이브發 이란전쟁 조기종식 기대로 급락. 같은 날 트럼프가 이란 케쉼섬 공습을 처음 공식 확인(\"경미했다\", \"전쟁 아니었다\"), 이란은 美측 호르무즈 재개방 답변을 \"설득력 없다\"며 거부(레자이 최고국가안보회의 서기). 모즈타바 하메네이는 재공격시 \"훨씬 더 큰\" 대응 경고" },
-      { date: "2026-11-04", text: "(11/3 현지시간) WTI $96.09(-0.4%, 10/14래 최저)·브렌트유 $103.60(-1.17%, 10/7래 최저) — 美-이란 평화협상 기대·러-우 3자협상 계획이 겹친 영향으로 풀이됨. 익명 미 당국자 발언으로 美가 전날밤 이란 케슘섬을 '제한적' 공습했다는 보도(뉴스핌)가 나왔으나 당시엔 교차검증 실패 — 11/4 트럼프 공식확인으로 사실관계 해소됨" },
-      { date: "2026-11-03", text: "(11/1~2) 이란 외무장관 아라그치, 카타르 중재로 호르무즈 '2일 재개방안' 합의(1일차 美이행조치→2일차 개방) 제시 — 동결자금 전액해제·역내전쟁종식·제재면제복원 조건. 이 신호로 WTI $96.46(-7.4%)·브렌트유 $104.77(-7.6%) 급락" },
-      { date: "2026-11-02", text: "네타냐후, 트럼프에 중간선거(11/3) 전 이란 재공습 요구 — 트럼프는 \"선거전엔 안 된다\"며 유보. OPEC+는 12월 원유생산목표 동결(석달째) — WTI $104.12·브렌트 $117.64(10/30 종가, 6개월래 최고치 유지)" },
-      { date: "2026-11-01", text: "이란 최고지도자 모즈타바 하메네이, 처음으로 美·이스라엘에 \"지리적 제한없는 대응\" 공개경고 — 아라그치 외무장관은 카타르에 대표단 보내 호르무즈 재개방 이행기간(이란2일·카타르5일) 조율" },
     ]
   },
   {
@@ -1962,9 +1956,173 @@ const WEEKLIES = [
 
 const BRIEFINGS = [
   {
+    date: "2026-11-11",
+    weekday: "수",
+    isToday: true,
+    schemaVersion: 2,
+    collectedAt: "2026-11-11 06:20 KST",
+    window: "최근 72시간 중 지난 3회차(11/8~11/10)에 안 실린 것",
+    tally: "12개 분야 search(에이전트 6개 병렬) · 검색 약190여회(150+예비50 중 대부분 소진) · 확정 기사 45건(주요 16 · 그 외 29) — 70~100건 목표에 크게 미달",
+    coverage: {
+      failedSources: ["yna.co.kr(원문 WebFetch 전면 접속 차단)", "theguardian.com(일부 접속 차단)", "ft.com·marketwatch.com(접속 차단)", "wowtale.net·platum.kr(403)"],
+      gaps: ["세계정치(2건으로 얇음)", "사회/문화/소비(신규 3건, 전부 그외)", "중국 AI(6회차 연속 신규 확정 0건)", "에너지/기후/자원(주요급 0건)", "프랑스 르코르뉴 총리의 11/9 노사대표 회동 결과 확인 못함", "아부다비 협상 2일차(11/11) 결과 확인 못함", "DR콩고 에볼라 유행 새 진전 확인 못함"],
+      feedCollectedAt: "2026-11-10T17:17:55.812652+00:00"
+    },
+    fx: {
+      asOf: "11/10 15:30 종가",
+      rates: [
+        { label: "원/달러", value: "1,337.5", delta: "-9.6원", dir: "down", note: "이틀 연속 하락, 외국인 순매수 전환" }
+      ]
+    },
+    oil: {
+      asOf: "11/10 종가",
+      prices: [
+        { label: "WTI", value: "$86.47", delta: "-$0.38", dir: "down", note: "-0.44%" },
+        { label: "브렌트유", value: "$91.49", delta: "-1.17%", dir: "down", note: "장중 한때 $90 아래로, 8월 이후 최초" }
+      ]
+    },
+    metrics: [
+      { label: "코스피", value: "5,239.13", delta: "+220.28 (+4.39%)", dir: "up", note: "11/10 종가" },
+      { label: "코스닥", value: "667.61", delta: "+4.48%", dir: "up", note: "11/10 종가" }
+    ],
+    digest: [
+      "엔비디아 CEO 젠슨 황 '중국 스파이' 의혹이 <strong>투자자 집단소송</strong>으로 번졌다 — 블룸버그는 엔비디아 법률책임자가 상무부에 수사 개입을 문의한 사실을 보도했고, 밀반출 칩 수량은 매체마다 5만~24만 개로 엇갈린다.",
+      "앤스로픽이 나스닥 상장 공모가를 주당 70~78달러(완전희석 밸류 최대 <strong>1조4,040억달러</strong>)로 제시했다 — 11월 19일 상장 목표, 구글·엔비디아가 각 100억달러씩 투자한다.",
+      "美 10월 CPI가 예상(+0.3%)을 웃돈 +0.4%로 나와 10년물 국채수익률이 장중 <strong>5%를 넘었다</strong> — 연준 월러 이사는 \"12월에 50bp 인상을 검토해야 한다\"고 말했다.",
+      "공정위가 배달의민족·쿠팡이츠에 최혜국(MFN) 조항 강제를 이유로 역대 최대 수준인 <strong>6,319억원</strong>의 과징금을 부과했다.",
+      "브렌트유가 $91.49로 추가 하락(-1.17%)했다 — 트럼프 대통령은 \"이란과의 전쟁이 <strong>실질적으로 끝났다</strong>\"고 말했다."
+    ],
+    insight: [
+      { label: "흐름", text: "미국-이란 충돌 재개와 유가 급등 호가 8/31 시작 이후 12주째, 오늘로 62번째 진전이다. 트럼프 대통령이 11/10 \"이란과의 전쟁이 실질적으로 끝났다\"고 말했고 브렌트유는 $91.49로 추가 하락(-1.17%)했다 — 11/9 \"대규모공격 명령 가능성 매우낮다\" 발언 이후 디에스컬레이션 쪽으로 더 기운 것으로 풀이된다." },
+      { label: "뒤집힐 조건", text: "호르무즈 해협에서 1주일 이상 추가 공격 없이 소강되면 이 판단은 강화된다. 반대로 이란이 사거리제한 해제 선언을 실제 공격 범위 확대로 옮기거나 유가가 다시 급등하면 판단은 뒤집힌다." },
+      { label: "안 보이는 것", text: "엔비디아 CEO 스캔들은 투자자 집단소송까지 번졌지만 이사회 조사의 결론이나 실제 기소 여부는 여전히 없다. 아부다비 3자협상은 1일차가 \"건설적\"이라는 평가만 나왔을 뿐, 핵심 쟁점인 영토 문제는 그대로 미해결로 남아 있다." }
+    ],
+    sections: [
+      {
+        topic: "세계 정치 / 지정학",
+        items: [
+          { id: "2026-11-11-abudhabi-day1", title: "美·러·우크라, 아부다비서 종전협상 1일차 — \"건설적\" 평가, 영토문제는 미해결", body: "미국(위트코프·쿠슈너 특사)·러시아·우크라이나 3자 종전협상 1일차가 11/10 아부다비에서 열렸다. 젤렌스키 대통령은 협상을 \"건설적이고 상당히 실질적\"이라고 평가했다. 1일차에는 인도적 문제와 안전보장(나토 5조를 본뜬 방위공약 검토)이 논의됐고, 영토 문제는 미해결로 남았다 — 러시아는 우크라이나군의 돈바스 전역 철수를, 우크라이나는 현재 전선 기준 동결을 각각 요구하고 있다. 미국 측은 안보체계 합의 이후 영토 문제를 마지막에 다룰 가능성이 있다고 밝혔다. 러시아는 이번에도 유럽 국가의 참여를 거부했고, 우크라이나는 회담 전 유럽·나토·EU 대표와 별도로 만났다. 2일차(11/11) 결과는 이 브리핑 마감 시점까지 나오지 않았다.", regions: ["기타 아시아", "유럽"], entities: [], publishedAt: "2026-11-10", status: "update", change: "11/8 날짜·장소 공식화 이후 실제 1일차 협상이 열렸다", topRank: 5, sources: [{ name: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/11/10/russia-ukraine-and-us-to-meet-as-zelenskyy-claims-battlefield-successes" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-hegseth-impeachment", title: "美 공화당 메시 하원의원, 헤그세스 국방장관 탄핵안 재추진 — 헤그세스 \"정치적 쇼\" 반박", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "update", change: "이란전 관련 탄핵 논의가 재점화됐다", sources: [{ name: "SCMP", url: "https://www.scmp.com/news/us/politics/article/3373990/hegseth-calls-impeachment-bid-farce-he-defends-iran-war" }] }
+        ]
+      },
+      {
+        topic: "글로벌 경제 / 시장",
+        items: [
+          { id: "2026-11-11-us-cpi-waller", title: "美 10월 CPI 예상 상회 — 10년물 국채 5% 터치, 연준 월러 \"12월 50bp 인상 검토해야\"", body: "11/10 발표된 美 10월 소비자물가지수(CPI)는 전월대비 +0.4%로 예상치(+0.3%)를 웃돌았다(근원CPI +0.3%, 예상 +0.2%). 이 영향으로 10년물 국채수익률이 장중 5%를 넘었다가 4.992%로 마감(+13bp), 2년물은 4.736%(+18bp)까지 급등했다. 크리스토퍼 월러 연준이사는 \"25bp만 올리면 연준 신뢰도가 위험해진다\"며 12월 회의에서 50bp 인상을 검토해야 한다고 주장했다. 같은 날 100억달러 규모 10년물 국채 입찰이 부진(딜러 낙찰 비중 10%, 5월 이후 최대)해 채권가격 하락을 키웠다.", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "new", topRank: 3, sources: [{ name: "CNBC", url: "https://www.cnbc.com/2026/11/10/us-bonds-treasurys-yields.html" }] },
+          { id: "2026-11-11-oil-trump-over", title: "브렌트유 $91.49로 추가 하락 — 트럼프 \"이란과 전쟁 실질적으로 끝났다\"", body: "11/10(화) 브렌트유는 장중 배럴당 90달러 아래로 내려가 8월 이후 처음 그 수준을 밑돌았으나, 종가는 전일대비 1.17% 하락한 91.49달러로 마감했다. WTI는 전일대비 0.44%(-0.38달러) 내린 86.47달러로 마감했다. 같은 날 트럼프 대통령은 이란과의 전쟁이 \"실질적으로 끝났다\"고 말했고, 美 휘발유 평균 소매가는 갤런당 3.98달러로 7월 이후 처음 4달러 밑으로 내려갔다. 다만 호르무즈 해협 안팎에서는 선박 피격이 계속 보고되고 있어 최종 합의는 아직이다.", regions: ["글로벌"], entities: [], publishedAt: "2026-11-10", status: "update", change: "11/9 급락 뒤 추가 하락, 트럼프가 처음으로 \"전쟁 끝났다\" 수준의 발언을 했다", topRank: 1, arc: "미국-이란 충돌 재개와 유가 급등 · 12주째 62번째 진전 (8/31부터)", sources: [{ name: "CNBC", url: "https://www.cnbc.com/2026/11/10/us-bonds-treasurys-yields.html" }, { name: "Yahoo Finance", url: "https://finance.yahoo.com/quote/CL=F/history" }] },
+          { id: "2026-11-11-kospi-rally", title: "코스피·코스닥 4%대 급등 — 美 증시 반등·유가 급락에 亞 반도체주 일제 상승", body: "코스피는 11/10 전장 대비 220.28포인트(4.39%) 오른 5,239.13, 코스닥은 28.64포인트(4.48%) 오른 667.61에 마감했다. 전날 美 증시 급반등(나스닥 +2.74%, 7월30일 이후 최대 상승)과 국제유가 급락이 투자심리를 되살린 영향이다. 아시아 반도체·AI관련주도 일제히 급등해 소프트뱅크그룹 +13.88%, 삼성SDI +9.88%, SK하이닉스 +6.69%, 삼성전자 +4.74%, TSMC +2.24%를 기록했다. 11/5~6 美 중간선거 이후 AI데이터센터 규제 우려로 급락했던 한 주의 되돌림이라는 분석이 나왔으나, 트레이드네이션 애널리스트는 \"매도세가 끝났다고 보기엔 이르다\"고 경계했다.", regions: ["한국", "일본"], entities: ["SK"], publishedAt: "2026-11-10", status: "update", change: "11/9 종가 5,018.85에서 반전해 급등 마감했다", sources: [{ name: "CNBC", url: "https://www.cnbc.com/2026/11/10/ai-softbank-sk-hynix-samsung-wall-street-tech-stocks.html" }, { name: "한국경제", url: "https://www.hankyung.com/article/202611108126i" }] },
+          { id: "2026-11-11-china-trade-surplus", title: "中 10월 무역흑자, 사상 최단기간 1조달러 돌파", body: "중국의 10월 수출은 전년동월대비 +35.2%(예상 +33.5% 상회)로 전월(+36.3%)보다는 둔화됐고, 수입은 +41.6%(예상 +32% 대폭 상회, 2021년5월 이후 최대 증가폭 — 첨단기술수입 +72%·원유수입 +41%)를 기록했다. 1~10월 누적 무역흑자는 1조400억달러로 사상 처음 10개월 만에 1조달러를 넘었다. 교역상대국·IMF는 베이징에 내수중심 성장 전환을 재차 요구했고, 9월 소매판매 증가율은 1.1%에 그쳐 내수 취약이 지속되고 있다. Citi는 2027년 수출 증가율이 8%로 둔화할 수 있다고 전망했다.", regions: ["중국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "CNBC", url: "https://www.cnbc.com/2026/11/10/china-trade-october-exports-imports-surplus-.html" }] }
+        ],
+        briefs: []
+      },
+      {
+        topic: "AI / 디지털 기술",
+        items: [
+          { id: "2026-11-11-nvidia-huang-scandal", title: "엔비디아 CEO 황 스캔들 급변 — 투자자 집단소송, 블룸버그 \"법률책임자가 상무부에 수사개입 문의\"", body: "투자자 Mark Kistenmacher가 뉴욕 로젠로펌을 통해 엔비디아와 황 CEO를 상대로 캘리포니아 북부지방법원에 증권 집단소송을 제기했다 — 황 CEO가 싱가포르 데이터센터업체 메가스피드 임원 앨리스 황과의 관계에 대해 투자자를 오도했다는 주장이다. 최소 4개 로펌이 추가 소송을 검토 중이며, 엔비디아 이사회는 독립이사 중심으로 조사를 진행 중이지만 황 CEO는 계속 지휘권을 유지한다고 밝혔다. 별도로 블룸버그는 엔비디아 최고법률책임자 팀 테터가 지난해 여름 미 상무부 고위 당국자들에게 연락해, 싱가포르 당국의 앨리스 황 수사·출국제한에 미국 정부가 관여했는지 문의한 사실을 보도했다 — 블룸버그는 메가스피드로 판매된 반도체 약 5만 개가 무역기록 집계에서 빠졌다고 분석했다(가치 수십억달러 추정). 다만 Tom's Hardware는 별도로 앨리스 황이 3년간 75억달러·24만 개의 금지 칩(주로 H100·H200) 수입에 관여했다고 보도해 수치가 매체 간 크게 엇갈린다. 예일대 제프리 소넨펠드 교수는 황 CEO 해임 가능성을 \"반반\"으로 평가했다.", regions: ["미국", "중국"], entities: [], publishedAt: "2026-11-09", status: "update", change: "의혹(10/29 최초보도) 자체에서 투자자 집단소송·정부개입 문의 보도로 번졌다", topRank: 2, sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia/" }, { name: "The Guardian", url: "https://www.theguardian.com/technology/2026/nov/10/nvidia-jensen-huang-sued-donald-trump-fbi" }, { name: "전자신문(블룸버그 인용)", url: "https://www.etnews.com/20261110000163" }] },
+          { id: "2026-11-11-anthropic-fable-mythos", title: "앤스로픽, Fable·Mythos 5.2 공개 — \"모델이 스스로 개발을 가속하는 단계 근접\" 우려 병기", body: "앤스로픽이 6월 출시한 '클로드 페이블 5'(일반공개)·'클로드 미토스 5'(제한적 파트너공개)의 5.2 버전을 공개했다. 코딩·추론·비전 성능이 개선됐고 페이블 5.2는 입력토큰 100만개당 가격을 10달러에서 8달러로 낮췄다. 회사는 외부 평가기관 METR이 \"모델이 사람 개입 없이 스스로 개발을 가속하는 단계(RSI)에 가까워졌을 가능성\"을 제기했다고 밝혔다. 두 모델 모두 이전 모델보다 \"평가받고 있다는 의심\"을 더 자주 보여, 실제 환경에서의 행동 예측이 어려워지고 있다고 회사 스스로 인정했다.", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "update", change: "6월 출시 모델의 5.2 버전 공개, RSI 우려가 새로 제기됐다", arc: "앤스로픽 — 자체 칩과 IPO · 12주째 35번째 진전 (8/23부터)", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-google-tpu", title: "구글, AI전용칩 2종 추가공개(기밀컴퓨팅용 \"TPU 8tx\", 추론용 \"TPU 8i Max\") — 4월 발표 8세대 TPU 확장판", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "update", change: "4월 발표 TPU 8세대의 확장 제품이 추가됐다", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/10/google-broadens-its-ai-hardware-portfolio-with-two-new-specialized-chips/" }] },
+          { id: "2026-11-11-adobe-mcp", title: "어도비 MAX, 포토샵·프리미어·파이어플라이에 AI기능 추가 + 챗GPT·클로드·제미나이가 쓸 수 있는 로컬 MCP 공개", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/" }] },
+          { id: "2026-11-11-meta-muse-ember", title: "메타, 경량 에이전트모델 \"뮤즈 엠버\" 공개(도구호출·코딩 특화, 100만토큰당 10센트)", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/" }] },
+          { id: "2026-11-11-huggingface-warning", title: "허깅페이스 임원, 사이버공격 표적화로 오픈소스AI의 개방성 자체가 줄어들 수 있다고 경고", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/10/cyberattacks-threaten-to-make-open-source-ai-a-little-less-open-hugging-face-exec-warns/" }] }
+        ]
+      },
+      {
+        topic: "반도체 / 컴퓨팅 인프라",
+        items: [
+          { id: "2026-11-11-tsmc-october-revenue", title: "TSMC, 10월 매출 사상 최대 — 2나노 AI데이터센터용 수요 집중", body: "TSMC가 10일 10월 매출이 5,868억9,000만대만달러(약23.8조원)로 집계돼 월간 기준 사상 최대치를 기록했다고 공시했다 — 전월대비 14.7%, 전년동월대비 59.7% 늘었다(기존 최고치는 8월 5,148억1,000만대만달러). 1~10월 누적 매출은 4조490억대만달러로 전년대비 43.3% 증가했다. 2나노 공정 수요가 AI데이터센터용 칩에 집중된 영향으로 분석됐다.", regions: ["기타 아시아"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "전자신문", url: "https://www.etnews.com/20261110000479" }] },
+          { id: "2026-11-11-musk-terafab", title: "머스크 \"테라팹\", 한·일 반도체장비업체에 구체 수주 — 2027년 시험칩·2028년 양산 목표", body: "머스크의 \"테라팹\"이 텍사스 오스틴 기가팩토리 내 연구용 반도체팹 구축에 착수했다. 2027년 5~6월 SRAM기반 첫 시험칩 정상작동, 2028년 3~4분기 본격양산을 목표로 하며 머스크도 일정이 매우 공격적이라고 인정했다. 10월13일 테라팹 관계자가 방한해 HPSP·한미반도체 외에 이엔에프테크놀로지·동진쎄미켐 등과 접촉했고, 11월초 일본경제신문에 따르면 조달팀이 일본 장비업체들과 만나 구체적 발주계획을 제시해 일부는 수개월 내 납기 주문을 받았다. 2032년 이후 목표인 월100만장 웨이퍼 중 메모리70만장·로직30만장 배정이 거론됐으나, 메모리 제조 파트너(삼성전자·SK하이닉스·마이크론) 참여 여부는 확인되지 않았다.", regions: ["미국", "한국", "일본"], entities: [], publishedAt: "2026-11-09", status: "update", change: "한·일 장비업체와의 수주·발주 일정이 구체적으로 확인됐다", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202611095959i" }, { name: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/semiconductors/elon-musks-terafab-targets-1-million-wafers-a-month-after-2032-planned-700-000-monthly-memory-wafers-could-rival-samsungs-entire-estimated-dram-production-capacity" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-daewon-powertron", title: "회생절차 중인 다원시스 자회사 다원파워트론 인수전에 美 램리서치·스위스 코멧 등 5~6곳 참여, EY한영이 이번주 우선협상대상자 선정 예정", regions: ["한국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202611095186i" }] }
+        ]
+      },
+      {
+        topic: "에너지 / 기후 / 자원",
+        items: [],
+        briefs: [
+          { id: "2026-11-11-carbonbrief-2026-co2", title: "Carbon Brief 분석, 2026년 세계 화석연료·시멘트 CO2 배출 전년대비 약0.4% 감소(382억톤) 전망 — 이란사태發 석유소비 감소가 주요인", regions: ["글로벌"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "Carbon Brief", url: "https://www.carbonbrief.org/analysis-fossil-fuel-co2-emissions-set-to-dip-in-2026-as-iran-conflict-hits-oil-use" }] },
+          { id: "2026-11-11-cgn-tibet-csp", title: "中 CGN, 티베트 해발4,300m 지대에 세계최고고도 주장 CSP+PV하이브리드 발전소 1호기 계통연결", regions: ["중국"], entities: [], publishedAt: "2026-11-06", status: "new", sources: [{ name: "pv magazine", url: "https://www.pv-magazine.com/2026/11/09/cgn-connects-first-unit-of-worlds-highest-altitude-csp-plant-in-tibet/" }] },
+          { id: "2026-11-11-huaneng-flywheel", title: "中 화넝그룹, 간쑤성 란저우 석탄화력발전소에 5.5MW급 듀얼플라이휠 주파수조정설비 가동(독립검증 안된 자체주장)", regions: ["중국"], entities: [], publishedAt: "2026-11-06", status: "new", sources: [{ name: "pv magazine", url: "https://www.pv-magazine.com/2026/11/10/huaneng-commissions-dual-flywheel-frequency-regulation-system-claims-china-single-unit-power-record/" }] }
+        ]
+      },
+      {
+        topic: "산업 / 모빌리티 / 로봇",
+        items: [
+          { id: "2026-11-11-genesis-gv90", title: "제네시스 GV90, 한국서 판매 시작 — 그룹 최대용량 배터리 탑재", body: "현대차그룹 제네시스가 11월10일 대형 전기SUV GV90 판매를 한국에서 시작했다. 가격은 7인승 스탠다드 1억3,950만원부터 4인승 뉴런 이그제큐티브스위트 2억3,950만원까지다. 그룹 신규 eMP플랫폼을 적용했고 123.5kWh 배터리(그룹내 최대용량), 듀얼모터AWD 657마력, 350kW급속충전 시 10~80% 약22분을 적용했다. 7인승 기준 주행거리는 약500km다. 미국 출시는 2027년 초로 예상된다.", regions: ["한국"], entities: ["현대차그룹"], publishedAt: "2026-11-10", status: "new", sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/10/genesis-launches-flagship-gv90-starting-over-100000-korea/" }] },
+          { id: "2026-11-11-tesla-china-sales", title: "테슬라 10월 중국 소매판매 66% 급감 — 4년여 만에 최저", body: "중국승용차협회(CPCA) 집계에서 테슬라의 10월 중국 내 소매판매는 8,817대로 전년동월(2만6,006대) 대비 약66% 감소해 2022년7월 이후 최저치를 기록했다. 반면 국내+수출 합산 도매출하는 6만7,829대로 전년대비 10.3% 늘었고 이 중 수출이 5만9,012대(약87%)였다. 10월 중국전체 NEV 소매도 전년대비 10% 줄었지만 테슬라의 감소폭이 훨씬 크고, 샤오미·리프모터(+51%)·BYD 등 경쟁심화가 배경으로 꼽힌다. 2027년4월 수출부가세 환급률 인하(13%→9%)를 앞두고 수출을 앞당기고 있다는 해석도 나온다.", regions: ["중국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/10/tesla-china-sales-crash-october-2026-lowest-four-years/" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-tesla-robotaxi-sanantonio", title: "테슬라 로보택시, 8번째 도시 샌안토니오 서비스 개시 — 지오펜스 약274평방마일로 역대최대 발표면적(실제 가용면적은 더 좁을 가능성)", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/09/tesla-robotaxi-san-antonio-launch-geofence/" }] },
+          { id: "2026-11-11-bostondynamics-atlas-wheels", title: "보스턴다이내믹스, 아틀라스 휴머노이드 발목에 바퀴 달아 모델기반+강화학습 혼합제어 시험(연구용 테스트베드)", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "The Robot Report", url: "https://www.therobotreport.com/boston-dynamics-adds-wheels-to-atlas-humanoid-to-test-whole-body-control/" }] },
+          { id: "2026-11-11-renault-ugv", title: "르노그룹, 벨기에 John Cockerill과 모듈형 무인지상차량(UGV) \"Forefront\" 콘셉트 공동개발 — 프랑스 육군 고객 염두, 현재 렌더링 단계", regions: ["유럽"], entities: [], publishedAt: "2026-11-08", status: "new", sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/08/french-carmaker-renault-wants-to-get-into-the-military-robot-business/" }] },
+          { id: "2026-11-11-byd-jlr-raid", title: "BYD, 재규어랜드로버(JLR)의 \"디펜더 디자인 모방\" 제소 분쟁 속 사무실 압수수색 보도(수색주체·근거 추가확인 필요)", regions: ["유럽"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/10/byd-offices-raided-jlr-legal-battle-heats-up-over-defender-lookalike/" }] }
+        ]
+      },
+      {
+        topic: "과학 / 바이오 / 건강",
+        items: [
+          { id: "2026-11-11-cern-lhcb-bmeson", title: "CERN LHCb, 희귀 B중간자 뮤온쌍 붕괴 첫 증거 포착", body: "CERN 대형강입자충돌기(LHC) LHCb 실험이 Bd중간자(beauty쿼크+down반쿼크)가 뮤온-반뮤온 쌍으로 붕괴하는 현상의 첫 증거를 제시했다. 약100억분의1 확률로 일어나는 극희귀 붕괴로, 관련 Bs중간자 붕괴(약10억분의3)보다 30배 희귀하다. 2024~2025년 데이터만으로 3.0표준편차, 2011~2018년 데이터를 합치면 3.2표준편차(증거 인정기준 3.0, 공식 \"관측\" 확정은 5.0표준편차 필요)를 기록했다. 결과는 표준모형 예측과 일치한다.", regions: ["유럽"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "ScienceDaily", url: "https://www.sciencedaily.com/releases/2026/11/261108233047.htm" }] },
+          { id: "2026-11-11-bayer-sunharbo-fda", title: "바이엘 \"Sunharbo\", 뇌졸중 재발예방 신약으로 FDA 승인", body: "FDA가 11월9일 바이엘의 Sunharbo(성분 XIa인자 억제제)를 뇌졸중 재발예방용으로 승인했다. 이미 뇌졸중을 겪고 표준치료 중인 환자 대상으로, 출혈위험을 높이지 않으면서 혈전을 막는 새 계열의 첫 약물이다. NEJM에 발표된 3상 결과, 재발뇌졸중이 위약군8.4%·투약군6.2%로 상대위험 26% 감소했으며, 1년간 재발1건을 막는데 필요한 환자수(NNT)는 53명이었다.", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/09/cardiovascular-stroke-recurrence-bayer-drug-fda-approval/" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-alzheimers-nmj-model", title: "美 센트럴플로리다대·Hesperos, \"인간칩\" 신경-근육접합부 모델로 가족성 알츠하이머 운동신경세포 배양 — 뇌·척수 없이도 신호전달·근육수축능력 저하 확인(실제 환자 시점 확인 아님)", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "ScienceDaily", url: "https://www.sciencedaily.com/releases/2026/11/261108233103.htm" }] },
+          { id: "2026-11-11-oura-counsel-health", title: "스마트링업체 오우라, AI임상챗봇 카운슬헬스를 6억2,500만달러에 인수 — 오우라는 한달여전 IPO계획 연기한 상태", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/10/oura-acquires-counsel-health-big-bet-ai-care/" }] },
+          { id: "2026-11-11-flu-h2n1", title: "변이독감(h2N1 계열) 확산 — 美 확진170만건+·사망1,400명, 예비연구(동료검토전)는 10대·청년층이 더 취약할 수 있다고 제시", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/10/health-news-why-flu-season-could-hit-teens-and-young-adults-hard/" }] },
+          { id: "2026-11-11-pepgen-dm1", title: "펩젠, 근긴장성이상증(DM1) 치료제 PGN-EDODM1 초기임상(환자6명)서 지금까지 중 가장 유망한 지표개선", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/10/muscular-dystrophy-dm1-pepgen-pgn-edodm1-early-results/" }] },
+          { id: "2026-11-11-ionis-tryngolza", title: "아이오니스제약 \"트린골자\" 처방 부진으로 주가 하루만에 약25% 급락, 2026년 매출전망 1~1.1억달러→5,000만달러로 하향", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/09/ionis-pharmaceuticals-shares-plummet-after-tryngolza-slow-rollout/" }] },
+          { id: "2026-11-11-wuxi-apptec-delisted", title: "美국방부, 中우시앱텍을 \"중국군 기업\" 명단에서 철회 — 8월 연방법원이 우시의 제소를 받아들여 지정을 임시중단시킨 데 따른 조치", regions: ["미국", "중국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "STAT News", url: "https://www.statnews.com/pharmalot/2026/11/09/trump-administration-removes-wuxi-apptec-from-its-chinese-military-list/" }] }
+        ]
+      },
+      {
+        topic: "사회 / 문화 / 소비",
+        items: [],
+        briefs: [
+          { id: "2026-11-11-mjohn-harrison-booker", title: "英작가 M.존 해리슨(81), 《The End of Everything》으로 2026 부커상 수상 — SF작가 최초 수상, 역대 최고령 수상자", regions: ["유럽"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "The Guardian", url: "https://www.theguardian.com/books/2026/nov/09/m-john-harrison-the-end-of-everything-wins-2026-booker-prize" }] },
+          { id: "2026-11-11-mccartney-billionaire", title: "폴 매카트니(83), 억만장자 등극·세계 음악인 재산 3위 보도(가디언, 집계기준·구체금액은 접근제한으로 확인 못함)", regions: ["유럽"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "The Guardian", url: "https://www.theguardian.com/music/2026/nov/09/paul-mccartney-billionaire" }] },
+          { id: "2026-11-11-australia-ai-survey", title: "호주 대학생 85% \"학업에 AI 활용\"(2024년 83%에서 증가) — 67%는 정확성 우려로 사용 제한, 대학 가이드라인 충분응답 47%에 그쳐", regions: ["오세아니아"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "Phys.org", url: "https://phys.org/news/2026-11-university-students-ai-doesnt.html" }] }
+        ]
+      },
+      {
+        topic: "글로벌 기업 / 스타트업 / 자본",
+        items: [
+          { id: "2026-11-11-anthropic-ipo-price", title: "앤스로픽, IPO 공모가 범위 확정 — 밸류 최대 1조4,040억달러, 11/19 상장 목표", body: "앤스로픽이 나스닥 상장을 위해 공모가 범위를 주당 70~78달러로 제시했다. 상단 기준 완전희석 밸류는 1조4,040억달러로, 5월 자금조달 당시(9,650억달러)보다는 높지만 최근 보도된 목표치(2조달러)에는 못 미친다. 구글과 엔비디아가 각 100억달러씩, AMD·브로드컴·마이크론·마이크로소프트·TSMC 등도 참여해 총260억달러 규모 무의결권 사모주식을 공모가로 매입한다. 티커는 \"ANT\", 상장 예정일은 11월19일 무렵이다. 10월말 기준 런레이트 매출은 810억달러, 9개월 순손실은 1,040억달러다.", regions: ["미국"], entities: [], publishedAt: "2026-11-10", status: "update", change: "워치리스트로 추적하던 공모가·상장일이 확정됐다", topRank: 4, arc: "앤스로픽 — 자체 칩과 IPO · 12주째 35번째 진전 (8/23부터)", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/" }, { name: "The Guardian", url: "https://www.theguardian.com/technology/2026/nov/10/anthropic-valuation-stock-market-flotation-ipo-wall-street-ai" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-nominal-seriesc", title: "AI하드웨어 스타트업 노미널, 라이트스피드·인사이트파트너스 주도 2억4,000만달러 시리즈C — 8개월만 밸류 3배(10억→30억달러)", regions: ["미국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/09/ai-hardware-startup-nominal-triples-valuation-to-3b-in-8-months/" }] }
+        ]
+      },
+      {
+        topic: "한국 산업 / 정책 / SK",
+        items: [
+          { id: "2026-11-11-ffc-baemin-coupangeats", title: "공정위, 배민·쿠팡이츠에 역대 최대 6,319억원 과징금 — 최혜국(MFN) 조항 강제 혐의", body: "공정위가 우아한형제들(배민)과 쿠팡이츠에 시장지배적 지위 남용 혐의로 각각 3,311억원·3,008억원, 총6,319억원의 과징금을 부과했다. 두 회사가 식당에 타플랫폼보다 낮은 가격·조건을 강제한 최혜국(MFN) 요구가 핵심 혐의다. 공정위는 \"와우매장\" 비율이 2023년7월 13%에서 2025년1월 94%로, \"배민클럽\" 가입률이 2024년5월 63%에서 2025년1월 80%로 급증한 것을 근거로 들었다. 양사는 \"소명이 반영되지 않았다\"며 법적대응을 검토하겠다고 밝혔다.", regions: ["한국"], entities: ["배달의민족", "쿠팡이츠"], publishedAt: "2026-11-09", status: "new", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202611094778g" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-skt-nvidia-rebellions", title: "SKT·엔비디아·리벨리온, \"엔비디아 서울AI데이 2026\" 라운드테이블서 GPU·NPU 융합 데이터센터 인프라 협력 발표", regions: ["한국"], entities: ["SK"], publishedAt: "2026-11-09", status: "update", change: "엔비디아 서울 AI데이 행사의 구체 협력 내용이 확인됐다", sources: [{ name: "전자신문", url: "https://www.etnews.com/20261109000354" }] },
+          { id: "2026-11-11-honam-cluster", title: "산업부 장관, 삼성전자·SK하이닉스가 짓는 호남 반도체클러스터 팹배치를 이달내 마무리하겠다고 언급(원문 접근제한으로 제목 수준 확인)", regions: ["한국"], entities: ["SK"], publishedAt: "2026-11-10", status: "new", sources: [{ name: "연합뉴스(제목만 확인)", url: "https://www.yna.co.kr/view/AKR20261110091051001" }] },
+          { id: "2026-11-11-samsungdisplay-boe-oled", title: "삼성디스플레이·BOE·티엔마, 저가 LCD스마트폰 대체용 HD급 OLED 개발 검토 — 오포·비보가 기존 LCD수준 가격 요구해 수익성 쟁점", regions: ["한국", "중국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20261109170809" }] },
+          { id: "2026-11-11-samsung-startup-1000", title: "삼성전자, AI·로봇·헬스케어 스타트업 1,000곳 육성·투자유치 지원 계획 발표(원문 접근제한으로 제목 수준 확인)", regions: ["한국"], entities: [], publishedAt: "2026-11-10", status: "new", sources: [{ name: "연합뉴스(제목만 확인)", url: "https://www.yna.co.kr/view/AKR20261110030000003" }] }
+        ]
+      },
+      {
+        topic: "중국 반도체 산업",
+        items: [
+          { id: "2026-11-11-nvidia-shell-companies-h200", title: "美, \"유령회사\" 中기업에 엔비디아 H200 취급 승인 — NYT 보도, 밀반출 칩 규모는 매체간 상충", body: "뉴욕타임스가 11월7일 보도한 데 따르면 미 상무부가 베이징의 \"뉴매트릭스\"와 \"매긴프라\" 등 중국기업에 엔비디아 H200칩 취급을 승인했으나, 기자들이 등록주소를 방문한 결과 두 곳 모두 실제 운영 흔적이 없었다. 뉴매트릭스의 주요 소유주는 2024년 미국이 블랙리스트에 올린 사모펀드 와이즈로드 관련기업과 연관됐고, 매긴프라는 군사용으로 블랙리스트에 오른 인스퍼와 연계된 것으로 분석됐다. 상무부는 바이두·BYD·테슬라상하이 등 약20여개 중국기업에 H200 취급을 승인한 것으로 전해졌다. 엔비디아는 \"중국군이 미국기술에 의존하는 것은 말이 안된다\"는 입장만 밝혔고, 칩이 실제로 뉴매트릭스에 도달했는지는 확인되지 않았다.", regions: ["미국", "중국"], entities: [], publishedAt: "2026-11-07", status: "new", sources: [{ name: "letsdatascience(NYT 인용)", url: "https://letsdatascience.com/news/us-reportedly-approves-nvidia-h200-sales-to-chinese-firm-wit-eda4fbc0" }] }
+        ],
+        briefs: [
+          { id: "2026-11-11-envision-galaxy-dc", title: "中 에너지기업 엔비전, 네이멍구 울란차부에 최대800MW급 AI데이터센터 \"갤럭시\" 캠퍼스 구축 — 美 스타게이트 애빌린 캠퍼스급 규모(비교기준 교차검증 못함)", regions: ["중국"], entities: [], publishedAt: "2026-11-07", status: "new", sources: [{ name: "Tom's Hardware(SemiAnalysis 인용)", url: "https://www.tomshardware.com/tech-industry/data-centers/china-builds-massive-800-megawatt-ai-data-center-campus-to-rival-us-stargate-project-galaxy-campus-delivers-first-120-megawatts-in-a-year-at-one-fifth-the-cost" }] },
+          { id: "2026-11-11-rasa-cloud-gpu", title: "美 \"원격접근보안법\"(RASA) 추진 — 클라우드 GPU 임차도 수출통제 대상화, 美 GPU탑재 해외클라우드를 쓰는 한국기업도 영향권에 들 수 있다는 분석", regions: ["미국", "한국"], entities: [], publishedAt: "2026-11-09", status: "new", sources: [{ name: "ZDNet Korea", url: "https://zdnet.co.kr/view/?no=20261109134146" }] }
+        ]
+      }
+    ]
+  },
+  {
     date: "2026-11-10",
     weekday: "화",
-    isToday: true,
+    isToday: false,
     schemaVersion: 2,
     collectedAt: "2026-11-10 06:20 KST",
     window: "최근 72시간 중 지난 3회차(11/7~11/9)에 안 실린 것",
@@ -3253,322 +3411,6 @@ const BRIEFINGS = [
         ]
       }
     ]
-  },
-  {
-    date: "2026-11-04",
-    weekday: "수",
-    isToday: false,
-    schemaVersion: 2,
-    collectedAt: "2026-11-04 06:20 KST",
-    window: "최근 72시간 중 지난 3회차(11/1~11/3)에 안 실린 것",
-    tally: "리서치 포크 9개 병렬운영(1차 6개+보강 3개) + news-candidates 캐시 스캔 + WebSearch 약117회로 원문 교차검증 · 확정 기사 34건(주요 17 · 그 외 17)",
-    coverage: {
-      failedSources: ["tomshardware.com(원문 다수 WebFetch 실패)", "Google News 중국어 리다이렉트(중국반도체·중국AI 접속실패)", "yna.co.kr(원문 WebFetch 다수 차단)"],
-      gaps: ["원/엔100·원/유로·두바이유 확정치(엿새째)", "중국반도체산업(5일 연속 해당없음)", "중국AI 개별기업 발표(3일째 공백)", "美 중간선거 결과(투표진행중)", "글로벌기업/스타트업/자본(신규 검증 사실 없음)"],
-      feedCollectedAt: "2026-11-03T21:17:07.104107+00:00"
-    },
-    fx: {
-      asOf: "11/3 15:30 종가",
-      rates: [
-        { label: "원/달러", value: "1,341.0", delta: "-2.8원", dir: "down", note: "장중 1,337.5~1,346.8원" },
-        { label: "달러인덱스", value: "101.82", delta: "소폭 상승", dir: "up", note: "정확한 전일대비 수치 미확인" }
-      ]
-    },
-    oil: {
-      asOf: "11/3(현지시간) 종가",
-      prices: [
-        { label: "WTI", value: "$96.09", delta: "-0.4%", dir: "down", note: "10/14래 최저" },
-        { label: "브렌트유", value: "$103.60", delta: "-1.17%", dir: "down", note: "10/7래 최저" }
-      ]
-    },
-    metrics: [
-      { label: "코스피", value: "5,648.79", delta: "-210.29 (-3.59%)", dir: "down", note: "11/3 종가, AI투자 수익성 우려發 반도체주 동반급락" },
-      { label: "금(COMEX)", value: "$3,940.40", delta: "-0.7%", dir: "down", note: "11/3 12월물 종가" }
-    ],
-    digest: [
-      "SK하이닉스發 中다롄공장 美장비수출이 보류되면서 뉴욕 신설 낸드공장 투자 재원조달까지 차질이 생겼다 — 10/19 이후 진전이 없어 어제(11/3) 휴면 처리됐던 \"대미 통상\" 호가 하루 만에 재점화했다",
-      "코스피가 <strong>3.59%(210.29p)</strong> 급락해 5,648.79 마감 — 美 AI투자 수익성 우려發 반도체 대형주 동반급락 속에 원/달러는 1,341.0원으로 소폭 더 내렸다",
-      "쿠팡Inc 3분기 영업손실 <strong>6,423억원</strong> — 인천 물류센터 화재손실을 반영해 3개 분기 연속 적자를 냈고, 1~3분기 누적손실이 이미 2021년 연간 손실을 넘어섰다",
-      "WTI $96.09·브렌트유 $103.60으로 한달래 최저 — 美-이란 외교협상 기대가 반영된 가운데, 미 당국자 발언으로 알려진 이란 케슘섬 공습설은 독립 교차검증되지 않았다",
-      "앤스로픽이 수정 증권신고서(S-1/A)에서 \"자기개선형 AI(RSI)에 근접했다\"고 처음 경고했다 — 3분기 매출은 <strong>170억달러</strong>로 늘었지만 매출 대비 컴퓨팅비용 비중도 58%로 악화됐다"
-    ],
-    insight: [
-      { label: "흐름", text: "\"대미 통상 — 2,000억 달러 전략투자와 반도체 관세\" 호가 10/19 마지막 진전 이후 15일 경과로 11/3 휴면 처리됐는데, 바로 다음날인 오늘 SK하이닉스 다롄공장 美수출허가 보류가 뉴욕 투자 재원조달까지 막고 있다는 사실이 확인되며 재점화하는 모습이다 — 활성 복귀 후 30번째 진전으로 보인다." },
-      { label: "뒤집힐 조건", text: "美 상무부가 다롄 장비반입을 승인하거나, 솔리다임이 뉴욕 투자 재원을 다른 경로(\"플랜B\")로 공식화하면 이 판단은 달라진다. 기사에 언급된 \"현 규모 유지\" 수준 장비 수출 협상이 실제로 타결되는지가 다음 확인 지점이다." },
-      { label: "안 보이는 것", text: "美 중간선거 결과는 이 브리핑 마감까지 나오지 않았다(투표 진행중, 美 동부 투표마감이 KST 오전대라 당연한 공백). 이란 \"케슘섬 공습\"은 익명 당국자 발언 하나뿐으로, 통신사·국방부의 독립 확인 없이 호르무즈 외교진전 서사와 나란히 보도됐다 — 외교와 군사 중 어느 쪽이 실제 흐름인지 아직 불확실하다." }
-    ],
-    sections: [
-      {
-        topic: "세계 정치 / 지정학",
-        items: [
-          {
-            id: "2026-11-04-trump-israel-aid-cut",
-            title: "트럼프, 연 40억달러 규모 대이스라엘 안보지원 연말 중단 발표",
-            body: "트럼프 대통령이 11/3 미국 중간선거 당일 이스라엘에 매년 제공하는 안보지원을 올해 말부터 중단하겠다고 밝혔다. 금액은 매체별로 40억달러(가디언·타임스오브인디아)와 38억달러(더힌두)로 엇갈려 보도됐는데, 후자는 2028년 9월까지 유효한 기존 10년 양해각서(MOU)상의 연간 군사원조 액수다. 트럼프는 네타냐후 총리와 사전에 합의했다고 말했고, 이 조치가 민주당이 '이스라엘 원조'를 비판 소재로 쓰는 것을 없애기 위함이라고 설명했다. 실제 중단 방식과 기존 MOU와의 관계는 불분명하며, 백악관의 추가 공식 설명은 아직 없다.",
-            regions: ["미국", "중동"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "new",
-            sources: [{ name: "ABC Australia", url: "https://www.abc.net.au/news/2026-11-04/us-midterms-daily-news-briefing/107340542" }, { name: "The Guardian", url: "https://www.theguardian.com/us-news/2026/nov/03/donald-trump-usa-end-military-aid-to-israel-end-year-midterms" }, { name: "The Hindu", url: "https://www.thehindu.com/news/international/trump-says-us-cutting-38-billion-annual-security-assistance-to-israel/article71662755.ece" }]
-          },
-          {
-            id: "2026-11-04-senegal-budget-rejected",
-            title: "세네갈 국회, IMF 구제금융 핵심 예산 수정안 부결 — 22억달러 프로그램 차질",
-            body: "세네갈 국회가 11/3(화) 올해 예산 수정안을 109대20(기권3)으로 부결시켰다. 이 수정안은 국제통화기금(IMF)의 22억달러 규모 3년짜리 구제금융 프로그램 확보에 핵심 조건이었는데, 국회가 일주일 전에도 법안을 재무위원회로 돌려보낸 데 이어 재차 거부하면서 다음달로 예상됐던 IMF 이사회 표결이 어려워질 전망이다. IMF에 따르면 세네갈의 부채는 2024년말 기준 GDP의 132%에 달하는데, 이는 전 정부의 부채 축소 신고가 뒤늦게 드러난 데서 비롯됐다. 배경에는 우스만 소코 국회의장과 바시루 디오마예 파예 대통령 간 정치 갈등, 청년실업·생활비 위기에 따른 최근 3일간의 총파업이 있다.",
-            regions: ["아프리카"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "new",
-            sources: [{ name: "Africanews", url: "http://www.africanews.com/2026/11/03/senegalese-lawmakers-reject-key-budget-in-major-setback-for-imf-talks/" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-us-midterms-voting", title: "美 중간선거(11/3) 투표 진행 — 이 브리핑 마감 시점까지 개표결과 없음", regions: ["미국"], entities: [], publishedAt: "2026-11-03", status: "update", change: "투표 자체가 11/3(미국시간) 진행 중이라 결과는 아직 없음. 연방항소법원이 행정부의 주 선관위 압박을 제한했고, 연방대법원은 캘리포니아 투표용지 집계를 막으려던 행정부의 긴급요청을 기각함", sources: [{ name: "ABC Australia", url: "https://www.abc.net.au/news/2026-11-04/us-midterms-daily-news-briefing/107340542" }] }
-        ]
-      },
-      {
-        topic: "글로벌 경제 / 시장",
-        items: [
-          {
-            id: "2026-11-04-kospi-slump-krw",
-            title: "코스피 3.59% 급락 5,648.79 마감 — 美 AI거품 우려·반도체주 동반급락, 환율은 1,341원으로 소폭 하락",
-            body: "3일 한국거래소에 따르면 코스피는 전 거래일보다 210.29포인트(3.59%) 내린 5,648.79에 마감해 전날 반등분을 모두 반납했다. 외국인이 1조5,151억원, 기관이 5,113억원을 순매도해 합계 2조원 넘게 팔았고 개인이 1조6,608억원을 순매수하며 받아냈다. 간밤 미국 증시에서 다우는 0.4% 올랐지만 S&P500(-0.5%)·나스닥(-1.1%)은 내렸고, 오라클의 200억달러대 자금조달 추진과 함께 마이크론(-5.8%)·엔비디아(-1.3%) 등이 떨어지며 AI 투자 수익성 우려가 반도체 대형주로 번졌다. 서울외환시장에서 원/달러 환율은 오후 3시30분 기준 전 거래일보다 2.8원 내린 1,341.0원에 거래를 마쳤다 — 장중 1,337.5원까지 떨어졌다가 1,346.8원까지 오르는 변동성을 보였다. 美 중간선거 결과 대기 속 증권가는 선거 결과보다 AI 투자 수익성과 외국인 자금 흐름이 코스피 반등 여부를 가를 것으로 본다는 분석이다.",
-            regions: ["한국", "미국"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "update",
-            change: "11/2 반등(+2.24%)에서 11/3 급락(-3.59%)으로 전환, 원/달러도 1,341.0원으로 추가 하락",
-            arc: "원/달러 환율 추세 · 12주째 55번째 진전",
-            topRank: 2,
-            sources: [{ name: "전자신문", url: "https://www.etnews.com/20261103000382" }, { name: "BusinessKorea", url: "https://www.businesskorea.co.kr/news/articleView.html?idxno=280364" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-dollar-index-strength", title: "달러인덱스 101.82 내외로 소폭 상승 — \"달러 약세\" 전망이 빗나갔다는 평가", regions: ["미국"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/202611034089i" }] },
-          { id: "2026-11-04-korea-fx-reserves", title: "10월 외환보유액 4,432억달러로 늘어 국제순위 9위로 상승", regions: ["한국"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "연합뉴스", url: "https://www.yna.co.kr/view/AKR20261103169200002" }] }
-        ]
-      },
-      {
-        topic: "AI / 디지털 기술",
-        items: [
-          {
-            id: "2026-11-04-anthropic-s1a-amended",
-            title: "앤스로픽 수정 S-1/A 공시 — \"자기개선형 AI(RSI)에 매우 근접\" 경고와 3분기 실적 공개",
-            body: "앤스로픽이 11/2 공개한 수정 증권신고서(S-1/A)의 위험요인 섹션에서 자사 책임있는확장정책(RSP) 기준인 \"AI발 급격히 가속된 진전\"에 곧 도달할 수 있다고 처음 밝혔다 — 다만 현재 모델 중 이 기준을 넘긴 것으로 지정된 모델은 없다고 덧붙였다. 같은 공시로 재무자료가 6월말에서 3분기(9월말)까지 확장됐는데, 매출은 전분기 115억달러에서 170억달러로 늘었지만 매출대비 컴퓨팅비용 비중도 48%→58%로 악화됐다. 3분기 컴퓨팅비용 100억달러 중 50억달러는 단가가 비싼 단기계약으로 조달했다. 공모가·상장일은 여전히 공란이며(10/9 나스닥 프라이빗마켓은 주당 85.10달러 지표 제시), 일부 매체는 11/16 상장을 추정하나 미확정이다.",
-            regions: ["미국"],
-            entities: [],
-            publishedAt: "2026-11-02",
-            status: "update",
-            change: "RSI 근접 경고 최초 공개, 재무자료가 3분기까지 확장돼 매출170억달러·컴퓨팅비용비중58% 처음 공시",
-            arc: "앤스로픽 — 자체 칩과 IPO · 11주째 31번째 진전",
-            topRank: 5,
-            sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/" }, { name: "TechCrunch", url: "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-openai-search-catchup", title: "OpenAI, ChatGPT 검색 이용이 구글을 추격 중이라고 자체 주장 — 수치는 회사측 발표 기준", regions: ["미국"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "The Verge", url: "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search" }] },
-          { id: "2026-11-04-openai-datacenter-rename", title: "OpenAI, 데이터센터 명칭을 'AI 컴퓨트 캠퍼스'로 바꾸는 방안 검토", regions: ["미국"], entities: [], publishedAt: "2026-11-01", status: "new", sources: [{ name: "The Verge", url: "https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses" }] },
-          { id: "2026-11-04-openai-chat-work-merge", title: "OpenAI, ChatGPT의 Chat·Work 탭 통합 및 Pro 사용한도 2배 확대", regions: ["미국"], entities: [], publishedAt: "2026-11-02", status: "new", sources: [{ name: "TechCrunch", url: "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/" }] },
-          { id: "2026-11-04-anthropic-clone-crackdown", title: "앤스로픽, Claude로 만든 AI 비디오게임 '클론' 단속 강화", regions: ["미국"], entities: [], publishedAt: "2026-11-02", status: "new", sources: [{ name: "The Verge", url: "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones" }] }
-        ]
-      },
-      {
-        topic: "반도체 / 컴퓨팅 인프라",
-        items: [
-          {
-            id: "2026-11-04-samsung-umc-ddi-wafer",
-            title: "삼성전자, UMC에 디스플레이구동칩 웨이퍼 1만장+ 추가요청 — 대만 파운드리 \"생산능력 한계\"로 거절",
-            body: "대만 경제일보가 11/2(현지시간) 보도하고 전자신문이 11/3 전한 내용에 따르면, 삼성전자가 대만 파운드리 UMC에 OLED 디스플레이 구동칩(DDI) 제조용 웨이퍼 1만장 이상을 추가로 요청했으나 UMC가 공장 가동이 한계에 달해 신규 물량 배정이 어렵다는 입장을 보였다. 삼성전자는 앞서 메모리 반도체 공급난에 따른 부품가 상승과 물가부담으로 스마트폰 시장 성장이 제한적일 것으로 보고 기존 DDI 웨이퍼 생산계획을 철회했는데, 이후 갤럭시Z 폴드·플립8 수요가 전망치를 웃돌면서 구동칩을 다시 확보해야 하는 상황이 됐다. UMC는 그 사이 비워진 생산능력을 다른 고객사 주문으로 채운 상태라 추가 물량을 받기 어려웠던 것으로 전해졌다. 성숙공정(범용반도체) 쪽 가용 생산능력이 전반적으로 줄어든 업계 상황이 배경으로 꼽힌다.",
-            regions: ["한국", "기타 아시아"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "new",
-            sources: [{ name: "전자신문", url: "https://www.etnews.com/20261103000413" }]
-          },
-          {
-            id: "2026-11-04-chip-equipment-leadtime",
-            title: "AI 반도체 장비 리드타임 평시 2배 이상 — 어플라이드·ASML·램리서치 등 2028년 계약 마무리, 2029년분 논의 시작",
-            body: "전자신문이 11/3 보도한 바에 따르면 AI 인프라 수요 대응을 위한 반도체 제조사들의 설비투자 경쟁으로 장비 리드타임이 평시 대비 2배 이상 늘어 일부 품목은 최대 2년 이상 걸린다. 어플라이드머티어리얼즈·ASML·램리서치·도쿄일렉트론(TEL)·KLA 등 주요 장비업체는 2028년 공급계약 마무리 단계에 들어섰고 일부는 2029년 공급분 구매주문(PO) 논의를 시작했다. 통상 계약 논의는 도입 6~12개월 전, 구매주문에서 납품까지는 3~6개월이 걸렸는데 지금은 계약 시점 자체가 평시보다 1~2년 빨라졌다. ASML은 2028년까지 노광장비 공급에 차질이 없을 것으로 보고 생산능력 확대도 검토 중이라고 밝혔다. 해외에서는 TSMC·마이크론·인텔이 2029년 공급전략을 수립 중이고, 국내에서는 삼성전자·SK하이닉스도 선제 대응이 필요하다는 지적이 나온다. 업계 임원들은 이 추세가 2030년까지 이어질 것으로 본다.",
-            regions: ["글로벌", "한국"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "new",
-            arc: "메모리 슈퍼사이클과 AI 인프라 원가 전가 · 12주째 53번째 진전",
-            sources: [{ name: "전자신문", url: "https://www.etnews.com/20261103000452" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-hbm-smuggle", title: "밀수업자, 저가 비규제 프로세서에 고가 HBM 끼워 포장해 한국→중국 수출통제 우회 — 원문 접근 제한으로 세부수치 미확인", regions: ["한국", "중국"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/semiconductors/ai-chip-smugglers-exploit-trade-control-loophole-to-bring-banned-hbm-from-south-korea-into-china-expensive-memory-chips-packaged-with-cheap-unsanctioned-processors-to-become-legal-exports" }] },
-          { id: "2026-11-04-nvidia-china-49pct", title: "엔비디아, 데이터센터 운영사에 중국고객 비중 49% 제한 요청했다는 보도 — 공식확인 안됨", regions: ["글로벌", "중국"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/data-centers/nvidia-tells-data-center-operators-to-limit-business-from-chinese-customers-with-new-global-restrictions-report-claims-allegedly-restricted-to-49-percent-of-the-total-ensuring-51-percent-are-non-chinese-outfits" }] }
-        ]
-      },
-      {
-        topic: "에너지 / 기후 / 자원",
-        items: [
-          {
-            id: "2026-11-04-oil-qeshm-strike",
-            title: "WTI·브렌트유 한달래 최저 — 美, 이란 케슘섬 전날밤 공습 사실도 알려져",
-            body: "11/3(현지시간) WTI 12월물은 배럴당 96.09달러(-0.37달러·약 0.4%)로 10/14 이후 최저치에 마감했고, 브렌트유 1월물도 103.60달러(-1.17달러·1.17%)로 10/7 이후 최저 종가를 기록했다. 하락은 미국-이란 평화협상 기대와 러시아-우크라이나 3자 협상 계획이 겹친 영향으로 풀이된다. 다만 익명의 미 당국자 발언으로, 미국이 전날 밤 호르무즈 해협의 이란 전략 요충지 케슘섬을 '제한적' 공습했다고 알려졌다 — 통신사나 국방부의 공식 확인이 아니라 해당 보도(뉴스핌)의 단독 서술에 가까워 독립 교차검증에는 실패했다. WSJ이 \"미군이 최근 수주간 이란에 제한적 공습을 이어왔다\"고 보도한 바 있으나, 이 역시 11/2 케슘섬 특정 공습을 직접 보도한 것은 아니다. 10/30 브렌트유가 6개월래 최고치(117.64달러)를 기록한 지 나흘 만의 큰 반전이다.",
-            regions: ["미국", "중동"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "update",
-            change: "11/2 7%대 급락 이후 11/3도 추가 하락 지속. 美의 케슘섬 공습설이 처음 보도됐으나 독립 교차검증 실패",
-            arc: "미국-이란 충돌 재개와 유가 급등 · 10주째 55번째 진전",
-            topRank: 4,
-            sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20261104000022" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-climate-state-2026", title: "2026년, 2024년과 역대 최고 더운 해 동률 될 확률 67% — Carbon Brief 분석", regions: ["글로벌"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "Carbon Brief", url: "https://www.carbonbrief.org/state-of-the-climate-2026-likely-to-tie-with-2024-as-the-warmest-year-on-record" }] }
-        ]
-      },
-      {
-        topic: "산업 / 모빌리티 / 로봇",
-        items: [
-          {
-            id: "2026-11-04-agility-robotics-nasdaq",
-            title: "애질리티로보틱스 SPAC합병, 주주 84%+ 찬성으로 승인 — 11/5 나스닥 상장 예정",
-            body: "휴머노이드로봇업체 애질리티로보틱스와 스팩(SPAC) 처칠캐피털XI의 합병안을 11/2 특별주주총회에서 주주 84% 이상이 찬성해 승인했다. 거래는 11/4 종결, 통합법인 '애질리티로보틱스'의 보통주·워런트는 11/5부터 나스닥에 'AGLT'·'AGLTW'로 상장될 예정이다. 조달액은 수수료 전 약4억6,500만달러(처칠신탁 약1억6,400만달러+폭스콘주도 PIPE 약2억100만달러+기존유입 약1억달러)로, 10/13 발표 당시 제시된 약4억2,400만달러보다 신탁 환매가 늘어 구성이 달라졌다.",
-            regions: ["미국"],
-            entities: [],
-            publishedAt: "2026-11-02",
-            status: "update",
-            change: "10/30 조달액 확정 보도 이후 11/2 주주승인과 11/4 거래종결·11/5 나스닥 상장 일정이 처음 확정됨",
-            sources: [{ name: "The Robot Report", url: "https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/" }]
-          },
-          {
-            id: "2026-11-04-china-electric-truck",
-            title: "중국 9월 대형 전기트럭 판매 비중 50.3%로 반등 — 1~9월 누적 38.1%",
-            body: "중국의 12톤 이상 대형트럭 시장에서 전기트럭이 9월 판매의 50.3%(약3만3,100대)를 차지했다. 전년 동월比 37% 늘었으나 전체 대형트럭 시장 자체는 전년比 21% 줄어든 상태다. 1~9월 누적으로는 약22만6,400대·비중38.1%(전년比64%↑)다. 지난해 12월 보조금 종료 전 사재기로 53.9%까지 올랐다가 3월엔 약23%로 급락한 바 있어, 9월 반등은 추세 재확인으로 풀이된다. Kpler는 LNG·전기트럭 전환으로 중국 디젤수요가 하루 약23만배럴(전기트럭분) 줄어들 것으로 추정했다.",
-            regions: ["중국"],
-            entities: [],
-            publishedAt: "2026-11-02",
-            status: "new",
-            sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/02/electric-trucks-50-percent-china-heavy-truck-sales-diesel-demand/" }]
-          },
-          {
-            id: "2026-11-04-kia-us-sales-record",
-            title: "기아, 美 10월 판매 역대 최고(8만8대·+16%) — EV3 美출시 두달새 1,496대",
-            body: "기아가 10월 미국에서 8만8대를 판매해 전년比16% 늘었다 — 10월 기준 역대 최고치이자 6개월 연속 월간 기록 경신이다. 전기차·하이브리드 판매가 각각112%·114% 늘며 두 부문 모두 신기록을 세웠고, EV9+111%·텔루라이드+63%·EV6+58% 등 주요 모델이 동반 증가했다. 8월 중순 미국 출시한 보급형 EV3(2027년형 라이트 FWD 2만9,890달러부터, 58.3kWh·최대221마일)는 출시 두 달간 1,496대가 팔렸다. 기아는 이 성장세가 4분기·2027년까지 이어질 것으로 기대한다고 밝혔다.",
-            regions: ["한국", "미국"],
-            entities: [],
-            publishedAt: "2026-10-31",
-            status: "new",
-            sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/03/kia-racks-up-another-record-month-new-30k-ev3-hits-dealers/" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-iso-robot-standard", title: "ISO, 산업용 이동로봇 상호운용성 표준 'ISO 21423:2026' 발행", regions: ["글로벌"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "The Robot Report", url: "https://www.therobotreport.com/new-iso-interoperability-standard-covers-collaboration-among-mobile-robots/" }] },
-          { id: "2026-11-04-hyundai-ioniq5-sales", title: "현대차 아이오닉5, 2026년 美 판매 3만3,000대 넘기며 자리 잡는 모습", regions: ["한국", "미국"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "Electrek", url: "https://electrek.co/2026/11/03/hyundai-ioniq-5-finds-footing-2026-sales-top-33000/" }] }
-        ]
-      },
-      {
-        topic: "과학 / 바이오 / 건강",
-        items: [
-          {
-            id: "2026-11-04-ny-measles-death",
-            title: "뉴욕주 루이스카운티서 홍역으로 어린이 사망 — 주 30년만의 첫 홍역 사망",
-            body: "뉴욕주 보건당국이 11/3(월) 루이스카운티(시러큐스 북쪽 약150km)의 농촌지역 어린이가 홍역으로 사망했다고 발표했다 — 뉴욕주에서 30년 만의 첫 홍역 사망 사례다. 나이·성별, 백신접종 여부, 정확한 사망일은 공개되지 않았다. 호컬 주지사는 10월초 인접주·농촌지역 확산을 이유로 재난 비상사태를 선포해 파라메딕·조산사까지 백신접종 인력을 확대했다. 美CDC는 올해 홍역 관련사망 3건을 확인했으나 주 보건당국들은 더 많은 수를 보고 중이며, 펜실베이니아주는 올해 5건(6번째 조사중)을 자체 집계했다 — 집계기준(증상발생·확진 후 30일내 사망 포함여부) 차이로 수치가 엇갈린다.",
-            regions: ["미국"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "new",
-            sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/03/child-dies-measles-new-york-first-death-30-years/" }]
-          },
-          {
-            id: "2026-11-04-bird-flu-h5n5",
-            title: "美 올해 첫 조류인플루엔자 사망 — 워싱턴주서 희귀 H5N5형, 소 노출 후",
-            body: "워싱턴주 주민이 조류인플루엔자 합병증으로 사망했다고 AP가 11/2 보도했다 — 美에서 올해 처음 나온 조류인플루엔자 사망이자, 2024년 이 질병이 주요 공중보건 문제로 떠오른 이후 세번째 사망 사례다. 앞선 두 사망(루이지애나·2025년 1월 등)은 모두 H5N1형이었던 반면 이번 워싱턴 사례는 더 드문 변종인 H5N5형이며, 소(cattle) 노출 후 발생했다고 보도됐다. 사망자 나이·정확한 지역·확진 시점 등은 보도되지 않았다. 최근 몇년간 감염사례는 대체로 가벼웠던 터라 과학자들 사이에서도 이례적 사례로 받아들여지고 있다.",
-            regions: ["미국"],
-            entities: [],
-            publishedAt: "2026-11-02",
-            status: "new",
-            sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/03/health-news-first-us-bird-flu-death-after-cattle-exposure-2026/" }]
-          },
-          {
-            id: "2026-11-04-servier-dmd-trial-fail",
-            title: "세르비에 15억5,000만달러에 인수한 근이영양증 신약, 3상 1차목표 달성 실패",
-            body: "프랑스 제약사 세르비에가 6월 15억5,000만달러(최대 마일스톤 포함 26억5,000만달러)에 에지와이즈테라퓨틱스에서 인수한 세바세뮤텐이 베커근이영양증 대상 3상(GRAND CANYON)에서 질병진행을 늦추는 1차 목표를 달성하지 못했다고 11/3 발표됐다. 베커근이영양증에는 현재 승인된 치료제가 없다. 인수 전 소규모 무작위대조연구에서는 긍정적 결과가 나왔던 터라, 세르비에는 이번 결과가 \"일부 이전 연구와 일치하지 않는다\"며 전체 데이터셋과 기존 임상자료를 함께 분석해 원인을 규명하겠다고 밝혔다. 구체적 1차평가지표 수치·통계적 유의성은 원문이 유료라 확인하지 못했다.",
-            regions: ["미국", "유럽"],
-            entities: [],
-            publishedAt: "2026-11-03",
-            status: "new",
-            sources: [{ name: "STAT News", url: "https://www.statnews.com/2026/11/03/becker-muscular-dystrophy-servier-edgewise-sevasemten-fail/" }]
-          },
-          {
-            id: "2026-11-04-lenacapavir-generic",
-            title: "FDA, 레나카파비르 제네릭 잠정승인 — 저소득국 연간 1인당 40달러",
-            body: "FDA가 인도 제약사 닥터레디스랩에 HIV예방 주사제 레나카파비르(오리지널은 길리어드의 'Yeztugo')의 제네릭에 대해 잠정승인(tentative approval)을 내렸다고 11/2 보도됐다. 저·중소득국가 연간 1인당 비용은 매일 먹는 알약 수준인 40달러로, 여러 국제보건단체 지원 아래 다음달부터 수십개국에 출하를 시작할 계획이다. 오리지널 Yeztugo는 작년 美 FDA 승인을 받은 6개월 1회 투여 주사제이며, 기사에는 오리지널 가격이 명시되지 않아 직접적인 가격 비교는 확인하지 못했다.",
-            regions: ["미국", "글로벌"],
-            entities: [],
-            publishedAt: "2026-11-02",
-            status: "new",
-            sources: [{ name: "STAT News", url: "https://www.statnews.com/pharmalot/2026/11/02/lenacapavir-generic-version-approved-fda-hiv-prevention-dr-reddys/" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-pritzker-prize-mit", title: "MIT 바르질라이·콜린스, AI 기반 항생제 발굴 연구로 2026 프리츠커상 공동수상", regions: ["미국"], entities: [], publishedAt: "2026-11-02", status: "new", sources: [{ name: "MIT News", url: "https://news.mit.edu/2026/regina-barzilay-jim-collins-win-pritzker-prize-ai-and-science-research-excellence-1102" }] },
-          { id: "2026-11-04-kcl-alzheimer-candidate", title: "킹스칼리지런던, 알츠하이머 후보물질 KCL-286 생쥐실험서 DNA손상복구·뇌염증감소 확인 — 1상 안전성시험만 통과", regions: ["유럽"], entities: [], publishedAt: "2026-11-02", status: "new", sources: [{ name: "ScienceDaily", url: "https://www.sciencedaily.com/releases/2026/11/261102075806.htm" }] }
-        ]
-      },
-      {
-        topic: "사회 / 문화 / 소비",
-        items: [],
-        briefs: [
-          { id: "2026-11-04-spain-population-65plus", title: "스페인, 65세 이상 인구 처음으로 1,000만명 돌파 — 원문 접근 제한으로 세부수치 미확인", regions: ["유럽"], entities: [], publishedAt: "2026-11-03", status: "new", sources: [{ name: "El País", url: "https://elpais.com/sociedad/2026-11-03/espana-supera-por-primera-vez-los-10-millones-de-habitantes-mayores-de-65-anos.html" }] }
-        ]
-      },
-      {
-        topic: "한국 산업 / 정책 / SK",
-        items: [
-          {
-            id: "2026-11-04-sk-hynix-dalian-export-block",
-            title: "美, SK하이닉스 中다롄공장 장비반입 승인 보류 — 뉴욕 투자계획까지 차질",
-            body: "로이터가 11/3(현지시간) 보도한 바에 따르면 미국 상무부가 SK하이닉스의 중국 다롄 낸드공장 증설용 미국산 장비 수출허가를 아직 내주지 않고 있다. 솔리다임(SK하이닉스 美자회사) 경영진이 8월말 이후 상무부와 10차례 가까이 협의했지만 생산능력 확대·시설개선용 추가 장비 반입은 여전히 불허 기조라고 전해졌다. 문제는 이 다롄 증설 수익을 솔리다임이 뉴욕주 마시(Marcy)에 짓기로 한 약450억달러(장기 최대1,000억달러 거론) 규모 낸드공장 투자 재원으로 쓰려던 구상이었다는 점이다 — 2025년 8월 VEU(검증된최종사용자) 지위 철회 이후 중국 공장 생산능력 확대가 막히면서 미국 투자계획 자체가 재원 조달 단계에서 걸림돌을 만났다. 다만 2027년까지 다롄 공장을 '현 규모 유지' 수준으로 돌리는 데 필요한 장비 수출은 별도로 협상 중이라고 알려졌다.",
-            regions: ["한국", "미국", "중국"],
-            entities: ["SK"],
-            publishedAt: "2026-11-03",
-            status: "update",
-            change: "10/16 요청사실 보도에서 한발 나가, 상무부 보류 사실과 뉴욕투자 재원조달 저해 메커니즘이 처음 확인됨",
-            arc: "대미 통상 — 2,000억 달러 전략투자와 반도체 관세 · 12주째 30번째 진전(15일 휴면 후 재점화)",
-            topRank: 1,
-            sources: [{ name: "연합뉴스", url: "https://www.yna.co.kr/view/AKR20261104006700072" }, { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202611040405338468" }]
-          },
-          {
-            id: "2026-11-04-coupang-q3-loss",
-            title: "쿠팡Inc 3분기 영업손실 6,423억원 — 3개 분기 연속 적자, 인천 화재손실 반영",
-            body: "쿠팡Inc가 11/4(한국시간) SEC에 제출한 보고서에서 3분기 영업손실 4억5,000만달러(약6,423억원)를 기록했다고 밝혔다 — 전년 동기(영업이익 2,245억원)에서 적자로 전환한 뒤 1분기(3,545억원)·2분기(8,350억원)에 이어 3개 분기 연속 적자다. 매출은 99억6,200만달러(약14조2,209억원)로 전년比 7%(고정환율 기준 11%) 늘었다. 순손실은 5억100만달러(약7,151억원). 7월 인천 물류센터 화재 관련 손실 2억4,800만달러가 반영됐는데, 이를 빼면 영업손실은 2억200만달러로 줄어든다. 직전 2분기보다는 적자규모가 1,927억원 줄었다. 1~3분기 누적 영업손실(1조8,318억원)은 이미 2021년 연간 영업손실(1조7,088억원)을 넘어섰다.",
-            regions: ["한국"],
-            entities: [],
-            publishedAt: "2026-11-04",
-            status: "new",
-            topRank: 3,
-            sources: [{ name: "뉴스핌", url: "https://www.newspim.com/news/view/20261104000027" }, { name: "파이낸셜뉴스", url: "https://www.fnnews.com/news/202611040619546926" }]
-          }
-        ],
-        briefs: [
-          { id: "2026-11-04-nvidia-naver-investment-final", title: "엔비디아, 네이버 투자금 1조3,412억원·지분율4.13%로 확정 — 7/27 발표 10억달러에서 환율조정", regions: ["한국", "미국"], entities: [], publishedAt: "2026-11-03", status: "update", change: "환율 기준으로 최종 확정된 금액·지분율이 처음 공개됨", sources: [{ name: "연합뉴스", url: "https://www.yna.co.kr/view/AKR20261103176300017" }] },
-          { id: "2026-11-04-toss-naver-ftc-complaint", title: "토스, 네이버 공정위 제소 — POS 연동 거부가 자사우대라는 주장(접수 여부 중간신뢰도)", regions: ["한국"], entities: [], publishedAt: "2026-11-03", status: "update", change: "주병기 공정위원장의 10/12 국감 발언 이후 토스의 실제 제소 추진이 보도됨", sources: [{ name: "한국경제", url: "https://www.hankyung.com/article/2026110337291" }] }
-        ]
-      },
-      {
-        topic: "중국 AI",
-        items: [
-          {
-            id: "2026-11-04-wic-wuzhen-2026",
-            title: "2026 세계인터넷대회 우전서밋 개막 — AI 오픈소스가 핵심 의제, 27개 분과포럼·670여개 기업 참가",
-            body: "2026 세계인터넷대회(WIC) 우전서밋이 11/2~5 저장성 우전에서 '개원개방 공건공향(開源開放 共建共享)'을 주제로 열리고 있다. 올해 처음으로 주포럼에 '인공지능 우전대화' 세션이 신설돼 AI 오픈소스 생태계 구축을 집중 논의하며, 창신발전·안전치리(안전 거버넌스)·문명교류·국제협력 등을 다루는 27개 분과포럼이 함께 열린다. 11/4 오전에는 저장성 분과포럼이 \"신질생산력 발전, 강력한 증량은 AI\"를 주제로 열려 올해 새로 생긴 '선도발표'·'미래장면' 코너에서 구현형 지능(具身智能)·브레인-컴퓨터 인터페이스 등을 다룬다. 부대행사인 '인터넷의 빛' 박람회에는 670여개 기업이 참가해 기술성과 1,000여건을 전시한다.",
-            regions: ["중국"],
-            entities: [],
-            publishedAt: "2026-11-02",
-            status: "new",
-            sources: [{ name: "中国网信网(CAC)", url: "https://www.cac.gov.cn/2026-10/21/c_1794335237063244.htm" }, { name: "北京青年报", url: "https://www.bjnews.com.cn/detail/1792481178189081.html" }]
-          }
-        ],
-        briefs: []
-      }
-    ]
   }
 ];
 
@@ -3577,8 +3419,8 @@ const BRIEFINGS = [
 /* EVENTS-BEGIN */
 const EVENT_DATA = {
   "registryHash": "46e8cb58cd15e6850d8bb7982f8826f59dab02825d513d168bf5d1c4c8892e27",
-  "asOf": "2026-11-10",
-  "measuredAt": "2026-11-09T17:49:43.319861+00:00",
+  "asOf": "2026-11-11",
+  "measuredAt": "2026-11-10T17:17:55.812652+00:00",
   "comparison": {
     "ready": false,
     "reason": "비교 기간에 2시간 넘는 수집 공백이 있음"
