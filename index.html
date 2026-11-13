@@ -4360,7 +4360,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "d8f76c5fb43fc5b25562c192908109d8c6acbce93815e9fe6e40b41c1ec83caf",
+  "registryHash": "15073f17af5d3272f60e9274ae13f447d585df85051dbf2c2e2b3c3dec755cc4",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -14908,6 +14908,262 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-12T00:10:00Z"
         }
       ]
+    },
+    {
+      "id": "saudi-pipeline-hormuz-claims-vs-confirmed-2026-11-13",
+      "ruleId": "energy-geopolitics",
+      "topic": "세계 정치 / 지정학",
+      "question": "11/12 사우디 동서 송유관·얀부 공격 주장과 호르무즈 유조선 피격 주장이 유가를 끌어올렸지만, 그중 실제로 정부가 확인했거나 독립 검증된 부분은 무엇인가?",
+      "basis": "12개 분야 중 '세계 정치 / 지정학'이 10/24(france-sentinelle-precedent) 이후 자동조사 15건 중 한 번도 선정되지 않아 가장 오래(20일) 비어 있었다. 비공개 조사대기 큐(news-candidates 브랜치, 11/12 22:52 UTC 갱신)에도 이 분야의 energy-geopolitics 작업('외교·분쟁 보도가 실제 원유 수송과 공급에 어떤 변화를 만들었는가', 트리거 17건 누적)이 쌓여 있었다. 오늘(11/13) 일간 브리핑의 핵심 3위 항목(후티군의 사우디 송유관·얀부 공격 주장과 이란의 호르무즈 유조선 피격 주장이 겹치며 유가 급등, 로이터 미확인)이 두 주장의 확인 수준을 구분하지 않아 이 질문으로 검증했다. 기존 Hormuz 관련 자동조사 3건(10/2 다크탱커 지표, 10/6 통행료 주장, 11/3 재개방 제안)은 각각 다른 구체적 주장을 다뤄 이번 11/12 사건과 중복되지 않는다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-13",
+      "scope": "current",
+      "summary": "오늘 일간 브리핑이 다룬 11/12 사우디 에너지시설 공격 주장과 호르무즈 유조선 피격 주장을, 후티군 성명 원문(2차 보도)·사우디 주도 연합군 발표·사우디 에너지부의 11/9 별도 확인·2026년 9월 공격 당시 위성영상 검증 사례·유가 종가 수치를 대조해 검증했다. '공격 주장'·'정부 확인'·'독립 검증(위성·추적데이터)'이 서로 다른 신뢰 단계이며, 11/12 사건은 아직 첫 단계(주장)에 머물러 있다는 점과, 같은 날 보도된 유가 수치 중 일부가 WTI·브렌트유를 혼동한 오류였다는 점을 확인했다.",
+      "learning": [
+        {
+          "title": "'공격 주장'·'정부 확인'·'독립 검증'은 신뢰 단계가 다르다",
+          "text": "후티군·이란군 같은 공격 주체의 자체 성명은 가장 낮은 단계의 '주장'이다. 사우디 주도 연합군이나 사우디 에너지부가 요격·피해 여부를 밝히면 '정부 확인' 단계로 올라가지만, 정부도 자국에 유리하게 축소·과장할 수 있어 완전히 독립적이지는 않다. 가장 신뢰할 수 있는 단계는 위성영상(Vantor 등)이나 선박 추적데이터(Kpler·Vortexa)처럼 분쟁 당사자가 아닌 제3자가 만든 '독립 검증'이다. 2026년 9월 동서송유관 공격은 사흘~며칠 뒤 위성영상으로 화재 피해가 독립 확인됐지만, 11/12 주장은 이번 조사 시점까지 두 번째·세 번째 단계로 올라가지 못했다.",
+          "sourceIds": [
+            "wikipedia-eastwest",
+            "houseofsaud-1112"
+          ]
+        },
+        {
+          "title": "동서 송유관(Petroline)은 호르무즈를 거치지 않는 사우디의 핵심 우회 수출로다",
+          "text": "사우디는 걸프 연안 유전에서 생산한 원유 중 상당량을 약 1,200km 길이의 동서 송유관으로 홍해 얀부항까지 보내 호르무즈 해협을 거치지 않고 수출한다. 이 경로는 전쟁 전 하루 약 400만~500만 배럴을 처리했다. 그래서 이 송유관이 공격받으면 '호르무즈가 막혀도 쓸 수 있는 대체로'가 함께 흔들린다는 의미가 있어, 이 경로에 대한 공격 주장은 단순한 호르무즈 통항 주장보다 시장이 더 민감하게 반응할 수 있는 지점이다.",
+          "sourceIds": [
+            "wikipedia-eastwest"
+          ]
+        },
+        {
+          "title": "후티군 공격 성명의 대상 목록은 여러 '파고'에 걸쳐 되풀이된다",
+          "text": "10/25 성명과 11/12 성명을 비교하면 리야드 인근 공항·얀부 아람코 시설·라비그 정유공장·동서송유관 펌프장 등 대상 목록이 상당 부분 겹친다. 이는 매번 완전히 새로운 공격이 이뤄졌다는 뜻이라기보다, 성명 자체가 기존 목표군을 다시 거론하는 방식으로 반복되는 경향이 있다는 뜻으로 읽을 수 있다 — 다만 이것만으로 개별 공격의 실재 여부를 판단할 수는 없다.",
+          "sourceIds": [
+            "qatar-tribune-1025",
+            "houseofsaud-1112",
+            "rallies-1112"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "11/12(현지시간) 종가는 WTI 배럴당 88.74달러(+2.21달러, +2.6%), 브렌트유 95.82달러(+3.06달러, +3.3%)였다. 오늘 일간 브리핑이 쓴 수치(WTI $88.76/+2.58%, 브렌트유 $95.79)와 거의 일치한다. 반면 같은 날짜를 보도한 한 경제지(Newspim)는 'WTI 12월물 95.20달러(+2.63%)'로 전했는데, 이는 실제보다 약 6.5달러 높고 같은 기사의 브렌트유 수치(95.27달러)와 거의 같은 값이어서 WTI와 브렌트유를 혼동했을 가능성이 있다.",
+          "sourceIds": [
+            "rallies-1112",
+            "newspim-1113"
+          ]
+        },
+        {
+          "text": "후티군 대변인 야히야 사리는 11/12 성명에서 사우디 동서 송유관 펌프장에 대한 드론 공격과 얀부 아람코 시설에 대한 미사일 공격을 주장했다. 사우디 주도 연합군은 같은 날 드론 2기를 요격했다고만 밝혔다. 송유관·얀부 시설의 실제 피해 여부에 대한 사우디 정부나 아람코의 공식 확인·부인은 이번 조사 시점까지 찾지 못했다.",
+          "sourceIds": [
+            "rallies-1112",
+            "houseofsaud-1112"
+          ]
+        },
+        {
+          "text": "이와는 별개로 사우디 에너지부는 11/9 같은 동서 송유관에 대한 공격을 사우디통신(SPA)을 통해 공식 확인한 바 있다 — 다만 '부상자·사망자 없음, 송유관 운영에 영향 없음'이라고 밝혀 가동에는 지장이 없었다. 이는 11/12 주장보다 사흘 앞선, 규모가 작고 공식 확인된 별개 사건이다.",
+          "sourceIds": [
+            "aljazeera-1109"
+          ]
+        },
+        {
+          "text": "2026년 9월 10~11일 이라크 영토에서 발사된 드론들이 같은 동서 송유관 펌프 스테이션을 타격해 화재가 발생했을 때는, 민간 위성업체 Vantor의 위성영상이 알메사바 인근 펌프장의 화재 피해를 독립적으로 확인했다. 다만 공격 책임 주체(사우디는 '이라크발 드론'이라고 발표, 이라크 내 민병대는 관여 부인)는 끝내 공식 결론이 나지 않았고, 인포박스 수준에서만 후티군 연루 주장이 언급됐다. 가동은 최소 6~8주 만에 완전 복구될 것으로 예상됐다.",
+          "sourceIds": [
+            "wikipedia-eastwest"
+          ]
+        },
+        {
+          "text": "10/25 후티군 성명은 리야드 킹칼레드 공항·담맘 킹파흐드 공항·나즈란 공항·키미스무샤이트 공군기지·얀부 아람코 시설·라비그 정유공장·동서송유관 펌프장을 '사우디의 예멘 공습(24시간 100회)에 대한 보복'으로 공격했다고 주장했다. 당시도 사우디 연합군은 미사일·드론 요격만 발표했을 뿐 피해나 인명피해는 언급하지 않았다. 11/12 성명의 대상군(송유관·얀부 등)은 이 목록과 상당 부분 겹친다.",
+          "sourceIds": [
+            "qatar-tribune-1025"
+          ]
+        }
+      ],
+      "limitations": [
+        "11/12 후티 주장에 대한 사우디 정부·아람코의 공식 확인 또는 부인 자체를 이번 조사에서는 찾지 못했다. 사우디통신(SPA) 원문을 직접 열람하지 못하고 Al Jazeera의 인용(11/9 사건 한정)으로만 확인했다.",
+        "'리야드 아람코 건물' 공격이 11/12 성명에 실제 포함됐는지는 두 출처의 서술이 엇갈린다 — rallies.ai(11/12)는 포함된 것으로 전했지만, houseofsaud.com(11/12)은 리야드 관련 11/12 주장이 킹칼레드 공항 순항미사일이었고 '아람코 건물' 피해는 11/8의 별도 사건이라고 구분했다. 이번 조사로는 어느 쪽이 맞는지 확정하지 못했다.",
+        "펌프장 번호 표기 차이(Reuters·Middle East Eye의 '7번' vs Shafaq News의 '11번')는 houseofsaud.com의 요약에만 의존했고, 세 매체의 원문을 직접 열람하지 못했다. Shafaq News 자체 보도(과거 기사)는 전체 시스템이 펌프장 11개로 구성된다고만 밝혀, '11번'이 특정 펌프장을 가리키는지 전체 수를 가리키는지도 불확실하다.",
+        "이란의 호르무즈 유조선 4척 피격 주장은 로이터가 독립 확인하지 못했다는 사실만 확인했고, 선박 추적데이터(AIS·Kpler·Vortexa)로 11/12 당일 호르무즈 통항량 변화를 직접 확인하지는 못했다 — 검색된 자료는 11월 초(11/1·11/3) 수치에 그쳤고 11/12 당일 자료는 찾지 못했다.",
+        "반대근거·실패사례 검색(필수 1회)에서는 2026년 9월 유사 공격이 위성영상으로 사후 확인된 선례를 찾았지만, 그 사례도 책임 주체는 끝내 공식 결론이 나지 않았다 — '검증 가능한 주장'과 '완전히 검증된 주장'은 구별된다는 한계가 함께 확인됐다.",
+        "newspim 기사의 WTI 수치 오류(의심)는 이번 조사가 rallies.ai 등 타 매체와 대조해 추정한 것이며, newspim에 정정·해명을 직접 확인하지는 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "11/12 유가 급등은 로이터가 공식 확인하지 않은 두 개의 주장(송유관·얀부 공격, 호르무즈 유조선 피격)에 대한 시장의 즉각적 반응으로 보이며, 사흘 전(11/9) 사우디가 스스로 '피해 없음'으로 확인한 소규모 공격과 9월의 실제 가동중단 전례가 뒤섞여 반영된 것으로 풀이된다. 시장이 반응한 두 주장 모두 이번 조사 시점까지는 '정부 확인'이나 '독립 검증' 단계로 올라가지 않은 것으로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "사우디 에너지부나 아람코가 11/9 때처럼 11/12 공격에 대해서도 공식 입장(피해 있음/없음)을 내거나, 위성영상·선박 추적데이터로 실제 피해나 통항 차질이 확인되면 '아직 주장 단계'라는 이번 판단은 바뀐다. 반대로 1주일 내 추가 확인 없이 소강되면(기존 호르무즈 주장들의 반복 패턴과 같이) 이번 판단은 유지된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "'리야드 아람코 건물'이 11/12 공격 대상에 실제 포함됐는지, 그리고 10/25·11/8·11/9·11/12로 이어진 각 공격 주장들이 서로 다른 사건인지 같은 사건들의 재서술·중첩인지를 사우디·후티 양측 모두 명확히 정리해 밝히지 않았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "11/9 사우디 에너지부가 확인한 소규모 공격 이후 사우디 측이 11/12 주장에 대해 추가 공식 설명(피해·요격 결과)을 내는지, 그리고 선박 추적데이터(Kpler·Vortexa)에서 11월 중순 호르무즈 통항량에 실제 변화가 나타나는지 확인한다.",
+      "nextCheck": "2026-11-20",
+      "processedJobIds": [
+        "energy-geopolitics-b215d437a0f5"
+      ],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Houthi attack Saudi East-West pipeline Yanbu November 12 2026 (웹검색)",
+          "note": "일반 맥락 확인, 9월·7월 공격과 혼재돼 11/12 직접 보도는 찾지 못함"
+        },
+        {
+          "outcome": "opened",
+          "target": "Iran tankers struck Hormuz November 12 2026 Reuters unconfirmed (웹검색)",
+          "note": "로이터 미확인 보도 패턴 확인, 날짜 특정은 미흡"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "newspim-1113",
+          "target": "https://www.newspim.com/news/view/20261113000016",
+          "note": "오늘 일간 브리핑이 인용한 원문 직접 열람 — 공격 주장·유가 수치 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://today.lorientlejour.com/article/1547742/yemens-houthis-say-they-attacked-aramco-facilities-in-yanbu-no-saudi-confirmation.html",
+          "note": "403 접속 차단"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Yanbu\" OR \"East-West pipeline\" Houthi oil prices jump \"November 12\" (웹검색, extended)",
+          "note": "houseofsaud.com·Fox News 등 11/12 관련 2차 보도 단서 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "AP News oil prices jump Houthi Saudi pipeline Hormuz tankers Iran November 2026 (웹검색)",
+          "note": "AP 원문은 못 찾음, 9~10월 배경 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "wikipedia-eastwest",
+          "target": "https://en.wikipedia.org/wiki/2026_East%E2%80%93West_Crude_Oil_Pipeline_attack",
+          "note": "9월 공격 세부사항·위성영상 검증·책임소재 논란·송유관의 호르무즈 우회 역할 확인(배경자료, scope: background)"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "houseofsaud-1112",
+          "target": "https://houseofsaud.com/houthis-claim-yanbu-oil-attack-nov12/",
+          "note": "11/12 성명 세부 대상·매체 간 펌프장 번호 불일치·리야드 주장의 날짜 혼선 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "investing.com OR tradingeconomics WTI crude oil November 12 2026 close price (웹검색)",
+          "note": "11/12 종가를 직접 보여주는 결과 없음"
+        },
+        {
+          "outcome": "opened",
+          "target": "Saudi Arabia Aramco response Houthi pipeline Yanbu claim November 13 2026 statement (웹검색)",
+          "note": "사우디·아람코의 공식 확인/부인을 찾지 못함 — 그 자체를 한계로 기록"
+        },
+        {
+          "outcome": "opened",
+          "target": "Reuters oil prices rise Houthi Hormuz tankers November 12 2026 Brent WTI settle (웹검색, extended)",
+          "note": "WTI·브렌트유 11/12 종가 수치의 1차 단서(rallies.ai, Fox News) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Shafaq News Houthi East-West pipeline pump station 11 November 2026 (웹검색)",
+          "note": "송유관 시스템이 펌프장 11개로 구성된다는 배경 확인, '11번' 표기의 의미는 불확실"
+        },
+        {
+          "outcome": "opened",
+          "target": "Houthi Saudi pipeline attack claim later confirmed satellite imagery damage 2026 (웹검색, 반대근거 검색)",
+          "note": "9월 공격이 위성영상(Vantor)으로 사후 확인됐으나 책임 주체는 미확정이었음을 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "aljazeera-1109",
+          "target": "https://aljazeera.com/news/2026/11/9/saudi-arabia-reports-new-attack-on-key-east-west-pipeline",
+          "note": "11/9 공격에 대한 사우디 에너지부(SPA)의 공식 확인 — 피해 없음·가동 정상 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Reuters Houthi \"pumping station\" Yanbu Riyadh airport missiles November 12 2026 (웹검색)",
+          "note": "후티군 전체 대상 목록(공항·정유공장 포함), AFP 기자의 리야드 공항 인근 화재 목격 단서 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Kpler Vortexa Hormuz tanker traffic data November 2026 disruption (웹검색)",
+          "note": "11/12 당일 통항량 데이터는 찾지 못함 — 11월 초 수치만 확인, 한계로 기록"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "rallies-1112",
+          "target": "https://rallies.ai/news/oil-settles-3-higher-on-attacks-on-saudi-energy-sites-strait-of-hormuz-disruptions-274558af43909ac1",
+          "note": "11/12 WTI·브렌트유 종가(88.74달러/95.82달러) 직접 확인, newspim 수치와 대조"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "qatar-tribune-1025",
+          "target": "https://www.qatar-tribune.com/article/260752/world/houthis-claim-string-of-new-attacks-on-saudi-arabia",
+          "note": "10/25 후티 성명 전체 대상 목록 확인 — 11/12 목록과의 중첩 비교에 사용(발행일은 10/25로 확인, 11/12 사건 아님)"
+        }
+      ],
+      "sources": [
+        {
+          "id": "newspim-1113",
+          "name": "Newspim, 사우디 송유관·호르무즈 유조선 피격 주장 겹치며 유가 상승 보도",
+          "url": "https://www.newspim.com/news/view/20261113000016",
+          "publishedAt": "2026-11-13",
+          "kind": "경제지 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-13T00:05:00Z"
+        },
+        {
+          "id": "rallies-1112",
+          "name": "rallies.ai, 'Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions'",
+          "url": "https://rallies.ai/news/oil-settles-3-higher-on-attacks-on-saudi-energy-sites-strait-of-hormuz-disruptions-274558af43909ac1",
+          "publishedAt": "2026-11-12",
+          "kind": "시황 뉴스 집계(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-13T00:09:00Z"
+        },
+        {
+          "id": "houseofsaud-1112",
+          "name": "houseofsaud.com, 'Houthis Claim 2 Strikes on East-West Pipeline and Yanbu Oil Facilities'",
+          "url": "https://houseofsaud.com/houthis-claim-yanbu-oil-attack-nov12/",
+          "publishedAt": "2026-11-12",
+          "kind": "중동 전문 분석 블로그, 로이터·미들이스트아이·샤파크뉴스 보도 재정리(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-13T00:07:00Z"
+        },
+        {
+          "id": "aljazeera-1109",
+          "name": "Al Jazeera, 'Saudi Arabia reports new attack on key East-West pipeline'",
+          "url": "https://aljazeera.com/news/2026/11/9/saudi-arabia-reports-new-attack-on-key-east-west-pipeline",
+          "publishedAt": "2026-11-09",
+          "kind": "국제 통신매체 보도, 사우디통신(SPA) 발표 인용(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-13T00:12:00Z"
+        },
+        {
+          "id": "wikipedia-eastwest",
+          "name": "Wikipedia, '2026 East–West Crude Oil Pipeline attack'",
+          "url": "https://en.wikipedia.org/wiki/2026_East%E2%80%93West_Crude_Oil_Pipeline_attack",
+          "publishedAt": "2026-10",
+          "kind": "백과사전 정리 문서, 2026-10-11 최종 편집(직접 열람, scope: background)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-13T00:06:00Z"
+        },
+        {
+          "id": "qatar-tribune-1025",
+          "name": "Qatar Tribune, 'Houthis claim string of new attacks on Saudi Arabia'",
+          "url": "https://www.qatar-tribune.com/article/260752/world/houthis-claim-string-of-new-attacks-on-saudi-arabia",
+          "publishedAt": "2026-10-25",
+          "kind": "중동 매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-13T00:14:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -15354,6 +15610,15 @@ const RESEARCH_DATA = {
         "korea-tourist-spending-vs-domestic-consumption-2026-11-12"
       ],
       "reason": "12개 분야 중 '중국 AI'가 10/30 이후 11건 중 한 번도 선정되지 않아 가장 오래(13일) 비어있었으나, 오늘(11/12) 일간 브리핑이 '7회차 연속 공백'이라 검증할 신규 사실이 없었다. 다음으로 가장 오래(11일) 비어있던 '사회/문화/소비'의 오늘 브리핑 단신(외국인 관광객 소비가 소매판매 지지, 내수는 둔화)이 근거를 설명하지 않아, 한국은행 3분기 GDP 속보치(민간소비 -0.2%, 2022년 4분기 이후 첫 감소)·국가데이터처 소매판매동향(업태별 YoY)·문화체육관광부·서울시 관광소비 통계·한국은행 8월 관광산업 이슈노트를 대조해 검증했다. 검색·원문열기 합계 25회(opened 22·failed 3: straitstimes.com 접속차단·koreancenter.or.kr 본문추출실패·dealsite.co.kr 403) 사용. 스트레이츠타임스 원문이 정확히 인용한 1차 통계와 전국 단위 관광소비 총액(원화)은 확인하지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-13",
+      "checkedAt": "2026-11-13T00:20:00Z",
+      "status": "published",
+      "reportIds": [
+        "saudi-pipeline-hormuz-claims-vs-confirmed-2026-11-13"
+      ],
+      "reason": "12개 분야 중 '세계 정치 / 지정학'이 10/24(france-sentinelle-precedent) 이후 자동조사 15건 중 한 번도 선정되지 않아 가장 오래(20일) 비어있었고, 비공개 조사대기 큐에도 같은 분야의 energy-geopolitics 작업(트리거 17건 누적)이 쌓여 있었다. 오늘(11/13) 일간 브리핑의 핵심 항목(후티군의 사우디 동서송유관·얀부 공격 주장과 이란의 호르무즈 유조선 피격 주장이 겹치며 유가 급등, 로이터 미확인)이 두 주장의 확인 수준을 구분하지 않아, 후티 성명 원문(2차 보도)·사우디 연합군 발표·사우디 에너지부의 11/9 별도 확인·2026년 9월 공격 당시 위성영상 검증 사례·유가 종가 수치를 대조해 검증했다. 검색·원문열기 합계 18회(opened 17·failed 1: lorientlejour.com 403) 사용. 같은 날짜를 보도한 한 매체(Newspim)가 WTI와 브렌트유 수치를 혼동한 것으로 보이는 오류도 확인했다. 11/12 주장에 대한 사우디 정부·아람코의 공식 확인/부인과 '리야드 아람코 건물' 공격이 11/12 성명에 실제 포함됐는지는 출처가 엇갈려 확정하지 못해 한계로 남겼다."
     }
   ]
 };
