@@ -4950,7 +4950,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "cf9bc1a4d8a4d5ce248cf30d800bb2194075729598cd3d5510b17286812a52b3",
+  "registryHash": "84d12435583125e481ed86bece3d6b7aa2c6545500a773a7fcd6610bee7af2b2",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -16264,6 +16264,206 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-15T00:15:00Z"
         }
       ]
+    },
+    {
+      "id": "fireworks-ai-breach-cascade-notion-uber-cursor-2026-11-16",
+      "ruleId": "ai-work",
+      "topic": "AI / 디지털 기술",
+      "question": "최근 사흘(11/12 노션·11/13 우버·11/14 Cursor) 일간 브리핑이 번갈아 전한 보안사고는 '파이어웍스AI 침해 하나'가 세 회사로 번진 결과인가, 서로 다른 경로의 별개 사건들인가?",
+      "basis": "12개 분야 중 'AI / 디지털 기술'(ai-work)이 2026-11-04 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 같은 분야의 비공개 조사대기 큐에는 '기업 AI 도입과 실제 업무 성과' 질문이 11/9부터 쌓여 있었으나, 트리거 기사 다수가 생산성 효과를 30분·30회 예산으로 직접 검증하기 어려운 일반론이었다. 대신 그 큐에도 트리거로 포함된 Cursor 보안사고 기사를 포함해, 최근 사흘(11/12 노션·11/13 우버·11/14 Cursor) 일간 브리핑이 연속 보도하면서도 서로 '파이어웍스AI 침해'로만 엮고 정확한 관계를 설명하지 않은 사건을 택했다. 기존 자동조사 49건 중 파이어웍스AI 침해를 다룬 보고서는 없어 중복이 아니다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-16",
+      "scope": "current",
+      "summary": "최근 사흘간 일간 브리핑이 노션(11/12)·우버(11/13)·Cursor(11/14)의 보안사고를 각각 '파이어웍스AI 침해'로만 설명하고 셋의 관계를 밝히지 않았다. 파이어웍스AI의 공식 보안공지와 세 회사의 발표문·보도, Wiz의 산업 전반 분석을 대조해, 이것이 하나의 침입이 번진 결과인지 몇 주 사이 벌어진 별개 경로의 사건들인지를 확인했다.",
+      "learning": [
+        {
+          "title": "'LLMJacking'과 환경변수 탈취 — AI 개발 플랫폼이 왜 반복 표적이 되는가",
+          "text": "AI 추론 서비스를 쓰려면 API 키를 코드나 환경변수에 저장해야 하는데, 이 키들은 비싼 대형모델 호출 권한을 그대로 쥐고 있어 탈취되면 공격자가 무단으로 추론을 돌려 피해자에게 요금을 떠안기거나(LLMJacking) 모델 증류 시도에 악용될 수 있다. 보안업체 Wiz는 이런 유형의 사고가 2026년 10월 한 달 동안 Fireworks·Railway·Northflank·Lightning AI·OpenCode·Warp 등 적어도 9곳(집계 기준에 따라 16곳까지)의 AI 개발 인프라 업체에서 공개됐다며 이를 'Black October'로 불렀다.",
+          "sourceIds": [
+            "wiz-blackoctober"
+          ]
+        },
+        {
+          "title": "파이어웍스AI 사건은 하나가 아니라 3주 사이 두 단계로 넓어진 사건이다",
+          "text": "파이어웍스AI 자체 공식 공지에 따르면 10/9에 먼저 내부 자격증명 관련 사고를 공지했고, 이후 10/23 파이어웍스의 연구개발(R&D) 장비를 호스팅하던 제3자 클라우드 업체가 별도로 침해당해 10/24 공격자가 파이어웍스 개발 장비에서 비인가 작업을 실행한 사실이 추가로 확인됐다. 10/25 이후로는 추가 무단접근 증거가 없었고, 11/9 최종 업데이트에서 계정·청구정보에 더해 일부 고객의 시크릿·데이터셋·미완성 모델까지 영향 범위가 넓어졌다고 밝혔다.",
+          "sourceIds": [
+            "fireworks-bulletin"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "우버는 파이어웍스AI로부터 10/9(파이어웍스의 첫 공지와 같은 날)에 공급업체 침해 통보를 받았다고 밝혔다. 해커가 파이어웍스 내부 인증정보를 탈취해 우버 데이터에 접근했고, 유출 데이터는 운전자의 개인정보·운전면허증 정보다. 주별 통보 인원은 매사추세츠 2,567명·사우스캐롤라이나 3,430명·로드아일랜드 1,873명이 확인됐고, 캘리포니아·일리노이는 통지 대상이라는 점만 확인됐을 뿐 인원은 공개되지 않았다. 우버 전체 영향 인원은 공개되지 않았다.",
+          "sourceIds": [
+            "techcrunch-uber",
+            "fireworks-bulletin"
+          ]
+        },
+        {
+          "text": "노션은 11/12 '파이어웍스에 관한 두 번째(10월 사고에 이은) 침해'라며 고객의 약 1%가 영향받았다고 밝혔다. 노션 AI의 'Insights' 기능을 쓴 고객의 채팅 기록(모델 입력·출력)이 유출됐으나 대부분은 어느 고객의 것인지 특정할 수 없었다고 설명했다. 노션은 11/3 파이어웍스와의 시스템 연동을 끊고 저장 데이터를 삭제했다. 이 경로는 파이어웍스가 10/23 제3자 클라우드 업체 침해로 개발 장비에 접근당한 사건과 연결된다.",
+          "sourceIds": [
+            "techcrunch-notion",
+            "fireworks-bulletin"
+          ]
+        },
+        {
+          "text": "Cursor의 사고는 노션·우버와 다른 경로를 거쳤다. 공격자는 탈취한 파이어웍스 액세스 키로, Cursor가 파이어웍스와 데이터를 주고받는 데 쓰던 '읽기 전용 스토리지 버킷'에 접근했다. 그 버킷 안의 2025년 수집 AI 코딩 에이전트 트레이스(프라이버시 모드 미사용 고객분) 일부에 암호화되지 않은 API 자격증명이 들어 있었고, 공격자는 이를 이용해 Cursor의 추가 시스템에 재침투했다. 그 결과 10/29 악성 Claude Code 확장(버전 2.1.312/313)이 약 11시간 Cursor 마켓플레이스에 노출돼 최대 5,000명이 영향받았을 수 있고, 코딩 트레이스 노출은 0.05% 미만·API 자격증명 노출은 0.01% 미만으로 Cursor는 추정했다.",
+          "sourceIds": [
+            "bleepingcomputer-cursor"
+          ]
+        },
+        {
+          "text": "보안업체 Wiz는 10월 한 달의 이런 사고들을 'Black October'로 묶어 설명하지만, 이를 하나의 공격자나 단일 취약점·의존성으로 연결하지는 않는다 — 원문은 'no single vulnerability or dependency linking these attacks'라고 명시하고, 여러 행위자가 같은 탈취 키를 썼을 가능성을 들어 도난당한 AI 자격증명을 거래하는 '시장'이 있을 수 있다고만 제시한다.",
+          "sourceIds": [
+            "wiz-blackoctober"
+          ]
+        },
+        {
+          "text": "파이어웍스AI의 공식 보안공지에는 노션·우버·Cursor 등 특정 고객사 이름이 전혀 등장하지 않으며, 전체 영향 고객 수·비율도 밝히지 않는다('제한된 계정 집합', '일부 고객'이라는 표현만 사용). 지금까지 알려진 구체적 숫자(노션 1%, Cursor 0.05%·0.01%·최대 5,000명, 우버의 주별 인원)는 모두 각 다운스트림 회사가 자체적으로 공개한 수치다.",
+          "sourceIds": [
+            "fireworks-bulletin",
+            "techcrunch-notion",
+            "bleepingcomputer-cursor",
+            "techcrunch-uber"
+          ]
+        }
+      ],
+      "limitations": [
+        "The Information의 11/9 보도(2차 매체 재인용으로만 확인)는 법률AI 기업 하비 등 대형 고객이 다른 벤더로 이탈을 검토 중이라고 전했으나, 원 기사는 유료장벽으로 직접 열람하지 못했다(시도한 The Information 기사도 'Subscribe to unlock' 문구만 확인됨). 재인용 기사 자체도 익명 소스 1인에 의존한다고 밝히고 있고, 하비 측은 자사 고객 데이터는 영향받지 않았다고 반박한 것으로 전해진다 — 이 역시 재인용 수준에서만 확인했다.",
+        "Cursor의 파이어웍스 액세스 키가 정확히 언제 탈취됐는지는 BleepingComputer 기사에 명시되지 않아, Cursor 사건이 10/9 최초 공지 사건과 10/23~24 클라우드 공급업체발 사건 중 어느 계열에 속하는지 단정할 수 없다.",
+        "파이어웍스는 전체 영향 고객 수·비율을 공식적으로 밝히지 않아, 노션·우버·Cursor 외에 다른 고객사가 얼마나 더 영향받았는지 확인할 방법이 없다.",
+        "반대 근거를 찾기 위한 탐색(Wiz 원문 포함)에서도 '세 사건이 서로 무관하다'는 직접적 반박은 찾지 못했다 — 다만 Wiz가 단일 행위자·단일 취약점을 확인하지 않았다고 밝힌 점은 '같은 해킹이 번졌다'는 단순화된 서술에 대한 한계로 남긴다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "노션·우버·Cursor의 사고는 '하나의 해킹이 세 회사로 번진 것'이라기보다, 파이어웍스AI라는 하나의 AI 인프라 벤더가 3주 사이 서로 다른 경로로 최소 두 단계에 걸쳐 침해당했고, 그 여파가 고객사마다 다른 방식(채팅기록 유출·고객 PII 유출·2차 자격증명 재탈취)으로 번진 것으로 읽힌다. 더 넓게 보면 Wiz가 집계한 'Black October' — 적어도 9개 AI 개발 플랫폼이 10월 한 달 같은 유형(환경변수·API 키 탈취)의 사고를 공개한 흐름 — 중 하나로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "파이어웍스나 Wiz가 추후 모든 사고를 단일 행위자·단일 취약점으로 묶는 공식 분석을 내놓으면 '서로 다른 경로의 별개 사건들'이라는 지금의 판단은 바뀐다. 반대로 Cursor의 액세스 키 탈취 시점이 10/9 최초 사건 이전으로 확인되면, 적어도 우버·Cursor는 같은 최초 사건 계열로 좁혀진다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "파이어웍스의 전체 피해 고객 수·비율과 Cursor 액세스 키의 정확한 탈취 시점이 아직 공개되지 않았다. 하비 등 대형 고객의 실제 이탈 여부도 익명 보도 수준에서만 돌고 있어 당사자 공식 확인이 없다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "파이어웍스AI가 전체 영향 고객 수·비율을 공식적으로 밝히는지, Cursor의 액세스 키 탈취 시점이 10/9 최초 사건과 10/23~24 두 번째 사건 중 어느 쪽에 속하는지 확인한다.",
+      "nextCheck": "2026-11-23",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Fireworks AI breach Notion Uber Cursor timeline (웹검색)",
+          "note": "전체 사건 구도·보도 간 불일치 1차 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "techcrunch-uber",
+          "target": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/",
+          "note": "우버 침해 통지 경로(10/9)·유출 데이터 종류·주별 인원 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "bleepingcomputer-cursor",
+          "target": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/",
+          "note": "Cursor 침해의 기술적 경로(액세스 키→읽기전용 버킷→트레이스 내 자격증명 재탈취) 및 기사 게시일(11/14) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Fireworks AI security incident notice official statement site:fireworks.ai (웹검색)",
+          "note": "파이어웍스 공식 보안공지 URL 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "fireworks-bulletin",
+          "target": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+          "note": "파이어웍스 공식 보안공지 원문 — 10/9·10/23·10/24·10/25·11/9 타임라인과 영향 데이터 범위 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "techcrunch-notion",
+          "target": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+          "note": "노션 공식 입장 — 영향 비율(1%)·Insights 기능·11/3 연동 해제 시점 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Fireworks AI breach criticism disclosure delay Harvey customers response (웹검색)",
+          "note": "반대 근거·한계 탐색(필수 1회) — 대형 고객 반응·비판 보도 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "Wiz \"Black October\" AI developer platforms credential theft campaign (웹검색)",
+          "note": "Black October 캠페인의 성격(단일 공격자 여부, 전체 사건 수) 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "wiz-blackoctober",
+          "target": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms",
+          "note": "Wiz 원문 — 단일 취약점·단일 행위자 여부, 파이어웍스 언급 맥락, 전체 사건 수 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Fireworks AI Harvey customers considering switching vendors The Information (웹검색)",
+          "note": "하비 등 대형 고객 이탈설 추가 탐색 — 익명 소스 1인 의존, 하비의 반박 재확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.theinformation.com/articles/ai-cloud-startup-fireworks-discusses-4-billion-valuation-deal-lightspeed-index",
+          "note": "The Information 원문 직접 열람 시도 — 유료장벽('Subscribe to unlock')으로 실패, 재인용 매체로만 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "fireworks-bulletin",
+          "name": "Fireworks AI, \"October 2026 Security Incident\" (공식 보안공지 업데이트)",
+          "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+          "publishedAt": "2026-11-09",
+          "kind": "파이어웍스AI 공식 보안공지, 1차 자료(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-16T00:30:00Z"
+        },
+        {
+          "id": "techcrunch-notion",
+          "name": "TechCrunch, \"Cyberattack on Fireworks AI allowed hackers to access Notion customers' chat transcripts\"",
+          "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+          "publishedAt": "2026-11-12",
+          "kind": "뉴스매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-16T00:15:00Z"
+        },
+        {
+          "id": "techcrunch-uber",
+          "name": "TechCrunch, \"Uber confirms hackers stole thousands of drivers' license information in data breach\"",
+          "url": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/",
+          "publishedAt": "2026-11-13",
+          "kind": "뉴스매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-16T00:05:00Z"
+        },
+        {
+          "id": "bleepingcomputer-cursor",
+          "name": "BleepingComputer, \"Cursor confirms security breach led to malicious Claude Code extension\"",
+          "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/",
+          "publishedAt": "2026-11-14",
+          "kind": "뉴스매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-16T00:10:00Z"
+        },
+        {
+          "id": "wiz-blackoctober",
+          "name": "Wiz, \"'Black October' for AI Developer Platforms\"",
+          "url": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms",
+          "publishedAt": "2026-10-30",
+          "kind": "보안업체 Wiz 위협 인텔리전스 블로그, 1차 자료(직접 열람, 11/10 업데이트 포함)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-16T00:25:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -16737,6 +16937,15 @@ const RESEARCH_DATA = {
         "us-measles-elimination-status-confirmation-level-2026-11-15"
       ],
       "reason": "12개 분야 중 '과학/바이오/건강'이 2026-11-02 이후 자동조사 16건 중 한 번도 선정되지 않아 가장 오래(13일) 비어있었다. 오늘(11/15) 일간 브리핑의 핵심 항목(PAHO 산하 위원회가 11/10~13 심사 끝에 미국 홍역 퇴치 지위를 박탈했다는 Al Jazeera·CNN 인용 보도, 확진자 수 5,182명·5,412명 병기)이 판정의 확정 수준과 두 수치의 관계를 설명하지 않아 이 질문으로 검증했다. PAHO의 10/14·1/16 공식 보도자료, CDC 공식 데이터 페이지, Al Jazeera 3건(11/14·11/7·9/1), Star-Advertiser(NYT 통신, 11/10), thegrio(11/11), 2025년 캐나다 사례의 PAHO 총장 기자회견 원문, KFF Health News(1/21 반론)를 대조했다. 검색·원문열기 합계 23회(opened 22·failed 1: CNN 451 접속차단) 사용. PAHO 총장의 미국 관련 공식 발표문·보도자료는 검색 시점까지 찾지 못해, 현재 유통되는 '지위 상실' 보도가 WSJ발 언론 재전달에 근거한다는 사실과 확진자 수 두 표기가 서로 다른 주차의 CDC 집계일 뿐이라는 점을 한계·학습으로 남겼다."
+    },
+    {
+      "date": "2026-11-16",
+      "checkedAt": "2026-11-16T00:40:00Z",
+      "status": "published",
+      "reportIds": [
+        "fireworks-ai-breach-cascade-notion-uber-cursor-2026-11-16"
+      ],
+      "reason": "12개 분야 중 'AI / 디지털 기술'이 2026-11-04 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/16) 직전 사흘(11/12~14) 일간 브리핑이 노션·우버·Cursor 보안사고를 각각 '파이어웍스AI 침해'로만 엮고 셋의 관계를 설명하지 않아 이 질문으로 검증했다. 파이어웍스 공식 보안공지(10/9 최초 공지, 10/23 제3자 클라우드업체 침해, 10/24 개발장비 접근, 11/9 업데이트)와 세 회사의 발표·보도, Wiz의 'Black October' 분석을 대조한 결과, 세 사건은 '하나의 해킹'이 아니라 같은 벤더가 3주 사이 서로 다른 경로로 최소 두 단계 침해당한 결과이며, Wiz도 단일 행위자·단일 취약점을 확인하지 않았음을 확인했다. 검색·원문열기 합계 11회(opened 10·failed 1: theinformation.com 유료장벽) 사용. 하비 등 대형 고객의 이탈 검토설과 Cursor 액세스 키의 정확한 탈취 시점은 확인하지 못해 한계로 남겼다."
     }
   ]
 };
