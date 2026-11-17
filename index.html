@@ -5247,7 +5247,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "84d12435583125e481ed86bece3d6b7aa2c6545500a773a7fcd6610bee7af2b2",
+  "registryHash": "8e28bb1b4000e789ea8d24c6f92a93bb6656f538c1cbfe5e1a45ce7cff9c7a08",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -16761,6 +16761,279 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-16T00:25:00Z"
         }
       ]
+    },
+    {
+      "id": "cop31-1.5c-overshoot-vs-abandon-2026-11-17",
+      "ruleId": "energy-grid-review",
+      "topic": "에너지 / 기후 / 자원",
+      "question": "COP31에서 거론되는 '1.5도 목표 포기'는 기온이 1.5도를 넘어서는 것(오버슈트)과 같은 말인가, 협상 문서에서 실제로 무엇이 달라지는가?",
+      "basis": "12개 분야 중 '에너지/기후/자원'(energy-grid-review)이 2026-11-05(싱가포르 전력수요 전망 보고서) 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/17) 일간 브리핑의 '에너지/기후/자원' 섹션 핵심 항목(COP31 안탈리아 협상이 중간점에 이르러 '1.5도 목표 유지냐 포기냐' 공방이 벌어진다는 Phys.org/AFP 인용 기사)이 '포기'와 '오버슈트(초과)'라는 두 표현을 구분 없이 섞어 쓰고, '포기'를 주장한다고 전해지는 쪽이 정확히 무엇을 요구하는지 설명하지 않아 이 질문으로 검증했다. 비공개 조사대기 큐에는 이 주제의 트리거가 없었다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-17",
+      "scope": "current",
+      "summary": "오늘(11/17) 일간 브리핑이 COP31 안탈리아 협상의 '1.5도 목표 유지냐 포기냐' 공방을 전하며 '포기'라는 표현을 썼다. 포기 측으로 전해지는 아랍그룹·'뜻을 같이하는 개발도상국 모임'(사우디아라비아·인도 포함으로 전해짐)이 실제 요구한 것은 목표 수치의 공식 폐기가 아니라 오버슈트를 인정하는 문구·근거 문헌(UNEP 연구)을 결정문에서 빼는 것이었다. 이를 UNEP의 2026년 두 보고서('Limiting Overshoot' 9/2, 'Emissions Gap Report 2026: The Point of Return' 10/21)가 공통으로 쓰는 '불가피하지만 복귀 가능한 초과'라는 개념과 대조해 확인했다.",
+      "learning": [
+        {
+          "title": "'오버슈트(overshoot)'는 목표 포기가 아니라 '넘었다가 되돌아오는' 경로를 가리키는 말",
+          "text": "기후과학에서 오버슈트는 특정 온난화 한계(예: 1.5도)를 일정 기간 넘어선 뒤 세기말 전까지 다시 그 수준 이하로 복귀하는 온도 경로를 가리킨다. 복귀가 실제로 가능한지는 정점 온도가 얼마나 높은지에 달려 있다고 설명되며, 정점이 낮을수록 복귀의 장벽이 줄어든다. 즉 '오버슈트를 인정한다'는 것과 '목표를 포기한다'는 것은 다른 개념이다 — 전자는 일시적 초과 후 복귀 시도를 전제하고, 후자는 그 복귀 시도 자체를 그만둔다는 뜻이다.",
+          "sourceIds": [
+            "cmcc-overshoot-explainer"
+          ]
+        },
+        {
+          "title": "'1.5도 초과는 불가피하다'는 선언은 2026년에 UNEP이 낸 서로 다른 두 보고서에서 나왔다",
+          "text": "같은 해에 UNEP은 9/2 'Limiting Overshoot'와 10/21 'Emissions Gap Report 2026: The Point of Return'을 각각 냈다. 두 보고서 모두 '1.5도 초과(exceeding)는 이제 불가피하다'는 표현을 쓰고 '오버슈트·정점·하락' 경로를 차선책으로 제시하지만, 제목과 발표일이 다른 별개 문서다. 보도마다 이를 구분 없이 'UN 보고서'로만 인용해, 어느 보고서를 가리키는지 헷갈리기 쉽다.",
+          "sourceIds": [
+            "iucn-limiting-overshoot",
+            "carbonbrief-pointofreturn"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "COP31은 11/9~20 튀르키예 안탈리아에서 열리며, 호주가 '협상 의장(President of negotiations)'을 맡고 튀르키예가 최종 결정권을 갖는 이원 구조다. 의장단은 11/13까지 고위급 요약을 내겠다고 밝혔고, 최종 결정문이 '긴 정치 선언이 되지는 않을 것'이라고 예고했다.",
+          "sourceIds": [
+            "ccn-cop31-briefing"
+          ]
+        },
+        {
+          "text": "오늘 일간 브리핑이 인용한 Phys.org(AFP) 기사에 따르면, 아랍그룹과 '뜻을 같이하는 개발도상국 모임'(참여국으로 사우디아라비아·인도가 전해짐)이 목표를 버릴 기회로 보는 것으로 전해지며, 이들이 협상에서 구체적으로 요구했다고 보도된 것은 '회색문헌(gray literature)' 배제다 — 기사는 이것이 UNEP의 오버슈트 연구를 겨냥한 것으로 보일 수 있다고 설명한다. 반면 팔라우 등 유지 측은 최종 합의문에 1.5도가 여전히 '올바른 목표(right goal)'이고 '가능한 한 빨리(as soon as possible)' 복귀한다는 문구, 한계를 넘은 뒤에도 온도를 다시 낮출 수 있다('still able')는 문구를 넣자고 요구한다. 두 요구 모두 호주 의장국이 발표한 협상 입장 요약·우선순위 목록에 담긴 내용이며, 확정된 결정문 문구는 아니다.",
+          "sourceIds": [
+            "physorg-afp-cop31"
+          ]
+        },
+        {
+          "text": "UNEP의 10/21 'Emissions Gap Report 2026: The Point of Return'은 '가장 낮은 오버슈트' 경로에서도 세기 중반 무렵 1.7~1.8도까지 오른 뒤, 2100년까지 50% 확률로 1.5도 이하로 복귀한다고 추정한다. 이를 위해 2025년 대비 전 세계 온실가스 배출을 2030년 18%·2035년 45%·2040년 69% 감축해야 한다고 명시한다. 현재 각국이 제출한 공약을 모두 지켜도 세계는 약 2.3~2.5도 온난화 경로에 머문다고 봤다.",
+          "sourceIds": [
+            "carbonbrief-pointofreturn"
+          ]
+        },
+        {
+          "text": "COP31 개막 이틀째인 11/11, 구테흐스 UN 사무총장은 '기후위기가 우리를 앞지르고 있다'며 2040년까지 미감축 석탄 폐지, 석유·가스 사용 3분의 1 감축, 연 6% 배출 감축을 요구했고 각국이 제출한 기후계획이 필요한 감축의 3분의 1 정도만 달성한다고 말했다. 다만 이 발언에는 '오버슈트를 작고 짧게' 같은 구체적 문구는 포함되지 않았다 — 해당 표현은 2025년 11월 COP30(벨렝) 발언에서 확인된 바 있어, COP31에서 새로 나온 말이 아니라 기존 UN 어법이 되풀이됐을 가능성을 시사한다.",
+          "sourceIds": [
+            "aljazeera-guterres-cop31"
+          ]
+        },
+        {
+          "text": "IUCN은 9/2 UNEP 'Limiting Overshoot' 보고서를 두고 '1.5도 초과는 이미 불가피하다'고 전하면서도, 이 보고서가 차선책으로 제시하는 경로는 '오버슈트·정점·하락(overshoot, peak and decline)'이며 목표 자체를 버리는 것이 아니라고 설명한다.",
+          "sourceIds": [
+            "iucn-limiting-overshoot"
+          ]
+        }
+      ],
+      "limitations": [
+        "공식 1차 자료(UNFCCC 협상 일일보고서 ENB, UNEP 보고서·보도자료 페이지, UN 사무총장실 페이지)에 7회 접속을 시도했으나 전부 403 차단되거나 내용을 읽지 못했다(ENB 일일보고서 HTML·PDF, UNEP 보고서 페이지, UNEP 오버슈트 설명 페이지, UNEP 보도자료, UNFCCC 파리협정 페이지, UN.org 사무총장 발언 페이지). 이 보고서의 모든 출처는 이를 보도·인용한 2차 매체·NGO이며, 공식 1차 문서를 직접 열람하지는 못했다.",
+        "'포기'를 주장한다고 전해지는 사우디아라비아·인도·아랍그룹·LMDC의 공식 입장문이나 실명 협상 발언 원문은 확인하지 못했다. Phys.org 기사도 이를 '전해졌다'는 수준으로만 보도해, 실제 발언자·제출 문서는 확인하지 못했다.",
+        "반대 근거 탐색(필수 1회)에서 '1.5도 목표 자체를 폐기해야 한다'는 공개된 과학적 반론은 찾지 못했다. 찾은 비판은 UNEP 보고서의 '탄소제거 의존' 서술에 대한 활동가(그린피스·CIEL)들의 반발이었고, 보고서에 참여한 과학자(Debra Roberts)와 과학자단체(Union of Concerned Scientists의 Rachel Cleetus)는 오히려 보고서의 결론을 지지했다. 반론을 못 찾았다는 사실과 반론이 없다는 판단은 구별해 기록한다.",
+        "COP31은 11/20까지 진행 중이라, 오버슈트·1.5도 관련 문구가 최종 결정문에 실제로 어떻게 반영됐는지는 이 보고서 작성 시점(11/17)까지 확정되지 않았다.",
+        "UNEP의 9/2 보고서와 10/21 보고서가 서로를 어떻게 참조하는지, 또는 어느 쪽이 먼저 나온 '원 연구'인지는 각 매체 보도에서만 확인했을 뿐 UNEP 자체 설명은 열람하지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "오늘 일간 브리핑은 '포기'와 '오버슈트'를 같은 공방의 양쪽으로 묘사했지만, 확인되는 것은 UN 쪽(UNEP 두 보고서·구테흐스)이 말하는 '불가피한 초과'가 처음부터 '복귀 가능성을 전제로 한 오버슈트'라는 점과, 포기 측 요구로 전해지는 것이 목표 수치 변경이 아니라 '오버슈트를 인정하는 문구·근거 문헌을 결정문에서 빼는 것'에 가깝다는 점이다. 공방의 실제 대상은 '1.5도라는 숫자'가 아니라 '그 숫자를 넘었다는 사실을 공식 문서에 어떻게 적을 것인가'로 읽힌다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "사우디아라비아·인도 등이 '1.5도를 공식 목표에서 완전히 삭제하자'는 문안을 실제로 제출한 사실이 원문 협상 문서나 본인 발언으로 확인되면 이 판단은 바뀐다. 또는 11/20 COP31 폐막 결정문에서 오버슈트 관련 문구 자체가 빠지는 것으로 확정되면, '숫자가 아니라 표기 방식의 공방'이라는 지금의 해석은 '표기 자체도 지켜내지 못했다'로 바뀐다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "포기를 주장한다고 전해지는 측의 실명 발언·제출 문서, UNEP 두 보고서의 상호 참조 여부, COP31 최종 결정문의 실제 문구(11/20 폐막 전까지는 나오지 않는다) 세 가지가 아직 확인되지 않았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "COP31이 11/20 폐막할 때 결정문에 '오버슈트' 또는 '1.5도' 관련 문구가 실제로 어떻게 반영되는지, 그리고 포기를 주장했다고 전해진 국가들의 실명 발언이 협상 기록(ENB 등)에 남아 있는지 확인한다.",
+      "nextCheck": "2026-11-21",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "COP31 Antalya 1.5C target abandon overshoot negotiations (웹검색)",
+          "note": "전체 공방 구도 1차 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "UN 1.5C breach imminent unavoidable September 2026 WMO statement (웹검색)",
+          "note": "'불가피' 선언의 출처(UNEP/WMO 구분) 1차 탐색"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://enb.iisd.org/antalya-un-climate-change-conference-cop31-daily-report-9nov2026",
+          "note": "IISD 지구협상회보(ENB) COP31 일일보고서 원문 열람 시도 — 403 차단"
+        },
+        {
+          "outcome": "opened",
+          "target": "UNEP Emissions Gap Report 2026 \"1.5C\" \"unavoidable\" exceeding target (웹검색)",
+          "note": "Emissions Gap Report 2026 발표일·핵심 수치 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "carbonbrief-pointofreturn",
+          "target": "https://carbonbrief.org/unep-opportunity-has-been-lost-to-meet-1-5c-warming-limit-without-overshoot",
+          "note": "Emissions Gap Report 2026 핵심 수치(피크온도·복귀확률·감축률) 원문 대조"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ccn-cop31-briefing",
+          "target": "https://www.climatechangenews.com/2026/11/05/cop31-briefing-what-to-expect-from-the-antalya-climate-summit/",
+          "note": "COP31 협상 테이블에 실제 오른 1.5도/오버슈트 쟁점과 각 그룹 입장 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "physorg-afp-cop31",
+          "target": "https://phys.org/news/2026-11-nations-grapple-loss-15c-climate.html",
+          "note": "오늘 일간 브리핑이 인용한 기사 원문 — '포기' 측과 '유지' 측이 실제 요구하는 문구 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Saudi Arabia India \"abandon\" OR \"drop\" 1.5C target COP31 negotiations formal proposal (웹검색)",
+          "note": "포기 측 국가의 공식 제안문·발언 원문 탐색 — 전언 수준 이상의 확인 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "UNEP \"Limiting Overshoot\" report September 2026 1.5C unavoidable (웹검색)",
+          "note": "9/2 보고서와 10/21 보고서가 같은 문서인지 확인하기 위한 탐색"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.unep.org/en/publications/report/emissions-gap-report-2026",
+          "note": "UNEP 공식 보고서 페이지 원문 열람 시도 — 403 차단"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.unep.org/news-and-stories/story/overshoot-explained-5-things-understand-about-world-beyond-15degc",
+          "note": "UNEP 공식 '오버슈트 설명' 페이지 원문 열람 시도 — 403 차단"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"gray literature\" COP31 UNEP overshoot report negotiations Antalya dispute (웹검색)",
+          "note": "'회색문헌 배제' 요구가 어느 문서를 겨냥했는지 추가 확인 — Phys.org 기사 외 추가 확인 못함"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://enb.iisd.org/sites/default/files/2026-11/enb12902e.pdf",
+          "note": "ENB 일일보고서 PDF 열람 시도 — 바이너리 인코딩으로 텍스트 추출 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "COP31 Antalya overshoot cover decision text November 16 17 2026 outcome (웹검색)",
+          "note": "최종 결정문 확정 여부 탐색 — 11/20 폐막 전이라 미확정 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "insideclimatenews-overshootera",
+          "target": "https://insideclimatenews.org/?p=116012",
+          "note": "COP30이 오버슈트를 처음 공식 인정했다는 주장 검증 시도 — 이 기사로는 확인 불가, 보고서에는 미반영"
+        },
+        {
+          "outcome": "opened",
+          "target": "UNEP overshoot report criticism \"not a reason\" OR skeptic OR disputed \"1.5C\" framing climate scientists (웹검색)",
+          "note": "반대 근거·한계 탐색(필수 1회) — 과학적 반론 대신 활동가 비판·과학자 지지 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "IPCC definition overshoot temperature AR6 \"return to 1.5\" exceedance (웹검색)",
+          "note": "오버슈트의 과학적 정의 원출처 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "cmcc-overshoot-explainer",
+          "target": "https://www.cmcc.it/article/overshoot-what-does-it-mean-to-exceed-and-return-to-global-warming-of-1-5c",
+          "note": "오버슈트 정의·'목표 포기'와의 차이 설명 원문 확인(배경 자료, 2025-04-14)"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.unep.org/news-and-stories/press-release/new-unep-report-lays-out-emission-cuts-needed-return-15degc",
+          "note": "UNEP 공식 보도자료 원문 열람 재시도 — 403 차단"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://unfccc.int/process-and-meetings/the-paris-agreement",
+          "note": "파리협정 장기 기온목표 조항 확인 시도 — 페이지가 비어 있어(JS 렌더링) 본문 확인 실패"
+        },
+        {
+          "outcome": "opened",
+          "target": "Guterres COP31 Antalya speech statement overshoot \"as small and short\" press.un.org OR un.org (웹검색)",
+          "note": "구테흐스 발언의 정확한 문구·출처 회의 확인 시도"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.un.org/sg/en/node/401776",
+          "note": "UN 사무총장실 공식 발언 페이지 열람 시도 — 403 차단"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "aljazeera-guterres-cop31",
+          "target": "https://www.aljazeera.com/amp/news/2026/11/11/climate-crisis-is-outrunning-us-un-chief-guterres-says-at-cop31",
+          "note": "구테흐스의 11/11 COP31 발언 실제 인용문·날짜·맥락 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "iucn-limiting-overshoot",
+          "target": "https://iucn.org/news/202609/stark-findings-uneps-overshoot-report-demand-urgent-ambitious-climate-action-iucn",
+          "note": "9/2 'Limiting Overshoot' 보고서의 제목·발표일·핵심 결론을 10/21 보고서와 구분해 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "ccn-cop31-briefing",
+          "name": "Climate Change News, \"COP31 briefing: what to expect from the Antalya climate summit\"",
+          "url": "https://www.climatechangenews.com/2026/11/05/cop31-briefing-what-to-expect-from-the-antalya-climate-summit/",
+          "publishedAt": "2026-11-05",
+          "kind": "뉴스매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-17T00:12:00Z"
+        },
+        {
+          "id": "physorg-afp-cop31",
+          "name": "Phys.org (AFP), \"Nations grapple with loss of 1.5C climate target\"",
+          "url": "https://phys.org/news/2026-11-nations-grapple-loss-15c-climate.html",
+          "publishedAt": "2026-11-15",
+          "kind": "통신사(AFP) 보도, 오늘 일간 브리핑 인용 출처(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-17T00:14:00Z"
+        },
+        {
+          "id": "carbonbrief-pointofreturn",
+          "name": "Carbon Brief, \"UNEP: Opportunity has been lost to meet 1.5C warming limit without 'overshoot'\"",
+          "url": "https://carbonbrief.org/unep-opportunity-has-been-lost-to-meet-1-5c-warming-limit-without-overshoot",
+          "publishedAt": "2026-10-21",
+          "kind": "기후전문 매체 분석 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-17T00:08:00Z"
+        },
+        {
+          "id": "iucn-limiting-overshoot",
+          "name": "IUCN, \"Stark findings of UNEP's overshoot report demand urgent, ambitious climate action – IUCN\"",
+          "url": "https://iucn.org/news/202609/stark-findings-uneps-overshoot-report-demand-urgent-ambitious-climate-action-iucn",
+          "publishedAt": "2026-09-02",
+          "kind": "국제 NGO(IUCN) 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-17T00:38:00Z"
+        },
+        {
+          "id": "cmcc-overshoot-explainer",
+          "name": "CMCC (Marina Menga), \"Overshoot: what does it mean to exceed and return to global warming of 1.5°C?\"",
+          "url": "https://www.cmcc.it/article/overshoot-what-does-it-mean-to-exceed-and-return-to-global-warming-of-1-5c",
+          "publishedAt": "2025-04-14",
+          "kind": "연구기관(CMCC) 설명 기사, 배경 개념 자료(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-17T00:30:00Z"
+        },
+        {
+          "id": "aljazeera-guterres-cop31",
+          "name": "Al Jazeera, \"Climate crisis is outrunning us, UN chief Guterres says at COP31\"",
+          "url": "https://www.aljazeera.com/amp/news/2026/11/11/climate-crisis-is-outrunning-us-un-chief-guterres-says-at-cop31",
+          "publishedAt": "2026-11-11",
+          "kind": "뉴스매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-17T00:36:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -17243,6 +17516,15 @@ const RESEARCH_DATA = {
         "fireworks-ai-breach-cascade-notion-uber-cursor-2026-11-16"
       ],
       "reason": "12개 분야 중 'AI / 디지털 기술'이 2026-11-04 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/16) 직전 사흘(11/12~14) 일간 브리핑이 노션·우버·Cursor 보안사고를 각각 '파이어웍스AI 침해'로만 엮고 셋의 관계를 설명하지 않아 이 질문으로 검증했다. 파이어웍스 공식 보안공지(10/9 최초 공지, 10/23 제3자 클라우드업체 침해, 10/24 개발장비 접근, 11/9 업데이트)와 세 회사의 발표·보도, Wiz의 'Black October' 분석을 대조한 결과, 세 사건은 '하나의 해킹'이 아니라 같은 벤더가 3주 사이 서로 다른 경로로 최소 두 단계 침해당한 결과이며, Wiz도 단일 행위자·단일 취약점을 확인하지 않았음을 확인했다. 검색·원문열기 합계 11회(opened 10·failed 1: theinformation.com 유료장벽) 사용. 하비 등 대형 고객의 이탈 검토설과 Cursor 액세스 키의 정확한 탈취 시점은 확인하지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-17",
+      "checkedAt": "2026-11-17T00:40:00Z",
+      "status": "published",
+      "reportIds": [
+        "cop31-1.5c-overshoot-vs-abandon-2026-11-17"
+      ],
+      "reason": "12개 분야 중 '에너지/기후/자원'(energy-grid-review)이 2026-11-05 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/17) 일간 브리핑의 핵심 항목(COP31 안탈리아 협상에서 '1.5도 목표 유지냐 포기냐' 공방, Phys.org/AFP 인용)이 '포기'와 '오버슈트'를 구분 없이 섞어 써 이 질문으로 검증했다. Climate Change News·Phys.org(AFP)·Carbon Brief·IUCN·CMCC·Al Jazeera 6개 독립 매체·기관을 대조한 결과, 포기를 주장한다고 전해지는 측의 요구는 목표 수치 폐기가 아니라 오버슈트를 인정하는 문구·UNEP 근거 문헌을 결정문에서 빼는 것에 가깝고, UNEP의 2026년 두 보고서(9/2 'Limiting Overshoot', 10/21 'Point of Return')는 각각 '불가피하지만 복귀 가능한 초과'라는 같은 개념을 쓰면서도 서로 다른 별개 문서임을 확인했다. 검색·원문열기 합계 24회(opened 18·failed 6: ENB 일일보고서·ENB PDF·UNEP 보고서 페이지·UNEP 설명 페이지·UNEP 보도자료·UNFCCC 파리협정 페이지·UN.org 사무총장 페이지 전부 403 차단 또는 본문 접근 실패) 사용. 포기 측 국가의 실명 발언·제출 문서와 COP31(11/20 폐막) 최종 결정문 문구는 확인 시점까지 나오지 않아 한계로 남겼다."
     }
   ]
 };
