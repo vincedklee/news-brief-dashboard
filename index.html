@@ -5714,7 +5714,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "8e28bb1b4000e789ea8d24c6f92a93bb6656f538c1cbfe5e1a45ce7cff9c7a08",
+  "registryHash": "2e5b7f59af79dac6d7369b3426b61d00d83a37dea14c47b2413f130fdc800d56",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -17501,6 +17501,206 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-17T00:36:00Z"
         }
       ]
+    },
+    {
+      "id": "eu-small-series-cap-cybercab-giga-berlin-2026-11-18",
+      "ruleId": "industry-mobility",
+      "topic": "산업 / 모빌리티 / 로봇",
+      "question": "EU의 완전자율주행차 '소량생산(small series)' 등록 상한(연 1,500대)은 테슬라가 기가베를린에 짓는 연 100만대 규모 사이버캡 전용 공장과 실제로 어떻게 충돌하는가?",
+      "basis": "12개 분야 중 '산업/모빌리티/로봇'(industry-mobility)이 2026-11-06(중국 ABB 로보틱스 안보심사 차단) 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/18) 일간 브리핑의 '산업/모빌리티/로봇' 섹션 핵심 항목(Electrek, 테슬라가 기가베를린에 30억유로를 투자해 연 최대 100만대 규모 사이버캡 전용 공장을 짓는다는 기사)이 'EU는 완전자율주행차 소량생산 승인을 차종당 연 1,500대로 제한한다'는 사실만 한 줄로 언급하고, 이 상한이 최근 바뀌었는지·사이버캡에 그대로 적용되는지는 설명하지 않아 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치, 11/17 23:09 UTC 기준)에는 이 주제의 트리거가 없어 최신 일간 브리핑에서 직접 질문을 골랐다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-18",
+      "scope": "current",
+      "summary": "오늘(11/18) 일간 브리핑이 인용한 Electrek 기사는 테슬라의 기가베를린 사이버캡 공장(3억유로, 연 100만대 설계)과 'EU 소량생산 상한 연 1,500대'를 나란히 적었지만 둘의 관계를 설명하지 않았다. 확인 결과 2026년 3월 EU 집행위원회가 이 상한을 완화한 것은 로보택시가 아니라 자동발레주차(AVP)에 한정됐고, 사이버캡처럼 핸들·페달이 없는 완전자율주행차는 여전히 연 1,500대 등록 상한이 적용되는 소량생산 경로에 머물러 있다. 독일에는 EU 틀과 별개로 국가 차원의 레벨4 승인 경로가 있지만 2026년 6월 기준 신청이 전혀 없었다.",
+      "learning": [
+        {
+          "title": "EU '소량생산(small series)' 형식승인은 신기술 차량을 위한 예외 경로이며 등록 대수가 제한된다",
+          "text": "Regulation (EU) 2018/858 제41조에 따른 EU 소량생산 형식승인은 대량 생산되는 일반 차종이 통과하는 표준 형식승인과 달리, 아직 모든 안전요건을 충족하지 못했거나 신기술을 적용한 차량에 한해 예외적으로 승인해주는 경로다. 완전자동화 주행기능을 가진 M·N 카테고리 차량은 이 경로를 쓰더라도 EU 전체에서 연간 등록 대수가 1,500대로 제한된다. 즉 '형식승인을 받았다'와 '제한 없이 팔 수 있다'는 다른 말이다.",
+          "sourceIds": [
+            "kba-eu-typgenehmigung"
+          ]
+        },
+        {
+          "title": "2026년 3월의 완화는 로보택시가 아니라 '자동발레주차(AVP)'에 한정됐다",
+          "text": "2026년 3월 3일 채택된 Commission Implementing Regulation (EU) 2026/481은 완전자동화 주행시스템 형식승인 규정(2022/1426)을 고쳐 '소량생산 등록 상한을 AVP(automated valet parking) 사용 사례부터 해제한다'고 밝혔다. 이는 UNECE 규정 제79호·제13/13-H호 덕분에 AVP 시스템이 이미 대량 생산·배치가 가능한 수준에 이르렀다는 판단에 따른 것으로, 저속(시속 30km 이하)의 주차장 내 주행이라는 특수성이 전제됐다. 로보택시처럼 일반 도로를 다니는 완전자율주행차에는 이 완화가 적용되지 않는다.",
+          "sourceIds": [
+            "eurlex-2026-481",
+            "electrek-giga-berlin-cybercab"
+          ]
+        },
+        {
+          "title": "독일은 EU 틀과 별개로 국가 차원의 레벨4 승인 경로를 갖고 있지만 2026년 6월까지 신청이 없었다",
+          "text": "독일은 2021년 레벨4 자율주행 관련 법을 마련해 ① 제조사의 차량 형식승인과 ② 차량 보유자(로보택시 사업자 등)의 운행구역 허가를 따로 받는 2단계 국가 승인 절차를 운영한다. 이는 EU 소량생산 상한과는 별개의 경로다. 다만 2026년 6월 11일 기사(Auto Bild) 기준 '지금까지 레벨4 신청은 아직 한 건도 접수되지 않았다'고 보도됐고, TÜV협회 관계자는 2027년에야 첫 신청자가 나오길 기대한다고 말했다 — 이는 당국자의 전망일 뿐 확정된 일정은 아니다.",
+          "sourceIds": [
+            "autobild-level4-robotaxi"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "Electrek에 따르면 테슬라는 기가베를린 기존 공장 북쪽에 새 생산동·부속건물·2차 폐수처리시설을 짓는 데 약 30억유로를 투자하며, 이 새 생산동은 'designed for up to 1 million Cybercabs a year' 규모로 설계됐다. 연내 건축 허가 신청, 2027년 상반기 착공, 2029년 생산 시작을 계획한다고 공장장이 밝혔다.",
+          "sourceIds": [
+            "electrek-giga-berlin-cybercab"
+          ]
+        },
+        {
+          "text": "같은 Electrek 기사는 'EU의 완전자율주행차 승인 경로가 소량생산 방식이며 차종별 등록이 연 1,500대로 제한된다'고 설명하고, '3월에 EU 집행위원회가 이 상한을 자동발레주차에 대해서만 풀었고, 로보택시는 여전히 소량생산 경로에 머물러 있다'고 적었다. 기사는 이를 근거로 테슬라가 '유럽에서 대량 판매할 수 없는 차량(a vehicle it can't sell in volume in Europe)'에 투자하고 있다고 평가했다.",
+          "sourceIds": [
+            "electrek-giga-berlin-cybercab"
+          ]
+        },
+        {
+          "text": "독일 연방자동차청(KBA) 공식 설명에 따르면 완전자동화 주행기능을 가진 M·N 카테고리 차량의 EU 소량생산 형식승인은 'limited to 1,500 units'이며, 그 법적 근거는 Regulation (EU) 2018/858 제41조이고 세부 기술 요건은 Regulation (EU) 2022/1426이 정한다.",
+          "sourceIds": [
+            "kba-eu-typgenehmigung"
+          ]
+        },
+        {
+          "text": "EUR-Lex에 공개된 Commission Implementing Regulation (EU) 2026/481 원문 recital은 '소량생산 상한을 AVP 사용 사례부터 해제하는 것이 가능하고 적절해졌다(it is possible and appropriate to lift the small series limitation starting with the ('AVP') use case)'고 명시한다. 이 규정은 2026년 3월 3일 채택, 3월 4일 관보 게재(OJ L 2026/481), 게재 20일 뒤인 3월 24일께 시행됐으며, 새 부속서(Annex V)에 AVP 기능의 최고속도를 시속 30km 이하로 제한하는 기술요건(2.3항)을 뒀다.",
+          "sourceIds": [
+            "eurlex-2026-481"
+          ]
+        },
+        {
+          "text": "사이버캡은 핸들이 없어 레벨4 인증이 필요하다. 이는 테슬라가 현재 유럽에서 받은 어떤 승인과도 다르다 — 네덜란드 RDW가 승인한 'Tesla Assisted Driving'은 운전자가 주의를 기울여야 하는 레벨2 시스템이고, 9개국이 이 승인을 상호 인정하고 있을 뿐이다.",
+          "sourceIds": [
+            "electrek-giga-berlin-cybercab"
+          ]
+        },
+        {
+          "text": "2026년 5월 8일 로이터 보도(Gulf Times 전재)에 따르면 유럽 각국 규제당국의 내부 이메일에서 스웨덴 교통청 조사관은 테슬라 FSD가 과속을 허용하는 점에 '꽤 놀랐다'고 썼고, 핀란드 교통청 관계자는 '시속 80km 결빙 도로에서도 핸즈프리 주행을 허용하는 시스템을 정말 도입하려는 것이냐'고 물었다. 북유럽 규제당국들은 무스(moose) 대응, 휴대폰 사용 방지 기능 우회 가능성, 'Full Self-Driving (Supervised)'라는 명칭이 소비자에게 오해를 줄 수 있는지도 논의했다. 다만 덴마크 규제당국자는 코펜하겐 출근 시간대 주행에서 차량이 '매우 양호했다'고 평가했다.",
+          "sourceIds": [
+            "gulftimes-eu-scepticism"
+          ]
+        }
+      ],
+      "limitations": [
+        "Regulation (EU) 2018/858 제41조와 2022/1426의 1,500대 상한 조항 원문을 EUR-Lex에서 직접 열람하지 못했다. 이 상한의 법적 근거는 독일 KBA의 공식 설명(2차 요약)과 2026/481의 recital(해당 조항을 개정하지 않았다는 사실)로만 확인했다.",
+        "테슬라가 기가베를린에서 생산할 사이버캡의 실제 판매 목적지(EU 내 등록 대수 상한에 맞춰 소량만 등록할지, 비EU 지역으로 수출할지)를 테슬라 공식 발표로는 확인하지 못했다. 이 보고서의 '유럽에서 대량 판매 불가'라는 설명은 전부 Electrek의 분석에 의존한다.",
+        "반대 근거 탐색(필수 1회)에서 'EU가 소량생산 상한을 로보택시에도 추가로 완화할 계획'이라는 공식 발표나 보도는 찾지 못했다. 다만 EU 규제당국이 테슬라 FSD의 안전성 자체에도 광범위한 의문을 제기한 사례(과속 허용, 결빙도로, 명칭 오해 소지)를 확인해, 상한 완화와 무관하게도 레벨4 승인까지 가야 할 길이 멀다는 점을 한계로 남긴다.",
+        "독일의 국가 레벨4 승인 경로의 정식 법령명(조례 명칭)은 이번 조사에서 사용한 1차 자료(Auto Bild)에 명시되지 않아 확정하지 못했고, 이 보고서에서는 법령명을 특정하지 않았다.",
+        "일론 머스크가 유럽 로보택시 논의에서 '너무 서둘렀다'고 인정했다는 일부 2차 보도상의 언급은 이번에 열람한 로이터·Gulf Times 원문에서는 확인되지 않아 이 보고서에는 반영하지 않았다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "100만대 생산능력과 1,500대 등록상한 사이의 간극은 '아직 해결 못 한 규제'가 아니라 '애초에 로보택시를 겨냥하지 않은 완화'로 좁혀 읽힌다. 2026년 3월의 완화가 자동발레주차에만 적용된 이상, 기가베를린 투자는 EU 내 대량 판매를 전제하지 않은 결정 — 수출용이거나, 향후 추가 완화·독일 국가승인 경로를 기다리는 결정으로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "2029년 생산 시작 전까지 EU가 로보택시 등 일반도로 완전자율주행차에도 소량생산 상한을 추가로 완화하는 규정을 내거나, 독일이 국가 레벨4 경로로 사이버캡의 대량 운행을 승인하면 '유럽 대량판매 불가'라는 지금의 해석은 바뀐다. 반대로 2029년 가동 시점까지도 레벨4 인증이나 상한 완화가 전혀 없으면 기가베를린의 사이버캡 생산은 사실상 수출 전용으로 굳어진다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "테슬라가 기가베를린 생산분의 실제 목적지(EU 판매 vs 수출)를 공식적으로 밝힌 적이 없고, 독일 국가 레벨4 경로에 테슬라가 신청했는지도 확인되지 않았다. EU가 2029년 전까지 로보택시용 상한을 추가로 완화할 계획이 있는지도 아직 확인되지 않았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "기가베를린이 연내 건축 허가를 실제로 신청하는지, 독일 국가 레벨4 경로에 신청 사례(테슬라 포함)가 나오는지, EU가 로보택시용 소량생산 상한을 추가로 완화하는 움직임이 있는지 확인한다.",
+      "nextCheck": "2027-01-15",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "EU small series type approval 1500 vehicles autonomous vehicle limit Tesla (웹검색)",
+          "note": "EU 소량생산 상한과 2026년 완화 범위에 대한 1차 탐색 — 블로그·법률가이드 간 설명이 엇갈림을 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Commission Implementing Regulation (EU) 2026/481 EUR-Lex automated driving small series (웹검색)",
+          "note": "2026/481의 정확한 채택일·적용범위(AVP 한정) 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "electrek-giga-berlin-cybercab",
+          "target": "https://electrek.co/2026/11/16/tesla-cybercab-giga-berlin-3-billion-1-million/",
+          "note": "오늘 일간 브리핑이 인용한 기사 원문 — 투자 규모·일정·EU 상한 언급 대조"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "eurlex-2026-481",
+          "target": "https://eur-lex.europa.eu/eli/reg_impl/2026/481/oj",
+          "note": "2026/481 공식 recital·조항·시행일 원문 대조"
+        },
+        {
+          "outcome": "opened",
+          "target": "Germany Autonomous Driving Act driverless Level 4 national approval Mercedes robotaxi exemption EU small series (웹검색)",
+          "note": "EU 틀과 별개인 독일 국가 레벨4 승인 경로 탐색"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "autobild-level4-robotaxi",
+          "target": "https://www.autobild.de/artikel/fahrpruefung-fuer-autonomes-fahren-robotaxi-28686401.html",
+          "note": "독일 국가 레벨4 2단계 승인 절차·신청 건수·발행일 원문 대조"
+        },
+        {
+          "outcome": "opened",
+          "target": "Tesla Cybercab Europe robotaxi regulation skeptic doubt \"small series\" OR \"1,500\" criticism analysis (웹검색)",
+          "note": "반대 근거·한계 탐색(필수 1회) — 상한 완화 확대 계획 유무 및 EU 규제당국의 폭넓은 회의론 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "gulftimes-eu-scepticism",
+          "target": "https://www.gulf-times.com/article/725219/opinion/viewpoint/tesla-faces-eu-scepticism-over-automated-driving-technology",
+          "note": "로이터발 EU 규제당국 회의론 기사 원문 대조, 발행일 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "kba-eu-typgenehmigung",
+          "target": "https://www.kba.de/EN/Themen_en/Typgenehmigung_en/Autonomes_automatisiertes_Fahren_en/EU_Typgenehmigung_en/eu_typgenehmigung_node_en.html",
+          "note": "독일 연방자동차청(KBA)의 1,500대 상한·법적 근거(2018/858 제41조, 2022/1426) 공식 설명 원문 대조"
+        }
+      ],
+      "sources": [
+        {
+          "id": "electrek-giga-berlin-cybercab",
+          "name": "Electrek, \"Tesla to invest €3 billion more in Giga Berlin for 1 million Cybercabs a year\"",
+          "url": "https://electrek.co/2026/11/16/tesla-cybercab-giga-berlin-3-billion-1-million/",
+          "publishedAt": "2026-11-16",
+          "kind": "뉴스매체 보도, 오늘 일간 브리핑 인용 출처(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-18T00:03:00Z"
+        },
+        {
+          "id": "eurlex-2026-481",
+          "name": "EUR-Lex, Commission Implementing Regulation (EU) 2026/481",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/481/oj",
+          "publishedAt": "2026-03-04",
+          "kind": "EU 공식 법령(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-18T00:06:00Z"
+        },
+        {
+          "id": "autobild-level4-robotaxi",
+          "name": "Auto Bild (Raphael Schuderer), 레벨4 자율주행 로보택시 승인절차 기사",
+          "url": "https://www.autobild.de/artikel/fahrpruefung-fuer-autonomes-fahren-robotaxi-28686401.html",
+          "publishedAt": "2026-06-11",
+          "kind": "뉴스매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-18T00:10:00Z"
+        },
+        {
+          "id": "gulftimes-eu-scepticism",
+          "name": "Gulf Times (Reuters 전재), \"Tesla faces EU scepticism over automated-driving technology\"",
+          "url": "https://www.gulf-times.com/article/725219/opinion/viewpoint/tesla-faces-eu-scepticism-over-automated-driving-technology",
+          "publishedAt": "2026-05-08",
+          "kind": "통신사(Reuters) 보도 전재(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-18T00:13:00Z"
+        },
+        {
+          "id": "kba-eu-typgenehmigung",
+          "name": "독일 연방자동차청(KBA), \"EU type approvals for motor vehicles with a fully automated driving function in small series production\"",
+          "url": "https://www.kba.de/EN/Themen_en/Typgenehmigung_en/Autonomes_automatisiertes_Fahren_en/EU_Typgenehmigung_en/eu_typgenehmigung_node_en.html",
+          "publishedAt": "2026-11",
+          "kind": "독일 정부기관 공식 설명(직접 열람, 페이지 발행월 미표기라 최근 확인월로 기록)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-18T00:16:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -17992,6 +18192,15 @@ const RESEARCH_DATA = {
         "cop31-1.5c-overshoot-vs-abandon-2026-11-17"
       ],
       "reason": "12개 분야 중 '에너지/기후/자원'(energy-grid-review)이 2026-11-05 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/17) 일간 브리핑의 핵심 항목(COP31 안탈리아 협상에서 '1.5도 목표 유지냐 포기냐' 공방, Phys.org/AFP 인용)이 '포기'와 '오버슈트'를 구분 없이 섞어 써 이 질문으로 검증했다. Climate Change News·Phys.org(AFP)·Carbon Brief·IUCN·CMCC·Al Jazeera 6개 독립 매체·기관을 대조한 결과, 포기를 주장한다고 전해지는 측의 요구는 목표 수치 폐기가 아니라 오버슈트를 인정하는 문구·UNEP 근거 문헌을 결정문에서 빼는 것에 가깝고, UNEP의 2026년 두 보고서(9/2 'Limiting Overshoot', 10/21 'Point of Return')는 각각 '불가피하지만 복귀 가능한 초과'라는 같은 개념을 쓰면서도 서로 다른 별개 문서임을 확인했다. 검색·원문열기 합계 24회(opened 18·failed 6: ENB 일일보고서·ENB PDF·UNEP 보고서 페이지·UNEP 설명 페이지·UNEP 보도자료·UNFCCC 파리협정 페이지·UN.org 사무총장 페이지 전부 403 차단 또는 본문 접근 실패) 사용. 포기 측 국가의 실명 발언·제출 문서와 COP31(11/20 폐막) 최종 결정문 문구는 확인 시점까지 나오지 않아 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-18",
+      "checkedAt": "2026-11-18T00:20:00Z",
+      "status": "published",
+      "reportIds": [
+        "eu-small-series-cap-cybercab-giga-berlin-2026-11-18"
+      ],
+      "reason": "12개 분야 중 '산업/모빌리티/로봇'(industry-mobility)이 2026-11-06 이후 자동조사 11건 중 한 번도 선정되지 않아 가장 오래(12일) 비어있었다. 오늘(11/18) 일간 브리핑의 핵심 항목(Electrek, 테슬라 기가베를린 연 100만대 사이버캡 전용 공장 투자, EU 소량생산 상한 연 1,500대 언급)이 이 상한의 최근 변화·적용 범위를 설명하지 않아 이 질문으로 검증했다. 2026년 3월 EU의 완화(2026/481)가 자동발레주차에만 적용되고 로보택시에는 적용되지 않는다는 점, 독일 국가 레벨4 경로는 2026년 6월까지 신청이 전혀 없었다는 점, EU 규제당국이 테슬라 FSD의 안전성 자체에도 광범위한 의문을 제기했다는 점을 확인했다. 검색·원문열기 합계 9회(opened 9·failed 0) 사용. 테슬라의 실제 판매 목적지(EU 판매 vs 수출) 공식 확인과 1,500대 상한 조항 원문(2018/858 41조)의 직접 열람은 하지 못해 한계로 남겼다."
     }
   ]
 };
