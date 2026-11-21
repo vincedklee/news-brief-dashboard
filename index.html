@@ -6243,7 +6243,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "cf3adb580ef8abf377cf020c48870d0eb76e7c9a150108a2c9d13fce188d5b4e",
+  "registryHash": "461e9fe79663fed6b058b31698867f0e19a8a8224933430c1962bca115f05cbe",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -18720,6 +18720,286 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-20T00:13:00Z"
         }
       ]
+    },
+    {
+      "id": "intel-18a-yield-70-claim-2026-11-21",
+      "ruleId": "ai-infrastructure",
+      "topic": "반도체 / 컴퓨팅 인프라",
+      "question": "인텔 CEO 리우벤 탄이 11/18 말했다는 '18A 공정 수율 70%'는 어떤 확인 수준의 발언이며, 반도체 수율 수치가 기관·시점마다 10%대~80%대로 엇갈리는 이유는 무엇인가?",
+      "basis": "12개 분야 중 '반도체 / 컴퓨팅 인프라'(ai-infrastructure)가 2026-11-08(tsmc-3d-dram-denial-claim 조사) 이후 자동조사 12건 중 한 번도 선정되지 않아 13일간 가장 오래 비어있었다. 오늘(11/21) 일간 브리핑의 해당 섹션 핵심 항목(인텔-마이크로소프트 애저용 EMIB 패키징·제온 공급 장기계약, 11/18 발표)이 '같은 날 CEO 리우벤 탄이 별도 행사에서 18A공정 수율이 70%에 도달했고 첫 외부고객을 확보했다고 언급했다는 보도도 있었으나, 참석자 전언 수준이라 수율·고객명은 공식 확인되지 않았다'고만 적어, 이 미확인 보도의 출처·맥락·확인 수준을 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치)의 ai-infrastructure 대기 작업(17건 중 5건, 11/14~11/20 등록)은 '18A 수율 70%' 발언을 트리거로 포함하지 않아 처리 대상에 넣지 않았다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-21",
+      "scope": "current",
+      "summary": "인텔과 마이크로소프트는 11/18 애저용 EMIB 첨단패키징·제온 다년 공급계약을 공식 보도자료로 발표했다. 같은 날 리우벤 탄 CEO가 별도 콘퍼런스(TomorrowX Summit, 텍사스 오스틴)에서 '18A 공정 수율이 70%'라고 말했다는 보도가 여러 매체로 퍼졌으나, 이 수치는 인텔의 공식 보도자료·실적발표 어디에도 등장하지 않는다. 이번 조사는 두 발표의 실제 관계와, '수율 70%'라는 단일 숫자가 왜 지난 1년 넘게 매체·분석기관마다 10%대부터 80%대까지 다르게 보도돼 왔는지를 1차 자료(인텔 보도자료·실적발표·어닝콜 녹취록)와 교차 보도로 대조했다.",
+      "learning": [
+        {
+          "title": "인텔은 18A 수율을 공식 수치로 공개하지 않는다 — '70%'도 마찬가지다",
+          "text": "인텔의 11/18 EMIB·제온 공급계약 보도자료와 10/29 3분기 실적발표 보도자료 어디에도 18A 공정의 수율 수치나 '70%'라는 표현이 없다. 3분기 어닝콜(2025년 10월, Q3 2025)에서도 CFO 데이브 진스너는 수치를 밝히지 않고 '공급은 감당할 수준이지만 마진을 끌어올리기엔 부족하다'(yields are adequate to address the supply, but they are not where we need them to be in order to drive the appropriate level of margins)고만 설명했고, '업계 수용 가능한 수준'에는 2027년에야 도달할 것이라고 밝혔다. 즉 '70%'는 CEO가 콘퍼런스 발언에서 꺼낸 숫자일 뿐, 인텔이 투자자 대상 공식 자료에서 밝힌 수치가 아니다.",
+          "sourceIds": [
+            "intel-emib-azure-release",
+            "intc-q3-2026-earnings",
+            "fool-q3-2025-transcript"
+          ]
+        },
+        {
+          "title": "같은 '70%'가 2025년 하반기 목표치로도, 2026년 11월 CEO 발언으로도 나온다",
+          "text": "2025년 7월 KeyBanc 분석은 18A 수율을 '전 분기 50%→이번 분기 55%'로 추정하며 '2025년 4분기(10~12월)에 70%에 도달할 것'이라고 전망했다. 그런데 1년 넘게 지난 2026년 11월 18일, 탄 CEO가 콘퍼런스에서 꺼낸 숫자도 똑같이 '70%'다. 두 수치가 같은 기준(다이사이즈·수율 종류)인지는 확인되지 않지만, 숫자만 보면 'KeyBanc가 2025년 말에 도달한다고 본 지점에 1년가량 늦게 도달했다'와 '그때 이후 수율이 정체됐다'는 두 가지 서로 다른 해석이 모두 가능하다는 점이 수율 수치를 시점 비교 없이 단독으로 받아들이면 안 되는 이유다.",
+          "sourceIds": [
+            "wccftech-keybanc-55",
+            "cryptobriefing-tomorrowx"
+          ]
+        },
+        {
+          "title": "'수율 몇 %'는 기준(다이사이즈·제품·기능/파라메트릭 여부)이 달라야 비교할 수 있다",
+          "text": "2025년 7월 KeyBanc는 18A 55%를 'TSMC 2나노 65%에 근접, 삼성 SF2 40%는 상회'라고 같은 분석 안에서 비교했는데, 이는 같은 분석기관이 같은 기준으로 여러 회사 수치를 나란히 추정했기 때문에 가능했다. 반면 탄 CEO의 '70%'는 어떤 제품(로직 다이 전체인지 특정 소형 다이인지), 어떤 수율 정의(기능수율·파라메트릭수율 등)를 가리키는지 콘퍼런스 발언 보도 어디에도 명시되지 않았다. 기준을 모르는 숫자는 다른 기관의 추정치와 나란히 놓고 비교할 수 없다.",
+          "sourceIds": [
+            "wccftech-keybanc-55",
+            "cryptobriefing-tomorrowx"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "인텔과 마이크로소프트는 11/18 공식 보도자료로 애저 인프라 협력 확대를 발표했다. 마이크로소프트는 애저 자사설계 실리콘에 인텔 파운드리의 EMIB 첨단패키징 기술을 쓴다고 처음 공개한 기업이 됐고, 차세대 서버CPU '다이아몬드 래피즈'를 포함해 다년간 제온 공급물량을 확정했다 — 다만 구체적 수량·계약기간·금액은 공개되지 않았다('multi-year'라는 표현만 있음).",
+          "sourceIds": [
+            "intel-emib-azure-release"
+          ]
+        },
+        {
+          "text": "이 보도자료 본문에는 18A 공정 수율에 대한 언급이나 수치가 전혀 없다. '70%'라는 표현도 등장하지 않는다 — EMIB·제온 계약과 '수율 70%' 발언은 같은 날 나왔을 뿐, 인텔이 두 사안을 공식적으로 연결해 설명한 적은 없다.",
+          "sourceIds": [
+            "intel-emib-azure-release"
+          ]
+        },
+        {
+          "text": "'18A 수율 70%' 발언은 인텔의 공식 발표가 아니라, 같은 날(11/18) 텍사스 오스틴에서 열린 별도 콘퍼런스 'TomorrowX Summit'에서 탄 CEO가 한 발언으로 보도됐다. 외부 고객(첫 외부고객 확보)의 신원, 계약 물량, 매출 영향에 대한 구체 수치는 이 보도에서도 공개되지 않았다.",
+          "sourceIds": [
+            "cryptobriefing-tomorrowx"
+          ]
+        },
+        {
+          "text": "인텔의 3분기(2026년, 10/29 발표) 실적 보도자료에도 18A나 수율 수치에 대한 언급이 없다. 파운드리 부문 매출은 67억 달러(전년 동기 대비 58%↑), 영업손실은 18억5,300만 달러(전년 동기 23억2,100만 달러에서 축소)였고, 10월에 차세대 공정(14A) 0.9 설계키트(PDK)를 출시했다는 내용이 공정 관련 유일한 구체 언급이었다.",
+          "sourceIds": [
+            "intc-q3-2026-earnings"
+          ]
+        },
+        {
+          "text": "2025년 10월(3분기) 어닝콜에서 CFO 데이브 진스너는 18A 수율을 수치로 밝히지 않고 '공급을 감당할 수준이지만 마진을 끌어올리기엔 부족하다'고 설명했다. '2026년 말에는 마진 목표에 가까워지고, 2027년에야 업계에서 수용 가능한 수준에 도달할 것'이라는 시간표를 제시했다 — 탄 CEO는 같은 콜에서 수율이 '예측 가능한 속도로' 개선되고 있다고만 말했고 구체적 수치는 언급하지 않았다.",
+          "sourceIds": [
+            "fool-q3-2025-transcript"
+          ]
+        },
+        {
+          "text": "반대근거·추정치 분산 확인: 2025년 7월 KeyBanc는 18A 수율을 전분기 50%에서 55%로 상향하며 '2025년 4분기에 70% 도달' 전망을 냈다(같은 분석에서 TSMC 2나노 65%·삼성 SF2 40%와 비교). 2026년 5월에는 탄 CEO가 CNBC에 '수율이 월 7~8%씩 개선되고 있다'고 말했다고 TrendForce가 전했는데, 이때도 출발 기준 수치는 공개되지 않았다. 두 보도 모두 인텔의 공식 수치 공개 없이 CEO 발언·애널리스트 추정에 의존한다는 공통된 한계가 있다.",
+          "sourceIds": [
+            "wccftech-keybanc-55",
+            "trendforce-cnbc-may2026"
+          ]
+        }
+      ],
+      "limitations": [
+        "'18A 수율 70%' 발언의 최초 보도로 보이는 매체(fourweekmba.com)와 발언을 처음 전한 것으로 보이는 X(트위터) 게시물(@firesidealpha)은 접속이 막혀(403) 직접 열람하지 못했다. 발언의 정확한 워딩(예: '취임 당시 수율이 끔찍했다, 지금은 70%')은 이를 재인용한 cryptobriefing.com 등 2차 보도로만 교차확인했고, 1차 녹취나 영상은 확인하지 못했다.",
+        "Tom's Hardware의 관련 기사 4건(외부고객 확보, 2027년 업계표준 도달 전망, 젤싱어 전CEO의 결함밀도 반박, '수율 70%·EMIB' 제목 기사)은 모두 접속은 됐으나 본문이 잘려 제목 외 내용을 확인하지 못했다 — attempts에 실패로 남겼다.",
+        "'70%'가 기능수율(functional yield)인지 파라메트릭수율인지, 어떤 다이사이즈·제품을 기준으로 한 수치인지는 어떤 보도에서도 명시되지 않았다. 이 때문에 KeyBanc의 2025년 추정치(50%→55%→70%전망)나 GF증권의 '팬서레이크 약80%' 추정과 탄 CEO의 '70%'를 같은 기준으로 비교할 수 없다.",
+        "마이크로소프트가 확정한 제온 공급(다이아몬드 래피즈 포함)이 실제로 18A 공정을 쓰는지는 11/18 보도자료에 명시되지 않았다. EMIB는 패키징 기술이고 18A는 로직 공정이어서 둘은 별개 개념인데, 여러 매체가 제목에서 '수율70%·마이크로소프트EMIB고객확보'를 나란히 묶어 두 사안이 기술적으로 연결된 것처럼 보이게 썼다 — 같은 날 발표됐다는 사실 외에 인텔이 둘을 공식적으로 연결한 근거는 찾지 못했다.",
+        "반대근거·회의론 탐색에서는 2025년 7월 Wells Fargo의 '아직 턴어라운드를 전제하기엔 이르다'는 평가를 확인했으나, 이는 2026년 11월 발언 이전 시점의 평가다. 11/18 발언 이후 시점에 나온 애널리스트의 구체적 반박·검증 시도는 이번 조사에서 찾지 못했다.",
+        "인텔이 이 발언을 공식 확인하거나 반박한 자료는 이번 조사 시점까지 찾지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "11/18 하루에 나온 두 소식('공식 보도자료의 EMIB·제온 계약'과 '콘퍼런스 발언의 수율 70%')은 확인 수준이 전혀 다른데도 여러 매체 제목에서 하나로 묶여 보도된 것으로 풀이된다. 인텔이 투자자 대상 공식 자료에서 수율 수치를 공개하지 않는 관행이 이어지는 한, '수율 70%' 같은 콘퍼런스 발언은 공식 실적 발표로 재확인되기 전까지는 추정치의 하나로만 다뤄야 할 것으로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "인텔이 다음 실적발표(4분기, 통상 1월)나 투자자 자료에서 18A 수율을 구체적 수치·기준(다이사이즈·수율종류)과 함께 공식 확인하면 '70%는 미확인 발언'이라는 지금의 평가는 바뀐다. 반대로 공식 자료에서 또 다시 수치를 밝히지 않은 채 다음 콘퍼런스에서 또 다른 숫자가 나온다면, 수율 수치가 공식 데이터보다 홍보성 발언에 의존한다는 지금의 해석이 강화된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "탄 CEO가 말한 '70%'의 정확한 산출 기준(제품·다이사이즈·수율 정의), 마이크로소프트의 제온 공급계약이 실제 18A 공정을 쓰는지 여부, 그리고 '첫 외부고객'의 실제 신원과 계약 규모는 이번 조사에서 확인되지 않았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "인텔이 다음 실적발표(4분기, 통상 1월)나 투자자 자료에서 18A 수율을 구체적 기준과 함께 수치로 공개하는지, 그리고 마이크로소프트의 제온 공급계약이 실제로 18A 공정 기반인지 공식 확인되는지.",
+      "nextCheck": "2026-12-21",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Intel 18A yield 70% Lip-Bu Tan November 2026 (웹검색)",
+          "note": "'70%' 발언 최초 탐색 — fourweekmba.com 보도·과거 KeyBanc/TrendForce 추정치 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "인텔 18A 수율 70% 리우벤 탄 발언 (웹검색, 한국어 교차탐색)",
+          "note": "한국어 매체 교차확인 — 2025년 'Chosun 10%' 보도와 젤싱어 반박 사례 추가 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"18A\" yield industry standard 2027 analyst Tom's Hardware \"lags behind\" (웹검색)",
+          "note": "2027년 업계표준 도달 전망의 출처(CFO 진스너) 탐색"
+        },
+        {
+          "outcome": "opened",
+          "target": "Intel 18A yield Q3 2026 earnings call Zinsner Tan percent (웹검색)",
+          "note": "2026년 3분기(10/29) 어닝콜에 18A 수율 수치 발언이 있는지 탐색 — Intel 3 언급만 확인, 18A는 수치 없음"
+        },
+        {
+          "outcome": "opened",
+          "target": "Intel INTC Q3 2026 earnings call transcript fool.com October 29 (웹검색)",
+          "note": "3분기 실적 발표일·개요 확인(10/29, 매출 165.1억달러)"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Tomorrow X Summit\" Gavin Baker Lip-Bu Tan Intel interview (웹검색)",
+          "note": "콘퍼런스명·발언 맥락 독립 교차확인 탐색 — 직접 매칭 결과는 못 찾고 다른 탄 CEO 인터뷰만 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Intel 18A yield skeptical analyst doubt November 2026 (웹검색)",
+          "note": "반대근거·회의론 탐색(필수 1회) — 2025년 Wells Fargo 신중론·Ben Bajarin 반론 확인, 2026년 11월 시점 반박은 못 찾음"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Lip-Bu Tan\" \"70%\" 18A yield \"horrible\" quote (웹검색, extended)",
+          "note": "발언 정확한 워딩·행사명(TomorrowX Summit, 텍사스 오스틴, 11/18)·원 게시물(@firesidealpha) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Intel 18A yield 70% official confirm response November 19 20 2026 (웹검색)",
+          "note": "11/18 발언 이후 인텔의 공식 확인·반박 여부 탐색 — 못 찾음"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://fourweekmba.com/ai-intel-puts-18a-yield-at-70-on-the-day-microsoft-picks-emib/",
+          "note": "'70%' 발언 최초 보도로 보이는 매체 — 접속거부(403)로 원문 직접 열람 실패"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.tomshardware.com/tech-industry/semiconductors/intel-ceo-recognizes-its-18a-node-for-external-customers-as-18a-p-gets-inbound-interest-company-cites-increasing-yields",
+          "note": "본문 잘림 — 제목 외 내용 확인 불가"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.tomshardware.com/pc-components/cpus/intels-pivotal-18a-process-is-making-steady-progress-but-still-lags-behind-yields-only-set-to-reach-industry-standard-levels-in-2027",
+          "note": "본문 잘림 — 제목 외 내용 확인 불가"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.tomshardware.com/tech-industry/semiconductors/gelsinger-fires-back-at-recent-stories-about-18as-poor-yields-schools-social-media-commenters-on-defect-densities-and-yields",
+          "note": "본문 잘림 — 결함밀도·수율 설명 내용 확인 불가"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "wccftech-keybanc-55",
+          "target": "https://wccftech.com/keybanc-finds-that-the-yields-on-intels-18a-process-are-now-at-55-percent-but-one-analyst-believes-that-its-still-too-soon-to-judge-if-things-have-turned-around/",
+          "note": "KeyBanc 55%·2025년4분기 70%전망, TSMC·삼성 비교, Wells Fargo 신중론 원문 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "intc-q3-2026-earnings",
+          "target": "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results",
+          "note": "3분기(2026) 공식 실적 보도자료 — 18A 수율 수치·'70%' 표현 부재 확인, 파운드리 매출·손실 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.benzinga.com/node/62725076",
+          "note": "3분기(2026) 어닝콜 녹취록 — 접속거부(403)"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "fool-q3-2025-transcript",
+          "target": "https://www.fool.com/earnings/call-transcripts/2025/10/24/intel-intc-q3-2025-earnings-call-transcript",
+          "note": "3분기(2025) 어닝콜 녹취록 — CFO 진스너의 수율 관련 정성적 발언·2027년 업계표준 시간표 원문 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "trendforce-cnbc-may2026",
+          "target": "https://www.trendforce.com/news/2026/05/19/news-intel-18a-yields-improve-7-8-monthly-with-2h26-customers-expected-reportedly-pushes-18a-cpus-amid-tight-supply/",
+          "note": "2026년 5월 탄CEO의 CNBC 발언('월 7~8%개선') 출처·날짜 확인 — 기준수치 비공개 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.tomshardware.com/tech-industry/semiconductors/intel-18a-yields-hit-70-percent-as-company-signs-microsoft-as-emib-customer-the-first-company-to-publicly-commit-to-intels-new-packaging-technology",
+          "note": "본문 잘림 — 제목 외 내용 확인 불가"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://mezha.net/eng/news/mezha-b56d21e1374934e1c51ef63e_intel_says_18a/",
+          "note": "접속거부(403)"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "cryptobriefing-tomorrowx",
+          "target": "https://cryptobriefing.com/intel-first-external-customer-18a-process/",
+          "note": "발언 행사명(TomorrowX Summit)·날짜(11/18)·게재 시각(15:10 EST) 및 외부고객 신원 비공개 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "intel-emib-azure-release",
+          "target": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/microsoft-azure-infrastructure-collaboration.html",
+          "note": "인텔 공식 보도자료 — EMIB·제온 계약 내용 확인, 18A 수율·'70%' 표현 부재 확인"
+        }
+      ],
+      "sources": [
+        {
+          "id": "intel-emib-azure-release",
+          "name": "Intel Newsroom, \"Intel and Microsoft Expand Decades-Long Collaboration to Advance Azure Infrastructure\"",
+          "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/microsoft-azure-infrastructure-collaboration.html",
+          "publishedAt": "2026-11-18",
+          "kind": "기업 공식 보도자료(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-21T00:25:00Z"
+        },
+        {
+          "id": "intc-q3-2026-earnings",
+          "name": "Intel Investor Relations, \"Intel Reports Third-Quarter 2026 Financial Results\"",
+          "url": "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results",
+          "publishedAt": "2026-10-29",
+          "kind": "기업 공식 실적발표 보도자료(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-21T00:10:00Z"
+        },
+        {
+          "id": "fool-q3-2025-transcript",
+          "name": "The Motley Fool, \"Intel (INTC) Q3 2025 Earnings Call Transcript\"",
+          "url": "https://www.fool.com/earnings/call-transcripts/2025/10/24/intel-intc-q3-2025-earnings-call-transcript",
+          "publishedAt": "2025-10-24",
+          "kind": "실적발표 콜 녹취록(AI생성 녹취, 발언 인용 포함, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-21T00:15:00Z"
+        },
+        {
+          "id": "wccftech-keybanc-55",
+          "name": "WccfTech, \"KeyBanc finds that the yields on Intel's 18A process are now at 55 percent...\"",
+          "url": "https://wccftech.com/keybanc-finds-that-the-yields-on-intels-18a-process-are-now-at-55-percent-but-one-analyst-believes-that-its-still-too-soon-to-judge-if-things-have-turned-around/",
+          "publishedAt": "2025-07-16",
+          "kind": "기술전문매체 보도(애널리스트 노트 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-21T00:05:00Z"
+        },
+        {
+          "id": "trendforce-cnbc-may2026",
+          "name": "TrendForce, \"Intel 18A Yields Improve 7%–8% Monthly with 2H26 Customers Expected\" (CNBC 인용)",
+          "url": "https://www.trendforce.com/news/2026/05/19/news-intel-18a-yields-improve-7-8-monthly-with-2h26-customers-expected-reportedly-pushes-18a-cpus-amid-tight-supply/",
+          "publishedAt": "2026-05-19",
+          "kind": "시장조사기관 매체 보도(CNBC 인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-21T00:18:00Z"
+        },
+        {
+          "id": "cryptobriefing-tomorrowx",
+          "name": "Crypto Briefing, \"Intel signs first outside customer for 18A process as yields reach 70%\"",
+          "url": "https://cryptobriefing.com/intel-first-external-customer-18a-process/",
+          "publishedAt": "2026-11-18",
+          "kind": "기술/금융 전문매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-21T00:22:00Z"
+        }
+      ]
     }
   ],
   "runs": [
@@ -19238,6 +19518,15 @@ const RESEARCH_DATA = {
         "shenzhen-trilateral-ukraine-agenda-2026-11-20"
       ],
       "reason": "12개 분야 중 '세계 정치 / 지정학'이 2026-10-24('france-protest-military') 이후 자동조사 9건 중 한 번도 선정되지 않아 27일간 가장 오래 비어있었고, [상태/추적.md] 워치리스트에 오늘(11/20)을 만기로 등록된 질문(3자회담 실제개최·우크라이나 의제포함여부)과 정확히 겹쳐 이 질문으로 검증했다. 11/19(목) 선전 3자회담이 실제로 열렸고 4개 항 공동성명('평화선언': 핵전쟁불가론·핵위험감소대화·정제석유공급확대·ICC관할권남용금지)이 발표됐음을 확인했다. 우크라이나는 성명 문구에는 없었으나 크렘린이 '3자회담의 중심의제는 아니었다'(같은 날 별도 푸틴-트럼프 양자회담에서는 핵심)고 구분해 밝혔고, 푸틴은 공개발언에서 우크라이나 갈등을 '지역분쟁'으로 언급했으며 트럼프는 실제로 시진핑에게 전쟁해결 지원을 요청한 것으로 보도됐다. 검색·원문열기 합계 19회(opened 17·failed 2: SCMP·CBC 403 접속차단) 사용. 반대근거 탐색에서는 회담 성과 자체에 대한 전문가 반박 대신 참가국 내부·동맹국의 정치적 비판(美 슈머 '배신', 독 메르츠 '얄타식으론 평화불가')을 확인했다. 백악관·크렘린·신화통신의 성명 원문(1차 문서)과 우크라이나 정부의 공식 반응 원문은 찾지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-21",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "published",
+      "reportIds": [
+        "intel-18a-yield-70-claim-2026-11-21"
+      ],
+      "reason": "12개 분야 중 '반도체 / 컴퓨팅 인프라'(ai-infrastructure)가 2026-11-08 이후 자동조사 12건 중 한 번도 선정되지 않아 13일간 가장 오래 비어있었다. 오늘(11/21) 일간 브리핑의 핵심 항목(인텔-마이크로소프트 EMIB·제온 공급계약, 11/18)이 같은 날 CEO의 '18A 수율 70%' 발언을 '참석자 전언 수준'이라며 미확인으로 남겨, 이 발언의 출처·맥락·확인 수준을 검증했다. 인텔의 공식 보도자료(11/18 EMIB계약, 10/29 3분기실적)와 2025년 3분기 어닝콜 녹취록을 직접 대조한 결과, 인텔은 18A 수율을 투자자 대상 공식 자료에서 수치로 공개한 적이 없으며 '70%'도 콘퍼런스 발언으로만 전해졌음을 확인했다. 반대근거 탐색에서는 2025년 7월 KeyBanc의 55%(2025년4분기 70%전망)·Wells Fargo 신중론을 확인했고, 같은 '70%'라는 숫자가 1년 전 분석기관의 목표치와 이번 CEO 발언에 공통으로 등장한다는 점을 학습으로 남겼다. 검색·원문열기 합계 22회(opened 15·failed 7: fourweekmba.com·mezha.net·benzinga.com 403 접속거부, Tom's Hardware 기사 4건 본문잘림) 사용. 발언의 정확한 산출 기준(다이사이즈·수율종류)과 마이크로소프트 제온계약의 실제 18A 공정 사용 여부는 확인하지 못해 한계로 남겼다."
     }
   ]
 };
