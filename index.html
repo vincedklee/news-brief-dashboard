@@ -5078,7 +5078,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "9475933628243467ddd9dfb9460f7373eb65c058ff784e38007cdd4c3651256e",
+  "registryHash": "97fd9860b219c130b70ce3d97f58ec95142f160c7d2d9cfe39c5beff0625c1f3",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -18117,18 +18117,239 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-22T00:50:00Z"
         }
       ]
+    },
+    {
+      "id": "databricks-valuation-multiple-mechanics-2026-11-23",
+      "ruleId": "global-corporate-startups",
+      "topic": "글로벌 기업 / 스타트업 / 자본",
+      "question": "데이터브릭스가 3개월 만에 다시 올린 2,250억달러 밸류는 어떤 수치로 뒷받침되고, '매출배수' 비교는 공개기업과 그대로 견줄 수 있는가?",
+      "basis": "12개 분야 중 '글로벌 기업 / 스타트업 / 자본'(global-corporate-startups)이 2026-11-10(zipline-walmart-300-sites-revenue-share) 이후 자동조사 12건 중 한 번도 선정되지 않아 13일간 가장 오래 비어있었다. 오늘(11/23) 일간 브리핑의 이 섹션 항목('데이터브릭스, 2,250억달러 밸류 신규투자 초기협상 — WSJ 보도')이 8월 1,900억달러 대비 약18.4% 상승했다는 사실만 적고, 그 18.4%가 어떤 매출 지표로 뒷받침되는지와 '매출배수'라는 비교 잣대가 공개기업과 그대로 견줄 수 있는지는 설명하지 않아 이 질문으로 검증했다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-23",
+      "scope": "current",
+      "summary": "일간 브리핑이 인용한 ZDNet Korea·로이터(WSJ 인용) 보도로 2,250억달러 협상의 구체 내용(투자자·단계·회사측 반응)을 확인하고, 데이터브릭스의 공식 매출 발표(8월)와 투자전문매체 247wallst의 스노우플레이크 비교를 대조해 '매출배수'가 두 회사에서 서로 다른 기준(연환산 run-rate 대 실제 12개월 매출)으로 계산된다는 점, 그리고 비상장 AI기업 ARR 지표 일반의 신뢰성 한계를 확인했다.",
+      "learning": [
+        {
+          "title": "'런레이트(run-rate)'는 감사된 연매출이 아니라 최근 실적을 1년치로 환산한 추정치다",
+          "text": "데이터브릭스는 2026년 8월13일 공식 보도자료에서 '연환산 매출 run-rate가 70억달러를 넘었고 2분기 기준 전년동기대비 80% 이상 성장했다'고 밝혔다. 그런데 이 보도자료에는 run-rate를 정확히 어떤 기간(분기·월)을 기준으로 연환산했는지, 수치가 감사됐는지에 대한 설명이 없다. 벤처투자자 미카엘 존슨은 2026년2월 포춘 칼럼에서, 요즘 AI 기업들의 '연간반복매출(ARR)'에는 구독형 매출뿐 아니라 일회성·사용량 기반·성과기반 계약까지 섞여 들어가 실제 반복성을 과장할 수 있다고 지적했다. 즉 '런레이트 70억달러'는 데이터브릭스가 스스로 공개한 추정치이며, 공인회계기준으로 집계된 연간 매출과는 다른 지표다.",
+          "sourceIds": [
+            "databricks-pr",
+            "fortune-johnsson"
+          ]
+        },
+        {
+          "title": "'매출배수'는 분자(밸류)뿐 아니라 분모(어떤 매출인지)가 같아야 비교할 수 있다",
+          "text": "247wallst 분석에 따르면 데이터브릭스의 2,250억달러 협상가를 8월 발표 run-rate(70억달러)로 나누면 약32배, 8월 당시 밸류(1,900억달러)로 나누면 약27배가 나온다. 반면 상장사 스노우플레이크는 시가총액(약899억달러)을 최근 12개월 실제(trailing) 매출(약54억3,000만달러)로 나누면 약16.6배다. 두 숫자 모두 '매출배수'라 불리지만 데이터브릭스는 미래지향적 추정치(run-rate)를, 스노우플레이크는 이미 실현된 1년 실적(trailing)을 분모로 쓴다 — 247wallst도 이 차이 때문에 두 회사의 격차가 실제보다 과장되게 보일 수 있다고 지적한다.",
+          "sourceIds": [
+            "247wallst"
+          ]
+        },
+        {
+          "title": "비상장 라운드 가격은 같은 날 공개시장이 흔들려도 따로 움직일 수 있다",
+          "text": "247wallst에 따르면 로이터·WSJ의 2,250억달러 보도가 나온 세션 전날, 나스닥종합지수는 5.28%, 필라델피아반도체지수는 10.73% 떨어졌다 — 매도는 주로 반도체주에 집중됐다. 그런데도 비상장 데이터브릭스는 더 높은 밸류를 협상 중이라는 보도가 같은 주에 나왔다. 기사는 두 사건의 인과관계를 주장하지 않지만, 협상이 축소되거나 무산되면 '비상장 AI 가격이 공개시장 가격에 맞춰 내려오는 신호'로 볼 수 있다고 짚었다. 포춘 칼럼은 이런 비상장 가격 상승의 배경으로 엔비디아가 오픈AI·코어위브에 투자하고 클라우드 기업들이 오픈AI·앤트로픽에 투자하면서 그 돈이 다시 컴퓨팅 구매로 돌아오는 '순환투자' 구조, 그리고 많은 AI기업의 총이익률이 전통 소프트웨어(70~80%)에 못 미치는 10%대~20%대에 머물러 있다는 점을 들었다.",
+          "sourceIds": [
+            "247wallst",
+            "fortune-johnsson"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "로이터가 2026년11월20일(현지시간) 보도한 바에 따르면, 월스트리트저널(WSJ)은 데이터브릭스가 수십억달러 규모의 신규 자금조달을 위해 초기 협상 중이며 거론되는 기업가치가 약2,250억달러라고 사정에 밝은 관계자들을 인용해 전했다. 협상은 초기 단계이고 조건은 바뀔 수 있으며, 투자자 명단은 보도되지 않았다. 데이터브릭스는 기사 작성 시점까지 로이터의 논평 요청에 즉시 응답하지 않았다.",
+          "sourceIds": [
+            "reuters-investing"
+          ]
+        },
+        {
+          "text": "ZDNet Korea가 같은 WSJ 보도를 인용해 전한 바에 따르면, 2,250억달러는 지난 8월 투자유치 당시 기업가치 1,900억달러보다 약18.4% 높은 수치다. 8월 라운드에는 50억달러가 투자됐고, 이번 협상에 관심을 보이는 투자자로 코튜매니지먼트·앤드리슨호로위츠·NEA·인사이트파트너스·피델리티매니지먼트앤드리서치·JP모건자산운용이 거론됐다.",
+          "sourceIds": [
+            "zdnet-wsj"
+          ]
+        },
+        {
+          "text": "데이터브릭스는 2026년8월13일 공식 보도자료에서 연환산 매출 run-rate가 70억달러를 넘었고 2분기 기준 전년동기대비 80% 이상 성장했다고 밝혔다. 제품별로는 레이크하우스(데이터 웨어하우징)가 run-rate 15억달러 이상(전년대비100%이상 성장), 레이크베이스가 1억달러 이상이었고, 연간run-rate 100만달러 이상을 쓰는 고객이 1,000곳 이상, 1,000만달러 이상 고객이 100곳 이상이라고 밝혔다. 최근12개월 조정 잉여현금흐름은 양(+)이라고 덧붙였다. 보도자료는 run-rate의 정확한 산출 기준(기준 기간, 감사 여부)을 밝히지 않았다.",
+          "sourceIds": [
+            "databricks-pr"
+          ]
+        },
+        {
+          "text": "247wallst 분석(11/21)에 보도된 수치로 계산하면, 데이터브릭스의 2,250억달러 협상가는 8월 발표 run-rate(70억달러)의 약32배, 8월 당시 밸류(1,900억달러)는 약27배였다. 같은 날 기준 상장사 스노우플레이크는 시가총액 약899억달러를 최근12개월 실제매출 약54억3,000만달러로 나누면 약16.6배였다. 기사는 데이터브릭스의 run-rate(미래지향적 추정치)와 스노우플레이크의 trailing 매출(이미 실현된 실적)은 측정기준이 달라 두 배수를 그대로 비교할 수 없다고 지적했다. 또 보도 전날 세션에서 나스닥종합지수가 5.28%, 필라델피아반도체지수가 10.73% 떨어진 가운데 이번 협상 보도가 나왔다고 전했다.",
+          "sourceIds": [
+            "247wallst"
+          ]
+        },
+        {
+          "text": "벤처투자자 미카엘 존슨은 2026년2월6일 포춘 칼럼에서 AI 기업의 ARR·run-rate 지표가 구독형 매출 외에 일회성·사용량기반·성과기반 계약까지 섞여 반복매출로 과장될 수 있다고 지적했다. 또 엔비디아가 오픈AI·코어위브에 투자하고 클라우드기업들이 오픈AI·앤트로픽에 투자해 그 돈이 다시 컴퓨팅 구매로 돌아오는 순환투자 구조, 그리고 많은 AI기업의 총이익률이 전통 소프트웨어(70~80%)보다 낮은 10%대~20%대에 머문다는 점을 비상장 AI 밸류에이션의 위험 요인으로 꼽았다. 이 칼럼은 데이터브릭스를 특정해 다루지 않았으며 업계 전반에 대한 의견 기고다.",
+          "sourceIds": [
+            "fortune-johnsson"
+          ]
+        }
+      ],
+      "limitations": [
+        "이번 협상 시점(11월)의 실제 run-rate는 공개되지 않았다 — 위 32배·27배 계산은 모두 3개월 이상 지난 8월 수치(70억달러)를 분모로 쓴 것이며, 실제 매출이 그만큼 늘었다면 현재 기준 배수는 이보다 낮을 수 있다.",
+        "데이터브릭스 측이나 거론된 투자자들의 공식 반응, 그리고 이번 밸류를 뒷받침하는 자체 근거는 찾지 못했다 — 모두 익명 관계자를 인용한 보도에 그친다.",
+        "FourWeekMBA의 관련 분석 2건(스노우플레이크·팔란티어 배수 비교, 18%상승 분석)은 403 접속거부로 원문을 열람하지 못해 이번 보고서의 배수 계산은 247wallst가 공개한 수치만으로 독자적으로 재계산한 것이다 — 두 매체의 계산방식이 서로 다를 가능성을 배제하지 못한다.",
+        "포춘 칼럼의 순환투자·저마진 비판은 AI 업계 전반에 대한 벤처투자자 개인의 의견 기고이며, 데이터브릭스 자체의 매출 구성(반복계약 비중, 매출원가)을 검증한 자료는 아니다.",
+        "반대 근거(이 정도 배수가 정당하다는 분석)는 적극적으로 찾았으나, 데이터브릭스에 특화된 긍정적 반론은 찾지 못했다 — 못 찾은 것과 반론이 없다는 판단은 구별해야 한다."
+      ],
+      "insight": [
+        {
+          "label": "그래서 뭐?",
+          "text": "데이터브릭스의 밸류는 2월1,340억달러→8월1,900억달러→11월 협상가2,250억달러로 9개월 새 세 차례 올랐다. 공개된 매출(run-rate) 증가만으로 이 상승을 전부 설명하기는 어렵다 — 8월 run-rate 기준으로 계산한 배수(27배→32배)가 오히려 더 높아졌기 때문이다. 같은 주 공개 반도체주가 급락한 가운데 비상장 가격은 거꾸로 오르는 보도가 나왔다는 점에서, 이번 상승은 매출 성장보다 '얼마를 낼 의향이 있는 투자자가 있는가'라는 가격결정 쪽에 더 기대고 있는 것으로 풀이된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "라운드가 실제로 마감돼 최신(3분기 이후) run-rate가 공개되고, 그 수치로 다시 계산한 배수가 8월과 비슷하거나 낮게 나온다면 '매출보다 가격결정이 앞선다'는 지금의 해석은 틀린 것이 된다. 반대로 협상이 축소되거나 결렬된다면 247wallst가 언급한 '비상장 가격이 공개시장에 맞춰 내려오는 신호'로 봐야 한다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "데이터브릭스나 투자자 측이 2,250억달러를 뒷받침하는 구체적 근거(최신 매출·수익성 지표)를 공개한 적은 아직 없다. 또한 이번 밸류에 대한 업계 분석가의 데이터브릭스 특정 반론(정당·과도 평가)도 찾지 못했다 — 지금까지 확인된 것은 모두 '협상 중'이라는 사실과 과거 수치의 재계산뿐이다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "데이터브릭스가 이번 라운드를 실제로 마감하면 확정 밸류·투자자 명단·최신 run-rate를 공개하는지, 그리고 그 수치로 다시 계산한 매출배수가 8월(27~32배) 대비 오르는지 내리는지.",
+      "nextCheck": "2026-12-15",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "target": "Databricks $225 billion valuation funding talks November 2026 (웹검색)",
+          "note": "2026년7월 1,880억달러 라운드까지만 확인, 2,250억달러는 색인 공백으로 미확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Databricks annualized revenue run rate 2026 $7 billion ARR (웹검색)",
+          "note": "8/13 공식 발표(run-rate 70억달러+, 전년대비80%성장) 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Databricks WSJ \"$225 billion\" valuation funding (웹검색)",
+          "note": "재검색에도 2,250억달러 미확인, 7월 1,880억달러 라운드 정보만 재확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "데이터브릭스 2250억달러 밸류 신규투자 (웹검색)",
+          "note": "한국어 검색에서도 2,250억달러 미확인, 8월 1,900억달러 라운드 등 과거 수치만 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "zdnet-wsj",
+          "target": "https://zdnet.co.kr/view/?no=20261121090138",
+          "note": "WSJ 인용 2,250억달러·18.4%상승·투자자명단·run-rate70억달러 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Wall Street Journal Databricks early talks new funding round $225 billion valuation (웹검색)",
+          "note": "WSJ 원문 직접 확인 실패, 7월 1,880억달러 라운드 정보만 재확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "\"Databricks\" \"$225 billion\" (웹검색, extended)",
+          "note": "로이터·FourWeekMBA·247wallst 등 2,250억달러 보도 다건 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "reuters-investing",
+          "target": "https://www.investing.com/news/stock-market-news/databricks-in-early-talks-to-raise-funds-at-225-billion-valuation-wsj-reports-5042898",
+          "note": "로이터 전재, WSJ 인용 2,250억달러 초기협상 보도 원문 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://fourweekmba.com/ai-databricks-at-32x-sales-vs-snowflake-s-14-5x-palantir-s-37x/",
+          "note": "403 접속거부로 원문 열람 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "247wallst",
+          "target": "https://247wallst.com/investing/2026/11/21/databricks-wants-a-225-billion-valuation-even-as-ai-stocks-slide/",
+          "note": "밸류·run-rate·스노우플레이크 매출배수 비교·측정기준 불일치 지적·증시하락 맥락 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://fourweekmba.com/ai-databricks-in-talks-at-225b-18-above-august-s-190b/",
+          "note": "403 접속거부로 원문 열람 실패"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "databricks-pr",
+          "target": "https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales",
+          "note": "1차자료(공식 보도자료) run-rate·성장률·제품별 수치 원문 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "private AI company valuation ARR multiple bubble concern analysts 2026 Databricks OpenAI Anthropic (웹검색)",
+          "note": "반대근거 탐색 — 포춘 칼럼·Tunguz ARR배수 분석·PitchBook 인용 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "fortune-johnsson",
+          "target": "https://fortune.com/2026/02/06/when-the-music-stops-the-unravelling-of-ai-companies-flawed-valuations/",
+          "note": "ARR 지표 왜곡 가능성·순환투자구조·저마진 비판 원문 확인"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://cdn6.benzinga.com/markets/private-markets/26/05/52536017/ai-startups-are-commanding-valuations-public-saas-companies-could-never-get",
+          "note": "404 Not Found"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.benzinga.com/markets/private-markets/26/05/52536017/ai-startups-are-commanding-valuations-public-saas-companies-could-never-get",
+          "note": "403 접속거부로 원문 열람 실패"
+        }
+      ],
+      "sources": [
+        {
+          "id": "reuters-investing",
+          "name": "Investing.com(로이터 전재), \"Databricks in early talks to raise funds at $225 billion valuation, WSJ reports\"",
+          "url": "https://www.investing.com/news/stock-market-news/databricks-in-early-talks-to-raise-funds-at-225-billion-valuation-wsj-reports-5042898",
+          "publishedAt": "2026-11-20",
+          "kind": "통신사 전재 기사(로이터, WSJ 보도 재전달, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-23T00:05:00Z"
+        },
+        {
+          "id": "zdnet-wsj",
+          "name": "ZDNet Korea, 데이터브릭스 2,250억달러 밸류 신규투자 초기협상 보도(WSJ 인용)",
+          "url": "https://zdnet.co.kr/view/?no=20261121090138",
+          "publishedAt": "2026-11-22",
+          "kind": "국내 매체의 해외 보도 재인용 기사(WSJ 인용, 2차출처, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-23T00:00:00Z"
+        },
+        {
+          "id": "databricks-pr",
+          "name": "Databricks 공식 보도자료, \"Databricks Grows >80% YoY, Surpasses $7B Revenue Run-Rate, Scales...\"",
+          "url": "https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales",
+          "publishedAt": "2026-08-13",
+          "kind": "기업 공식 보도자료(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-23T00:15:00Z"
+        },
+        {
+          "id": "247wallst",
+          "name": "24/7 Wall St., \"Databricks Wants a $225 Billion Valuation Even as AI Stocks Slide\"",
+          "url": "https://247wallst.com/investing/2026/11/21/databricks-wants-a-225-billion-valuation-even-as-ai-stocks-slide/",
+          "publishedAt": "2026-11-21",
+          "kind": "투자전문매체 분석기사(수치 비교·해설, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-23T00:20:00Z"
+        },
+        {
+          "id": "fortune-johnsson",
+          "name": "Fortune(Mikael Johnsson 기고), \"When the music stops: the unravelling of AI companies' flawed valuations\"",
+          "url": "https://fortune.com/2026/02/06/when-the-music-stops-the-unravelling-of-ai-companies-flawed-valuations/",
+          "publishedAt": "2026-02-06",
+          "kind": "오피니언 칼럼(벤처투자자 기고, 배경자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-23T00:30:00Z"
+        }
+      ]
     }
   ],
   "runs": [
-    {
-      "date": "2026-09-28",
-      "checkedAt": "2026-09-28T00:30:00Z",
-      "status": "failed",
-      "reportIds": [
-        "ai-infrastructure-buildout-2026-09-28"
-      ],
-      "reason": "원문 접근 제한으로 충분한 근거를 대조하지 못해 초안 게시를 취소했습니다. 원문 확인 후 재조사합니다."
-    },
     {
       "date": "2026-09-28",
       "checkedAt": "2026-09-28T01:05:00Z",
@@ -18653,6 +18874,15 @@ const RESEARCH_DATA = {
         "son-sk-hynix-trillion-bid-feasibility-2026-11-22"
       ],
       "reason": "12개 분야 중 '한국 산업 / 정책 / SK'(korea-industry-sk)가 2026-11-09 이후 자동조사 12건 중 한 번도 선정되지 않아 13일간 가장 오래 비어있었다. 오늘(11/22) 일간 브리핑의 핵심3 항목(더인포메이션 단독보도를 인용한 한국경제 기사, 손정의 회장의 SK하이닉스 1조달러 인수 검토설)이 '실제 추진으로는 이어지지 않았다'고만 적고 왜 그런지는 설명하지 않아 이 질문으로 검증했다. 한국경제 기사 원문으로 보도 핵심사실(금액·당사자 입장·시가총액)을 확인하고, 소프트뱅크그룹의 2026 회계연도 2분기 실적(11/10 발표, LTV 15.9%·유동성 약5조엔·분기조달액 565억달러)과 한국의 국가핵심기술 지정제도(30나노 이하급 D램 등 반도체 기술 포함, 2025년7월 세메스 사례로 재확인)를 각각 대조해 자금력·제도 양면의 간극을 확인했다. 검색·원문열기 합계 25회(opened 23·failed 2: 연합뉴스 접속제한, 소프트뱅크 공식 실적보고서 PDF 텍스트추출 실패) 사용. 더인포메이션 원문 직접 열람, 이번 인수설에 대한 증권가의 구체적 반응, SK하이닉스 자체의 국가핵심기술 지정 여부 정부 공식 확인은 하지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-23",
+      "checkedAt": "2026-11-23T00:16:32.908Z",
+      "status": "published",
+      "reportIds": [
+        "databricks-valuation-multiple-mechanics-2026-11-23"
+      ],
+      "reason": "12개 분야 중 '글로벌 기업 / 스타트업 / 자본'(global-corporate-startups)이 2026-11-10 이후 자동조사 12건 중 한 번도 선정되지 않아 13일간 가장 오래 비어있었다. 오늘(11/23) 일간 브리핑의 핵심 항목(ZDNet Korea 인용, WSJ 보도 데이터브릭스 2,250억달러 밸류 신규투자 초기협상)이 8월 1,900억달러 대비 18.4% 상승이라는 사실만 적고 그 근거·비교기준을 설명하지 않아 이 질문으로 검증했다. 로이터(WSJ 인용)·ZDNet Korea로 보도 핵심사실을 확인하고, 데이터브릭스 공식 8월 보도자료(run-rate 70억달러+)와 247wallst의 스노우플레이크 비교 분석을 대조해 '매출배수'가 두 회사에서 서로 다른 기준(연환산 run-rate 대 trailing 매출)으로 계산돼 그대로 비교할 수 없음을 확인했다. 반대근거 탐색에서는 포춘 칼럼(2026/2/6)의 AI기업 ARR 지표 왜곡 가능성·순환투자구조·저마진 비판을 확인했다. 검색·원문열기 합계 16회(opened 13·failed 3: FourWeekMBA 관련분석 2건 403, Benzinga 1건 403/404) 사용. 이번 협상 시점의 실제(11월) run-rate와 데이터브릭스·투자자 측의 공식 반응은 확인하지 못해 한계로 남겼다."
     }
   ]
 };
