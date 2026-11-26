@@ -4485,7 +4485,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "43dc3392bd783fa30fe9c2f8166e92ab3a04a416bf20b6f19baeb5fcf7fa7bec",
+  "registryHash": "09e96e7da23dddb958000cb5eb16c31455c5e37a557fc329a50e47bf5932f1ed",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -18250,16 +18250,217 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-25T00:13:00Z"
         }
       ]
+    },
+    {
+      "id": "openrouter-china-token-share-30weeks-2026-11-26",
+      "ruleId": "china-ai",
+      "topic": "중국 AI",
+      "question": "'중국 대모델이 30주 연속 토큰 호출량 세계 1위'라는 집계는 실제 AI 사용·시장 점유율을 보여주는가?",
+      "basis": "12개 분야 중 '중국 AI'(china-ai)가 2026-11-14(deepseek-moonshot-blackwell-checkpoint-forensics) 이후 자동조사 11건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 오늘(11/26) 일간 브리핑의 중국AI 섹션이 핵심 사실 없이 'OpenRouter 플랫폼 집계 기준 중국 대모델이 30주 연속 주간 토큰 호출량 세계 1위(전체 210조 토큰 중 중국 111.16조·미국 19.21조)'라는 참고 수치만 전하며 '한 플랫폼 집계로 업계 전체 사용량을 대표하지 않는다는 점에 유의'라고 단서를 달았으나, 왜 그런지는 설명하지 않아 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치)에는 이 주제와 직접 맞는 대기 요청이 없어(ai-infrastructure·energy-geopolitics 반복 요청만 존재) 일간 브리핑에서 직접 질문을 골랐다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-26",
+      "scope": "current",
+      "summary": "11/26 일간 브리핑은 중국 AI 섹션에서 'OpenRouter 플랫폼 집계 기준 중국 대모델 30주 연속 주간 토큰 호출량 세계 1위'라는 참고 수치를 전하며 한 플랫폼 집계가 업계 전체를 대표하지 않는다는 단서만 달았다. 이번 조사는 그 수치의 출처(每日经济新闻 보도와 OpenRouter 자체 랭킹 페이지·뉴스레터)를 직접 대조해 무엇이 OpenRouter의 공식 발표치이고 무엇이 매체의 자체 재가공인지 구분하고, 토큰량이라는 지표의 측정 범위·한계를 확인했다. 반대 근거로는 미국 기업의 AI 지출 데이터(Ramp)와 이를 근거로 한 반론을 대조했다.",
+      "learning": [
+        {
+          "title": "OpenRouter '순위'는 플랫폼 내 토큰량이고, '30주 연속 1위'는 매체의 자체 집계다",
+          "text": "OpenRouter의 공식 랭킹 페이지(openrouter.ai/rankings)는 모델별 주간 토큰 처리량만 보여줄 뿐 국가 단위 합산치는 제공하지 않는다. 每日经济新闻(11/23)이 보도한 '중국 대모델 주간 호출량 30주 연속 세계 1위·전체 210조 토큰 중 중국 111.16조·미국 19.21조'라는 수치는 기사 자체가 'OpenRouter 데이터를 바탕으로 자체 측산(自行测算)한 수치'라고 밝힌 것으로, OpenRouter가 국가별로 발표한 공식 통계가 아니다. 다만 방향성 자체는 OpenRouter 1차 자료로도 뒷받침된다 — OpenRouter 자체 뉴스레터(9/22)는 오픈웨이트 모델의 플랫폼 내 토큰 점유율이 2026년 4월부터 지속적으로 50%를 넘었고 7월초 79%로 정점을 찍었으며, 그중 상당 부분이 중국 연구소 모델(당시 69%)이라고 밝혔다.",
+          "sourceIds": [
+            "nbd-cn-report",
+            "openrouter-rankings",
+            "openrouter-newsletter"
+          ]
+        },
+        {
+          "title": "토큰 수는 '얼마나 많이 쓰였나'를 보여줄 뿐, '누가 더 좋은가·누가 돈을 버는가'는 보여주지 않는다",
+          "text": "OpenRouter는 이 랭킹이 '품질이 아니라 채택(adoption)을 측정한다'고 스스로 명시하며, 정확도·추론 능력·벤치마크 성능으로 순위를 매기지 않는다고 밝힌다. 토큰 수는 업스트림 제공사마다 고유 토크나이저로 집계돼 모델 간 직접 비교가 어렵고, 무료(:free)·배치(:batch) 등 가격이 다른 변형이 각각 별도 행으로 집계돼 특정 모델의 사용량이 실제보다 부풀려지거나 줄어들 수 있다. 또 이 수치는 OpenRouter라는 한 플랫폼을 거친 트래픽만 포함하므로, 모델 제공사 자체 API나 소비자용 앱(챗GPT·제미나이 등) 사용량은 빠진다.",
+          "sourceIds": [
+            "openrouter-rankings",
+            "digitalapplied-blog"
+          ]
+        },
+        {
+          "title": "토큰량 1위와 기업 지출 점유율은 다른 그림을 보여준다",
+          "text": "미국 기업의 AI 지출을 기준으로 삼는 Ramp AI Index(7/8)를 보면, OpenAI(39.5%)·Anthropic(42.4%)이 'AI 지출 기업' 대부분을 차지한 반면, 중국·오픈소스 모델에 접근 가능한 '모델 서빙 플랫폼' 이용 기업은 전체 AI지출 기업의 5.8%(2026년 6월 기준)에 불과했고, 이들 기업의 93.2%도 Anthropic을, 85.8%도 OpenAI를 함께 쓰고 있었다. Ramp는 이 지표 자체를 중국·오픈소스 모델 채택의 '불완전한 대리지표'라고 밝혔다. 이는 OpenRouter의 토큰량 1위가 '세계 AI 사용의 중심이 중국 모델로 넘어갔다'는 뜻으로 곧바로 확대 해석되기는 어렵다는 반대 근거다.",
+          "sourceIds": [
+            "ramp-ai-index-july",
+            "digg-counter"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "每日经济新闻(2026-11-23)은 2026년 11월 16~22주 기준 전세계 AI 모델 총 호출량이 210조 토큰(전주 대비 +8.25%)이고, 이 중 중국 모델이 111.16조 토큰(-6.67%), 미국 모델이 19.21조 토큰(+29.53%)이라고 보도했다. 기사는 '중국 대모델 주간 호출량이 30주 연속 미국을 앞서며 세계 1위를 유지하고 있다(连续30周超过美国，稳居全球首位)'고 썼고, 이 수치가 OpenRouter 데이터를 바탕으로 매체가 자체 측산한 것이라고 밝혔다.",
+          "sourceIds": [
+            "nbd-cn-report"
+          ]
+        },
+        {
+          "text": "같은 보도의 모델별 순위에서 DeepSeek V4.1-Flash-1017이 65조 토큰(전주 대비 +16%)으로 5주 연속 1위를 지켰고, 2위 DeepSeek V4.1 Flash(15.4조·-1%), 3위 智谱 GLM 5.3 Flash(12.2조·+3%), 4위 腾讯混元 Hy4 flash(10.2조)로 상위 5개 중 4개가 중국 모델이었다.",
+          "sourceIds": [
+            "nbd-cn-report"
+          ]
+        },
+        {
+          "text": "OpenRouter 공식 랭킹 페이지는 'tokens processed through the OpenRouter API'(텍스트·미디어 모두 포함)만을 집계 기준으로 명시하며, 국가별 집계·호출 횟수 기준 순위는 제공하지 않는다. 페이지는 이 순위가 모델 제공사 자체 API 사용량은 포함하지 않는 'OpenRouter 플랫폼 트래픽'이라고 밝힌다.",
+          "sourceIds": [
+            "openrouter-rankings"
+          ]
+        },
+        {
+          "text": "OpenRouter 자체 뉴스레터 'The Token State of Play'(2026-09-22, Inferred 01호)는 오픈웨이트 모델의 플랫폼 내 토큰 점유율이 2026년 4월부터 지속적으로 50%를 넘었고 7월초 79%로 정점을 찍은 뒤 62% 이상을 유지했으며, 당시(뉴스레터 작성 시점 직전 1주) 토큰의 69%가 중국 연구소 모델에서 나왔다고 밝혔다. 미국·중국 외 연구소의 토큰 비중은 2025년 약 12%에서 2%로 줄었고, 모든 차트는 리셀러 활동을 제외한다고 명시했다.",
+          "sourceIds": [
+            "openrouter-newsletter"
+          ]
+        },
+        {
+          "text": "독립 분석(digitalapplied.com, 2026-08-26)은 OpenRouter의 Datasets API 문서를 인용해 토큰 수가 각 업스트림 제공사의 고유 토크나이저에서 산출되므로 한 모델의 토큰과 다른 모델의 토큰이 직접 비교되지 않으며, ':free' 등 가격 변형이 별도 행으로 집계된다고 설명했다. OpenRouter 자신도 이 순위가 '정확도·추론 능력·벤치마크 성능이 아니라 채택(adoption)을 측정한다'고 명시한다는 점도 확인했다.",
+          "sourceIds": [
+            "digitalapplied-blog"
+          ]
+        },
+        {
+          "text": "Ramp AI Index(2026-07-08)는 Ramp 고객 기업의 지출 데이터를 기준으로 OpenAI를 쓰는 기업이 39.5%, Anthropic을 쓰는 기업이 42.4%라고 밝혔다. 중국·오픈소스 모델에 접근 가능한 '모델 서빙 플랫폼' 이용 기업은 2026년 6월 기준 AI지출 기업의 5.8%(1월 4.5%)였고, 이들 기업의 직원 1인당 AI지출 중앙값($248)은 전체 AI지출 기업 중앙값($10.59)의 약 23배였다. Ramp는 이 지표를 중국·오픈소스 모델 채택의 '불완전한 대리지표'라고 스스로 밝혔다.",
+          "sourceIds": [
+            "ramp-ai-index-july"
+          ]
+        }
+      ],
+      "limitations": [
+        "'30주 연속'이라는 횟수와 그 정확한 시작 시점, 매체의 국가 분류 기준(어느 회사를 '중국 모델'로 분류했는지, 리셀러 트래픽 포함 여부 등)은 OpenRouter 1차 자료로 직접 재확인하지 못했다 — 每日经济新闻 기사는 '자체 측산'이라고만 밝혔다.",
+        "반대 근거로 인용한 digg.com의 분석(Mary Clare McMahon·Konstantin Pilz)은 원 게시글(X)을 직접 열람하지 못하고 2차 인용으로만 확인했으며, 정확한 발행일도 특정하지 못했다(인용 기준 시점은 2026-09-13).",
+        "Ramp 데이터는 Ramp 플랫폼을 쓰는 기업 고객에 한정되며, Ramp 스스로도 '모델 서빙 플랫폼' 이용률을 중국·오픈소스 모델 채택의 불완전한 대리지표라고 명시했다 — 전체 미국 기업, 더구나 전세계 기업을 대표하지 않는다.",
+        "챗GPT·제미나이·바이두 文心 같은 소비자용 앱의 토큰·사용량은 OpenRouter·Ramp 데이터 어디에도 포함되지 않아, 이번 조사로는 소비자 시장에서의 점유율 변화를 확인할 수 없다.",
+        "반대 근거 탐색에서 OpenRouter의 토큰 수치 자체가 '틀렸다'고 주장하는 자료는 찾지 못했다 — 찾은 비판은 모두 '수치는 맞지만 대표성이 제한적'이라는 수준이었다."
+      ],
+      "insight": [
+        {
+          "label": "흐름",
+          "text": "'중국 대모델 30주 연속 토큰 호출량 1위'라는 수치 자체가 허위는 아니지만, 이는 OpenRouter라는 한 플랫폼 안에서의 집계이자 매체가 모델별 수치를 국가 단위로 재가공한 결과로, 전체 AI 사용량·시장 점유율이 중국으로 넘어갔다는 뜻으로 곧바로 읽기는 어려운 것으로 풀이된다. 11/26 브리핑이 '한 플랫폼 집계로 업계 전체를 대표하지 않는다'고 단 단서는 이런 맥락에서 적절했던 것으로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "OpenRouter가 국가별 공식 집계를 직접 발표하거나, Ramp 등 기업지출 데이터에서 중국·오픈소스 모델에 접근 가능한 기업 비율이 지금의 5.8%에서 OpenAI·Anthropic 수준으로 뚜렷이 올라서면, 또는 소비자 앱 사용량까지 포함한 전체 집계가 공개되면 이 해석은 달라진다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "OpenRouter·Ramp 데이터 모두 소비자용 앱(챗GPT·제미나이·바이두 文心 앱 등) 사용량은 포함하지 않아, 전체 AI 사용에서 가장 큰 축일 수 있는 부분이 두 데이터 모두에서 비어 있다. '30주 연속'이라는 횟수도 OpenRouter 1차 자료로 직접 재확인되지 않은 채 매체 보도로만 반복되고 있다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "다음 몇 주간 OpenRouter 플랫폼에서 중국 모델의 주간 호출량 비중이 계속 줄어드는가, 그리고 Ramp 등 기업지출 데이터에서 중국·오픈소스 모델에 접근 가능한 '모델 서빙 플랫폼' 이용 기업 비율이 5.8%보다 뚜렷이 늘어나는가?",
+      "nextCheck": "2026-12-10",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "nbd-cn-report",
+          "target": "https://www.nbd.com.cn/articles/2026-11-23/4655481.html",
+          "note": "每日经济新闻 원문 직접 열람 — '30주 연속 1위' 문구, 전체·중국·미국 호출량, 모델별 순위, '자체 측산' 명시 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "openrouter-rankings",
+          "target": "https://openrouter.ai/rankings",
+          "note": "OpenRouter 공식 랭킹 페이지 직접 열람 — 집계 기준(플랫폼 내 토큰량)·국가별 집계 미제공·채택(adoption) 측정 명시 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "openrouter-newsletter",
+          "target": "https://openrouter.ai/data/newsletter/the-token-state-of-play",
+          "note": "OpenRouter 자체 뉴스레터 'The Token State of Play' 직접 열람 — 오픈웨이트·중국연구소 모델의 플랫폼 내 토큰 점유율 추이(4월 50%+, 7월초 79% 정점), 리셀러 제외 명시 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "digitalapplied-blog",
+          "target": "https://www.digitalapplied.com/blog/openrouter-usage-charts-what-they-measure",
+          "note": "독립 분석 블로그 직접 열람 — 토크나이저 차이, ':free' 변형 별도 집계, 'measure adoption, not quality' 명시 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "digg-counter",
+          "target": "https://digg.com/ai/fyb4qfzt",
+          "note": "반대근거 탐색 — 중국 오픈웨이트 토큰 점유율(9/13 기준 약53%)이 세계 전체 사용량을 대표하지 않는다는 반론(Ramp 기업지출 데이터 인용) 직접 열람"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "ramp-ai-index-july",
+          "target": "https://ramp.com/data/ai-index-july-2026",
+          "note": "Ramp AI Index(2026-07-08) 원문 직접 열람 — OpenAI 39.5%·Anthropic 42.4% 기업채택률, 모델서빙 플랫폼 이용기업 5.8%·중복사용률 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "OpenRouter token rankings limitations market share proxy criticism (웹검색)",
+          "note": "반대근거·한계 탐색 — OpenRouter 자체 고지('measure adoption, not quality')와 2차 분석들이 공통으로 '플랫폼 데이터일 뿐 세계 시장 전체를 대표하지 않는다'고 지적함을 확인"
+        },
+        {
+          "outcome": "opened",
+          "target": "Ramp AI spending report OpenAI Anthropic share of business (웹검색)",
+          "note": "Ramp 데이터의 정확한 페이지(ai-index-july-2026)와 발행일(7/8)·수치를 특정하기 위한 검색"
+        }
+      ],
+      "sources": [
+        {
+          "id": "nbd-cn-report",
+          "name": "每日经济新闻(每经网), \"中国大模型周调用量连续30周超过美国，稳居全球首位\" (宋欣悦 기자)",
+          "url": "https://www.nbd.com.cn/articles/2026-11-23/4655481.html",
+          "publishedAt": "2026-11-23",
+          "kind": "매체 보도(자체 집계, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-26T00:15:00Z"
+        },
+        {
+          "id": "openrouter-rankings",
+          "name": "OpenRouter, \"AI Model Rankings\" (공식 랭킹 페이지)",
+          "url": "https://openrouter.ai/rankings",
+          "publishedAt": "2026-11-26",
+          "kind": "플랫폼 공식 랭킹 페이지(1차 자료, 직접 열람, 실시간 데이터)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-26T00:20:00Z"
+        },
+        {
+          "id": "openrouter-newsletter",
+          "name": "OpenRouter, \"The Token State of Play\" (Inferred, 01호 뉴스레터)",
+          "url": "https://openrouter.ai/data/newsletter/the-token-state-of-play",
+          "publishedAt": "2026-09-22",
+          "kind": "플랫폼 자체 뉴스레터(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-26T00:28:00Z"
+        },
+        {
+          "id": "digitalapplied-blog",
+          "name": "Digital Applied, \"OpenRouter Usage Charts: What They Measure\"",
+          "url": "https://www.digitalapplied.com/blog/openrouter-usage-charts-what-they-measure",
+          "publishedAt": "2026-08-26",
+          "kind": "독립 분석 블로그(2차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-26T00:35:00Z"
+        },
+        {
+          "id": "digg-counter",
+          "name": "Digg, \"Do Chinese open-weight models really process most of the world's AI tokens?\" (Mary Clare McMahon·Konstantin Pilz 분석 재인용)",
+          "url": "https://digg.com/ai/fyb4qfzt",
+          "publishedAt": "2026-09",
+          "kind": "뉴스 집계 사이트의 2차 인용(X 게시글 재인용, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-26T00:40:00Z"
+        },
+        {
+          "id": "ramp-ai-index-july",
+          "name": "Ramp Economics Lab(Ara Kharazian), \"Our latest data on China vs. the American AI Labs\" (Ramp AI Index)",
+          "url": "https://ramp.com/data/ai-index-july-2026",
+          "publishedAt": "2026-07-08",
+          "kind": "기업 지출데이터 업체 자체 보고서(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-26T00:48:00Z"
+        }
+      ]
     }
   ],
   "runs": [
-    {
-      "date": "2026-09-29",
-      "checkedAt": "2026-09-29T00:20:00Z",
-      "status": "failed",
-      "reportIds": [],
-      "reason": "이날 첫(오전) 실행. 새 조사를 시작하기 전 research-automation.json의 lastObservedBlock에 따라 표본 점검(WebSearch 1회 + WebFetch 8회, 8개 서로 다른 도메인)으로 네트워크 상태를 재확인했습니다. 결과: WebSearch는 정상 동작(AI 인프라 지출 검색에서 다수 출처 반환). WebFetch는 reuters.com, en.wikipedia.org, www.sec.gov, openai.com, www.bok.or.kr, www.gartner.com, www.idc.com 7곳 모두 EGRESS_BLOCKED로 실패했고, www.anthropic.com·www.microsoft.com 2곳만 열렸습니다 — 2026-09-28 세 차례 실행과 동일한 차단 패턴이 이번에도 그대로 재현됨을 확인했습니다. 접근 가능한 조직이 여전히 2곳(둘 다 AI/클라우드 사업자로 이해관계가 있어 서로 독립적 대조에도 한계)뿐이라, 최소 출처 다양성(2개 이상 독립 조직, 반대 근거 포함)과 원문 전체 열람(full_text) 요건을 충족할 수 없습니다. 직전 회차(ai-infrastructure-buildout-2026-09-28)가 검색 발췌만으로 사실을 채웠다가 게시 후 검증 취소된 전례가 있어, 같은 실수를 반복하지 않기 위해 이번에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
-    },
     {
       "date": "2026-09-29",
       "checkedAt": "2026-09-29T06:24:00Z",
@@ -18786,6 +18987,15 @@ const RESEARCH_DATA = {
         "suneung-ai-cheating-detection-limits-2026-11-25"
       ],
       "reason": "12개 분야 중 '사회 / 문화 / 소비'(society-culture-consumer)가 2026-11-12(korea-tourist-spending-vs-domestic-consumption) 이후 자동조사 15건 중 한 번도 선정되지 않아 13일간 가장 오래 비어있었다. 같은 기간 일간 브리핑은 수능 'AI 부정행위' 사태를 11/17(포상금 검토)·11/20~22(TF 구체화)·11/23(교육부장관 사퇴)까지 여러 날 다뤘지만, 적발된 98명 중 실제로 무엇이 'AI' 부정행위로 확인됐는지와 왜 기술적으로 막기 어려운지는 설명하지 않았다. 11/25 오늘 브리핑에서도 사회/문화/소비 섹션이 다시 0건이라 이 간극이 그대로 남아 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치)에는 이 주제와 관련된 대기 요청이 없어 일간 브리핑·추적 대장에서 직접 질문을 골랐다."
+    },
+    {
+      "date": "2026-11-26",
+      "checkedAt": "2026-11-26T00:50:00Z",
+      "status": "published",
+      "reportIds": [
+        "openrouter-china-token-share-30weeks-2026-11-26"
+      ],
+      "reason": "12개 분야 중 '중국 AI'(china-ai)가 2026-11-14 이후 자동조사 11건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 오늘(11/26) 일간 브리핑의 중국AI 섹션이 'OpenRouter 플랫폼 집계 기준 중국 대모델 30주 연속 주간 토큰 호출량 세계 1위' 수치를 전하며 '한 플랫폼 집계로 업계 전체를 대표하지 않는다'는 단서만 달아, 왜 그런지를 이 질문으로 검증했다. 每日经济新闻 원문을 직접 열람해 이 수치가 매체의 자체 재가공임을 확인하고, OpenRouter 공식 랭킹 페이지·자체 뉴스레터(1차 자료)로 측정 범위(플랫폼 내 토큰량, 품질이 아닌 채택 측정, 토크나이저 차이)를 확인했다. 반대근거 탐색에서는 Ramp AI Index(기업 지출 데이터, 1차 자료)를 통해 미국 기업 AI지출의 80% 이상이 여전히 OpenAI·Anthropic에 쓰이고 중국·오픈소스 모델 접근 플랫폼 이용 기업은 5.8%에 불과하다는 반론을 확인했다. 검색·원문열기 합계 8회(opened 8·failed 0) 사용. '30주 연속'의 정확한 시작 시점과 매체의 국가 분류 기준은 OpenRouter 1차 자료로 직접 재확인하지 못해 한계로 남겼다."
     }
   ]
 };
