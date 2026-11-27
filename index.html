@@ -4142,7 +4142,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "09e96e7da23dddb958000cb5eb16c31455c5e37a557fc329a50e47bf5932f1ed",
+  "registryHash": "8fc80f67b10c062ed44132eed6afd80741f8342be9688c73c5e2a755eb2a2647",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -18115,16 +18115,215 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-26T00:48:00Z"
         }
       ]
+    },
+    {
+      "id": "medicare-round3-savings-9.2b-vs-5.5b-2026-11-27",
+      "ruleId": "science-bio-health",
+      "topic": "과학 / 바이오 / 건강",
+      "question": "메디케어 3차 약가협상 '절감액'이 92억 달러와 55억 달러 두 가지로 보도되는 이유는 무엇인가?",
+      "basis": "12개 분야 중 '과학 / 바이오 / 건강'(science-bio-health)이 2026-11-15(us-measles-elimination-status-confirmation-level) 이후 자동조사 11건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 11/25·11/27 이틀에 걸친 일간 브리핑이 美 메디케어 3차 약가협상 결과(11/23 발표)를 다루며 '내년 92억달러 절감 전망(제조사 할인 반영시 55억달러로 상충)'이라고만 적고 두 수치가 왜 갈리는지는 설명하지 않아 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치)를 확인한 결과 대기 중인 요청은 ai-work·ai-infrastructure·energy-geopolitics 3건뿐이고 이 주제와 맞는 요청은 없어, 일간 브리핑에서 직접 질문을 골랐다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "scope": "current",
+      "summary": "11/25·11/27 일간 브리핑은 美 메디케어 3차 약가협상 결과(11/23 발표)의 절감액을 '내년 92억달러, 제조사 할인 반영시 55억달러로 상충'이라고만 전하고 설명 없이 넘어갔다. 이번 조사는 CMS 공식 보도자료·팩트시트 원문을 직접 대조해 두 수치가 어떤 비교 기준선(baseline) 차이에서 나오는지, 그리고 이런 '이중 수치' 공개가 2차 협상에서도 반복된 패턴인지 확인했다.",
+      "learning": [
+        {
+          "title": "92억 달러와 55억 달러는 같은 협상의 다른 비교 기준선이다",
+          "text": "CMS 팩트시트는 '2025년 메디케어 지출(리베이트·일부 수수료 차감 후) 대비' 협상가격이 그해 시행됐다면 92억 달러(45%) 절감됐을 것이라고 추산하면서, 바로 다음 문장에서 '이 추산은 Part D 적용 약물의 제조사 할인 프로그램(Manufacturer Discount Program, MDP) 지출을 반영하지 않았다'고 밝힌다. MDP 지출까지 포함해 다시 계산하면 절감액은 55억 달러(33%)로 줄어든다. 두 수치는 서로 다른 조사·추정이 아니라, '리베이트까지만 뺀 지출'과 'MDP 할인까지 뺀 지출' 중 어느 쪽을 비교 기준으로 삼느냐의 차이다.",
+          "sourceIds": [
+            "cms-factsheet-ipay2028",
+            "cms-pressrelease-13drugs"
+          ]
+        },
+        {
+          "title": "MDP는 협상과 별개로 2025년부터 이미 시행 중인 또 다른 할인 장치다",
+          "text": "제조사 할인 프로그램(MDP)은 2022년 인플레이션감축법(IRA)의 Part D 급여구조 개편으로 기존 '보장공백구간(coverage gap)' 70% 할인을 대체해 2025년부터 시행됐다. 초기보장구간에서 제조사가 10%, 재난적 보장구간에서 20%를 할인하는 구조로, 메디케어 약가협상 대상으로 선정됐는지와 무관하게 Part D 약물 전반에 적용된다. 92억 달러 추산에는 '협상이 없었어도 어차피 MDP로 깎였을 부분'까지 협상의 성과로 잡혀 있다는 것이, CMS가 55억 달러로 다시 계산해 함께 공개하는 이유다.",
+          "sourceIds": [
+            "kff-partd-redesign-2025",
+            "cms-factsheet-ipay2028"
+          ]
+        },
+        {
+          "title": "같은 '이중 수치' 공개는 2차 협상(2027년 적용분)에서도 있었다",
+          "text": "2025년 11월 발표된 2차 협상 결과도 CMS가 '2024년 순지출 대비 12억 달러(44%)'와 '당시의 기존 공백구간 할인 프로그램(CGDP) 지출까지 반영하면 8.5억 달러(36%)'라는 같은 구조의 두 수치를 함께 공개했다. 독립 보험계리 분석기관 Milliman은 2026년 1월 보고서에서, 36%라는 CMS의 더 낮은 수치조차 2027년부터 적용될 MDP의 실제 할인율(평균 약 15%, 고가 특수의약품은 약 20%)을 충분히 반영하지 않아 과대평가됐을 수 있고, 실제 순절감률은 25~30%에 더 가까울 것으로 추정했다.",
+          "sourceIds": [
+            "milliman-mfp-brief4"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "CMS는 11/23 보도자료에서 13개 약물(선정 당시 15개 중 Xeljanz·Xeljanz XR·Xolair는 제네릭/바이오시밀러 관련 소송·판단으로 최종 대상에서 제외)에 대한 2028년 1월 1일 발효 협상가격을 공개하며 '추정 순절감률 45%, 92억 달러'라고 밝혔다.",
+          "sourceIds": [
+            "cms-pressrelease-13drugs",
+            "cms-factsheet-ipay2028"
+          ]
+        },
+        {
+          "text": "같은 팩트시트는 '이 추산은 Part D 적용 약물의 제조사 할인 프로그램(MDP) 지출을 반영하지 않았다(This estimate does not account for Manufacturer Discount Program (MDP) spending for drugs covered under Part D)'고 명시하며, MDP 지출을 포함하면 절감액은 약 55억 달러, 순절감률은 약 33%로 낮아진다고 밝혔다.",
+          "sourceIds": [
+            "cms-factsheet-ipay2028"
+          ]
+        },
+        {
+          "text": "팩트시트의 약물별 표에 따르면 2025년 기준 30일 처방 목록가 대비 협상가 할인율은 트룰리시티(Eli Lilly) -84%, 트라젠타(재협상, Boehringer Ingelheim) -83%, 아노로 엘립타(GSK) -72%, 코센틱스(Novartis) -67% 순으로 컸다. 13개 약물의 2025년 메디케어 총지출은 Part D 223억 달러(수급자 약140만명)·Part B 33억 달러(수급자 약12만명)였다.",
+          "sourceIds": [
+            "cms-factsheet-ipay2028"
+          ]
+        },
+        {
+          "text": "제조사 할인 프로그램(MDP)은 2022년 IRA의 Part D 급여구조 개편으로 기존 보장공백구간(coverage gap) 70% 할인을 대체해 2025년부터 시행됐으며, 초기보장구간 10%·재난적구간 20%의 제조사 할인을 Part D 약물 전반에 의무화한다.",
+          "sourceIds": [
+            "kff-partd-redesign-2025"
+          ]
+        },
+        {
+          "text": "STAT News(11/23)도 같은 92억 달러(45%)·55억 달러(33%) 수치와 '이번이 처음으로 진료실 투여 약물(Part B)을 협상 대상에 포함한 라운드'라는 사실을 보도했다.",
+          "sourceIds": [
+            "stat-medicare-round3"
+          ]
+        },
+        {
+          "text": "2025년 11월 발표된 2차 협상(2027년 적용분) 결과도 '2024년 순지출 대비 12억 달러(44%)'와 '당시 공백구간 할인 프로그램(CGDP) 반영시 8.5억 달러(36%)'라는 같은 구조의 두 수치를 공개했다. Milliman(2026-01-12)은 2027년부터 적용될 MDP의 실제 평균 할인율(약 15%, 고가 특수의약품 약 20%)을 반영하면 실제 순절감률은 25~30%에 더 가까울 것이라고 추정했다.",
+          "sourceIds": [
+            "milliman-mfp-brief4"
+          ]
+        }
+      ],
+      "limitations": [
+        "이번 조사는 CMS 자체 발표자료(보도자료·팩트시트)와 이를 보도한 매체 1곳(STAT, 무료 공개 서두만 직접 열람), 2차 협상에 대한 독립 분석 1건(Milliman)을 대조했을 뿐, 3차 협상 결과(11/23) 자체에 대한 업계(PhRMA)·환자단체의 반응은 원문으로 확인하지 못했다. 검색에서 PhRMA가 1차 선정 때(2026년 1월) '정부의 가격통제는 잘못된 접근'이라는 입장을 낸 사실은 확인했으나, 이는 선정 단계에 대한 반응이지 11/23 절감액 발표에 대한 반응이 아니어서 findings에 넣지 않았다.",
+        "92억·55억 달러 모두 2025년 실제 지출에 협상가격을 '소급 적용했다면'이라는 가정에 기반한 추정치이며, 2028년 시행 이후 실제 처방 추이·추가 약가 변동은 반영하지 않는다.",
+        "Milliman의 25~30% 추정은 2차 협상(2027년 적용분) 약물을 대상으로 한 것으로, 3차 협상(2028년 적용분) 13개 약물에 동일한 추정치를 직접 적용할 수 있는지는 확인하지 못했다.",
+        "반대 근거 탐색에서, 92억·55억 두 수치 중 어느 쪽이 '틀렸다'거나 '조작됐다'는 주장은 찾지 못했다. 확인된 비판은 모두 'CMS가 공개한 더 낮은 수치(55억·2차의 8.5억)조차 여전히 과대평가일 수 있다'는 방향이었고, 반대로 92억 달러가 더 정확하다는 주장은 찾지 못했다."
+      ],
+      "insight": [
+        {
+          "label": "흐름",
+          "text": "메디케어 약가협상의 절감액 발표가 1차(리스트가 대비 논란)·2차(CGDP 반영 여부)에 이어 3차(MDP 반영 여부)까지 매 라운드 비교 기준선이 다른 두 수치를 함께 내놓는 것은, 비교 기준을 어디로 잡느냐에 따라 절감액이 반토막 가까이 달라질 수 있음을 CMS 스스로도 인지하고 있다는 뜻으로 풀이된다. 11/25·11/27 브리핑이 전한 '92억 vs 55억 상충'은 오류나 보도 혼선이 아니라, 이 제도가 구조적으로 안고 있는 비교기준 문제로 보인다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "CMS가 2028년 시행 이후 실제 집행 결과(실제 처방 건수·실제 절감액)를 공개해 92억·55억 중 어느 쪽에 더 가까웠는지 확인되거나, 3차 협상 대상 약물에 대한 Milliman류의 독립 재추정치가 나와 25~30%대의 더 낮은 범위가 3차에도 적용된다면, '55억 달러·33%'조차 낙관적인 수치였다는 쪽으로 판단이 뒤집힐 수 있다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "3차 협상 결과 발표 직후 업계(PhRMA)·환자단체의 구체적 반응은 이번 조사로 확인되지 않았다. 또한 선정 당시 15개 약물 중 Xeljanz·Xeljanz XR·Xolair 3개가 제네릭/바이오시밀러 관련 사유로 최종 명단에서 빠졌다는 사실은 팩트시트 각주에만 남아 있고, 이들 약물이 향후 협상 대상에 복귀할지는 확인되지 않았다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "2028년 1월 협상가격이 실제로 시행된 뒤, CMS가 집행 기준 실제 절감액을 공개하면 그 수치가 92억 달러·55억 달러 중 어느 쪽에 더 가까운가?",
+      "nextCheck": "2027-03-01",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "cms-pressrelease-13drugs",
+          "target": "https://www.cms.gov/newsroom/press-releases/cms-announces-lower-negotiated-prices-13-high-cost-drugs",
+          "note": "CMS 공식 보도자료 직접 열람 — 13개 약물, 45%/92억달러, 3차(third cycle) 명시, 2028년 1월 시행 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "cms-factsheet-ipay2028",
+          "target": "https://www.cms.gov/files/document/fact-sheet-negotiated-prices-ipay-2028.pdf",
+          "note": "CMS 팩트시트 PDF 원문 직접 열람 — 'Estimated Medicare Net Savings in 2025' 단락에서 92억달러/45% vs MDP 반영시 55억달러/33% 정확한 문구, 약물별 할인율표·총지출 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "stat-medicare-round3",
+          "target": "https://www.statnews.com/2026/11/23/medicare-drug-price-negotiations-announcement-third-round/",
+          "note": "무료 공개 서두 직접 열람(본문 전체는 유료) — 동일 수치·Part B 최초 포함 문구 교차확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "kff-partd-redesign-2025",
+          "target": "https://www.kff.org/medicare/issue-brief/changes-to-medicare-part-d-in-2024-and-2025-under-the-inflation-reduction-act-and-how-enrollees-will-benefit/",
+          "note": "직접 열람 — MDP 단계별 할인율(초기10%·재난적20%) 및 기존 공백구간 70%할인 대체 확인. 배경자료(발행 2023-04-20)로 scope: background 처리"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "milliman-mfp-brief4",
+          "target": "https://www.milliman.com/ja-JP/insight/medicare-drug-negotiation-next-maximum-fair-prices",
+          "note": "직접 열람 — 2차(2027년 적용분) CMS 공식치(44%/36%)에 대해서도 '실제 순절감률은 25~30%에 가까울 것'이라는 독립분석법인의 반대근거·한계 지적 확인(저자 Jake Klaisner 외, 2026-01-12)"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.healthaffairs.org/do/10.1377/forefront.20260526.802745/full/",
+          "note": "MDP-협상 상호작용 분석 원문 접근 시도 — HTTP 403으로 차단, 다른 URL 경로로 재시도도 동일하게 403 실패"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.cms.gov/newsroom/press-releases",
+          "note": "CMS 뉴스룸 목록 페이지 직접 접근 시도 — HTTP 404, 검색으로 개별 보도자료 URL을 특정해 우회"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.milliman.com/en-US/insight/medicare-drug-negotiation-next-maximum-fair-prices",
+          "note": "영어 로케일 URL 접근 시도 — HTTP 404, ja-JP 로케일 URL로 재시도해 성공"
+        },
+        {
+          "outcome": "opened",
+          "target": "Medicare drug price negotiation savings methodology criticism \"net of rebates\" overstate accounting economists (웹검색)",
+          "note": "반대근거 탐색 — 1차(리스트가 대비 과장 비판, AEI·Health Affairs)·2차(CGDP 반영) 비판 패턴을 확인해 Milliman 보고서로 연결. 원문 미열람 비판(PhRMA 등)은 findings·sources에서 제외"
+        },
+        {
+          "outcome": "opened",
+          "target": "PhRMA criticism Medicare drug price negotiation third round savings $9.2 billion overstated reaction (웹검색)",
+          "note": "3차 결과 발표에 대한 업계 반응 검색 — 11/23 발표에 대한 직접 반응은 찾지 못함(1월 선정 단계 반응만 확인), limitations에 기록"
+        }
+      ],
+      "sources": [
+        {
+          "id": "cms-pressrelease-13drugs",
+          "name": "CMS(Centers for Medicare & Medicaid Services), \"CMS Announces Lower Negotiated Prices for 13 High-Cost Drugs\" (보도자료)",
+          "url": "https://www.cms.gov/newsroom/press-releases/cms-announces-lower-negotiated-prices-13-high-cost-drugs",
+          "publishedAt": "2026-11-23",
+          "kind": "정부기관 공식 보도자료(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-27T00:12:00Z"
+        },
+        {
+          "id": "cms-factsheet-ipay2028",
+          "name": "CMS, \"Medicare Drug Price Negotiation Program: Negotiated Prices for Initial Price Applicability Year 2028\" (팩트시트)",
+          "url": "https://www.cms.gov/files/document/fact-sheet-negotiated-prices-ipay-2028.pdf",
+          "publishedAt": "2026-11",
+          "kind": "정부기관 공식 팩트시트(1차 자료, PDF 원문 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-27T00:20:00Z"
+        },
+        {
+          "id": "stat-medicare-round3",
+          "name": "STAT News, \"Medicare drug price negotiations announcement\" (3차 라운드 결과 보도)",
+          "url": "https://www.statnews.com/2026/11/23/medicare-drug-price-negotiations-announcement-third-round/",
+          "publishedAt": "2026-11-23",
+          "kind": "매체 보도(유료기사, 무료 공개 서두 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-27T00:05:00Z"
+        },
+        {
+          "id": "kff-partd-redesign-2025",
+          "name": "KFF, \"Changes to Medicare Part D in 2024 and 2025 Under the Inflation Reduction Act and How Enrollees Will Benefit\"",
+          "url": "https://www.kff.org/medicare/issue-brief/changes-to-medicare-part-d-in-2024-and-2025-under-the-inflation-reduction-act-and-how-enrollees-will-benefit/",
+          "publishedAt": "2023-04-20",
+          "kind": "비영리 정책연구기관 설명자료(배경자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-27T00:30:00Z"
+        },
+        {
+          "id": "milliman-mfp-brief4",
+          "name": "Milliman(Jake Klaisner·Katherine Holcomb·Dan Simenc), \"Medicare drug negotiation: What's next for maximum fair prices\" (MFP Issue Brief 4)",
+          "url": "https://www.milliman.com/ja-JP/insight/medicare-drug-negotiation-next-maximum-fair-prices",
+          "publishedAt": "2026-01-12",
+          "kind": "보험계리법인 독립분석(2차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-27T00:42:00Z"
+        }
+      ]
     }
   ],
   "runs": [
-    {
-      "date": "2026-09-29",
-      "checkedAt": "2026-09-29T06:24:00Z",
-      "status": "failed",
-      "reportIds": [],
-      "reason": "이날 두 번째(오후) 실행. 오전 실행에서 네트워크 차단이 확인됐으므로 이번에도 20개 전면 재탐색 대신 가벼운 표본 점검(WebSearch 1회 + WebFetch 4회, 오전과 겹치지 않는 도메인)만 했습니다. WebSearch는 정상 동작해 'AI 데이터센터 전력 수급' 주제로 다수 출처를 반환했습니다(전자신문·헤럴드경제·전기신문 등). WebFetch는 www.etnews.com, www.iea.org, www.yna.co.kr 3곳이 모두 실패(앞 둘은 EGRESS_BLOCKED, yna.co.kr은 'unable to fetch')했고, www.microsoft.com만 정상 열람됐습니다 — 지금까지 5회 연속(9/28 세 차례, 9/29 두 차례) 같은 차단 패턴입니다. 접근 가능한 조직이 1~2곳(둘 다 AI/클라우드 이해관계자)뿐이라 최소 출처 다양성과 원문 전체 열람 요건을 충족할 수 없어, 유망한 후보 주제(AI 데이터센터 전력 수급 병목)를 확인했음에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
-    },
     {
       "date": "2026-09-30",
       "checkedAt": "2026-09-30T00:09:40Z",
@@ -18653,6 +18852,15 @@ const RESEARCH_DATA = {
         "openrouter-china-token-share-30weeks-2026-11-26"
       ],
       "reason": "12개 분야 중 '중국 AI'(china-ai)가 2026-11-14 이후 자동조사 11건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 오늘(11/26) 일간 브리핑의 중국AI 섹션이 'OpenRouter 플랫폼 집계 기준 중국 대모델 30주 연속 주간 토큰 호출량 세계 1위' 수치를 전하며 '한 플랫폼 집계로 업계 전체를 대표하지 않는다'는 단서만 달아, 왜 그런지를 이 질문으로 검증했다. 每日经济新闻 원문을 직접 열람해 이 수치가 매체의 자체 재가공임을 확인하고, OpenRouter 공식 랭킹 페이지·자체 뉴스레터(1차 자료)로 측정 범위(플랫폼 내 토큰량, 품질이 아닌 채택 측정, 토크나이저 차이)를 확인했다. 반대근거 탐색에서는 Ramp AI Index(기업 지출 데이터, 1차 자료)를 통해 미국 기업 AI지출의 80% 이상이 여전히 OpenAI·Anthropic에 쓰이고 중국·오픈소스 모델 접근 플랫폼 이용 기업은 5.8%에 불과하다는 반론을 확인했다. 검색·원문열기 합계 8회(opened 8·failed 0) 사용. '30주 연속'의 정확한 시작 시점과 매체의 국가 분류 기준은 OpenRouter 1차 자료로 직접 재확인하지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-27",
+      "checkedAt": "2026-11-27T01:00:00Z",
+      "status": "published",
+      "reportIds": [
+        "medicare-round3-savings-9.2b-vs-5.5b-2026-11-27"
+      ],
+      "reason": "12개 분야 중 '과학 / 바이오 / 건강'(science-bio-health)이 2026-11-15 이후 자동조사 11건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 11/25·11/27 일간 브리핑이 메디케어 3차 약가협상 절감액(92억달러 vs 제조사 할인 반영시 55억달러)의 상충을 설명 없이 전해 이 질문으로 검증했다. CMS 공식 보도자료·팩트시트 원문을 직접 대조해 두 수치가 비교 기준선(리베이트만 차감 vs MDP까지 차감) 차이에서 나온다는 것과, 이 '이중 수치' 공개가 2차 협상(2027년 적용분)에서도 반복된 패턴임을 확인했다. Milliman의 독립분석으로 CMS의 더 낮은 수치조차 과대평가일 수 있다는 반대근거도 확인했다. 검색·원문열기 합계 13회(opened 11·failed 3: Health Affairs 403 2건, CMS 뉴스룸 인덱스 404, Milliman 영어로케일 404) 사용. 3차 결과 발표 자체에 대한 업계·환자단체의 반응은 원문으로 확인하지 못해 한계로 남겼다."
     }
   ]
 };
