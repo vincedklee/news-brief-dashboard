@@ -3968,7 +3968,7 @@ const EVENT_DATA = {
 
 /* RESEARCH-BEGIN */
 const RESEARCH_DATA = {
-  "registryHash": "8fc80f67b10c062ed44132eed6afd80741f8342be9688c73c5e2a755eb2a2647",
+  "registryHash": "59adeee7415f6aebadade323af97d0506083b6eb78de0417dc881bfff88d6f51",
   "reports": [
     {
       "id": "ai-work-outcomes-2026-09-21",
@@ -18147,16 +18147,222 @@ const RESEARCH_DATA = {
           "fetchedAt": "2026-11-27T00:42:00Z"
         }
       ]
+    },
+    {
+      "id": "agentic-cyberattack-autonomy-gap-2026-11-28",
+      "ruleId": "ai-work",
+      "topic": "AI / 디지털 기술",
+      "question": "스위스·EU가 확인했다는 'AI 에이전트형 공격 프레임워크(agentic offensive framework)'는 실제로 무엇을 자동화하며, '거의 완전 자율'이라는 설명은 어디까지 근거가 있는가?",
+      "basis": "12개 분야 중 'AI / 디지털 기술'(ai-work)이 2026-11-16(fireworks-ai-breach-cascade) 이후 자동조사 12건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 오늘(11/28) 일간 브리핑의 AI/디지털기술 섹션이 스위스 국가사이버보안센터(NCSC/BACS)의 'AI 에이전트가 기반시설 운영사 2곳을 실제 침해' 발표를 다루며 '에이전트형 공격 프레임워크'라는 용어만 쓰고 그것이 구체적으로 무엇을 자동화하는지, 그리고 '자율적 AI 공격'이라는 설명이 2025년 11월 Anthropic의 유사 주장 때처럼 과장일 가능성은 없는지를 설명하지 않아 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치, 2026-11-27 22:57 UTC 기준)에는 ai-work 관련 요청이 있었으나 내용이 'AI 도입이 실제 업무성과로 이어지는가'라는 별개의 일반 질문(2026-10-10 보고서에서 이미 다룬 주제)이라 처리 대상으로 선택하지 않고, 오늘 브리핑에서 직접 이 질문을 골랐다.",
+      "mode": "autonomous",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-28",
+      "scope": "current",
+      "summary": "11/28 일간 브리핑은 스위스 NCSC가 'AI 에이전트형 공격'으로 기반시설 운영사 2곳이 실제 침해됐다고 공식 권고문·SRF 인터뷰로 밝혔다고 전했다. 이번 조사는 BACS 공식 권고문과 영국 NCSC의 같은 날 블로그 원문을 직접 대조해 '에이전트형 공격 프레임워크'가 구체적으로 자동화하는 단계와 악용되는 약점의 성격을 확인하고, 같은 시기 EU 집행위원회의 별도 ARTEX 침해 사례, 그리고 2025년 11월 Anthropic의 유사한 '거의 완전 자율' 주장에 대한 보안업계의 반박을 배경자료로 대조해 '자율성' 설명의 근거 수준을 검증했다.",
+      "learning": [
+        {
+          "title": "'에이전트형 공격 프레임워크'는 정해진 작업만 반복하는 기존 자동화 도구와 다르다",
+          "text": "기존 해킹 자동화 도구(스캐너·봇넷)는 사람이 미리 정한 규칙과 순서를 그대로 반복한다. 반면 스위스 BACS·영국 NCSC가 공식 권고문·블로그에서 설명하는 '에이전트형 공격 프레임워크'는 소프트웨어 에이전트가 ①취약점을 스스로 탐색하고 ②상황에 맞는 공격 도구를 고르고 ③결과를 평가해 ④다음 단계를 계획·실행하는 순환을 사람 입력 없이 반복한다. 방어 측이 막으면 다른 방법으로 유연하게 전환한다. 다만 이 기술은 레드팀(침투테스트)용으로도 쓰이는 이중 용도 도구라고 BACS는 명시한다.",
+          "sourceIds": [
+            "bacs-advisory",
+            "uk-ncsc-blog"
+          ]
+        },
+        {
+          "title": "악용하는 약점은 새 것이 아니라 오래 방치된 기술부채다",
+          "text": "영국 NCSC는 'none of the weaknesses being exploited are new or novel'이라고 명시한다. 에이전트가 악용하는 것은 새로운 메모리손상 취약점이 아니라 코드저장소에 잘못 노출된 자격증명, 코드형 인프라(IaC)의 설정오류, 기본값이거나 없는 인증, API 결함처럼 오래전부터 알려진 보안 미비점이다. 달라진 것은 취약점의 종류가 아니라 이를 찾아 악용하는 속도·지속성·비용구조라는 것이 NCSC의 설명이다.",
+          "sourceIds": [
+            "uk-ncsc-blog"
+          ]
+        },
+        {
+          "title": "'AI가 몇 %를 수행했다'는 수치와 '완전 자율'이라는 결론은 다른 이야기다",
+          "text": "2025년 11월 Anthropic이 중국 연계 해커가 Claude를 '거의 전적으로 자율적으로' 조율해 사이버공격을 벌였다고 보고했을 때, Sophos·Phobos Group 등 보안 연구자들은 AI가 작업의 80~90%를 수행했을 가능성은 인정하면서도 핵심 판단·목표 설정 단계에는 사람의 개입이 있었을 것이라며 '완전 자율'이라는 표현에 의문을 제기했다. Anthropic 자신도 공격 시도 중 실제 성공은 '소수'였다고 밝힌 바 있다. 이는 '자율성'을 둘러싼 주장을 읽을 때 수행 비율(%)과 감독 없는 완전 자율을 구분해야 한다는 선례다.",
+          "sourceIds": [
+            "techradar-anthropic-doubt"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "text": "스위스 BACS(연방사이버보안청, 구 NCSC)는 2026-11-24 공식 권고문에서 '최근 며칠간' 접수된 보고 중 조직·핵심기반시설 운영자가 '적어도 두 개 분야'에서 피해를 입었고, 'NCSC가 알고 있는 모든 사례에서' 공격자가 AI 에이전트로 피해자 IT 시스템 침해에 성공했다고 밝혔다 — 정확한 전체 건수·성공 건수는 권고문에 명시되지 않았다.",
+          "sourceIds": [
+            "bacs-advisory"
+          ]
+        },
+        {
+          "text": "같은 날 공영방송 SRF 인터뷰에서 BACS 국장 Florian Schütz는 구체적 수치로 '현재 5건의 확인된 AI 에이전트 공격 사례가 있다(Wir haben aktuell fünf bestätigte Fälle)'고 밝혔다. 5건 중 4건에서 시스템이 침해됐고, 핵심기반시설 운영자 3곳(전력·수도·통신 등)이 공격 대상이 됐다고 전했다 — 3곳 중 몇 곳이 실제 침해로 이어졌는지, 5건 중 몇 건이 핵심기반시설인지는 인터뷰에서도 명확히 구분되지 않았다. 공식 권고문의 '알고 있는 모든 사례에서 침해 성공'이라는 서술과 인터뷰의 '5건 중 4건' 수치 사이의 차이를 설명하는 내용은 권고문·인터뷰 어디에도 없다.",
+          "sourceIds": [
+            "bacs-advisory",
+            "srf-schutz-interview"
+          ]
+        },
+        {
+          "text": "BACS 권고문과 영국 NCSC(2026-11-24 블로그)는 '에이전트형 공격 프레임워크'의 작동 방식을 동일하게 설명한다 — 에이전트가 취약점을 스스로 찾고, 공격 도구를 선택하고, 결과를 평가해 다음 단계를 계획·실행하며, 방어 대응에 부딪히면 다른 방법으로 전환한다. 주로 악용하는 것은 기본·추측가능 비밀번호와 인터넷에 노출된 시스템의 알려진(패치되지 않은) 취약점이다.",
+          "sourceIds": [
+            "bacs-advisory",
+            "uk-ncsc-blog"
+          ]
+        },
+        {
+          "text": "영국 NCSC는 'none of the weaknesses being exploited are new or novel'이라고 명시하며, 공격 대상이 코드저장소에 노출된 자격증명·IaC 설정오류·기본/누락 인증·API 결함 같은 방치된 기술부채라고 밝혔다. 달라진 것은 취약점 종류가 아니라 공격의 속도·지속성·비용구조라는 것이 이 기관의 설명이다.",
+          "sourceIds": [
+            "uk-ncsc-blog"
+          ]
+        },
+        {
+          "text": "스위스 BACS 권고문은 ARTEX·CyberStrikeAI를 '인터넷에서 접근 가능한 에이전트의 예시'로만 언급했으며, 두 도구 수가 2026년 10월 이후 거의 두 배로 늘었다고 밝혔다 — 스위스 5건에 실제로 쓰인 도구로 지목한 것은 아니다. 한편 EU 집행위원회는 2026-10-22 처음 탐지된 별도 사건에서 ARTEX를 쓴 공격자가 인사·의료비환급·번역 시스템에 침투했다고 공식 확인했다고 The Hacker News(2026-11-23)가 전했다. Check Point 분석은 ARTEX 캠페인에서 운영자가 초기 목표만 설정하면 에이전트가 거의 전적으로 자율 진행했다고 밝혔고, FBI는 일부 침투가 표적선정부터 권한상승까지 3시간 이내 진행됐다고 경고했다 — 이 '거의 완전 자율' 분석은 ARTEX 캠페인 전반에 대한 것으로, EU 집행위 사건 자체나 스위스 5건에 대한 개별 자율성 검증은 아니다.",
+          "sourceIds": [
+            "bacs-advisory",
+            "thn-eu-artex"
+          ]
+        },
+        {
+          "text": "2025-11-17 보도(TechRadar Pro)에 따르면, Anthropic이 2025년 11월 '중국 연계 해커가 Claude를 거의 전적으로 자율적으로 조율해 대규모 사이버공격을 수행했다'고 보고했을 때 Sophos·Phobos Group 연구자들은 AI 수행 비율(80~90%로 추정)을 인정하면서도 핵심 판단 단계의 인간 개입 가능성을 지적했고, Anthropic 자체 보고서도 실제 성공한 침투 시도는 '소수'였다고 밝혔다.",
+          "sourceIds": [
+            "techradar-anthropic-doubt"
+          ]
+        }
+      ],
+      "limitations": [
+        "스위스 사례의 피해 기관명, 핵심기반시설 3곳 중 정확한 침해 성공 건수, 공격 배후(공격자 신원)는 BACS·SRF 모두 공개하지 않았다. EU 집행위 사건의 공격 주체도 공개되지 않았다.",
+        "ARTEX가 스위스 5건에 실제로 사용됐는지는 확인되지 않았다 — BACS는 이 도구를 '접근 가능한 예시'로만 언급했을 뿐 스위스 사례의 실제 사용 도구로 지목하지 않았다.",
+        "Check Point·FBI의 '거의 완전 자율' 분석은 ARTEX 캠페인 전반과 EU 집행위 사건에 대한 것이며, 이번 조사로 스위스 5건 자체의 자율성 수준을 직접 검증하지는 못했다.",
+        "반대근거 탐색에서 스위스·EU의 이번(2026년 11월) 사례 자체에 대한 전문가 비판 보도는 찾지 못했다. 대신 2025년 11월 Anthropic의 유사한 선행 사례에 대한 비판을 배경자료로 대조했을 뿐, 이번 사례에도 동일한 비판이 적용되는지는 확인되지 않은 추정이다.",
+        "검색 중 Marcus Hutchins의 '벤더 마케팅' 비판, MIT Sloan·Safe Security의 'AI지원 랜섬웨어 80%' 보고서가 전문가들 반박으로 철회된 사례 등을 다룬 2차 보도(Axios, cybernews 등)를 발견했으나 원문을 직접 열람하지 못해 findings·sources에는 넣지 않았다."
+      ],
+      "insight": [
+        {
+          "label": "흐름",
+          "text": "2025년 11월 Anthropic의 'Claude 거의 완전 자율 공격' 주장 이후 스위스·EU까지, '에이전트형 AI가 자율적으로 사이버공격을 수행했다'는 발표가 반복되고 있지만 매번 자세히 들여다보면 ①악용된 약점은 새로운 것이 아니고 ②'자율'의 정확한 범위(사람 개입 지점)는 공개되지 않으며 ③공식 발표 내부에서도 수치가 엇갈리는(스위스의 '모든 사례 성공' vs '5건 중 4건') 패턴이 되풀이되는 것으로 풀이된다.",
+          "sourceIds": []
+        },
+        {
+          "label": "뒤집힐 조건",
+          "text": "BACS나 독립적인 제3자 포렌식 기관이 스위스 5건 중 하나를 사람의 개입 지점까지 구체적으로 공개하는 상세 기술보고서를 내고, 그 안에서 기존에 알려지지 않은 새로운 취약점 악용이나 사람의 판단 개입이 전혀 없는 완전한 에이전트 체인이 확인된다면, '속도·비용의 변화일 뿐 능력의 변화는 아니다'라는 이번 판단은 뒤집힐 수 있다.",
+          "sourceIds": []
+        },
+        {
+          "label": "안 보이는 것",
+          "text": "스위스 공식 권고문의 '알고 있는 모든 사례에서 침해 성공'과 인터뷰의 '5건 중 4건 성공' 사이의 수치 차이에 대한 설명이 없다. 피해 기관명과 공격 배후는 스위스·EU 사례 모두 공개되지 않았고, ARTEX가 실제로 스위스 사례에 쓰였는지도 확인되지 않은 채 '예시'로만 언급된 상태로 남아 있다.",
+          "sourceIds": []
+        }
+      ],
+      "nextQuestion": "스위스 BACS가 5건 중 핵심기반시설 피해의 정확한 성공 건수와 실제 사용된 공격 도구(ARTEX 여부 포함)를 추가로 공개할 것인가, 그리고 '모든 사례 성공'과 '5건 중 4건' 수치 차이에 대한 설명을 내놓을 것인가?",
+      "nextCheck": "2026-12-19",
+      "processedJobIds": [],
+      "attempts": [
+        {
+          "outcome": "opened",
+          "sourceId": "bacs-advisory",
+          "target": "https://www.bacs.admin.ch/en/26-ki-agenten-1-en",
+          "note": "스위스 BACS(구 NCSC) 공식 권고문 원문 직접 열람 — 발행일 2026-11-24, 'Agentic Offensive Frameworks' 설명, 핵심 인용문('shift in the cyber threat landscape' 등), ARTEX·CyberStrikeAI가 예시로만 언급됨을 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "srf-schutz-interview",
+          "target": "https://www.srf.ch/news/schweiz/fuenf-bestaetigte-faelle-erstmals-cyberangriffe-mit-ki-agenten-in-der-schweiz",
+          "note": "SRF 인터뷰 기사 원문 직접 열람 — Florian Schütz의 '5건 확인, 4건 침해, 핵심기반시설 3곳' 발언 원문(독일어) 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "uk-ncsc-blog",
+          "target": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks",
+          "note": "영국 NCSC 공식 블로그 원문 직접 열람 — 'none of the weaknesses being exploited are new or novel' 등 핵심 인용문과 방어 권고 8가지 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "thn-switzerland",
+          "target": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
+          "note": "The Hacker News 종합 보도 원문 직접 열람 — 스위스·이탈리아CSIRT·영국NCSC 사례를 종합하고 수치 불일치를 지적하는 대목 확인"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "thn-eu-artex",
+          "target": "https://thehackernews.com/2026/11/ai-assisted-cyberattacks-trigger.html",
+          "note": "The Hacker News EU 집행위 ARTEX 침해 보도 원문 직접 열람 — 발행일 2026-11-23, 탐지 시점(10/22), Check Point·FBI 분석 인용 확인, 스위스 사례와는 별개 사건임을 확인(기사에 스위스 언급 없음)"
+        },
+        {
+          "outcome": "opened",
+          "sourceId": "techradar-anthropic-doubt",
+          "target": "https://www.techradar.com/pro/security/experts-cast-doubt-over-anthropic-claims-that-claude-was-hijacked-to-automate-cyberattacks",
+          "note": "반대근거 탐색 — 2025-11-17 TechRadar Pro 원문 직접 열람, Sophos·Phobos Group 연구자들의 '완전 자율' 표현에 대한 반박과 Anthropic 자체 '성공은 소수' 인정 확인(배경자료, scope: background)"
+        },
+        {
+          "outcome": "failed",
+          "target": "https://www.infosecurity-magazine.com/opinions/why-aipowered-cyberattacks-threat",
+          "note": "반대근거 추가 탐색 시도 — HTTP 403으로 접근 차단, 다른 비판 보도(Marcus Hutchins 발언 등)는 2차 출처로만 확인돼 findings에서 제외"
+        },
+        {
+          "outcome": "opened",
+          "target": "AI agentic cyberattack hype skepticism \"not truly autonomous\" security researchers critique 2026 (웹검색)",
+          "note": "반대근거 탐색 — Marcus Hutchins·MIT Sloan/Safe Security 보고서 논란 등을 발견했으나 원문 미열람으로 findings·sources에서 제외, limitations에 기록"
+        },
+        {
+          "outcome": "opened",
+          "target": "Switzerland NCSC AI agentic attack critical infrastructure advisory November 2026 (웹검색)",
+          "note": "1차 자료 위치 탐색 — bacs.admin.ch 권고문 URL 특정에 사용"
+        }
+      ],
+      "sources": [
+        {
+          "id": "bacs-advisory",
+          "name": "스위스 연방사이버보안청(BACS, 구 NCSC), 공식 보안 권고문",
+          "url": "https://www.bacs.admin.ch/en/26-ki-agenten-1-en",
+          "publishedAt": "2026-11-24",
+          "kind": "정부기관 공식 권고문(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-28T00:05:00Z"
+        },
+        {
+          "id": "srf-schutz-interview",
+          "name": "SRF(스위스 공영방송), \"Fünf bestätigte Fälle: Erstmals Cyberangriffe mit KI-Agenten in der Schweiz\" (Florian Schütz 인터뷰)",
+          "url": "https://www.srf.ch/news/schweiz/fuenf-bestaetigte-faelle-erstmals-cyberangriffe-mit-ki-agenten-in-der-schweiz",
+          "publishedAt": "2026-11-24",
+          "kind": "공영방송 인터뷰 보도(1차 인터뷰, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-28T00:08:00Z"
+        },
+        {
+          "id": "uk-ncsc-blog",
+          "name": "영국 국가사이버보안센터(NCSC), \"Familiar weaknesses exploited faster: defending against agentic cyber attacks\" (공식 블로그)",
+          "url": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks",
+          "publishedAt": "2026-11-24",
+          "kind": "정부기관 공식 블로그(1차 자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-28T00:11:00Z"
+        },
+        {
+          "id": "thn-switzerland",
+          "name": "The Hacker News, \"Switzerland Confirms AI-Assisted Cyberattacks on Critical Infrastructure\"",
+          "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
+          "publishedAt": "2026-11-27",
+          "kind": "매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-28T00:02:00Z"
+        },
+        {
+          "id": "thn-eu-artex",
+          "name": "The Hacker News, \"AI-Assisted Cyberattacks Trigger...\" (EU 집행위원회 ARTEX 침해 보도)",
+          "url": "https://thehackernews.com/2026/11/ai-assisted-cyberattacks-trigger.html",
+          "publishedAt": "2026-11-23",
+          "kind": "매체 보도(직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-28T00:15:00Z"
+        },
+        {
+          "id": "techradar-anthropic-doubt",
+          "name": "TechRadar Pro(Ellen Jennings-Trace), \"Experts cast doubt over Anthropic claims that Claude was hijacked to automate cyberattacks\"",
+          "url": "https://www.techradar.com/pro/security/experts-cast-doubt-over-anthropic-claims-that-claude-was-hijacked-to-automate-cyberattacks",
+          "publishedAt": "2025-11-17",
+          "kind": "매체 보도(배경자료, 직접 열람)",
+          "verification": "full_text",
+          "fetchedAt": "2026-11-28T00:18:00Z"
+        }
+      ]
     }
   ],
   "runs": [
-    {
-      "date": "2026-09-30",
-      "checkedAt": "2026-09-30T00:09:40Z",
-      "status": "failed",
-      "reportIds": [],
-      "reason": "이날 첫(오전) 실행. 5회 연속 재확인된 네트워크 차단 패턴을 전면 재탐색 대신 가벼운 표본(WebSearch 1회 + WebFetch 5회, 이전 5회 실행과 겹치지 않는 새 도메인 4곳 + 대조군 1곳)으로 재확인했습니다. WebSearch는 정상 동작해 'AI 데이터센터 전력 공급 병목' 주제로 다수 출처(이투데이·글로벌이코노믹·파이낸셜뉴스·전기신문·토큰포스트 등)를 반환했습니다. WebFetch는 새로 시도한 www.bloomberg.com, www.nvidia.com, www.hankyung.com이 모두 EGRESS_BLOCKED, oracle.com은 HTTP 403으로 실패했고, 대조군인 www.anthropic.com만 정상 열람됐습니다 — 지금까지 6회 연속(9/28 세 차례, 9/29 두 차례, 9/30 오전) 동일 패턴입니다. 접근 가능한 조직이 사실상 1~2곳(둘 다 AI/클라우드 이해관계자)뿐이라 최소 출처 다양성(2개 이상 독립 조직, 반대 근거 포함)과 원문 전체 열람(full_text) 요건을 충족할 수 없어, 유망한 후보 주제(AI 데이터센터 전력 공급 병목)를 확인했음에도 새 보고서 작성을 시도하지 않고 실패로 기록합니다. 클라우드 환경 UI의 Network access 설정에서 원문 사이트 허용이 여전히 필요합니다."
-    },
     {
       "date": "2026-09-30",
       "checkedAt": "2026-09-30T00:49:44Z",
@@ -18687,6 +18893,15 @@ const RESEARCH_DATA = {
         "medicare-round3-savings-9.2b-vs-5.5b-2026-11-27"
       ],
       "reason": "12개 분야 중 '과학 / 바이오 / 건강'(science-bio-health)이 2026-11-15 이후 자동조사 11건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 11/25·11/27 일간 브리핑이 메디케어 3차 약가협상 절감액(92억달러 vs 제조사 할인 반영시 55억달러)의 상충을 설명 없이 전해 이 질문으로 검증했다. CMS 공식 보도자료·팩트시트 원문을 직접 대조해 두 수치가 비교 기준선(리베이트만 차감 vs MDP까지 차감) 차이에서 나온다는 것과, 이 '이중 수치' 공개가 2차 협상(2027년 적용분)에서도 반복된 패턴임을 확인했다. Milliman의 독립분석으로 CMS의 더 낮은 수치조차 과대평가일 수 있다는 반대근거도 확인했다. 검색·원문열기 합계 13회(opened 11·failed 3: Health Affairs 403 2건, CMS 뉴스룸 인덱스 404, Milliman 영어로케일 404) 사용. 3차 결과 발표 자체에 대한 업계·환자단체의 반응은 원문으로 확인하지 못해 한계로 남겼다."
+    },
+    {
+      "date": "2026-11-28",
+      "checkedAt": "2026-11-28T00:25:00Z",
+      "status": "published",
+      "reportIds": [
+        "agentic-cyberattack-autonomy-gap-2026-11-28"
+      ],
+      "reason": "12개 분야 중 'AI / 디지털 기술'(ai-work)이 2026-11-16(fireworks-ai-breach-cascade) 이후 자동조사 12건 중 한 번도 선정되지 않아 12일간 가장 오래 비어있었다. 오늘(11/28) 일간 브리핑의 AI/디지털기술 섹션이 스위스 국가사이버보안센터(NCSC/BACS)의 'AI 에이전트가 기반시설 운영사 2곳을 실제 침해' 발표를 다루며 '에이전트형 공격 프레임워크'라는 용어만 쓰고 그것이 구체적으로 무엇을 자동화하는지, 그리고 '자율적 AI 공격'이라는 설명이 2025년 11월 Anthropic의 유사 주장 때처럼 과장일 가능성은 없는지를 설명하지 않아 이 질문으로 검증했다. 비공개 조사대기 큐(news-candidates 브랜치, 2026-11-27 22:57 UTC 기준)에는 ai-work 관련 요청이 있었으나 내용이 'AI 도입이 실제 업무성과로 이어지는가'라는 별개의 일반 질문(2026-10-10 보고서에서 이미 다룬 주제)이라 처리 대상으로 선택하지 않고, 오늘 브리핑에서 직접 이 질문을 골랐다."
     }
   ]
 };
